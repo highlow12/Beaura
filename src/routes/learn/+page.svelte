@@ -1,6 +1,6 @@
 <script lang="ts">
   import { base } from "$app/paths";
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
   import { fly } from "svelte/transition";
   import {
     loadDashboard,
@@ -22,6 +22,14 @@
   import { layoutCurriculumDag } from "$lib/curriculum/dag-layout";
 
   type SwipeStart = { pointerId: number; x: number; y: number };
+  type ExternalPrerequisite = { trackTitle: string; lessonTitle: string };
+  type PrerequisitePopover = {
+    lessonId: string;
+    items: ExternalPrerequisite[];
+    left: number;
+    top: number;
+    arrowLeft: number;
+  };
 
   let data = $state<Dashboard | null>(null);
   let error = $state("");
@@ -31,7 +39,10 @@
   let transitionDirection = $state<SwipeDirection>("next");
   let hintEvaluated = false;
   let swipeStart: SwipeStart | null = null;
+  let suppressPopoverUntilClick = false;
   let reducedMotion = $state(false);
+  let dagScroll = $state<HTMLDivElement | null>(null);
+  let prerequisitePopover = $state<PrerequisitePopover | null>(null);
 
   function trackMotif(trackId: string): string {
     switch (trackId) {
@@ -118,6 +129,21 @@
         )
       : new Set<string>(),
   );
+
+  $effect(() => {
+    const trackId = selectedTrack?.id;
+    const layoutWidth = dagLayout.width;
+    if (!trackId || !layoutWidth) return;
+
+    void tick().then(() => {
+      if (!dagScroll || selectedTrack?.id !== trackId) return;
+      dagScroll.scrollLeft = Math.max(
+        0,
+        (dagScroll.scrollWidth - dagScroll.clientWidth) / 2,
+      );
+      dagScroll.scrollTop = 0;
+    });
+  });
 
   function localStorageIfAvailable(): Storage | null {
     if (typeof window === "undefined") return null;
@@ -211,6 +237,7 @@
     const nextIndex = tracks.findIndex((track) => track.id === trackId);
     if (nextIndex < 0 || nextIndex === selectedTrackIndex) return;
     transitionDirection = nextIndex > selectedTrackIndex ? "next" : "previous";
+    prerequisitePopover = null;
     selectedTrackId = trackId;
     if (data) {
       const nextLessons = data.lessons.filter(
@@ -270,6 +297,83 @@
     selectedLessonId = lessonId;
   }
 
+  function externalMissingPrerequisites(
+    lessonId: string,
+  ): ExternalPrerequisite[] {
+    if (!data || !selectedTrack) return [];
+    const missing = new Set(
+      missingPrerequisites(
+        lessonId,
+        data.curriculum,
+        data.snapshot.lessonStates,
+      ),
+    );
+    const lessonsById = new Map(
+      data.lessons.map((lesson) => [lesson.id, lesson]),
+    );
+    const tracksById = new Map(
+      data.curriculum.tracks.map((track) => [track.id, track]),
+    );
+    const required =
+      data.curriculum.nodes.find((node) => node.lesson === lessonId)
+        ?.requires ?? [];
+
+    return required.flatMap((requiredId) => {
+      if (!missing.has(requiredId)) return [];
+      const lesson = lessonsById.get(requiredId);
+      if (!lesson || lesson.track === selectedTrack.id) return [];
+      return [
+        {
+          trackTitle: tracksById.get(lesson.track)?.title ?? lesson.track,
+          lessonTitle: lesson.title,
+        },
+      ];
+    });
+  }
+
+  function handleLessonClick(event: MouseEvent, lessonId: string) {
+    selectLesson(lessonId);
+    if (suppressPopoverUntilClick) {
+      suppressPopoverUntilClick = false;
+      return;
+    }
+    const items = externalMissingPrerequisites(lessonId);
+    if (!items.length) {
+      prerequisitePopover = null;
+      return;
+    }
+
+    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
+    const width = Math.min(280, window.innerWidth - 24);
+    const anchor = rect.left + rect.width / 2;
+    const left = Math.min(
+      Math.max(12, anchor - width / 2),
+      window.innerWidth - width - 12,
+    );
+    prerequisitePopover = {
+      lessonId,
+      items,
+      left,
+      top: rect.top - 8,
+      arrowLeft: anchor - left,
+    };
+  }
+
+  function dismissPrerequisitePopover() {
+    prerequisitePopover = null;
+  }
+
+  function handleWindowPointerDown() {
+    if (!prerequisitePopover) return;
+    prerequisitePopover = null;
+    suppressPopoverUntilClick = true;
+    window.setTimeout(() => (suppressPopoverUntilClick = false), 0);
+  }
+
+  function handleWindowKeydown(event: KeyboardEvent) {
+    if (event.key === "Escape") dismissPrerequisitePopover();
+  }
+
   function handlePointerUp(event: PointerEvent) {
     if (!swipeStart || swipeStart.pointerId !== event.pointerId) return;
     const start = swipeStart;
@@ -295,6 +399,13 @@
       surface.releasePointerCapture(event.pointerId);
   }
 </script>
+
+<svelte:window
+  onpointerdown={handleWindowPointerDown}
+  onkeydown={handleWindowKeydown}
+  onresize={dismissPrerequisitePopover}
+  onscroll={dismissPrerequisitePopover}
+/>
 
 <svelte:head><title>학습 경로 | CS 듀오링고</title></svelte:head>
 
@@ -433,6 +544,7 @@
               <div class="dag-viewport">
                 <div
                   class="dag-scroll"
+                  bind:this={dagScroll}
                   role="region"
                   aria-label={`${selectedTrack.title} 레슨 DAG`}
                   aria-describedby={`dag-help-${selectedTrack.id}`}
@@ -496,7 +608,12 @@
                             aria-pressed={lesson.id === selectedLesson?.id}
                             aria-label={`${lesson.title}, ${statusLabels[status]}${node.externalPrerequisiteCount ? `, 외부 선행 ${node.externalPrerequisiteCount}개` : ""}`}
                             style={`--node-x: ${node.x}px; --node-y: ${node.y}px; --node-width: ${node.width}px; --node-height: ${node.height}px;`}
-                            onclick={() => selectLesson(lesson.id)}
+                            aria-describedby={prerequisitePopover?.lessonId ===
+                            lesson.id
+                              ? "external-prerequisite-popover"
+                              : undefined}
+                            onclick={(event) =>
+                              handleLessonClick(event, lesson.id)}
                           >
                             <span class="node-icon" aria-hidden="true"
                               >{status === "completed"
@@ -607,6 +724,22 @@
     </section>
   {/if}
 </div>
+
+{#if prerequisitePopover}
+  <div
+    id="external-prerequisite-popover"
+    class="prerequisite-popover"
+    role="status"
+    style={`--popover-left: ${prerequisitePopover.left}px; --popover-top: ${prerequisitePopover.top}px; --popover-arrow-left: ${prerequisitePopover.arrowLeft}px;`}
+  >
+    <strong>먼저 다른 트랙에서 들어야 해요</strong>
+    <ul>
+      {#each prerequisitePopover.items as item}
+        <li><span>{item.trackTitle}</span> · {item.lessonTitle}</li>
+      {/each}
+    </ul>
+  </div>
+{/if}
 
 <style>
   .track-switcher {
@@ -1035,6 +1168,59 @@
   .dag-help {
     margin: 0;
     font-size: 0.78rem;
+  }
+
+  .prerequisite-popover {
+    position: fixed;
+    z-index: 100;
+    top: var(--popover-top);
+    left: var(--popover-left);
+    width: min(17.5rem, calc(100vw - 1.5rem));
+    border: 1px solid color-mix(in srgb, var(--warning) 58%, var(--border));
+    border-radius: var(--radius-md);
+    background: var(--surface-raised);
+    box-shadow: var(--shadow-md);
+    color: var(--text);
+    padding: 0.75rem 0.85rem;
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+
+  .prerequisite-popover::after {
+    position: absolute;
+    top: 100%;
+    left: var(--popover-arrow-left);
+    width: 0.7rem;
+    height: 0.7rem;
+    border-right: 1px solid
+      color-mix(in srgb, var(--warning) 58%, var(--border));
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--warning) 58%, var(--border));
+    background: var(--surface-raised);
+    content: "";
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .prerequisite-popover strong {
+    color: var(--warning);
+    font-size: 0.8rem;
+  }
+
+  .prerequisite-popover ul {
+    display: grid;
+    gap: 0.25rem;
+    margin: 0.45rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .prerequisite-popover li {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  .prerequisite-popover li span {
+    font-weight: 650;
   }
 
   .lesson-detail {
