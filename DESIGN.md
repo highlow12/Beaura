@@ -26,9 +26,9 @@ track, lesson, state, or piece of content.
 | `--text-muted` | `#5d6a63` | supporting copy and metadata |
 | `--border` | `#d5ded8` | thin structural rule |
 | `--border-strong` | `#aab8ae` | focused/pressed structural rule |
-| `--primary` | `#176b52` | primary action and neutral progress |
-| `--primary-strong` | `#0f503d` | primary action pressed state |
-| `--primary-soft` | `#e2f1e9` | selected/quiet primary tint |
+| `--primary` | `#2563eb` | primary action and neutral progress |
+| `--primary-strong` | `#1d4ed8` | primary action pressed state |
+| `--primary-soft` | `#eff6ff` | selected/quiet primary tint |
 | `--success` | `#16734b` | correct/completed state |
 | `--success-soft` | `#e1f3e9` | correct state surface |
 | `--danger` | `#b7473c` | destructive/wrong state |
@@ -55,9 +55,9 @@ neon.
 | `--text-muted` | `#a8b8ae` | supporting copy and metadata |
 | `--border` | `#2c3b33` | quiet structural rule |
 | `--border-strong` | `#557064` | focused/pressed structural rule |
-| `--primary` | `#73c6a1` | primary action and neutral progress |
-| `--primary-strong` | `#9be0be` | primary action pressed state |
-| `--primary-soft` | `#1f3d31` | selected/quiet primary tint |
+| `--primary` | `#60a5fa` | primary action and neutral progress |
+| `--primary-strong` | `#93c5fd` | primary action pressed state |
+| `--primary-soft` | `#172554` | selected/quiet primary tint |
 | `--success` | `#7bd6a5` | correct/completed state |
 | `--success-soft` | `#1d3b2d` | correct state surface |
 | `--danger` | `#f08b82` | destructive/wrong state |
