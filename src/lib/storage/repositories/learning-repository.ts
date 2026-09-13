@@ -46,6 +46,11 @@ const MAX_REVIEW_LIMIT = 50;
 export const MAX_HEARTS = 3;
 export const HEART_REGENERATION_INTERVAL_MS = 8 * 60 * 60 * 1000;
 export const HEARTS_CHANGED_EVENT = "cs-duolingo:hearts-changed";
+/**
+ * Temporary beta switch.  Keep the stored heart state intact so the feature
+ * can be re-enabled without a data migration after testing.
+ */
+export const HEARTS_ENABLED = false;
 export const NO_HEARTS_MESSAGE =
   "하트를 모두 사용했어요. 다음 하트가 생길 때까지 기다려 주세요.";
 
@@ -904,12 +909,14 @@ export class LearningRepository {
         return clone(existingSession.session) as LessonSession;
       }
 
-      if (hearts.count <= 0)
+      if (HEARTS_ENABLED && hearts.count <= 0)
         throw new NoHeartsError(heartStatus(hearts).nextRecoveryAt);
 
       const fresh = createLessonSession(lesson);
-      hearts = consumeHeart(hearts, now);
-      await this.database.heartState.put(hearts);
+      if (HEARTS_ENABLED) {
+        hearts = consumeHeart(hearts, now);
+        await this.database.heartState.put(hearts);
+      }
       await this.database.lessonSessions.put({
         lessonId: lesson.id,
         contentRevision: lesson.revision,

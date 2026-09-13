@@ -5,6 +5,7 @@
   import "../app.css";
   import OfflineStatus from "$lib/components/OfflineStatus.svelte";
   import HeartIndicator from "$lib/components/HeartIndicator.svelte";
+  import { HEARTS_ENABLED } from "$lib/storage/repositories/learning-repository";
   import ReportIssue from "$lib/components/ReportIssue.svelte";
   import { installGlobalErrorReporting } from "$lib/application/error-reporting";
   import { disableSentry, initSentry } from "$lib/application/sentry";
@@ -136,7 +137,9 @@
     >
       <span class="theme-toggle-icon" aria-hidden="true">{theme === "dark" ? "☼" : "◐"}</span>
     </button>
-    <HeartIndicator />
+    {#if HEARTS_ENABLED}
+      <HeartIndicator />
+    {/if}
   </div>
 </header>
 

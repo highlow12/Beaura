@@ -5,6 +5,7 @@ import type { Lesson } from "$lib/content/types";
 import { LearningDatabase } from "$lib/storage/db";
 import {
   HEART_REGENERATION_INTERVAL_MS,
+  HEARTS_ENABLED,
   LearningRepository,
   NoHeartsError,
   NO_HEARTS_MESSAGE,
@@ -49,15 +50,15 @@ afterEach(async () => {
 });
 
 describe("lesson hearts", () => {
-  it("charges a fresh lesson, resumes an active session for free, and charges a restart", async () => {
+  it("does not charge or block lessons while hearts are disabled", async () => {
     const repo = repository();
     const currentLesson = lesson("lesson.one");
 
     await repo.startLesson(currentLesson);
-    expect((await repo.getHeartStatus()).count).toBe(2);
+    expect((await repo.getHeartStatus()).count).toBe(3);
 
     await repo.startLesson(currentLesson);
-    expect((await repo.getHeartStatus()).count).toBe(2);
+    expect((await repo.getHeartStatus()).count).toBe(3);
 
     await repo.completeLesson(currentLesson, {
       lessonId: currentLesson.id,
@@ -67,10 +68,15 @@ describe("lesson hearts", () => {
       answers: [],
     });
     await repo.startLesson(currentLesson);
-    expect((await repo.getHeartStatus()).count).toBe(1);
+    expect((await repo.getHeartStatus()).count).toBe(3);
+
+    await repo.startLesson(lesson("lesson.two"));
+    await repo.startLesson(lesson("lesson.three"));
+    await repo.startLesson(lesson("lesson.four"));
+    expect((await repo.getHeartStatus()).count).toBe(3);
   });
 
-  it("rejects a new lesson at zero hearts without creating its session", async () => {
+  it.skipIf(!HEARTS_ENABLED)("rejects a new lesson at zero hearts without creating its session", async () => {
     const repo = repository();
     await repo.startLesson(lesson("lesson.one"));
     await repo.startLesson(lesson("lesson.two"));
@@ -100,7 +106,7 @@ describe("lesson hearts", () => {
     expect((await repo.getHeartStatus()).count).toBe(0);
   });
 
-  it("replenishes one heart every eight hours and caps at three", async () => {
+  it.skipIf(!HEARTS_ENABLED)("replenishes one heart every eight hours and caps at three", async () => {
     const repo = repository();
     await repo.startLesson(lesson("lesson.one"));
     expect((await repo.getHeartStatus()).count).toBe(2);
@@ -118,7 +124,7 @@ describe("lesson hearts", () => {
     expect((await repo.getHeartStatus()).count).toBe(3);
   });
 
-  it("does not grant an extra heart when the clock moves backwards", async () => {
+  it.skipIf(!HEARTS_ENABLED)("does not grant an extra heart when the clock moves backwards", async () => {
     const repo = repository();
     await repo.startLesson(lesson("lesson.one"));
     await repo.startLesson(lesson("lesson.two"));
@@ -130,7 +136,7 @@ describe("lesson hearts", () => {
     expect((await repo.getHeartStatus()).count).toBe(1);
   });
 
-  it("resets to three at a later local calendar date", async () => {
+  it.skipIf(!HEARTS_ENABLED)("resets to three at a later local calendar date", async () => {
     const repo = repository();
     await repo.startLesson(lesson("lesson.one"));
     await repo.startLesson(lesson("lesson.two"));
@@ -144,7 +150,7 @@ describe("lesson hearts", () => {
     expect((await repo.getHeartStatus()).count).toBe(3);
   });
 
-  it("keeps heart state in backups and restores a full allowance on reset", async () => {
+  it.skipIf(!HEARTS_ENABLED)("keeps heart state in backups and restores a full allowance on reset", async () => {
     const repo = repository();
     await repo.startLesson(lesson("lesson.one"));
     const backup = JSON.parse(await repo.exportBackup()) as {
@@ -158,7 +164,7 @@ describe("lesson hearts", () => {
     expect((await repo.getHeartStatus()).count).toBe(2);
   });
 
-  it("rolls back the heart charge when session creation fails", async () => {
+  it.skipIf(!HEARTS_ENABLED)("rolls back the heart charge when session creation fails", async () => {
     const repo = repository();
     vi.spyOn(repo.database.lessonSessions, "put").mockRejectedValue(
       new Error("injected session write failure"),
