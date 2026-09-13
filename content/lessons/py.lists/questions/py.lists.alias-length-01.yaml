@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: py.lists.alias-length-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 Python 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  first = [1, 2]
+  second = first
+  second.append(3)
+  print(len(first))
+choices:
+  - '3'
+  - '2'
+  - '1'
+acceptedOutputs:
+  - '3'
+explanation:
+  - type: text
+    text: second와 first는 같은 리스트를 가리킵니다. second로 원소를 추가하면 first로 본 리스트에도 그 변경이 보입니다.
+tags:
+  - lists
+  - aliasing
+  - mutation
+difficulty: 2

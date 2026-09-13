@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: arch.binary.to-decimal-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 이진수 10110₂를 십진수로 바꾸면 얼마인가요?
+options:
+  - id: value-22
+    content:
+      - type: text
+        text: '22'
+  - id: value-18
+    content:
+      - type: text
+        text: '18'
+  - id: value-26
+    content:
+      - type: text
+        text: '26'
+correctOptionId: value-22
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 10110₂에서 1인 자리는 16, 4, 2이므로 합은 22입니다.
+tags:
+  - binary
+  - place-value
+  - conversion
+difficulty: 1

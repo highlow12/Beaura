@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.sort
-revision: 1
+revision: 2
 track: algorithms
 title: 정렬
 description: 정렬의 목적과 기본 알고리즘의 비교·교환 과정을 익힌다.
@@ -15,3 +15,9 @@ flow:
   ref: algo.sort.bubble-output-01
 - type: question
   ref: algo.sort.pass-steps-01
+- type: content
+  ref: content/passes.md
+- type: question
+  ref: algo.sort.bubble-pass-01
+- type: question
+  ref: algo.sort.selection-pass-01

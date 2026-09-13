@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: ds.queue.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 Python 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  from collections import deque
+  queue = deque(["A", "B"])
+  queue.append("C")
+  queue.popleft()
+  print(queue[0])
+choices:
+  - B
+  - A
+  - C
+acceptedOutputs:
+  - B
+explanation:
+  - type: text
+    text: C는 뒤에 들어가고 A가 앞에서 제거되므로 새로운 front는 B입니다.
+tags:
+  - queue
+  - fifo
+  - deque
+difficulty: 2

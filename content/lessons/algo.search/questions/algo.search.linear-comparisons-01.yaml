@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.search.linear-comparisons-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 선형 탐색으로 [5, 7, 9, 11]에서 7을 앞에서부터 찾으면 몇 번 비교한 뒤 찾나요?
+options:
+  - id: two
+    content:
+      - type: text
+        text: 2번
+  - id: one
+    content:
+      - type: text
+        text: 1번
+  - id: four
+    content:
+      - type: text
+        text: 4번
+correctOptionId: two
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 5와 한 번 비교한 뒤 두 번째 원소 7에서 찾으므로 총 두 번 비교합니다.
+tags:
+  - search
+  - linear-search
+  - tracing
+difficulty: 1

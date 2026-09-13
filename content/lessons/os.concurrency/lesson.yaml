@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.concurrency
-revision: 1
+revision: 2
 track: operating-systems
 title: 동시성과 원자성
 description: 동시 실행과 병렬 실행을 구분하고 여러 단계 작업의 원자성을 설명한다.
@@ -19,3 +19,5 @@ flow:
     ref: os.concurrency.ordering-04
   - type: question
     ref: os.concurrency.matching-05
+  - type: question
+    ref: os.concurrency.lost-update-06

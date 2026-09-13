@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.logic
-revision: 1
+revision: 2
 track: computer-architecture
 title: 논리 게이트
 description: AND, OR, NOT의 진리표와 논리 조합을 살펴본다.
@@ -15,3 +15,9 @@ flow:
     ref: arch.logic.true-expressions-01
   - type: question
     ref: arch.logic.combined-gate-01
+  - type: content
+    ref: content/evaluation.md
+  - type: question
+    ref: arch.logic.nand-trace-01
+  - type: question
+    ref: arch.logic.nested-trace-01

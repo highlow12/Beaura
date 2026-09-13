@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: ds.graph
-revision: 1
+revision: 2
 track: data-structures
 title: 그래프
 description: 정점과 간선으로 관계와 연결을 표현하는 그래프를 이해한다.
@@ -15,3 +15,9 @@ flow:
   ref: ds.graph.directed-01
 - type: question
   ref: ds.graph.neighbor-output-01
+- type: content
+  ref: content/degree.md
+- type: question
+  ref: ds.graph.degree-01
+- type: question
+  ref: ds.graph.out-degree-01

@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: algo.traversal.visited-purpose-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 그래프 순회에서 visited 집합이 필요한 이유를 모두 고르세요.
+options:
+  - id: avoid-repeat
+    content:
+      - type: text
+        text: 이미 처리한 정점을 불필요하게 다시 방문하지 않기 위해
+  - id: stop-cycles
+    content:
+      - type: text
+        text: 순환 그래프에서 같은 정점을 계속 도는 것을 막기 위해
+  - id: sort-vertices
+    content:
+      - type: text
+        text: 정점 이름을 자동으로 정렬하기 위해
+correctOptionIds:
+  - avoid-repeat
+  - stop-cycles
+shuffleOptions: true
+explanation:
+  - type: text
+    text: visited는 중복 처리와 순환으로 인한 반복을 막는 장치이며 정렬을 위한 구조가 아닙니다.
+tags:
+  - traversal
+  - visited
+  - graph
+difficulty: 1

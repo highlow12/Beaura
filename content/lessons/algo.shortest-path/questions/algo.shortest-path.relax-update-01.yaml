@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.shortest-path.relax-update-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: dist[u]=4, 간선 u→v의 가중치가 3, 현재 dist[v]=10일 때 완화 후 dist[v]는 얼마인가요?
+options:
+  - id: seven
+    content:
+      - type: text
+        text: '7'
+  - id: ten
+    content:
+      - type: text
+        text: '10'
+  - id: three
+    content:
+      - type: text
+        text: '3'
+correctOptionId: seven
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 새 후보 거리는 4 + 3 = 7이고 기존 10보다 작으므로 dist[v]를 7로 갱신합니다.
+tags:
+  - shortest-path
+  - relaxation
+  - dijkstra
+difficulty: 2

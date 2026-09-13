@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: py.variables.value-copy-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 Python 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  first = 4
+  second = first + 3
+  first = 10
+  print(second)
+choices:
+  - '7'
+  - '13'
+  - '10'
+acceptedOutputs:
+  - '7'
+explanation:
+  - type: text
+    text: second를 계산할 때 first의 값은 4이므로 second에는 7이 대입됩니다. 이후 first를 10으로 바꿔도 second는 자동으로 다시 계산되지 않습니다.
+tags:
+  - variables
+  - assignment
+  - code-output
+difficulty: 2

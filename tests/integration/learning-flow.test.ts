@@ -52,9 +52,9 @@ describe('real authored lesson to saved progress and review',()=>{
     expect(missingPrerequisites('py.types',compiled.curriculum as Curriculum,snapshot.lessonStates)).toEqual([]);
     expect(missingPrerequisites('py.conditionals',compiled.curriculum as Curriculum,snapshot.lessonStates)).toEqual(['py.io']);
     expect(snapshot.questionStates.find(s=>s.questionId===studied[0].id)?.incorrectCount).toBe(1);
-    expect(snapshot.questionStates).toHaveLength(2);
+    expect(snapshot.questionStates).toHaveLength(studied.length);
     now=Math.max(...snapshot.questionStates.map(s=>s.nextReviewAt??now))+1;
-    expect(await repository.getReviewQueue(studied,new Date(now))).toHaveLength(2);
+    expect(await repository.getReviewQueue(studied,new Date(now))).toHaveLength(studied.length);
     await repository.saveAttempt({id:crypto.randomUUID(),question:studied[0],correct:true,durationMs:100,mode:'review'});
     const events=await database.studyEvents.where('questionId').equals(studied[0].id).sortBy('clientSeq');
     expect(events.map(e=>e.rating)).toEqual(['again','good']);

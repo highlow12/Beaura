@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: sys.graphics.pixel-count-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 가로 4픽셀, 세로 3픽셀인 프레임버퍼에는 한 프레임에 몇 개의 픽셀 위치가 있나요?
+options:
+  - id: pixels-12
+    content:
+      - type: text
+        text: 12개
+  - id: pixels-7
+    content:
+      - type: text
+        text: 7개
+  - id: pixels-24
+    content:
+      - type: text
+        text: 24개
+correctOptionId: pixels-12
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 가로와 세로 픽셀 수를 곱하면 4 × 3 = 12개의 픽셀 위치가 됩니다.
+tags:
+  - graphics
+  - framebuffer
+  - resolution
+difficulty: 1

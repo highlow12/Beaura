@@ -9,6 +9,8 @@
     "build": "npm run content:build && vite build",
     "preview": "vite preview",
     "content:validate": "node --import tsx/esm scripts/content/validate.ts",
+    "content:audit": "node --import tsx/esm scripts/content/quality.ts",
+    "content:quality": "node --import tsx/esm scripts/content/quality.ts --strict",
     "content:build": "node --import tsx/esm scripts/content/build.ts",
     "test:unit": "vitest run",
     "test": "npm run test:unit",

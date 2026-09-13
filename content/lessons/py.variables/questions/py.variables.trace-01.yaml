@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: py.variables.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 Python 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  coins = 3
+  coins = coins + 2
+  coins = coins * 2
+  print(coins)
+choices:
+  - '10'
+  - '7'
+  - '12'
+acceptedOutputs:
+  - '10'
+explanation:
+  - type: text
+    text: coins는 3에서 5가 된 뒤 다시 2배가 되어 10이 됩니다.
+tags:
+  - variables
+  - reassignment
+  - code-output
+difficulty: 1

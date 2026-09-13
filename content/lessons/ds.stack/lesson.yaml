@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: ds.stack
-revision: 1
+revision: 2
 track: data-structures
 title: 스택
 description: 마지막에 들어온 값이 먼저 나오는 LIFO 구조를 익힌다.
@@ -15,3 +15,9 @@ flow:
   ref: ds.stack.lifo-output-01
 - type: question
   ref: ds.stack.use-01
+- type: content
+  ref: content/invariant.md
+- type: question
+  ref: ds.stack.trace-01
+- type: question
+  ref: ds.stack.undo-order-01

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: ds.tree
-revision: 1
+revision: 2
 track: data-structures
 title: 트리
 description: 부모와 자식 관계로 계층 데이터를 표현하는 트리를 살펴본다.
@@ -15,3 +15,9 @@ flow:
   ref: ds.tree.binary-01
 - type: question
   ref: ds.tree.child-output-01
+- type: content
+  ref: content/structure.md
+- type: question
+  ref: ds.tree.depth-01
+- type: question
+  ref: ds.tree.subtree-01

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: sys.graphics
-revision: 1
+revision: 2
 track: computer-systems
 title: 컴퓨터 그래픽스 입문
 description: 픽셀, 색상, 정점과 프레임버퍼로 화면을 만드는 과정을 소개한다.
@@ -15,3 +15,9 @@ flow:
   ref: sys.graphics.pipeline-terms-01
 - type: question
   ref: sys.graphics.rgb-channels-01
+- type: content
+  ref: content/framebuffer.md
+- type: question
+  ref: sys.graphics.pixel-count-01
+- type: question
+  ref: sys.graphics.framebuffer-role-01

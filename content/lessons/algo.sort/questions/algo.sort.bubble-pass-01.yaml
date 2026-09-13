@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.sort.bubble-pass-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 오름차순 버블 정렬로 [3, 1, 2]를 왼쪽부터 한 패스 수행한 결과는 무엇인가요?
+options:
+  - id: result-123
+    content:
+      - type: text
+        text: '[1, 2, 3]'
+  - id: result-132
+    content:
+      - type: text
+        text: '[1, 3, 2]'
+  - id: result-312
+    content:
+      - type: text
+        text: '[3, 1, 2]'
+correctOptionId: result-123
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 3과 1을 바꿔 [1, 3, 2]가 되고, 이어 3과 2를 바꿔 [1, 2, 3]이 됩니다.
+tags:
+  - sort
+  - bubble-sort
+  - tracing
+difficulty: 2

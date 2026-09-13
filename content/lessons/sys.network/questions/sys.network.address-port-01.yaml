@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: sys.network.address-port-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 식별자와 주된 역할을 연결하세요.
+leftItems:
+  - id: ip
+    content:
+      - type: text
+        text: IP 주소
+  - id: port
+    content:
+      - type: text
+        text: 포트 번호
+rightItems:
+  - id: host
+    content:
+      - type: text
+        text: 네트워크의 목적지 호스트를 구분한다.
+  - id: service
+    content:
+      - type: text
+        text: 호스트 안의 애플리케이션이나 서비스를 구분한다.
+correctPairs:
+  - leftId: ip
+    rightId: host
+  - leftId: port
+    rightId: service
+explanation:
+  - type: text
+    text: IP 주소는 목적지 호스트를, 포트 번호는 그 호스트 안의 통신 대상을 구분합니다.
+tags:
+  - network
+  - ip
+  - port
+difficulty: 1

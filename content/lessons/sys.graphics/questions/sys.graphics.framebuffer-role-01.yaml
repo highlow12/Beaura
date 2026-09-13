@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: sys.graphics.framebuffer-role-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 렌더링 과정에서 프레임버퍼의 역할을 가장 잘 설명한 것은 무엇인가요?
+options:
+  - id: final-pixels
+    content:
+      - type: text
+        text: 화면에 표시할 최종 픽셀 색 결과를 저장한다.
+  - id: source-code
+    content:
+      - type: text
+        text: 프로그램의 소스 코드를 저장한다.
+  - id: network-route
+    content:
+      - type: text
+        text: 네트워크 패킷의 경로를 결정한다.
+correctOptionId: final-pixels
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 프레임버퍼에는 렌더링된 화면의 픽셀 결과가 저장되고 디스플레이가 이를 화면에 표시합니다.
+tags:
+  - graphics
+  - framebuffer
+  - rendering
+difficulty: 1

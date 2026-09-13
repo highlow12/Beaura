@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: sys.network
-revision: 1
+revision: 2
 track: computer-systems
 title: 네트워크 기초
 description: 주소, 패킷, 프로토콜이 데이터를 주고받는 방식을 소개한다.
@@ -15,3 +15,9 @@ flow:
   ref: sys.network.tcp-choice-01
 - type: question
   ref: sys.network.web-protocol-01
+- type: content
+  ref: content/delivery.md
+- type: question
+  ref: sys.network.address-port-01
+- type: question
+  ref: sys.network.dns-role-01

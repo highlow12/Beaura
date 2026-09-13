@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.search
-revision: 1
+revision: 2
 track: algorithms
 title: 탐색
 description: 선형 탐색과 이진 탐색의 전제와 진행 과정을 비교한다.
@@ -15,3 +15,9 @@ flow:
   ref: algo.search.linear-steps-01
 - type: question
   ref: algo.search.binary-update-01
+- type: content
+  ref: content/bounds.md
+- type: question
+  ref: algo.search.binary-range-01
+- type: question
+  ref: algo.search.linear-comparisons-01

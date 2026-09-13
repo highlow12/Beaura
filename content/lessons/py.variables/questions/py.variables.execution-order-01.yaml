@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: py.variables.execution-order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: '"score = score + 1" 대입문이 처리되는 순서를 배열하세요.'
+items:
+  - id: read
+    content:
+      - type: text
+        text: 현재 score 값을 읽어 1을 더한다.
+  - id: assign
+    content:
+      - type: text
+        text: 계산 결과를 score에 다시 연결한다.
+  - id: next
+    content:
+      - type: text
+        text: 갱신된 score를 다음 문장에서 사용한다.
+correctOrder:
+  - read
+  - assign
+  - next
+explanation:
+  - type: text
+    text: 대입문은 오른쪽 표현식을 먼저 계산하고 그 결과를 왼쪽 이름에 저장한 뒤 다음 문장으로 진행합니다.
+tags:
+  - variables
+  - assignment
+  - execution-order
+difficulty: 2

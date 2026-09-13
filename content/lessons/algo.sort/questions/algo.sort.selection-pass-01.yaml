@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.sort.selection-pass-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 오름차순 선택 정렬로 [4, 3, 2, 1]의 첫 패스를 수행한 결과는 무엇인가요?
+options:
+  - id: result-1324
+    content:
+      - type: text
+        text: '[1, 3, 2, 4]'
+  - id: result-1234
+    content:
+      - type: text
+        text: '[1, 2, 3, 4]'
+  - id: result-4312
+    content:
+      - type: text
+        text: '[4, 3, 1, 2]'
+correctOptionId: result-1324
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 첫 패스에서는 전체 범위의 최솟값 1을 찾아 첫 원소 4와 한 번 교환합니다.
+tags:
+  - sort
+  - selection-sort
+  - tracing
+difficulty: 2

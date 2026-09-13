@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: arch.cpu.pc-sequential-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 모든 명령의 길이가 4바이트이고 현재 PC가 100을 가리킵니다. 점프 없이 다음 명령으로 순차 실행한다면 다음 PC는 무엇인가요?
+options:
+  - id: pc-104
+    content:
+      - type: text
+        text: '104'
+  - id: pc-100
+    content:
+      - type: text
+        text: '100'
+  - id: pc-96
+    content:
+      - type: text
+        text: '96'
+correctOptionId: pc-104
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 고정 길이 4바이트 명령을 순차 실행하므로 다음 명령 위치는 100 + 4 = 104입니다.
+tags:
+  - cpu
+  - program-counter
+  - fetch
+difficulty: 2
