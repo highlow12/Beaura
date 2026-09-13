@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: toc.finite-state-machine.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 유한 상태 기계에서 상태(state)의 가장 중요한 역할은 무엇인가요?
+options:
+  - id: summarize-history
+    content:
+      - type: text
+        text: 미래의 전이를 결정하는 데 필요한 입력 이력을 요약한다.
+  - id: store-all-input
+    content:
+      - type: text
+        text: 지금까지의 입력 문자열 전체를 그대로 저장한다.
+  - id: generate-random
+    content:
+      - type: text
+        text: 다음 입력 기호를 무작위로 생성한다.
+  - id: count-memory
+    content:
+      - type: text
+        text: 제한 없이 모든 수를 정확히 저장한다.
+correctOptionId: summarize-history
+shuffleOptions: true
+explanation:
+  - type: text
+    text: FSM의 상태는 과거 전체가 아니라 앞으로 필요한 구별 정보만 유한하게 요약합니다.
+tags:
+  - theory-of-computation
+  - finite-state-machine
+  - state
+difficulty: 1

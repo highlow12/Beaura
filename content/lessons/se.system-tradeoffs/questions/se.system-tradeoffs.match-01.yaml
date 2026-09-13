@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.system-tradeoffs.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 시스템 품질 속성과 설명을 연결하세요.
+leftItems:
+  - id: consistency
+    content:
+      - type: text
+        text: 일관성
+  - id: availability
+    content:
+      - type: text
+        text: 가용성
+  - id: latency
+    content:
+      - type: text
+        text: 지연 시간
+rightItems:
+  - id: same-view
+    content:
+      - type: text
+        text: 여러 관찰자가 데이터 규칙을 같은 의미로 보는 정도
+  - id: timely-response
+    content:
+      - type: text
+        text: 정해진 시간 안에 요청에 응답할 수 있는 능력
+  - id: response-delay
+    content:
+      - type: text
+        text: 요청을 보내고 결과를 받기까지 걸리는 시간
+correctPairs:
+  - leftId: consistency
+    rightId: same-view
+  - leftId: availability
+    rightId: timely-response
+  - leftId: latency
+    rightId: response-delay
+explanation:
+  - type: text
+    text: 일관성은 데이터 관점의 동일성, 가용성은 응답 가능성, 지연 시간은 응답까지 걸리는 시간을 설명합니다.
+tags:
+  - software-engineering
+  - system-design
+  - quality-attributes
+difficulty: 2

@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: toc.cfg.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 함수가 `S → aSb | ε`의 생성 길이를 계산합니다. generate(2)의 결과는 무엇인가요?
+language: python
+code: |-
+  def generate(n):
+      if n == 0:
+          return ""
+      return "a" + generate(n - 1) + "b"
+  print(generate(2))
+choices:
+  - aabb
+  - abab
+  - ab
+acceptedOutputs:
+  - aabb
+explanation:
+  - type: text
+    text: 바깥 호출이 a와 b를 감싸고 안쪽 호출도 ab를 만들므로 aabb가 됩니다.
+tags:
+  - theory-of-computation
+  - cfg
+  - trace
+difficulty: 2

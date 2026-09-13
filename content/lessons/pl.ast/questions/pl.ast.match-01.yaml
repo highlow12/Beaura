@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.ast.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: AST 관련 요소와 역할을 연결하세요.
+leftItems:
+  - id: literal
+    content:
+      - type: text
+        text: 리터럴 노드
+  - id: operator
+    content:
+      - type: text
+        text: 연산 노드
+  - id: source-span
+    content:
+      - type: text
+        text: 소스 위치 범위
+rightItems:
+  - id: value
+    content:
+      - type: text
+        text: 3이나 "hi" 같은 직접 값
+  - id: children
+    content:
+      - type: text
+        text: 연산 종류와 피연산자 자식
+  - id: diagnostics
+    content:
+      - type: text
+        text: 오류와 경고를 원문에 연결
+correctPairs:
+  - leftId: literal
+    rightId: value
+  - leftId: operator
+    rightId: children
+  - leftId: source-span
+    rightId: diagnostics
+explanation:
+  - type: text
+    text: AST에 위치와 의미 정보를 함께 보존하면 타입 오류를 원래 코드에 표시하고 여러 방문자가 구조를 재사용할 수 있습니다.
+tags:
+  - programming-languages
+  - ast
+  - tree
+difficulty: 2

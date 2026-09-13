@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.runtime-gc
+revision: 1
+track: programming-languages
+title: 런타임과 가비지 컬렉션
+description: 실행 중 객체 도달 가능성과 mark-sweep 수집 과정을 이해한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.runtime-gc.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.runtime-gc.match-01
+  - type: question
+    ref: pl.runtime-gc.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.runtime-gc.order-01
+  - type: question
+    ref: pl.runtime-gc.trace-01

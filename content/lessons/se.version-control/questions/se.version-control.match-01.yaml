@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.version-control.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 버전 관리의 용어와 역할을 연결하세요.
+leftItems:
+  - id: commit
+    content:
+      - type: text
+        text: 커밋
+  - id: branch
+    content:
+      - type: text
+        text: 브랜치
+  - id: merge
+    content:
+      - type: text
+        text: 병합
+rightItems:
+  - id: snapshot
+    content:
+      - type: text
+        text: 논리적 변경을 담은 이력 스냅샷
+  - id: workflow-name
+    content:
+      - type: text
+        text: 특정 이력을 가리키며 독립 작업을 가리키는 이름
+  - id: histories-combine
+    content:
+      - type: text
+        text: 서로 다른 변경 이력을 하나의 결과로 합치는 과정
+correctPairs:
+  - leftId: commit
+    rightId: snapshot
+  - leftId: branch
+    rightId: workflow-name
+  - leftId: merge
+    rightId: histories-combine
+explanation:
+  - type: text
+    text: 커밋은 기록 단위이고 브랜치는 작업 흐름을 가리키며 병합은 이력을 통합합니다.
+tags:
+  - software-engineering
+  - version-control
+  - collaboration
+difficulty: 2

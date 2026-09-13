@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: pl.lexing.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 단순 렉서가 공백으로 나눈 토큰을 출력합니다. 결과를 고르세요.
+language: python
+code: |-
+  source = "sum = 3"
+  tokens = source.split()
+  print(len(tokens))
+choices:
+  - "3"
+  - "2"
+  - "7"
+acceptedOutputs:
+  - "3"
+explanation:
+  - type: text
+    text: 공백 기준 토큰은 sum, =, 3의 세 개이므로 길이는 3입니다. 실제 렉서는 연산자와 위치도 더 정교하게 처리합니다.
+tags:
+  - programming-languages
+  - lexer
+  - trace
+difficulty: 1

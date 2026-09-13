@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.api-contracts.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: API가 성공적으로 끝난 뒤 보장해야 하는 규칙을 사전 조건이 아니라 ___ 조건이라고 합니다.
+choices:
+  - 사후
+  - 사전
+  - 임의
+acceptedAnswers:
+  - 사후
+explanation:
+  - type: text
+    text: 사후 조건은 연산이 성공한 다음 반환값이나 상태에 대해 API가 보장하는 내용을 뜻합니다.
+tags:
+  - software-engineering
+  - api
+  - postcondition
+difficulty: 1

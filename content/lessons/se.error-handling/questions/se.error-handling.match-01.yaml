@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.error-handling.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 오류 처리 전략과 적절한 설명을 연결하세요.
+leftItems:
+  - id: recover
+    content:
+      - type: text
+        text: 복구
+  - id: propagate
+    content:
+      - type: text
+        text: 전파
+  - id: fail-fast
+    content:
+      - type: text
+        text: 빠른 실패
+rightItems:
+  - id: fallback
+    content:
+      - type: text
+        text: 대체값이나 제한된 재시도로 정상 흐름을 이어 간다.
+  - id: preserve-cause
+    content:
+      - type: text
+        text: 해결 책임이 있는 상위 계층으로 원인과 맥락을 넘긴다.
+  - id: stop-invalid
+    content:
+      - type: text
+        text: 복구할 수 없는 상태에서 즉시 중단하고 신호를 남긴다.
+correctPairs:
+  - leftId: recover
+    rightId: fallback
+  - leftId: propagate
+    rightId: preserve-cause
+  - leftId: fail-fast
+    rightId: stop-invalid
+explanation:
+  - type: text
+    text: 현재 경계가 해결할 수 있는지에 따라 대체·전달·중단을 선택하며, 모든 오류에 같은 대응을 적용하지 않습니다.
+tags:
+  - software-engineering
+  - error-handling
+  - resilience
+difficulty: 2

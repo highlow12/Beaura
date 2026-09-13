@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.grammar.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 문법 표기의 요소와 설명을 연결하세요.
+leftItems:
+  - id: terminal
+    content:
+      - type: text
+        text: 단말
+  - id: nonterminal
+    content:
+      - type: text
+        text: 비단말
+  - id: start-symbol
+    content:
+      - type: text
+        text: 시작 기호
+rightItems:
+  - id: output
+    content:
+      - type: text
+        text: 최종 문자열에 남는 기호
+  - id: expandable
+    content:
+      - type: text
+        text: 생산 규칙으로 확장되는 기호
+  - id: derivation-root
+    content:
+      - type: text
+        text: 유도를 시작하는 비단말
+correctPairs:
+  - leftId: terminal
+    rightId: output
+  - leftId: nonterminal
+    rightId: expandable
+  - leftId: start-symbol
+    rightId: derivation-root
+explanation:
+  - type: text
+    text: 시작 기호에서 비단말을 규칙으로 바꾸고, 단말만 남을 때 생성된 문자열이 완성됩니다.
+tags:
+  - theory-of-computation
+  - grammar
+  - derivation
+difficulty: 1

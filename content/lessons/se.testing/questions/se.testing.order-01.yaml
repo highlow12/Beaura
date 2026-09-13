@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: se.testing.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: Arrange-Act-Assert 방식으로 합계 함수를 테스트하는 순서를 배열하세요.
+items:
+  - id: arrange
+    content:
+      - type: text
+        text: 가격 목록과 필요한 의존성을 준비한다.
+  - id: act
+    content:
+      - type: text
+        text: 합계 함수를 한 번 호출한다.
+  - id: assert
+    content:
+      - type: text
+        text: 반환된 합계가 기대값과 같은지 검증한다.
+  - id: diagnose
+    content:
+      - type: text
+        text: 실패하면 기대 규칙과 실제 결과를 비교해 원인을 좁힌다.
+correctOrder:
+  - arrange
+  - act
+  - assert
+  - diagnose
+explanation:
+  - type: text
+    text: 입력을 준비하고 행동을 실행한 뒤 결과를 주장하며, 실패가 있을 때 비교 정보로 원인을 분석합니다.
+tags:
+  - software-engineering
+  - testing
+  - arrange-act-assert
+difficulty: 2

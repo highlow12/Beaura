@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.pda.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: PDA 동작과 스택 연산을 연결하세요.
+leftItems:
+  - id: read-a
+    content:
+      - type: text
+        text: a 구간을 읽는다
+  - id: read-b
+    content:
+      - type: text
+        text: b 구간을 읽는다
+  - id: empty-check
+    content:
+      - type: text
+        text: 입력이 끝난 뒤 확인한다
+rightItems:
+  - id: push
+    content:
+      - type: text
+        text: 스택에 표시를 추가한다
+  - id: pop
+    content:
+      - type: text
+        text: 스택 맨 위 표시를 제거한다
+  - id: acceptance
+    content:
+      - type: text
+        text: 스택 조건과 수용 상태를 검사한다
+correctPairs:
+  - leftId: read-a
+    rightId: push
+  - leftId: read-b
+    rightId: pop
+  - leftId: empty-check
+    rightId: acceptance
+explanation:
+  - type: text
+    text: "`a^n b^n`을 처리할 때 앞 구간의 개수를 push하고 뒤 구간에서 하나씩 pop해 개수를 맞춥니다."
+tags:
+  - theory-of-computation
+  - pda
+  - stack
+difficulty: 2

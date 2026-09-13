@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: toc.decidability
+revision: 1
+track: theory-of-computation
+title: 결정 가능성
+description: 모든 입력에서 멈추며 정답을 내는 문제와 인식 가능한 문제를 구분한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: toc.decidability.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: toc.decidability.match-01
+  - type: question
+    ref: toc.decidability.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: toc.decidability.order-01
+  - type: question
+    ref: toc.decidability.trace-01

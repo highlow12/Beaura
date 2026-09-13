@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.api-contracts.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: API 계약에 포함되어야 할 내용으로 가장 알맞은 것은 무엇인가요?
+options:
+  - id: input-output-errors
+    content:
+      - type: text
+        text: 허용 입력, 보장 결과, 실패를 표현하는 규칙
+  - id: implementation-only
+    content:
+      - type: text
+        text: 내부 함수의 현재 구현 코드 전체
+  - id: timing-only
+    content:
+      - type: text
+        text: 개발자가 코드를 작성한 시각만
+  - id: ui-color
+    content:
+      - type: text
+        text: 호출자와 무관한 화면 색상만
+correctOptionId: input-output-errors
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 계약은 호출자가 지켜야 할 입력과 API가 보장할 결과 및 오류의 의미를 정의하며 내부 구현 전체를 노출하지 않습니다.
+tags:
+  - software-engineering
+  - api
+  - contract
+difficulty: 1

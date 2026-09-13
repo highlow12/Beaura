@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.nfa.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: NFA를 시뮬레이션할 때 한 시점에 기록하는 것은 가능한 현재 상태들의 ___입니다.
+choices:
+  - 집합
+  - 숫자
+  - 단일 문자열
+acceptedAnswers:
+  - 집합
+explanation:
+  - type: text
+    text: 같은 입력까지 여러 경로가 살아 있을 수 있으므로 가능한 상태를 집합으로 합쳐 기록합니다.
+tags:
+  - theory-of-computation
+  - nfa
+  - state-set
+difficulty: 1

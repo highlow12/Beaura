@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.lexical-scope.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 렉시컬 스코프에서 이름 x를 해석하는 순서를 배열하세요.
+items:
+  - id: current
+    content:
+      - type: text
+        text: 현재 함수 또는 블록의 환경을 검색한다.
+  - id: parent
+    content:
+      - type: text
+        text: 없으면 정의 위치의 부모 환경으로 이동한다.
+  - id: repeat
+    content:
+      - type: text
+        text: 바인딩을 찾을 때까지 바깥 환경 검색을 반복한다.
+  - id: report
+    content:
+      - type: text
+        text: 전역에도 없으면 미정의 이름 오류를 보고한다.
+correctOrder:
+  - current
+  - parent
+  - repeat
+  - report
+explanation:
+  - type: text
+    text: 호출자가 아니라 정의된 코드의 환경 사슬을 따라 검색하며, 끝까지 없을 때만 오류입니다.
+tags:
+  - programming-languages
+  - lexical-scope
+  - name-resolution
+difficulty: 2

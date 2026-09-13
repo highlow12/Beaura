@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: toc.decidability.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 어떤 언어가 결정 가능(decidable)하다는 뜻은 무엇인가요?
+options:
+  - id: halt-both
+    content:
+      - type: text
+        text: 모든 입력에서 멈추며 소속 여부를 정확히 판정하는 알고리즘이 있다.
+  - id: accept-only
+    content:
+      - type: text
+        text: 소속인 입력에서만 언젠가 멈추면 된다.
+  - id: fast-only
+    content:
+      - type: text
+        text: 항상 상수 시간에 답을 내야 한다.
+  - id: human-check
+    content:
+      - type: text
+        text: 사람이 대부분의 입력에서 답을 추측할 수 있다.
+correctOptionId: halt-both
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 결정자는 yes와 no 어느 경우에도 유한 시간 안에 멈춰야 합니다. 속도가 빠른지는 별도의 복잡도 문제입니다.
+tags:
+  - theory-of-computation
+  - decidability
+  - decision-problem
+difficulty: 1

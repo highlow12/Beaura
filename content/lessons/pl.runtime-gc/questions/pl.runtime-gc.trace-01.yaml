@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: pl.runtime-gc.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 그래프에서 root가 가리키는 객체만 mark합니다. sweep 뒤 회수되는 객체 수를 고르세요.
+language: python
+code: |-
+  references = {"root": {"a"}, "a": set(), "orphan": set()}
+  reachable = {"root", "a"}
+  collected = set(references) - reachable
+  print(len(collected))
+choices:
+  - "1"
+  - "2"
+  - "0"
+acceptedOutputs:
+  - "1"
+explanation:
+  - type: text
+    text: root에서 a에는 도달하지만 orphan에는 도달하지 못하므로 회수 대상은 하나입니다.
+tags:
+  - programming-languages
+  - garbage-collection
+  - trace
+difficulty: 2

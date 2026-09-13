@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.nfa.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: NFA 관련 개념과 설명을 연결하세요.
+leftItems:
+  - id: epsilon
+    content:
+      - type: text
+        text: ε 전이
+  - id: current-set
+    content:
+      - type: text
+        text: 현재 상태 집합
+  - id: subset-construction
+    content:
+      - type: text
+        text: 부분집합 구성
+rightItems:
+  - id: no-consume
+    content:
+      - type: text
+        text: 입력 기호를 소비하지 않고 이동한다
+  - id: possibilities
+    content:
+      - type: text
+        text: 현재 도달 가능한 모든 상태를 기록한다
+  - id: nfa-to-dfa
+    content:
+      - type: text
+        text: NFA 상태 집합을 DFA의 한 상태로 바꾼다
+correctPairs:
+  - leftId: epsilon
+    rightId: no-consume
+  - leftId: current-set
+    rightId: possibilities
+  - leftId: subset-construction
+    rightId: nfa-to-dfa
+explanation:
+  - type: text
+    text: NFA 실행은 단일 상태가 아닌 가능한 상태 집합을 유지하며, ε 전이는 입력을 읽지 않는 이동입니다.
+tags:
+  - theory-of-computation
+  - nfa
+  - epsilon
+difficulty: 2

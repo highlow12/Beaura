@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.complexity.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 복잡도 개념과 설명을 연결하세요.
+leftItems:
+  - id: p
+    content:
+      - type: text
+        text: P
+  - id: np
+    content:
+      - type: text
+        text: NP
+  - id: reduction
+    content:
+      - type: text
+        text: 다항 시간 환원
+rightItems:
+  - id: solve-poly
+    content:
+      - type: text
+        text: 결정적 다항 시간에 풀 수 있는 문제
+  - id: verify-poly
+    content:
+      - type: text
+        text: 후보 해를 다항 시간에 검증할 수 있는 문제
+  - id: transform
+    content:
+      - type: text
+        text: 한 문제의 입력을 다른 문제 입력으로 효율적으로 변환
+correctPairs:
+  - leftId: p
+    rightId: solve-poly
+  - leftId: np
+    rightId: verify-poly
+  - leftId: reduction
+    rightId: transform
+explanation:
+  - type: text
+    text: P는 풀기의 시간, NP는 검증기의 시간으로 정의하며, 환원은 문제 난이도 관계를 전달하는 변환입니다.
+tags:
+  - theory-of-computation
+  - complexity
+  - reduction
+difficulty: 2

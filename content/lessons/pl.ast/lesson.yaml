@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.ast
+revision: 1
+track: programming-languages
+title: 추상 구문 트리
+description: 파싱 결과의 계층 구조와 연산자 우선순위를 AST로 표현한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.ast.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.ast.match-01
+  - type: question
+    ref: pl.ast.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.ast.order-01
+  - type: question
+    ref: pl.ast.trace-01

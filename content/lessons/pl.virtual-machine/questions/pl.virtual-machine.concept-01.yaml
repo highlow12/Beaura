@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.virtual-machine.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 바이트코드 가상 머신(VM)의 역할로 가장 알맞은 것은 무엇인가요?
+options:
+  - id: execute-bytecode
+    content:
+      - type: text
+        text: 이식 가능한 중간 명령을 해석하거나 기계어로 번역해 실행한다.
+  - id: parse-only
+    content:
+      - type: text
+        text: 소스 코드를 토큰으로만 나누고 실행하지 않는다.
+  - id: hardware-only
+    content:
+      - type: text
+        text: 어떤 운영체제에도 의존하지 않는 실제 CPU 하드웨어다.
+  - id: database
+    content:
+      - type: text
+        text: 프로그램의 사용자 데이터를 영구 저장하는 DBMS다.
+correctOptionId: execute-bytecode
+shuffleOptions: true
+explanation:
+  - type: text
+    text: VM은 바이트코드와 실행 환경 사이의 층으로, 인터프리터나 JIT를 통해 명령을 실행합니다.
+tags:
+  - programming-languages
+  - virtual-machine
+  - bytecode
+difficulty: 1

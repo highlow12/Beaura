@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.lexical-scope.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 렉시컬 스코프에서 함수 안의 이름을 찾는 기준은 무엇인가요?
+options:
+  - id: definition-site
+    content:
+      - type: text
+        text: 함수가 소스 코드에서 정의된 위치의 바깥 스코프를 따른다.
+  - id: call-site
+    content:
+      - type: text
+        text: 함수가 마지막으로 호출된 위치의 스코프만 따른다.
+  - id: random
+    content:
+      - type: text
+        text: 실행할 때마다 무작위 바인딩을 선택한다.
+  - id: global-only
+    content:
+      - type: text
+        text: 항상 전역 변수만 참조한다.
+correctOptionId: definition-site
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 렉시컬 스코프는 소스의 중첩 구조로 참조 대상을 결정하므로 정의 환경을 따라 바깥으로 검색합니다.
+tags:
+  - programming-languages
+  - lexical-scope
+  - binding
+difficulty: 1

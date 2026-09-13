@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: pl.memory-model.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 코드에서 함수가 반환한 뒤 출력되는 지역 변수의 값은 무엇인가요?
+language: python
+code: |-
+  def make_value():
+      value = 7
+      return value
+  saved = make_value()
+  print(saved)
+choices:
+  - "7"
+  - "0"
+  - "value"
+acceptedOutputs:
+  - "7"
+explanation:
+  - type: text
+    text: 함수 안의 value는 프레임에 있었지만 반환값 7이 saved에 전달되어 호출 뒤에도 그 값이 남습니다.
+tags:
+  - programming-languages
+  - memory
+  - trace
+difficulty: 1

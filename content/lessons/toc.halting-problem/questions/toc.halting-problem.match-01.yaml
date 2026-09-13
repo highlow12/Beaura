@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.halting-problem.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 정지 문제의 구성 요소와 역할을 연결하세요.
+leftItems:
+  - id: h
+    content:
+      - type: text
+        text: 가정한 판정기 H
+  - id: d
+    content:
+      - type: text
+        text: 대각선 프로그램 D
+  - id: self-input
+    content:
+      - type: text
+        text: D(D)
+rightItems:
+  - id: prediction
+    content:
+      - type: text
+        text: 프로그램이 멈출지 예측한다고 가정한 절차
+  - id: opposite
+    content:
+      - type: text
+        text: H의 예측과 반대로 행동하는 프로그램
+  - id: contradiction
+    content:
+      - type: text
+        text: 예측이 어느 쪽이든 모순을 일으키는 실행
+correctPairs:
+  - leftId: h
+    rightId: prediction
+  - leftId: d
+    rightId: opposite
+  - leftId: self-input
+    rightId: contradiction
+explanation:
+  - type: text
+    text: D는 H의 결론을 뒤집도록 설계되고 자기 자신을 입력으로 받으면서 H의 존재 가정과 충돌합니다.
+tags:
+  - theory-of-computation
+  - halting-problem
+  - diagonalization
+difficulty: 2

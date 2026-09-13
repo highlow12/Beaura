@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: toc.halting-problem.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 정지 판정기 H의 존재를 반박하는 대각선 논증의 흐름을 배열하세요.
+items:
+  - id: assume-h
+    content:
+      - type: text
+        text: 모든 프로그램의 정지를 알려 주는 H가 있다고 가정한다.
+  - id: define-d
+    content:
+      - type: text
+        text: H의 예측과 반대로 행동하는 D를 정의한다.
+  - id: self-run
+    content:
+      - type: text
+        text: D에 자기 자신을 입력해 D(D)를 실행한다.
+  - id: contradiction
+    content:
+      - type: text
+        text: H의 어느 예측도 실행 결과와 모순됨을 확인한다.
+correctOrder:
+  - assume-h
+  - define-d
+  - self-run
+  - contradiction
+explanation:
+  - type: text
+    text: 판정기를 먼저 가정하고 그 판정기의 출력을 반대로 만드는 자기 참조 입력을 구성하는 것이 논증의 핵심입니다.
+tags:
+  - theory-of-computation
+  - halting-problem
+  - proof
+difficulty: 3

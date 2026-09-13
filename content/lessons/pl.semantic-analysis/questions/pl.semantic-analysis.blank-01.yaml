@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.semantic-analysis.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 현재 스코프에서 이름을 찾지 못하면 의미 분석기는 보통 부모 스코프로 ___해 검색합니다.
+choices:
+  - 올라가
+  - 내려가
+  - 무시해
+acceptedAnswers:
+  - 올라가
+explanation:
+  - type: text
+    text: 렉시컬 환경 사슬을 따라 바깥으로 올라가며 검색하고, 전역에도 없을 때 미정의 이름 오류를 냅니다.
+tags:
+  - programming-languages
+  - semantic-analysis
+  - scope
+difficulty: 1

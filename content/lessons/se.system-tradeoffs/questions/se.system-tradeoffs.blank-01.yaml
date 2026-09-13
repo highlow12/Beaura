@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.system-tradeoffs.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 한 목표를 높일 때 다른 목표의 비용이나 위험을 함께 고려해야 하는 설계 상황을 ___라고 합니다.
+choices:
+  - 트레이드오프
+  - 직렬화
+  - 캡슐화
+acceptedAnswers:
+  - 트레이드오프
+explanation:
+  - type: text
+    text: 트레이드오프는 성능·일관성·비용처럼 동시에 모두 최대로 만들기 어려운 목표 사이의 선택을 뜻합니다.
+tags:
+  - software-engineering
+  - system-design
+  - tradeoffs
+difficulty: 1

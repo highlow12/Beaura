@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: toc.dfa
+revision: 1
+track: theory-of-computation
+title: 결정적 유한 오토마톤
+description: DFA의 결정적 전이와 입력 처리 결과를 추적한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: toc.dfa.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: toc.dfa.match-01
+  - type: question
+    ref: toc.dfa.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: toc.dfa.order-01
+  - type: question
+    ref: toc.dfa.trace-01

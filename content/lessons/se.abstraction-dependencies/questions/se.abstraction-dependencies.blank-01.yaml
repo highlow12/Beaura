@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.abstraction-dependencies.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 고수준 정책과 저수준 구현이 공통 인터페이스를 바라보게 만드는 원칙을 의존성 ___라고 합니다.
+choices:
+  - 역전
+  - 고정
+  - 복제
+acceptedAnswers:
+  - 역전
+explanation:
+  - type: text
+    text: 의존성 역전은 세부 구현이 정책을 끌고 가는 방향을 뒤집어 양쪽이 추상화에 의존하게 합니다.
+tags:
+  - software-engineering
+  - dependency-inversion
+  - abstraction
+difficulty: 1

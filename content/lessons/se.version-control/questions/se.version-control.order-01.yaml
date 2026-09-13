@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: se.version-control.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 기능 브랜치의 변경을 안전하게 main에 통합하는 순서를 배열하세요.
+items:
+  - id: inspect
+    content:
+      - type: text
+        text: 변경 diff와 관련 테스트를 점검한다.
+  - id: update
+    content:
+      - type: text
+        text: 최신 main과의 차이를 반영한다.
+  - id: resolve
+    content:
+      - type: text
+        text: 충돌이 있다면 의도를 비교해 해결하고 다시 테스트한다.
+  - id: merge
+    content:
+      - type: text
+        text: 리뷰가 끝난 브랜치를 main에 병합한다.
+correctOrder:
+  - inspect
+  - update
+  - resolve
+  - merge
+explanation:
+  - type: text
+    text: 먼저 현재 변경을 이해하고 기반을 최신화한 뒤 충돌과 테스트를 해결하고 검토된 결과만 통합합니다.
+tags:
+  - software-engineering
+  - version-control
+  - workflow
+difficulty: 2

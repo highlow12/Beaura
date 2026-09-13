@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: pl.code-generation.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 코드는 두 IR 임시값을 계산한 뒤 반환합니다. 출력 결과는 무엇인가요?
+language: python
+code: |-
+  left = 4
+  right = 6
+  result = left + right
+  print(result)
+choices:
+  - "10"
+  - "24"
+  - "2"
+acceptedOutputs:
+  - "10"
+explanation:
+  - type: text
+    text: 두 피연산자의 덧셈 결과가 10이며, 실제 코드 생성에서는 이 값을 대상 레지스터나 메모리에 배치합니다.
+tags:
+  - programming-languages
+  - code-generation
+  - trace
+difficulty: 1

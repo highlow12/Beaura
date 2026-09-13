@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: se.system-tradeoffs.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 캐시 응답이 원본보다 짧은지 비교하는 다음 코드의 출력은 무엇인가요?
+language: python
+code: |-
+  responses = {"cache": 20, "origin": 120}
+  print(responses["cache"] < responses["origin"])
+choices:
+  - "True"
+  - "False"
+  - "100"
+acceptedOutputs:
+  - "True"
+explanation:
+  - type: text
+    text: 20은 120보다 작으므로 비교식의 결과인 True가 출력됩니다. 실제 설계에서는 이 빠른 응답과 최신성의 비용을 함께 비교해야 합니다.
+tags:
+  - software-engineering
+  - system-design
+  - code-trace
+difficulty: 1

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: toc.halting-problem
+revision: 1
+track: theory-of-computation
+title: 정지 문제
+description: 모든 프로그램의 정지를 판정하는 알고리즘이 존재할 수 없음을 이해한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: toc.halting-problem.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: toc.halting-problem.match-01
+  - type: question
+    ref: toc.halting-problem.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: toc.halting-problem.order-01
+  - type: question
+    ref: toc.halting-problem.trace-01

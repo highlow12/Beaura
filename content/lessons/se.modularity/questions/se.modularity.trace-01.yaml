@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: se.modularity.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음처럼 포맷 책임을 작은 함수로 모듈화했을 때 출력은 무엇인가요?
+language: python
+code: |-
+  def format_total(amount):
+      return f"{amount:,}원"
+
+  def send_report(amount):
+      print(format_total(amount))
+
+  send_report(1200)
+choices:
+  - 1,200원
+  - "1200"
+  - 12,00원
+acceptedOutputs:
+  - 1,200원
+explanation:
+  - type: text
+    text: send_report는 표시 형식을 직접 구현하지 않고 format_total의 결과를 출력하므로 1200이 천 단위 구분 기호와 함께 표시됩니다.
+tags:
+  - software-engineering
+  - modularity
+  - code-trace
+difficulty: 2

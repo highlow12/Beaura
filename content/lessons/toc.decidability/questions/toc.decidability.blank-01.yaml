@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.decidability.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 결정자는 yes와 no 어느 입력에서도 반드시 ___해야 합니다.
+choices:
+  - 멈춰야
+  - 무작위여야
+  - 느려야
+acceptedAnswers:
+  - 멈춰야
+explanation:
+  - type: text
+    text: 결정 가능성의 핵심은 정답뿐 아니라 모든 입력에 대한 종료(halting) 보장입니다.
+tags:
+  - theory-of-computation
+  - decidability
+  - halting
+difficulty: 1

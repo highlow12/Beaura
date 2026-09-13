@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.dfa.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: DFA 표기의 요소와 역할을 연결하세요.
+leftItems:
+  - id: q
+    content:
+      - type: text
+        text: Q
+  - id: delta
+    content:
+      - type: text
+        text: δ
+  - id: f
+    content:
+      - type: text
+        text: F
+rightItems:
+  - id: states
+    content:
+      - type: text
+        text: 상태들의 집합
+  - id: transition-function
+    content:
+      - type: text
+        text: 상태와 입력을 다음 상태로 보내는 함수
+  - id: accepting-states
+    content:
+      - type: text
+        text: 입력을 수용하는 최종 상태 집합
+correctPairs:
+  - leftId: q
+    rightId: states
+  - leftId: delta
+    rightId: transition-function
+  - leftId: f
+    rightId: accepting-states
+explanation:
+  - type: text
+    text: DFA의 형식은 상태 Q, 전이 δ, 시작 상태, 수용 상태 F를 분리해 기록합니다.
+tags:
+  - theory-of-computation
+  - dfa
+  - notation
+difficulty: 2

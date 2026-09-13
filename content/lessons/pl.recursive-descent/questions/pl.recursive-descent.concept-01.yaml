@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.recursive-descent.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 재귀 하강 파서의 전형적인 설계는 무엇인가요?
+options:
+  - id: function-per-nonterminal
+    content:
+      - type: text
+        text: 문법의 각 비단말에 대응하는 파싱 함수를 둔다.
+  - id: token-per-function
+    content:
+      - type: text
+        text: 모든 문자에 대해 운영체제 스레드를 하나씩 만든다.
+  - id: execute-source
+    content:
+      - type: text
+        text: 토큰을 확인하지 않고 소스 코드를 즉시 실행한다.
+  - id: random-grammar
+    content:
+      - type: text
+        text: 매 호출마다 문법 규칙을 무작위로 선택한다.
+correctOptionId: function-per-nonterminal
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 비단말별 함수가 하위 규칙을 호출하고 토큰을 소비하면서 문법의 하향식 구조를 코드로 드러냅니다.
+tags:
+  - programming-languages
+  - parser
+  - recursive-descent
+difficulty: 1

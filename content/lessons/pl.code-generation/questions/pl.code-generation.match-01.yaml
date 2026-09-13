@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.code-generation.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 코드 생성 개념과 설명을 연결하세요.
+leftItems:
+  - id: instruction-selection
+    content:
+      - type: text
+        text: 명령어 선택
+  - id: register-allocation
+    content:
+      - type: text
+        text: 레지스터 배정
+  - id: spill
+    content:
+      - type: text
+        text: spill
+rightItems:
+  - id: target-isa
+    content:
+      - type: text
+        text: IR 연산에 맞는 대상 ISA 명령을 고른다
+  - id: physical-reg
+    content:
+      - type: text
+        text: 살아 있는 가상값을 물리 레지스터에 매핑한다
+  - id: memory-fallback
+    content:
+      - type: text
+        text: 레지스터가 부족한 값을 메모리에 잠시 저장한다
+correctPairs:
+  - leftId: instruction-selection
+    rightId: target-isa
+  - leftId: register-allocation
+    rightId: physical-reg
+  - leftId: spill
+    rightId: memory-fallback
+explanation:
+  - type: text
+    text: 동시에 살아 있는 값이 레지스터 수보다 많으면 spill의 load·store 비용까지 생성 결과에 포함됩니다.
+tags:
+  - programming-languages
+  - code-generation
+  - register
+difficulty: 2

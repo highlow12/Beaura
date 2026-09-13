@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: se.cicd.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 빌드·테스트·배포 단계 목록에서 두 번째 단계를 출력하면 무엇인가요?
+language: python
+code: |-
+  steps = ["build", "test", "deploy"]
+  print(steps[1])
+choices:
+  - test
+  - build
+  - deploy
+acceptedOutputs:
+  - test
+explanation:
+  - type: text
+    text: Python 리스트의 인덱스 1은 두 번째 항목이므로 test가 출력됩니다.
+tags:
+  - software-engineering
+  - cicd
+  - code-trace
+difficulty: 1

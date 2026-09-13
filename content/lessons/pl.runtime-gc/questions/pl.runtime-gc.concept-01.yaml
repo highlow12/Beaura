@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.runtime-gc.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 추적형 가비지 컬렉터가 객체를 회수하는 기준은 무엇인가요?
+options:
+  - id: unreachable
+    content:
+      - type: text
+        text: 실행 루트에서 더 이상 도달할 수 없는 객체다.
+  - id: old
+    content:
+      - type: text
+        text: 힙에 오래 있었던 모든 객체다.
+  - id: large
+    content:
+      - type: text
+        text: 크기가 큰 모든 객체다.
+  - id: local-name
+    content:
+      - type: text
+        text: 지역 변수 이름을 가진 모든 객체다.
+correctOptionId: unreachable
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 루트에서 참조를 따라 도달 가능한 객체는 살아 있는 것으로 표시하고, 도달하지 못한 객체를 회수합니다.
+tags:
+  - programming-languages
+  - runtime
+  - garbage-collection
+difficulty: 1

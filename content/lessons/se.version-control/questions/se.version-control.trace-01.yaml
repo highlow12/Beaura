@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: se.version-control.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 공통 기반에서 서로 다른 커밋을 만든 두 목록의 마지막 항목을 출력하면 무엇인가요?
+language: python
+code: |-
+  base = ["A", "B"]
+  feature = base + ["F"]
+  main = base + ["M"]
+
+  print(feature[-1], main[-1])
+choices:
+  - F M
+  - A B
+  - M F
+acceptedOutputs:
+  - F M
+explanation:
+  - type: text
+    text: base를 바꾸지 않고 각 목록에 서로 다른 항목을 덧붙였으므로 feature와 main의 마지막 항목은 각각 F와 M입니다.
+tags:
+  - software-engineering
+  - version-control
+  - code-trace
+difficulty: 2

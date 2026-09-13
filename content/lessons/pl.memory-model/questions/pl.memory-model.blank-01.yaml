@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.memory-model.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 함수 호출의 매개변수와 반환 주소를 묶어 관리하는 실행 단위를 스택 ___이라고 합니다.
+choices:
+  - 프레임
+  - 토큰
+  - 블록체인
+acceptedAnswers:
+  - 프레임
+explanation:
+  - type: text
+    text: 호출마다 만들어지는 스택 프레임이 지역 실행 정보와 반환 지점을 보관합니다.
+tags:
+  - programming-languages
+  - stack
+  - call-frame
+difficulty: 1

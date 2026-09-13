@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: toc.language.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 코드는 word의 모든 기호가 alphabet에 있는지 검사합니다. 출력 결과를 고르세요.
+language: python
+code: |-
+  alphabet = {"0", "1"}
+  word = "101"
+  print(all(symbol in alphabet for symbol in word))
+choices:
+  - "True"
+  - "False"
+  - "101"
+acceptedOutputs:
+  - "True"
+explanation:
+  - type: text
+    text: word의 세 기호 1, 0, 1이 모두 alphabet에 있으므로 all의 결과는 True입니다.
+tags:
+  - theory-of-computation
+  - alphabet
+  - trace
+difficulty: 2

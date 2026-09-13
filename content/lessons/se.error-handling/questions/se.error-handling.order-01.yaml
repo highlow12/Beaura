@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: se.error-handling.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 외부 결제 오류를 안전하게 처리하는 순서를 배열하세요.
+items:
+  - id: detect
+    content:
+      - type: text
+        text: 오류가 발생했음을 감지한다.
+  - id: classify
+    content:
+      - type: text
+        text: 입력 오류·일시 오류·불변식 위반으로 분류한다.
+  - id: context
+    content:
+      - type: text
+        text: 요청 ID와 작업 맥락을 남긴다.
+  - id: policy
+    content:
+      - type: text
+        text: 분류에 맞게 복구하거나 전파하거나 실패시킨다.
+correctOrder:
+  - detect
+  - classify
+  - context
+  - policy
+explanation:
+  - type: text
+    text: 감지한 오류를 먼저 분류하고 추적 가능한 맥락을 남긴 뒤, 재시도·전파·중단 중 맞는 정책을 적용합니다.
+tags:
+  - software-engineering
+  - error-handling
+  - workflow
+difficulty: 2

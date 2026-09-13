@@ -77,3 +77,21 @@ tracks:
     title: 데이터베이스
     description: 관계 모델, SQL, 인덱스와 트랜잭션을 통해 데이터를 신뢰성 있게 다루는 원리를 익힌다.
     order: 95
+
+  - id: theory-of-computation
+    revision: 1
+    title: 계산이론
+    description: 형식 언어와 계산 모델을 통해 무엇을 계산할 수 있는지 탐구한다.
+    order: 100
+
+  - id: programming-languages
+    revision: 1
+    title: 프로그래밍 언어와 컴파일러
+    description: 소스 코드가 분석되고 중간 표현과 실행 코드로 바뀌는 과정을 익힌다.
+    order: 110
+
+  - id: software-engineering
+    revision: 1
+    title: 소프트웨어 공학
+    description: 큰 소프트웨어를 설계하고 검증하고 운영하며 안전하게 변경하는 방법을 익힌다.
+    order: 120

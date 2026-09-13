@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.cfg.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: CFG의 개념과 설명을 연결하세요.
+leftItems:
+  - id: parse-tree
+    content:
+      - type: text
+        text: 구문 트리
+  - id: ambiguity
+    content:
+      - type: text
+        text: 모호성
+  - id: recursive-rule
+    content:
+      - type: text
+        text: 재귀 생산 규칙
+rightItems:
+  - id: hierarchy
+    content:
+      - type: text
+        text: 생성 구조를 트리로 나타낸 것
+  - id: multiple-trees
+    content:
+      - type: text
+        text: 한 문자열에 둘 이상의 구문 트리가 있는 성질
+  - id: nested-generation
+    content:
+      - type: text
+        text: 같은 비단말을 다시 만들어 중첩을 표현하는 규칙
+correctPairs:
+  - leftId: parse-tree
+    rightId: hierarchy
+  - leftId: ambiguity
+    rightId: multiple-trees
+  - leftId: recursive-rule
+    rightId: nested-generation
+explanation:
+  - type: text
+    text: CFG의 트리는 비단말이 어떤 규칙으로 확장되었는지를 보여 주며, 트리가 여러 개면 해석이 모호합니다.
+tags:
+  - theory-of-computation
+  - cfg
+  - parse-tree
+difficulty: 2

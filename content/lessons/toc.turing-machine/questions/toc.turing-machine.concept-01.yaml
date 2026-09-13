@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: toc.turing-machine.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 튜링 기계의 한 전이가 일반적으로 수행하는 세 동작은 무엇인가요?
+options:
+  - id: write-move-state
+    content:
+      - type: text
+        text: 기호를 쓰고, 헤드를 이동하고, 상태를 바꾼다.
+  - id: delete-input
+    content:
+      - type: text
+        text: 입력을 모두 삭제하고 무작위 상태를 고른다.
+  - id: push-pop
+    content:
+      - type: text
+        text: 스택에만 push하고 pop한다.
+  - id: compile-run-stop
+    content:
+      - type: text
+        text: 프로그램을 컴파일하고 실행 파일을 만든다.
+correctOptionId: write-move-state
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 전이는 현재 상태와 읽은 기호를 바탕으로 쓸 기호, 왼쪽·오른쪽 이동, 새 상태를 정합니다.
+tags:
+  - theory-of-computation
+  - turing-machine
+  - transition
+difficulty: 1

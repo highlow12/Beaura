@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: se.api-contracts.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 페이지 조회 API가 계약을 지키며 요청을 처리하는 순서를 배열하세요.
+items:
+  - id: receive
+    content:
+      - type: text
+        text: 호출자의 입력을 받는다.
+  - id: validate
+    content:
+      - type: text
+        text: limit과 인증 같은 사전 조건을 검증한다.
+  - id: execute
+    content:
+      - type: text
+        text: 검증된 입력으로 조회를 실행한다.
+  - id: guarantee
+    content:
+      - type: text
+        text: 결과와 오류를 계약에 맞는 형태로 반환한다.
+correctOrder:
+  - receive
+  - validate
+  - execute
+  - guarantee
+explanation:
+  - type: text
+    text: 경계에서 사전 조건을 확인한 뒤 작업을 실행하고, 마지막에 사후 조건과 오류 표현을 지켜 반환합니다.
+tags:
+  - software-engineering
+  - api
+  - contract
+difficulty: 2

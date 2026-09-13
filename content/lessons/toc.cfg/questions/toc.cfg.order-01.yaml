@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: toc.cfg.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "`S → aSb | ε`로 문자열 aabb를 유도하는 순서를 배열하세요."
+items:
+  - id: outer
+    content:
+      - type: text
+        text: S ⇒ aSb
+  - id: inner
+    content:
+      - type: text
+        text: aSb ⇒ aaSbb
+  - id: epsilon
+    content:
+      - type: text
+        text: aaSbb ⇒ aabb
+correctOrder:
+  - outer
+  - inner
+  - epsilon
+explanation:
+  - type: text
+    text: 재귀 규칙을 두 번 적용하면 a와 b가 각각 두 개 생기고, 마지막에 S를 ε로 바꾸어 유도를 끝냅니다.
+tags:
+  - theory-of-computation
+  - cfg
+  - derivation
+difficulty: 2

@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.memory-model.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 메모리 모델의 용어와 설명을 연결하세요.
+leftItems:
+  - id: stack-frame
+    content:
+      - type: text
+        text: 스택 프레임
+  - id: heap-object
+    content:
+      - type: text
+        text: 힙 객체
+  - id: alias
+    content:
+      - type: text
+        text: 별칭
+rightItems:
+  - id: call-data
+    content:
+      - type: text
+        text: 매개변수·지역 변수·반환 정보를 담는다
+  - id: dynamic-life
+    content:
+      - type: text
+        text: 호출 순서와 무관한 수명을 가질 수 있다
+  - id: shared-target
+    content:
+      - type: text
+        text: 여러 변수가 같은 객체를 가리킨다
+correctPairs:
+  - leftId: stack-frame
+    rightId: call-data
+  - leftId: heap-object
+    rightId: dynamic-life
+  - leftId: alias
+    rightId: shared-target
+explanation:
+  - type: text
+    text: 메모리 위치와 값의 의미를 구분해야 같은 객체의 내부 변경과 변수 자체의 재대입을 정확히 추적할 수 있습니다.
+tags:
+  - programming-languages
+  - memory
+  - references
+difficulty: 2

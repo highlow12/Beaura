@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: toc.language.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 문자열 ab와 c를 왼쪽에서 오른쪽 순서로 연결한 결과를 고르세요.
+  - type: code
+    language: text
+    code: ab · c = ___
+choices:
+  - abc
+  - acb
+  - ab
+acceptedAnswers:
+  - abc
+explanation:
+  - type: text
+    text: 연결은 첫 문자열 뒤에 두 번째 문자열을 붙이는 연산이므로 ab 뒤에 c가 와서 abc가 됩니다.
+tags:
+  - theory-of-computation
+  - concatenation
+difficulty: 1

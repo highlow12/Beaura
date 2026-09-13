@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: toc.halting-problem.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 일반적인 정지 문제의 결론은 무엇인가요?
+options:
+  - id: undecidable
+    content:
+      - type: text
+        text: 모든 프로그램과 입력의 정지를 판정하는 알고리즘은 존재하지 않는다.
+  - id: always-easy
+    content:
+      - type: text
+        text: 충분히 오래 실행하면 모든 프로그램의 정지를 알 수 있다.
+  - id: random-only
+    content:
+      - type: text
+        text: 무작위 프로그램만 정지 여부를 판정할 수 없다.
+  - id: finite-input
+    content:
+      - type: text
+        text: 입력이 유한하면 프로그램은 반드시 정지한다.
+correctOptionId: undecidable
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 정지 판정기 H가 있다고 가정하면 자기 자신의 예측을 뒤집는 프로그램으로 모순을 만들 수 있어, 일반적인 H는 존재할 수 없습니다.
+tags:
+  - theory-of-computation
+  - halting-problem
+  - undecidability
+difficulty: 1

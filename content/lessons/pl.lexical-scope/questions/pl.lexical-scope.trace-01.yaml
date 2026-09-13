@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: pl.lexical-scope.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 렉시컬 스코프를 따르는 다음 코드의 출력은 무엇인가요?
+language: python
+code: |-
+  x = "global"
+  def outer():
+      x = "outer"
+      def inner():
+          print(x)
+      inner()
+  outer()
+choices:
+  - outer
+  - global
+  - inner
+acceptedOutputs:
+  - outer
+explanation:
+  - type: text
+    text: inner는 outer 안에서 정의되었으므로 호출 위치와 관계없이 가장 가까운 바깥 x인 outer를 캡처해 출력합니다.
+tags:
+  - programming-languages
+  - lexical-scope
+  - trace
+difficulty: 2

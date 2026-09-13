@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: pl.types.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 값의 종류와 허용 연산을 분류하는 규칙을 값의 ___이라고 합니다.
+choices:
+  - 타입
+  - 주소
+  - 토큰
+acceptedAnswers:
+  - 타입
+explanation:
+  - type: text
+    text: 타입은 값의 분류와 연산 규칙을 알려 주며, 함수에서는 인자와 반환값의 모양도 표현합니다.
+tags:
+  - programming-languages
+  - types
+difficulty: 1

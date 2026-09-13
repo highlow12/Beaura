@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.code-generation.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 물리 레지스터가 부족해 값을 메모리에 잠시 저장하는 것을 register ___이라고 합니다.
+choices:
+  - spill
+  - cache
+  - parse
+acceptedAnswers:
+  - spill
+explanation:
+  - type: text
+    text: spill은 값을 스택 같은 메모리 위치로 내보내고 필요할 때 다시 load하는 레지스터 배정의 처리입니다.
+tags:
+  - programming-languages
+  - code-generation
+  - register-allocation
+difficulty: 1

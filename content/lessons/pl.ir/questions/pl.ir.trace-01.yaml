@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: pl.ir.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음은 세 주소 코드의 임시값 계산을 그대로 옮긴 코드입니다. 출력은 무엇인가요?
+language: python
+code: |-
+  t1 = 3 * 4
+  t2 = 2 + t1
+  print(t2)
+choices:
+  - "14"
+  - "24"
+  - "9"
+acceptedOutputs:
+  - "14"
+explanation:
+  - type: text
+    text: t1이 12가 되고 t2가 2+12인 14가 되므로 14를 출력합니다.
+tags:
+  - programming-languages
+  - ir
+  - trace
+difficulty: 1

@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.optimization.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 컴파일러 최적화의 가장 중요한 제약은 무엇인가요?
+options:
+  - id: preserve-semantics
+    content:
+      - type: text
+        text: 관찰 가능한 프로그램 의미를 보존해야 한다.
+  - id: change-output
+    content:
+      - type: text
+        text: 더 빠르면 출력과 부수 효과를 바꾸어도 된다.
+  - id: remove-all
+    content:
+      - type: text
+        text: 모든 명령을 가능한 한 많이 삭제해야 한다.
+  - id: compile-runtime
+    content:
+      - type: text
+        text: 실행 시간에만 무작위로 변환해야 한다.
+correctOptionId: preserve-semantics
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 최적화는 시간·공간을 줄이더라도 정상 결과, 오류, 부수 효과의 관찰 가능한 의미를 바꾸면 안 됩니다.
+tags:
+  - programming-languages
+  - optimization
+  - semantics
+difficulty: 1

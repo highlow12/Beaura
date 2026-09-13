@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: pl.ir.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "`a + b * c`를 세 주소 IR로 나누는 순서를 배열하세요."
+items:
+  - id: multiply
+    content:
+      - type: text
+        text: t1 = b * c를 만든다.
+  - id: add
+    content:
+      - type: text
+        text: t2 = a + t1을 만든다.
+  - id: result
+    content:
+      - type: text
+        text: t2를 전체 식의 결과로 사용한다.
+correctOrder:
+  - multiply
+  - add
+  - result
+explanation:
+  - type: text
+    text: 곱셈의 우선순위를 먼저 임시값으로 계산한 뒤 그 값을 덧셈에 사용합니다.
+tags:
+  - programming-languages
+  - ir
+  - three-address-code
+difficulty: 2

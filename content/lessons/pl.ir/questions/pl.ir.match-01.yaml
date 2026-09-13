@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.ir.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: IR 개념과 역할을 연결하세요.
+leftItems:
+  - id: three-address
+    content:
+      - type: text
+        text: 세 주소 코드
+  - id: ssa
+    content:
+      - type: text
+        text: SSA
+  - id: basic-block
+    content:
+      - type: text
+        text: 기본 블록
+rightItems:
+  - id: small-ops
+    content:
+      - type: text
+        text: 한 명령이 작은 계산과 임시값 하나를 표현
+  - id: one-definition
+    content:
+      - type: text
+        text: 값 이름마다 대입을 한 번만 허용
+  - id: straight-line
+    content:
+      - type: text
+        text: 중간 분기 없이 입구와 출구가 하나인 명령 묶음
+correctPairs:
+  - leftId: three-address
+    rightId: small-ops
+  - leftId: ssa
+    rightId: one-definition
+  - leftId: basic-block
+    rightId: straight-line
+explanation:
+  - type: text
+    text: IR은 값의 정의·사용과 분기를 명시해 상수 전파, 도달성, 레지스터 배정 같은 분석의 기반이 됩니다.
+tags:
+  - programming-languages
+  - ir
+  - ssa
+difficulty: 2

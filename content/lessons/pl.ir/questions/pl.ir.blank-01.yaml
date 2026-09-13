@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.ir.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: SSA에서는 하나의 값 이름에 대한 대입을 보통 ___번만 허용합니다.
+choices:
+  - 한
+  - 두
+  - 무한히
+acceptedAnswers:
+  - 한
+explanation:
+  - type: text
+    text: Static Single Assignment의 single은 각 이름이 한 번만 정의된다는 뜻이며, 분기 병합은 φ 함수로 나타냅니다.
+tags:
+  - programming-languages
+  - ir
+  - ssa
+difficulty: 1

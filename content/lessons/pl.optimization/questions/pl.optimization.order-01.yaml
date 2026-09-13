@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.optimization.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 안전한 죽은 코드 제거를 수행하는 흐름을 배열하세요.
+items:
+  - id: inspect-uses
+    content:
+      - type: text
+        text: 명령의 결과가 어디에서 사용되는지 찾는다.
+  - id: inspect-effects
+    content:
+      - type: text
+        text: 함수 호출·쓰기 같은 부수 효과를 확인한다.
+  - id: prove-dead
+    content:
+      - type: text
+        text: 결과와 효과에 영향이 없음을 증명한다.
+  - id: remove
+    content:
+      - type: text
+        text: 해당 명령을 IR에서 제거한다.
+correctOrder:
+  - inspect-uses
+  - inspect-effects
+  - prove-dead
+  - remove
+explanation:
+  - type: text
+    text: 값을 사용하지 않는 것만으로는 부족하며, 실행 자체의 부수 효과가 없다는 사실까지 확인해야 안전하게 지울 수 있습니다.
+tags:
+  - programming-languages
+  - optimization
+  - dead-code
+difficulty: 3

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.lexing.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 소스 문자열을 토큰으로 만드는 렉서의 작업을 배열하세요.
+items:
+  - id: cursor
+    content:
+      - type: text
+        text: 현재 커서 위치의 문자를 확인한다.
+  - id: candidate
+    content:
+      - type: text
+        text: 가능한 토큰 패턴을 찾는다.
+  - id: choose
+    content:
+      - type: text
+        text: 우선순위와 가장 긴 일치로 하나를 선택한다.
+  - id: emit
+    content:
+      - type: text
+        text: 토큰과 위치를 내보내고 커서를 이동한다.
+correctOrder:
+  - cursor
+  - candidate
+  - choose
+  - emit
+explanation:
+  - type: text
+    text: 커서를 소비하지 않고 후보를 판단한 뒤 하나의 토큰을 확정해야 겹치는 연산자와 식별자를 올바르게 처리할 수 있습니다.
+tags:
+  - programming-languages
+  - lexer
+  - pipeline
+difficulty: 2

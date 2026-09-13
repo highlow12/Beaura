@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: toc.finite-state-machine.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 현재 상태와 입력 기호를 보고 다음 상태로 이동하게 하는 규칙을 무엇이라고 하나요?
+choices:
+  - 전이
+  - 알파벳
+  - 문자열
+acceptedAnswers:
+  - 전이
+explanation:
+  - type: text
+    text: 전이(transition)는 현재 상태와 입력을 다음 상태로 연결하는 규칙입니다.
+tags:
+  - theory-of-computation
+  - transition
+difficulty: 1

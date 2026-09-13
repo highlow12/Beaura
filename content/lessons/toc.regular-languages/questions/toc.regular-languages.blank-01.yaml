@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: toc.regular-languages.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 정규식 a*가 허용하는 a의 반복 횟수는 0회 ___입니다.
+choices:
+  - 이상
+  - 이하
+  - 미만
+acceptedAnswers:
+  - 이상
+explanation:
+  - type: text
+    text: 클레이니 스타는 해당 패턴을 0번, 1번, 2번처럼 제한 없이 반복하는 연산입니다.
+tags:
+  - theory-of-computation
+  - kleene-star
+difficulty: 1

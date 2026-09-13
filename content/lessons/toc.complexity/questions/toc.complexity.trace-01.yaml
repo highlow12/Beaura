@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: toc.complexity.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 검증기는 후보 경로의 모든 간선이 그래프에 있는지 확인합니다. 출력 결과를 고르세요.
+language: python
+code: |-
+  edges = {("A", "B"), ("B", "C")}
+  candidate = [("A", "B"), ("B", "C")]
+  print(all(edge in edges for edge in candidate))
+choices:
+  - "True"
+  - "False"
+  - "2"
+acceptedOutputs:
+  - "True"
+explanation:
+  - type: text
+    text: 후보의 두 간선이 모두 edges에 있으므로 검증 결과는 True입니다. 후보를 찾는 것과 검증하는 것은 다른 작업입니다.
+tags:
+  - theory-of-computation
+  - complexity
+  - verifier
+difficulty: 2

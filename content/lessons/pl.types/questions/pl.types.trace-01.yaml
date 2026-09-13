@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: pl.types.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 동적 타입 언어에서 다음 덧셈의 결과로 출력되는 값은 무엇인가요?
+language: python
+code: |-
+  value = 3
+  result = value + 2
+  print(result)
+choices:
+  - "5"
+  - "32"
+  - "3"
+acceptedOutputs:
+  - "5"
+explanation:
+  - type: text
+    text: value가 정수 3이므로 + 2는 정수 덧셈이 되어 5를 만듭니다. 문자열이었다면 다른 규칙이 적용됩니다.
+tags:
+  - programming-languages
+  - types
+  - trace
+difficulty: 1

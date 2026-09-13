@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.error-handling.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 같은 요청을 여러 번 실행해도 결과가 한 번 실행한 것과 같다면 그 작업은 ___적이라고 합니다.
+choices:
+  - 멱등
+  - 무작위
+  - 가변
+acceptedAnswers:
+  - 멱등
+explanation:
+  - type: text
+    text: 멱등성은 재시도나 중복 요청이 있어도 관찰 가능한 결과가 한 번 실행한 것과 같다는 성질입니다.
+tags:
+  - software-engineering
+  - error-handling
+  - idempotency
+difficulty: 1

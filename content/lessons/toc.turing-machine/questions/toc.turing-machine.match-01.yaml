@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.turing-machine.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 튜링 기계 구성 요소와 역할을 연결하세요.
+leftItems:
+  - id: tape
+    content:
+      - type: text
+        text: 테이프
+  - id: head
+    content:
+      - type: text
+        text: 헤드
+  - id: halt-state
+    content:
+      - type: text
+        text: 정지 상태
+rightItems:
+  - id: work-memory
+    content:
+      - type: text
+        text: 기호를 읽고 쓰는 작업 공간
+  - id: cursor
+    content:
+      - type: text
+        text: 현재 칸을 읽고 이동하는 위치
+  - id: stop
+    content:
+      - type: text
+        text: 더 이상 전이를 수행하지 않는 상태
+correctPairs:
+  - leftId: tape
+    rightId: work-memory
+  - leftId: head
+    rightId: cursor
+  - leftId: halt-state
+    rightId: stop
+explanation:
+  - type: text
+    text: 테이프는 입력과 중간 결과를 보관하고 헤드는 한 칸의 읽기·쓰기 위치를 가리킵니다.
+tags:
+  - theory-of-computation
+  - turing-machine
+  - model
+difficulty: 1

@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: toc.regular-languages.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 다음 중 정규 언어에 대한 올바른 설명은 무엇인가요?
+options:
+  - id: automaton
+    content:
+      - type: text
+        text: 어떤 유한 오토마톤이 인식할 수 있는 언어다.
+  - id: all-counting
+    content:
+      - type: text
+        text: 같은 기호의 개수를 임의로 비교해야 하는 모든 언어다.
+  - id: finite-only
+    content:
+      - type: text
+        text: 문자열이 유한 개만 있는 언어만을 뜻한다.
+  - id: grammar-only
+    content:
+      - type: text
+        text: CFG로만 표현되고 오토마톤으로는 표현할 수 없는 언어다.
+correctOptionId: automaton
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 정규 언어는 DFA나 NFA가 인식할 수 있으며 정규식으로도 표현할 수 있습니다. 언어 자체의 문자열 수가 반드시 유한할 필요는 없습니다.
+tags:
+  - theory-of-computation
+  - regular-language
+  - definition
+difficulty: 1

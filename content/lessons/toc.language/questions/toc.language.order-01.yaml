@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: toc.language.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 문자열이 어떤 언어에 속하는지 판정하는 흐름을 올바른 순서로 배열하세요.
+items:
+  - id: choose-alphabet
+    content:
+      - type: text
+        text: 사용할 알파벳 Σ를 확인한다.
+  - id: read-string
+    content:
+      - type: text
+        text: 판정할 문자열을 기호열로 읽는다.
+  - id: check-rule
+    content:
+      - type: text
+        text: 언어의 길이·기호 조건을 검사한다.
+  - id: decide-membership
+    content:
+      - type: text
+        text: 조건을 만족하면 소속, 아니면 비소속으로 결론낸다.
+correctOrder:
+  - choose-alphabet
+  - read-string
+  - check-rule
+  - decide-membership
+explanation:
+  - type: text
+    text: 알파벳과 입력을 먼저 분리한 다음 언어의 규칙을 적용해야 기호 자체와 소속 조건을 혼동하지 않습니다.
+tags:
+  - theory-of-computation
+  - membership
+difficulty: 2

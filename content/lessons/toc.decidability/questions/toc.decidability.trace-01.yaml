@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: toc.decidability.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 제한 시뮬레이터는 3단계 안에 멈추지 않으면 timeout을 출력합니다. 결과를 고르세요.
+language: python
+code: |-
+  halted = False
+  for step in range(3):
+      if step == 1:
+          halted = True
+          break
+  print("halted" if halted else "timeout")
+choices:
+  - halted
+  - timeout
+  - undecidable
+acceptedOutputs:
+  - halted
+explanation:
+  - type: text
+    text: step이 1일 때 halted가 True가 되고 break하므로 상한에 도달하기 전에 halted를 출력합니다.
+tags:
+  - theory-of-computation
+  - decidability
+  - trace
+difficulty: 2

@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.language.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 형식 언어의 용어와 설명을 알맞게 연결하세요.
+leftItems:
+  - id: alphabet
+    content:
+      - type: text
+        text: 알파벳 Σ
+  - id: string
+    content:
+      - type: text
+        text: 문자열
+  - id: language
+    content:
+      - type: text
+        text: 언어 L
+rightItems:
+  - id: symbols
+    content:
+      - type: text
+        text: 사용할 수 있는 유한한 기호 집합
+  - id: sequence
+    content:
+      - type: text
+        text: 기호를 유한 번 이어 붙인 결과
+  - id: subset
+    content:
+      - type: text
+        text: 문자열을 원소로 갖는 집합
+correctPairs:
+  - leftId: alphabet
+    rightId: symbols
+  - leftId: string
+    rightId: sequence
+  - leftId: language
+    rightId: subset
+explanation:
+  - type: text
+    text: 언어는 문자열의 집합이고, 문자열을 만들 수 있는 기호를 먼저 알파벳으로 정합니다.
+tags:
+  - theory-of-computation
+  - alphabet
+  - string
+difficulty: 1

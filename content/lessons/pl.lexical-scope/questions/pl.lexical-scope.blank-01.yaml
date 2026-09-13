@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.lexical-scope.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 같은 이름이 중첩 스코프에 여러 번 선언되면 참조는 보통 현재 위치에서 가장 ___ 바인딩을 선택합니다.
+choices:
+  - 가까운
+  - 먼
+  - 무작위인
+acceptedAnswers:
+  - 가까운
+explanation:
+  - type: text
+    text: 현재 스코프에서 먼저 찾고 없을 때만 부모로 올라가므로 가장 가까운 바인딩이 우선합니다.
+tags:
+  - programming-languages
+  - lexical-scope
+  - shadowing
+difficulty: 1

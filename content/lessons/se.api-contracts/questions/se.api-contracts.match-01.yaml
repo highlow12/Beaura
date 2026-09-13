@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.api-contracts.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: API 계약의 용어와 설명을 연결하세요.
+leftItems:
+  - id: precondition
+    content:
+      - type: text
+        text: 사전 조건
+  - id: postcondition
+    content:
+      - type: text
+        text: 사후 조건
+  - id: invariant
+    content:
+      - type: text
+        text: 불변식
+rightItems:
+  - id: before-call
+    content:
+      - type: text
+        text: 호출 전에 참이어야 하는 입력이나 상태의 규칙
+  - id: after-success
+    content:
+      - type: text
+        text: 성공적으로 끝난 뒤 보장되는 결과의 규칙
+  - id: always-holds
+    content:
+      - type: text
+        text: 작업 전후에 계속 유지되어야 하는 시스템의 규칙
+correctPairs:
+  - leftId: precondition
+    rightId: before-call
+  - leftId: postcondition
+    rightId: after-success
+  - leftId: invariant
+    rightId: always-holds
+explanation:
+  - type: text
+    text: 사전 조건은 호출 전, 사후 조건은 성공 후를 설명하고 불변식은 작업 전후에 유지됩니다.
+tags:
+  - software-engineering
+  - api
+  - contracts
+difficulty: 2

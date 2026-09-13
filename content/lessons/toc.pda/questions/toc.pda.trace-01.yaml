@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: toc.pda.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 코드는 입력 aa에서 두 번 push한 뒤 bb에서 두 번 pop하는 과정을 단순화했습니다. 마지막 스택 길이는 얼마인가요?
+language: python
+code: |-
+  stack = []
+  for symbol in "aa":
+      stack.append("A")
+  for symbol in "bb":
+      stack.pop()
+  print(len(stack))
+choices:
+  - "0"
+  - "1"
+  - "2"
+acceptedOutputs:
+  - "0"
+explanation:
+  - type: text
+    text: A를 두 개 넣고 두 개를 꺼냈으므로 스택은 비어 길이가 0입니다.
+tags:
+  - theory-of-computation
+  - pda
+  - trace
+difficulty: 2

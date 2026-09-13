@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.recursive-descent.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 재귀 하강 파서의 요소와 역할을 연결하세요.
+leftItems:
+  - id: parse-function
+    content:
+      - type: text
+        text: 파싱 함수
+  - id: lookahead
+    content:
+      - type: text
+        text: 미리 보는 토큰
+  - id: consume
+    content:
+      - type: text
+        text: 토큰 소비
+rightItems:
+  - id: nonterminal
+    content:
+      - type: text
+        text: 비단말 하나의 문법을 처리
+  - id: choose-rule
+    content:
+      - type: text
+        text: 다음 생산 규칙을 선택하는 단서
+  - id: advance
+    content:
+      - type: text
+        text: 현재 위치를 다음 토큰으로 전진
+correctPairs:
+  - leftId: parse-function
+    rightId: nonterminal
+  - leftId: lookahead
+    rightId: choose-rule
+  - leftId: consume
+    rightId: advance
+explanation:
+  - type: text
+    text: 함수가 토큰을 실제로 소비하지 않고 반복 호출되면 종료하지 않으므로 각 문법 규칙의 소비 지점을 분명히 해야 합니다.
+tags:
+  - programming-languages
+  - recursive-descent
+  - parser
+difficulty: 2

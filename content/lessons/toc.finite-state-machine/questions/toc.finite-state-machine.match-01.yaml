@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: toc.finite-state-machine.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 유한 상태 기계의 구성 요소와 설명을 연결하세요.
+leftItems:
+  - id: state
+    content:
+      - type: text
+        text: 상태
+  - id: transition
+    content:
+      - type: text
+        text: 전이
+  - id: start
+    content:
+      - type: text
+        text: 시작 상태
+rightItems:
+  - id: mode
+    content:
+      - type: text
+        text: 현재 입력까지의 요약된 계산 모드
+  - id: move
+    content:
+      - type: text
+        text: 입력과 현재 상태에 따른 다음 상태 변화
+  - id: initial
+    content:
+      - type: text
+        text: 첫 기호를 읽기 전에 놓이는 상태
+correctPairs:
+  - leftId: state
+    rightId: mode
+  - leftId: transition
+    rightId: move
+  - leftId: start
+    rightId: initial
+explanation:
+  - type: text
+    text: 시작 상태에서 전이를 반복해 현재 상태를 갱신하는 것이 FSM 실행입니다.
+tags:
+  - theory-of-computation
+  - finite-state-machine
+difficulty: 1

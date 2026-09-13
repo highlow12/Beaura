@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.lexical-scope.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 스코프 개념과 설명을 연결하세요.
+leftItems:
+  - id: binding
+    content:
+      - type: text
+        text: 바인딩
+  - id: shadowing
+    content:
+      - type: text
+        text: 가리기
+  - id: environment
+    content:
+      - type: text
+        text: 환경
+rightItems:
+  - id: name-value
+    content:
+      - type: text
+        text: 이름과 값 또는 위치를 연결하는 사건
+  - id: inner-name
+    content:
+      - type: text
+        text: 안쪽의 같은 이름이 바깥 이름을 가림
+  - id: chain
+    content:
+      - type: text
+        text: 현재 바인딩과 부모 스코프의 연결
+correctPairs:
+  - leftId: binding
+    rightId: name-value
+  - leftId: shadowing
+    rightId: inner-name
+  - leftId: environment
+    rightId: chain
+explanation:
+  - type: text
+    text: 이름 해석은 현재 환경에서 시작해 가장 가까운 바인딩을 선택하고, 없으면 부모 환경으로 이동합니다.
+tags:
+  - programming-languages
+  - lexical-scope
+  - environment
+difficulty: 2

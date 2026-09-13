@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.types.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "`x + y`의 타입을 검사하는 흐름을 배열하세요."
+items:
+  - id: lookup
+    content:
+      - type: text
+        text: x와 y의 선언 타입을 조회한다.
+  - id: operator-rule
+    content:
+      - type: text
+        text: + 연산자가 허용하는 피연산자 타입을 찾는다.
+  - id: compare
+    content:
+      - type: text
+        text: 두 피연산자 타입이 규칙과 맞는지 비교한다.
+  - id: result-type
+    content:
+      - type: text
+        text: 식의 결과 타입을 부모 노드에 전달한다.
+correctOrder:
+  - lookup
+  - operator-rule
+  - compare
+  - result-type
+explanation:
+  - type: text
+    text: 자식 식의 타입과 연산자 규칙을 모두 알아야 연산 가능 여부와 결과 타입을 결정할 수 있습니다.
+tags:
+  - programming-languages
+  - types
+  - type-checking
+difficulty: 2

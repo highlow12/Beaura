@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: pl.syntax-semantics.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 프로그램이 실행될 때 어떤 값과 상태 변화를 만드는지를 설명하는 것은 문법이 아니라 ___입니다.
+choices:
+  - 의미
+  - 토큰
+  - 들여쓰기
+acceptedAnswers:
+  - 의미
+explanation:
+  - type: text
+    text: 의미론은 표현식과 명령이 실행될 때 관찰되는 계산 결과와 상태 변화를 다룹니다.
+tags:
+  - programming-languages
+  - semantics
+difficulty: 1

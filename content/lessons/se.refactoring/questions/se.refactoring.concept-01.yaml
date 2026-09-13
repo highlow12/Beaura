@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.refactoring.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 리팩터링을 설명하는 문장으로 가장 알맞은 것은 무엇인가요?
+options:
+  - id: preserve-behavior
+    content:
+      - type: text
+        text: 외부 동작을 보존하면서 내부 구조를 개선한다.
+  - id: add-feature
+    content:
+      - type: text
+        text: 새로운 사용자 기능을 반드시 추가한다.
+  - id: rewrite-all
+    content:
+      - type: text
+        text: 기존 코드를 테스트 없이 전부 다시 작성한다.
+  - id: change-contract
+    content:
+      - type: text
+        text: 공개 API의 의미를 예고 없이 바꾼다.
+correctOptionId: preserve-behavior
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 리팩터링의 핵심은 클라이언트가 관찰하는 결과와 계약을 유지하면서 내부 구조와 변경 가능성을 개선하는 것입니다.
+tags:
+  - software-engineering
+  - refactoring
+  - behavior-preservation
+difficulty: 1

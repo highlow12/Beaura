@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.testing
+revision: 1
+track: software-engineering
+title: 테스트 피라미드
+description: 단위·통합·E2E 테스트의 범위와 비용을 비교해 테스트 전략을 세운다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: se.testing.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: se.testing.match-01
+  - type: question
+    ref: se.testing.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: se.testing.order-01
+  - type: question
+    ref: se.testing.trace-01

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: toc.language
+revision: 1
+track: theory-of-computation
+title: 알파벳, 문자열, 언어
+description: 형식 언어를 이루는 기호, 문자열, 언어의 관계를 구분한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: toc.language.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: toc.language.match-01
+  - type: question
+    ref: toc.language.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: toc.language.order-01
+  - type: question
+    ref: toc.language.trace-01

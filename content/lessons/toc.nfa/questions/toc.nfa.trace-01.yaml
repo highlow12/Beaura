@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: toc.nfa.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 코드는 ε 전이로 q0에서 q1에 도달한 뒤 입력 a를 읽어 q2로 이동하는 상황을 단순화합니다. 출력은 무엇인가요?
+language: python
+code: |-
+  current = {"q0"}
+  current = current | {"q1"}
+  current = {"q2"} if "q1" in current else set()
+  print("q2" in current)
+choices:
+  - "True"
+  - "False"
+  - q1
+acceptedOutputs:
+  - "True"
+explanation:
+  - type: text
+    text: 두 번째 줄에서 q1이 가능한 상태에 추가되고, 세 번째 줄의 a 전이가 q2를 만들므로 q2가 집합에 있습니다.
+tags:
+  - theory-of-computation
+  - nfa
+  - trace
+difficulty: 2

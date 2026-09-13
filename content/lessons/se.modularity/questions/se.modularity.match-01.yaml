@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.modularity.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 모듈화의 용어와 설명을 연결하세요.
+leftItems:
+  - id: cohesion
+    content:
+      - type: text
+        text: 응집도
+  - id: coupling
+    content:
+      - type: text
+        text: 결합도
+  - id: boundary
+    content:
+      - type: text
+        text: 모듈 경계
+rightItems:
+  - id: shared-purpose
+    content:
+      - type: text
+        text: 한 모듈의 구성 요소가 같은 목적에 집중하는 정도
+  - id: dependency-knowledge
+    content:
+      - type: text
+        text: 모듈 사이가 서로의 지식과 변경에 묶이는 정도
+  - id: public-surface
+    content:
+      - type: text
+        text: 외부에 공개할 동작과 숨길 구현을 나누는 선
+correctPairs:
+  - leftId: cohesion
+    rightId: shared-purpose
+  - leftId: coupling
+    rightId: dependency-knowledge
+  - leftId: boundary
+    rightId: public-surface
+explanation:
+  - type: text
+    text: 응집도는 내부의 목적 집중도를, 결합도는 모듈 간 의존성을 말하며 경계는 공개 표면과 구현을 나눕니다.
+tags:
+  - software-engineering
+  - modularity
+  - design
+difficulty: 2

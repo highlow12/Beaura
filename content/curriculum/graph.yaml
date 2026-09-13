@@ -650,3 +650,139 @@ nodes:
     requires:
       - db.replication
       - db.concurrency
+  - lesson: toc.language
+    requires:
+      - math.sets
+      - math.propositions
+  - lesson: toc.finite-state-machine
+    requires:
+      - toc.language
+      - math.relations
+  - lesson: toc.dfa
+    requires:
+      - toc.finite-state-machine
+  - lesson: toc.nfa
+    requires:
+      - toc.dfa
+  - lesson: toc.regular-languages
+    requires:
+      - toc.nfa
+  - lesson: toc.grammar
+    requires:
+      - toc.language
+  - lesson: toc.cfg
+    requires:
+      - toc.grammar
+  - lesson: toc.pda
+    requires:
+      - toc.cfg
+      - ds.stack
+  - lesson: toc.turing-machine
+    requires:
+      - toc.pda
+  - lesson: toc.decidability
+    requires:
+      - toc.turing-machine
+      - math.direct-proof
+  - lesson: toc.halting-problem
+    requires:
+      - toc.decidability
+      - math.contradiction
+  - lesson: toc.complexity
+    requires:
+      - toc.halting-problem
+      - algo.big-o
+  - lesson: pl.syntax-semantics
+    requires:
+      - py.modules
+      - toc.grammar
+  - lesson: pl.types
+    requires:
+      - pl.syntax-semantics
+      - py.types
+  - lesson: pl.lexical-scope
+    requires:
+      - pl.syntax-semantics
+      - py.scopes
+  - lesson: pl.functions-closures
+    requires:
+      - pl.lexical-scope
+      - py.functions
+  - lesson: pl.memory-model
+    requires:
+      - pl.functions-closures
+      - os.allocation
+  - lesson: pl.lexing
+    requires:
+      - pl.syntax-semantics
+      - toc.regular-languages
+  - lesson: pl.ast
+    requires:
+      - pl.lexing
+      - toc.cfg
+  - lesson: pl.recursive-descent
+    requires:
+      - pl.ast
+      - algo.recursion
+  - lesson: pl.semantic-analysis
+    requires:
+      - pl.ast
+      - pl.types
+  - lesson: pl.ir
+    requires:
+      - pl.semantic-analysis
+  - lesson: pl.code-generation
+    requires:
+      - pl.ir
+      - arch.isa
+  - lesson: pl.optimization
+    requires:
+      - pl.ir
+      - algo.correctness
+  - lesson: pl.runtime-gc
+    requires:
+      - pl.memory-model
+      - os.virtual-memory
+  - lesson: pl.virtual-machine
+    requires:
+      - pl.code-generation
+      - pl.runtime-gc
+  - lesson: se.modularity
+    requires:
+      - py.modules
+      - pl.syntax-semantics
+  - lesson: se.api-contracts
+    requires:
+      - se.modularity
+  - lesson: se.error-handling
+    requires:
+      - se.api-contracts
+      - py.exceptions
+  - lesson: se.testing
+    requires:
+      - se.api-contracts
+      - algo.correctness
+  - lesson: se.version-control
+    requires:
+      - se.modularity
+  - lesson: se.abstraction-dependencies
+    requires:
+      - se.modularity
+      - pl.types
+  - lesson: se.refactoring
+    requires:
+      - se.testing
+      - se.abstraction-dependencies
+  - lesson: se.observability
+    requires:
+      - se.error-handling
+      - os.system-call
+  - lesson: se.cicd
+    requires:
+      - se.testing
+      - se.version-control
+  - lesson: se.system-tradeoffs
+    requires:
+      - se.observability
+      - db.consistency
+      - net.performance

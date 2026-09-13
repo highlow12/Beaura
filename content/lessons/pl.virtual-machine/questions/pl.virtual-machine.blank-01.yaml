@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.virtual-machine.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: VM이 현재 PC 위치의 명령을 가져와 해석하고 실행하는 반복을 인터프리터 ___라고 합니다.
+choices:
+  - 루프
+  - 트리
+  - 스키마
+acceptedAnswers:
+  - 루프
+explanation:
+  - type: text
+    text: 인터프리터 루프는 fetch, decode, 실행, PC 갱신을 반복하며 바이트코드를 진행합니다.
+tags:
+  - programming-languages
+  - virtual-machine
+  - interpreter-loop
+difficulty: 1

@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: pl.semantic-analysis.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 단순 심벌 테이블 조회가 반환하는 타입을 고르세요.
+language: python
+code: |-
+  symbols = {"count": "int", "name": "str"}
+  print(symbols["count"])
+choices:
+  - int
+  - str
+  - undefined
+acceptedOutputs:
+  - int
+explanation:
+  - type: text
+    text: 심벌 테이블에서 count는 int에 매핑되어 있으므로 조회 결과는 int입니다.
+tags:
+  - programming-languages
+  - semantic-analysis
+  - trace
+difficulty: 1

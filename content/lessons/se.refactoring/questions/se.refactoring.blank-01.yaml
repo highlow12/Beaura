@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.refactoring.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 외부 동작을 보존하면서 내부 구조를 개선하는 작업을 ___이라고 합니다.
+choices:
+  - 리팩터링
+  - 배포
+  - 직렬화
+acceptedAnswers:
+  - 리팩터링
+explanation:
+  - type: text
+    text: 리팩터링은 새로운 의미를 추가하는 기능 개발과 구분하며 구조와 유지보수성을 개선합니다.
+tags:
+  - software-engineering
+  - refactoring
+  - terminology
+difficulty: 1

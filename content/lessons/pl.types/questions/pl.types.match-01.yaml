@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.types.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 타입 시스템의 개념과 설명을 연결하세요.
+leftItems:
+  - id: static
+    content:
+      - type: text
+        text: 정적 타입
+  - id: dynamic
+    content:
+      - type: text
+        text: 동적 타입
+  - id: inference
+    content:
+      - type: text
+        text: 타입 추론
+rightItems:
+  - id: compile-check
+    content:
+      - type: text
+        text: 실행 전 제약을 검사한다
+  - id: runtime-check
+    content:
+      - type: text
+        text: 실행 중 값의 타입을 확인한다
+  - id: derive-type
+    content:
+      - type: text
+        text: 대입과 연산 관계로 타입을 계산한다
+correctPairs:
+  - leftId: static
+    rightId: compile-check
+  - leftId: dynamic
+    rightId: runtime-check
+  - leftId: inference
+    rightId: derive-type
+explanation:
+  - type: text
+    text: 검사 시점과 타입을 얻는 방식은 별도 축이므로 정적 언어도 추론을 사용할 수 있습니다.
+tags:
+  - programming-languages
+  - types
+  - inference
+difficulty: 2

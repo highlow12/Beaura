@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: toc.grammar.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음은 `S → aS | b`를 재귀 함수로 흉내 낸 코드입니다. n=2일 때 출력은 무엇인가요?
+language: python
+code: |-
+  def derive(n):
+      if n == 0:
+          return "b"
+      return "a" + derive(n - 1)
+  print(derive(2))
+choices:
+  - aab
+  - abb
+  - aa
+acceptedOutputs:
+  - aab
+explanation:
+  - type: text
+    text: n이 2일 때 a를 두 번 붙이고 기저 사례에서 b를 붙이므로 결과는 aab입니다.
+tags:
+  - theory-of-computation
+  - grammar
+  - trace
+difficulty: 2

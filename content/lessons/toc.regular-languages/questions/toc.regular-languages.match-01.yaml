@@ -1,0 +1,50 @@
+schemaVersion: 1
+id: toc.regular-languages.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 정규식 기호와 의미를 연결하세요.
+leftItems:
+  - id: union
+    content:
+      - type: code
+        language: text
+        code: a|b
+  - id: concat
+    content:
+      - type: code
+        language: text
+        code: ab
+  - id: star
+    content:
+      - type: code
+        language: text
+        code: a*
+rightItems:
+  - id: either
+    content:
+      - type: text
+        text: a 또는 b 중 하나
+  - id: sequence
+    content:
+      - type: text
+        text: a 다음에 b
+  - id: repeat
+    content:
+      - type: text
+        text: a를 0번 이상 반복
+correctPairs:
+  - leftId: union
+    rightId: either
+  - leftId: concat
+    rightId: sequence
+  - leftId: star
+    rightId: repeat
+explanation:
+  - type: text
+    text: 합집합, 연결, 스타는 정규식의 기본 연산이며 각각 선택, 순서 있는 연결, 0회 이상 반복을 나타냅니다.
+tags:
+  - theory-of-computation
+  - regular-expression
+difficulty: 1

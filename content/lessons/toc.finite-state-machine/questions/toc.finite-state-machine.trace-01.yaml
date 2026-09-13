@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: toc.finite-state-machine.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 상태가 1을 읽을 때마다 even과 odd 사이를 전환하고 0에서는 유지됩니다. 다음 코드의 출력은 무엇인가요?
+language: python
+code: |-
+  state = "even"
+  for symbol in "101":
+      if symbol == "1":
+          state = "odd" if state == "even" else "even"
+  print(state)
+choices:
+  - even
+  - odd
+  - start
+acceptedOutputs:
+  - even
+explanation:
+  - type: text
+    text: 1을 두 번 읽으므로 even에서 odd를 거쳐 다시 even이 됩니다. 0은 상태를 바꾸지 않습니다.
+tags:
+  - theory-of-computation
+  - finite-state-machine
+  - trace
+difficulty: 2

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: toc.nfa.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: ε 전이가 있는 NFA에서 입력 기호 하나를 처리하는 순서를 배열하세요.
+items:
+  - id: closure-before
+    content:
+      - type: text
+        text: 현재 상태 집합의 ε-closure를 구한다.
+  - id: consume-symbol
+    content:
+      - type: text
+        text: 다음 입력 기호로 이동 가능한 전이를 모은다.
+  - id: closure-after
+    content:
+      - type: text
+        text: 이동 결과에 다시 ε-closure를 적용한다.
+  - id: continue
+    content:
+      - type: text
+        text: 갱신된 상태 집합으로 다음 기호를 처리한다.
+correctOrder:
+  - closure-before
+  - consume-symbol
+  - closure-after
+  - continue
+explanation:
+  - type: text
+    text: 입력을 소비하지 않는 ε 이동을 앞뒤에서 닫아야 숨은 경로를 놓치지 않습니다.
+tags:
+  - theory-of-computation
+  - nfa
+  - epsilon-closure
+difficulty: 3

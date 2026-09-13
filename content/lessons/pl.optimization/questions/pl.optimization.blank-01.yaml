@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.optimization.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 컴파일 시점에 계산 가능한 상수식 `2 * 3`을 `6`으로 바꾸는 최적화를 상수 ___이라고 합니다.
+choices:
+  - 접기
+  - 분기
+  - 호출
+acceptedAnswers:
+  - 접기
+explanation:
+  - type: text
+    text: constant folding은 실행 때 할 계산을 컴파일 때 미리 수행해 명령어와 실행 비용을 줄입니다.
+tags:
+  - programming-languages
+  - optimization
+  - constant-folding
+difficulty: 1

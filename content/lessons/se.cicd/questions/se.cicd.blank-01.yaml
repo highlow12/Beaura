@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.cicd.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 같은 입력에서 빌드와 배포가 매번 같은 결과를 내도록 파이프라인을 ___ 가능하게 만들어야 합니다.
+choices:
+  - 재현
+  - 무작위
+  - 일회
+acceptedAnswers:
+  - 재현
+explanation:
+  - type: text
+    text: 재현 가능한 파이프라인은 소스 버전과 도구·의존성·환경을 고정해 검증한 결과를 다시 만들 수 있게 합니다.
+tags:
+  - software-engineering
+  - cicd
+  - reproducibility
+difficulty: 1

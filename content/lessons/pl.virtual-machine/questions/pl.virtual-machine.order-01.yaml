@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.virtual-machine.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 스택 기반 VM에서 `2 + 3` 바이트코드를 실행하는 순서를 배열하세요.
+items:
+  - id: push-two
+    content:
+      - type: text
+        text: PUSH 2로 스택에 2를 넣는다.
+  - id: push-three
+    content:
+      - type: text
+        text: PUSH 3으로 스택에 3을 넣는다.
+  - id: add
+    content:
+      - type: text
+        text: ADD가 두 값을 꺼내 합산한다.
+  - id: push-result
+    content:
+      - type: text
+        text: 결과 5를 스택에 다시 넣는다.
+correctOrder:
+  - push-two
+  - push-three
+  - add
+  - push-result
+explanation:
+  - type: text
+    text: ADD는 스택 위의 두 피연산자를 소비하고 하나의 결과를 남기므로, 두 PUSH가 먼저 실행되어야 합니다.
+tags:
+  - programming-languages
+  - virtual-machine
+  - operand-stack
+difficulty: 2

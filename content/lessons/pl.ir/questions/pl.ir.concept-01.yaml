@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.ir.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 컴파일러에서 중간 표현(IR)을 사용하는 가장 큰 이유는 무엇인가요?
+options:
+  - id: separate-front-back
+    content:
+      - type: text
+        text: 소스 분석과 대상 기계 코드 생성을 분리해 재사용한다.
+  - id: replace-source
+    content:
+      - type: text
+        text: 모든 소스 언어를 하나의 문법으로 강제한다.
+  - id: avoid-analysis
+    content:
+      - type: text
+        text: 타입 검사와 최적화를 생략한다.
+  - id: store-input
+    content:
+      - type: text
+        text: 실행 사용자의 입력을 영구 저장한다.
+correctOptionId: separate-front-back
+shuffleOptions: true
+explanation:
+  - type: text
+    text: IR은 여러 프런트엔드와 백엔드 사이의 공통 경계를 만들고, 값 흐름·제어 흐름 분석을 위한 형태를 제공합니다.
+tags:
+  - programming-languages
+  - intermediate-representation
+  - compiler
+difficulty: 1

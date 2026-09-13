@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.modularity.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 한 모듈이 하나의 목적에 집중하는 정도를 ___라고 합니다.
+choices:
+  - 응집도
+  - 결합도
+  - 상속도
+acceptedAnswers:
+  - 응집도
+explanation:
+  - type: text
+    text: 응집도는 모듈 내부 요소가 하나의 관련된 책임에 얼마나 모여 있는지를 나타냅니다.
+tags:
+  - software-engineering
+  - cohesion
+  - modularity
+difficulty: 1

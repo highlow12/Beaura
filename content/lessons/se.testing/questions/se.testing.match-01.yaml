@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.testing.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 테스트 종류와 검증 범위를 연결하세요.
+leftItems:
+  - id: unit
+    content:
+      - type: text
+        text: 단위 테스트
+  - id: integration
+    content:
+      - type: text
+        text: 통합 테스트
+  - id: e2e
+    content:
+      - type: text
+        text: E2E 테스트
+rightItems:
+  - id: isolated-unit
+    content:
+      - type: text
+        text: 함수나 클래스 같은 작은 단위를 격리해 검증
+  - id: real-boundary
+    content:
+      - type: text
+        text: 저장소나 여러 모듈의 실제 연결을 검증
+  - id: user-flow
+    content:
+      - type: text
+        text: 사용자 관점의 전체 핵심 흐름을 검증
+correctPairs:
+  - leftId: unit
+    rightId: isolated-unit
+  - leftId: integration
+    rightId: real-boundary
+  - leftId: e2e
+    rightId: user-flow
+explanation:
+  - type: text
+    text: 단위·통합·E2E는 격리된 작은 책임, 모듈 경계, 사용자 전체 흐름으로 갈수록 범위와 비용이 커집니다.
+tags:
+  - software-engineering
+  - testing
+  - test-types
+difficulty: 2

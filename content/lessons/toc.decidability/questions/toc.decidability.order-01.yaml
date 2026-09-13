@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: toc.decidability.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 제한된 실행 단계 안에서 입력을 판정하는 결정 절차를 배열하세요.
+items:
+  - id: set-bound
+    content:
+      - type: text
+        text: 최대 실행 단계 B를 정한다.
+  - id: simulate
+    content:
+      - type: text
+        text: 프로그램을 최대 B단계까지 시뮬레이션한다.
+  - id: detect-halt
+    content:
+      - type: text
+        text: 중간에 멈추면 결과를 기록한다.
+  - id: timeout
+    content:
+      - type: text
+        text: B단계까지 안 멈추면 제한 초과로 판정한다.
+correctOrder:
+  - set-bound
+  - simulate
+  - detect-halt
+  - timeout
+explanation:
+  - type: text
+    text: 단계 상한이 입력에 포함된 제한된 문제에서는 무한 실행을 기다리지 않고 상한에 도달한 뒤 결론을 낼 수 있습니다.
+tags:
+  - theory-of-computation
+  - decidability
+  - simulation
+difficulty: 3

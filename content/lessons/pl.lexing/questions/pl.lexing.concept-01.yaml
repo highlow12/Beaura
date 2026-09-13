@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.lexing.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 렉서(lexer)의 주된 출력은 무엇인가요?
+options:
+  - id: tokens
+    content:
+      - type: text
+        text: 소스 문자에서 분리한 종류 있는 토큰의 순서
+  - id: machine-code
+    content:
+      - type: text
+        text: CPU가 바로 실행하는 최종 기계어
+  - id: parse-tree
+    content:
+      - type: text
+        text: 생산 규칙이 모두 펼쳐진 구문 트리
+  - id: test-report
+    content:
+      - type: text
+        text: 프로그램의 테스트 통과 여부 보고서
+correctOptionId: tokens
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 렉서는 문자를 식별자·숫자·연산자 같은 토큰으로 나누고, 파서가 그 토큰을 구조로 조합하게 합니다.
+tags:
+  - programming-languages
+  - lexer
+  - tokens
+difficulty: 1

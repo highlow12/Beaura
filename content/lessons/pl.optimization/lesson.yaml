@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.optimization
+revision: 1
+track: programming-languages
+title: 컴파일러 최적화
+description: 의미를 보존하면서 계산을 줄이는 대표적인 최적화를 익힌다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.optimization.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.optimization.match-01
+  - type: question
+    ref: pl.optimization.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.optimization.order-01
+  - type: question
+    ref: pl.optimization.trace-01

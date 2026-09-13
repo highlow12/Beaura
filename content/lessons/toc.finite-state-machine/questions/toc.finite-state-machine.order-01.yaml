@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: toc.finite-state-machine.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: FSM이 입력 한 기호를 처리하는 순서를 배열하세요.
+items:
+  - id: current
+    content:
+      - type: text
+        text: 현재 상태를 확인한다.
+  - id: consume
+    content:
+      - type: text
+        text: 다음 입력 기호를 읽는다.
+  - id: lookup
+    content:
+      - type: text
+        text: 상태와 기호에 맞는 전이를 찾는다.
+  - id: update
+    content:
+      - type: text
+        text: 다음 상태로 상태값을 갱신한다.
+correctOrder:
+  - current
+  - consume
+  - lookup
+  - update
+explanation:
+  - type: text
+    text: 전이는 현재 상태와 방금 읽은 기호를 함께 입력으로 사용하므로 두 값을 먼저 확인해야 합니다.
+tags:
+  - theory-of-computation
+  - finite-state-machine
+  - execution
+difficulty: 2

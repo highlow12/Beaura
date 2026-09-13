@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.ir
+revision: 1
+track: programming-languages
+title: 중간 표현
+description: 프런트엔드와 백엔드 사이에서 쓰는 중간 표현의 목적을 익힌다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.ir.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.ir.match-01
+  - type: question
+    ref: pl.ir.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.ir.order-01
+  - type: question
+    ref: pl.ir.trace-01

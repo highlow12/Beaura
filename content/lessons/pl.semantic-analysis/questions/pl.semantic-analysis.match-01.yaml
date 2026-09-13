@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.semantic-analysis.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 의미 분석기의 검사와 설명을 연결하세요.
+leftItems:
+  - id: name-lookup
+    content:
+      - type: text
+        text: 이름 조회
+  - id: type-check
+    content:
+      - type: text
+        text: 타입 검사
+  - id: return-check
+    content:
+      - type: text
+        text: 반환 검사
+rightItems:
+  - id: declared
+    content:
+      - type: text
+        text: 식별자가 현재 스코프 사슬에 선언되었는지
+  - id: operand
+    content:
+      - type: text
+        text: 연산 피연산자의 타입이 규칙에 맞는지
+  - id: function-contract
+    content:
+      - type: text
+        text: 함수가 약속한 반환 타입과 경로를 지키는지
+correctPairs:
+  - leftId: name-lookup
+    rightId: declared
+  - leftId: type-check
+    rightId: operand
+  - leftId: return-check
+    rightId: function-contract
+explanation:
+  - type: text
+    text: AST를 순회하며 이름과 타입을 주석처럼 붙이면 코드 생성과 오류 보고가 같은 분석 결과를 재사용할 수 있습니다.
+tags:
+  - programming-languages
+  - semantic-analysis
+  - type-checking
+difficulty: 2

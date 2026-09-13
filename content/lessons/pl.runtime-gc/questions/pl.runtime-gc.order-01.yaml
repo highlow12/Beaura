@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.runtime-gc.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: mark-sweep 수집의 기본 순서를 배열하세요.
+items:
+  - id: find-roots
+    content:
+      - type: text
+        text: 스택·전역 등 GC 루트를 수집한다.
+  - id: traverse
+    content:
+      - type: text
+        text: 루트에서 참조를 따라 객체를 방문한다.
+  - id: mark
+    content:
+      - type: text
+        text: 방문한 객체에 mark를 남긴다.
+  - id: sweep
+    content:
+      - type: text
+        text: 표시되지 않은 힙 객체를 회수한다.
+correctOrder:
+  - find-roots
+  - traverse
+  - mark
+  - sweep
+explanation:
+  - type: text
+    text: 도달 가능성 표시를 끝낸 다음 표시되지 않은 객체만 제거해야 살아 있는 참조를 보존할 수 있습니다.
+tags:
+  - programming-languages
+  - garbage-collection
+  - mark-sweep
+difficulty: 2

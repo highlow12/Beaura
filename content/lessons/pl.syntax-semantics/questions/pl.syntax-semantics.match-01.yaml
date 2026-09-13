@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.syntax-semantics.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 프로그램 언어의 층위와 예를 연결하세요.
+leftItems:
+  - id: syntax
+    content:
+      - type: text
+        text: 문법
+  - id: static
+    content:
+      - type: text
+        text: 정적 의미
+  - id: dynamic
+    content:
+      - type: text
+        text: 동적 의미
+rightItems:
+  - id: token-order
+    content:
+      - type: text
+        text: 괄호와 토큰 순서가 규칙에 맞는지
+  - id: source-check
+    content:
+      - type: text
+        text: 선언·타입 같은 실행 전 제약
+  - id: execution-result
+    content:
+      - type: text
+        text: 실제 상태에서 계산되는 값과 부수 효과
+correctPairs:
+  - leftId: syntax
+    rightId: token-order
+  - leftId: static
+    rightId: source-check
+  - leftId: dynamic
+    rightId: execution-result
+explanation:
+  - type: text
+    text: 컴파일러는 먼저 구조를 파싱하고 정적 제약을 검사한 뒤 실행 의미를 보존하는 코드를 만듭니다.
+tags:
+  - programming-languages
+  - semantics
+  - compiler
+difficulty: 2

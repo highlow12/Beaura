@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: pl.syntax-semantics.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 일반적인 소스 프로그램 처리 단계를 올바른 순서로 배열하세요.
+items:
+  - id: lex
+    content:
+      - type: text
+        text: 문자를 토큰으로 나눈다.
+  - id: parse
+    content:
+      - type: text
+        text: 토큰으로 구문 구조를 만든다.
+  - id: analyze
+    content:
+      - type: text
+        text: 이름과 타입의 정적 의미를 검사한다.
+  - id: generate
+    content:
+      - type: text
+        text: 대상 코드나 바이트코드를 생성한다.
+correctOrder:
+  - lex
+  - parse
+  - analyze
+  - generate
+explanation:
+  - type: text
+    text: 렉싱과 파싱이 구조를 만들고, 의미 분석이 그 구조의 정적 제약을 확인한 뒤 코드 생성으로 넘어갑니다.
+tags:
+  - programming-languages
+  - compiler-pipeline
+difficulty: 2

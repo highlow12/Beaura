@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.functions-closures.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 함수 개념과 설명을 연결하세요.
+leftItems:
+  - id: first-class
+    content:
+      - type: text
+        text: 일급 함수
+  - id: higher-order
+    content:
+      - type: text
+        text: 고차 함수
+  - id: closure
+    content:
+      - type: text
+        text: 클로저
+rightItems:
+  - id: value
+    content:
+      - type: text
+        text: 함수를 변수·인자·반환값으로 다룬다
+  - id: function-argument
+    content:
+      - type: text
+        text: 함수를 받거나 반환하는 함수다
+  - id: captured-env
+    content:
+      - type: text
+        text: 함수와 정의 환경을 함께 보존한다
+correctPairs:
+  - leftId: first-class
+    rightId: value
+  - leftId: higher-order
+    rightId: function-argument
+  - leftId: closure
+    rightId: captured-env
+explanation:
+  - type: text
+    text: 일급 함수라는 성질이 고차 함수와 클로저를 만들 수 있는 언어 기능의 바탕이 됩니다.
+tags:
+  - programming-languages
+  - functions
+  - closure
+difficulty: 2

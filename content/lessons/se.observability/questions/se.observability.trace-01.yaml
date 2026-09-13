@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: se.observability.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 시작과 성공 사건을 순서대로 연결해 출력하는 다음 코드의 결과는 무엇인가요?
+language: python
+code: |-
+  events = ["start", "success"]
+  print(" -> ".join(events))
+choices:
+  - start -> success
+  - success -> start
+  - startsuccess
+acceptedOutputs:
+  - start -> success
+explanation:
+  - type: text
+    text: join은 events의 두 문자열 사이에 공백을 포함한 화살표를 넣어 요청 흐름처럼 출력합니다.
+tags:
+  - software-engineering
+  - observability
+  - code-trace
+difficulty: 1

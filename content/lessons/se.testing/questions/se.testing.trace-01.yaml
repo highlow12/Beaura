@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: se.testing.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 단위 테스트에서 호출할 수 있는 합계 함수의 출력은 무엇인가요?
+language: python
+code: |-
+  def total(prices):
+      return sum(prices)
+
+  print(total([2, 3, 5]))
+choices:
+  - "10"
+  - "235"
+  - "5"
+acceptedOutputs:
+  - "10"
+explanation:
+  - type: text
+    text: sum은 목록의 세 값을 더하므로 2 + 3 + 5인 10을 반환합니다.
+tags:
+  - software-engineering
+  - testing
+  - code-trace
+difficulty: 1

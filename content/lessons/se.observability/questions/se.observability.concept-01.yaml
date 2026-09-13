@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.observability.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 한 요청이 여러 서비스와 작업을 통과한 경로와 병목을 파악하는 데 가장 직접적인 신호는 무엇인가요?
+options:
+  - id: trace
+    content:
+      - type: text
+        text: 트레이스
+  - id: log-only
+    content:
+      - type: text
+        text: 구조화되지 않은 단일 로그 한 줄
+  - id: source-comment
+    content:
+      - type: text
+        text: 소스 코드 주석
+  - id: build-artifact
+    content:
+      - type: text
+        text: 빌드 산출물 이름
+correctOptionId: trace
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 트레이스는 하나의 요청을 trace와 span으로 연결해 서비스 경계를 가로지르는 경로와 각 구간의 시간을 보여 줍니다.
+tags:
+  - software-engineering
+  - observability
+  - tracing
+difficulty: 1

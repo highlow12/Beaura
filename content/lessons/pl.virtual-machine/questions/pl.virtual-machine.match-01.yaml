@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.virtual-machine.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: VM 구성 요소와 역할을 연결하세요.
+leftItems:
+  - id: bytecode
+    content:
+      - type: text
+        text: 바이트코드
+  - id: pc
+    content:
+      - type: text
+        text: 프로그램 카운터
+  - id: operand-stack
+    content:
+      - type: text
+        text: 피연산자 스택
+rightItems:
+  - id: intermediate-instruction
+    content:
+      - type: text
+        text: VM이 이해하는 중간 명령의 순서
+  - id: next-opcode
+    content:
+      - type: text
+        text: 다음에 가져올 명령의 위치
+  - id: temporary-values
+    content:
+      - type: text
+        text: 계산 중간 값과 인자를 보관
+correctPairs:
+  - leftId: bytecode
+    rightId: intermediate-instruction
+  - leftId: pc
+    rightId: next-opcode
+  - leftId: operand-stack
+    rightId: temporary-values
+explanation:
+  - type: text
+    text: 스택 VM은 PC로 명령을 순서대로 가져오고 피연산자 스택에서 값을 꺼내 결과를 다시 넣습니다.
+tags:
+  - programming-languages
+  - virtual-machine
+  - interpreter
+difficulty: 2

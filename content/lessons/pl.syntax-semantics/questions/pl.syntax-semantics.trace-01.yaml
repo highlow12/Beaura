@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: pl.syntax-semantics.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 문법에 맞는 산술식이 실행하는 계산을 추적하세요. 출력 결과는 무엇인가요?
+language: python
+code: |-
+  x = 2
+  y = x + 3
+  print(y)
+choices:
+  - "5"
+  - "2"
+  - "6"
+acceptedOutputs:
+  - "5"
+explanation:
+  - type: text
+    text: x에 2가 바인딩되고 x+3이 5로 평가되어 y에 저장되므로 5가 출력됩니다.
+tags:
+  - programming-languages
+  - semantics
+  - trace
+difficulty: 1

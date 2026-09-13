@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: pl.virtual-machine.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음은 스택 VM의 PUSH·ADD 동작을 직접 계산한 코드입니다. 최종 스택의 값을 고르세요.
+language: python
+code: |-
+  stack = []
+  stack.append(2)
+  stack.append(3)
+  right = stack.pop()
+  left = stack.pop()
+  stack.append(left + right)
+  print(stack[-1])
+choices:
+  - "5"
+  - "6"
+  - "1"
+acceptedOutputs:
+  - "5"
+explanation:
+  - type: text
+    text: 3과 2를 꺼내 더한 5를 다시 넣으므로 최종 스택의 꼭대기는 5입니다.
+tags:
+  - programming-languages
+  - virtual-machine
+  - trace
+difficulty: 1

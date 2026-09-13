@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.observability.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 관찰 가능성의 신호와 주된 용도를 연결하세요.
+leftItems:
+  - id: log
+    content:
+      - type: text
+        text: 로그
+  - id: metric
+    content:
+      - type: text
+        text: 메트릭
+  - id: trace
+    content:
+      - type: text
+        text: 트레이스
+rightItems:
+  - id: event-detail
+    content:
+      - type: text
+        text: 특정 사건의 입력·오류·처리 맥락을 기록
+  - id: time-series
+    content:
+      - type: text
+        text: 요청 수·오류율·지연 같은 수치의 추세를 집계
+  - id: request-path
+    content:
+      - type: text
+        text: 한 요청이 여러 작업을 거친 경로와 시간을 연결
+correctPairs:
+  - leftId: log
+    rightId: event-detail
+  - leftId: metric
+    rightId: time-series
+  - leftId: trace
+    rightId: request-path
+explanation:
+  - type: text
+    text: 메트릭으로 이상을 감지하고 트레이스로 범위를 좁힌 뒤 로그로 사건의 상세 원인을 확인할 수 있습니다.
+tags:
+  - software-engineering
+  - observability
+  - signals
+difficulty: 2

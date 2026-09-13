@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: toc.cfg
+revision: 1
+track: theory-of-computation
+title: 문맥 자유 문법
+description: CFG의 생성 규칙과 구문 트리로 중첩 구조를 표현한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: toc.cfg.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: toc.cfg.match-01
+  - type: question
+    ref: toc.cfg.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: toc.cfg.order-01
+  - type: question
+    ref: toc.cfg.trace-01

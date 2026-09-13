@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.abstraction-dependencies.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 의존성 역전이 적용된 고수준 주문 정책의 바람직한 의존 방향은 무엇인가요?
+options:
+  - id: policy-port
+    content:
+      - type: text
+        text: 주문 정책과 알림 구현이 모두 안정적인 알림 인터페이스를 의존한다.
+  - id: policy-email
+    content:
+      - type: text
+        text: 주문 정책이 이메일 SDK의 구체 클래스를 직접 생성한다.
+  - id: adapter-policy
+    content:
+      - type: text
+        text: 알림 어댑터가 주문 정책의 내부 자료를 직접 변경한다.
+  - id: no-dependency
+    content:
+      - type: text
+        text: 모든 모듈이 다른 모듈과 전혀 통신하지 않는다.
+correctOptionId: policy-port
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 고수준 정책은 안정적인 추상화에 의존하고, 각 어댑터가 그 약속을 구현하게 하면 세부 기술의 교체가 정책을 흔들지 않습니다.
+tags:
+  - software-engineering
+  - abstraction
+  - dependency-inversion
+difficulty: 2

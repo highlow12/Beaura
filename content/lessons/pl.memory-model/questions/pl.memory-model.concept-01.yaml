@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.memory-model.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 스택과 힙의 차이를 올바르게 설명한 것은 무엇인가요?
+options:
+  - id: lifetimes
+    content:
+      - type: text
+        text: 스택은 호출 프레임 관리에, 힙은 호출과 무관한 동적 객체 수명 관리에 적합하다.
+  - id: same
+    content:
+      - type: text
+        text: 둘은 같은 영역이며 이름만 다르다.
+  - id: stack-all
+    content:
+      - type: text
+        text: 모든 힙 객체는 함수가 끝나면 즉시 사라진다.
+  - id: heap-order
+    content:
+      - type: text
+        text: 힙은 항상 후입선출 순서로만 해제된다.
+correctOptionId: lifetimes
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 스택은 호출·반환 구조에 맞고, 힙은 호출이 끝나도 살아야 하는 객체를 보관합니다. 실제 값·참조 배치는 언어 규칙에 따라 달라집니다.
+tags:
+  - programming-languages
+  - memory
+  - stack
+difficulty: 1

@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.runtime-gc.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: mark-sweep 가비지 컬렉션의 단계와 설명을 연결하세요.
+leftItems:
+  - id: root
+    content:
+      - type: text
+        text: 루트
+  - id: mark
+    content:
+      - type: text
+        text: mark
+  - id: sweep
+    content:
+      - type: text
+        text: sweep
+rightItems:
+  - id: entry-points
+    content:
+      - type: text
+        text: 스택·전역에서 탐색을 시작하는 참조
+  - id: reachable
+    content:
+      - type: text
+        text: 도달한 객체에 표시
+  - id: reclaim
+    content:
+      - type: text
+        text: 표시되지 않은 객체를 회수
+correctPairs:
+  - leftId: root
+    rightId: entry-points
+  - leftId: mark
+    rightId: reachable
+  - leftId: sweep
+    rightId: reclaim
+explanation:
+  - type: text
+    text: mark-sweep은 루트 탐색과 힙 청소를 분리하므로 서로 참조하는 고립된 순환 객체도 회수할 수 있습니다.
+tags:
+  - programming-languages
+  - garbage-collection
+  - mark-sweep
+difficulty: 2

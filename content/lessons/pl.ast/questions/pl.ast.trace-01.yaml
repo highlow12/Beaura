@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: pl.ast.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음은 AST의 후위 순회를 흉내 내어 계산하는 코드입니다. 출력은 무엇인가요?
+language: python
+code: |-
+  tree = ("+", 2, ("*", 3, 4))
+  result = tree[1] + tree[2][1] * tree[2][2]
+  print(result)
+choices:
+  - "14"
+  - "20"
+  - "24"
+acceptedOutputs:
+  - "14"
+explanation:
+  - type: text
+    text: 오른쪽 자식의 곱셈 3*4를 먼저 계산한 뒤 루트 덧셈 2를 적용해 14가 됩니다.
+tags:
+  - programming-languages
+  - ast
+  - trace
+difficulty: 2

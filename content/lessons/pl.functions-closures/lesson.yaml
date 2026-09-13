@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.functions-closures
+revision: 1
+track: programming-languages
+title: 일급 함수와 클로저
+description: 함수를 값으로 다루고 정의 환경을 기억하는 클로저를 이해한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.functions-closures.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.functions-closures.match-01
+  - type: question
+    ref: pl.functions-closures.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.functions-closures.order-01
+  - type: question
+    ref: pl.functions-closures.trace-01

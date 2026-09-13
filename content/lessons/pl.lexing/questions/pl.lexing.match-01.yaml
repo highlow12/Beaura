@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.lexing.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 렉싱 개념과 설명을 연결하세요.
+leftItems:
+  - id: token
+    content:
+      - type: text
+        text: 토큰
+  - id: longest-match
+    content:
+      - type: text
+        text: 가장 긴 일치
+  - id: source-position
+    content:
+      - type: text
+        text: 소스 위치
+rightItems:
+  - id: kind-value
+    content:
+      - type: text
+        text: 종류와 원문 또는 값을 가진 단위
+  - id: prefer-long
+    content:
+      - type: text
+        text: "`==`를 `=` 두 개보다 먼저 선택하는 규칙"
+  - id: diagnostic
+    content:
+      - type: text
+        text: 오류 줄과 열을 표시하는 정보
+correctPairs:
+  - leftId: token
+    rightId: kind-value
+  - leftId: longest-match
+    rightId: prefer-long
+  - leftId: source-position
+    rightId: diagnostic
+explanation:
+  - type: text
+    text: 토큰 경계와 위치를 정확히 유지해야 파서와 오류 메시지가 원본 코드와 연결됩니다.
+tags:
+  - programming-languages
+  - lexer
+  - tokenization
+difficulty: 2

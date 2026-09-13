@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.complexity.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: P 문제의 대표적인 시간 상한은 입력 크기에 대한 ___ 시간입니다.
+choices:
+  - 다항
+  - 무한
+  - 임의
+acceptedAnswers:
+  - 다항
+explanation:
+  - type: text
+    text: P는 결정적 알고리즘이 입력 크기의 다항식으로 제한되는 시간 안에 푸는 문제 클래스입니다.
+tags:
+  - theory-of-computation
+  - complexity
+  - p
+difficulty: 1

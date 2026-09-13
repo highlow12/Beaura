@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.ast.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: AST(Abstract Syntax Tree)의 목적을 가장 잘 설명한 것은 무엇인가요?
+options:
+  - id: meaningful-tree
+    content:
+      - type: text
+        text: 소스의 의미 있는 구조를 트리로 보존해 후속 분석과 변환에 사용한다.
+  - id: raw-chars
+    content:
+      - type: text
+        text: 모든 공백과 괄호를 문자 그대로 저장한다.
+  - id: runtime-stack
+    content:
+      - type: text
+        text: 실행 중 호출 스택을 대신 관리한다.
+  - id: test-cases
+    content:
+      - type: text
+        text: 입력 테스트 케이스만 모아 둔다.
+correctOptionId: meaningful-tree
+shuffleOptions: true
+explanation:
+  - type: text
+    text: AST는 파스 트리에서 의미에 필요하지 않은 문법 장식을 줄이고 연산·이름·리터럴 구조를 드러냅니다.
+tags:
+  - programming-languages
+  - ast
+  - parsing
+difficulty: 1

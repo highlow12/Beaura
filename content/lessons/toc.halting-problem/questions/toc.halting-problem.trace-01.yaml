@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: toc.halting-problem.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음은 H가 “멈춘다”라고 예측할 때 무한 반복하는 D를 단순화한 코드입니다. H의 예측이 True일 때 출력은 무엇인가요?
+language: python
+code: |-
+  prediction = True
+  result = "loop" if prediction else "halt"
+  print(result)
+choices:
+  - loop
+  - halt
+  - undecidable
+acceptedOutputs:
+  - loop
+explanation:
+  - type: text
+    text: D는 H가 멈춘다고 예측한 경우 그 반대로 loop를 선택합니다. 이 반대 행동이 자기 입력에서 모순을 만듭니다.
+tags:
+  - theory-of-computation
+  - halting-problem
+  - trace
+difficulty: 2

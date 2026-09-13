@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: pl.optimization.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 상수 접기를 적용하기 전과 후가 같은 결과를 내는지 확인하세요. 출력은 무엇인가요?
+language: python
+code: |-
+  folded = 2 * 3
+  print(folded + 1)
+choices:
+  - "7"
+  - "6"
+  - "5"
+acceptedOutputs:
+  - "7"
+explanation:
+  - type: text
+    text: 2*3을 미리 6으로 계산해도 마지막에 1을 더한 결과는 7로 원본 의미와 같습니다.
+tags:
+  - programming-languages
+  - optimization
+  - trace
+difficulty: 1

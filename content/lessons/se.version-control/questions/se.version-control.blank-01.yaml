@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.version-control.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 두 브랜치가 같은 부분을 서로 다르게 수정해 자동으로 합칠 수 없을 때 ___이 발생합니다.
+choices:
+  - 충돌
+  - 캐시
+  - 병렬화
+acceptedAnswers:
+  - 충돌
+explanation:
+  - type: text
+    text: 충돌은 도구가 어느 변경 의도를 선택할지 결정할 수 없는 상태이므로 사람이 최종 결과를 편집해야 합니다.
+tags:
+  - software-engineering
+  - version-control
+  - merge-conflict
+difficulty: 1

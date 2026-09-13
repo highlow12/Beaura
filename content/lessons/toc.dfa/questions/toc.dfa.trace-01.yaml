@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: toc.dfa.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 DFA 시뮬레이션이 입력 101을 처리한 뒤 출력하는 상태를 고르세요.
+language: python
+code: |-
+  transition = {
+      ("q0", "0"): "q0",
+      ("q0", "1"): "q1",
+      ("q1", "0"): "q1",
+      ("q1", "1"): "q0",
+  }
+  state = "q0"
+  for symbol in "101":
+      state = transition[(state, symbol)]
+  print(state)
+choices:
+  - q0
+  - q1
+  - undefined
+acceptedOutputs:
+  - q0
+explanation:
+  - type: text
+    text: q0에서 1을 읽으면 q1, 0에서는 q1 유지, 마지막 1에서 q0으로 돌아옵니다.
+tags:
+  - theory-of-computation
+  - dfa
+  - trace
+difficulty: 3

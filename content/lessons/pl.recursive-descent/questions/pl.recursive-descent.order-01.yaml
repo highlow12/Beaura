@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.recursive-descent.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "`2 + 3`을 처리하는 재귀 하강 파서의 호출 흐름을 배열하세요."
+items:
+  - id: expression
+    content:
+      - type: text
+        text: parseExpression을 호출한다.
+  - id: term
+    content:
+      - type: text
+        text: parseTerm으로 첫 숫자 2를 읽는다.
+  - id: plus
+    content:
+      - type: text
+        text: + 토큰을 확인하고 소비한다.
+  - id: second-term
+    content:
+      - type: text
+        text: parseTerm으로 두 번째 숫자 3을 읽는다.
+correctOrder:
+  - expression
+  - term
+  - plus
+  - second-term
+explanation:
+  - type: text
+    text: 상위 expression이 term을 읽고 연산자를 소비한 뒤 다음 term을 읽어 더하기 AST를 구성합니다.
+tags:
+  - programming-languages
+  - recursive-descent
+  - parsing
+difficulty: 2

@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: toc.grammar.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "`S → aS | b`로 문자열 aab를 만드는 좌측 유도를 올바른 순서로 배열하세요."
+items:
+  - id: first-a
+    content:
+      - type: text
+        text: S ⇒ aS
+  - id: second-a
+    content:
+      - type: text
+        text: aS ⇒ aaS
+  - id: finish-b
+    content:
+      - type: text
+        text: aaS ⇒ aab
+correctOrder:
+  - first-a
+  - second-a
+  - finish-b
+explanation:
+  - type: text
+    text: 두 번 재귀 규칙을 적용해 a를 두 개 만든 뒤, 마지막에 S를 b로 바꾸면 aab가 됩니다.
+tags:
+  - theory-of-computation
+  - grammar
+  - derivation
+difficulty: 2

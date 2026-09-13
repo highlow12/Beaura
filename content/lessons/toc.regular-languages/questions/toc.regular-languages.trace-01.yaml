@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: toc.regular-languages.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 정규식 0(0|1)*가 문자열 010을 검사한 결과를 출력합니다. 결과를 고르세요.
+language: python
+code: |-
+  word = "010"
+  accepts = word.startswith("0") and all(symbol in "01" for symbol in word[1:])
+  print(accepts)
+choices:
+  - "True"
+  - "False"
+  - "010"
+acceptedOutputs:
+  - "True"
+explanation:
+  - type: text
+    text: 010은 0으로 시작하고 뒤의 10은 0과 1로만 이루어져 있으므로 패턴을 만족합니다.
+tags:
+  - theory-of-computation
+  - regular-language
+  - trace
+difficulty: 2

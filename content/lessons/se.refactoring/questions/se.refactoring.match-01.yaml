@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.refactoring.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 리팩터링 관련 용어와 설명을 연결하세요.
+leftItems:
+  - id: smell
+    content:
+      - type: text
+        text: 코드 냄새
+  - id: extraction
+    content:
+      - type: text
+        text: 함수 추출
+  - id: equivalence
+    content:
+      - type: text
+        text: 동작 보존
+rightItems:
+  - id: change-signal
+    content:
+      - type: text
+        text: 구조 개선을 검토하라고 알려 주는 반복이나 긴 함수 같은 신호
+  - id: isolate-responsibility
+    content:
+      - type: text
+        text: 긴 코드 일부를 이름 있는 작은 함수로 분리하는 기법
+  - id: observable-contract
+    content:
+      - type: text
+        text: 결과·오류·부수 효과 같은 외부 의미를 유지하는 기준
+correctPairs:
+  - leftId: smell
+    rightId: change-signal
+  - leftId: extraction
+    rightId: isolate-responsibility
+  - leftId: equivalence
+    rightId: observable-contract
+explanation:
+  - type: text
+    text: 냄새는 개선 지점의 신호이고 추출은 책임을 나누는 기법이며, 동작 보존은 외부 계약을 비교하는 기준입니다.
+tags:
+  - software-engineering
+  - refactoring
+  - code-smell
+difficulty: 2

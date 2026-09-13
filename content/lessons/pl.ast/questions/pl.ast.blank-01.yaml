@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.ast.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: AST에서 `1 + 2 * 3`의 곱셈 노드는 덧셈보다 ___ 우선순위로 더 깊은 위치에 놓입니다.
+choices:
+  - 높은
+  - 낮은
+  - 무관한
+acceptedAnswers:
+  - 높은
+explanation:
+  - type: text
+    text: 곱셈을 먼저 계산해야 하므로 곱셈 노드가 덧셈 노드의 자식이 되어 연산자 우선순위를 표현합니다.
+tags:
+  - programming-languages
+  - ast
+  - precedence
+difficulty: 2

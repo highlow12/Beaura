@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: toc.turing-machine.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 코드는 테이프의 1을 오른쪽으로 훑어 빈칸에 1을 하나 추가합니다. 최종 테이프를 고르세요.
+language: python
+code: |-
+  tape = list("111_")
+  head = 0
+  while tape[head] == "1":
+      head += 1
+  tape[head] = "1"
+  print("".join(tape))
+choices:
+  - "1111"
+  - "111_"
+  - "0111"
+acceptedOutputs:
+  - "1111"
+explanation:
+  - type: text
+    text: 헤드는 세 개의 1을 지나 빈칸 위치에 도달하고 그 칸을 1로 덮어써 1111을 만듭니다.
+tags:
+  - theory-of-computation
+  - turing-machine
+  - trace
+difficulty: 2

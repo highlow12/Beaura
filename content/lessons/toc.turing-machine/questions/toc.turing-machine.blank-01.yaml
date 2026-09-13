@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.turing-machine.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 튜링 기계가 헤드를 현재 칸의 오른쪽으로 옮기는 이동 방향 기호는 ___입니다.
+choices:
+  - R
+  - L
+  - S
+acceptedAnswers:
+  - R
+explanation:
+  - type: text
+    text: 전이의 이동 방향에서 R은 오른쪽(right), L은 왼쪽(left)을 뜻합니다.
+tags:
+  - theory-of-computation
+  - turing-machine
+  - head
+difficulty: 1

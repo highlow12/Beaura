@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.lexing.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 렉서가 `=`와 `==`를 함께 지원할 때 보통 일치하는 길이가 더 긴 토큰을 우선하는 ___ 일치 규칙을 사용합니다.
+choices:
+  - 가장 긴
+  - 가장 짧은
+  - 무작위
+acceptedAnswers:
+  - 가장 긴
+explanation:
+  - type: text
+    text: longest match를 적용하면 현재 위치에서 가능한 `==`를 `=` 두 개로 잘못 쪼개지 않습니다.
+tags:
+  - programming-languages
+  - lexer
+  - longest-match
+difficulty: 1

@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: pl.recursive-descent.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 함수는 재귀 하강 파서가 숫자 토큰을 하나씩 더하는 과정을 단순화합니다. 출력은 무엇인가요?
+language: python
+code: |-
+  tokens = [2, 3, 4]
+  total = 0
+  for token in tokens:
+      total += token
+  print(total)
+choices:
+  - "9"
+  - "24"
+  - "7"
+acceptedOutputs:
+  - "9"
+explanation:
+  - type: text
+    text: 토큰 2, 3, 4를 차례로 누적하므로 9가 됩니다. 실제 파서는 이 흐름으로 AST를 만들고 나중에 평가합니다.
+tags:
+  - programming-languages
+  - recursive-descent
+  - trace
+difficulty: 1

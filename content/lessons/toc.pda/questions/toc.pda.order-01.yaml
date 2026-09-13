@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: toc.pda.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "`a^n b^n`을 인식하는 PDA의 입력 처리 흐름을 배열하세요."
+items:
+  - id: push-as
+    content:
+      - type: text
+        text: a를 읽을 때마다 표시를 push한다.
+  - id: switch-phase
+    content:
+      - type: text
+        text: 첫 b를 만나면 b 구간 처리로 전환한다.
+  - id: pop-bs
+    content:
+      - type: text
+        text: b를 읽을 때마다 표시를 pop한다.
+  - id: verify
+    content:
+      - type: text
+        text: 입력 종료와 스택 조건을 함께 확인한다.
+correctOrder:
+  - push-as
+  - switch-phase
+  - pop-bs
+  - verify
+explanation:
+  - type: text
+    text: 두 구간의 역할을 나누어야 b를 읽기 시작한 뒤에는 저장한 a의 개수를 하나씩 소비할 수 있습니다.
+tags:
+  - theory-of-computation
+  - pda
+  - simulation
+difficulty: 2

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: toc.turing-machine.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 튜링 기계가 현재 칸에서 한 단계를 실행하는 순서를 배열하세요.
+items:
+  - id: read
+    content:
+      - type: text
+        text: 헤드 아래 기호와 현재 상태를 읽는다.
+  - id: choose
+    content:
+      - type: text
+        text: 일치하는 전이 규칙을 찾는다.
+  - id: write
+    content:
+      - type: text
+        text: 지정된 기호를 현재 칸에 쓴다.
+  - id: move-state
+    content:
+      - type: text
+        text: 헤드를 이동하고 새 상태로 바꾼다.
+correctOrder:
+  - read
+  - choose
+  - write
+  - move-state
+explanation:
+  - type: text
+    text: 전이 선택은 읽은 상태와 기호에 의존하며, 선택한 규칙의 쓰기·이동·상태 변경을 차례로 적용합니다.
+tags:
+  - theory-of-computation
+  - turing-machine
+  - execution
+difficulty: 2

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: se.cicd.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 커밋을 검증된 배포로 전달하는 기본 파이프라인 순서를 배열하세요.
+items:
+  - id: commit
+    content:
+      - type: text
+        text: 커밋을 파이프라인에 전달한다.
+  - id: build
+    content:
+      - type: text
+        text: 의존성을 준비하고 산출물을 빌드한다.
+  - id: test
+    content:
+      - type: text
+        text: 정적 검사와 테스트로 산출물을 검증한다.
+  - id: deploy
+    content:
+      - type: text
+        text: 통과한 동일 산출물을 대상 환경에 배포한다.
+correctOrder:
+  - commit
+  - build
+  - test
+  - deploy
+explanation:
+  - type: text
+    text: 소스에서 산출물을 만들고 검증한 뒤 같은 산출물을 전달해야 운영 결과가 검증 결과와 일치합니다.
+tags:
+  - software-engineering
+  - cicd
+  - pipeline
+difficulty: 2

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.semantic-analysis.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 식별자 x가 사용된 AST 노드를 의미 분석하는 순서를 배열하세요.
+items:
+  - id: enter-scope
+    content:
+      - type: text
+        text: 현재 AST 위치의 스코프 환경을 확인한다.
+  - id: lookup
+    content:
+      - type: text
+        text: 심벌 테이블에서 x를 조회한다.
+  - id: validate
+    content:
+      - type: text
+        text: 선언 여부와 사용 위치 제약을 검사한다.
+  - id: annotate
+    content:
+      - type: text
+        text: AST 노드에 선언 타입과 위치를 기록한다.
+correctOrder:
+  - enter-scope
+  - lookup
+  - validate
+  - annotate
+explanation:
+  - type: text
+    text: 올바른 환경에서 선언을 찾고 제약을 검사한 뒤 후속 단계가 사용할 분석 결과를 노드에 붙입니다.
+tags:
+  - programming-languages
+  - semantic-analysis
+  - symbol-table
+difficulty: 2

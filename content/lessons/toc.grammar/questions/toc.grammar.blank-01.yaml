@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.grammar.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "`S → aS | b`에서 `S`를 `b`로 바꾸는 것은 하나의 생산 ___을 적용하는 것입니다."
+choices:
+  - 규칙
+  - 상태
+  - 입력
+acceptedAnswers:
+  - 규칙
+explanation:
+  - type: text
+    text: 생산 규칙의 오른쪽 대안을 선택해 비단말을 바꾸는 한 번의 조작을 규칙 적용이라고 합니다.
+tags:
+  - theory-of-computation
+  - grammar
+  - production
+difficulty: 1

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.halting-problem.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 정지 문제는 모든 프로그램과 입력에 대한 정지 여부를 판정하는 문제가 ___ 가능하지 않음을 보입니다.
+choices:
+  - 결정
+  - 정렬
+  - 압축
+acceptedAnswers:
+  - 결정
+explanation:
+  - type: text
+    text: 어떤 특정 프로그램을 분석할 수 있는 경우와 별개로, 모든 프로그램·입력 쌍을 다루는 일반 결정자는 존재하지 않습니다.
+tags:
+  - theory-of-computation
+  - halting-problem
+  - decidability
+difficulty: 1

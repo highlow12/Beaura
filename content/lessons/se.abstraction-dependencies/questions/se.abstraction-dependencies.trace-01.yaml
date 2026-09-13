@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: se.abstraction-dependencies.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 주입된 알림 구현이 호출되는 다음 코드의 출력은 무엇인가요?
+language: python
+code: |-
+  class RecordingNotifier:
+      def notify(self, order_id):
+          print(f"notified:{order_id}")
+
+  def checkout(order_id, notifier):
+      notifier.notify(order_id)
+
+  checkout("A7", RecordingNotifier())
+choices:
+  - notified:A7
+  - checkout:A7
+  - notified:RecordingNotifier
+acceptedOutputs:
+  - notified:A7
+explanation:
+  - type: text
+    text: checkout은 구체 구현을 만들지 않고 전달받은 notifier의 notify를 호출하므로 주문 ID A7이 출력됩니다.
+tags:
+  - software-engineering
+  - dependency-injection
+  - code-trace
+difficulty: 2

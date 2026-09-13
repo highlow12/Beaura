@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: se.error-handling.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 잘못된 포트 문자열을 기본값으로 복구하는 다음 코드의 출력은 무엇인가요?
+language: python
+code: |-
+  def parse_port(text):
+      try:
+          return int(text)
+      except ValueError:
+          return 8080
+
+  print(parse_port("bad"))
+choices:
+  - "8080"
+  - bad
+  - ValueError
+acceptedOutputs:
+  - "8080"
+explanation:
+  - type: text
+    text: int("bad")가 ValueError를 일으키지만 해당 예외를 잡아 8080을 반환하므로 그 값이 출력됩니다.
+tags:
+  - software-engineering
+  - error-handling
+  - code-trace
+difficulty: 2

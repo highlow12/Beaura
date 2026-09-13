@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: se.system-tradeoffs.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 시스템 설계 대안을 비교해 결정하는 순서를 배열하세요.
+items:
+  - id: requirements
+    content:
+      - type: text
+        text: 우선순위와 허용 범위를 요구사항으로 적는다.
+  - id: options
+    content:
+      - type: text
+        text: 가능한 설계 대안을 나열한다.
+  - id: constraints
+    content:
+      - type: text
+        text: 각 대안의 비용과 장애 시 결과를 비교한다.
+  - id: decision
+    content:
+      - type: text
+        text: 선택한 이유와 다시 검토할 조건을 기록한다.
+correctOrder:
+  - requirements
+  - options
+  - constraints
+  - decision
+explanation:
+  - type: text
+    text: 무엇을 최적화할지 먼저 정하고 대안을 만든 뒤 비용과 실패 결과를 비교해야 선택의 이유를 설명할 수 있습니다.
+tags:
+  - software-engineering
+  - system-design
+  - decision-making
+difficulty: 2

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: toc.regular-languages.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 정규식 0(0|1)*를 DFA로 실행하기 위한 사고 순서를 배열하세요.
+items:
+  - id: first-symbol
+    content:
+      - type: text
+        text: 입력의 첫 기호가 0인지 확인한다.
+  - id: reject-other
+    content:
+      - type: text
+        text: 첫 기호가 0이 아니면 거부 상태로 보낸다.
+  - id: enter-accept
+    content:
+      - type: text
+        text: 0을 읽었다면 나머지를 읽는 수용 상태로 들어간다.
+  - id: loop-rest
+    content:
+      - type: text
+        text: 이후 0과 1에서는 수용 상태에 머문다.
+correctOrder:
+  - first-symbol
+  - reject-other
+  - enter-accept
+  - loop-rest
+explanation:
+  - type: text
+    text: 맨 앞의 0이라는 조건을 먼저 확인하고, 스타가 적용된 나머지 부분은 두 기호 모두 허용하면 됩니다.
+tags:
+  - theory-of-computation
+  - regular-expression
+  - dfa
+difficulty: 2

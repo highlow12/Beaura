@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.semantic-analysis
+revision: 1
+track: programming-languages
+title: 의미 분석
+description: 심벌 테이블과 타입 검사를 이용해 구문 이후의 제약을 확인한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.semantic-analysis.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.semantic-analysis.match-01
+  - type: question
+    ref: pl.semantic-analysis.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.semantic-analysis.order-01
+  - type: question
+    ref: pl.semantic-analysis.trace-01

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.pda.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: PDA에서 새 기호를 스택 맨 위에 넣는 연산을 ___이라고 합니다.
+choices:
+  - push
+  - pop
+  - peek
+acceptedAnswers:
+  - push
+explanation:
+  - type: text
+    text: push는 스택 위에 기호를 추가하고, pop은 맨 위 기호를 제거하는 연산입니다.
+tags:
+  - theory-of-computation
+  - pda
+  - stack-operation
+difficulty: 1

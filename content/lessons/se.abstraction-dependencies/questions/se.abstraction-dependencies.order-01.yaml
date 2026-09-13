@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: se.abstraction-dependencies.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 이메일 알림을 교체 가능한 의존성으로 만드는 순서를 배열하세요.
+items:
+  - id: volatile-detail
+    content:
+      - type: text
+        text: 교체될 수 있는 이메일 API 세부 사항을 식별한다.
+  - id: define-port
+    content:
+      - type: text
+        text: 정책이 필요한 동작을 작은 알림 포트로 정의한다.
+  - id: implement-adapter
+    content:
+      - type: text
+        text: 이메일 어댑터가 포트의 약속을 구현하게 한다.
+  - id: inject
+    content:
+      - type: text
+        text: 시작 지점에서 어댑터를 정책에 주입한다.
+correctOrder:
+  - volatile-detail
+  - define-port
+  - implement-adapter
+  - inject
+explanation:
+  - type: text
+    text: 변동 지점을 먼저 구분하고 정책 중심의 포트를 만든 다음 어댑터를 구현해 조립 단계에서 전달합니다.
+tags:
+  - software-engineering
+  - dependency-injection
+  - design-process
+difficulty: 2

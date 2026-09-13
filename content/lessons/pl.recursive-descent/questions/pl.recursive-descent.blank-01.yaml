@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.recursive-descent.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "`Expr → Expr + Term`처럼 함수가 토큰을 소비하기 전에 자기 자신을 부르는 문법은 ___ 재귀입니다."
+choices:
+  - 왼쪽
+  - 오른쪽
+  - 무작위
+acceptedAnswers:
+  - 왼쪽
+explanation:
+  - type: text
+    text: 왼쪽 재귀는 재귀 하강 함수가 입력을 소비하기 전에 다시 자신을 호출하게 해 무한 재귀를 일으킬 수 있습니다.
+tags:
+  - programming-languages
+  - recursive-descent
+  - left-recursion
+difficulty: 1

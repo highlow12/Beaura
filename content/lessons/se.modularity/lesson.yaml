@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.modularity
+revision: 1
+track: software-engineering
+title: 모듈화와 결합도
+description: 응집도와 결합도로 변경하기 쉬운 모듈 경계를 설계한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: se.modularity.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: se.modularity.match-01
+  - type: question
+    ref: se.modularity.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: se.modularity.order-01
+  - type: question
+    ref: se.modularity.trace-01
