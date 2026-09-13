@@ -144,13 +144,20 @@ one bottom rule or a subtle surface, not a collection of colorful tiles.
 
 ## Lesson Nodes
 
-Every lesson node uses the same anatomy: a 52px signature icon block, title,
-one-line description, status text, and one action. The icon comes from the
-track motif (`>_`, `CPU`, `Σ`, `node`, graph, pixel) and receives the track
-accent through `--track-accent`. `available` is a quiet outlined node;
-`in-progress` has an accent edge and progress cue; `completed` uses the success
-mark plus the track accent; `locked` is muted and shows its prerequisite text.
-The node action is always in the same place and remains at least 44px tall.
+The learning tab presents each selected track as a top-to-bottom DAG. Ranks are
+derived from the longest chain of in-track `requires` edges; lesson order and
+screen coordinates are never hardcoded. Thin routed connectors make branches
+and merges explicit. Requirements from another track remain visible as an
+external-prerequisite count and are named in the detail panel.
+
+Every graph node uses the same compact anatomy: a 30px status or motif marker,
+a two-line lesson title, and a short status line. `available` is quietly
+outlined; `in-progress` uses the track accent; `completed` uses a success mark;
+and `locked` is muted but remains selectable so prerequisites can be inspected.
+The selected node may use a 2px track border and low shadow, without a selection
+animation. Nodes are buttons with at least a 44px hit area. One quiet detail
+panel below the graph contains the description, stable lesson ID, prerequisites,
+and the single lesson CTA.
 
 ## Question Cards
 
@@ -212,8 +219,10 @@ transitions to near-zero while preserving state changes.
 
 Design from 320px up. At 640px the header nav becomes a fixed bottom nav; page
 content uses 16px gutters and bottom safe-area padding. Track tabs scroll
-horizontally without forcing the page to scroll. Lesson and review columns
-collapse to one column. Long Korean labels wrap naturally; code blocks scroll
+horizontally without forcing the page to scroll. The learning DAG remains
+top-to-bottom; wide branches use an internal horizontal scroll region instead
+of shrinking lesson text. The detail panel collapses to one column with a
+full-width CTA. Long Korean labels wrap naturally; code blocks scroll
 horizontally. Matching remains two compact columns. All pointer controls and
 icon controls are 44px or larger. Respect `env(safe-area-inset-top)` and
 `env(safe-area-inset-bottom)`.

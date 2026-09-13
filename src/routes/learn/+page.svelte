@@ -19,12 +19,14 @@
     missingPrerequisites,
     statusLabels,
   } from "$lib/curriculum/progress";
+  import { layoutCurriculumDag } from "$lib/curriculum/dag-layout";
 
   type SwipeStart = { pointerId: number; x: number; y: number };
 
   let data = $state<Dashboard | null>(null);
   let error = $state("");
   let selectedTrackId = $state<string | null>(null);
+  let selectedLessonId = $state<string | null>(null);
   let showSwipeHint = $state(false);
   let transitionDirection = $state<SwipeDirection>("next");
   let hintEvaluated = false;
@@ -33,13 +35,20 @@
 
   function trackMotif(trackId: string): string {
     switch (trackId) {
-      case "python": return ">_";
-      case "computer-architecture": return "CPU";
-      case "discrete-math": return "Σ";
-      case "data-structures": return "•—•";
-      case "algorithms": return "↗";
-      case "computer-systems": return "0101";
-      default: return "[]";
+      case "python":
+        return ">_";
+      case "computer-architecture":
+        return "CPU";
+      case "discrete-math":
+        return "Σ";
+      case "data-structures":
+        return "•—•";
+      case "algorithms":
+        return "↗";
+      case "computer-systems":
+        return "0101";
+      default:
+        return "[]";
     }
   }
 
@@ -65,6 +74,50 @@
       ? data.lessons.filter((lesson) => lesson.track === selectedTrack.id)
       : [],
   );
+  let lessonById = $derived(
+    new Map(selectedLessons.map((lesson) => [lesson.id, lesson])),
+  );
+  let dagLayout = $derived(
+    layoutCurriculumDag(
+      selectedLessons.map((lesson) => lesson.id),
+      data?.curriculum.nodes ?? [],
+    ),
+  );
+  let selectedLesson = $derived(
+    selectedLessons.find((lesson) => lesson.id === selectedLessonId) ??
+      selectedLessons[0] ??
+      null,
+  );
+  let completedLessonCount = $derived(
+    data && selectedTrack
+      ? selectedLessons.filter(
+          (lesson) =>
+            lessonStatus(
+              lesson,
+              data!.curriculum,
+              data!.snapshot.lessonStates,
+            ) === "completed",
+        ).length
+      : 0,
+  );
+  let selectedRequiredIds = $derived(
+    selectedLesson && data
+      ? (data.curriculum.nodes.find(
+          (node) => node.lesson === selectedLesson!.id,
+        )?.requires ?? [])
+      : [],
+  );
+  let selectedMissingIds = $derived(
+    selectedLesson && data
+      ? new Set(
+          missingPrerequisites(
+            selectedLesson.id,
+            data.curriculum,
+            data.snapshot.lessonStates,
+          ),
+        )
+      : new Set<string>(),
+  );
 
   function localStorageIfAvailable(): Storage | null {
     if (typeof window === "undefined") return null;
@@ -73,6 +126,36 @@
     } catch {
       return null;
     }
+  }
+
+  function defaultLessonId(
+    lessons: Dashboard["lessons"],
+    curriculum: Dashboard["curriculum"],
+    states: Dashboard["snapshot"]["lessonStates"],
+  ): string | null {
+    const inProgress = lessons.find(
+      (lesson) => lessonStatus(lesson, curriculum, states) === "in-progress",
+    );
+    if (inProgress) return inProgress.id;
+
+    const available = lessons.find(
+      (lesson) => lessonStatus(lesson, curriculum, states) === "available",
+    );
+    if (available) return available.id;
+
+    const stateByLesson = new Map(
+      states.map((state) => [state.lessonId, state]),
+    );
+    const completed = lessons
+      .filter(
+        (lesson) => lessonStatus(lesson, curriculum, states) === "completed",
+      )
+      .sort(
+        (left, right) =>
+          (stateByLesson.get(right.id)?.lastStudiedAt ?? 0) -
+          (stateByLesson.get(left.id)?.lastStudiedAt ?? 0),
+      );
+    return completed[0]?.id ?? lessons[0]?.id ?? null;
   }
 
   async function load() {
@@ -89,6 +172,14 @@
       // Track selection is deliberately local to this page. Every fresh entry
       // starts at the first currently reachable track in curriculum order.
       selectedTrackId = nextTracks[0]?.id ?? null;
+      const nextLessons = nextTracks[0]
+        ? next.lessons.filter((lesson) => lesson.track === nextTracks[0].id)
+        : [];
+      selectedLessonId = defaultLessonId(
+        nextLessons,
+        next.curriculum,
+        next.snapshot.lessonStates,
+      );
       if (!hintEvaluated && nextTracks.length > 1) {
         hintEvaluated = true;
         const storage = localStorageIfAvailable();
@@ -121,6 +212,16 @@
     if (nextIndex < 0 || nextIndex === selectedTrackIndex) return;
     transitionDirection = nextIndex > selectedTrackIndex ? "next" : "previous";
     selectedTrackId = trackId;
+    if (data) {
+      const nextLessons = data.lessons.filter(
+        (lesson) => lesson.track === trackId,
+      );
+      selectedLessonId = defaultLessonId(
+        nextLessons,
+        data.curriculum,
+        data.snapshot.lessonStates,
+      );
+    }
     if (showSwipeHint) dismissSwipeHint();
   }
 
@@ -152,6 +253,8 @@
 
   function handlePointerDown(event: PointerEvent) {
     if (!event.isPrimary) return;
+    const target = event.target;
+    if (target instanceof Element && target.closest(".dag-scroll")) return;
     if (event.pointerType === "mouse" && event.button !== 0) return;
     const surface = event.currentTarget as HTMLElement;
     surface.setPointerCapture(event.pointerId);
@@ -160,6 +263,11 @@
       x: event.clientX,
       y: event.clientY,
     };
+  }
+
+  function selectLesson(lessonId: string) {
+    if (!lessonById.has(lessonId)) return;
+    selectedLessonId = lessonId;
   }
 
   function handlePointerUp(event: PointerEvent) {
@@ -278,78 +386,221 @@
           >
             <div>
               <div class="track-heading" data-track={selectedTrack.id}>
-                <span class="track-motif" aria-hidden="true">{trackMotif(selectedTrack.id)}</span>
+                <span class="track-motif" aria-hidden="true"
+                  >{trackMotif(selectedTrack.id)}</span
+                >
                 <div class="track-heading-copy">
                   <div class="row">
                     <h2>{selectedTrack.title}</h2>
                     <span class="muted"
-                  >{selectedLessons.filter(
-                    (lesson) =>
-                      lessonStatus(
-                        lesson,
-                        data!.curriculum,
-                        data!.snapshot.lessonStates,
-                      ) === "completed",
-                  ).length} / {selectedLessons.length} 완료</span>
+                      >{completedLessonCount} / {selectedLessons.length} 완료</span
+                    >
                   </div>
                   {#if selectedTrack.description}<p class="muted">
-                    {selectedTrack.description}
-                  </p>{/if}
+                      {selectedTrack.description}
+                    </p>{/if}
                 </div>
               </div>
             </div>
-            <div class="lesson-list">
-              {#each selectedLessons as lesson, index}
-                {@const status = lessonStatus(
-                  lesson,
-                  data.curriculum,
-                  data.snapshot.lessonStates,
-                )}
-                <article
-                  class="card lesson-card"
-                  class:locked={status === "locked"}
-                  class:in-progress={status === "in-progress"}
-                  data-track={selectedTrack.id}
-                >
+            <section
+              class="dag-section"
+              data-track={selectedTrack.id}
+              aria-labelledby={`dag-title-${selectedTrack.id}`}
+            >
+              <div class="dag-heading">
+                <div>
+                  <h3 id={`dag-title-${selectedTrack.id}`}>선행 관계</h3>
+                  <p class="muted">
+                    위에서 아래로 갈수록 다음에 배울 수 있는 레슨입니다.
+                  </p>
+                </div>
+                <div class="dag-legend" aria-label="레슨 상태">
                   <span
-                    class="lesson-number"
-                    class:done={status === "completed"}
-                    aria-hidden="true"
-                    ><span class="lesson-motif">{status === "completed" ? "✓" : trackMotif(selectedTrack.id)}</span><span class="lesson-index">{String(index + 1).padStart(2, "0")}</span></span
+                    ><i class="legend-dot completed" aria-hidden="true">✓</i
+                    >완료</span
                   >
-                  <div class="lesson-info">
-                    <span class="badge" class:success={status === "completed"}
-                      >{statusLabels[status]}</span
+                  <span
+                    ><i class="legend-dot in-progress" aria-hidden="true">●</i
+                    >학습 중</span
+                  >
+                  <span
+                    ><i class="legend-dot available" aria-hidden="true">+</i
+                    >시작 가능</span
+                  >
+                </div>
+              </div>
+
+              <div class="dag-viewport">
+                <div
+                  class="dag-scroll"
+                  role="region"
+                  aria-label={`${selectedTrack.title} 레슨 DAG`}
+                  aria-describedby={`dag-help-${selectedTrack.id}`}
+                >
+                  <div
+                    class="dag-canvas"
+                    style={`width: ${dagLayout.width}px; height: ${dagLayout.height}px;`}
+                  >
+                    <svg
+                      class="dag-edges"
+                      viewBox={`0 0 ${dagLayout.width} ${dagLayout.height}`}
+                      aria-hidden="true"
                     >
-                    <h3>{lesson.title}</h3>
-                    <p class="muted">{lesson.description}</p>
-                    {#if status === "locked"}<p class="prerequisites">
-                        먼저 배워요: {missingPrerequisites(
-                          lesson.id,
-                          data.curriculum,
-                          data.snapshot.lessonStates,
-                        )
-                          .map(
-                            (id) =>
-                              data!.lessons.find((item) => item.id === id)
-                                ?.title ?? id,
-                          )
-                          .join(", ")}
-                      </p>{/if}
+                      <defs>
+                        <marker
+                          id={`dag-arrow-${selectedTrack.id}`}
+                          viewBox="0 0 8 8"
+                          refX="7"
+                          refY="4"
+                          markerWidth="5"
+                          markerHeight="5"
+                          orient="auto-start-reverse"
+                        >
+                          <path d="M 0 0 L 8 4 L 0 8 z" />
+                        </marker>
+                      </defs>
+                      {#each dagLayout.edges as edge}
+                        {@const targetLesson = lessonById.get(edge.targetId)}
+                        {@const targetStatus = targetLesson
+                          ? lessonStatus(
+                              targetLesson,
+                              data.curriculum,
+                              data.snapshot.lessonStates,
+                            )
+                          : "locked"}
+                        <path
+                          d={edge.path}
+                          class:edge-muted={targetStatus === "locked"}
+                          marker-end={`url(#dag-arrow-${selectedTrack.id})`}
+                        />
+                      {/each}
+                    </svg>
+
+                    <div class="dag-nodes">
+                      {#each dagLayout.nodes as node (node.id)}
+                        {@const lesson = lessonById.get(node.id)}
+                        {#if lesson}
+                          {@const status = lessonStatus(
+                            lesson,
+                            data.curriculum,
+                            data.snapshot.lessonStates,
+                          )}
+                          <button
+                            type="button"
+                            class="lesson-node"
+                            class:selected={lesson.id === selectedLesson?.id}
+                            class:completed={status === "completed"}
+                            class:in-progress={status === "in-progress"}
+                            class:locked={status === "locked"}
+                            data-track={selectedTrack.id}
+                            aria-pressed={lesson.id === selectedLesson?.id}
+                            aria-label={`${lesson.title}, ${statusLabels[status]}${node.externalPrerequisiteCount ? `, 외부 선행 ${node.externalPrerequisiteCount}개` : ""}`}
+                            style={`--node-x: ${node.x}px; --node-y: ${node.y}px; --node-width: ${node.width}px; --node-height: ${node.height}px;`}
+                            onclick={() => selectLesson(lesson.id)}
+                          >
+                            <span class="node-icon" aria-hidden="true"
+                              >{status === "completed"
+                                ? "✓"
+                                : trackMotif(selectedTrack.id)}</span
+                            >
+                            <span class="node-copy">
+                              <strong>{lesson.title}</strong>
+                              <span class="node-status"
+                                >{statusLabels[status]}</span
+                              >
+                              {#if node.externalPrerequisiteCount}
+                                <span class="node-external"
+                                  >+{node.externalPrerequisiteCount} 외부 선행</span
+                                >
+                              {/if}
+                            </span>
+                          </button>
+                        {/if}
+                      {/each}
+                    </div>
                   </div>
-                  {#if status !== "locked"}<a
-                      class="button secondary"
-                      href={`${base}/learn/${lesson.id}`}
-                      aria-label={`${lesson.title} ${status === "completed" ? "다시 읽기" : "학습하기"}`}
-                      >{status === "completed"
+                </div>
+              </div>
+              <p id={`dag-help-${selectedTrack.id}`} class="dag-help muted">
+                선을 따라 선행 레슨과 다음 갈림길을 확인하세요. 넓은 그래프는
+                좌우로 움직일 수 있어요.
+              </p>
+            </section>
+
+            {#if selectedLesson}
+              {@const selectedStatus = lessonStatus(
+                selectedLesson,
+                data.curriculum,
+                data.snapshot.lessonStates,
+              )}
+              <section
+                class="lesson-detail"
+                data-track={selectedTrack.id}
+                aria-live="polite"
+                aria-labelledby={`lesson-detail-title-${selectedLesson.id}`}
+              >
+                <div class="detail-status-row">
+                  <span
+                    class="detail-status"
+                    class:success={selectedStatus === "completed"}
+                  >
+                    <span aria-hidden="true"
+                      >{selectedStatus === "completed"
+                        ? "✓"
+                        : trackMotif(selectedTrack.id)}</span
+                    >
+                    {statusLabels[selectedStatus]}
+                  </span>
+                  <code>{selectedLesson.id}</code>
+                </div>
+                <div class="detail-content">
+                  <h3 id={`lesson-detail-title-${selectedLesson.id}`}>
+                    {selectedLesson.title}
+                  </h3>
+                  <p>{selectedLesson.description}</p>
+                  {#if selectedRequiredIds.length}
+                    <div class="detail-prerequisites">
+                      <span class="detail-label">선행 레슨</span>
+                      <div class="prerequisite-list">
+                        {#each selectedRequiredIds as prerequisiteId}
+                          <span
+                            class:unmet={selectedMissingIds.has(prerequisiteId)}
+                            class="prerequisite-chip"
+                          >
+                            <span aria-hidden="true"
+                              >{selectedMissingIds.has(prerequisiteId)
+                                ? "·"
+                                : "✓"}</span
+                            >
+                            {data.lessons.find(
+                              (lesson) => lesson.id === prerequisiteId,
+                            )?.title ?? prerequisiteId}
+                          </span>
+                        {/each}
+                      </div>
+                    </div>
+                  {/if}
+                </div>
+                <div class="detail-action">
+                  {#if selectedStatus !== "locked"}
+                    <a
+                      class="button"
+                      href={`${base}/learn/${selectedLesson.id}`}
+                      aria-label={`${selectedLesson.title} ${selectedStatus === "completed" ? "다시 읽기" : "학습하기"}`}
+                      >{selectedStatus === "completed"
                         ? "다시 읽기"
-                        : status === "in-progress"
+                        : selectedStatus === "in-progress"
                           ? "이어하기"
-                          : "시작"}</a
-                    >{/if}
-                </article>
-              {/each}
-            </div>
+                          : "시작하기"}</a
+                    >
+                  {:else}
+                    <span class="detail-locked"
+                      >선행 레슨을 모두 완료하면 시작할 수 있어요.</span
+                    >
+                  {/if}
+                </div>
+              </section>
+            {/if}
           </div>
         {/key}
       </div>
@@ -388,7 +639,10 @@
     background: var(--surface);
     color: var(--text-muted);
     font-weight: 600;
-    transition: border-color var(--dur-1) ease, background-color var(--dur-1) ease, color var(--dur-1) ease;
+    transition:
+      border-color var(--dur-1) ease,
+      background-color var(--dur-1) ease,
+      color var(--dur-1) ease;
   }
 
   .track-tab {
@@ -480,9 +734,14 @@
     place-items: center;
     width: 3.25rem;
     height: 3.25rem;
-    border: 1px solid color-mix(in srgb, var(--track-accent, var(--primary)) 60%, var(--border));
+    border: 1px solid
+      color-mix(in srgb, var(--track-accent, var(--primary)) 60%, var(--border));
     border-radius: var(--radius-md);
-    background: color-mix(in srgb, var(--track-accent, var(--primary)) 12%, var(--surface));
+    background: color-mix(
+      in srgb,
+      var(--track-accent, var(--primary)) 12%,
+      var(--surface)
+    );
     color: var(--track-accent, var(--primary));
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-size: 0.78rem;
@@ -490,105 +749,461 @@
     line-height: 1;
   }
 
-  .lesson-list {
+  .dag-section {
     display: grid;
     gap: var(--space-3);
   }
 
-  .lesson-card {
+  .dag-heading {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: space-between;
     gap: var(--space-4);
-    border-left: 3px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: var(--space-4);
-    transition: border-color var(--dur-1) ease, background-color var(--dur-1) ease;
   }
 
-  .lesson-card[data-track] {
-    border-left-color: color-mix(in srgb, var(--track-accent, var(--border)) 62%, var(--border));
+  .dag-heading h3 {
+    margin: 0;
+    font-size: 1rem;
   }
 
-  .lesson-card.in-progress {
-    border-left-width: 4px;
-    background: color-mix(in srgb, var(--track-accent, var(--primary)) 5%, var(--surface));
+  .dag-heading p {
+    margin: var(--space-1) 0 0;
+    font-size: 0.88rem;
   }
 
-  .lesson-info {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .lesson-info h3 {
-    margin: var(--space-2) 0 var(--space-1);
-  }
-
-  .lesson-info p {
-    margin-bottom: 0;
-  }
-
-  .lesson-number {
-    display: grid;
-    align-content: center;
-    justify-items: center;
+  .dag-legend {
+    display: flex;
     flex: 0 0 auto;
-    width: 3.25rem;
-    min-height: 3.25rem;
-    flex-shrink: 0;
-    border: 1px solid color-mix(in srgb, var(--track-accent, var(--primary)) 60%, var(--border));
-    border-radius: var(--radius-md);
-    background: color-mix(in srgb, var(--track-accent, var(--primary)) 10%, var(--surface));
-    color: var(--track-accent, var(--primary));
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-weight: 700;
-    line-height: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: var(--space-2) var(--space-3);
+    color: var(--text-muted);
+    font-size: 0.75rem;
   }
 
-  .lesson-motif { font-size: 0.72rem; }
-  .lesson-index { margin-top: 0.28rem; color: var(--text-muted); font-size: 0.65rem; font-weight: 500; }
+  .dag-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    white-space: nowrap;
+  }
 
-  .lesson-number.done {
-    border-color: var(--success);
+  .legend-dot {
+    display: inline-grid;
+    width: 1.2rem;
+    height: 1.2rem;
+    place-items: center;
+    border: 1px solid var(--border-strong);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text-muted);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .legend-dot.completed {
+    border-color: color-mix(in srgb, var(--success) 60%, var(--border));
     background: var(--success-soft);
     color: var(--success);
   }
 
-  .lesson-number.done .lesson-index { color: var(--success); }
-
-  .locked {
-    border-left-color: var(--border) !important;
-    background: var(--surface-muted);
-    color: var(--text-muted);
+  .legend-dot.in-progress {
+    border-color: color-mix(
+      in srgb,
+      var(--track-accent, var(--primary)) 60%,
+      var(--border)
+    );
+    background: color-mix(
+      in srgb,
+      var(--track-accent, var(--primary)) 12%,
+      var(--surface)
+    );
+    color: var(--track-accent, var(--primary));
   }
 
-  .locked .lesson-number {
+  .legend-dot.available {
+    color: var(--primary);
+  }
+
+  .dag-viewport {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-muted);
+  }
+
+  .dag-scroll {
+    max-width: 100%;
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: var(--space-2);
+    scrollbar-width: thin;
+    touch-action: pan-x pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dag-canvas {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .dag-edges,
+  .dag-nodes {
+    position: absolute;
+    inset: 0;
+  }
+
+  .dag-edges {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    color: color-mix(
+      in srgb,
+      var(--track-accent, var(--primary)) 62%,
+      var(--border)
+    );
+    pointer-events: none;
+  }
+
+  .dag-edges path {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+    opacity: 0.85;
+  }
+
+  .dag-edges path.edge-muted {
+    stroke-dasharray: 3 4;
+    opacity: 0.45;
+  }
+
+  .dag-edges marker path {
+    fill: currentColor;
+    stroke: none;
+  }
+
+  .dag-nodes {
+    pointer-events: none;
+  }
+
+  .lesson-node {
+    position: absolute;
+    top: var(--node-y);
+    left: var(--node-x);
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    width: var(--node-width);
+    min-height: var(--node-height);
+    border: 1px solid
+      color-mix(in srgb, var(--track-accent, var(--primary)) 58%, var(--border));
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    color: var(--text);
+    padding: 0.65rem 0.6rem;
+    text-align: left;
+    pointer-events: auto;
+    transition:
+      border-color var(--dur-1) ease,
+      background-color var(--dur-1) ease,
+      color var(--dur-1) ease;
+  }
+
+  .lesson-node:hover {
+    border-color: var(--track-accent, var(--primary));
+    background: color-mix(
+      in srgb,
+      var(--track-accent, var(--primary)) 5%,
+      var(--surface)
+    );
+  }
+
+  .lesson-node:active {
+    transform: translateY(1px);
+  }
+
+  .lesson-node.selected {
+    border-width: 2px;
+    border-color: var(--track-accent, var(--primary));
+    background: color-mix(
+      in srgb,
+      var(--track-accent, var(--primary)) 8%,
+      var(--surface-raised)
+    );
+    box-shadow: var(--shadow-sm);
+  }
+
+  .lesson-node.completed {
+    border-color: color-mix(
+      in srgb,
+      var(--success) 58%,
+      var(--track-accent, var(--border))
+    );
+  }
+
+  .lesson-node.in-progress {
+    border-color: var(--track-accent, var(--primary));
+    background: color-mix(
+      in srgb,
+      var(--track-accent, var(--primary)) 7%,
+      var(--surface)
+    );
+  }
+
+  .lesson-node.locked {
     border-color: var(--border);
     background: var(--surface-muted);
     color: var(--text-muted);
   }
 
-  .prerequisites {
-    color: var(--warning) !important;
+  .lesson-node.locked:hover {
+    border-color: var(--border-strong);
+    background: var(--surface);
+  }
+
+  .node-icon {
+    display: grid;
+    flex: 0 0 auto;
+    width: 1.9rem;
+    height: 1.9rem;
+    place-items: center;
+    border: 1px solid
+      color-mix(in srgb, var(--track-accent, var(--primary)) 52%, var(--border));
+    border-radius: var(--radius-sm);
+    background: color-mix(
+      in srgb,
+      var(--track-accent, var(--primary)) 11%,
+      var(--surface)
+    );
+    color: var(--track-accent, var(--primary));
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .lesson-node.completed .node-icon {
+    border-color: color-mix(in srgb, var(--success) 52%, var(--border));
+    background: var(--success-soft);
+    color: var(--success);
+  }
+
+  .lesson-node.locked .node-icon {
+    border-color: var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+  }
+
+  .node-copy {
+    display: grid;
+    min-width: 0;
+    gap: 0.12rem;
+  }
+
+  .node-copy strong {
+    display: -webkit-box;
+    overflow: hidden;
+    color: inherit;
     font-size: 0.82rem;
+    font-weight: 650;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .node-status,
+  .node-external {
+    overflow: hidden;
+    color: var(--text-muted);
+    font-size: 0.67rem;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .node-external {
+    color: var(--warning);
+  }
+
+  .dag-help {
+    margin: 0;
+    font-size: 0.78rem;
+  }
+
+  .lesson-detail {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: start;
+    gap: var(--space-4);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--track-accent, var(--primary));
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    padding: var(--space-4);
+  }
+
+  .detail-status-row {
+    display: grid;
+    align-content: start;
+    gap: var(--space-2);
+    min-width: 7rem;
+  }
+
+  .detail-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    width: fit-content;
+    color: var(--track-accent, var(--primary));
+    font-size: 0.82rem;
+    font-weight: 650;
+  }
+
+  .detail-status.success {
+    color: var(--success);
+  }
+
+  .detail-status-row code {
+    width: fit-content;
+    overflow-wrap: anywhere;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+  }
+
+  .detail-content {
+    min-width: 0;
+  }
+
+  .detail-content h3 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .detail-content p {
+    margin: var(--space-2) 0 0;
+    color: var(--text-muted);
+  }
+
+  .detail-prerequisites {
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+
+  .detail-label {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+  }
+
+  .prerequisite-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .prerequisite-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    max-width: 100%;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface-muted);
+    color: var(--text-muted);
+    padding: 0.35rem 0.5rem;
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+  }
+
+  .prerequisite-chip.unmet {
+    border-color: color-mix(in srgb, var(--warning) 55%, var(--border));
+    background: var(--warning-soft);
+    color: var(--warning);
+  }
+
+  .detail-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 7rem;
+  }
+
+  .detail-action .button {
+    white-space: nowrap;
+  }
+
+  .detail-locked {
+    color: var(--warning);
+    font-size: 0.78rem;
+    line-height: 1.45;
+    text-align: right;
   }
 
   @media (max-width: 540px) {
     .track-navigation {
       gap: 0.35rem;
     }
+
     .track-tab {
       padding-inline: 0.7rem;
     }
+
     .swipe-hint {
       align-items: flex-start;
       flex-direction: column;
     }
-    .lesson-card {
-      flex-wrap: wrap;
+
+    .dag-heading {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .dag-legend {
+      justify-content: flex-start;
+    }
+
+    .lesson-detail {
+      grid-template-columns: minmax(0, 1fr);
       gap: var(--space-3);
     }
-    .lesson-card .button {
-      margin-left: calc(3.25rem + var(--space-3));
+
+    .detail-status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 0;
+    }
+
+    .detail-action {
+      justify-content: stretch;
+      min-width: 0;
+    }
+
+    .detail-action .button {
+      width: 100%;
+    }
+
+    .detail-locked {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .dag-scroll {
+      padding: var(--space-1);
+    }
+
+    .lesson-node {
+      padding-inline: 0.5rem;
     }
   }
 
