@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: arch.binary.bit-weight-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 오른쪽에서 네 번째 비트가 1일 때 그 비트가 나타내는 값은 얼마인가요? 가장 오른쪽 비트의 값은 1입니다.
+options:
+  - id: weight-8
+    content:
+      - type: text
+        text: '8'
+  - id: weight-4
+    content:
+      - type: text
+        text: '4'
+  - id: weight-16
+    content:
+      - type: text
+        text: '16'
+correctOptionId: weight-8
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 오른쪽부터 자리값은 1, 2, 4, 8 순서이므로 네 번째 비트의 값은 8입니다.
+tags:
+  - binary
+  - bits
+  - place-value
+difficulty: 1

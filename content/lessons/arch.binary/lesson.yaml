@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.binary
-revision: 1
+revision: 2
 track: computer-architecture
 title: 이진수와 비트
 description: 컴퓨터가 값을 0과 1의 비트 조합으로 표현하는 방식을 배운다.
@@ -15,3 +15,9 @@ flow:
     ref: arch.binary.unsigned-byte-01
   - type: question
     ref: arch.binary.hex-digit-01
+  - type: content
+    ref: content/place-value.md
+  - type: question
+    ref: arch.binary.to-decimal-01
+  - type: question
+    ref: arch.binary.bit-weight-01

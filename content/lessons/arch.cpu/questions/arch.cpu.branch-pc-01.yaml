@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: arch.cpu.branch-pc-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 조건 분기가 실제로 수행되었을 때 프로그램 카운터(PC)는 보통 무엇을 가리켜야 하나요?
+options:
+  - id: branch-target
+    content:
+      - type: text
+        text: 분기 대상 명령의 위치
+  - id: current-instruction
+    content:
+      - type: text
+        text: 방금 실행한 명령의 위치를 계속 유지
+  - id: data-value
+    content:
+      - type: text
+        text: ALU가 계산한 일반 데이터 값
+correctOptionId: branch-target
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 분기가 수행되면 다음 fetch가 분기 대상에서 시작하도록 PC가 그 위치로 갱신됩니다.
+tags:
+  - cpu
+  - program-counter
+  - branch
+difficulty: 1

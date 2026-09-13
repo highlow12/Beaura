@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.cpu
-revision: 1
+revision: 2
 track: computer-architecture
 title: CPU 실행 사이클
 description: CPU가 명령을 가져오고 해석해 실행하는 기본 흐름을 이해한다.
@@ -15,3 +15,9 @@ flow:
     ref: arch.cpu.register-01
   - type: question
     ref: arch.cpu.register-update-01
+  - type: content
+    ref: content/program-counter.md
+  - type: question
+    ref: arch.cpu.pc-sequential-01
+  - type: question
+    ref: arch.cpu.branch-pc-01

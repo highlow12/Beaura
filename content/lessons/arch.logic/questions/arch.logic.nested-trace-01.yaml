@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: arch.logic.nested-trace-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: A=0, B=1, C=1일 때 A OR (B AND C)의 결과는 무엇인가요?
+options:
+  - id: result-1
+    content:
+      - type: text
+        text: '1'
+  - id: result-0
+    content:
+      - type: text
+        text: '0'
+correctOptionId: result-1
+shuffleOptions: true
+explanation:
+  - type: text
+    text: B AND C가 1이므로 A OR 1은 1입니다.
+tags:
+  - logic-gates
+  - composition
+  - tracing
+difficulty: 2

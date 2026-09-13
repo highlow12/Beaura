@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: arch.logic.nand-trace-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: A=1, B=0일 때 NOT(A AND B)의 결과는 무엇인가요?
+options:
+  - id: result-1
+    content:
+      - type: text
+        text: '1'
+  - id: result-0
+    content:
+      - type: text
+        text: '0'
+correctOptionId: result-1
+shuffleOptions: true
+explanation:
+  - type: text
+    text: A AND B는 0이고, NOT 0은 1입니다.
+tags:
+  - logic-gates
+  - nand
+  - tracing
+difficulty: 1
