@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.relations.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "R={(a,1),(a,2),(b,2)}일 때 R의 정의역에 속하는 원소를 모두 고르세요."
+options:
+  - id: a
+    content:
+      - type: text
+        text: "a"
+  - id: b
+    content:
+      - type: text
+        text: "b"
+  - id: one
+    content:
+      - type: text
+        text: "1"
+  - id: two
+    content:
+      - type: text
+        text: "2"
+correctOptionIds: [a, b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "정의역은 관계의 순서쌍에서 첫 성분만 모은 집합입니다."
+  - type: text
+    text: "1과 2는 둘째 성분에 나타나므로 치역에 해당합니다."
+tags:
+  - discrete-math
+  - relations
+  - domain-range
+difficulty: 2

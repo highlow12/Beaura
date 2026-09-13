@@ -1,0 +1,61 @@
+schemaVersion: 1
+id: math.logic-equivalence.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "논리식 형태와 특징을 알맞게 연결하세요."
+leftItems:
+  - id: cnf
+    content:
+      - type: text
+        text: "CNF"
+  - id: dnf
+    content:
+      - type: text
+        text: "DNF"
+  - id: demorgan-and
+    content:
+      - type: text
+        text: "¬(P ∧ Q)"
+  - id: demorgan-or
+    content:
+      - type: text
+        text: "¬(P ∨ Q)"
+rightItems:
+  - id: cnf-desc
+    content:
+      - type: text
+        text: "OR 절들을 AND로 결합한 형태"
+  - id: dnf-desc
+    content:
+      - type: text
+        text: "AND 항들을 OR로 결합한 형태"
+  - id: and-desc
+    content:
+      - type: text
+        text: "¬P ∨ ¬Q로 변환된다"
+  - id: or-desc
+    content:
+      - type: text
+        text: "¬P ∧ ¬Q로 변환된다"
+correctPairs:
+  - leftId: cnf
+    rightId: cnf-desc
+  - leftId: dnf
+    rightId: dnf-desc
+  - leftId: demorgan-and
+    rightId: and-desc
+  - leftId: demorgan-or
+    rightId: or-desc
+explanation:
+  - type: text
+    text: "CNF와 DNF는 절을 묶는 바깥 연산자가 다르고, 드모르간 법칙은 부정과 함께 AND·OR를 교환합니다."
+  - type: text
+    text: "형태를 읽을 때 괄호 안 항과 바깥 결합 연산자를 따로 살펴보세요."
+tags:
+  - discrete-math
+  - logic
+  - cnf
+  - dnf
+difficulty: 2

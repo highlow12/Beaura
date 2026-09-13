@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: la.eigenvectors.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "행렬에서 고유값과 고유벡터를 찾는 흐름을 배열하세요."
+items:
+  - id: form
+    content:
+      - type: text
+        text: "A−λI를 만든다"
+  - id: det
+    content:
+      - type: text
+        text: "det(A−λI)=0을 세운다"
+  - id: solve-lambda
+    content:
+      - type: text
+        text: "λ의 해를 구한다"
+  - id: solve-v
+    content:
+      - type: text
+        text: "각 λ에 대해 (A−λI)v=0의 0이 아닌 v를 구한다"
+correctOrder:
+  - form
+  - det
+  - solve-lambda
+  - solve-v
+explanation:
+  - type: text
+    text: "특성방정식으로 배율을 먼저 찾고 각 배율에 대한 방향 벡터를 구합니다."
+  - type: text
+    text: "고유벡터는 0이 아닌 해만 선택해야 합니다."
+tags:
+  - linear-algebra
+  - eigen
+  - procedure
+difficulty: 2

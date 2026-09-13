@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.graphs.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "간선 목록에서 정점 v의 무방향 차수를 세는 절차를 배열하세요."
+items:
+  - id: scan
+    content:
+      - type: text
+        text: "모든 간선을 하나씩 살핀다"
+  - id: check
+    content:
+      - type: text
+        text: "간선의 어느 끝점에 v가 있는지 확인한다"
+  - id: count
+    content:
+      - type: text
+        text: "v에 붙은 간선마다 카운트를 1 증가한다"
+  - id: report
+    content:
+      - type: text
+        text: "최종 카운트를 차수로 보고한다"
+correctOrder:
+  - scan
+  - check
+  - count
+  - report
+explanation:
+  - type: text
+    text: "각 간선이 정점 v에 붙었는지를 검사해 총 횟수를 세면 차수가 됩니다."
+  - type: text
+    text: "자기 루프를 허용하는 정의에서는 차수에 기여하는 방식이 별도로 정해질 수 있습니다."
+tags:
+  - discrete-math
+  - graphs
+  - degree-count
+difficulty: 2

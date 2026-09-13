@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.eigenvectors.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "고유값·고유벡터에 대한 옳은 설명을 모두 고르세요."
+options:
+  - id: scale
+    content:
+      - type: text
+        text: "고유값은 방향을 유지한 채 바뀌는 배율이다"
+  - id: equation
+    content:
+      - type: text
+        text: "Av=λv를 만족한다"
+  - id: characteristic
+    content:
+      - type: text
+        text: "det(A−λI)=0에서 고유값 후보를 찾는다"
+  - id: all
+    content:
+      - type: text
+        text: "모든 벡터가 고유벡터이다"
+correctOptionIds: [scale, equation, characteristic]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "고유값은 변환의 배율이고 특성방정식은 0이 아닌 고유벡터가 존재할 조건을 표현합니다."
+  - type: text
+    text: "일반 벡터는 변환 후 방향이 섞일 수 있습니다."
+tags:
+  - linear-algebra
+  - eigen
+  - eigenvalue
+difficulty: 2

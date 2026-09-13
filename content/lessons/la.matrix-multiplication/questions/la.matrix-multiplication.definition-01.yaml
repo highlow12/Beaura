@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.matrix-multiplication.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "A가 2×3, B가 3×4일 때 AB의 크기는?"
+options:
+  - id: two-four
+    content:
+      - type: text
+        text: "2×4"
+  - id: three-three
+    content:
+      - type: text
+        text: "3×3"
+  - id: four-two
+    content:
+      - type: text
+        text: "4×2"
+  - id: six-four
+    content:
+      - type: text
+        text: "6×4"
+correctOptionId: two-four
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A의 행 수 2와 B의 열 수 4가 결과의 크기가 됩니다."
+  - type: text
+    text: "가운데 차원 3이 같으므로 곱셈이 정의됩니다."
+tags:
+  - linear-algebra
+  - matrices
+  - dimensions
+difficulty: 1

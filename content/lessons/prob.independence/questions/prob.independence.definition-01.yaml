@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.independence.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "A와 B가 독립일 때 성립하는 식은 무엇인가요?"
+options:
+  - id: product
+    content:
+      - type: text
+        text: "P(A∩B)=P(A)P(B)"
+  - id: sum
+    content:
+      - type: text
+        text: "P(A∩B)=P(A)+P(B)"
+  - id: zero
+    content:
+      - type: text
+        text: "P(A∩B)=0"
+  - id: equal
+    content:
+      - type: text
+        text: "P(A)=P(B)만 성립"
+correctOptionId: product
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "독립 사건의 교집합 확률은 두 주변 확률의 곱입니다."
+  - type: text
+    text: "동일한 확률이라는 조건이 아니라 서로의 정보가 영향을 주지 않는다는 조건입니다."
+tags:
+  - probability-statistics
+  - independence
+  - definition
+difficulty: 1

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.combinations.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "조합으로 계산하는 상황을 모두 고르세요."
+options:
+  - id: team
+    content:
+      - type: text
+        text: "8명 중 발표 팀 3명을 고른다"
+  - id: committee
+    content:
+      - type: text
+        text: "10명 중 위원 4명을 순서 없이 뽑는다"
+  - id: rank
+    content:
+      - type: text
+        text: "달리기 1·2·3등을 정한다"
+  - id: seats
+    content:
+      - type: text
+        text: "서로 다른 좌석에 3명을 배치한다"
+correctOptionIds: [team, committee]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "순서나 역할이 없는 집합을 선택하는 상황은 조합입니다."
+  - type: text
+    text: "등수와 좌석은 위치가 달라 결과가 달라지므로 순열에 해당합니다."
+tags:
+  - discrete-math
+  - combinatorics
+  - selection
+difficulty: 2

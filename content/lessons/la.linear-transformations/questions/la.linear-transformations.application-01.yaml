@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.linear-transformations.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "선형 변환의 성질로 옳은 것을 모두 고르세요."
+options:
+  - id: origin
+    content:
+      - type: text
+        text: "원점을 원점으로 보낸다"
+  - id: basis
+    content:
+      - type: text
+        text: "기저 벡터의 이미지로 전체 변환을 정할 수 있다"
+  - id: combo
+    content:
+      - type: text
+        text: "선형 결합을 보존한다"
+  - id: translation
+    content:
+      - type: text
+        text: "모든 평행이동은 선형 변환이다"
+correctOptionIds: [origin, basis, combo]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "선형성은 원점과 선형 결합을 보존하며, 기저의 이미지가 전체 동작을 결정합니다."
+  - type: text
+    text: "평행이동은 일반적으로 원점을 보존하지 않으므로 선형이 아닙니다."
+tags:
+  - linear-algebra
+  - transformations
+  - properties
+difficulty: 2

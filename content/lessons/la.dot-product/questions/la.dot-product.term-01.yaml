@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.dot-product.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "(1,2)·(2,−1)=___이므로 두 벡터는 직교합니다."
+choices:
+  - "−1"
+  - "0"
+  - "1"
+  - "4"
+acceptedAnswers:
+  - "0"
+explanation:
+  - type: text
+    text: "1×2+2×(−1)=2−2=0입니다."
+  - type: text
+    text: "내적이 0이면 두 벡터가 직교합니다."
+tags:
+  - linear-algebra
+  - dot-product
+  - orthogonality
+difficulty: 1

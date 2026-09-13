@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.cross-product.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "외적 개념과 역할을 알맞게 연결하세요."
+leftItems:
+  - id: cross
+    content:
+      - type: text
+        text: "u×v"
+  - id: magnitude
+    content:
+      - type: text
+        text: "|u×v|"
+  - id: right-hand
+    content:
+      - type: text
+        text: "오른손 법칙"
+  - id: normal
+    content:
+      - type: text
+        text: "법선"
+rightItems:
+  - id: cross-desc
+    content:
+      - type: text
+        text: "두 입력에 수직인 벡터"
+  - id: magnitude-desc
+    content:
+      - type: text
+        text: "평행사변형의 넓이"
+  - id: right-hand-desc
+    content:
+      - type: text
+        text: "결과 방향을 정하는 규칙"
+  - id: normal-desc
+    content:
+      - type: text
+        text: "평면에 수직인 방향 벡터"
+correctPairs:
+  - leftId: cross
+    rightId: cross-desc
+  - leftId: magnitude
+    rightId: magnitude-desc
+  - leftId: right-hand
+    rightId: right-hand-desc
+  - leftId: normal
+    rightId: normal-desc
+explanation:
+  - type: text
+    text: "외적은 방향과 넓이를 동시에 제공해 3차원 기하와 그래픽스에 유용합니다."
+  - type: text
+    text: "입력 순서가 법선 방향을 바꾼다는 점을 항상 기록하세요."
+tags:
+  - linear-algebra
+  - cross-product
+  - geometry
+difficulty: 2

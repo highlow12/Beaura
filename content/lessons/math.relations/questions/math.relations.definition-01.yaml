@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.relations.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "A={a,b}, B={1,2}일 때 A×B의 원소는 무엇인가요?"
+options:
+  - id: pairs
+    content:
+      - type: text
+        text: "(a,1), (a,2), (b,1), (b,2)"
+  - id: reverse
+    content:
+      - type: text
+        text: "(1,a), (2,a), (1,b), (2,b)"
+  - id: same
+    content:
+      - type: text
+        text: "a, b, 1, 2 네 원소만 있다"
+  - id: two
+    content:
+      - type: text
+        text: "(a,1), (b,2) 두 쌍만 있다"
+correctOptionId: pairs
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Cartesian product는 첫 성분을 A에서, 둘째 성분을 B에서 고르는 모든 순서쌍을 포함합니다."
+  - type: text
+    text: "관계는 이 네 쌍 중 일부만 골라 만든 부분집합일 수 있습니다."
+tags:
+  - discrete-math
+  - relations
+  - cartesian-product
+difficulty: 1

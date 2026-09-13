@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.statistics.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "자료에 매우 큰 이상치가 하나 있을 때 상대적으로 덜 영향을 받는 중심 측도는?"
+options:
+  - id: median
+    content:
+      - type: text
+        text: "중앙값"
+  - id: mean
+    content:
+      - type: text
+        text: "평균"
+  - id: sum
+    content:
+      - type: text
+        text: "합계"
+  - id: range
+    content:
+      - type: text
+        text: "범위"
+correctOptionId: median
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "중앙값은 순서상의 가운데 위치로 정해져 극단값의 크기에 평균보다 덜 민감합니다."
+  - type: text
+    text: "평균은 모든 값을 더하므로 큰 이상치에 끌릴 수 있습니다."
+tags:
+  - probability-statistics
+  - statistics
+  - median
+difficulty: 1

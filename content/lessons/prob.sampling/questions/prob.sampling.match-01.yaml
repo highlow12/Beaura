@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.sampling.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "표본 관련 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: population
+    content:
+      - type: text
+        text: "모집단"
+  - id: sample
+    content:
+      - type: text
+        text: "표본"
+  - id: sample-mean
+    content:
+      - type: text
+        text: "표본평균"
+  - id: bias
+    content:
+      - type: text
+        text: "표본 편향"
+rightItems:
+  - id: population-desc
+    content:
+      - type: text
+        text: "관심 있는 전체 대상"
+  - id: sample-desc
+    content:
+      - type: text
+        text: "모집단에서 관측한 일부"
+  - id: sample-mean-desc
+    content:
+      - type: text
+        text: "표본 값의 산술 평균"
+  - id: bias-desc
+    content:
+      - type: text
+        text: "추출 방식 때문에 생기는 체계적 치우침"
+correctPairs:
+  - leftId: population
+    rightId: population-desc
+  - leftId: sample
+    rightId: sample-desc
+  - leftId: sample-mean
+    rightId: sample-mean-desc
+  - leftId: bias
+    rightId: bias-desc
+explanation:
+  - type: text
+    text: "표본 통계량은 모집단을 추정하는 도구지만, 추출 설계가 대표성을 보장해야 합니다."
+  - type: text
+    text: "표본 크기만 늘리는 것과 편향을 줄이는 것은 서로 다른 개선입니다."
+tags:
+  - probability-statistics
+  - sampling
+  - terminology
+difficulty: 2

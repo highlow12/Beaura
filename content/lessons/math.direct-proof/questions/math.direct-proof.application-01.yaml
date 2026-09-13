@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.direct-proof.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "“두 홀수의 합은 짝수”를 직접 증명할 때 사용할 수 있는 표현을 모두 고르세요."
+options:
+  - id: odd-m
+    content:
+      - type: text
+        text: "첫 홀수를 2m+1로 둔다"
+  - id: odd-n
+    content:
+      - type: text
+        text: "둘째 홀수를 2n+1로 둔다"
+  - id: sum
+    content:
+      - type: text
+        text: "합을 2(m+n+1)로 정리한다"
+  - id: even-form
+    content:
+      - type: text
+        text: "합을 2k+1로 정리한다"
+correctOptionIds: [odd-m, odd-n, sum]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "홀수의 정의로 두 수를 표현하면 합은 2m+1+2n+1=2(m+n+1)이 됩니다."
+  - type: text
+    text: "마지막 식이 2의 배수이므로 짝수의 정의를 만족합니다."
+tags:
+  - discrete-math
+  - proof
+  - parity
+difficulty: 2

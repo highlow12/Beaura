@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.events.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "겹치는 두 사건의 합확률을 계산하는 순서를 배열하세요."
+items:
+  - id: p-a
+    content:
+      - type: text
+        text: "P(A)를 계산한다"
+  - id: p-b
+    content:
+      - type: text
+        text: "P(B)를 계산한다"
+  - id: overlap
+    content:
+      - type: text
+        text: "P(A∩B)를 계산한다"
+  - id: combine
+    content:
+      - type: text
+        text: "두 확률을 더하고 교집합을 뺀다"
+correctOrder:
+  - p-a
+  - p-b
+  - overlap
+  - combine
+explanation:
+  - type: text
+    text: "각 사건과 겹침을 먼저 구한 뒤 포함배제 식에 대입합니다."
+  - type: text
+    text: "교집합을 빼는 단계가 중복 계산을 제거합니다."
+tags:
+  - probability-statistics
+  - events
+  - inclusion-exclusion
+difficulty: 2

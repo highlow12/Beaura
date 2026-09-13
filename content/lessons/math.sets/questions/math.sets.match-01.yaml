@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.sets.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "집합 기호와 그 의미를 알맞게 연결하세요."
+leftItems:
+  - id: member
+    content:
+      - type: text
+        text: "x ∈ A"
+  - id: subset
+    content:
+      - type: text
+        text: "A ⊆ B"
+  - id: union
+    content:
+      - type: text
+        text: "A ∪ B"
+  - id: intersection
+    content:
+      - type: text
+        text: "A ∩ B"
+rightItems:
+  - id: member-desc
+    content:
+      - type: text
+        text: "x가 A의 원소이다"
+  - id: subset-desc
+    content:
+      - type: text
+        text: "A의 모든 원소가 B에도 있다"
+  - id: union-desc
+    content:
+      - type: text
+        text: "A 또는 B에 속한 원소의 모음"
+  - id: intersection-desc
+    content:
+      - type: text
+        text: "A와 B에 공통인 원소의 모음"
+correctPairs:
+  - leftId: member
+    rightId: member-desc
+  - leftId: subset
+    rightId: subset-desc
+  - leftId: union
+    rightId: union-desc
+  - leftId: intersection
+    rightId: intersection-desc
+explanation:
+  - type: text
+    text: "∈는 원소와 집합 사이, ⊆는 집합 사이의 포함을 나타냅니다. ∪와 ∩는 각각 합집합과 교집합입니다."
+  - type: text
+    text: "기호의 양쪽 대상이 원소인지 집합인지부터 확인하면 읽기 쉽습니다."
+tags:
+  - discrete-math
+  - sets
+  - notation
+difficulty: 2

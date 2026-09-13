@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.events.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "사건의 확률 공식에 대한 옳은 설명을 모두 고르세요."
+options:
+  - id: union
+    content:
+      - type: text
+        text: "P(A∪B)=P(A)+P(B)−P(A∩B)"
+  - id: complement
+    content:
+      - type: text
+        text: "P(Aᶜ)=1−P(A)"
+  - id: disjoint
+    content:
+      - type: text
+        text: "배반이면 P(A∩B)=0이다"
+  - id: always-add
+    content:
+      - type: text
+        text: "모든 사건에서 P(A∪B)=P(A)+P(B)이다"
+correctOptionIds: [union, complement, disjoint]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "합사건은 겹치는 교집합을 빼야 하며, 여사건과 배반의 공식은 각각 조건에 맞게 단순화됩니다."
+  - type: text
+    text: "겹칠 수 있는 사건을 무조건 더하면 공통 결과를 중복 계산합니다."
+tags:
+  - probability-statistics
+  - events
+  - formulas
+difficulty: 2

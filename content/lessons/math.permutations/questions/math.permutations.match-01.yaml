@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.permutations.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "순열 표현과 의미를 알맞게 연결하세요."
+leftItems:
+  - id: factorial
+    content:
+      - type: text
+        text: "n!"
+  - id: npr
+    content:
+      - type: text
+        text: "nPr"
+  - id: all-arrangement
+    content:
+      - type: text
+        text: "모든 n개를 배열"
+  - id: ordered-choice
+    content:
+      - type: text
+        text: "n개 중 r개를 순서 있게 선택"
+rightItems:
+  - id: factorial-desc
+    content:
+      - type: text
+        text: "n부터 1까지의 곱"
+  - id: npr-desc
+    content:
+      - type: text
+        text: "n!/(n−r)!로 계산"
+  - id: all-arrangement-desc
+    content:
+      - type: text
+        text: "n!가지"
+  - id: ordered-choice-desc
+    content:
+      - type: text
+        text: "자리별 선택 수를 곱한 값"
+correctPairs:
+  - leftId: factorial
+    rightId: factorial-desc
+  - leftId: npr
+    rightId: npr-desc
+  - leftId: all-arrangement
+    rightId: all-arrangement-desc
+  - leftId: ordered-choice
+    rightId: ordered-choice-desc
+explanation:
+  - type: text
+    text: "전체 배열은 팩토리얼, 일부를 순서 있게 고르는 것은 nPr로 표현합니다."
+  - type: text
+    text: "같은 대상을 반복하는 문제인지도 공식 적용 전에 확인하세요."
+tags:
+  - discrete-math
+  - combinatorics
+  - notation
+difficulty: 2

@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.bayes.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "검사 양성 결과에서 질병의 사후확률을 구하는 흐름을 배열하세요."
+items:
+  - id: prior
+    content:
+      - type: text
+        text: "질병의 기저율 P(D)를 정한다"
+  - id: likelihood
+    content:
+      - type: text
+        text: "질병일 때 양성일 확률 P(+|D)를 정한다"
+  - id: evidence
+    content:
+      - type: text
+        text: "전체 양성 확률 P(+)를 계산한다"
+  - id: bayes
+    content:
+      - type: text
+        text: "P(D|+)=P(+|D)P(D)/P(+)를 계산한다"
+correctOrder:
+  - prior
+  - likelihood
+  - evidence
+  - bayes
+explanation:
+  - type: text
+    text: "사전확률과 우도를 정한 뒤 증거가 나타날 전체 확률로 정규화해야 사후확률이 됩니다."
+  - type: text
+    text: "전체 양성 확률에는 질병이 없는 경로도 포함됩니다."
+tags:
+  - probability-statistics
+  - bayes
+  - procedure
+difficulty: 3

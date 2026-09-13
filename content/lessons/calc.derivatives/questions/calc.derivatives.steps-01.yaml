@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.derivatives.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "미분계수의 극한 정의를 해석하는 순서를 배열하세요."
+items:
+  - id: two-points
+    content:
+      - type: text
+        text: "a와 a+h에서 함수값을 계산한다"
+  - id: difference
+    content:
+      - type: text
+        text: "출력 변화 f(a+h)−f(a)를 구한다"
+  - id: divide
+    content:
+      - type: text
+        text: "입력 변화 h로 나눈다"
+  - id: limit
+    content:
+      - type: text
+        text: "h를 0으로 보내 극한을 취한다"
+correctOrder:
+  - two-points
+  - difference
+  - divide
+  - limit
+explanation:
+  - type: text
+    text: "평균 변화율을 먼저 만들고 두 점 간격을 0으로 보내 순간 변화율을 얻습니다."
+  - type: text
+    text: "분모 h를 바로 0으로 두면 나눗셈이 정의되지 않으므로 극한으로 처리합니다."
+tags:
+  - calculus
+  - derivatives
+  - definition
+difficulty: 2

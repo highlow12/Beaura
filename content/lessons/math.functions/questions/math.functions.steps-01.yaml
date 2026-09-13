@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: math.functions.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "화살표 그림으로 함수가 전사인지 확인하는 순서를 배열하세요."
+items:
+  - id: list-codomain
+    content:
+      - type: text
+        text: "공역의 모든 원소를 적는다"
+  - id: trace
+    content:
+      - type: text
+        text: "각 공역 원소로 들어오는 화살표를 센다"
+  - id: decide
+    content:
+      - type: text
+        text: "화살표가 하나 이상인 원소만 있으면 전사로 판정한다"
+correctOrder:
+  - list-codomain
+  - trace
+  - decide
+explanation:
+  - type: text
+    text: "전사는 공역에 빈 출력이 없는지를 확인하는 성질입니다."
+  - type: text
+    text: "한 원소로 여러 화살표가 들어오는 것은 전사 여부와 별개이며 단사 여부와 관련됩니다."
+tags:
+  - discrete-math
+  - functions
+  - surjective
+difficulty: 2

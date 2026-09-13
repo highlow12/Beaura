@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.partial-derivatives.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "∂f/∂x를 계산하는 절차를 배열하세요."
+items:
+  - id: target
+    content:
+      - type: text
+        text: "미분할 변수 x를 정한다"
+  - id: hold
+    content:
+      - type: text
+        text: "다른 변수들을 상수로 취급한다"
+  - id: differentiate
+    content:
+      - type: text
+        text: "x가 포함된 항을 미분한다"
+  - id: simplify
+    content:
+      - type: text
+        text: "결과를 정리한다"
+correctOrder:
+  - target
+  - hold
+  - differentiate
+  - simplify
+explanation:
+  - type: text
+    text: "편미분은 대상 변수와 고정 변수의 역할을 먼저 나누는 것이 핵심입니다."
+  - type: text
+    text: "마지막에 함수가 여전히 다른 변수에 의존할 수 있음을 확인하세요."
+tags:
+  - calculus
+  - multivariable
+  - procedure
+difficulty: 2

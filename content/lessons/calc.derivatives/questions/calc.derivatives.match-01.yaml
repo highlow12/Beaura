@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.derivatives.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "미분 용어와 의미를 알맞게 연결하세요."
+leftItems:
+  - id: average
+    content:
+      - type: text
+        text: "평균 변화율"
+  - id: derivative
+    content:
+      - type: text
+        text: "도함수"
+  - id: tangent
+    content:
+      - type: text
+        text: "접선 기울기"
+  - id: acceleration
+    content:
+      - type: text
+        text: "가속도"
+rightItems:
+  - id: average-desc
+    content:
+      - type: text
+        text: "두 점의 변화량 비율"
+  - id: derivative-desc
+    content:
+      - type: text
+        text: "각 입력에서의 순간 변화율 함수"
+  - id: tangent-desc
+    content:
+      - type: text
+        text: "한 점에서 그래프를 근사하는 직선의 기울기"
+  - id: acceleration-desc
+    content:
+      - type: text
+        text: "속도의 시간에 대한 변화율"
+correctPairs:
+  - leftId: average
+    rightId: average-desc
+  - leftId: derivative
+    rightId: derivative-desc
+  - leftId: tangent
+    rightId: tangent-desc
+  - leftId: acceleration
+    rightId: acceleration-desc
+explanation:
+  - type: text
+    text: "미분은 평균 변화율을 국소적인 순간 변화율로 정밀하게 만든 개념입니다."
+  - type: text
+    text: "물리량의 이름이 달라도 ‘무엇에 대해 미분하는가’를 먼저 확인하세요."
+tags:
+  - calculus
+  - derivatives
+  - terminology
+difficulty: 2

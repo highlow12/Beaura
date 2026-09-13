@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.trees.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "정점 6개인 트리가 가지는 간선 수는 얼마인가요?"
+options:
+  - id: five
+    content:
+      - type: text
+        text: "5개"
+  - id: six
+    content:
+      - type: text
+        text: "6개"
+  - id: seven
+    content:
+      - type: text
+        text: "7개"
+  - id: twelve
+    content:
+      - type: text
+        text: "12개"
+correctOptionId: five
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "정점 n개인 트리의 간선 수는 n−1이므로 6−1=5개입니다."
+  - type: text
+    text: "이 공식은 연결성과 비순환성을 함께 만족하는 트리의 핵심 성질입니다."
+tags:
+  - discrete-math
+  - graphs
+  - tree-property
+difficulty: 1

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.limits.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "limₓ→ₐ f(x)의 뜻으로 알맞은 것은 무엇인가요?"
+options:
+  - id: approach
+    content:
+      - type: text
+        text: "x가 a에 가까워질 때 f(x)가 가까워지는 값"
+  - id: at-only
+    content:
+      - type: text
+        text: "x=a에서의 함수값만"
+  - id: average
+    content:
+      - type: text
+        text: "정의역 전체의 평균값"
+  - id: slope
+    content:
+      - type: text
+        text: "항상 그래프의 기울기"
+correctOptionId: approach
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "극한은 입력이 목표값에 접근할 때 출력이 다가가는 값을 말합니다."
+  - type: text
+    text: "a에서의 실제 함수값이 없어도 주변의 접근 양상으로 극한을 말할 수 있습니다."
+tags:
+  - calculus
+  - limits
+  - definition
+difficulty: 1

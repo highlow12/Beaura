@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.sets.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "A={1,2,3}, B={3,4}일 때 A ∩ B의 원소 개수를 고르세요."
+choices:
+  - "0"
+  - "1"
+  - "2"
+acceptedAnswers:
+  - "1"
+explanation:
+  - type: text
+    text: "두 집합에 공통으로 들어 있는 원소는 3 하나입니다."
+  - type: text
+    text: "따라서 교집합은 {3}이고 원소 개수는 1입니다."
+tags:
+  - discrete-math
+  - sets
+  - intersection
+difficulty: 1

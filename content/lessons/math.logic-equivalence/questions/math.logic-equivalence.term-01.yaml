@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.logic-equivalence.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "¬(P ∨ Q)를 드모르간 법칙으로 바꿀 때 빈칸에 들어갈 연산자를 고르세요: ¬P ___ ¬Q"
+choices:
+  - "∧"
+  - "∨"
+  - "→"
+acceptedAnswers:
+  - "∧"
+explanation:
+  - type: text
+    text: "OR 전체를 부정하면 각 항을 부정하고 AND로 연결합니다."
+  - type: text
+    text: "드모르간 법칙은 부정이 안으로 들어가며 AND와 OR를 교환합니다."
+tags:
+  - discrete-math
+  - logic
+  - demorgan
+difficulty: 1

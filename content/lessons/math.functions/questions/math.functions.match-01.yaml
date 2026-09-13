@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.functions.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "함수의 분류와 판정 기준을 알맞게 연결하세요."
+leftItems:
+  - id: function
+    content:
+      - type: text
+        text: "함수"
+  - id: injective
+    content:
+      - type: text
+        text: "단사"
+  - id: surjective
+    content:
+      - type: text
+        text: "전사"
+  - id: bijective
+    content:
+      - type: text
+        text: "전단사"
+rightItems:
+  - id: function-desc
+    content:
+      - type: text
+        text: "각 입력에 정확히 하나의 출력"
+  - id: injective-desc
+    content:
+      - type: text
+        text: "서로 다른 입력의 출력이 겹치지 않음"
+  - id: surjective-desc
+    content:
+      - type: text
+        text: "공역의 모든 값이 적어도 한 번 출력됨"
+  - id: bijective-desc
+    content:
+      - type: text
+        text: "단사와 전사를 모두 만족함"
+correctPairs:
+  - leftId: function
+    rightId: function-desc
+  - leftId: injective
+    rightId: injective-desc
+  - leftId: surjective
+    rightId: surjective-desc
+  - leftId: bijective
+    rightId: bijective-desc
+explanation:
+  - type: text
+    text: "함수인지 먼저 확인한 뒤 입력의 충돌 여부와 공역의 빈칸 여부로 단사와 전사를 판별합니다."
+  - type: text
+    text: "전단사는 두 조건을 함께 만족하는 특별한 함수입니다."
+tags:
+  - discrete-math
+  - functions
+  - classification
+difficulty: 2

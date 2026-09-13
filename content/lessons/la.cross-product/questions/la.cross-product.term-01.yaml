@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: la.cross-product.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "u와 v가 평행하면 u×v의 크기는 ___입니다."
+choices:
+  - "0"
+  - "1"
+  - "|u|+|v|"
+acceptedAnswers:
+  - "0"
+explanation:
+  - type: text
+    text: "|u||v|sinθ에서 평행할 때 sinθ=0이므로 크기는 0입니다."
+  - type: text
+    text: "방향도 정해지지 않는 영벡터가 결과가 됩니다."
+tags:
+  - linear-algebra
+  - cross-product
+  - parallel
+difficulty: 1

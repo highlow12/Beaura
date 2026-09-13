@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.definite-integrals.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "두 함수 사이 넓이를 적분하는 절차를 배열하세요."
+items:
+  - id: intersections
+    content:
+      - type: text
+        text: "두 함수의 교점을 찾는다"
+  - id: top
+    content:
+      - type: text
+        text: "각 구간에서 위 함수를 확인한다"
+  - id: difference
+    content:
+      - type: text
+        text: "위 함수−아래 함수 식을 만든다"
+  - id: integrate
+    content:
+      - type: text
+        text: "구간별로 적분해 합한다"
+correctOrder:
+  - intersections
+  - top
+  - difference
+  - integrate
+explanation:
+  - type: text
+    text: "교점과 위아래 관계가 정해져야 올바른 적분 구간과 피적분함수를 만들 수 있습니다."
+  - type: text
+    text: "위아래가 바뀌는 교점을 지나면 적분을 나누어야 합니다."
+tags:
+  - calculus
+  - definite-integrals
+  - between-curves
+difficulty: 2

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.inverse-determinant.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "[[2,1],[0,3]]의 행렬식은 2×3−1×0=___입니다."
+choices:
+  - "0"
+  - "3"
+  - "6"
+  - "7"
+acceptedAnswers:
+  - "6"
+explanation:
+  - type: text
+    text: "2×2 행렬식은 ad−bc이므로 6−0=6입니다."
+  - type: text
+    text: "0이 아니므로 이 행렬은 가역입니다."
+tags:
+  - linear-algebra
+  - matrices
+  - calculation
+difficulty: 1

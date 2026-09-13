@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.derivative-rules.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "sin(x²)를 미분하는 순서를 배열하세요."
+items:
+  - id: outer
+    content:
+      - type: text
+        text: "바깥 함수 sin의 도함수 cos를 쓴다"
+  - id: inner
+    content:
+      - type: text
+        text: "안쪽 함수 x²를 유지한다"
+  - id: inner-deriv
+    content:
+      - type: text
+        text: "안쪽 도함수 2x를 곱한다"
+  - id: result
+    content:
+      - type: text
+        text: "2x cos(x²)로 정리한다"
+correctOrder:
+  - outer
+  - inner
+  - inner-deriv
+  - result
+explanation:
+  - type: text
+    text: "연쇄 법칙은 바깥 미분을 안쪽에 대입한 뒤 안쪽 도함수를 곱합니다."
+  - type: text
+    text: "안쪽 도함수를 빼면 합성함수의 변화율이 빠집니다."
+tags:
+  - calculus
+  - derivative-rules
+  - chain-rule
+difficulty: 2

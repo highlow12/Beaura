@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.bayes.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "베이즈 정리에서 P(A|B)가 뜻하는 것은 무엇인가요?"
+options:
+  - id: posterior
+    content:
+      - type: text
+        text: "증거 B를 관찰한 뒤 원인 A일 확률"
+  - id: likelihood
+    content:
+      - type: text
+        text: "원인 A일 때 증거 B일 확률"
+  - id: prior
+    content:
+      - type: text
+        text: "증거를 보기 전 A의 확률"
+  - id: evidence
+    content:
+      - type: text
+        text: "증거 B 자체의 확률"
+correctOptionId: posterior
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "P(A|B)는 조건이 B로 주어진 사후확률입니다."
+  - type: text
+    text: "P(B|A)는 우도이고 방향이 반대입니다."
+tags:
+  - probability-statistics
+  - bayes
+  - posterior
+difficulty: 1

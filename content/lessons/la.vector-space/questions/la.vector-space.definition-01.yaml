@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.vector-space.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "2차원 평면의 표준 기저는 무엇인가요?"
+options:
+  - id: standard
+    content:
+      - type: text
+        text: "(1,0)과 (0,1)"
+  - id: same
+    content:
+      - type: text
+        text: "(1,0)과 (2,0)"
+  - id: one
+    content:
+      - type: text
+        text: "(1,1) 하나만"
+  - id: zero
+    content:
+      - type: text
+        text: "(0,0)과 (0,1)"
+correctOptionId: standard
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "표준 기저의 두 벡터로 (x,y)=x(1,0)+y(0,1)을 만들 수 있습니다."
+  - type: text
+    text: "두 벡터가 서로 다른 축 방향이라 선형 독립이기도 합니다."
+tags:
+  - linear-algebra
+  - space
+  - basis
+difficulty: 1

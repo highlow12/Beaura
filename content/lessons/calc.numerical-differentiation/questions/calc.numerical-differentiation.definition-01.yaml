@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.numerical-differentiation.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "중심 차분의 공식은 무엇인가요?"
+options:
+  - id: central
+    content:
+      - type: text
+        text: "[f(x+h)−f(x−h)]/(2h)"
+  - id: forward
+    content:
+      - type: text
+        text: "[f(x+h)−f(x)]/h"
+  - id: backward
+    content:
+      - type: text
+        text: "[f(x)−f(x−h)]/(2h)"
+  - id: sum
+    content:
+      - type: text
+        text: "[f(x+h)+f(x−h)]/h"
+correctOptionId: central
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "중심 차분은 기준점 양쪽의 값을 사용하고 간격 전체가 2h입니다."
+  - type: text
+    text: "전진·후진 차분보다 대칭적인 정보를 사용합니다."
+tags:
+  - calculus
+  - numerical
+  - finite-difference
+difficulty: 1

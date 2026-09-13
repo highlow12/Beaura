@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.induction.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "귀납 단계에서 P(k)가 참이라고 두는 것을 귀납 ___이라고 합니다."
+choices:
+  - "가정"
+  - "반례"
+  - "공역"
+acceptedAnswers:
+  - "가정"
+explanation:
+  - type: text
+    text: "귀납 가정은 P(k+1)을 유도할 때 사용할 임시 조건입니다."
+  - type: text
+    text: "가정한 P(k)를 실제로 다음 단계 계산에 연결해야 합니다."
+tags:
+  - discrete-math
+  - proof
+  - inductive-hypothesis
+difficulty: 1

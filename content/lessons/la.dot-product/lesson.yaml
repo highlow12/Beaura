@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: la.dot-product
+revision: 1
+track: linear-algebra
+title: "내적과 각도"
+description: "내적을 성분 곱의 합으로 계산하고 각도와 직교를 판별한다."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.dot-product.definition-01
+  - type: question
+    ref: la.dot-product.application-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: la.dot-product.term-01
+  - type: question
+    ref: la.dot-product.steps-01
+  - type: question
+    ref: la.dot-product.match-01

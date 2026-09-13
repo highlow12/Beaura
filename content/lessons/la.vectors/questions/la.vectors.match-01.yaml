@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.vectors.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "벡터 연산과 의미를 알맞게 연결하세요."
+leftItems:
+  - id: addition
+    content:
+      - type: text
+        text: "u+v"
+  - id: scalar
+    content:
+      - type: text
+        text: "3u"
+  - id: zero
+    content:
+      - type: text
+        text: "0u"
+  - id: negative
+    content:
+      - type: text
+        text: "−u"
+rightItems:
+  - id: addition-desc
+    content:
+      - type: text
+        text: "성분끼리 더해 이동을 이어 붙임"
+  - id: scalar-desc
+    content:
+      - type: text
+        text: "크기가 3배가 되고 방향 유지"
+  - id: zero-desc
+    content:
+      - type: text
+        text: "영벡터가 됨"
+  - id: negative-desc
+    content:
+      - type: text
+        text: "크기는 같고 방향이 반대"
+correctPairs:
+  - leftId: addition
+    rightId: addition-desc
+  - leftId: scalar
+    rightId: scalar-desc
+  - leftId: zero
+    rightId: zero-desc
+  - leftId: negative
+    rightId: negative-desc
+explanation:
+  - type: text
+    text: "벡터 덧셈은 이동의 합이고 스칼라배는 크기와 방향을 바꿉니다."
+  - type: text
+    text: "스칼라의 부호와 절댓값을 따로 살펴보면 각 결과를 구분할 수 있습니다."
+tags:
+  - linear-algebra
+  - vectors
+  - operations
+difficulty: 2

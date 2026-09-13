@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.direct-proof.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "직접 증명의 일반적인 시작은 무엇인가요?"
+options:
+  - id: assume
+    content:
+      - type: text
+        text: "명제의 가정을 참이라고 둔다"
+  - id: deny
+    content:
+      - type: text
+        text: "결론을 거짓이라고 단정한다"
+  - id: sample
+    content:
+      - type: text
+        text: "예시 하나만 계산한다"
+  - id: guess
+    content:
+      - type: text
+        text: "결론을 먼저 추측하고 끝낸다"
+correctOptionId: assume
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "직접 증명은 가정에서 출발해 논리적으로 결론을 이끌어 냅니다."
+  - type: text
+    text: "반증법이나 모순법은 다른 시작을 사용하지만 예시 하나만으로는 일반 명제를 증명할 수 없습니다."
+tags:
+  - discrete-math
+  - proof
+  - direct-proof
+difficulty: 1

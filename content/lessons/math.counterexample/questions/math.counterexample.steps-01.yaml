@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.counterexample.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "반례를 검증하는 절차를 순서대로 배열하세요."
+items:
+  - id: read-claim
+    content:
+      - type: text
+        text: "명제의 조건과 결론을 분리해 읽는다"
+  - id: choose
+    content:
+      - type: text
+        text: "조건을 만족할 가능성이 있는 대상을 고른다"
+  - id: check-condition
+    content:
+      - type: text
+        text: "대상이 모든 조건을 만족하는지 확인한다"
+  - id: break
+    content:
+      - type: text
+        text: "결론이 거짓임을 계산해 제시한다"
+correctOrder:
+  - read-claim
+  - choose
+  - check-condition
+  - break
+explanation:
+  - type: text
+    text: "조건을 벗어난 사례는 반례가 아니므로 조건을 먼저 확인해야 합니다."
+  - type: text
+    text: "마지막에는 결론이 실제로 깨진다는 사실을 명확히 보여 줍니다."
+tags:
+  - discrete-math
+  - proof
+  - proof-method
+difficulty: 2

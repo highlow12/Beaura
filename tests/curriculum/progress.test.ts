@@ -107,14 +107,21 @@ describe("visible learning tracks", () => {
     ).toEqual(["python", "computer-architecture", "discrete-math", "later"]);
   });
 
-  it("ships Python, computer architecture, and discrete math as root tracks", async () => {
+  it("ships the programming, architecture, and foundational math tracks as roots", async () => {
     const compiled = compileContent(await loadSourceContent(process.cwd()));
     const lessons = [...compiled.lessons.values()] as Lesson[];
     expect(
       visibleTracks(compiled.curriculum as Curriculum, lessons, []).map(
         (track) => track.id,
       ),
-    ).toEqual(["python", "computer-architecture", "discrete-math"]);
+    ).toEqual([
+      "python",
+      "computer-architecture",
+      "discrete-math",
+      "linear-algebra",
+      "calculus",
+      "probability-statistics",
+    ]);
   });
 });
 

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.probability.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "확률의 기본 성질로 옳은 것을 모두 고르세요."
+options:
+  - id: range
+    content:
+      - type: text
+        text: "0≤P(A)≤1"
+  - id: whole
+    content:
+      - type: text
+        text: "P(Ω)=1"
+  - id: impossible
+    content:
+      - type: text
+        text: "P(∅)=0"
+  - id: negative
+    content:
+      - type: text
+        text: "확률은 음수가 될 수 있다"
+correctOptionIds: [range, whole, impossible]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "확률은 0과 1 사이이고 전체·불가능 사건의 값은 각각 1과 0입니다."
+  - type: text
+    text: "음의 확률은 기본 확률 모델에서 허용되지 않습니다."
+tags:
+  - probability-statistics
+  - probability
+  - axioms
+difficulty: 1

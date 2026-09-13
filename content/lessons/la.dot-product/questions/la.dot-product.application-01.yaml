@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.dot-product.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "두 벡터의 내적에 대한 옳은 설명을 모두 고르세요."
+options:
+  - id: scalar
+    content:
+      - type: text
+        text: "결과는 스칼라이다"
+  - id: zero-orthogonal
+    content:
+      - type: text
+        text: "내적이 0이면 직교일 수 있다"
+  - id: component
+    content:
+      - type: text
+        text: "같은 위치 성분의 곱을 더한다"
+  - id: vector-result
+    content:
+      - type: text
+        text: "항상 또 하나의 벡터를 만든다"
+correctOptionIds: [scalar, zero-orthogonal, component]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "내적은 성분 곱의 합인 수이며 0이면 직교 관계를 나타냅니다."
+  - type: text
+    text: "벡터를 결과로 만드는 연산은 벡터 덧셈이나 외적처럼 별도로 정의됩니다."
+tags:
+  - linear-algebra
+  - dot-product
+  - geometry
+difficulty: 2

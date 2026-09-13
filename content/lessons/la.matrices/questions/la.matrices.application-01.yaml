@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.matrices.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "행렬에 대한 옳은 설명을 모두 고르세요."
+options:
+  - id: grid
+    content:
+      - type: text
+        text: "행과 열로 배열된 수의 표이다"
+  - id: same-add
+    content:
+      - type: text
+        text: "같은 크기끼리 대응 원소를 더할 수 있다"
+  - id: scalar
+    content:
+      - type: text
+        text: "스칼라배는 모든 원소에 같은 수를 곱한다"
+  - id: always-square
+    content:
+      - type: text
+        text: "모든 행렬은 정사각행렬이다"
+correctOptionIds: [grid, same-add, scalar]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "행렬은 직사각형 형태도 가능하며 같은 크기 행렬의 덧셈과 스칼라배가 정의됩니다."
+  - type: text
+    text: "행 수와 열 수가 같을 때만 정사각행렬이라고 부릅니다."
+tags:
+  - linear-algebra
+  - matrices
+  - operations
+difficulty: 2

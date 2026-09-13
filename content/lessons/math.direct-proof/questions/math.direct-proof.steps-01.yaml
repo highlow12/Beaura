@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.direct-proof.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "두 짝수의 합이 짝수임을 직접 증명하는 흐름을 배열하세요."
+items:
+  - id: represent
+    content:
+      - type: text
+        text: "두 짝수를 2m, 2n으로 표현한다"
+  - id: add
+    content:
+      - type: text
+        text: "합을 2m+2n으로 쓴다"
+  - id: factor
+    content:
+      - type: text
+        text: "2(m+n)으로 묶는다"
+  - id: conclude
+    content:
+      - type: text
+        text: "2의 배수이므로 짝수라고 결론낸다"
+correctOrder:
+  - represent
+  - add
+  - factor
+  - conclude
+explanation:
+  - type: text
+    text: "짝수의 정의를 대입하고 공통 인수 2를 묶으면 결과가 짝수의 정의와 일치합니다."
+  - type: text
+    text: "각 단계가 다음 단계의 근거가 되도록 식을 생략하지 않는 것이 좋습니다."
+tags:
+  - discrete-math
+  - proof
+  - proof-steps
+difficulty: 2

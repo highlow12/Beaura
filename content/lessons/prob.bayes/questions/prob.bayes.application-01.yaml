@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.bayes.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "베이즈 정리에 대한 옳은 설명을 모두 고르세요."
+options:
+  - id: formula
+    content:
+      - type: text
+        text: "P(A|B)=P(B|A)P(A)/P(B)"
+  - id: prior
+    content:
+      - type: text
+        text: "P(A)는 사전확률이다"
+  - id: base-rate
+    content:
+      - type: text
+        text: "드문 원인의 기저율이 사후확률에 영향을 준다"
+  - id: swap
+    content:
+      - type: text
+        text: "P(A|B)와 P(B|A)는 항상 같다"
+correctOptionIds: [formula, prior, base-rate]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "베이즈 정리는 조건의 방향을 바꾸며 사전확률과 증거의 전체 확률을 함께 사용합니다."
+  - type: text
+    text: "조건부 확률의 방향을 단순히 뒤집을 수는 없습니다."
+tags:
+  - probability-statistics
+  - bayes
+  - base-rate
+difficulty: 2

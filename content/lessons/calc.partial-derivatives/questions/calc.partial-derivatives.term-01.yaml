@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.partial-derivatives.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "f(x,y)=x²+y²에서 ∂f/∂y는 ___입니다."
+choices:
+  - "2x"
+  - "2y"
+  - "x+y"
+  - "y²"
+acceptedAnswers:
+  - "2y"
+explanation:
+  - type: text
+    text: "x²는 y에 대해 상수이므로 0이고, y²의 미분은 2y입니다."
+  - type: text
+    text: "편미분 대상이 아닌 변수의 항은 상수처럼 처리합니다."
+tags:
+  - calculus
+  - multivariable
+  - partial
+difficulty: 1

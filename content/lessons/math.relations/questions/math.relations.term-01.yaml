@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.relations.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "관계 R은 Cartesian product의 ___ 집합입니다."
+choices:
+  - "부분"
+  - "전체"
+  - "여집합"
+acceptedAnswers:
+  - "부분"
+explanation:
+  - type: text
+    text: "관계는 Cartesian product에서 관련된 순서쌍만 선택한 부분집합입니다."
+  - type: text
+    text: "모든 쌍을 포함할 필요는 없습니다."
+tags:
+  - discrete-math
+  - relations
+  - relation
+difficulty: 1

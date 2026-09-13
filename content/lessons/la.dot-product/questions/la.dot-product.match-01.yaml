@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.dot-product.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "내적 표현과 의미를 알맞게 연결하세요."
+leftItems:
+  - id: formula
+    content:
+      - type: text
+        text: "u·v"
+  - id: positive
+    content:
+      - type: text
+        text: "u·v>0"
+  - id: zero
+    content:
+      - type: text
+        text: "u·v=0"
+  - id: negative
+    content:
+      - type: text
+        text: "u·v<0"
+rightItems:
+  - id: formula-desc
+    content:
+      - type: text
+        text: "대응 성분 곱의 합"
+  - id: positive-desc
+    content:
+      - type: text
+        text: "두 방향이 대체로 같은 쪽"
+  - id: zero-desc
+    content:
+      - type: text
+        text: "두 벡터가 직교"
+  - id: negative-desc
+    content:
+      - type: text
+        text: "두 방향이 대체로 반대쪽"
+correctPairs:
+  - leftId: formula
+    rightId: formula-desc
+  - leftId: positive
+    rightId: positive-desc
+  - leftId: zero
+    rightId: zero-desc
+  - leftId: negative
+    rightId: negative-desc
+explanation:
+  - type: text
+    text: "내적의 부호는 두 벡터가 이루는 각의 코사인 부호와 연결됩니다."
+  - type: text
+    text: "벡터의 길이가 0인 경우에도 내적이 0이므로 문맥을 함께 확인하세요."
+tags:
+  - linear-algebra
+  - dot-product
+  - sign
+difficulty: 2

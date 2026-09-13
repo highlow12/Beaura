@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: la.projection.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "벡터 u를 v 방향 성분과 수직 성분으로 분해하는 순서를 배열하세요."
+items:
+  - id: dot
+    content:
+      - type: text
+        text: "u·v로 평행 성분의 계수를 구한다"
+  - id: project
+    content:
+      - type: text
+        text: "proj_v(u)를 계산한다"
+  - id: subtract
+    content:
+      - type: text
+        text: "u에서 투영 벡터를 뺀다"
+  - id: check
+    content:
+      - type: text
+        text: "남은 벡터가 v와 직교인지 확인한다"
+correctOrder:
+  - dot
+  - project
+  - subtract
+  - check
+explanation:
+  - type: text
+    text: "투영을 먼저 구한 다음 원래 벡터에서 빼면 수직 성분을 얻습니다."
+  - type: text
+    text: "두 성분의 내적 관계를 확인하면 분해가 올바른지 검산할 수 있습니다."
+tags:
+  - linear-algebra
+  - projection
+  - decomposition
+difficulty: 2

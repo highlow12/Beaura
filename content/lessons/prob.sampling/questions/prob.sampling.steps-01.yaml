@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.sampling.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "설문으로 모집단 평균을 추정하는 흐름을 배열하세요."
+items:
+  - id: define
+    content:
+      - type: text
+        text: "관심 있는 모집단과 측정값을 정의한다"
+  - id: sample
+    content:
+      - type: text
+        text: "표본 추출 방법과 크기를 정한다"
+  - id: collect
+    content:
+      - type: text
+        text: "표본 데이터를 수집한다"
+  - id: estimate
+    content:
+      - type: text
+        text: "표본 통계량으로 모집단을 추정한다"
+correctOrder:
+  - define
+  - sample
+  - collect
+  - estimate
+explanation:
+  - type: text
+    text: "무엇을 알고 싶은지 정한 뒤 표본을 설계하고 관측·추정으로 이어갑니다."
+  - type: text
+    text: "표본을 먼저 모으고 모집단을 나중에 정하면 편향을 평가하기 어렵습니다."
+tags:
+  - probability-statistics
+  - sampling
+  - procedure
+difficulty: 2

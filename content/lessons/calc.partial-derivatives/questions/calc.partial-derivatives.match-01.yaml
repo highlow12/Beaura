@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.partial-derivatives.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "다변수 미분 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: partial-x
+    content:
+      - type: text
+        text: "∂f/∂x"
+  - id: partial-y
+    content:
+      - type: text
+        text: "∂f/∂y"
+  - id: fixed
+    content:
+      - type: text
+        text: "고정 변수"
+  - id: mixed
+    content:
+      - type: text
+        text: "혼합 편미분"
+rightItems:
+  - id: partial-x-desc
+    content:
+      - type: text
+        text: "y를 고정하고 x 방향 변화율"
+  - id: partial-y-desc
+    content:
+      - type: text
+        text: "x를 고정하고 y 방향 변화율"
+  - id: fixed-desc
+    content:
+      - type: text
+        text: "미분하는 동안 상수로 취급하는 변수"
+  - id: mixed-desc
+    content:
+      - type: text
+        text: "서로 다른 변수로 두 번 미분"
+correctPairs:
+  - leftId: partial-x
+    rightId: partial-x-desc
+  - leftId: partial-y
+    rightId: partial-y-desc
+  - leftId: fixed
+    rightId: fixed-desc
+  - leftId: mixed
+    rightId: mixed-desc
+explanation:
+  - type: text
+    text: "편미분은 여러 방향의 변화를 분리해 계산하는 방법입니다."
+  - type: text
+    text: "변수별 결과를 모으면 다변수 함수의 국소 모양을 더 잘 설명할 수 있습니다."
+tags:
+  - calculus
+  - multivariable
+  - terminology
+difficulty: 2

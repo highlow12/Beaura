@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.conditional.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "P(A|B)의 의미는 무엇인가요?"
+options:
+  - id: given-b
+    content:
+      - type: text
+        text: "B가 일어났다는 조건에서 A의 확률"
+  - id: given-a
+    content:
+      - type: text
+        text: "A가 일어났다는 조건에서 B의 확률"
+  - id: union
+    content:
+      - type: text
+        text: "A 또는 B의 확률"
+  - id: independent
+    content:
+      - type: text
+        text: "항상 서로 독립이라는 뜻"
+correctOptionId: given-b
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "조건부 확률에서 오른쪽 B가 주어진 조건이고 왼쪽 A가 관심 사건입니다."
+  - type: text
+    text: "P(A|B)와 P(B|A)는 일반적으로 서로 다른 값입니다."
+tags:
+  - probability-statistics
+  - conditional
+  - notation
+difficulty: 1

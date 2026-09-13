@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.numerical-differentiation.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "수치 미분의 h 선택에 대한 옳은 설명을 모두 고르세요."
+options:
+  - id: large-error
+    content:
+      - type: text
+        text: "h가 너무 크면 곡선의 국소 변화를 놓칠 수 있다"
+  - id: small-rounding
+    content:
+      - type: text
+        text: "h가 너무 작으면 반올림·잡음 오차가 커질 수 있다"
+  - id: compare
+    content:
+      - type: text
+        text: "여러 h의 결과를 비교해 안정성을 볼 수 있다"
+  - id: zero
+    content:
+      - type: text
+        text: "항상 h=0으로 두면 정확한 미분이 된다"
+correctOptionIds: [large-error, small-rounding, compare]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "스텝 크기는 절단 오차와 수치 오차 사이의 균형을 정해야 합니다."
+  - type: text
+    text: "h=0은 분모가 0이어서 차분 공식에 사용할 수 없습니다."
+tags:
+  - calculus
+  - numerical
+  - error
+difficulty: 2

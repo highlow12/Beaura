@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.graph-connectivity.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "연결성 용어와 판정 기준을 알맞게 연결하세요."
+leftItems:
+  - id: connected
+    content:
+      - type: text
+        text: "연결 그래프"
+  - id: component
+    content:
+      - type: text
+        text: "connected component"
+  - id: bridge
+    content:
+      - type: text
+        text: "bridge"
+  - id: isolated
+    content:
+      - type: text
+        text: "고립 정점"
+rightItems:
+  - id: connected-desc
+    content:
+      - type: text
+        text: "모든 정점 쌍 사이에 경로가 있음"
+  - id: component-desc
+    content:
+      - type: text
+        text: "서로 연결된 최대 정점 집합"
+  - id: bridge-desc
+    content:
+      - type: text
+        text: "제거하면 구성 요소가 늘어나는 간선"
+  - id: isolated-desc
+    content:
+      - type: text
+        text: "간선이 없어 혼자 구성 요소가 됨"
+correctPairs:
+  - leftId: connected
+    rightId: connected-desc
+  - leftId: component
+    rightId: component-desc
+  - leftId: bridge
+    rightId: bridge-desc
+  - leftId: isolated
+    rightId: isolated-desc
+explanation:
+  - type: text
+    text: "연결 그래프는 전체 성질이고, 구성 요소와 bridge는 연결이 끊어지는 구조를 세밀하게 설명합니다."
+  - type: text
+    text: "고립 정점은 차수가 0이지만 그 자체로 탐색의 시작점이 될 수 있습니다."
+tags:
+  - discrete-math
+  - graphs
+  - graph-properties
+difficulty: 2

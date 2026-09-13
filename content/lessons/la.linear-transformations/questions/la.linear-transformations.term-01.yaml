@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: la.linear-transformations.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "선형 변환은 반드시 원점을 ___으로 보냅니다."
+choices:
+  - "원점"
+  - "무한점"
+  - "다른 점"
+acceptedAnswers:
+  - "원점"
+explanation:
+  - type: text
+    text: "T(0)=T(0·v)=0·T(v)=0이므로 원점은 그대로입니다."
+  - type: text
+    text: "원점을 옮기는 평행이동과 선형 변환을 구분하세요."
+tags:
+  - linear-algebra
+  - transformations
+  - origin
+difficulty: 1

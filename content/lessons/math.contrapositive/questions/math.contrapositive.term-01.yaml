@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.contrapositive.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "대우를 만들 때 원래 명제의 전건과 후건은 순서를 바꾸고 각각 ___합니다."
+choices:
+  - "부정"
+  - "반복"
+  - "제곱"
+acceptedAnswers:
+  - "부정"
+explanation:
+  - type: text
+    text: "대우 ¬Q → ¬P는 두 부분을 모두 부정한 뒤 순서를 뒤집습니다."
+  - type: text
+    text: "이 규칙을 기억하면 역이나 이와 혼동하기 어렵습니다."
+tags:
+  - discrete-math
+  - proof
+  - negation
+difficulty: 1

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.graphs.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "방향 그래프에서 정점으로 들어오는 간선 수를 ___라고 합니다."
+choices:
+  - "indegree"
+  - "outdegree"
+  - "degree-total"
+acceptedAnswers:
+  - "indegree"
+explanation:
+  - type: text
+    text: "indegree는 해당 정점을 향해 들어오는 간선의 개수입니다."
+  - type: text
+    text: "반대로 정점에서 나가는 간선 수는 outdegree입니다."
+tags:
+  - discrete-math
+  - graphs
+  - directed-graph
+difficulty: 1

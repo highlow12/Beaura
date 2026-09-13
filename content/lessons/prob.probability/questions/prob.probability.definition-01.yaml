@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.probability.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "표본공간 Ω의 뜻은 무엇인가요?"
+options:
+  - id: all-outcomes
+    content:
+      - type: text
+        text: "실험에서 가능한 모든 결과의 집합"
+  - id: favorite
+    content:
+      - type: text
+        text: "관심 있는 결과 하나"
+  - id: average
+    content:
+      - type: text
+        text: "결과의 평균값"
+  - id: impossible
+    content:
+      - type: text
+        text: "일어날 수 없는 결과만"
+correctOptionId: all-outcomes
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "표본공간은 확률을 정의하기 위한 전체 가능한 결과를 담습니다."
+  - type: text
+    text: "사건은 이 표본공간에서 관심 있는 결과를 골라 만든 부분집합입니다."
+tags:
+  - probability-statistics
+  - probability
+  - sample-space
+difficulty: 1

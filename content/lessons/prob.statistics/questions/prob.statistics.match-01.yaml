@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.statistics.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "통계 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: mean
+    content:
+      - type: text
+        text: "평균"
+  - id: median
+    content:
+      - type: text
+        text: "중앙값"
+  - id: mode
+    content:
+      - type: text
+        text: "최빈값"
+  - id: correlation
+    content:
+      - type: text
+        text: "상관"
+rightItems:
+  - id: mean-desc
+    content:
+      - type: text
+        text: "값의 합을 개수로 나눈 중심"
+  - id: median-desc
+    content:
+      - type: text
+        text: "정렬된 자료의 가운데 위치"
+  - id: mode-desc
+    content:
+      - type: text
+        text: "가장 자주 나타나는 값"
+  - id: correlation-desc
+    content:
+      - type: text
+        text: "두 변수의 함께 변하는 관계"
+correctPairs:
+  - leftId: mean
+    rightId: mean-desc
+  - leftId: median
+    rightId: median-desc
+  - leftId: mode
+    rightId: mode-desc
+  - leftId: correlation
+    rightId: correlation-desc
+explanation:
+  - type: text
+    text: "중심 측도는 자료의 모양과 이상치에 따라 서로 다른 정보를 보존합니다."
+  - type: text
+    text: "상관은 인과와 다르므로 해석 문장의 범위를 제한해야 합니다."
+tags:
+  - probability-statistics
+  - statistics
+  - terminology
+difficulty: 2

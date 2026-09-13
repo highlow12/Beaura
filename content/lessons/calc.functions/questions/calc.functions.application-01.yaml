@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.functions.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "그래프 y=f(x)에 대한 옳은 설명을 모두 고르세요."
+options:
+  - id: height
+    content:
+      - type: text
+        text: "f(a)는 x=a에서의 y값이다"
+  - id: vertical
+    content:
+      - type: text
+        text: "수직선이 그래프를 두 번 이상 만나면 함수가 아니다"
+  - id: domain
+    content:
+      - type: text
+        text: "그래프의 가로 범위는 정의역과 관련된다"
+  - id: horizontal
+    content:
+      - type: text
+        text: "수평선 판정으로 함수 여부를 결정한다"
+correctOptionIds: [height, vertical, domain]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "수직선 판정은 하나의 입력에 출력이 하나인지 확인하는 방법입니다."
+  - type: text
+    text: "수평선 판정은 보통 일대일 여부를 살필 때 사용합니다."
+tags:
+  - calculus
+  - functions
+  - graph
+difficulty: 2

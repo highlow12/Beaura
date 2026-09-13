@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.independence.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "두 사건의 독립성을 곱셈식으로 확인하는 순서를 배열하세요."
+items:
+  - id: marginals
+    content:
+      - type: text
+        text: "P(A)와 P(B)를 계산한다"
+  - id: intersection
+    content:
+      - type: text
+        text: "P(A∩B)를 계산한다"
+  - id: product
+    content:
+      - type: text
+        text: "P(A)P(B)를 계산한다"
+  - id: compare
+    content:
+      - type: text
+        text: "두 값을 비교해 같으면 독립으로 판정한다"
+correctOrder:
+  - marginals
+  - intersection
+  - product
+  - compare
+explanation:
+  - type: text
+    text: "독립의 필요충분 조건인 교집합 곱셈식을 양쪽에서 계산해 비교합니다."
+  - type: text
+    text: "한 방향의 조건부 확률만 보고도 같은 결론을 낼 수 있지만, 식의 의미를 분명히 하세요."
+tags:
+  - probability-statistics
+  - independence
+  - test
+difficulty: 2

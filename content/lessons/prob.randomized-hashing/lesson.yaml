@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: prob.randomized-hashing
+revision: 1
+track: probability-statistics
+title: "무작위 알고리즘과 해싱 확률"
+description: "무작위 선택의 기대 성능과 해시 충돌 확률을 직관적으로 이해한다."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: prob.randomized-hashing.definition-01
+  - type: question
+    ref: prob.randomized-hashing.application-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: prob.randomized-hashing.term-01
+  - type: question
+    ref: prob.randomized-hashing.steps-01
+  - type: question
+    ref: prob.randomized-hashing.match-01

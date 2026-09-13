@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.cross-product.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "u×v가 항상 만족하는 관계는 무엇인가요?"
+options:
+  - id: perpendicular-both
+    content:
+      - type: text
+        text: "u와 v 모두에 수직이다"
+  - id: parallel-u
+    content:
+      - type: text
+        text: "항상 u와 평행하다"
+  - id: same
+    content:
+      - type: text
+        text: "항상 u와 같다"
+  - id: scalar
+    content:
+      - type: text
+        text: "항상 스칼라이다"
+correctOptionId: perpendicular-both
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "외적 결과는 두 입력 벡터가 만드는 평면의 법선 방향입니다."
+  - type: text
+    text: "3차원에서 정의되는 외적은 벡터를 결과로 냅니다."
+tags:
+  - linear-algebra
+  - cross-product
+  - normal
+difficulty: 1

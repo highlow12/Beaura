@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.trees.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "트리 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: root
+    content:
+      - type: text
+        text: "root"
+  - id: parent
+    content:
+      - type: text
+        text: "parent"
+  - id: child
+    content:
+      - type: text
+        text: "child"
+  - id: leaf
+    content:
+      - type: text
+        text: "leaf"
+rightItems:
+  - id: root-desc
+    content:
+      - type: text
+        text: "부모가 없는 기준 정점"
+  - id: parent-desc
+    content:
+      - type: text
+        text: "간선으로 아래 정점을 직접 이끄는 정점"
+  - id: child-desc
+    content:
+      - type: text
+        text: "부모 아래에 직접 연결된 정점"
+  - id: leaf-desc
+    content:
+      - type: text
+        text: "자식이 없는 끝 정점"
+correctPairs:
+  - leftId: root
+    rightId: root-desc
+  - leftId: parent
+    rightId: parent-desc
+  - leftId: child
+    rightId: child-desc
+  - leftId: leaf
+    rightId: leaf-desc
+explanation:
+  - type: text
+    text: "rooted tree는 방향을 임의로 정해 위·아래 계층을 말할 수 있게 만든 트리입니다."
+  - type: text
+    text: "같은 무방향 트리도 root 선택이 달라지면 부모와 자식 관계가 달라집니다."
+tags:
+  - discrete-math
+  - graphs
+  - terminology
+difficulty: 2

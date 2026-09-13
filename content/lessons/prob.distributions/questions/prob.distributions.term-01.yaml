@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.distributions.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "정규분포의 중심 위치를 나타내는 매개변수는 평균 ___입니다."
+choices:
+  - "μ"
+  - "σ"
+  - "p"
+  - "n"
+acceptedAnswers:
+  - "μ"
+explanation:
+  - type: text
+    text: "정규분포에서 μ는 중심과 평균을, σ는 퍼짐을 나타냅니다."
+  - type: text
+    text: "σ는 표준편차이므로 위치가 아니라 분산 정도를 조절합니다."
+tags:
+  - probability-statistics
+  - distributions
+  - normal
+difficulty: 1

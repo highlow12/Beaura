@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.trees.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Rooted tree에서 한 정점의 부모를 찾는 과정을 배열하세요."
+items:
+  - id: start-node
+    content:
+      - type: text
+        text: "관심 있는 정점을 고른다"
+  - id: move-up
+    content:
+      - type: text
+        text: "root 방향으로 한 간선을 따라간다"
+  - id: check-root
+    content:
+      - type: text
+        text: "도착한 정점이 root인지 확인한다"
+  - id: name-parent
+    content:
+      - type: text
+        text: "직전 정점을 부모로 기록한다"
+correctOrder:
+  - start-node
+  - move-up
+  - check-root
+  - name-parent
+explanation:
+  - type: text
+    text: "rooted tree에서는 root 쪽으로 바로 연결된 위 정점이 부모입니다."
+  - type: text
+    text: "관심 정점 자체가 root이면 부모가 없다는 예외도 확인해야 합니다."
+tags:
+  - discrete-math
+  - graphs
+  - parent-child
+difficulty: 2

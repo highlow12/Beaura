@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.gradient.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "∇f의 성분은 무엇으로 이루어지나요?"
+options:
+  - id: partials
+    content:
+      - type: text
+        text: "각 변수에 대한 편미분"
+  - id: integrals
+    content:
+      - type: text
+        text: "각 변수에 대한 적분"
+  - id: values-only
+    content:
+      - type: text
+        text: "함수값 하나를 반복한 것"
+  - id: eigen
+    content:
+      - type: text
+        text: "고유값만"
+correctOptionId: partials
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "그래디언트는 편미분을 벡터로 모은 것입니다."
+  - type: text
+    text: "2변수라면 x방향과 y방향 편미분 두 성분을 가집니다."
+tags:
+  - calculus
+  - gradient
+  - definition
+difficulty: 1

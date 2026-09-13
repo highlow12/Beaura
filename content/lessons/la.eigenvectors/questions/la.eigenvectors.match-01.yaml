@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.eigenvectors.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "고유값 개념과 표현을 알맞게 연결하세요."
+leftItems:
+  - id: eigenvector
+    content:
+      - type: text
+        text: "고유벡터 v"
+  - id: eigenvalue
+    content:
+      - type: text
+        text: "고유값 λ"
+  - id: equation
+    content:
+      - type: text
+        text: "Av=λv"
+  - id: char
+    content:
+      - type: text
+        text: "det(A−λI)=0"
+rightItems:
+  - id: eigenvector-desc
+    content:
+      - type: text
+        text: "변환 뒤 방향이 유지되는 0이 아닌 벡터"
+  - id: eigenvalue-desc
+    content:
+      - type: text
+        text: "그 방향의 배율"
+  - id: equation-desc
+    content:
+      - type: text
+        text: "고유 관계를 나타내는 식"
+  - id: char-desc
+    content:
+      - type: text
+        text: "고유값을 찾는 특성방정식"
+correctPairs:
+  - leftId: eigenvector
+    rightId: eigenvector-desc
+  - leftId: eigenvalue
+    rightId: eigenvalue-desc
+  - leftId: equation
+    rightId: equation-desc
+  - leftId: char
+    rightId: char-desc
+explanation:
+  - type: text
+    text: "고유 문제는 행렬 변환을 특별한 방향과 배율의 쌍으로 분석합니다."
+  - type: text
+    text: "방정식과 용어를 함께 기억하면 계산 절차를 재구성하기 쉽습니다."
+tags:
+  - linear-algebra
+  - eigen
+  - terminology
+difficulty: 2

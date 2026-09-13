@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.random-variables.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "확률변수 X의 정의로 알맞은 것은 무엇인가요?"
+options:
+  - id: mapping
+    content:
+      - type: text
+        text: "실험 결과를 수치에 대응시키는 함수"
+  - id: outcome-only
+    content:
+      - type: text
+        text: "실험의 한 결과 자체"
+  - id: probability-only
+    content:
+      - type: text
+        text: "확률을 모두 더한 값"
+  - id: average
+    content:
+      - type: text
+        text: "항상 평균값 하나"
+correctOptionId: mapping
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "확률변수는 표본공간의 결과를 숫자로 매핑해 분석하게 합니다."
+  - type: text
+    text: "하나의 확률변수가 여러 값을 가질 수 있고 그 분포를 함께 봅니다."
+tags:
+  - probability-statistics
+  - random-variables
+  - definition
+difficulty: 1

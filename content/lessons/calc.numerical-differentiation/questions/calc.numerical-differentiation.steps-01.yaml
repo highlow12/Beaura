@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.numerical-differentiation.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "수치 미분으로 표 데이터의 기울기를 구하는 흐름을 배열하세요."
+items:
+  - id: choose-h
+    content:
+      - type: text
+        text: "기준점과 이웃 샘플의 간격 h를 확인한다"
+  - id: select
+    content:
+      - type: text
+        text: "전진·후진·중심 차분 중 하나를 고른다"
+  - id: substitute
+    content:
+      - type: text
+        text: "표의 함숫값을 공식에 대입한다"
+  - id: check
+    content:
+      - type: text
+        text: "다른 h나 방법과 결과를 비교한다"
+correctOrder:
+  - choose-h
+  - select
+  - substitute
+  - check
+explanation:
+  - type: text
+    text: "샘플 간격과 경계를 고려해 차분 방식을 고른 뒤 값을 대입합니다."
+  - type: text
+    text: "근사값의 신뢰도를 보려면 스텝이나 공식에 따른 변화를 점검합니다."
+tags:
+  - calculus
+  - numerical
+  - procedure
+difficulty: 2

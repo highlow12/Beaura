@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.direct-proof.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "직접 증명의 요소와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: assumption
+    content:
+      - type: text
+        text: "가정"
+  - id: definition
+    content:
+      - type: text
+        text: "정의"
+  - id: derivation
+    content:
+      - type: text
+        text: "유도"
+  - id: conclusion
+    content:
+      - type: text
+        text: "결론"
+rightItems:
+  - id: assumption-desc
+    content:
+      - type: text
+        text: "증명에서 참으로 두고 시작하는 조건"
+  - id: definition-desc
+    content:
+      - type: text
+        text: "대상을 정확히 표현하는 약속"
+  - id: derivation-desc
+    content:
+      - type: text
+        text: "근거를 이용해 다음 문장을 얻는 과정"
+  - id: conclusion-desc
+    content:
+      - type: text
+        text: "처음 목표로 삼은 명제가 성립한다는 문장"
+correctPairs:
+  - leftId: assumption
+    rightId: assumption-desc
+  - leftId: definition
+    rightId: definition-desc
+  - leftId: derivation
+    rightId: derivation-desc
+  - leftId: conclusion
+    rightId: conclusion-desc
+explanation:
+  - type: text
+    text: "직접 증명은 가정과 정의에서 시작해 유도 과정을 거쳐 목표 결론에 도착합니다."
+  - type: text
+    text: "중간 유도의 근거가 빠지면 계산은 맞아도 증명이 완결되지 않을 수 있습니다."
+tags:
+  - discrete-math
+  - proof
+  - proof-structure
+difficulty: 2

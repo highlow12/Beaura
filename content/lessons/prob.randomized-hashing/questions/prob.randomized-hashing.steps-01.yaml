@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.randomized-hashing.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "해시 테이블에서 키를 삽입하는 개념적 흐름을 배열하세요."
+items:
+  - id: hash
+    content:
+      - type: text
+        text: "키에 해시 함수를 적용한다"
+  - id: bucket
+    content:
+      - type: text
+        text: "해시 값이 가리키는 버킷을 찾는다"
+  - id: check
+    content:
+      - type: text
+        text: "버킷에 충돌한 키가 있는지 확인한다"
+  - id: resolve
+    content:
+      - type: text
+        text: "빈 자리나 충돌 해결 구조에 키를 저장한다"
+correctOrder:
+  - hash
+  - bucket
+  - check
+  - resolve
+explanation:
+  - type: text
+    text: "해시 위치를 계산한 뒤 충돌 여부에 따라 정해진 해결 전략을 적용합니다."
+  - type: text
+    text: "해시 함수가 같아도 저장 방식은 chaining과 open addressing에 따라 달라집니다."
+tags:
+  - probability-statistics
+  - randomized-algorithms
+  - procedure
+difficulty: 2

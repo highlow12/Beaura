@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.conditional.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "조건부 확률을 도수표에서 구하는 절차를 배열하세요."
+items:
+  - id: condition
+    content:
+      - type: text
+        text: "조건 사건 B에 해당하는 행이나 열을 선택한다"
+  - id: overlap
+    content:
+      - type: text
+        text: "B 안에서 A와 겹치는 칸을 찾는다"
+  - id: count
+    content:
+      - type: text
+        text: "겹침의 도수를 분자로 센다"
+  - id: divide
+    content:
+      - type: text
+        text: "B 전체 도수로 나눈다"
+correctOrder:
+  - condition
+  - overlap
+  - count
+  - divide
+explanation:
+  - type: text
+    text: "조건 영역을 먼저 제한한 후 그 안의 관심 결과를 세어 분모와 분자를 정합니다."
+  - type: text
+    text: "전체 표본 수를 분모로 쓰면 조건을 반영하지 못합니다."
+tags:
+  - probability-statistics
+  - conditional
+  - contingency-table
+difficulty: 2

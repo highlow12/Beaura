@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.expectation.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "X가 1을 확률 1/2, 3을 확률 1/2로 가지면 E[X]=___입니다."
+choices:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+acceptedAnswers:
+  - "2"
+explanation:
+  - type: text
+    text: "E[X]=1×1/2+3×1/2=2입니다."
+  - type: text
+    text: "각 결과의 확률을 곱해 더하는 가중 평균입니다."
+tags:
+  - probability-statistics
+  - expectation
+  - calculation
+difficulty: 1

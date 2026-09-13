@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.counterexample.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "전칭 명제를 거짓으로 만드는 한 가지 사례를 ___라고 합니다."
+choices:
+  - "반례"
+  - "정의"
+  - "공역"
+acceptedAnswers:
+  - "반례"
+explanation:
+  - type: text
+    text: "주장의 조건을 만족하지만 결론을 깨는 사례가 반례입니다."
+  - type: text
+    text: "반례는 하나만으로도 ‘모든’이라는 주장을 반박할 수 있습니다."
+tags:
+  - discrete-math
+  - proof
+  - terminology
+difficulty: 1

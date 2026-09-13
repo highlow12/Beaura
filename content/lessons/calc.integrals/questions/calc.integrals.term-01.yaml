@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.integrals.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "∫2x dx의 한 원시함수는 ___입니다."
+choices:
+  - "x²"
+  - "2x²"
+  - "x+2"
+  - "2"
+acceptedAnswers:
+  - "x²"
+explanation:
+  - type: text
+    text: "x²을 미분하면 2x가 되므로 한 원시함수는 x²입니다."
+  - type: text
+    text: "부정적분 전체를 쓰면 x²+C입니다."
+tags:
+  - calculus
+  - integrals
+  - antiderivative
+difficulty: 1

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.partial-derivatives.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "∂f/∂x를 계산할 때 어떻게 하나요?"
+options:
+  - id: hold-y
+    content:
+      - type: text
+        text: "y를 상수로 고정하고 x에 대해 미분한다"
+  - id: hold-x
+    content:
+      - type: text
+        text: "x를 상수로 고정하고 y에 대해 미분한다"
+  - id: both
+    content:
+      - type: text
+        text: "x와 y를 동시에 1씩 바꾼다"
+  - id: integrate
+    content:
+      - type: text
+        text: "모든 변수를 적분한다"
+correctOptionId: hold-y
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "x에 대한 편미분에서는 나머지 변수 y를 상수처럼 취급합니다."
+  - type: text
+    text: "∂f/∂y에서는 반대로 x를 고정합니다."
+tags:
+  - calculus
+  - multivariable
+  - definition
+difficulty: 1

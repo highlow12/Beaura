@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.events.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "사건 연산과 의미를 알맞게 연결하세요."
+leftItems:
+  - id: union
+    content:
+      - type: text
+        text: "A∪B"
+  - id: intersection
+    content:
+      - type: text
+        text: "A∩B"
+  - id: complement
+    content:
+      - type: text
+        text: "Aᶜ"
+  - id: disjoint
+    content:
+      - type: text
+        text: "서로 배반"
+rightItems:
+  - id: union-desc
+    content:
+      - type: text
+        text: "A 또는 B가 일어남"
+  - id: intersection-desc
+    content:
+      - type: text
+        text: "A와 B가 모두 일어남"
+  - id: complement-desc
+    content:
+      - type: text
+        text: "A가 일어나지 않음"
+  - id: disjoint-desc
+    content:
+      - type: text
+        text: "두 사건이 동시에 일어날 수 없음"
+correctPairs:
+  - leftId: union
+    rightId: union-desc
+  - leftId: intersection
+    rightId: intersection-desc
+  - leftId: complement
+    rightId: complement-desc
+  - leftId: disjoint
+    rightId: disjoint-desc
+explanation:
+  - type: text
+    text: "집합 기호와 자연어의 ‘또는·그리고·아님’을 대응시키면 사건 영역을 빠르게 읽을 수 있습니다."
+  - type: text
+    text: "배반 여부는 합확률 공식을 단순화할 수 있는지 결정합니다."
+tags:
+  - probability-statistics
+  - events
+  - set-operations
+difficulty: 2

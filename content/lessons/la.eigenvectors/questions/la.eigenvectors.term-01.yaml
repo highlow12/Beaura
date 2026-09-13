@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: la.eigenvectors.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "고유값을 찾는 특성방정식은 det(A−λI)=___입니다."
+choices:
+  - "0"
+  - "1"
+  - "A"
+acceptedAnswers:
+  - "0"
+explanation:
+  - type: text
+    text: "0이 아닌 해 v를 가지려면 행렬 A−λI가 특이해야 하므로 행렬식이 0이어야 합니다."
+  - type: text
+    text: "이 식의 해 λ가 고유값 후보입니다."
+tags:
+  - linear-algebra
+  - eigen
+  - characteristic-equation
+difficulty: 1

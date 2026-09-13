@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: calc.functions.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "함수 f에서 입력 x에 대응하는 출력은 f(___)로 씁니다."
+choices:
+  - "x"
+  - "f"
+  - "0"
+acceptedAnswers:
+  - "x"
+explanation:
+  - type: text
+    text: "함수 표기 f(x)에서 괄호 안이 입력입니다."
+  - type: text
+    text: "f는 규칙의 이름이고 x가 입력 변수입니다."
+tags:
+  - calculus
+  - functions
+  - notation
+difficulty: 1

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.bayes.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "베이즈 용어와 의미를 알맞게 연결하세요."
+leftItems:
+  - id: prior
+    content:
+      - type: text
+        text: "사전확률"
+  - id: likelihood
+    content:
+      - type: text
+        text: "우도"
+  - id: evidence
+    content:
+      - type: text
+        text: "증거 확률"
+  - id: posterior
+    content:
+      - type: text
+        text: "사후확률"
+rightItems:
+  - id: prior-desc
+    content:
+      - type: text
+        text: "증거를 보기 전 원인의 확률"
+  - id: likelihood-desc
+    content:
+      - type: text
+        text: "원인이 주어졌을 때 증거의 확률"
+  - id: evidence-desc
+    content:
+      - type: text
+        text: "모든 원인을 고려한 증거의 전체 확률"
+  - id: posterior-desc
+    content:
+      - type: text
+        text: "증거를 본 뒤 원인의 확률"
+correctPairs:
+  - leftId: prior
+    rightId: prior-desc
+  - leftId: likelihood
+    rightId: likelihood-desc
+  - leftId: evidence
+    rightId: evidence-desc
+  - leftId: posterior
+    rightId: posterior-desc
+explanation:
+  - type: text
+    text: "베이즈 추론은 사전확률과 우도를 곱한 뒤 증거의 전체 확률로 나누어 방향을 바꿉니다."
+  - type: text
+    text: "기저율을 무시하면 희귀 사건의 판정 확률을 크게 과대평가할 수 있습니다."
+tags:
+  - probability-statistics
+  - bayes
+  - terminology
+difficulty: 2

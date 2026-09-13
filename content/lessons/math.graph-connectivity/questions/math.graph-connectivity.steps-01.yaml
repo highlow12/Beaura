@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: math.graph-connectivity.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "BFS로 연결 그래프인지 확인하는 절차를 배열하세요."
+items:
+  - id: start
+    content:
+      - type: text
+        text: "임의의 시작 정점을 고른다"
+  - id: search
+    content:
+      - type: text
+        text: "BFS로 도달 가능한 정점을 모두 방문한다"
+  - id: count
+    content:
+      - type: text
+        text: "방문한 정점 수를 센다"
+  - id: decide
+    content:
+      - type: text
+        text: "전체 정점 수와 같으면 연결 그래프로 판정한다"
+correctOrder:
+  - start
+  - search
+  - count
+  - decide
+explanation:
+  - type: text
+    text: "한 번의 탐색으로 모든 정점이 방문되는지가 연결성의 기준입니다."
+  - type: text
+    text: "방문하지 못한 정점이 있으면 그래프는 둘 이상의 구성 요소로 나뉩니다."
+tags:
+  - discrete-math
+  - graphs
+  - bfs
+  - connectivity
+difficulty: 2

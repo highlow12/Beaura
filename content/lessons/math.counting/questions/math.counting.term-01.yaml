@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.counting.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "서로 배타적인 경우의 수를 합하는 원리는 ___ 법칙입니다."
+choices:
+  - "합의"
+  - "곱의"
+  - "귀납"
+acceptedAnswers:
+  - "합의"
+explanation:
+  - type: text
+    text: "겹치지 않는 선택 경로를 하나씩 더하는 규칙이 합의 법칙입니다."
+  - type: text
+    text: "경우가 겹치면 단순 합산 전에 중복을 처리해야 합니다."
+tags:
+  - discrete-math
+  - combinatorics
+  - sum-rule
+difficulty: 1

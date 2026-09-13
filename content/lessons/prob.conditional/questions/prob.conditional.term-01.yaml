@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.conditional.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "P(A∩B)=P(A|B)P(B)에서 P(B)는 조건부 확률의 ___입니다."
+choices:
+  - "분모"
+  - "분자"
+  - "결과"
+acceptedAnswers:
+  - "분모"
+explanation:
+  - type: text
+    text: "P(A|B)의 정의에서 P(B)가 분모로 들어가며, 양변을 곱하면 교집합을 얻습니다."
+  - type: text
+    text: "조건 사건의 확률이 0이면 이 식으로 조건부 확률을 정의할 수 없습니다."
+tags:
+  - probability-statistics
+  - conditional
+  - multiplication-rule
+difficulty: 1

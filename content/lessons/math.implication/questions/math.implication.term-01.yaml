@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.implication.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "P가 거짓이고 Q도 거짓일 때 P → Q의 진리값을 고르세요."
+choices:
+  - "참"
+  - "거짓"
+  - "정의할 수 없음"
+acceptedAnswers:
+  - "참"
+explanation:
+  - type: text
+    text: "전건 P가 거짓인 행에서는 후건의 값과 관계없이 함의를 참으로 평가합니다."
+  - type: text
+    text: "함의를 거짓으로 만드는 유일한 행은 참인 전건과 거짓인 후건의 조합입니다."
+tags:
+  - discrete-math
+  - logic
+  - truth-value
+difficulty: 2

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.eigenvectors.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Av=λv에서 고유벡터 v에 필요한 조건은 무엇인가요?"
+options:
+  - id: nonzero
+    content:
+      - type: text
+        text: "v가 영벡터가 아니다"
+  - id: zero
+    content:
+      - type: text
+        text: "v가 반드시 영벡터이다"
+  - id: scalar
+    content:
+      - type: text
+        text: "v가 스칼라이다"
+  - id: orthogonal
+    content:
+      - type: text
+        text: "v가 항상 모든 벡터에 수직이다"
+correctOptionId: nonzero
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "영벡터는 모든 λ에 대해 식을 만족하므로 고유벡터의 정보가 되지 않아 제외합니다."
+  - type: text
+    text: "고유벡터는 변환 뒤 방향이 유지되는 0이 아닌 벡터입니다."
+tags:
+  - linear-algebra
+  - eigen
+  - definition
+difficulty: 1

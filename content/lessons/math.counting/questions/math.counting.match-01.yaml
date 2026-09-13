@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.counting.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "경우의 수 상황과 사용할 법칙을 알맞게 연결하세요."
+leftItems:
+  - id: exclusive
+    content:
+      - type: text
+        text: "버스 또는 지하철 하나 선택"
+  - id: sequential
+    content:
+      - type: text
+        text: "상의와 하의 하나씩 선택"
+  - id: sum
+    content:
+      - type: text
+        text: "배타적 경우를 더함"
+  - id: product
+    content:
+      - type: text
+        text: "연속 단계의 선택을 곱함"
+rightItems:
+  - id: exclusive-desc
+    content:
+      - type: text
+        text: "합의 법칙을 적용할 수 있는 상황"
+  - id: sequential-desc
+    content:
+      - type: text
+        text: "곱의 법칙을 적용할 수 있는 상황"
+  - id: sum-desc
+    content:
+      - type: text
+        text: "서로 겹치지 않는 경로의 총합"
+  - id: product-desc
+    content:
+      - type: text
+        text: "각 단계 조합의 총수"
+correctPairs:
+  - leftId: exclusive
+    rightId: exclusive-desc
+  - leftId: sequential
+    rightId: sequential-desc
+  - leftId: sum
+    rightId: sum-desc
+  - leftId: product
+    rightId: product-desc
+explanation:
+  - type: text
+    text: "‘또는’으로 갈라지는 배타적 선택은 합, ‘그리고’로 이어지는 단계는 곱을 사용합니다."
+  - type: text
+    text: "문장 속 연결어를 선택 구조로 바꿔 읽으면 법칙을 고르기 쉽습니다."
+tags:
+  - discrete-math
+  - combinatorics
+  - rules
+difficulty: 2

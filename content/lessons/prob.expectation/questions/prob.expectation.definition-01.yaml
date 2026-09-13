@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.expectation.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "기대값 E[X]의 의미로 가장 알맞은 것은 무엇인가요?"
+options:
+  - id: weighted-average
+    content:
+      - type: text
+        text: "확률로 가중한 장기 평균"
+  - id: most-likely
+    content:
+      - type: text
+        text: "가장 자주 나오는 값 하나"
+  - id: maximum
+    content:
+      - type: text
+        text: "가능한 최댓값"
+  - id: sum-only
+    content:
+      - type: text
+        text: "가능한 값의 단순 합"
+correctOptionId: weighted-average
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "기대값은 각 결과와 그 확률의 곱을 합한 가중 평균입니다."
+  - type: text
+    text: "가장 가능성 높은 값이나 최댓값과는 다른 개념입니다."
+tags:
+  - probability-statistics
+  - expectation
+  - definition
+difficulty: 1

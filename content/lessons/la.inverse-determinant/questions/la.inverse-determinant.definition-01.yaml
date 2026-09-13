@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.inverse-determinant.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "2×2 행렬 A가 역행렬을 가지기 위한 조건은 무엇인가요?"
+options:
+  - id: nonzero-det
+    content:
+      - type: text
+        text: "det(A)가 0이 아니다"
+  - id: zero-det
+    content:
+      - type: text
+        text: "det(A)=0이다"
+  - id: square-only
+    content:
+      - type: text
+        text: "정사각형이면 항상 가능하다"
+  - id: positive
+    content:
+      - type: text
+        text: "모든 원소가 양수다"
+correctOptionId: nonzero-det
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "행렬식이 0이 아니면 행렬은 가역(invertible)입니다."
+  - type: text
+    text: "정사각행렬이라는 조건만으로는 충분하지 않고 행렬식도 확인해야 합니다."
+tags:
+  - linear-algebra
+  - matrices
+  - invertible
+difficulty: 1

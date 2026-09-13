@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.counting.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "셔츠 3가지와 바지 2가지 중 하나씩 골라 옷 한 벌을 만들 때 경우의 수는?"
+options:
+  - id: five
+    content:
+      - type: text
+        text: "5가지"
+  - id: six
+    content:
+      - type: text
+        text: "6가지"
+  - id: one
+    content:
+      - type: text
+        text: "1가지"
+  - id: nine
+    content:
+      - type: text
+        text: "9가지"
+correctOptionId: six
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "셔츠 선택 3가지 각각에 바지 2가지를 조합할 수 있으므로 3×2=6입니다."
+  - type: text
+    text: "연속 선택은 곱의 법칙으로 계산합니다."
+tags:
+  - discrete-math
+  - combinatorics
+  - product-rule
+difficulty: 1

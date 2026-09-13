@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.limits.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "limₓ→₂ (x+3)의 값은 ___입니다."
+choices:
+  - "3"
+  - "5"
+  - "6"
+  - "2"
+acceptedAnswers:
+  - "5"
+explanation:
+  - type: text
+    text: "다항식은 x=2를 바로 대입할 수 있어 2+3=5입니다."
+  - type: text
+    text: "대입이 가능한지 식의 형태를 먼저 확인하세요."
+tags:
+  - calculus
+  - limits
+  - evaluation
+difficulty: 1

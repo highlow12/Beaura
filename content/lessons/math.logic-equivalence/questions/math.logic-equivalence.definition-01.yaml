@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.logic-equivalence.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "¬(P ∧ Q)와 논리적으로 동치인 식은 무엇인가요?"
+options:
+  - id: a
+    content:
+      - type: text
+        text: "¬P ∧ ¬Q"
+  - id: b
+    content:
+      - type: text
+        text: "¬P ∨ ¬Q"
+  - id: c
+    content:
+      - type: text
+        text: "P ∨ Q"
+  - id: d
+    content:
+      - type: text
+        text: "P ∧ ¬Q"
+correctOptionId: b
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "AND 전체를 부정하면 각 항을 부정한 뒤 OR로 연결하는 드모르간 법칙이 적용됩니다."
+  - type: text
+    text: "따라서 ¬(P ∧ Q)는 ¬P ∨ ¬Q입니다."
+tags:
+  - discrete-math
+  - logic
+  - demorgan
+difficulty: 1

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.definite-integrals.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "∫₀² x dx의 값은 ___입니다."
+choices:
+  - "1"
+  - "2"
+  - "4"
+  - "0"
+acceptedAnswers:
+  - "2"
+explanation:
+  - type: text
+    text: "원시함수는 x²/2이고 [x²/2]₀²=2−0=2입니다."
+  - type: text
+    text: "그래프 아래 삼각형의 넓이 1/2×2×2로도 확인할 수 있습니다."
+tags:
+  - calculus
+  - definite-integrals
+  - calculation
+difficulty: 1

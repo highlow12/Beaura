@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.trees.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Rooted tree에서 자식이 하나도 없는 정점을 ___라고 합니다."
+choices:
+  - "leaf"
+  - "root"
+  - "parent"
+acceptedAnswers:
+  - "leaf"
+explanation:
+  - type: text
+    text: "leaf는 아래로 더 이어지는 자식이 없는 끝 정점입니다."
+  - type: text
+    text: "root는 트리의 기준이 되는 시작 정점이고, parent는 자식 위의 정점입니다."
+tags:
+  - discrete-math
+  - graphs
+  - rooted-tree
+difficulty: 1

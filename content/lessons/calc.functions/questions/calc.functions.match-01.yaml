@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.functions.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "함수 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: domain
+    content:
+      - type: text
+        text: "정의역"
+  - id: codomain
+    content:
+      - type: text
+        text: "공역"
+  - id: range
+    content:
+      - type: text
+        text: "치역"
+  - id: composition
+    content:
+      - type: text
+        text: "합성함수"
+rightItems:
+  - id: domain-desc
+    content:
+      - type: text
+        text: "허용된 입력의 집합"
+  - id: codomain-desc
+    content:
+      - type: text
+        text: "출력으로 삼기로 한 전체 집합"
+  - id: range-desc
+    content:
+      - type: text
+        text: "실제로 나온 출력의 집합"
+  - id: composition-desc
+    content:
+      - type: text
+        text: "한 함수의 출력을 다음 함수에 입력"
+correctPairs:
+  - leftId: domain
+    rightId: domain-desc
+  - leftId: codomain
+    rightId: codomain-desc
+  - leftId: range
+    rightId: range-desc
+  - leftId: composition
+    rightId: composition-desc
+explanation:
+  - type: text
+    text: "정의역·공역·치역은 입력과 출력 집합의 범위를 구분하는 용어입니다."
+  - type: text
+    text: "합성에서는 안쪽 함수의 출력이 바깥 함수의 입력 조건을 만족해야 합니다."
+tags:
+  - calculus
+  - functions
+  - terminology
+difficulty: 2

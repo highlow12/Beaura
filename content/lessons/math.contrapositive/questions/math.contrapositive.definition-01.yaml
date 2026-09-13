@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.contrapositive.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "P → Q의 대우는 무엇인가요?"
+options:
+  - id: a
+    content:
+      - type: text
+        text: "Q → P"
+  - id: b
+    content:
+      - type: text
+        text: "¬P → ¬Q"
+  - id: c
+    content:
+      - type: text
+        text: "¬Q → ¬P"
+  - id: d
+    content:
+      - type: text
+        text: "P ∧ Q"
+correctOptionId: c
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "대우는 전건과 후건의 순서를 바꾼 뒤 둘을 모두 부정한 ¬Q → ¬P입니다."
+  - type: text
+    text: "Q → P는 역이고 ¬P → ¬Q는 이입니다."
+tags:
+  - discrete-math
+  - proof
+  - contrapositive
+difficulty: 1

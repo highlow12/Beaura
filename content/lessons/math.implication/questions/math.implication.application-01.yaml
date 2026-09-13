@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.implication.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "P → Q와 항상 논리적으로 동치인 명제를 모두 고르세요."
+options:
+  - id: contrapositive
+    content:
+      - type: text
+        text: "¬Q → ¬P"
+  - id: converse
+    content:
+      - type: text
+        text: "Q → P"
+  - id: not-or
+    content:
+      - type: text
+        text: "¬P ∨ Q"
+  - id: inverse
+    content:
+      - type: text
+        text: "¬P → ¬Q"
+correctOptionIds: [contrapositive, not-or]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "함의는 대우 ¬Q → ¬P와 동치이고, 진리표에서 ¬P ∨ Q와도 같은 값을 가집니다."
+  - type: text
+    text: "역과 이는 각각 별도의 명제라서 원래 함의와 항상 같지 않습니다."
+tags:
+  - discrete-math
+  - logic
+  - equivalence
+difficulty: 3

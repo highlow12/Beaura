@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.statistics.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "자료 2, 4, 8의 평균은 ___입니다."
+choices:
+  - "14/3"
+  - "14"
+  - "8"
+  - "2"
+acceptedAnswers:
+  - "14/3"
+explanation:
+  - type: text
+    text: "평균은 (2+4+8)/3=14/3입니다."
+  - type: text
+    text: "선택지에서 분수 표현도 정확히 확인해야 합니다."
+tags:
+  - probability-statistics
+  - statistics
+  - mean
+difficulty: 1

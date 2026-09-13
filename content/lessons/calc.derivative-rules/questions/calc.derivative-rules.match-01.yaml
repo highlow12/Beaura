@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.derivative-rules.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "미분 법칙과 식을 알맞게 연결하세요."
+leftItems:
+  - id: sum
+    content:
+      - type: text
+        text: "(f+g)′"
+  - id: product
+    content:
+      - type: text
+        text: "(fg)′"
+  - id: chain
+    content:
+      - type: text
+        text: "(f∘g)′"
+  - id: constant
+    content:
+      - type: text
+        text: "(cf)′"
+rightItems:
+  - id: sum-desc
+    content:
+      - type: text
+        text: "f′+g′"
+  - id: product-desc
+    content:
+      - type: text
+        text: "f′g+fg′"
+  - id: chain-desc
+    content:
+      - type: text
+        text: "f′(g(x))g′(x)"
+  - id: constant-desc
+    content:
+      - type: text
+        text: "cf′"
+correctPairs:
+  - leftId: sum
+    rightId: sum-desc
+  - leftId: product
+    rightId: product-desc
+  - leftId: chain
+    rightId: chain-desc
+  - leftId: constant
+    rightId: constant-desc
+explanation:
+  - type: text
+    text: "식의 바깥 구조가 합인지 곱인지 합성인지에 따라 사용할 법칙이 달라집니다."
+  - type: text
+    text: "법칙 이름보다 원래 식의 구조를 먼저 표시하면 선택이 쉬워집니다."
+tags:
+  - calculus
+  - derivative-rules
+  - rules
+difficulty: 2

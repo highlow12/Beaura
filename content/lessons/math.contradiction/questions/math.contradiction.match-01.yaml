@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.contradiction.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "모순 증명의 표현과 역할을 알맞게 연결하세요."
+leftItems:
+  - id: negated-goal
+    content:
+      - type: text
+        text: "¬Q를 가정"
+  - id: known
+    content:
+      - type: text
+        text: "이미 참인 정리"
+  - id: conflict
+    content:
+      - type: text
+        text: "P와 ¬P"
+  - id: conclusion
+    content:
+      - type: text
+        text: "Q"
+rightItems:
+  - id: negated-goal-desc
+    content:
+      - type: text
+        text: "모순 증명의 출발 가정"
+  - id: known-desc
+    content:
+      - type: text
+        text: "추론에 사용할 근거"
+  - id: conflict-desc
+    content:
+      - type: text
+        text: "동시에 참일 수 없는 결과"
+  - id: conclusion-desc
+    content:
+      - type: text
+        text: "부정 가정이 거짓임으로써 얻는 원래 목표"
+correctPairs:
+  - leftId: negated-goal
+    rightId: negated-goal-desc
+  - leftId: known
+    rightId: known-desc
+  - leftId: conflict
+    rightId: conflict-desc
+  - leftId: conclusion
+    rightId: conclusion-desc
+explanation:
+  - type: text
+    text: "모순 증명은 부정 가정과 근거에서 충돌을 만들고, 그 결과 원래 목표를 확정합니다."
+  - type: text
+    text: "모순의 두 문장이 실제로 서로 부정 관계인지 확인해야 합니다."
+tags:
+  - discrete-math
+  - proof
+  - structure
+difficulty: 2

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.conditional.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "조건부 확률 요소와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: a-given-b
+    content:
+      - type: text
+        text: "P(A|B)"
+  - id: intersection
+    content:
+      - type: text
+        text: "P(A∩B)"
+  - id: condition
+    content:
+      - type: text
+        text: "B"
+  - id: product
+    content:
+      - type: text
+        text: "P(A|B)P(B)"
+rightItems:
+  - id: a-given-b-desc
+    content:
+      - type: text
+        text: "B를 알고 난 뒤 A의 확률"
+  - id: intersection-desc
+    content:
+      - type: text
+        text: "두 사건이 함께 일어날 확률"
+  - id: condition-desc
+    content:
+      - type: text
+        text: "기준 공간을 좁히는 사건"
+  - id: product-desc
+    content:
+      - type: text
+        text: "교집합 확률을 복원하는 곱"
+correctPairs:
+  - leftId: a-given-b
+    rightId: a-given-b-desc
+  - leftId: intersection
+    rightId: intersection-desc
+  - leftId: condition
+    rightId: condition-desc
+  - leftId: product
+    rightId: product-desc
+explanation:
+  - type: text
+    text: "조건부 확률은 사건의 곱을 조건 사건의 확률로 나눈 값입니다."
+  - type: text
+    text: "표현의 방향을 읽고 조건 사건을 분모 기준으로 삼으세요."
+tags:
+  - probability-statistics
+  - conditional
+  - terminology
+difficulty: 2

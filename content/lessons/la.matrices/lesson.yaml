@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: la.matrices
+revision: 1
+track: linear-algebra
+title: "행렬과 좌표"
+description: "행렬의 행·열 구조와 행렬이 데이터를 표로 표현하는 방식을 이해한다."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.matrices.definition-01
+  - type: question
+    ref: la.matrices.application-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: la.matrices.term-01
+  - type: question
+    ref: la.matrices.steps-01
+  - type: question
+    ref: la.matrices.match-01

@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: math.sets.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "A−B를 구하는 절차를 순서대로 배열하세요."
+items:
+  - id: start-a
+    content:
+      - type: text
+        text: "기준이 되는 A의 원소를 하나씩 살핀다"
+  - id: check-b
+    content:
+      - type: text
+        text: "각 원소가 B에도 있는지 확인한다"
+  - id: keep
+    content:
+      - type: text
+        text: "B에 없는 원소만 결과에 남긴다"
+correctOrder:
+  - start-a
+  - check-b
+  - keep
+explanation:
+  - type: text
+    text: "차집합 A−B는 A를 기준으로 검사하고 B에 없는 원소만 보존합니다."
+  - type: text
+    text: "B−A를 구하면 기준 집합이 달라져 결과도 달라집니다."
+tags:
+  - discrete-math
+  - sets
+  - difference
+difficulty: 2

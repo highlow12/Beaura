@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.randomized-hashing.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "해시 함수가 서로 다른 키를 같은 버킷에 배치하면 ___이 발생합니다."
+choices:
+  - "충돌"
+  - "독립"
+  - "정규화"
+acceptedAnswers:
+  - "충돌"
+explanation:
+  - type: text
+    text: "같은 해시 위치를 공유하는 현상이 충돌입니다."
+  - type: text
+    text: "chaining이나 open addressing 같은 해결 방식이 필요합니다."
+tags:
+  - probability-statistics
+  - randomized-algorithms
+  - terminology
+difficulty: 1

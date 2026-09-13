@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.contrapositive.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "“n²이 홀수이면 n이 홀수”의 대우를 설명하는 문장을 모두 고르세요."
+options:
+  - id: even-n
+    content:
+      - type: text
+        text: "n이 짝수라고 가정한다"
+  - id: even-square
+    content:
+      - type: text
+        text: "n²이 짝수임을 보인다"
+  - id: odd-n
+    content:
+      - type: text
+        text: "n이 홀수라고 가정한다"
+  - id: same
+    content:
+      - type: text
+        text: "원래 명제와 논리적으로 동치이다"
+correctOptionIds: [even-n, even-square, same]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "후건 ‘n이 홀수’를 부정하면 n이 짝수이고, 전건 ‘n²이 홀수’를 부정한 n² 짝수를 보입니다."
+  - type: text
+    text: "대우 증명은 원래 명제와 동치이므로 결론이 원래 명제에도 적용됩니다."
+tags:
+  - discrete-math
+  - proof
+  - parity
+difficulty: 2

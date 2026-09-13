@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: la.projection.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "proj_v(u)의 결과가 반드시 만족하는 것은 무엇인가요?"
+options:
+  - id: parallel
+    content:
+      - type: text
+        text: "v와 평행하다"
+  - id: perpendicular
+    content:
+      - type: text
+        text: "v와 수직이다"
+  - id: zero
+    content:
+      - type: text
+        text: "항상 영벡터다"
+  - id: same
+    content:
+      - type: text
+        text: "항상 u와 같다"
+correctOptionId: parallel
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "투영 결과는 기준 벡터 v 방향의 성분이므로 v와 평행합니다."
+  - type: text
+    text: "u가 이미 v 방향일 때에만 u와 같고, 내적이 0일 때에는 영벡터가 됩니다."
+tags:
+  - linear-algebra
+  - projection
+difficulty: 1

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.linear-transformations.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "선형 변환 개념과 설명을 알맞게 연결하세요."
+leftItems:
+  - id: linearity
+    content:
+      - type: text
+        text: "선형성"
+  - id: origin
+    content:
+      - type: text
+        text: "T(0)=0"
+  - id: basis-image
+    content:
+      - type: text
+        text: "기저 이미지"
+  - id: matrix
+    content:
+      - type: text
+        text: "변환 행렬"
+rightItems:
+  - id: linearity-desc
+    content:
+      - type: text
+        text: "덧셈과 스칼라배를 보존"
+  - id: origin-desc
+    content:
+      - type: text
+        text: "원점을 원점으로 보낸다는 결과"
+  - id: basis-image-desc
+    content:
+      - type: text
+        text: "행렬의 열로 배치되는 벡터"
+  - id: matrix-desc
+    content:
+      - type: text
+        text: "입력 벡터에 곱해 변환을 수행"
+correctPairs:
+  - leftId: linearity
+    rightId: linearity-desc
+  - leftId: origin
+    rightId: origin-desc
+  - leftId: basis-image
+    rightId: basis-image-desc
+  - leftId: matrix
+    rightId: matrix-desc
+explanation:
+  - type: text
+    text: "선형 변환은 연산을 보존하고, 기저에서의 이미지가 행렬 표현으로 이어집니다."
+  - type: text
+    text: "평행이동처럼 원점을 보존하지 않는 동작은 별도 표현이 필요합니다."
+tags:
+  - linear-algebra
+  - transformations
+  - representation
+difficulty: 2

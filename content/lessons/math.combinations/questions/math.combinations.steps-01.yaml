@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.combinations.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "조합 nCr 공식을 이용해 값을 계산하는 흐름을 배열하세요."
+items:
+  - id: factorial-n
+    content:
+      - type: text
+        text: "n!을 계산한다"
+  - id: factorial-r
+    content:
+      - type: text
+        text: "r!과 (n−r)!을 계산한다"
+  - id: denominator
+    content:
+      - type: text
+        text: "두 팩토리얼을 곱해 분모를 만든다"
+  - id: divide
+    content:
+      - type: text
+        text: "n!을 분모로 나눈다"
+correctOrder:
+  - factorial-n
+  - factorial-r
+  - denominator
+  - divide
+explanation:
+  - type: text
+    text: "nCr=n!/(r!(n−r)!)의 분자와 분모를 각각 계산한 뒤 나눕니다."
+  - type: text
+    text: "작은 수에서는 자리 채우기와 중복 제거로도 같은 값을 확인할 수 있습니다."
+tags:
+  - discrete-math
+  - combinatorics
+  - formula
+difficulty: 2

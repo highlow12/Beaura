@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.expectation.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "기대값 요소와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: weighted
+    content:
+      - type: text
+        text: "xP(X=x)"
+  - id: expectation
+    content:
+      - type: text
+        text: "E[X]"
+  - id: linearity
+    content:
+      - type: text
+        text: "선형성"
+  - id: fair
+    content:
+      - type: text
+        text: "공정한 게임"
+rightItems:
+  - id: weighted-desc
+    content:
+      - type: text
+        text: "한 결과가 기대값에 기여하는 항"
+  - id: expectation-desc
+    content:
+      - type: text
+        text: "모든 기여를 더한 가중 평균"
+  - id: linearity-desc
+    content:
+      - type: text
+        text: "합과 상수배를 분리하는 성질"
+  - id: fair-desc
+    content:
+      - type: text
+        text: "기대 손익이 0인 장기 평균 모델"
+correctPairs:
+  - leftId: weighted
+    rightId: weighted-desc
+  - leftId: expectation
+    rightId: expectation-desc
+  - leftId: linearity
+    rightId: linearity-desc
+  - leftId: fair
+    rightId: fair-desc
+explanation:
+  - type: text
+    text: "기대값은 개별 결과를 예측하는 값이 아니라 확률 가중 장기 평균입니다."
+  - type: text
+    text: "독립성이 없어도 합의 기대값 선형성은 성립한다는 점을 구분하세요."
+tags:
+  - probability-statistics
+  - expectation
+  - terminology
+difficulty: 2

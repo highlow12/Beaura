@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.permutations.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "서로 다른 4명을 한 줄로 세우는 방법은 몇 가지인가요?"
+options:
+  - id: four
+    content:
+      - type: text
+        text: "4가지"
+  - id: eight
+    content:
+      - type: text
+        text: "8가지"
+  - id: twenty-four
+    content:
+      - type: text
+        text: "24가지"
+  - id: sixteen
+    content:
+      - type: text
+        text: "16가지"
+correctOptionId: twenty-four
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "첫 자리 4가지, 다음 3가지, 2가지, 1가지이므로 4!=24입니다."
+  - type: text
+    text: "모든 사람을 사용하고 순서를 고려하므로 순열입니다."
+tags:
+  - discrete-math
+  - combinatorics
+  - factorial
+difficulty: 1

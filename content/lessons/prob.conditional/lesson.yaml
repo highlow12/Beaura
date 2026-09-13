@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: prob.conditional
+revision: 1
+track: probability-statistics
+title: "조건부 확률"
+description: "조건이 주어진 뒤 표본공간이 좁아지는 관점으로 조건부 확률을 계산한다."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: prob.conditional.definition-01
+  - type: question
+    ref: prob.conditional.application-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: prob.conditional.term-01
+  - type: question
+    ref: prob.conditional.steps-01
+  - type: question
+    ref: prob.conditional.match-01

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.numerical-integration.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "폭 1, 양 끝 높이 2와 4인 사다리꼴의 넓이는 ___입니다."
+choices:
+  - "2"
+  - "3"
+  - "4"
+  - "6"
+acceptedAnswers:
+  - "3"
+explanation:
+  - type: text
+    text: "평균 높이는 (2+4)/2=3이고 폭이 1이므로 넓이는 3입니다."
+  - type: text
+    text: "양 끝점의 평균을 사용하는 것이 사다리꼴 공식입니다."
+tags:
+  - calculus
+  - numerical
+  - calculation
+difficulty: 1

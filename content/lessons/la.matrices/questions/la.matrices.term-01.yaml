@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.matrices.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "행렬 A의 i행 j열 원소를 보통 A___로 표시합니다."
+choices:
+  - "ij"
+  - "ji"
+  - "i+j"
+  - "i−j"
+acceptedAnswers:
+  - "ij"
+explanation:
+  - type: text
+    text: "첫 번째 첨자는 행, 두 번째 첨자는 열을 뜻하므로 Aᵢⱼ입니다."
+  - type: text
+    text: "Aⱼᵢ는 일반적으로 다른 위치의 원소입니다."
+tags:
+  - linear-algebra
+  - matrices
+  - indexing
+difficulty: 1

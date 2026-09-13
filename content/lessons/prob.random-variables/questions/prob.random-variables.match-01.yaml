@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.random-variables.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "확률변수 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: random-variable
+    content:
+      - type: text
+        text: "확률변수 X"
+  - id: pmf
+    content:
+      - type: text
+        text: "PMF"
+  - id: cdf
+    content:
+      - type: text
+        text: "CDF"
+  - id: support
+    content:
+      - type: text
+        text: "가능한 값"
+rightItems:
+  - id: random-variable-desc
+    content:
+      - type: text
+        text: "결과를 숫자에 대응하는 함수"
+  - id: pmf-desc
+    content:
+      - type: text
+        text: "값 하나의 확률을 주는 함수"
+  - id: cdf-desc
+    content:
+      - type: text
+        text: "x 이하의 누적 확률 함수"
+  - id: support-desc
+    content:
+      - type: text
+        text: "확률이 0이 아닐 수 있는 값들의 집합"
+correctPairs:
+  - leftId: random-variable
+    rightId: random-variable-desc
+  - leftId: pmf
+    rightId: pmf-desc
+  - leftId: cdf
+    rightId: cdf-desc
+  - leftId: support
+    rightId: support-desc
+explanation:
+  - type: text
+    text: "확률변수는 결과를 수치화하고 PMF·CDF는 그 수치의 분포를 다른 방식으로 표현합니다."
+  - type: text
+    text: "표본공간과 확률변수의 값 집합을 구별하면 분포를 정확히 읽을 수 있습니다."
+tags:
+  - probability-statistics
+  - random-variables
+  - terminology
+difficulty: 2

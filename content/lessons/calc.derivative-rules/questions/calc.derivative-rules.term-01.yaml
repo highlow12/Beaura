@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.derivative-rules.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "함수 f(x)=3x²의 도함수는 ___입니다."
+choices:
+  - "3x"
+  - "6x"
+  - "6x²"
+  - "x²"
+acceptedAnswers:
+  - "6x"
+explanation:
+  - type: text
+    text: "상수 3을 그대로 두고 x²를 미분하면 3×2x=6x입니다."
+  - type: text
+    text: "상수배 법칙과 거듭제곱 법칙을 함께 사용했습니다."
+tags:
+  - calculus
+  - derivative-rules
+  - constant-multiple
+difficulty: 1

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.variance.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Var(X)=E[X²]−(E[X])²에서 평균은 ___의 기호로도 씁니다."
+choices:
+  - "μ"
+  - "σ"
+  - "p"
+acceptedAnswers:
+  - "μ"
+explanation:
+  - type: text
+    text: "μ는 기대값 또는 평균을 나타내는 관례적 기호입니다."
+  - type: text
+    text: "σ는 보통 표준편차를 뜻합니다."
+tags:
+  - probability-statistics
+  - variance
+  - notation
+difficulty: 1

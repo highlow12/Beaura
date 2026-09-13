@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: la.coordinates
+revision: 1
+track: linear-algebra
+title: "좌표계와 기저 변환"
+description: "좌표가 기저에 대한 계수임을 이해하고 기저를 바꿔 벡터를 표현한다."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.coordinates.definition-01
+  - type: question
+    ref: la.coordinates.application-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: la.coordinates.term-01
+  - type: question
+    ref: la.coordinates.steps-01
+  - type: question
+    ref: la.coordinates.match-01

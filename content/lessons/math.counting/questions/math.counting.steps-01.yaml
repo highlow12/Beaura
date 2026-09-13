@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.counting.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "두 단계 선택의 경우의 수를 계산하는 과정을 배열하세요."
+items:
+  - id: identify-first
+    content:
+      - type: text
+        text: "첫 단계의 선택 수를 센다"
+  - id: identify-second
+    content:
+      - type: text
+        text: "각 첫 선택 뒤 둘째 단계의 선택 수를 센다"
+  - id: multiply
+    content:
+      - type: text
+        text: "단계별 선택 수를 곱한다"
+  - id: state
+    content:
+      - type: text
+        text: "전체 경우의 수와 단위를 적는다"
+correctOrder:
+  - identify-first
+  - identify-second
+  - multiply
+  - state
+explanation:
+  - type: text
+    text: "연속 선택에서는 각 단계의 선택이 결합되므로 곱셈으로 전체 경우를 셉니다."
+  - type: text
+    text: "둘째 단계의 수가 첫 선택에 따라 달라지면 각 경우를 나누어 계산해야 합니다."
+tags:
+  - discrete-math
+  - combinatorics
+  - counting-process
+difficulty: 2

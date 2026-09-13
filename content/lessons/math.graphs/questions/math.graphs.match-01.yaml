@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.graphs.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "그래프 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: vertex
+    content:
+      - type: text
+        text: "정점"
+  - id: edge
+    content:
+      - type: text
+        text: "간선"
+  - id: adj-list
+    content:
+      - type: text
+        text: "인접 리스트"
+  - id: adj-matrix
+    content:
+      - type: text
+        text: "인접 행렬"
+rightItems:
+  - id: vertex-desc
+    content:
+      - type: text
+        text: "그래프에서 대상을 나타내는 점"
+  - id: edge-desc
+    content:
+      - type: text
+        text: "두 정점 사이의 연결"
+  - id: adj-list-desc
+    content:
+      - type: text
+        text: "정점별 이웃 목록으로 저장"
+  - id: adj-matrix-desc
+    content:
+      - type: text
+        text: "정점 쌍을 행렬 칸으로 저장"
+correctPairs:
+  - leftId: vertex
+    rightId: vertex-desc
+  - leftId: edge
+    rightId: edge-desc
+  - leftId: adj-list
+    rightId: adj-list-desc
+  - leftId: adj-matrix
+    rightId: adj-matrix-desc
+explanation:
+  - type: text
+    text: "정점과 간선은 구조의 의미이고, 인접 리스트와 행렬은 그 구조를 저장하는 방식입니다."
+  - type: text
+    text: "같은 그래프도 메모리와 연산 목적에 따라 다른 표현을 선택할 수 있습니다."
+tags:
+  - discrete-math
+  - graphs
+  - representation
+difficulty: 2

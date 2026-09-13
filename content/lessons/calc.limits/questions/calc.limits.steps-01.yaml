@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.limits.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "그래프에서 x=a의 양쪽 극한을 확인하는 순서를 배열하세요."
+items:
+  - id: left
+    content:
+      - type: text
+        text: "x가 a보다 작은 쪽에서 접근한 값을 본다"
+  - id: right
+    content:
+      - type: text
+        text: "x가 a보다 큰 쪽에서 접근한 값을 본다"
+  - id: compare
+    content:
+      - type: text
+        text: "좌극한과 우극한을 비교한다"
+  - id: decide
+    content:
+      - type: text
+        text: "같으면 양쪽 극한이 존재한다고 결론낸다"
+correctOrder:
+  - left
+  - right
+  - compare
+  - decide
+explanation:
+  - type: text
+    text: "양쪽 접근값이 일치해야 하나의 극한값을 정할 수 있습니다."
+  - type: text
+    text: "한쪽이라도 다르면 양쪽 극한은 존재하지 않습니다."
+tags:
+  - calculus
+  - limits
+  - one-sided
+difficulty: 2

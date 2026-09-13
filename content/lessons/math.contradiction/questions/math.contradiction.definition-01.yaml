@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.contradiction.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "모순 증명의 첫 단계로 알맞은 것은 무엇인가요?"
+options:
+  - id: negate-goal
+    content:
+      - type: text
+        text: "증명할 결론의 부정을 가정한다"
+  - id: assume-goal
+    content:
+      - type: text
+        text: "결론을 이미 참이라고 가정한다"
+  - id: counter
+    content:
+      - type: text
+        text: "반례 하나를 찾는다"
+  - id: calculate
+    content:
+      - type: text
+        text: "계산 결과를 임의로 정한다"
+correctOptionId: negate-goal
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "모순 증명은 목표가 거짓이라고 가정해 불가능한 결과를 만드는 전략입니다."
+  - type: text
+    text: "가정에서 모순까지의 추론이 끝나면 원래 결론을 되돌려 얻습니다."
+tags:
+  - discrete-math
+  - proof
+  - contradiction
+difficulty: 1

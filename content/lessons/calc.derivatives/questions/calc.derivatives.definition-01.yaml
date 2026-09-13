@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.derivatives.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "f′(a)가 나타내는 것은 무엇인가요?"
+options:
+  - id: instant
+    content:
+      - type: text
+        text: "x=a에서의 순간 변화율과 접선 기울기"
+  - id: area
+    content:
+      - type: text
+        text: "그래프 아래 넓이"
+  - id: value
+    content:
+      - type: text
+        text: "f(a)의 함수값 자체"
+  - id: average-all
+    content:
+      - type: text
+        text: "정의역 전체 평균"
+correctOptionId: instant
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "미분계수는 한 점에서의 순간적인 출력 변화율입니다."
+  - type: text
+    text: "두 점 사이의 평균 변화율을 간격의 극한으로 보낸 값이기도 합니다."
+tags:
+  - calculus
+  - derivatives
+  - slope
+difficulty: 1

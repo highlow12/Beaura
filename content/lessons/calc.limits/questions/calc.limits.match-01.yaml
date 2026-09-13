@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.limits.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "극한 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: limit
+    content:
+      - type: text
+        text: "극한"
+  - id: left
+    content:
+      - type: text
+        text: "좌극한"
+  - id: right
+    content:
+      - type: text
+        text: "우극한"
+  - id: continuous
+    content:
+      - type: text
+        text: "연속"
+rightItems:
+  - id: limit-desc
+    content:
+      - type: text
+        text: "입력이 가까워질 때 출력의 접근값"
+  - id: left-desc
+    content:
+      - type: text
+        text: "왼쪽에서 접근한 값"
+  - id: right-desc
+    content:
+      - type: text
+        text: "오른쪽에서 접근한 값"
+  - id: continuous-desc
+    content:
+      - type: text
+        text: "극한·함수값·정의가 한 점에서 이어짐"
+correctPairs:
+  - leftId: limit
+    rightId: limit-desc
+  - leftId: left
+    rightId: left-desc
+  - leftId: right
+    rightId: right-desc
+  - leftId: continuous
+    rightId: continuous-desc
+explanation:
+  - type: text
+    text: "좌우 접근을 분리하면 극한의 존재와 불연속의 원인을 정확히 설명할 수 있습니다."
+  - type: text
+    text: "연속은 단순히 그래프가 매끄럽다는 말보다 세 조건의 일치로 정의됩니다."
+tags:
+  - calculus
+  - limits
+  - terminology
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.combinations.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "조합에서는 선택한 대상의 ___를 고려하지 않습니다."
+choices:
+  - "순서"
+  - "개수"
+  - "조건"
+acceptedAnswers:
+  - "순서"
+explanation:
+  - type: text
+    text: "조합은 같은 대상 집합이면 배열 순서를 같은 선택으로 봅니다."
+  - type: text
+    text: "선택하는 개수 r과 대상의 조건은 여전히 계산에 필요합니다."
+tags:
+  - discrete-math
+  - combinatorics
+  - definition
+difficulty: 1

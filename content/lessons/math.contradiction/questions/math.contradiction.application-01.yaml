@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.contradiction.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "모순 증명에서 모순을 이루는 두 문장으로 적절한 것을 모두 고르세요."
+options:
+  - id: p
+    content:
+      - type: text
+        text: "어떤 추론으로 P가 참임을 얻는다"
+  - id: not-p
+    content:
+      - type: text
+        text: "같은 조건에서 ¬P가 참임을 얻는다"
+  - id: example
+    content:
+      - type: text
+        text: "서로 다른 두 예시를 계산한다"
+  - id: opinion
+    content:
+      - type: text
+        text: "직관적으로 이상하다고 말한다"
+correctOptionIds: [p, not-p]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "P와 ¬P가 동시에 도출되면 같은 상황에서 양립할 수 없으므로 모순입니다."
+  - type: text
+    text: "단순한 이상함이나 예시의 차이는 논리적 모순의 근거가 아닙니다."
+tags:
+  - discrete-math
+  - proof
+  - logic
+difficulty: 2

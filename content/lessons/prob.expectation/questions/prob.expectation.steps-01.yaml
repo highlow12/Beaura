@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.expectation.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "확률표에서 기대값을 계산하는 순서를 배열하세요."
+items:
+  - id: values
+    content:
+      - type: text
+        text: "확률변수의 가능한 값과 확률을 나열한다"
+  - id: products
+    content:
+      - type: text
+        text: "각 값 x와 P(X=x)를 곱한다"
+  - id: sum
+    content:
+      - type: text
+        text: "곱한 값을 모두 더한다"
+  - id: interpret
+    content:
+      - type: text
+        text: "결과를 장기 평균으로 해석한다"
+correctOrder:
+  - values
+  - products
+  - sum
+  - interpret
+explanation:
+  - type: text
+    text: "기대값 공식의 각 항을 만든 뒤 합산하면 장기 평균 해석으로 이어집니다."
+  - type: text
+    text: "확률 합이 1인지 먼저 확인하면 표의 누락을 찾을 수 있습니다."
+tags:
+  - probability-statistics
+  - expectation
+  - procedure
+difficulty: 2

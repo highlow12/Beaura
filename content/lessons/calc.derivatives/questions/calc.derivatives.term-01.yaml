@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.derivatives.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "f(x)=x²의 도함수 f′(x)는 ___입니다."
+choices:
+  - "x"
+  - "2x"
+  - "x³"
+  - "2"
+acceptedAnswers:
+  - "2x"
+explanation:
+  - type: text
+    text: "거듭제곱 법칙에 따라 x²의 도함수는 2x입니다."
+  - type: text
+    text: "x가 특정 값일 때 접선 기울기를 얻으려면 2x에 대입합니다."
+tags:
+  - calculus
+  - derivatives
+  - power-rule
+difficulty: 1

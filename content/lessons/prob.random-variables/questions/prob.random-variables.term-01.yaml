@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.random-variables.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "동전 두 번에서 앞면의 개수를 X로 세면 X가 가질 수 있는 최댓값은 ___입니다."
+choices:
+  - "0"
+  - "1"
+  - "2"
+  - "4"
+acceptedAnswers:
+  - "2"
+explanation:
+  - type: text
+    text: "두 번 모두 앞면이면 앞면 개수는 2입니다."
+  - type: text
+    text: "가능한 값은 0,1,2이고 각 값에 확률이 배정됩니다."
+tags:
+  - probability-statistics
+  - random-variables
+  - count
+difficulty: 1

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.distributions.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "분포와 쓰임을 알맞게 연결하세요."
+leftItems:
+  - id: bernoulli
+    content:
+      - type: text
+        text: "Bernoulli"
+  - id: binomial
+    content:
+      - type: text
+        text: "Binomial"
+  - id: normal
+    content:
+      - type: text
+        text: "Normal"
+  - id: sigma
+    content:
+      - type: text
+        text: "σ"
+rightItems:
+  - id: bernoulli-desc
+    content:
+      - type: text
+        text: "한 번의 성공·실패 결과"
+  - id: binomial-desc
+    content:
+      - type: text
+        text: "반복 시행의 성공 횟수"
+  - id: normal-desc
+    content:
+      - type: text
+        text: "연속값의 종 모양 분포"
+  - id: sigma-desc
+    content:
+      - type: text
+        text: "정규분포의 퍼짐을 나타내는 표준편차"
+correctPairs:
+  - leftId: bernoulli
+    rightId: bernoulli-desc
+  - leftId: binomial
+    rightId: binomial-desc
+  - leftId: normal
+    rightId: normal-desc
+  - leftId: sigma
+    rightId: sigma-desc
+explanation:
+  - type: text
+    text: "시행 횟수와 값의 연속성에 따라 적절한 분포 모델이 달라집니다."
+  - type: text
+    text: "분포 이름을 외우기보다 관측값의 구조와 독립 가정을 먼저 확인하세요."
+tags:
+  - probability-statistics
+  - distributions
+  - comparison
+difficulty: 2

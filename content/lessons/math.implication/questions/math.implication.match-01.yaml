@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.implication.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "원래 명제 P → Q와 관련 명제를 알맞게 연결하세요."
+leftItems:
+  - id: original
+    content:
+      - type: text
+        text: "P → Q"
+  - id: converse
+    content:
+      - type: text
+        text: "Q → P"
+  - id: inverse
+    content:
+      - type: text
+        text: "¬P → ¬Q"
+  - id: contra
+    content:
+      - type: text
+        text: "¬Q → ¬P"
+rightItems:
+  - id: original-meaning
+    content:
+      - type: text
+        text: "전건에서 후건으로 향하는 원래 함의"
+  - id: reverse-meaning
+    content:
+      - type: text
+        text: "전건과 후건의 순서만 바꾼 명제"
+  - id: negated-meaning
+    content:
+      - type: text
+        text: "두 부분을 각각 부정한 명제"
+  - id: equivalent-meaning
+    content:
+      - type: text
+        text: "원래 명제와 항상 동치인 대우"
+correctPairs:
+  - leftId: original
+    rightId: original-meaning
+  - leftId: converse
+    rightId: reverse-meaning
+  - leftId: inverse
+    rightId: negated-meaning
+  - leftId: contra
+    rightId: equivalent-meaning
+explanation:
+  - type: text
+    text: "역은 순서만 바꾸고 이는 두 부분을 부정하며, 대우는 부정과 순서 바꾸기를 모두 적용합니다."
+  - type: text
+    text: "원래 명제와 대우만 항상 동치라는 점을 기억하세요."
+tags:
+  - discrete-math
+  - logic
+  - related-propositions
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.contradiction.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "결론의 부정을 가정해 불가능한 결과를 얻는 증명을 ___ 증명이라고 합니다."
+choices:
+  - "모순"
+  - "직접"
+  - "귀납"
+acceptedAnswers:
+  - "모순"
+explanation:
+  - type: text
+    text: "모순 증명은 귀류법이라고도 하며 부정 가정에서 모순을 이끌어 냅니다."
+  - type: text
+    text: "직접 증명과 달리 결론의 부정이 출발점입니다."
+tags:
+  - discrete-math
+  - proof
+  - terminology
+difficulty: 1

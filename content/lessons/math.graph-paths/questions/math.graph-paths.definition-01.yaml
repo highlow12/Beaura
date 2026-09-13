@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.graph-paths.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "시작 정점과 끝 정점이 같고 중간을 돌아오는 닫힌 경로를 무엇이라고 하나요?"
+options:
+  - id: cycle
+    content:
+      - type: text
+        text: "사이클"
+  - id: degree
+    content:
+      - type: text
+        text: "차수"
+  - id: tree
+    content:
+      - type: text
+        text: "트리"
+  - id: cut
+    content:
+      - type: text
+        text: "절단"
+correctOptionId: cycle
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "사이클은 시작과 끝이 같은 닫힌 경로입니다."
+  - type: text
+    text: "단순 경로는 일반적으로 정점을 반복하지 않지만 끝을 시작으로 닫는 조건이 추가됩니다."
+tags:
+  - discrete-math
+  - graphs
+  - cycle
+difficulty: 1

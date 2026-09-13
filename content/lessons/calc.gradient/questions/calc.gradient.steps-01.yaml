@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.gradient.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "gradient descent 한 단계를 수행하는 순서를 배열하세요."
+items:
+  - id: gradient
+    content:
+      - type: text
+        text: "현재 점에서 ∇f를 계산한다"
+  - id: negative
+    content:
+      - type: text
+        text: "그래디언트의 반대 방향을 정한다"
+  - id: rate
+    content:
+      - type: text
+        text: "학습률을 곱한다"
+  - id: update
+    content:
+      - type: text
+        text: "현재 점을 갱신한다"
+correctOrder:
+  - gradient
+  - negative
+  - rate
+  - update
+explanation:
+  - type: text
+    text: "감소 방향을 정한 뒤 학습률만큼 이동해 함수값을 낮춥니다."
+  - type: text
+    text: "학습률은 방향을 바꾸기보다 이동 거리의 크기를 정합니다."
+tags:
+  - calculus
+  - gradient
+  - optimization
+difficulty: 2

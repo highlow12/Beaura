@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.matrix-multiplication.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "행렬 곱의 요소와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-rows
+    content:
+      - type: text
+        text: "왼쪽 행렬의 행"
+  - id: right-cols
+    content:
+      - type: text
+        text: "오른쪽 행렬의 열"
+  - id: inner
+    content:
+      - type: text
+        text: "가운데 차원"
+  - id: result
+    content:
+      - type: text
+        text: "결과 크기"
+rightItems:
+  - id: left-rows-desc
+    content:
+      - type: text
+        text: "결과의 행을 결정"
+  - id: right-cols-desc
+    content:
+      - type: text
+        text: "결과의 열을 결정"
+  - id: inner-desc
+    content:
+      - type: text
+        text: "서로 같아야 곱이 정의됨"
+  - id: result-desc
+    content:
+      - type: text
+        text: "왼쪽 행 수×오른쪽 열 수"
+correctPairs:
+  - leftId: left-rows
+    rightId: left-rows-desc
+  - leftId: right-cols
+    rightId: right-cols-desc
+  - leftId: inner
+    rightId: inner-desc
+  - leftId: result
+    rightId: result-desc
+explanation:
+  - type: text
+    text: "행렬 곱의 차원은 왼쪽 행렬의 바깥쪽 행과 오른쪽 행렬의 바깥쪽 열로 정해집니다."
+  - type: text
+    text: "가운데 차원은 내적할 성분 수를 맞추는 역할을 합니다."
+tags:
+  - linear-algebra
+  - matrices
+  - dimension-rule
+difficulty: 2

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.definite-integrals.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "정적분 요소와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: lower
+    content:
+      - type: text
+        text: "a"
+  - id: upper
+    content:
+      - type: text
+        text: "b"
+  - id: antiderivative
+    content:
+      - type: text
+        text: "F"
+  - id: signed
+    content:
+      - type: text
+        text: "부호 있는 면적"
+rightItems:
+  - id: lower-desc
+    content:
+      - type: text
+        text: "적분 구간의 시작점"
+  - id: upper-desc
+    content:
+      - type: text
+        text: "적분 구간의 끝점"
+  - id: antiderivative-desc
+    content:
+      - type: text
+        text: "f의 원시함수"
+  - id: signed-desc
+    content:
+      - type: text
+        text: "x축 아래 부분을 음수로 포함한 누적"
+correctPairs:
+  - leftId: lower
+    rightId: lower-desc
+  - leftId: upper
+    rightId: upper-desc
+  - leftId: antiderivative
+    rightId: antiderivative-desc
+  - leftId: signed
+    rightId: signed-desc
+explanation:
+  - type: text
+    text: "정적분은 구간과 원시함수 끝점 차이를 함께 사용합니다."
+  - type: text
+    text: "면적이라는 말이 나와도 부호 있는 누적인지 기하적 넓이인지 구분하세요."
+tags:
+  - calculus
+  - definite-integrals
+  - notation
+difficulty: 2

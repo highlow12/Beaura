@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: la.inverse-determinant
+revision: 1
+track: linear-algebra
+title: "역행렬과 행렬식"
+description: "행렬식이 0인지로 역행렬 가능성을 판단하고 2×2 역행렬을 계산한다."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.inverse-determinant.definition-01
+  - type: question
+    ref: la.inverse-determinant.application-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: la.inverse-determinant.term-01
+  - type: question
+    ref: la.inverse-determinant.steps-01
+  - type: question
+    ref: la.inverse-determinant.match-01

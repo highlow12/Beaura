@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.projection.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "투영 공식 proj_v(u)=((u·v)/(v·v))v에 필요한 조건과 결과를 모두 고르세요."
+options:
+  - id: nonzero
+    content:
+      - type: text
+        text: "v는 영벡터가 아니어야 한다"
+  - id: dot
+    content:
+      - type: text
+        text: "u·v를 계산한다"
+  - id: parallel
+    content:
+      - type: text
+        text: "결과는 v와 평행하다"
+  - id: cross
+    content:
+      - type: text
+        text: "결과는 항상 v와 수직이다"
+correctOptionIds: [nonzero, dot, parallel]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "분모 v·v가 0이 되지 않으려면 v≠0이어야 하며 결과는 v 방향 성분입니다."
+  - type: text
+    text: "투영으로 뺀 나머지 u−proj_v(u)가 v와 수직입니다."
+tags:
+  - linear-algebra
+  - projection
+  - formula
+difficulty: 2

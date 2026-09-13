@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.integrals.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "적분을 가장 잘 해석한 것은 무엇인가요?"
+options:
+  - id: accumulation
+    content:
+      - type: text
+        text: "작은 양을 누적해 전체량을 구하는 것"
+  - id: instant
+    content:
+      - type: text
+        text: "한 점의 순간 변화율만 구하는 것"
+  - id: label
+    content:
+      - type: text
+        text: "함수 이름을 바꾸는 것"
+  - id: sort
+    content:
+      - type: text
+        text: "값을 순서대로 정렬하는 것"
+correctOptionId: accumulation
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "적분은 연속적인 작은 기여를 합해 누적량을 얻는 연산입니다."
+  - type: text
+    text: "미분이 변화율을 보는 것과 서로 연결된 역방향 관점입니다."
+tags:
+  - calculus
+  - integrals
+  - interpretation
+difficulty: 1

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.numerical-integration.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "수치 적분 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: left-sum
+    content:
+      - type: text
+        text: "왼쪽 직사각형 합"
+  - id: right-sum
+    content:
+      - type: text
+        text: "오른쪽 직사각형 합"
+  - id: trapezoid
+    content:
+      - type: text
+        text: "사다리꼴 합"
+  - id: step
+    content:
+      - type: text
+        text: "구간 폭 h"
+rightItems:
+  - id: left-sum-desc
+    content:
+      - type: text
+        text: "각 구간 왼쪽 높이를 사용하는 근사"
+  - id: right-sum-desc
+    content:
+      - type: text
+        text: "각 구간 오른쪽 높이를 사용하는 근사"
+  - id: trapezoid-desc
+    content:
+      - type: text
+        text: "양 끝 높이의 평균을 사용하는 근사"
+  - id: step-desc
+    content:
+      - type: text
+        text: "샘플 사이 x 간격"
+correctPairs:
+  - leftId: left-sum
+    rightId: left-sum-desc
+  - leftId: right-sum
+    rightId: right-sum-desc
+  - leftId: trapezoid
+    rightId: trapezoid-desc
+  - leftId: step
+    rightId: step-desc
+explanation:
+  - type: text
+    text: "직사각형 합은 한쪽 끝점을, 사다리꼴 합은 양쪽 끝점을 이용해 곡선을 근사합니다."
+  - type: text
+    text: "데이터의 간격을 정확히 읽는 것이 면적 계산의 출발점입니다."
+tags:
+  - calculus
+  - numerical
+  - methods
+difficulty: 2

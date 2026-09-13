@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: la.homogeneous-coordinates.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "3차원 점 (x,y,z)를 동차좌표로 확장할 때 마지막 성분은 ___입니다."
+choices:
+  - "0"
+  - "1"
+  - "z"
+acceptedAnswers:
+  - "1"
+explanation:
+  - type: text
+    text: "위치를 나타내는 동차좌표는 마지막 w 성분을 1로 둡니다."
+  - type: text
+    text: "방향 벡터는 w=0으로 두어 평행이동이 적용되지 않게 합니다."
+tags:
+  - linear-algebra
+  - coordinates
+  - point
+difficulty: 1

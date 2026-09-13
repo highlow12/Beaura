@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.combinations.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "순열과 조합의 표현을 상황에 알맞게 연결하세요."
+leftItems:
+  - id: npr
+    content:
+      - type: text
+        text: "nPr"
+  - id: ncr
+    content:
+      - type: text
+        text: "nCr"
+  - id: role
+    content:
+      - type: text
+        text: "회장과 부회장 선택"
+  - id: team
+    content:
+      - type: text
+        text: "팀원 2명 선택"
+rightItems:
+  - id: npr-desc
+    content:
+      - type: text
+        text: "순서를 고려한 r개 선택"
+  - id: ncr-desc
+    content:
+      - type: text
+        text: "순서를 무시한 r개 선택"
+  - id: role-desc
+    content:
+      - type: text
+        text: "역할이 달라 순열"
+  - id: team-desc
+    content:
+      - type: text
+        text: "역할이 같아 조합"
+correctPairs:
+  - leftId: npr
+    rightId: npr-desc
+  - leftId: ncr
+    rightId: ncr-desc
+  - leftId: role
+    rightId: role-desc
+  - leftId: team
+    rightId: team-desc
+explanation:
+  - type: text
+    text: "같은 대상이라도 역할이나 자리의 순서가 있으면 순열, 없으면 조합입니다."
+  - type: text
+    text: "문제의 결과가 순서 교환으로 달라지는지 먼저 물어보세요."
+tags:
+  - discrete-math
+  - combinatorics
+  - comparison
+difficulty: 2

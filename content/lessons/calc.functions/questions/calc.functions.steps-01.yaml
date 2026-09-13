@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.functions.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "f(g(x))를 계산하는 순서를 배열하세요."
+items:
+  - id: g
+    content:
+      - type: text
+        text: "입력 x에 g를 적용한다"
+  - id: value
+    content:
+      - type: text
+        text: "g(x)라는 중간값을 얻는다"
+  - id: f
+    content:
+      - type: text
+        text: "중간값을 f의 입력으로 넣는다"
+  - id: result
+    content:
+      - type: text
+        text: "최종 f(g(x))를 기록한다"
+correctOrder:
+  - g
+  - value
+  - f
+  - result
+explanation:
+  - type: text
+    text: "합성함수는 오른쪽 함수 g를 먼저 적용하고 그 결과를 f에 넣습니다."
+  - type: text
+    text: "식의 괄호 안쪽 함수부터 계산한다고 기억하면 됩니다."
+tags:
+  - calculus
+  - functions
+  - composition
+difficulty: 2

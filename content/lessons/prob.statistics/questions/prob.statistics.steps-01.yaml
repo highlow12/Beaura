@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.statistics.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "상관관계를 해석하는 안전한 절차를 배열하세요."
+items:
+  - id: plot
+    content:
+      - type: text
+        text: "두 변수의 자료와 단위를 확인한다"
+  - id: pattern
+    content:
+      - type: text
+        text: "산점도나 요약 통계로 함께 변하는 패턴을 본다"
+  - id: confound
+    content:
+      - type: text
+        text: "숨은 변수와 대안 설명을 점검한다"
+  - id: claim
+    content:
+      - type: text
+        text: "인과가 아닌 관계의 범위로 결론을 표현한다"
+correctOrder:
+  - plot
+  - pattern
+  - confound
+  - claim
+explanation:
+  - type: text
+    text: "자료의 맥락과 패턴을 본 뒤 대안 설명을 확인하고 과도하지 않은 결론을 내려야 합니다."
+  - type: text
+    text: "상관 계수 하나만으로 원인 관계를 확정하지 않습니다."
+tags:
+  - probability-statistics
+  - statistics
+  - correlation
+difficulty: 3

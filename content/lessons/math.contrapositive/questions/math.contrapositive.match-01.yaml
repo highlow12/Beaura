@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.contrapositive.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "명제와 대우 증명의 요소를 알맞게 연결하세요."
+leftItems:
+  - id: p
+    content:
+      - type: text
+        text: "전건 P"
+  - id: q
+    content:
+      - type: text
+        text: "후건 Q"
+  - id: not-q
+    content:
+      - type: text
+        text: "¬Q"
+  - id: not-p
+    content:
+      - type: text
+        text: "¬P"
+rightItems:
+  - id: p-desc
+    content:
+      - type: text
+        text: "대우에서 결론 쪽으로 이동하는 원래 조건"
+  - id: q-desc
+    content:
+      - type: text
+        text: "대우에서 부정되어 시작 조건이 되는 원래 결과"
+  - id: not-q-desc
+    content:
+      - type: text
+        text: "대우 증명의 가정"
+  - id: not-p-desc
+    content:
+      - type: text
+        text: "대우 증명이 보일 결론"
+correctPairs:
+  - leftId: p
+    rightId: p-desc
+  - leftId: q
+    rightId: q-desc
+  - leftId: not-q
+    rightId: not-q-desc
+  - leftId: not-p
+    rightId: not-p-desc
+explanation:
+  - type: text
+    text: "대우는 Q를 부정한 ¬Q에서 출발해 P를 부정한 ¬P로 가는 함의입니다."
+  - type: text
+    text: "원래 전건과 후건의 위치가 대우에서 어떻게 바뀌는지 추적해 보세요."
+tags:
+  - discrete-math
+  - proof
+  - structure
+difficulty: 2

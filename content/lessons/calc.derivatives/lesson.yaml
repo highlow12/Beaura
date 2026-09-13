@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: calc.derivatives
+revision: 1
+track: calculus
+title: "미분과 변화율"
+description: "도함수를 순간 변화율과 접선의 기울기로 해석하고 기본 식을 계산한다."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: calc.derivatives.definition-01
+  - type: question
+    ref: calc.derivatives.application-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: calc.derivatives.term-01
+  - type: question
+    ref: calc.derivatives.steps-01
+  - type: question
+    ref: calc.derivatives.match-01

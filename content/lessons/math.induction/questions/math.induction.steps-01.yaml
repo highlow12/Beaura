@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.induction.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "수학적 귀납법의 일반 흐름을 배열하세요."
+items:
+  - id: base
+    content:
+      - type: text
+        text: "시작 값에서 P(1)을 증명한다"
+  - id: assume
+    content:
+      - type: text
+        text: "임의의 k에 대해 P(k)가 참이라고 가정한다"
+  - id: next
+    content:
+      - type: text
+        text: "P(k)를 이용해 P(k+1)을 증명한다"
+  - id: generalize
+    content:
+      - type: text
+        text: "두 단계로 모든 자연수에 대해 결론낸다"
+correctOrder:
+  - base
+  - assume
+  - next
+  - generalize
+explanation:
+  - type: text
+    text: "기초 단계가 출발하고, 귀납 단계가 한 칸씩 다음 명제로 연결합니다."
+  - type: text
+    text: "k를 특정 숫자로 고정하지 않고 임의의 자연수로 다루는 것이 중요합니다."
+tags:
+  - discrete-math
+  - proof
+  - proof-steps
+difficulty: 2

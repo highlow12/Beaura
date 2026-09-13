@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.homogeneous-coordinates.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "2차원 점 (x,y)를 동차좌표로 나타내면 무엇인가요?"
+options:
+  - id: point
+    content:
+      - type: text
+        text: "(x,y,1)"
+  - id: direction
+    content:
+      - type: text
+        text: "(x,y,0)"
+  - id: two
+    content:
+      - type: text
+        text: "(x,y)"
+  - id: inverse
+    content:
+      - type: text
+        text: "(1,x,y)"
+correctOptionId: point
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "동차좌표에서 w=1인 벡터는 위치를 나타냅니다."
+  - type: text
+    text: "w=0은 평행이동의 영향을 받지 않는 방향을 나타낼 때 사용합니다."
+tags:
+  - linear-algebra
+  - coordinates
+  - homogeneous
+difficulty: 1

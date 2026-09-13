@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.numerical-differentiation.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "수치 미분 방식과 특징을 알맞게 연결하세요."
+leftItems:
+  - id: forward
+    content:
+      - type: text
+        text: "전진 차분"
+  - id: backward
+    content:
+      - type: text
+        text: "후진 차분"
+  - id: central
+    content:
+      - type: text
+        text: "중심 차분"
+  - id: h
+    content:
+      - type: text
+        text: "h"
+rightItems:
+  - id: forward-desc
+    content:
+      - type: text
+        text: "현재와 오른쪽 샘플 사용"
+  - id: backward-desc
+    content:
+      - type: text
+        text: "왼쪽과 현재 샘플 사용"
+  - id: central-desc
+    content:
+      - type: text
+        text: "양쪽 샘플을 대칭적으로 사용"
+  - id: h-desc
+    content:
+      - type: text
+        text: "샘플 사이의 간격"
+correctPairs:
+  - leftId: forward
+    rightId: forward-desc
+  - leftId: backward
+    rightId: backward-desc
+  - leftId: central
+    rightId: central-desc
+  - leftId: h
+    rightId: h-desc
+explanation:
+  - type: text
+    text: "세 차분은 사용할 이웃 샘플의 위치가 다르고, 중심 차분은 양쪽 정보를 사용합니다."
+  - type: text
+    text: "경계점에서는 양쪽 샘플이 없을 수 있어 전진 또는 후진 차분을 선택합니다."
+tags:
+  - calculus
+  - numerical
+  - methods
+difficulty: 2

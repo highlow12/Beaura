@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.variance.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "분산이 측정하는 것은 무엇인가요?"
+options:
+  - id: spread
+    content:
+      - type: text
+        text: "기대값 주변의 퍼짐 정도"
+  - id: center
+    content:
+      - type: text
+        text: "가장 큰 값의 위치"
+  - id: probability
+    content:
+      - type: text
+        text: "사건 하나의 확률"
+  - id: order
+    content:
+      - type: text
+        text: "자료를 정렬하는 규칙"
+correctOptionId: spread
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "분산은 평균에서의 편차 제곱을 평균내어 변동성을 측정합니다."
+  - type: text
+    text: "표준편차는 같은 퍼짐을 원래 단위로 표현한 값입니다."
+tags:
+  - probability-statistics
+  - variance
+  - definition
+difficulty: 1

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.gradient.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "그래디언트 개념과 설명을 알맞게 연결하세요."
+leftItems:
+  - id: gradient
+    content:
+      - type: text
+        text: "∇f"
+  - id: directional
+    content:
+      - type: text
+        text: "방향미분"
+  - id: contour
+    content:
+      - type: text
+        text: "등고선"
+  - id: descent
+    content:
+      - type: text
+        text: "gradient descent"
+rightItems:
+  - id: gradient-desc
+    content:
+      - type: text
+        text: "편미분을 성분으로 갖는 벡터"
+  - id: directional-desc
+    content:
+      - type: text
+        text: "특정 방향의 변화율"
+  - id: contour-desc
+    content:
+      - type: text
+        text: "함수값이 같은 점의 선"
+  - id: descent-desc
+    content:
+      - type: text
+        text: "음의 그래디언트 방향으로 갱신"
+correctPairs:
+  - leftId: gradient
+    rightId: gradient-desc
+  - leftId: directional
+    rightId: directional-desc
+  - leftId: contour
+    rightId: contour-desc
+  - leftId: descent
+    rightId: descent-desc
+explanation:
+  - type: text
+    text: "그래디언트는 다변수 함수의 방향 정보를 벡터로 압축합니다."
+  - type: text
+    text: "등고선과 수직인 관계는 함수 지형을 시각적으로 해석할 때 특히 유용합니다."
+tags:
+  - calculus
+  - gradient
+  - terminology
+difficulty: 2

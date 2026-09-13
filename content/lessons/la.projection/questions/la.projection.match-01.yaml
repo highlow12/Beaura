@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.projection.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "투영의 표현과 역할을 알맞게 연결하세요."
+leftItems:
+  - id: coefficient
+    content:
+      - type: text
+        text: "(u·v)/(v·v)"
+  - id: projection
+    content:
+      - type: text
+        text: "proj_v(u)"
+  - id: remainder
+    content:
+      - type: text
+        text: "u−proj_v(u)"
+  - id: unit
+    content:
+      - type: text
+        text: "e·e=1인 기준 벡터"
+rightItems:
+  - id: coefficient-desc
+    content:
+      - type: text
+        text: "기준 벡터를 몇 배 할지 정하는 값"
+  - id: projection-desc
+    content:
+      - type: text
+        text: "v 방향의 평행 성분"
+  - id: remainder-desc
+    content:
+      - type: text
+        text: "v와 수직인 나머지 성분"
+  - id: unit-desc
+    content:
+      - type: text
+        text: "투영 공식을 간단하게 만드는 단위 벡터"
+correctPairs:
+  - leftId: coefficient
+    rightId: coefficient-desc
+  - leftId: projection
+    rightId: projection-desc
+  - leftId: remainder
+    rightId: remainder-desc
+  - leftId: unit
+    rightId: unit-desc
+explanation:
+  - type: text
+    text: "투영은 한 벡터를 기준 방향과 그에 수직인 방향으로 분해하는 계산입니다."
+  - type: text
+    text: "기준 벡터가 0이 아닌지와 결과의 평행·직교 관계를 함께 확인하세요."
+tags:
+  - linear-algebra
+  - projection
+  - components
+difficulty: 2

@@ -1,7 +1,5 @@
 schemaVersion: 1
 nodes:
-  - lesson: math.propositions
-    requires: []
   - lesson: sys.graphics
     requires:
       - arch.cpu
@@ -387,3 +385,160 @@ nodes:
   - lesson: net.performance
     requires:
       - net.tcp
+  - lesson: math.propositions
+    requires: []
+  - lesson: math.implication
+    requires:
+      - math.propositions
+  - lesson: math.logic-equivalence
+    requires:
+      - math.implication
+  - lesson: math.sets
+    requires:
+      - math.propositions
+  - lesson: math.relations
+    requires:
+      - math.sets
+  - lesson: math.functions
+    requires:
+      - math.relations
+  - lesson: math.direct-proof
+    requires:
+      - math.implication
+  - lesson: math.counterexample
+    requires:
+      - math.direct-proof
+  - lesson: math.contrapositive
+    requires:
+      - math.implication
+  - lesson: math.contradiction
+    requires:
+      - math.contrapositive
+  - lesson: math.induction
+    requires:
+      - math.direct-proof
+  - lesson: math.counting
+    requires:
+      - math.sets
+  - lesson: math.permutations
+    requires:
+      - math.counting
+  - lesson: math.combinations
+    requires:
+      - math.permutations
+  - lesson: math.graphs
+    requires:
+      - math.sets
+  - lesson: math.graph-paths
+    requires:
+      - math.graphs
+  - lesson: math.graph-connectivity
+    requires:
+      - math.graph-paths
+  - lesson: math.trees
+    requires:
+      - math.graph-connectivity
+  - lesson: la.vectors
+    requires: []
+  - lesson: la.vector-space
+    requires:
+      - la.vectors
+  - lesson: la.dot-product
+    requires:
+      - la.vectors
+  - lesson: la.projection
+    requires:
+      - la.dot-product
+  - lesson: la.matrices
+    requires:
+      - la.vectors
+  - lesson: la.matrix-multiplication
+    requires:
+      - la.matrices
+  - lesson: la.linear-transformations
+    requires:
+      - la.matrix-multiplication
+  - lesson: la.inverse-determinant
+    requires:
+      - la.matrix-multiplication
+  - lesson: la.coordinates
+    requires:
+      - la.vector-space
+      - la.matrices
+  - lesson: la.cross-product
+    requires:
+      - la.vectors
+  - lesson: la.eigenvectors
+    requires:
+      - la.linear-transformations
+  - lesson: la.homogeneous-coordinates
+    requires:
+      - la.linear-transformations
+      - la.coordinates
+  - lesson: calc.functions
+    requires: []
+  - lesson: calc.limits
+    requires:
+      - calc.functions
+  - lesson: calc.derivatives
+    requires:
+      - calc.limits
+  - lesson: calc.derivative-rules
+    requires:
+      - calc.derivatives
+  - lesson: calc.partial-derivatives
+    requires:
+      - calc.derivative-rules
+  - lesson: calc.gradient
+    requires:
+      - calc.partial-derivatives
+      - la.vectors
+  - lesson: calc.integrals
+    requires:
+      - calc.limits
+  - lesson: calc.definite-integrals
+    requires:
+      - calc.integrals
+  - lesson: calc.numerical-differentiation
+    requires:
+      - calc.derivatives
+  - lesson: calc.numerical-integration
+    requires:
+      - calc.definite-integrals
+  - lesson: prob.events
+    requires: []
+  - lesson: prob.probability
+    requires:
+      - prob.events
+  - lesson: prob.conditional
+    requires:
+      - prob.probability
+  - lesson: prob.independence
+    requires:
+      - prob.conditional
+  - lesson: prob.bayes
+    requires:
+      - prob.conditional
+  - lesson: prob.random-variables
+    requires:
+      - prob.probability
+  - lesson: prob.distributions
+    requires:
+      - prob.random-variables
+  - lesson: prob.expectation
+    requires:
+      - prob.random-variables
+  - lesson: prob.variance
+    requires:
+      - prob.expectation
+  - lesson: prob.sampling
+    requires:
+      - prob.distributions
+  - lesson: prob.statistics
+    requires:
+      - prob.sampling
+  - lesson: prob.randomized-hashing
+    requires:
+      - prob.expectation
+      - ds.hash-table
+      - algo.big-o

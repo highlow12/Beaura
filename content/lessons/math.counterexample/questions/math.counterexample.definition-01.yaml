@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.counterexample.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "전칭 명제 “모든 x에 대해 P(x)”를 반박하는 데 필요한 것은 무엇인가요?"
+options:
+  - id: one
+    content:
+      - type: text
+        text: "P(x)가 거짓인 x 하나"
+  - id: all
+    content:
+      - type: text
+        text: "P(x)가 참인 x 하나"
+  - id: average
+    content:
+      - type: text
+        text: "평균적으로 P인 여러 x"
+  - id: proof
+    content:
+      - type: text
+        text: "P를 증명하는 계산"
+correctOptionId: one
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "전칭 명제는 한 사례라도 결론이 거짓이면 전체가 거짓입니다."
+  - type: text
+    text: "그 사례가 명제의 조건을 만족하는지도 함께 확인해야 합니다."
+tags:
+  - discrete-math
+  - proof
+  - counterexample
+difficulty: 1

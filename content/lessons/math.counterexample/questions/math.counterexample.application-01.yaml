@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.counterexample.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "“모든 소수는 홀수”의 반례가 되기 위한 조건을 모두 고르세요."
+options:
+  - id: prime
+    content:
+      - type: text
+        text: "그 수가 소수여야 한다"
+  - id: even
+    content:
+      - type: text
+        text: "그 수가 짝수여야 한다"
+  - id: positive
+    content:
+      - type: text
+        text: "양의 정수라는 문맥을 따른다"
+  - id: composite
+    content:
+      - type: text
+        text: "합성수여야 한다"
+correctOptionIds: [prime, even, positive]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "반례는 소수이면서 짝수인 수여야 하며, 이 문맥에서는 양의 정수 2가 그 역할을 합니다."
+  - type: text
+    text: "합성수는 애초에 소수 조건을 만족하지 않으므로 반례가 될 수 없습니다."
+tags:
+  - discrete-math
+  - proof
+  - number-theory
+difficulty: 2

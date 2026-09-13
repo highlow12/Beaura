@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.sampling.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "모집단과 표본의 관계로 알맞은 것은 무엇인가요?"
+options:
+  - id: subset
+    content:
+      - type: text
+        text: "표본은 모집단에서 관측한 일부이다"
+  - id: superset
+    content:
+      - type: text
+        text: "모집단은 표본의 한 관측값이다"
+  - id: same
+    content:
+      - type: text
+        text: "항상 서로 같은 집합이다"
+  - id: random-only
+    content:
+      - type: text
+        text: "표본은 숫자가 될 수 없다"
+correctOptionId: subset
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "표본은 전체 모집단에 대한 정보를 얻기 위해 선택한 일부 대상입니다."
+  - type: text
+    text: "표본 추출 방식이 추정의 신뢰도와 편향에 영향을 줍니다."
+tags:
+  - probability-statistics
+  - sampling
+  - population-sample
+difficulty: 1

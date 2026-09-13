@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.graph-connectivity.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "무방향 그래프의 모든 정점 쌍 사이에 경로가 있으면 그 그래프를 무엇이라고 하나요?"
+options:
+  - id: connected
+    content:
+      - type: text
+        text: "연결 그래프"
+  - id: cyclic
+    content:
+      - type: text
+        text: "완전 사이클"
+  - id: directed
+    content:
+      - type: text
+        text: "방향 그래프"
+  - id: weighted
+    content:
+      - type: text
+        text: "가중 그래프"
+correctOptionId: connected
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "모든 정점 쌍이 서로 도달 가능하면 connected graph라고 합니다."
+  - type: text
+    text: "간선의 방향이나 가중치는 연결 그래프 여부와 별도의 속성입니다."
+tags:
+  - discrete-math
+  - graphs
+  - connected
+difficulty: 1

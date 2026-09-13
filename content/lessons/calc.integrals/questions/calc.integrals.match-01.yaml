@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.integrals.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "적분 용어와 의미를 알맞게 연결하세요."
+leftItems:
+  - id: indefinite
+    content:
+      - type: text
+        text: "부정적분"
+  - id: definite
+    content:
+      - type: text
+        text: "정적분"
+  - id: antiderivative
+    content:
+      - type: text
+        text: "원시함수"
+  - id: constant
+    content:
+      - type: text
+        text: "적분상수"
+rightItems:
+  - id: indefinite-desc
+    content:
+      - type: text
+        text: "도함수가 f인 함수들의 일반형"
+  - id: definite-desc
+    content:
+      - type: text
+        text: "구간에서 누적된 하나의 값"
+  - id: antiderivative-desc
+    content:
+      - type: text
+        text: "미분하면 피적분함수가 되는 함수"
+  - id: constant-desc
+    content:
+      - type: text
+        text: "미분해도 사라져 일반형에 남는 C"
+correctPairs:
+  - leftId: indefinite
+    rightId: indefinite-desc
+  - leftId: definite
+    rightId: definite-desc
+  - leftId: antiderivative
+    rightId: antiderivative-desc
+  - leftId: constant
+    rightId: constant-desc
+explanation:
+  - type: text
+    text: "부정적분은 함수의 가족을, 정적분은 구간에서의 누적 결과를 다룹니다."
+  - type: text
+    text: "문제에 구간이 있는지와 C를 써야 하는지를 먼저 확인하세요."
+tags:
+  - calculus
+  - integrals
+  - terminology
+difficulty: 2

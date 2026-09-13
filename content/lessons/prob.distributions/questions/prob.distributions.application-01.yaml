@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.distributions.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "이항분포를 사용할 수 있는 조건을 모두 고르세요."
+options:
+  - id: fixed-n
+    content:
+      - type: text
+        text: "시행 횟수 n이 고정되어 있다"
+  - id: two-outcomes
+    content:
+      - type: text
+        text: "각 시행의 결과가 성공·실패 두 가지로 나뉜다"
+  - id: independent
+    content:
+      - type: text
+        text: "시행들이 독립이다"
+  - id: varying-p
+    content:
+      - type: text
+        text: "매 시행의 성공 확률이 임의로 변한다"
+correctOptionIds: [fixed-n, two-outcomes, independent]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "이항분포는 고정된 n번의 독립 Bernoulli 시행과 일정한 성공 확률을 가정합니다."
+  - type: text
+    text: "성공 확률이 달라지면 기본 이항분포 모델을 그대로 쓸 수 없습니다."
+tags:
+  - probability-statistics
+  - distributions
+  - binomial
+difficulty: 2

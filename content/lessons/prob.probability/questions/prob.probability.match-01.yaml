@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.probability.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "확률 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: space
+    content:
+      - type: text
+        text: "표본공간 Ω"
+  - id: event
+    content:
+      - type: text
+        text: "사건 A"
+  - id: complement
+    content:
+      - type: text
+        text: "여사건 Aᶜ"
+  - id: probability
+    content:
+      - type: text
+        text: "P(A)"
+rightItems:
+  - id: space-desc
+    content:
+      - type: text
+        text: "가능한 모든 결과의 집합"
+  - id: event-desc
+    content:
+      - type: text
+        text: "관심 있는 결과들의 부분집합"
+  - id: complement-desc
+    content:
+      - type: text
+        text: "A가 일어나지 않는 결과의 집합"
+  - id: probability-desc
+    content:
+      - type: text
+        text: "사건이 일어날 가능성을 나타내는 값"
+correctPairs:
+  - leftId: space
+    rightId: space-desc
+  - leftId: event
+    rightId: event-desc
+  - leftId: complement
+    rightId: complement-desc
+  - leftId: probability
+    rightId: probability-desc
+explanation:
+  - type: text
+    text: "표본공간과 사건을 집합으로 표현하면 확률의 분자와 전체 범위를 분명하게 셀 수 있습니다."
+  - type: text
+    text: "여사건 공식은 복잡한 사건보다 실패 확률이 간단할 때 특히 유용합니다."
+tags:
+  - probability-statistics
+  - probability
+  - terminology
+difficulty: 2

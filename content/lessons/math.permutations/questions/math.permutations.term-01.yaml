@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.permutations.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "n개의 서로 다른 대상을 모두 배열하는 경우의 수를 n___으로 나타냅니다."
+choices:
+  - "!"
+  - "P0"
+  - "/0"
+acceptedAnswers:
+  - "!"
+explanation:
+  - type: text
+    text: "n!는 n부터 1까지의 곱으로 전체 배열 수를 나타냅니다."
+  - type: text
+    text: "예를 들어 4!=24입니다."
+tags:
+  - discrete-math
+  - combinatorics
+  - factorial
+difficulty: 1

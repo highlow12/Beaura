@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.graphs.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "그래프를 이루는 기본 두 요소는 무엇인가요?"
+options:
+  - id: vertices-edges
+    content:
+      - type: text
+        text: "정점과 간선"
+  - id: rows-columns
+    content:
+      - type: text
+        text: "행과 열만"
+  - id: keys-values
+    content:
+      - type: text
+        text: "키와 값"
+  - id: stacks-queues
+    content:
+      - type: text
+        text: "스택과 큐"
+correctOptionId: vertices-edges
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "그래프는 대상인 정점과 관계를 나타내는 간선으로 구성됩니다."
+  - type: text
+    text: "인접 리스트나 행렬은 그래프를 저장하는 표현 방식입니다."
+tags:
+  - discrete-math
+  - graphs
+  - vertex-edge
+difficulty: 1

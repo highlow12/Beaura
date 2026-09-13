@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.vector-space.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "기저 관련 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: basis
+    content:
+      - type: text
+        text: "기저"
+  - id: span
+    content:
+      - type: text
+        text: "생성(span)"
+  - id: independent
+    content:
+      - type: text
+        text: "선형 독립"
+  - id: dimension
+    content:
+      - type: text
+        text: "차원"
+rightItems:
+  - id: basis-desc
+    content:
+      - type: text
+        text: "생성과 독립을 함께 만족하는 집합"
+  - id: span-desc
+    content:
+      - type: text
+        text: "선형 결합으로 공간 전체를 표현함"
+  - id: independent-desc
+    content:
+      - type: text
+        text: "영벡터 표현에서 계수가 모두 0뿐임"
+  - id: dimension-desc
+    content:
+      - type: text
+        text: "기저 벡터의 개수"
+correctPairs:
+  - leftId: basis
+    rightId: basis-desc
+  - leftId: span
+    rightId: span-desc
+  - leftId: independent
+    rightId: independent-desc
+  - leftId: dimension
+    rightId: dimension-desc
+explanation:
+  - type: text
+    text: "기저는 공간의 좌표를 정하는 최소 기준이며, 생성과 독립이 핵심입니다."
+  - type: text
+    text: "기저를 바꾸어도 한 공간의 차원은 달라지지 않습니다."
+tags:
+  - linear-algebra
+  - space
+  - terminology
+difficulty: 2

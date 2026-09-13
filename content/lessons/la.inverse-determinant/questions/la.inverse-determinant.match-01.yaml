@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.inverse-determinant.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "역행렬 관련 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: identity
+    content:
+      - type: text
+        text: "I"
+  - id: inverse
+    content:
+      - type: text
+        text: "A⁻¹"
+  - id: det
+    content:
+      - type: text
+        text: "det(A)"
+  - id: singular
+    content:
+      - type: text
+        text: "특이 행렬"
+rightItems:
+  - id: identity-desc
+    content:
+      - type: text
+        text: "곱셈의 항등원인 단위행렬"
+  - id: inverse-desc
+    content:
+      - type: text
+        text: "A와 곱해 I를 만드는 행렬"
+  - id: det-desc
+    content:
+      - type: text
+        text: "가역성을 판단하는 스칼라 값"
+  - id: singular-desc
+    content:
+      - type: text
+        text: "행렬식이 0이라 역행렬이 없음"
+correctPairs:
+  - leftId: identity
+    rightId: identity-desc
+  - leftId: inverse
+    rightId: inverse-desc
+  - leftId: det
+    rightId: det-desc
+  - leftId: singular
+    rightId: singular-desc
+explanation:
+  - type: text
+    text: "역행렬은 변환을 되돌리고, 행렬식은 그 가능성을 빠르게 판정하는 값입니다."
+  - type: text
+    text: "계산 결과가 맞는지 A와 A⁻¹의 곱을 확인해 보세요."
+tags:
+  - linear-algebra
+  - matrices
+  - terminology
+difficulty: 2

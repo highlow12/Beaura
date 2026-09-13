@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.functions.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "함수 f:A→B가 단사이기 위한 조건을 나타내는 문장을 모두 고르세요."
+options:
+  - id: distinct
+    content:
+      - type: text
+        text: "서로 다른 입력은 서로 다른 출력으로 간다"
+  - id: injective-equation
+    content:
+      - type: text
+        text: "f(x)=f(y)이면 x=y이다"
+  - id: cover
+    content:
+      - type: text
+        text: "공역의 모든 값이 출력되어야 한다"
+  - id: many
+    content:
+      - type: text
+        text: "모든 입력이 같은 출력으로 가야 한다"
+correctOptionIds: [distinct, injective-equation]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "단사는 출력이 겹치지 않는 성질이며 두 문장은 같은 조건을 서로 다르게 표현합니다."
+  - type: text
+    text: "공역을 모두 덮는 조건은 전사에 해당합니다."
+tags:
+  - discrete-math
+  - functions
+  - injective
+difficulty: 2

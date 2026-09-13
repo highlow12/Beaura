@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: la.homogeneous-coordinates
+revision: 1
+track: linear-algebra
+title: "동차좌표와 변환 행렬"
+description: "3차원 동차좌표로 평행이동을 포함한 그래픽스 변환을 표현한다."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.homogeneous-coordinates.definition-01
+  - type: question
+    ref: la.homogeneous-coordinates.application-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: la.homogeneous-coordinates.term-01
+  - type: question
+    ref: la.homogeneous-coordinates.steps-01
+  - type: question
+    ref: la.homogeneous-coordinates.match-01

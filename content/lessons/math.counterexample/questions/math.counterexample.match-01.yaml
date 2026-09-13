@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.counterexample.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "명제 유형과 필요한 증명 전략을 알맞게 연결하세요."
+leftItems:
+  - id: universal-false
+    content:
+      - type: text
+        text: "전칭 명제가 거짓임을 보이기"
+  - id: universal-true
+    content:
+      - type: text
+        text: "전칭 명제가 참임을 보이기"
+  - id: existential-true
+    content:
+      - type: text
+        text: "존재 명제가 참임을 보이기"
+  - id: example
+    content:
+      - type: text
+        text: "예시 하나를 계산하기"
+rightItems:
+  - id: universal-false-desc
+    content:
+      - type: text
+        text: "조건을 만족하는 반례 하나를 찾는다"
+  - id: universal-true-desc
+    content:
+      - type: text
+        text: "임의의 대상을 놓고 일반적으로 증명한다"
+  - id: existential-true-desc
+    content:
+      - type: text
+        text: "조건을 만족하는 증인 하나를 제시한다"
+  - id: example-desc
+    content:
+      - type: text
+        text: "아이디어를 얻지만 일반 결론을 보장하지 않는다"
+correctPairs:
+  - leftId: universal-false
+    rightId: universal-false-desc
+  - leftId: universal-true
+    rightId: universal-true-desc
+  - leftId: existential-true
+    rightId: existential-true-desc
+  - leftId: example
+    rightId: example-desc
+explanation:
+  - type: text
+    text: "전칭의 거짓은 반례 하나, 전칭의 참은 임의의 대상에 대한 증명, 존재의 참은 증인 하나로 다룹니다."
+  - type: text
+    text: "예시 하나는 그 자체로 일반 명제의 증명이 되지 않습니다."
+tags:
+  - discrete-math
+  - proof
+  - quantifiers
+difficulty: 3

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.independence.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "독립 사건에서 P(A|B)는 P(___)와 같습니다."
+choices:
+  - "A"
+  - "B"
+  - "A∩B"
+acceptedAnswers:
+  - "A"
+explanation:
+  - type: text
+    text: "B에 대한 정보가 A의 확률을 바꾸지 않으므로 P(A|B)=P(A)입니다."
+  - type: text
+    text: "조건부 확률의 정의와 독립성의 동치 표현입니다."
+tags:
+  - probability-statistics
+  - independence
+  - conditional
+difficulty: 1

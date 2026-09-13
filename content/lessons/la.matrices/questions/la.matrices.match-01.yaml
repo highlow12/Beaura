@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.matrices.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "행렬 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: row
+    content:
+      - type: text
+        text: "행"
+  - id: column
+    content:
+      - type: text
+        text: "열"
+  - id: shape
+    content:
+      - type: text
+        text: "m×n"
+  - id: square
+    content:
+      - type: text
+        text: "정사각행렬"
+rightItems:
+  - id: row-desc
+    content:
+      - type: text
+        text: "가로 방향 원소들의 줄"
+  - id: column-desc
+    content:
+      - type: text
+        text: "세로 방향 원소들의 줄"
+  - id: shape-desc
+    content:
+      - type: text
+        text: "행 수와 열 수를 나타내는 크기"
+  - id: square-desc
+    content:
+      - type: text
+        text: "행 수와 열 수가 같은 행렬"
+correctPairs:
+  - leftId: row
+    rightId: row-desc
+  - leftId: column
+    rightId: column-desc
+  - leftId: shape
+    rightId: shape-desc
+  - leftId: square
+    rightId: square-desc
+explanation:
+  - type: text
+    text: "행렬의 크기와 첨자를 읽으면 원소 위치와 연산 가능 여부를 판단할 수 있습니다."
+  - type: text
+    text: "정사각행렬은 역행렬과 행렬식 같은 개념을 정의하기 편리한 특별한 경우입니다."
+tags:
+  - linear-algebra
+  - matrices
+  - terminology
+difficulty: 2

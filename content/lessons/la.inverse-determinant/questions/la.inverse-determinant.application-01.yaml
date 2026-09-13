@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.inverse-determinant.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "A=[[1,2],[3,4]]에 대한 옳은 계산을 모두 고르세요."
+options:
+  - id: det-minus-two
+    content:
+      - type: text
+        text: "det(A)=−2이다"
+  - id: nonzero
+    content:
+      - type: text
+        text: "역행렬이 존재한다"
+  - id: formula
+    content:
+      - type: text
+        text: "대각 곱의 차는 1×4−2×3이다"
+  - id: zero
+    content:
+      - type: text
+        text: "det(A)=0이다"
+correctOptionIds: [det-minus-two, nonzero, formula]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "det(A)=1×4−2×3=−2이므로 0이 아니고 역행렬이 존재합니다."
+  - type: text
+    text: "행렬식의 부호가 음수여도 역행렬 가능 여부는 0인지로 판단합니다."
+tags:
+  - linear-algebra
+  - matrices
+  - determinant
+difficulty: 2

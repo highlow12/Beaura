@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.bayes.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "베이즈 정리에서 관찰 전 원인 A의 확률 P(A)를 사전___이라고 합니다."
+choices:
+  - "확률"
+  - "우도"
+  - "오차"
+acceptedAnswers:
+  - "확률"
+explanation:
+  - type: text
+    text: "P(A)는 증거를 보기 전의 믿음 또는 빈도로 사전확률이라고 부릅니다."
+  - type: text
+    text: "증거를 반영한 뒤에는 사후확률 P(A|B)가 됩니다."
+tags:
+  - probability-statistics
+  - bayes
+  - prior
+difficulty: 1

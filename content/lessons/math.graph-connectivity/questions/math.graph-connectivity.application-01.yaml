@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.graph-connectivity.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "그래프의 connected component에 대한 옳은 설명을 모두 고르세요."
+options:
+  - id: internal
+    content:
+      - type: text
+        text: "구성 요소 내부의 정점끼리는 경로로 연결된다"
+  - id: maximal
+    content:
+      - type: text
+        text: "더 큰 연결 집합으로 확장할 수 없는 최대 집합이다"
+  - id: isolated
+    content:
+      - type: text
+        text: "고립된 정점도 하나의 구성 요소가 될 수 있다"
+  - id: all
+    content:
+      - type: text
+        text: "항상 그래프 전체와 같다"
+correctOptionIds: [internal, maximal, isolated]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "구성 요소는 연결된 최대 집합이며, 다른 정점과 간선이 없는 고립 정점도 포함합니다."
+  - type: text
+    text: "그래프 자체가 연결된 경우에만 구성 요소 하나가 전체와 같습니다."
+tags:
+  - discrete-math
+  - graphs
+  - components
+difficulty: 2

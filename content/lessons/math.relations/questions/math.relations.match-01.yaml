@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.relations.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "관계 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: product
+    content:
+      - type: text
+        text: "A × B"
+  - id: relation
+    content:
+      - type: text
+        text: "R ⊆ A × B"
+  - id: domain
+    content:
+      - type: text
+        text: "정의역"
+  - id: range
+    content:
+      - type: text
+        text: "치역"
+rightItems:
+  - id: product-desc
+    content:
+      - type: text
+        text: "A와 B에서 고른 모든 순서쌍"
+  - id: relation-desc
+    content:
+      - type: text
+        text: "곱집합에서 고른 순서쌍의 모음"
+  - id: domain-desc
+    content:
+      - type: text
+        text: "관계 쌍의 첫 성분 모음"
+  - id: range-desc
+    content:
+      - type: text
+        text: "관계 쌍의 둘째 성분 모음"
+correctPairs:
+  - leftId: product
+    rightId: product-desc
+  - leftId: relation
+    rightId: relation-desc
+  - leftId: domain
+    rightId: domain-desc
+  - leftId: range
+    rightId: range-desc
+explanation:
+  - type: text
+    text: "관계는 순서쌍을 이용하므로 첫 성분과 둘째 성분을 기준으로 정의역과 치역을 나눕니다."
+  - type: text
+    text: "관계 자체와 관계가 놓인 전체 곱집합은 서로 다른 대상입니다."
+tags:
+  - discrete-math
+  - relations
+  - domain-range
+difficulty: 2

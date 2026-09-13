@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.matrix-multiplication.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "행렬 곱 AB에 대한 옳은 설명을 모두 고르세요."
+options:
+  - id: inner-match
+    content:
+      - type: text
+        text: "A의 열 수와 B의 행 수가 같아야 한다"
+  - id: row-column
+    content:
+      - type: text
+        text: "A의 행과 B의 열을 내적한다"
+  - id: outer
+    content:
+      - type: text
+        text: "결과의 크기는 A의 행 수×B의 열 수이다"
+  - id: commute
+    content:
+      - type: text
+        text: "항상 AB=BA이다"
+correctOptionIds: [inner-match, row-column, outer]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "행·열 내적 구조가 행렬 곱의 차원 조건과 결과 크기를 결정합니다."
+  - type: text
+    text: "행렬 곱은 일반적으로 교환되지 않으므로 순서를 바꿀 수 없습니다."
+tags:
+  - linear-algebra
+  - matrices
+  - matrix-product
+difficulty: 2

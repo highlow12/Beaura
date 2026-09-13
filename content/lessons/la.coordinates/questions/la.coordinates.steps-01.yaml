@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: la.coordinates.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "새 기저에서 벡터 좌표를 구하는 과정을 배열하세요."
+items:
+  - id: choose
+    content:
+      - type: text
+        text: "새 기저 벡터들을 열로 놓은 행렬 B를 만든다"
+  - id: equation
+    content:
+      - type: text
+        text: "B c=v라는 식을 세운다"
+  - id: solve
+    content:
+      - type: text
+        text: "계수 벡터 c를 푼다"
+  - id: verify
+    content:
+      - type: text
+        text: "B c를 다시 계산해 v와 같은지 확인한다"
+correctOrder:
+  - choose
+  - equation
+  - solve
+  - verify
+explanation:
+  - type: text
+    text: "새 기저의 선형 결합을 행렬식으로 세운 뒤 계수 c를 구합니다."
+  - type: text
+    text: "마지막 재구성은 좌표 계산이 맞는지 확인하는 간단한 검산입니다."
+tags:
+  - linear-algebra
+  - coordinates
+  - change-of-basis
+difficulty: 2

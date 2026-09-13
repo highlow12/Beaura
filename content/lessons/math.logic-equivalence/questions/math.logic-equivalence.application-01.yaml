@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.logic-equivalence.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "다음 중 DNF 형태인 논리식을 모두 고르세요."
+options:
+  - id: dnf-one
+    content:
+      - type: text
+        text: "(P ∧ Q) ∨ R"
+  - id: dnf-two
+    content:
+      - type: text
+        text: "(¬P ∧ R) ∨ (Q ∧ S)"
+  - id: cnf-one
+    content:
+      - type: text
+        text: "(P ∨ Q) ∧ R"
+  - id: plain
+    content:
+      - type: text
+        text: "P ∧ Q"
+correctOptionIds: [dnf-one, dnf-two]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "DNF는 AND로 묶인 항들을 OR로 결합한 형태입니다."
+  - type: text
+    text: "(P ∨ Q) ∧ R는 CNF 쪽의 모양이고, 단일 AND 항은 이 분류의 표준형 예로 선택하지 않았습니다."
+tags:
+  - discrete-math
+  - logic
+  - dnf
+difficulty: 2

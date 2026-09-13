@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.events.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "A와 B가 서로 배반이면 P(A∩B)=___입니다."
+choices:
+  - "0"
+  - "1"
+  - "P(A)+P(B)"
+acceptedAnswers:
+  - "0"
+explanation:
+  - type: text
+    text: "배반 사건은 동시에 일어날 수 없으므로 교집합이 빈 집합입니다."
+  - type: text
+    text: "따라서 합사건의 확률은 두 확률의 합으로 단순화됩니다."
+tags:
+  - probability-statistics
+  - events
+  - mutual-exclusion
+difficulty: 1

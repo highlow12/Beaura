@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.homogeneous-coordinates.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "동차좌표 요소와 의미를 알맞게 연결하세요."
+leftItems:
+  - id: w-one
+    content:
+      - type: text
+        text: "w=1"
+  - id: w-zero
+    content:
+      - type: text
+        text: "w=0"
+  - id: three-d
+    content:
+      - type: text
+        text: "(x,y,z,1)"
+  - id: composition
+    content:
+      - type: text
+        text: "행렬 곱"
+rightItems:
+  - id: w-one-desc
+    content:
+      - type: text
+        text: "위치나 점을 나타냄"
+  - id: w-zero-desc
+    content:
+      - type: text
+        text: "방향을 나타내며 평행이동 제외"
+  - id: three-d-desc
+    content:
+      - type: text
+        text: "3차원 점의 동차 표현"
+  - id: composition-desc
+    content:
+      - type: text
+        text: "여러 변환을 한 흐름으로 합성"
+correctPairs:
+  - leftId: w-one
+    rightId: w-one-desc
+  - leftId: w-zero
+    rightId: w-zero-desc
+  - leftId: three-d
+    rightId: three-d-desc
+  - leftId: composition
+    rightId: composition-desc
+explanation:
+  - type: text
+    text: "동차좌표는 위치와 방향을 구별하면서 모든 변환을 같은 행렬 언어로 묶습니다."
+  - type: text
+    text: "합성 순서와 w 값을 함께 관리하는 것이 그래픽스 변환의 핵심입니다."
+tags:
+  - linear-algebra
+  - coordinates
+  - terminology
+difficulty: 2

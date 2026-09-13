@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.integrals.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "누적함수와 미분의 관계를 사용하는 순서를 배열하세요."
+items:
+  - id: define
+    content:
+      - type: text
+        text: "f를 누적해 F(x)=∫ₐˣ f(t)dt를 정의한다"
+  - id: differentiate
+    content:
+      - type: text
+        text: "F(x)를 x에 대해 미분한다"
+  - id: recover
+    content:
+      - type: text
+        text: "F′(x)=f(x)를 얻는다"
+  - id: interpret
+    content:
+      - type: text
+        text: "누적량의 변화율이 원래 양임을 해석한다"
+correctOrder:
+  - define
+  - differentiate
+  - recover
+  - interpret
+explanation:
+  - type: text
+    text: "기본정리는 누적된 양을 미분하면 현재 지점의 원래 함수값이 된다는 연결을 제공합니다."
+  - type: text
+    text: "적분과 미분을 서로 역연산으로 보는 핵심 흐름입니다."
+tags:
+  - calculus
+  - integrals
+  - fundamental-theorem
+difficulty: 2

@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: la.homogeneous-coordinates.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "동차좌표로 모델 변환을 적용하는 흐름을 배열하세요."
+items:
+  - id: extend
+    content:
+      - type: text
+        text: "점 (x,y,z)를 (x,y,z,1)로 확장한다"
+  - id: matrix
+    content:
+      - type: text
+        text: "4×4 변환 행렬을 고른다"
+  - id: multiply
+    content:
+      - type: text
+        text: "행렬과 점 벡터를 곱한다"
+  - id: interpret
+    content:
+      - type: text
+        text: "결과를 변환된 위치로 해석한다"
+correctOrder:
+  - extend
+  - matrix
+  - multiply
+  - interpret
+explanation:
+  - type: text
+    text: "점의 w를 1로 만든 뒤 변환 행렬과 곱하면 평행이동까지 포함한 위치가 나옵니다."
+  - type: text
+    text: "방향 벡터를 변환할 때는 w=0을 사용합니다."
+tags:
+  - linear-algebra
+  - coordinates
+  - pipeline
+difficulty: 2

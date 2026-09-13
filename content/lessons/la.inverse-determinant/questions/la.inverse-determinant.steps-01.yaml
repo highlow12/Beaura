@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: la.inverse-determinant.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "2×2 역행렬을 공식으로 구하는 순서를 배열하세요."
+items:
+  - id: det
+    content:
+      - type: text
+        text: "행렬식 ad−bc를 계산한다"
+  - id: swap
+    content:
+      - type: text
+        text: "대각 원소 a,d를 서로 바꾼다"
+  - id: negate
+    content:
+      - type: text
+        text: "비대각 원소 b,c의 부호를 바꾼다"
+  - id: scale
+    content:
+      - type: text
+        text: "행렬식의 역수로 전체를 곱한다"
+correctOrder:
+  - det
+  - swap
+  - negate
+  - scale
+explanation:
+  - type: text
+    text: "공식은 행렬식 계산 후 원소 재배치와 부호 변경, 마지막 스케일링 순서로 적용합니다."
+  - type: text
+    text: "행렬식이 0이면 마지막 나눗셈이 불가능해 역행렬이 없습니다."
+tags:
+  - linear-algebra
+  - matrices
+  - inverse-formula
+difficulty: 2

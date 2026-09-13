@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.random-variables.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "확률질량함수에 대한 옳은 조건을 모두 고르세요."
+options:
+  - id: nonnegative
+    content:
+      - type: text
+        text: "각 확률은 0 이상이다"
+  - id: sum-one
+    content:
+      - type: text
+        text: "가능한 값 전체의 확률 합은 1이다"
+  - id: discrete
+    content:
+      - type: text
+        text: "이산 값별 확률을 표현한다"
+  - id: negative
+    content:
+      - type: text
+        text: "일부 확률은 음수여도 된다"
+correctOptionIds: [nonnegative, sum-one, discrete]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "PMF는 이산 확률변수의 값별 확률을 나타내며 확률 공리를 만족해야 합니다."
+  - type: text
+    text: "음수 확률은 허용되지 않습니다."
+tags:
+  - probability-statistics
+  - random-variables
+  - pmf
+difficulty: 1

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.trees.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "트리의 성질로 옳은 것을 모두 고르세요."
+options:
+  - id: connected
+    content:
+      - type: text
+        text: "모든 정점이 연결되어 있다"
+  - id: acyclic
+    content:
+      - type: text
+        text: "cycle이 없다"
+  - id: unique-path
+    content:
+      - type: text
+        text: "두 정점 사이 단순 경로가 하나이다"
+  - id: many-edges
+    content:
+      - type: text
+        text: "정점 n개에서 간선이 항상 n개 이상이다"
+correctOptionIds: [connected, acyclic, unique-path]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "연결·비순환·유일 경로는 서로 연결된 트리의 대표 성질입니다."
+  - type: text
+    text: "간선 수는 n−1이라서 n개 이상이 될 수 없습니다."
+tags:
+  - discrete-math
+  - graphs
+  - tree-properties
+difficulty: 2

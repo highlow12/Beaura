@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: math.sets.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "A={1,2,3}, B={3,4}일 때 A∪B에 속하는 원소를 모두 고르세요."
+options:
+  - id: one
+    content:
+      - type: text
+        text: "1"
+  - id: two
+    content:
+      - type: text
+        text: "2"
+  - id: three
+    content:
+      - type: text
+        text: "3"
+  - id: four
+    content:
+      - type: text
+        text: "4"
+  - id: five
+    content:
+      - type: text
+        text: "5"
+correctOptionIds: [one, two, three, four]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "합집합은 A 또는 B 중 하나 이상에 속한 원소를 중복 없이 모읍니다."
+  - type: text
+    text: "5는 두 집합 어느 쪽에도 없으므로 포함되지 않습니다."
+tags:
+  - discrete-math
+  - sets
+  - union
+difficulty: 1

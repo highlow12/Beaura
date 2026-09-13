@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.functions.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "다음 중 함수의 정의를 만족하는 대응은 무엇인가요?"
+options:
+  - id: valid
+    content:
+      - type: text
+        text: "입력 1→a, 2→a, 3→b"
+  - id: two-output
+    content:
+      - type: text
+        text: "입력 1→a와 1→b를 모두 가짐"
+  - id: missing
+    content:
+      - type: text
+        text: "입력 2에는 출력이 없음"
+  - id: many
+    content:
+      - type: text
+        text: "입력 하나가 두 출력으로 갈라짐"
+correctOptionId: valid
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "서로 다른 입력이 같은 출력으로 가는 것은 허용되지만, 하나의 입력에는 정확히 하나의 출력이 있어야 합니다."
+  - type: text
+    text: "모든 정의역 입력이 빠짐없이 대응되는지도 함께 확인해야 합니다."
+tags:
+  - discrete-math
+  - functions
+  - function-definition
+difficulty: 1

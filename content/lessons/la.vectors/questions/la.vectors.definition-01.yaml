@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.vectors.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "다음 중 벡터에 대한 설명으로 알맞은 것은 무엇인가요?"
+options:
+  - id: magnitude-direction
+    content:
+      - type: text
+        text: "크기와 방향을 함께 나타내는 양이다"
+  - id: magnitude-only
+    content:
+      - type: text
+        text: "방향 없이 크기만 나타낸다"
+  - id: label-only
+    content:
+      - type: text
+        text: "숫자에 붙인 이름일 뿐이다"
+  - id: position-only
+    content:
+      - type: text
+        text: "항상 시작 위치만 나타낸다"
+correctOptionId: magnitude-direction
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "벡터는 크기와 방향을 함께 가지며 이동이나 속도를 표현할 수 있습니다."
+  - type: text
+    text: "시작 위치가 달라도 같은 성분이면 같은 자유 벡터로 다룰 수 있습니다."
+tags:
+  - linear-algebra
+  - vectors
+  - vector
+difficulty: 1

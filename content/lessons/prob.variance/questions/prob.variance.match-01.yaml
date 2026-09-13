@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.variance.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "퍼짐 관련 용어와 설명을 알맞게 연결하세요."
+leftItems:
+  - id: variance
+    content:
+      - type: text
+        text: "분산 Var(X)"
+  - id: std
+    content:
+      - type: text
+        text: "표준편차 σ"
+  - id: mean
+    content:
+      - type: text
+        text: "평균 μ"
+  - id: shift
+    content:
+      - type: text
+        text: "상수 이동 X+b"
+rightItems:
+  - id: variance-desc
+    content:
+      - type: text
+        text: "편차 제곱의 평균"
+  - id: std-desc
+    content:
+      - type: text
+        text: "분산의 제곱근"
+  - id: mean-desc
+    content:
+      - type: text
+        text: "분포의 중심이 되는 기대값"
+  - id: shift-desc
+    content:
+      - type: text
+        text: "퍼짐은 바꾸지 않고 중심만 이동"
+correctPairs:
+  - leftId: variance
+    rightId: variance-desc
+  - leftId: std
+    rightId: std-desc
+  - leftId: mean
+    rightId: mean-desc
+  - leftId: shift
+    rightId: shift-desc
+explanation:
+  - type: text
+    text: "분산은 계산 단위가 제곱이지만 표준편차는 원래 단위로 돌아와 해석하기 쉽습니다."
+  - type: text
+    text: "평균의 이동과 배율 변환이 퍼짐에 미치는 영향을 분리해 보세요."
+tags:
+  - probability-statistics
+  - variance
+  - terminology
+difficulty: 2

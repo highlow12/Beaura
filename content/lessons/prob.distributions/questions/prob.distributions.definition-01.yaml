@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.distributions.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "한 번의 성공·실패 실험을 나타내는 분포는 무엇인가요?"
+options:
+  - id: bernoulli
+    content:
+      - type: text
+        text: "Bernoulli 분포"
+  - id: binomial
+    content:
+      - type: text
+        text: "Binomial 분포"
+  - id: normal
+    content:
+      - type: text
+        text: "Normal 분포"
+  - id: uniform-only
+    content:
+      - type: text
+        text: "항상 균등분포"
+correctOptionId: bernoulli
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Bernoulli는 두 결과를 갖는 한 번의 시행을 모델링합니다."
+  - type: text
+    text: "같은 실험을 여러 번 반복한 성공 횟수는 이항분포로 확장됩니다."
+tags:
+  - probability-statistics
+  - distributions
+  - bernoulli
+difficulty: 1

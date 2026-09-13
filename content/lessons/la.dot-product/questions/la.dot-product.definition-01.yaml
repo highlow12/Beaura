@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.dot-product.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "(2,3)·(4,1)의 값은 얼마인가요?"
+options:
+  - id: eleven
+    content:
+      - type: text
+        text: "11"
+  - id: nine
+    content:
+      - type: text
+        text: "9"
+  - id: ten
+    content:
+      - type: text
+        text: "10"
+  - id: twenty-four
+    content:
+      - type: text
+        text: "24"
+correctOptionId: eleven
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "내적은 2×4+3×1=8+3=11입니다."
+  - type: text
+    text: "성분을 먼저 곱한 뒤 그 결과를 더합니다."
+tags:
+  - linear-algebra
+  - dot-product
+  - calculation
+difficulty: 1

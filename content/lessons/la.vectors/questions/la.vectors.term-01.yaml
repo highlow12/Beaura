@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.vectors.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "(1,3)+(2,4)의 결과를 (___,___) 꼴로 쓸 때 첫 번째 빈칸을 고르세요."
+choices:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+acceptedAnswers:
+  - "3"
+explanation:
+  - type: text
+    text: "벡터 덧셈은 같은 위치의 성분끼리 더하므로 첫 성분은 1+2=3입니다."
+  - type: text
+    text: "둘째 성분까지 계산하면 전체 결과는 (3,7)입니다."
+tags:
+  - linear-algebra
+  - vectors
+  - addition
+difficulty: 1

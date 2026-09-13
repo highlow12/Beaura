@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.variance.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "표본 값으로 분산을 계산하는 개념적 순서를 배열하세요."
+items:
+  - id: mean
+    content:
+      - type: text
+        text: "평균 μ를 계산한다"
+  - id: deviation
+    content:
+      - type: text
+        text: "각 값에서 μ를 뺀다"
+  - id: square
+    content:
+      - type: text
+        text: "편차를 제곱한다"
+  - id: average
+    content:
+      - type: text
+        text: "제곱 편차를 평균낸다"
+correctOrder:
+  - mean
+  - deviation
+  - square
+  - average
+explanation:
+  - type: text
+    text: "분산은 평균에서의 거리를 제곱한 뒤 평균하는 순서입니다."
+  - type: text
+    text: "제곱을 하지 않고 편차를 평균내면 항상 0이 되어 퍼짐을 측정할 수 없습니다."
+tags:
+  - probability-statistics
+  - variance
+  - calculation
+difficulty: 2

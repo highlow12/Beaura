@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.permutations.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "5명 중 회장과 부회장을 순서 있게 뽑는 계산을 배열하세요."
+items:
+  - id: chair
+    content:
+      - type: text
+        text: "회장 자리에 가능한 5명을 센다"
+  - id: vice
+    content:
+      - type: text
+        text: "부회장 자리에 남은 4명을 센다"
+  - id: multiply
+    content:
+      - type: text
+        text: "5×4를 계산한다"
+  - id: interpret
+    content:
+      - type: text
+        text: "20가지 순열이라고 해석한다"
+correctOrder:
+  - chair
+  - vice
+  - multiply
+  - interpret
+explanation:
+  - type: text
+    text: "각 자리의 선택 수가 5와 4로 줄어들고 곱의 법칙으로 20을 얻습니다."
+  - type: text
+    text: "회장과 부회장의 역할이 달라 순서를 무시할 수 없습니다."
+tags:
+  - discrete-math
+  - combinatorics
+  - counting
+difficulty: 2

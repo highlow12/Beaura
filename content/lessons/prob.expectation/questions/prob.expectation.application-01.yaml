@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.expectation.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "기대값의 선형성으로 옳은 식을 모두 고르세요."
+options:
+  - id: scale-shift
+    content:
+      - type: text
+        text: "E[aX+b]=aE[X]+b"
+  - id: sum
+    content:
+      - type: text
+        text: "E[X+Y]=E[X]+E[Y]"
+  - id: constant
+    content:
+      - type: text
+        text: "E[c]=c"
+  - id: product
+    content:
+      - type: text
+        text: "항상 E[XY]=E[X]E[Y]"
+correctOptionIds: [scale-shift, sum, constant]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "기대값은 상수배와 합에 대해 선형입니다."
+  - type: text
+    text: "곱의 기대값을 곱으로 분리하려면 독립 등 추가 조건이 필요합니다."
+tags:
+  - probability-statistics
+  - expectation
+  - linearity
+difficulty: 2

@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.distributions.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "이항분포 상황을 모델링하는 순서를 배열하세요."
+items:
+  - id: outcome
+    content:
+      - type: text
+        text: "한 시행의 성공·실패를 정의한다"
+  - id: n
+    content:
+      - type: text
+        text: "반복 횟수 n을 정한다"
+  - id: p
+    content:
+      - type: text
+        text: "한 시행의 성공 확률 p를 정한다"
+  - id: count
+    content:
+      - type: text
+        text: "n번 중 성공 횟수의 확률을 계산한다"
+correctOrder:
+  - outcome
+  - n
+  - p
+  - count
+explanation:
+  - type: text
+    text: "시행의 구조와 매개변수를 정한 뒤 성공 횟수를 확률변수로 계산합니다."
+  - type: text
+    text: "독립성과 일정한 p가 빠지면 다른 모델을 검토해야 합니다."
+tags:
+  - probability-statistics
+  - distributions
+  - modeling
+difficulty: 2

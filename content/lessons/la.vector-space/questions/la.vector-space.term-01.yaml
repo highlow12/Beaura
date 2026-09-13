@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.vector-space.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "3차원 공간의 기저 벡터 개수는 차원 ___과 같습니다."
+choices:
+  - "1"
+  - "2"
+  - "3"
+  - "무한"
+acceptedAnswers:
+  - "3"
+explanation:
+  - type: text
+    text: "차원은 기저에 포함된 독립 벡터의 수입니다."
+  - type: text
+    text: "따라서 3차원 공간의 어떤 기저도 세 벡터를 가집니다."
+tags:
+  - linear-algebra
+  - space
+  - dimension
+difficulty: 1

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: prob.expectation
+revision: 1
+track: probability-statistics
+title: "기대값"
+description: "확률변수의 가중 평균인 기대값과 선형성을 계산한다."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: prob.expectation.definition-01
+  - type: question
+    ref: prob.expectation.application-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: prob.expectation.term-01
+  - type: question
+    ref: prob.expectation.steps-01
+  - type: question
+    ref: prob.expectation.match-01

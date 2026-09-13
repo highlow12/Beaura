@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.induction.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "수학적 귀납법에서 가장 먼저 확인하는 단계는 무엇인가요?"
+options:
+  - id: base
+    content:
+      - type: text
+        text: "기초 단계에서 시작 값의 명제가 참인지 확인한다"
+  - id: step
+    content:
+      - type: text
+        text: "모든 자연수를 하나씩 계산한다"
+  - id: counter
+    content:
+      - type: text
+        text: "반례를 찾는다"
+  - id: end
+    content:
+      - type: text
+        text: "결론을 부정한다"
+correctOptionId: base
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "기초 단계가 사슬의 출발점을 보장해야 귀납 단계가 이어질 수 있습니다."
+  - type: text
+    text: "그 다음에 임의의 k에서 다음 단계로 넘어가는 귀납 단계를 증명합니다."
+tags:
+  - discrete-math
+  - proof
+  - base-case
+difficulty: 1

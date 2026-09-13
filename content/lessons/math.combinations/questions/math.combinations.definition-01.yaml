@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.combinations.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "5명 중 2명을 순서 없이 팀원으로 고르는 경우의 수는?"
+options:
+  - id: five
+    content:
+      - type: text
+        text: "5가지"
+  - id: ten
+    content:
+      - type: text
+        text: "10가지"
+  - id: twenty
+    content:
+      - type: text
+        text: "20가지"
+  - id: twenty-five
+    content:
+      - type: text
+        text: "25가지"
+correctOptionId: ten
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "5C2=5×4/(2×1)=10입니다."
+  - type: text
+    text: "팀원 선택에서는 두 사람의 순서를 바꾸어도 같은 팀이므로 조합을 사용합니다."
+tags:
+  - discrete-math
+  - combinatorics
+  - combination
+difficulty: 1

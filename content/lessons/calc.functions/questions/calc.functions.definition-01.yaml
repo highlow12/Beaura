@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.functions.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "함수 f의 정의를 만족하는 대응은 무엇인가요?"
+options:
+  - id: one-output
+    content:
+      - type: text
+        text: "각 입력에 정확히 하나의 출력이 대응한다"
+  - id: many-output
+    content:
+      - type: text
+        text: "입력 하나에 여러 출력이 대응한다"
+  - id: no-output
+    content:
+      - type: text
+        text: "일부 입력에는 출력이 없어도 된다"
+  - id: same-output
+    content:
+      - type: text
+        text: "모든 입력이 반드시 같은 출력이어야 한다"
+correctOptionId: one-output
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "함수는 정의역의 모든 입력에 하나의 출력만 대응시키는 규칙입니다."
+  - type: text
+    text: "서로 다른 입력이 같은 출력으로 가는 것은 함수에서 허용됩니다."
+tags:
+  - calculus
+  - functions
+  - definition
+difficulty: 1

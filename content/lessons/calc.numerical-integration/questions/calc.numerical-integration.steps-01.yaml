@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.numerical-integration.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "사다리꼴 합을 계산하는 절차를 배열하세요."
+items:
+  - id: interval
+    content:
+      - type: text
+        text: "적분 구간을 같은 폭의 작은 구간으로 나눈다"
+  - id: values
+    content:
+      - type: text
+        text: "각 구간 양 끝의 함숫값을 읽는다"
+  - id: area
+    content:
+      - type: text
+        text: "각 사다리꼴의 넓이를 계산한다"
+  - id: sum
+    content:
+      - type: text
+        text: "작은 넓이를 모두 더한다"
+correctOrder:
+  - interval
+  - values
+  - area
+  - sum
+explanation:
+  - type: text
+    text: "구간을 나누고 각 도형의 면적을 합하면 전체 누적량의 근사가 됩니다."
+  - type: text
+    text: "간격이 일정하지 않다면 각 구간의 폭을 따로 사용해야 합니다."
+tags:
+  - calculus
+  - numerical
+  - procedure
+difficulty: 2

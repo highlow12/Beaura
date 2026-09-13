@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.matrices.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "2×3 행렬은 어떤 구조인가요?"
+options:
+  - id: two-three
+    content:
+      - type: text
+        text: "2개 행과 3개 열"
+  - id: three-two
+    content:
+      - type: text
+        text: "3개 행과 2개 열"
+  - id: six-row
+    content:
+      - type: text
+        text: "6개 행과 1개 열"
+  - id: square
+    content:
+      - type: text
+        text: "2개 행과 2개 열"
+correctOptionId: two-three
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "행렬의 표기 m×n에서 m은 행 수, n은 열 수입니다."
+  - type: text
+    text: "따라서 2×3에는 원소가 6개 있습니다."
+tags:
+  - linear-algebra
+  - matrices
+  - shape
+difficulty: 1
