@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.shortest-path.relax-keep-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: dist[u]=4, 간선 u→v의 가중치가 3, 현재 dist[v]=6일 때 완화 후 dist[v]는 얼마인가요?
+options:
+  - id: six
+    content:
+      - type: text
+        text: '6'
+  - id: seven
+    content:
+      - type: text
+        text: '7'
+  - id: three
+    content:
+      - type: text
+        text: '3'
+correctOptionId: six
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 새 후보 7은 기존 거리 6보다 짧지 않으므로 dist[v]는 6으로 유지됩니다.
+tags:
+  - shortest-path
+  - relaxation
+  - graph
+difficulty: 2
