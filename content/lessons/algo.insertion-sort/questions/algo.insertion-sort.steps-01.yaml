@@ -1,0 +1,36 @@
+id: algo.insertion-sort.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 삽입 정렬의 한 반복을 순서대로 배열하세요.
+items:
+- id: key
+  content:
+  - type: text
+    text: 다음 원소를 key로 저장한다
+- id: shift
+  content:
+  - type: text
+    text: key보다 큰 앞 원소를 오른쪽으로 민다
+- id: gap
+  content:
+  - type: text
+    text: 알맞은 삽입 위치가 생긴다
+- id: place
+  content:
+  - type: text
+    text: 빈 위치에 key를 쓴다
+correctOrder:
+- key
+- shift
+- gap
+- place
+explanation:
+- type: text
+  text: 다음 원소를 보관하고 더 큰 원소를 이동한 뒤 생긴 빈 위치에 key를 넣어 정렬된 prefix를 확장합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- insertion-sort
+difficulty: 2

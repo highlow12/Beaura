@@ -1,0 +1,47 @@
+id: ds.adt.match-01
+type: matching
+prompt:
+- type: text
+  text: ADT 관련 용어와 의미를 연결하세요.
+leftItems:
+- id: adt
+  content:
+  - type: text
+    text: ADT
+- id: interface
+  content:
+  - type: text
+    text: 인터페이스
+- id: implementation
+  content:
+  - type: text
+    text: 구현
+rightItems:
+- id: contract
+  content:
+  - type: text
+    text: 제공할 동작의 추상 규칙
+- id: visible
+  content:
+  - type: text
+    text: 호출자가 사용하는 연산 표면
+- id: inside
+  content:
+  - type: text
+    text: 규칙을 만족시키는 내부 코드와 저장 방식
+correctPairs:
+- leftId: adt
+  rightId: contract
+- leftId: interface
+  rightId: visible
+- leftId: implementation
+  rightId: inside
+explanation:
+- type: text
+  text: ADT는 동작 계약이고 인터페이스는 그 계약을 호출할 표면입니다. 구현은 내부에서 실제 저장과 처리를 담당합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- adt
+- interface
+difficulty: 2

@@ -1,0 +1,25 @@
+id: ds.linked-list.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 마지막 노드가 다음 노드가 없음을 나타내도록 빈칸을 고르세요.
+language: python
+template: 'node = {"value": "A", "next": {{blank:link}}}'
+blanks:
+- id: link
+  choices:
+  - None
+  - '0'
+  - '[]'
+  acceptedAnswers:
+  - None
+explanation:
+- type: text
+  text: 연결 리스트의 끝은 다음 노드가 없다는 의미의 None으로 표현합니다. 0이나 빈 리스트는 노드 부재를 같은 방식으로 나타내지 않습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- node
+- pointer
+difficulty: 2

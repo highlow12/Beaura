@@ -1,0 +1,36 @@
+id: ds.graph-representation.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 그래프 표현을 준비하는 순서를 배열하세요.
+items:
+- id: vertices
+  content:
+  - type: text
+    text: 정점과 ID를 정한다
+- id: choose
+  content:
+  - type: text
+    text: 인접 리스트나 행렬을 선택한다
+- id: record
+  content:
+  - type: text
+    text: 각 간선을 표현에 기록한다
+- id: query
+  content:
+  - type: text
+    text: 알고리즘에서 이웃이나 연결을 조회한다
+correctOrder:
+- vertices
+- choose
+- record
+- query
+explanation:
+- type: text
+  text: 정점 표현을 정한 뒤 그래프 밀도와 조회 패턴에 맞는 구조를 선택하고 간선을 기록해 알고리즘에 제공합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- graph
+- representation
+difficulty: 2

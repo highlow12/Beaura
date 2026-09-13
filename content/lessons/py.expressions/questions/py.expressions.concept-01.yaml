@@ -1,0 +1,33 @@
+id: py.expressions.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: Python에서 표현식에 대한 설명으로 가장 알맞은 것은 무엇인가요?
+options:
+- id: result
+  content:
+  - type: text
+    text: 평가되면 하나의 결과값을 만드는 코드 조각
+- id: comment
+  content:
+  - type: text
+    text: 실행되지 않고 메모만 남기는 주석
+- id: binding
+  content:
+  - type: text
+    text: 값을 이름에 연결하는 할당문만을 뜻하는 표현
+- id: file
+  content:
+  - type: text
+    text: 프로그램을 저장하는 파일 자체
+correctOptionId: result
+shuffleOptions: true
+explanation:
+- type: text
+  text: 표현식은 값, 이름, 연산자를 조합해 실행 시 결과값을 만듭니다. 할당문은 표현식을 계산한 뒤 그 결과를 이름에 연결하는 별도의 문장입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- values
+difficulty: 2

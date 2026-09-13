@@ -1,0 +1,47 @@
+id: py.dictionaries.match-01
+type: matching
+prompt:
+- type: text
+  text: 딕셔너리 용어와 의미를 연결하세요.
+leftItems:
+- id: key
+  content:
+  - type: text
+    text: key
+- id: value
+  content:
+  - type: text
+    text: value
+- id: lookup
+  content:
+  - type: text
+    text: user["score"]
+rightItems:
+- id: label
+  content:
+  - type: text
+    text: 값을 찾는 이름표
+- id: data
+  content:
+  - type: text
+    text: 키에 대응하는 데이터
+- id: access
+  content:
+  - type: text
+    text: 키로 값을 조회하는 표현
+correctPairs:
+- leftId: key
+  rightId: label
+- leftId: value
+  rightId: data
+- leftId: lookup
+  rightId: access
+explanation:
+- type: text
+  text: 키는 조회에 사용하는 이름표이고 값은 실제 데이터입니다. 대괄호 표현은 키를 이용해 값을 읽습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- dictionary
+difficulty: 2

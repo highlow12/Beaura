@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.dynamic-programming.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: 새로운 DP 문제를 설계하는 순서를 배열하세요.
+items:
+- id: state
+  content:
+  - type: text
+    text: 계산할 상태의 의미를 정의한다
+- id: base
+  content:
+  - type: text
+    text: 가장 작은 상태의 기저값을 정한다
+- id: transition
+  content:
+  - type: text
+    text: 이전 상태로부터의 전이 식을 만든다
+- id: compute
+  content:
+  - type: text
+    text: 메모이제이션이나 테이블로 값을 계산한다
+correctOrder:
+- state
+- base
+- transition
+- compute
+explanation:
+- type: text
+  text: 상태 의미가 분명해야 기저값과 전이 식을 올바르게 정의할 수 있고, 그 뒤 저장 전략을 선택합니다.
+tags:
+- dynamic-programming
+- state
+- execution-order
+difficulty: 2

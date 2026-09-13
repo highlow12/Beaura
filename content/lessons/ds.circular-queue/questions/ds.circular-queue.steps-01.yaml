@@ -1,0 +1,36 @@
+id: ds.circular-queue.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 원형 큐에 enqueue하는 순서를 배열하세요.
+items:
+- id: locate
+  content:
+  - type: text
+    text: front와 size로 다음 삽입 위치를 계산한다
+- id: wrap
+  content:
+  - type: text
+    text: capacity로 나머지를 취해 순환시킨다
+- id: write
+  content:
+  - type: text
+    text: 계산한 칸에 새 값을 쓴다
+- id: grow
+  content:
+  - type: text
+    text: size를 하나 늘려 상태를 갱신한다
+correctOrder:
+- locate
+- wrap
+- write
+- grow
+explanation:
+- type: text
+  text: 논리적 다음 위치를 계산하고 나머지로 배열 안에 매핑한 뒤 값을 기록하고 size를 갱신합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- circular-buffer
+difficulty: 2

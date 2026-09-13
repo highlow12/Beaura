@@ -1,0 +1,27 @@
+id: ds.dynamic-array.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 append 코드의 출력 결과를 고르세요.
+language: python
+code: 'values = [1, 2]
+
+  values.append(3)
+
+  print(values)'
+choices:
+- '[1, 2, 3]'
+- '[1, 2]'
+- '[3, 1, 2]'
+acceptedOutputs:
+- '[1, 2, 3]'
+explanation:
+- type: text
+  text: 동적 배열의 끝에 append가 3을 추가하므로 기존 순서를 유지한 [1, 2, 3]이 됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- array
+- dynamic-array
+- amortized
+difficulty: 2

@@ -1,0 +1,37 @@
+id: algo.heap-sort.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 힙 정렬의 처리 순서를 배열하세요.
+items:
+- id: build
+  content:
+  - type: text
+    text: 입력 배열로 힙을 만든다
+- id: root
+  content:
+  - type: text
+    text: 루트의 최우선 원소를 확인한다
+- id: remove
+  content:
+  - type: text
+    text: 루트를 꺼내 결과에 기록한다
+- id: restore
+  content:
+  - type: text
+    text: 남은 힙의 규칙을 복구한다
+correctOrder:
+- build
+- root
+- remove
+- restore
+explanation:
+- type: text
+  text: 먼저 힙을 만들고 루트를 제거한 뒤 남은 원소의 우선순위 규칙을 복구하는 과정을 반복합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- heap-sort
+- heap
+difficulty: 2

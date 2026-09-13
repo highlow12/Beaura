@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.astar.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: A*의 값과 의미를 연결하세요.
+leftItems:
+- id: g
+  content:
+  - type: text
+    text: g
+- id: h
+  content:
+  - type: text
+    text: h
+- id: f
+  content:
+  - type: text
+    text: f
+rightItems:
+- id: actual
+  content:
+  - type: text
+    text: 시작점에서 현재까지의 실제 비용
+- id: estimate
+  content:
+  - type: text
+    text: 현재에서 목표까지의 추정 비용
+- id: priority
+  content:
+  - type: text
+    text: g + h로 계산한 후보 우선순위
+correctPairs:
+- leftId: g
+  rightId: actual
+- leftId: h
+  rightId: estimate
+- leftId: f
+  rightId: priority
+explanation:
+- type: text
+  text: g는 이미 지불한 비용이고 h는 남은 비용의 추정입니다. 둘을 더한 f가 후보 선택 순서를 결정합니다.
+tags:
+- shortest-path
+- astar
+- heuristic
+difficulty: 2

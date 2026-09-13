@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: algo.connected-components.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: 무방향 그래프의 연결 요소를 가장 알맞게 설명한 것은 무엇인가요?
+options:
+- id: reachable-group
+  content:
+  - type: text
+    text: 서로 경로로 도달할 수 있는 정점들의 최대 묶음
+- id: edge-count
+  content:
+  - type: text
+    text: 그래프에 있는 모든 간선의 개수
+- id: start-layer
+  content:
+  - type: text
+    text: 시작 정점에서 같은 거리에 있는 한 레벨
+correctOptionId: reachable-group
+shuffleOptions: true
+explanation:
+- type: text
+  text: 연결 요소는 그 안의 정점끼리 서로 도달할 수 있고 다른 요소와는 연결되지 않는 최대 묶음입니다.
+tags:
+- graph
+- connected-components
+difficulty: 1

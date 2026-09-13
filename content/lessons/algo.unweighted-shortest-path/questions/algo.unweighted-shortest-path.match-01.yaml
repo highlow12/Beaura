@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.unweighted-shortest-path.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: 비가중치 최단 경로 계산에 쓰이는 값과 역할을 연결하세요.
+leftItems:
+- id: distance
+  content:
+  - type: text
+    text: distance
+- id: predecessor
+  content:
+  - type: text
+    text: predecessor
+- id: queue
+  content:
+  - type: text
+    text: 큐
+rightItems:
+- id: length
+  content:
+  - type: text
+    text: 시작점에서의 최소 간선 수
+- id: restore
+  content:
+  - type: text
+    text: 경로를 되짚을 이전 정점
+- id: levels
+  content:
+  - type: text
+    text: 가까운 레벨부터 처리하는 순서
+correctPairs:
+- leftId: distance
+  rightId: length
+- leftId: predecessor
+  rightId: restore
+- leftId: queue
+  rightId: levels
+explanation:
+- type: text
+  text: 거리는 최단 길이를 기록하고 predecessor는 실제 경로를 복원하게 합니다. 큐는 BFS의 레벨 순서를 유지합니다.
+tags:
+- graph
+- shortest-path
+- bfs
+difficulty: 2

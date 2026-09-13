@@ -1,0 +1,24 @@
+id: py.precedence.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 코드의 출력 결과를 고르세요.
+language: python
+code: 'value = 2 + 3 * 4
+
+  print(value)'
+choices:
+- '14'
+- '20'
+- '24'
+acceptedOutputs:
+- '14'
+explanation:
+- type: text
+  text: 3 * 4가 먼저 계산되어 12가 되고, 이어서 2를 더하므로 14가 출력됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- precedence
+difficulty: 2

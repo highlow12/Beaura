@@ -1,0 +1,24 @@
+id: py.modules.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 모듈 사용 코드의 출력 결과를 고르세요.
+language: python
+code: 'import math
+
+  print(math.ceil(2.1))'
+choices:
+- '3'
+- '2'
+- '2.1'
+acceptedOutputs:
+- '3'
+explanation:
+- type: text
+  text: math.ceil은 수를 올림해 가장 작은 정수를 반환하므로 2.1의 결과는 3입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- modules
+- import
+difficulty: 2

@@ -1,0 +1,48 @@
+id: algo.heap-sort.match-01
+type: matching
+prompt:
+- type: text
+  text: 힙 정렬 용어와 의미를 연결하세요.
+leftItems:
+- id: heapify
+  content:
+  - type: text
+    text: heapify
+- id: root
+  content:
+  - type: text
+    text: 루트
+- id: sift-down
+  content:
+  - type: text
+    text: sift-down
+rightItems:
+- id: build
+  content:
+  - type: text
+    text: 배열을 힙으로 재배열하는 작업
+- id: priority
+  content:
+  - type: text
+    text: 현재 최우선 원소가 있는 위치
+- id: restore
+  content:
+  - type: text
+    text: 아래 자식과 교환하며 규칙을 회복하는 작업
+correctPairs:
+- leftId: heapify
+  rightId: build
+- leftId: root
+  rightId: priority
+- leftId: sift-down
+  rightId: restore
+explanation:
+- type: text
+  text: heapify로 구조를 만들고 root를 꺼낸 뒤 sift-down으로 남은 힙의 규칙을 유지합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- heap-sort
+- heap
+difficulty: 2

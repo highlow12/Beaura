@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.astar.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: A*의 기본 탐색 흐름을 순서대로 배열하세요.
+items:
+- id: initialize
+  content:
+  - type: text
+    text: 시작점의 g를 0으로 하고 열린 목록에 넣는다
+- id: choose
+  content:
+  - type: text
+    text: f가 가장 작은 후보를 꺼낸다
+- id: goal
+  content:
+  - type: text
+    text: 목표인지 확인하고 아니면 이웃을 살핀다
+- id: relax
+  content:
+  - type: text
+    text: 더 좋은 g를 찾은 이웃을 갱신해 열린 목록에 넣는다
+correctOrder:
+- initialize
+- choose
+- goal
+- relax
+explanation:
+- type: text
+  text: A*는 우선순위 큐에서 f가 가장 작은 후보를 반복해서 꺼내고, 이웃의 더 좋은 경로를 완화합니다.
+tags:
+- shortest-path
+- astar
+- execution-order
+difficulty: 2

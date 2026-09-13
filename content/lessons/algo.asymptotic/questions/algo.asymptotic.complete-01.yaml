@@ -1,0 +1,24 @@
+id: algo.asymptotic.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 선형 비용의 tight bound를 완성하세요.
+language: python
+template: bound = Theta({{blank:term}})
+blanks:
+- id: term
+  choices:
+  - n
+  - n^2
+  - '1'
+  acceptedAnswers:
+  - n
+explanation:
+- type: text
+  text: n번 반복하는 비용은 상한도 O(n), 하한도 Ω(n)이므로 Θ(n)입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- asymptotic
+difficulty: 2

@@ -1,0 +1,47 @@
+id: py.tuples.match-01
+type: matching
+prompt:
+- type: text
+  text: 튜플 관련 문법과 의미를 연결하세요.
+leftItems:
+- id: pair
+  content:
+  - type: text
+    text: (3, 4)
+- id: single
+  content:
+  - type: text
+    text: (7,)
+- id: read
+  content:
+  - type: text
+    text: point[0]
+rightItems:
+- id: two
+  content:
+  - type: text
+    text: 두 원소를 가진 튜플
+- id: one
+  content:
+  - type: text
+    text: 원소 하나인 튜플
+- id: first
+  content:
+  - type: text
+    text: 첫 원소를 읽는 표현
+correctPairs:
+- leftId: pair
+  rightId: two
+- leftId: single
+  rightId: one
+- leftId: read
+  rightId: first
+explanation:
+- type: text
+  text: 쉼표가 튜플의 원소를 구분합니다. 원소 하나인 튜플에도 쉼표가 필요하고 인덱스는 0부터 시작합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- tuple
+difficulty: 2

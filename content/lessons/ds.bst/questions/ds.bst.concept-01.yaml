@@ -1,0 +1,34 @@
+id: ds.bst.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: BST의 핵심 불변식은 무엇인가요?
+options:
+- id: order
+  content:
+  - type: text
+    text: 각 노드의 왼쪽 값은 작고 오른쪽 값은 크다는 규칙
+- id: complete
+  content:
+  - type: text
+    text: 모든 레벨이 항상 빈틈없이 채워진다는 규칙
+- id: hash
+  content:
+  - type: text
+    text: 모든 키가 같은 버킷에 저장된다는 규칙
+- id: fifo
+  content:
+  - type: text
+    text: 먼저 들어온 값이 먼저 나온다는 규칙
+correctOptionId: order
+shuffleOptions: true
+explanation:
+- type: text
+  text: BST는 왼쪽과 오른쪽 하위 트리의 값 관계를 지킵니다. 완전성, 해시, FIFO는 BST의 필수 규칙이 아닙니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- bst
+- search
+difficulty: 2

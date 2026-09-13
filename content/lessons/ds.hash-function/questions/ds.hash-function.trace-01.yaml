@@ -1,0 +1,22 @@
+id: ds.hash-function.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 해시 버킷 계산의 출력 결과를 고르세요.
+language: python
+code: "def bucket(key):\n    return len(key) % 4\nprint(bucket(\"cat\"))"
+choices:
+- '3'
+- '1'
+- '4'
+acceptedOutputs:
+- '3'
+explanation:
+- type: text
+  text: cat의 길이는 3이고 3 % 4의 결과가 3이므로 버킷 인덱스 3이 출력됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-function
+difficulty: 2

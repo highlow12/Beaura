@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: algo.greedy.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: 활동의 시작 시간이 마지막으로 선택한 종료 시간 이상인지 검사하는 식을 완성하세요.
+- type: code
+  language: python
+  code: |-
+    if start {{blank:compatible}} last_finish:
+choices:
+- ">="
+- "<="
+- "=="
+acceptedAnswers:
+- ">="
+explanation:
+- type: text
+  text: start가 last_finish 이상이면 이전 활동이 끝난 뒤 시작하므로 두 활동은 겹치지 않습니다.
+tags:
+- greedy
+- activity-selection
+- code-completion
+difficulty: 2

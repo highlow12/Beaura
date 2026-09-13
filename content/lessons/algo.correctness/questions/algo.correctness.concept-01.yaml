@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.correctness.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: 반복문 불변식의 역할로 가장 알맞은 것은 무엇인가요?
+options:
+- id: preserve
+  content:
+  - type: text
+    text: 반복이 진행되어도 계속 참인 주장을 통해 결과의 정확성을 설명한다
+- id: random
+  content:
+  - type: text
+    text: 반복 횟수를 무작위로 바꾼다
+- id: format
+  content:
+  - type: text
+    text: 코드의 들여쓰기 모양만 검사한다
+correctOptionId: preserve
+shuffleOptions: true
+explanation:
+- type: text
+  text: 불변식은 초기화·유지·종료 단계를 통해 반복문이 올바른 결과에 도달하는 이유를 설명합니다.
+tags:
+- correctness
+- invariant
+- proof
+difficulty: 1

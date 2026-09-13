@@ -1,0 +1,36 @@
+id: ds.priority-queue.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 우선순위 큐의 한 작업 처리 순서를 배열하세요.
+items:
+- id: enqueue
+  content:
+  - type: text
+    text: priority와 작업을 큐에 넣는다
+- id: peek
+  content:
+  - type: text
+    text: 가장 높은 우선순위 후보를 확인한다
+- id: remove
+  content:
+  - type: text
+    text: 선택한 후보를 큐에서 제거한다
+- id: process
+  content:
+  - type: text
+    text: 제거한 작업을 실행한다
+correctOrder:
+- enqueue
+- peek
+- remove
+- process
+explanation:
+- type: text
+  text: 작업을 우선순위와 함께 저장하고 최우선 후보를 확인한 뒤 제거하여 처리합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- priority-queue
+difficulty: 2

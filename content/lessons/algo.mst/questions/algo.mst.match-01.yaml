@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.mst.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: MST의 용어와 설명을 연결하세요.
+leftItems:
+- id: spanning-tree
+  content:
+  - type: text
+    text: 신장 트리
+- id: cut
+  content:
+  - type: text
+    text: cut
+- id: safe-edge
+  content:
+  - type: text
+    text: 안전한 간선
+rightItems:
+- id: all-vertices
+  content:
+  - type: text
+    text: 모든 정점을 사이클 없이 연결하는 트리
+- id: partition
+  content:
+  - type: text
+    text: 정점 집합을 두 편으로 나누는 경계
+- id: light-crossing
+  content:
+  - type: text
+    text: 경계를 가로지르는 최소 가중치 간선
+correctPairs:
+- leftId: spanning-tree
+  rightId: all-vertices
+- leftId: cut
+  rightId: partition
+- leftId: safe-edge
+  rightId: light-crossing
+explanation:
+- type: text
+  text: cut을 가로지르는 가장 가벼운 간선은 MST를 구성하는 안전한 선택이 될 수 있습니다.
+tags:
+- graph
+- mst
+- cut-property
+difficulty: 2

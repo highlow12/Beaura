@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: algo.kruskal.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: 두 끝점이 서로 다른 묶음일 때 묶음을 합치는 연산을 고르세요.
+- type: code
+  language: python
+  code: components.{{blank:merge}}(u, v)
+choices:
+- union
+- find
+- skip
+acceptedAnswers:
+- union
+explanation:
+- type: text
+  text: Union-Find의 union은 서로 다른 연결 묶음을 하나로 합칩니다.
+tags:
+- graph
+- mst
+- kruskal
+- union-find
+- code-completion
+difficulty: 2

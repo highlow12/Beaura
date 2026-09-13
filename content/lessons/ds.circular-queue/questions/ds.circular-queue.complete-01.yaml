@@ -1,0 +1,24 @@
+id: ds.circular-queue.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 원형 큐의 인덱스가 끝에서 다시 0으로 돌아가도록 빈칸의 연산자를 고르세요.
+language: python
+template: next_index = (front + size) {{blank:operator}} capacity
+blanks:
+- id: operator
+  choices:
+  - '%'
+  - //
+  - +
+  acceptedAnswers:
+  - '%'
+explanation:
+- type: text
+  text: 나머지 연산 %는 capacity로 순환하는 인덱스를 만듭니다. //는 몫을 구하고 +는 범위를 줄이지 않습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- circular-buffer
+difficulty: 2

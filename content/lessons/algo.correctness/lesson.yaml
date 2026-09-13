@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.correctness
+revision: 1
+track: algorithms
+title: 정확성·불변식·트레이드오프
+description: 알고리즘이 항상 올바른 답을 내는지 불변식과 전제·결과로 설명하고 설계 선택을 비교한다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.correctness.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.correctness.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.correctness.steps-01
+- type: question
+  ref: algo.correctness.complete-01
+- type: question
+  ref: algo.correctness.trace-01

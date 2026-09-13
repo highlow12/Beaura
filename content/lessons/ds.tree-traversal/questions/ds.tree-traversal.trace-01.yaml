@@ -1,0 +1,22 @@
+id: ds.tree-traversal.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 전위 순회 코드의 출력 결과를 고르세요.
+language: python
+code: "tree = {\"value\": \"A\", \"left\": {\"value\": \"B\", \"left\": None, \"right\": None}, \"right\": {\"value\": \"C\", \"left\": None, \"right\": None}}\nresult = []\ndef preorder(node):\n    if node is None:\n        return\n    result.append(node[\"value\"])\n    preorder(node[\"left\"])\n    preorder(node[\"right\"])\npreorder(tree)\nprint(result)"
+choices:
+- '["A", "B", "C"]'
+- '["B", "A", "C"]'
+- '["B", "C", "A"]'
+acceptedOutputs:
+- '["A", "B", "C"]'
+explanation:
+- type: text
+  text: 현재 A를 먼저 기록한 뒤 왼쪽 B, 오른쪽 C 순서로 재귀 호출하므로 전위 결과가 A, B, C입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- traversal
+difficulty: 2

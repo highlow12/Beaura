@@ -1,0 +1,47 @@
+id: py.comprehensions.match-01
+type: matching
+prompt:
+- type: text
+  text: 컴프리헨션의 부분과 역할을 연결하세요.
+leftItems:
+- id: expression
+  content:
+  - type: text
+    text: x * 2
+- id: loop
+  content:
+  - type: text
+    text: for x in values
+- id: condition
+  content:
+  - type: text
+    text: if x > 0
+rightItems:
+- id: output
+  content:
+  - type: text
+    text: 결과 리스트에 넣을 값
+- id: iterate
+  content:
+  - type: text
+    text: 원본 원소를 순회한다
+- id: filter
+  content:
+  - type: text
+    text: 조건을 만족하는 원소만 통과시킨다
+correctPairs:
+- leftId: expression
+  rightId: output
+- leftId: loop
+  rightId: iterate
+- leftId: condition
+  rightId: filter
+explanation:
+- type: text
+  text: 앞 식은 변환, for 절은 순회, 선택적 if 절은 필터 역할을 합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- comprehension
+difficulty: 2

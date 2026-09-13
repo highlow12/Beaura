@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: algo.dynamic-programming.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: 동적 계획법이 특히 유리한 문제의 특징은 무엇인가요?
+options:
+- id: overlap
+  content:
+  - type: text
+    text: 같은 부분 문제가 반복되고 부분 답으로 전체 답을 만들 수 있다
+- id: no-state
+  content:
+  - type: text
+    text: 어떤 상태나 부분 문제도 정의할 수 없다
+- id: random
+  content:
+  - type: text
+    text: 매번 무작위 선택만 해야 한다
+correctOptionId: overlap
+shuffleOptions: true
+explanation:
+- type: text
+  text: 겹치는 부분 문제는 저장과 재사용으로 중복 계산을 줄이고, 부분 구조는 전이 식으로 전체 답을 구성하게 합니다.
+tags:
+- dynamic-programming
+- overlapping-subproblems
+difficulty: 1

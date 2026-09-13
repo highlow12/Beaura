@@ -1,0 +1,47 @@
+id: ds.circular-queue.match-01
+type: matching
+prompt:
+- type: text
+  text: 원형 큐의 상태와 의미를 연결하세요.
+leftItems:
+- id: front
+  content:
+  - type: text
+    text: front
+- id: size
+  content:
+  - type: text
+    text: size
+- id: wrap
+  content:
+  - type: text
+    text: '% capacity'
+rightItems:
+- id: dequeue
+  content:
+  - type: text
+    text: 다음에 꺼낼 원소의 위치
+- id: count
+  content:
+  - type: text
+    text: 현재 저장된 원소 수
+- id: cycle
+  content:
+  - type: text
+    text: 배열 끝에서 처음으로 돌아가는 계산
+correctPairs:
+- leftId: front
+  rightId: dequeue
+- leftId: size
+  rightId: count
+- leftId: wrap
+  rightId: cycle
+explanation:
+- type: text
+  text: front는 출구 위치, size는 큐의 현재 길이, 나머지 계산은 배열 경계를 순환시키는 역할입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- circular-buffer
+difficulty: 2

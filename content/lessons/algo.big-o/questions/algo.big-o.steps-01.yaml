@@ -1,0 +1,36 @@
+id: algo.big-o.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 반복 코드에서 Big-O를 추정하는 순서를 배열하세요.
+items:
+- id: loops
+  content:
+  - type: text
+    text: 반복문과 중첩 깊이를 확인한다
+- id: count
+  content:
+  - type: text
+    text: 각 반복의 횟수를 n으로 적는다
+- id: combine
+  content:
+  - type: text
+    text: 이어진 비용은 더하고 중첩 비용은 곱한다
+- id: drop
+  content:
+  - type: text
+    text: 상수와 낮은 차수 항을 생략한다
+correctOrder:
+- loops
+- count
+- combine
+- drop
+explanation:
+- type: text
+  text: 반복 구조를 식으로 옮기고 더하기·곱하기 규칙을 적용한 뒤, 성장에 영향을 덜 주는 항을 생략합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- big-o
+difficulty: 2

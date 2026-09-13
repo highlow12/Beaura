@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.enumerate-zip
+revision: 1
+track: python
+title: enumerate와 zip
+description: 순회 중 인덱스를 얻는 enumerate와 여러 시퀀스를 짝짓는 zip을 익힌다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.enumerate-zip.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: py.enumerate-zip.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.enumerate-zip.complete-01
+- type: question
+  ref: py.enumerate-zip.steps-01
+- type: question
+  ref: py.enumerate-zip.match-01

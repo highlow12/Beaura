@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: algo.backtracking.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: 재귀 호출이 돌아온 뒤 목록에서 마지막 선택을 제거하는 연산을 고르세요.
+- type: code
+  language: python
+  code: path.{{blank:undo}}()
+choices:
+- pop
+- append
+- clear
+acceptedAnswers:
+- pop
+explanation:
+- type: text
+  text: pop은 마지막으로 추가한 선택을 제거해 다음 형제 가지가 빈 상태에서 시작하게 합니다.
+tags:
+- backtracking
+- recursion
+- code-completion
+difficulty: 2

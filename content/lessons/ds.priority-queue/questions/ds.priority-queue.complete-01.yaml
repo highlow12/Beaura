@@ -1,0 +1,24 @@
+id: ds.priority-queue.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 우선순위 큐에서 최우선 항목을 제거하도록 빈칸을 고르세요.
+language: python
+template: next_task = heapq.{{blank:operation}}(queue)
+blanks:
+- id: operation
+  choices:
+  - heappop
+  - heappush
+  - heapify
+  acceptedAnswers:
+  - heappop
+explanation:
+- type: text
+  text: heappop은 힙의 루트인 최우선 항목을 꺼냅니다. heappush는 새 작업을 추가하는 연산입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- priority-queue
+difficulty: 2

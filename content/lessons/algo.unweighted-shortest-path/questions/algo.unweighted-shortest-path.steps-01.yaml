@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: algo.unweighted-shortest-path.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: BFS로 비가중치 최단 거리를 갱신하는 순서를 배열하세요.
+items:
+- id: start
+  content:
+  - type: text
+    text: 시작점의 거리를 0으로 하고 큐에 넣는다
+- id: pop
+  content:
+  - type: text
+    text: 큐에서 현재 정점을 꺼낸다
+- id: inspect
+  content:
+  - type: text
+    text: 아직 거리가 없는 이웃을 확인한다
+- id: update
+  content:
+  - type: text
+    text: 이웃의 거리와 predecessor를 기록하고 큐에 넣는다
+correctOrder:
+- start
+- pop
+- inspect
+- update
+explanation:
+- type: text
+  text: 이미 방문한 이웃은 건너뛰고 처음 발견한 이웃만 현재 거리보다 1 큰 값으로 기록합니다.
+tags:
+- graph
+- shortest-path
+- bfs
+- execution-order
+difficulty: 2

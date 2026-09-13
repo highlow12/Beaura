@@ -1,0 +1,36 @@
+id: ds.doubly-linked-list.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 이중 연결 리스트에서 중간 노드를 삭제하는 순서를 배열하세요.
+items:
+- id: save
+  content:
+  - type: text
+    text: 삭제할 노드의 prev와 next를 확인한다
+- id: forward
+  content:
+  - type: text
+    text: 이전 노드의 next를 다음 노드로 바꾼다
+- id: backward
+  content:
+  - type: text
+    text: 다음 노드의 prev를 이전 노드로 바꾼다
+- id: detach
+  content:
+  - type: text
+    text: 삭제한 노드의 연결을 정리한다
+correctOrder:
+- save
+- forward
+- backward
+- detach
+explanation:
+- type: text
+  text: 양쪽 이웃을 확인한 뒤 두 방향의 연결을 서로 잇고, 마지막에 삭제 노드의 참조를 정리합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- doubly-linked-list
+difficulty: 2

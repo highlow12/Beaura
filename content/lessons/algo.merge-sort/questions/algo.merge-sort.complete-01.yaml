@@ -1,0 +1,25 @@
+id: algo.merge-sort.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 배열을 절반으로 나누는 인덱스 계산을 완성하세요.
+language: python
+template: mid = len(values) {{blank:operator}} 2
+blanks:
+- id: operator
+  choices:
+  - //
+  - /
+  - '*'
+  acceptedAnswers:
+  - //
+explanation:
+- type: text
+  text: 인덱스는 정수여야 하므로 //로 나눈 몫을 사용해 가운데 위치를 계산합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- merge-sort
+- divide-conquer
+difficulty: 2

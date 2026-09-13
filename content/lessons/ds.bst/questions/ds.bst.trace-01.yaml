@@ -1,0 +1,27 @@
+id: ds.bst.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 BST 비교 코드의 출력 결과를 고르세요.
+language: python
+code: 'node = 8
+
+  target = 10
+
+  print("right" if target > node else "left")'
+choices:
+- right
+- left
+- '8'
+acceptedOutputs:
+- right
+explanation:
+- type: text
+  text: target 10이 현재 값 8보다 크므로 BST에서는 오른쪽 하위 트리로 이동합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- bst
+- search
+difficulty: 2

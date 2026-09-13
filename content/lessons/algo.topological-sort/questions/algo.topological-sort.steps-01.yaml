@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.topological-sort.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: Kahn 알고리즘의 한 반복을 순서대로 배열하세요.
+items:
+- id: pop
+  content:
+  - type: text
+    text: 큐에서 진입 차수 0인 정점을 꺼낸다
+- id: output
+  content:
+  - type: text
+    text: 꺼낸 정점을 결과에 추가한다
+- id: decrement
+  content:
+  - type: text
+    text: 이웃 정점의 진입 차수를 하나 줄인다
+- id: enqueue
+  content:
+  - type: text
+    text: 진입 차수가 0이 된 이웃을 큐에 넣는다
+correctOrder:
+- pop
+- output
+- decrement
+- enqueue
+explanation:
+- type: text
+  text: 정점을 결과에 넣은 뒤 그 정점에서 나가는 간선을 제거한 효과를 내고 새 후보를 큐에 넣습니다.
+tags:
+- graph
+- topological-sort
+- execution-order
+difficulty: 2

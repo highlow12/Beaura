@@ -1,0 +1,26 @@
+id: py.dictionaries.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: name 키의 값을 읽도록 빈칸에 들어갈 키 표현을 고르세요.
+language: python
+template: 'user = {"name": "Ada"}
+
+  print(user[{{blank:key}}])'
+blanks:
+- id: key
+  choices:
+  - '"name"'
+  - name
+  - '0'
+  acceptedAnswers:
+  - '"name"'
+explanation:
+- type: text
+  text: 딕셔너리의 문자열 키를 조회할 때는 키 자체를 문자열로 적어 user["name"]처럼 사용합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- dictionary
+difficulty: 2

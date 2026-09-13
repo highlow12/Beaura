@@ -1,0 +1,24 @@
+id: py.sets.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 값이 집합에 포함되었는지 검사하도록 빈칸의 연산자를 고르세요.
+language: python
+template: "if item {{blank:operator}} values:\n    print(\"found\")"
+blanks:
+- id: operator
+  choices:
+  - in
+  - ==
+  - +
+  acceptedAnswers:
+  - in
+explanation:
+- type: text
+  text: in은 왼쪽 값이 오른쪽 컬렉션의 원소인지 검사합니다. 결과는 True 또는 False입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- set
+difficulty: 2

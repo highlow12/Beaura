@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.unweighted-shortest-path
+revision: 1
+track: algorithms
+title: 비가중치 최단 경로
+description: 모든 간선 비용이 같을 때 BFS로 시작점에서 각 정점까지의 최소 간선 수를 구한다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.unweighted-shortest-path.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.unweighted-shortest-path.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.unweighted-shortest-path.steps-01
+- type: question
+  ref: algo.unweighted-shortest-path.complete-01
+- type: question
+  ref: algo.unweighted-shortest-path.trace-01

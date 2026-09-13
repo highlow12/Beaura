@@ -1,0 +1,33 @@
+id: py.dictionaries.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 딕셔너리의 핵심 역할은 무엇인가요?
+options:
+- id: map
+  content:
+  - type: text
+    text: 키를 사용해 대응하는 값을 찾는 것
+- id: index
+  content:
+  - type: text
+    text: 항상 숫자 인덱스로만 값을 찾는 것
+- id: unique
+  content:
+  - type: text
+    text: 모든 중복을 순서 없이 자동 제거하는 것
+- id: stack
+  content:
+  - type: text
+    text: 마지막에 넣은 값부터 꺼내는 것
+correctOptionId: map
+shuffleOptions: true
+explanation:
+- type: text
+  text: 딕셔너리는 키와 값을 연결해 키로 값을 조회합니다. 숫자 위치 기반 조회는 리스트의 특징입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- dictionary
+difficulty: 2

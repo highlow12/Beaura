@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.prim
+revision: 1
+track: algorithms
+title: Prim 알고리즘
+description: 하나의 트리를 키워 가며 경계를 가로지르는 최소 간선으로 MST를 만드는 방법을 익힌다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.prim.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.prim.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.prim.steps-01
+- type: question
+  ref: algo.prim.complete-01
+- type: question
+  ref: algo.prim.trace-01

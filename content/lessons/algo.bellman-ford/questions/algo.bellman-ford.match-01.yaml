@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.bellman-ford.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: Bellman-Ford의 단계와 의미를 연결하세요.
+leftItems:
+- id: relaxation
+  content:
+  - type: text
+    text: 완화
+- id: passes
+  content:
+  - type: text
+    text: V - 1회 pass
+- id: extra-pass
+  content:
+  - type: text
+    text: 추가 pass
+rightItems:
+- id: improve
+  content:
+  - type: text
+    text: 더 짧은 거리 후보로 값을 갱신한다
+- id: propagate
+  content:
+  - type: text
+    text: 단순 경로의 가능한 간선 수만큼 정보를 전파한다
+- id: detect
+  content:
+  - type: text
+    text: 아직 갱신되면 음수 사이클을 의심한다
+correctPairs:
+- leftId: relaxation
+  rightId: improve
+- leftId: passes
+  rightId: propagate
+- leftId: extra-pass
+  rightId: detect
+explanation:
+- type: text
+  text: V - 1회 반복은 음수 사이클이 없을 때 충분한 횟수이고, 추가 갱신은 음수 사이클의 신호입니다.
+tags:
+- shortest-path
+- bellman-ford
+- relaxation
+difficulty: 2

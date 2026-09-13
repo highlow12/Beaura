@@ -1,0 +1,48 @@
+id: py.enumerate-zip.match-01
+type: matching
+prompt:
+- type: text
+  text: enumerate와 zip의 역할을 연결하세요.
+leftItems:
+- id: enumerate
+  content:
+  - type: text
+    text: enumerate(items)
+- id: zip
+  content:
+  - type: text
+    text: zip(names, scores)
+- id: index
+  content:
+  - type: text
+    text: index
+rightItems:
+- id: position
+  content:
+  - type: text
+    text: 인덱스와 원소를 함께 순회
+- id: parallel
+  content:
+  - type: text
+    text: 같은 위치의 여러 시퀀스를 짝짓기
+- id: location
+  content:
+  - type: text
+    text: 시퀀스 안의 위치 번호
+correctPairs:
+- leftId: enumerate
+  rightId: position
+- leftId: zip
+  rightId: parallel
+- leftId: index
+  rightId: location
+explanation:
+- type: text
+  text: enumerate는 위치를 추가하고 zip은 여러 시퀀스의 같은 위치를 묶습니다. index는 그 위치 번호 자체입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- iteration
+- enumerate
+- zip
+difficulty: 2

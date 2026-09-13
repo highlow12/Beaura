@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: algo.backtracking.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: 다음 백트래킹이 길이 2의 순열을 몇 개 기록하는지 고르세요.
+language: python
+code: |-
+  solutions = []
+  def search(path, choices):
+      if len(path) == 2:
+          solutions.append(path)
+          return
+      for item in choices:
+          rest = [x for x in choices if x != item]
+          search(path + [item], rest)
+  search([], ["A", "B"])
+  print(len(solutions))
+choices:
+- '2'
+- '1'
+- '4'
+acceptedOutputs:
+- '2'
+explanation:
+- type: text
+  text: 첫 단계에서 A 또는 B를 고르고 남은 하나를 이어 붙이므로 [A, B]와 [B, A] 두 해를 기록합니다.
+tags:
+- backtracking
+- recursion
+- code-output
+difficulty: 3

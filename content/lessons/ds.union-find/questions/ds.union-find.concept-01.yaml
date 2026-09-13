@@ -1,0 +1,33 @@
+id: ds.union-find.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: union-find의 find 연산이 반환하는 것은 무엇인가요?
+options:
+- id: root
+  content:
+  - type: text
+    text: 원소가 속한 집합의 대표 원소
+- id: next
+  content:
+  - type: text
+    text: 그래프의 다음 이웃 하나
+- id: minimum
+  content:
+  - type: text
+    text: 전체 집합의 최솟값
+- id: index
+  content:
+  - type: text
+    text: 배열의 마지막 위치
+correctOptionId: root
+shuffleOptions: true
+explanation:
+- type: text
+  text: find는 부모 연결을 따라가 원소가 속한 집합의 대표를 찾습니다. 대표가 같으면 두 원소가 같은 집합입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- disjoint-set
+- union-find
+difficulty: 2

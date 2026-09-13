@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.dynamic-programming.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: DP 설계 요소와 설명을 연결하세요.
+leftItems:
+- id: state
+  content:
+  - type: text
+    text: 상태
+- id: transition
+  content:
+  - type: text
+    text: 전이
+- id: memo
+  content:
+  - type: text
+    text: 메모이제이션
+rightItems:
+- id: meaning
+  content:
+  - type: text
+    text: 현재 부분 문제를 나타내는 정보
+- id: relation
+  content:
+  - type: text
+    text: 작은 답에서 다음 답을 만드는 규칙
+- id: cache
+  content:
+  - type: text
+    text: 재귀 결과를 저장해 중복 계산을 막는 방법
+correctPairs:
+- leftId: state
+  rightId: meaning
+- leftId: transition
+  rightId: relation
+- leftId: memo
+  rightId: cache
+explanation:
+- type: text
+  text: 상태와 전이를 먼저 정하고, 메모이제이션이나 테이블에 계산 결과를 저장해 다시 사용합니다.
+tags:
+- dynamic-programming
+- memoization
+- tabulation
+difficulty: 2

@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: algo.prim.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: Prim의 한 확장 단계를 순서대로 배열하세요.
+items:
+- id: mark
+  content:
+  - type: text
+    text: 현재 정점을 트리에 표시한다
+- id: push
+  content:
+  - type: text
+    text: 현재 정점에서 나가는 경계 간선을 힙에 넣는다
+- id: pop
+  content:
+  - type: text
+    text: 힙에서 가장 가벼운 간선을 꺼낸다
+- id: add
+  content:
+  - type: text
+    text: 새 정점이면 간선과 정점을 트리에 추가한다
+correctOrder:
+- mark
+- push
+- pop
+- add
+explanation:
+- type: text
+  text: 새 정점을 방문 처리한 뒤 경계를 확장하고, 다음 최소 후보가 바깥 정점을 가리킬 때 선택합니다.
+tags:
+- graph
+- mst
+- prim
+- execution-order
+difficulty: 2

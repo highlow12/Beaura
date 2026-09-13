@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: algo.topological-sort.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: 정점 u를 결과에 추가한 뒤 u에서 v로 가는 간선을 제거하는 효과를 코드로 표현하세요.
+- type: code
+  language: python
+  code: indegree[v] {{blank:operation}} 1
+choices:
+- -=
+- +=
+- =
+acceptedAnswers:
+- -=
+explanation:
+- type: text
+  text: u를 처리하면 v로 들어오는 간선 하나가 사라지므로 v의 진입 차수를 1 줄입니다.
+tags:
+- graph
+- topological-sort
+- code-completion
+difficulty: 2

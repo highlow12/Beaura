@@ -1,0 +1,33 @@
+id: py.sets.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: set의 특징으로 가장 알맞은 것은 무엇인가요?
+options:
+- id: unique
+  content:
+  - type: text
+    text: 중복을 하나로 합치고 포함 여부를 검사하는 자료형
+- id: ordered
+  content:
+  - type: text
+    text: 항상 삽입 순서대로 인덱스로 접근하는 자료형
+- id: mapped
+  content:
+  - type: text
+    text: 키마다 하나의 값을 연결하는 자료형
+- id: stack
+  content:
+  - type: text
+    text: 마지막 원소부터 꺼내는 자료형
+correctOptionId: unique
+shuffleOptions: true
+explanation:
+- type: text
+  text: set은 중복 없는 원소 모음이며 membership 검사와 집합 연산에 적합합니다. 순서와 인덱스가 필요하면 리스트를 사용합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- set
+difficulty: 2

@@ -1,0 +1,24 @@
+id: py.exceptions.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 숫자 변환 실패를 처리하도록 except 뒤 예외 이름을 고르세요.
+language: python
+template: "try:\n    value = int(text)\nexcept {{blank:error}}:\n    value = 0"
+blanks:
+- id: error
+  choices:
+  - ValueError
+  - TypeError
+  - NameError
+  acceptedAnswers:
+  - ValueError
+explanation:
+- type: text
+  text: 문자열의 형식이 정수로 해석되지 않을 때 int()는 ValueError를 발생시킵니다.
+schemaVersion: 1
+revision: 1
+tags:
+- errors
+- exceptions
+difficulty: 2

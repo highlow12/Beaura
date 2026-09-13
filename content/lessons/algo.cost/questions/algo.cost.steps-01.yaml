@@ -1,0 +1,36 @@
+id: algo.cost.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 알고리즘 비용을 분석하는 순서를 배열하세요.
+items:
+- id: size
+  content:
+  - type: text
+    text: 입력 크기 n을 정의한다
+- id: basic
+  content:
+  - type: text
+    text: 셀 기본 연산을 정한다
+- id: count
+  content:
+  - type: text
+    text: 반복 횟수와 연산 수를 센다
+- id: growth
+  content:
+  - type: text
+    text: n이 커질 때 증가율을 표현한다
+correctOrder:
+- size
+- basic
+- count
+- growth
+explanation:
+- type: text
+  text: 입력과 기본 단위를 정한 뒤 연산 횟수를 세고, 그 식이 입력 크기에 따라 어떻게 커지는지 표현합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- cost
+difficulty: 2

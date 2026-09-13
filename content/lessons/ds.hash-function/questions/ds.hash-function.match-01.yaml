@@ -1,0 +1,47 @@
+id: ds.hash-function.match-01
+type: matching
+prompt:
+- type: text
+  text: 해시 함수 관련 용어와 의미를 연결하세요.
+leftItems:
+- id: hash-value
+  content:
+  - type: text
+    text: 해시값
+- id: bucket
+  content:
+  - type: text
+    text: 버킷
+- id: deterministic
+  content:
+  - type: text
+    text: 결정적
+rightItems:
+- id: number
+  content:
+  - type: text
+    text: 키에서 계산된 숫자
+- id: slot
+  content:
+  - type: text
+    text: 해시 테이블의 저장 칸
+- id: same
+  content:
+  - type: text
+    text: 같은 입력이면 같은 결과를 내는 성질
+correctPairs:
+- leftId: hash-value
+  rightId: number
+- leftId: bucket
+  rightId: slot
+- leftId: deterministic
+  rightId: same
+explanation:
+- type: text
+  text: 해시값은 키에서 나온 숫자이고 버킷은 실제 저장 위치입니다. 결정적 함수는 같은 키를 같은 결과로 매핑합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-function
+difficulty: 2

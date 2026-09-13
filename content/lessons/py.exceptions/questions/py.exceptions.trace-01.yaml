@@ -1,0 +1,22 @@
+id: py.exceptions.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 예외 처리 코드의 출력 결과를 고르세요.
+language: python
+code: "try:\n    value = int(\"hello\")\nexcept ValueError:\n    value = 0\nprint(value)"
+choices:
+- '0'
+- hello
+- ValueError
+acceptedOutputs:
+- '0'
+explanation:
+- type: text
+  text: 문자열을 정수로 바꾸는 과정에서 ValueError가 발생하므로 except에서 value를 0으로 정한 뒤 출력합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- errors
+- exceptions
+difficulty: 2

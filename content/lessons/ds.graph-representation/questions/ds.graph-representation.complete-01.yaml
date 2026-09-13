@@ -1,0 +1,24 @@
+id: ds.graph-representation.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: A와 B의 직접 연결을 행렬에 기록하도록 빈칸을 고르세요.
+language: python
+template: matrix[{{blank:row}}][1] = 1
+blanks:
+- id: row
+  choices:
+  - '0'
+  - '1'
+  - '2'
+  acceptedAnswers:
+  - '0'
+explanation:
+- type: text
+  text: A를 인덱스 0으로 표현한다면 A에서 B로 가는 연결은 matrix[0][1]에 기록합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- graph
+- representation
+difficulty: 2

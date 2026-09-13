@@ -1,0 +1,29 @@
+id: ds.memory.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 참조 코드의 출력 결과를 고르세요.
+language: python
+code: 'a = [1]
+
+  b = a
+
+  b.append(2)
+
+  print(a)'
+choices:
+- '[1, 2]'
+- '[1]'
+- '[2]'
+acceptedOutputs:
+- '[1, 2]'
+explanation:
+- type: text
+  text: a와 b가 같은 리스트를 가리키므로 b를 통해 append한 2가 a로 읽을 때도 보입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- memory
+- representation
+- reference
+difficulty: 2

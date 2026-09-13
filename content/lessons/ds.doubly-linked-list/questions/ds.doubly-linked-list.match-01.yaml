@@ -1,0 +1,47 @@
+id: ds.doubly-linked-list.match-01
+type: matching
+prompt:
+- type: text
+  text: 이중 연결 리스트의 참조와 의미를 연결하세요.
+leftItems:
+- id: prev
+  content:
+  - type: text
+    text: prev
+- id: next
+  content:
+  - type: text
+    text: next
+- id: sentinel
+  content:
+  - type: text
+    text: sentinel
+rightItems:
+- id: back
+  content:
+  - type: text
+    text: 이전 노드로 이동
+- id: forward
+  content:
+  - type: text
+    text: 다음 노드로 이동
+- id: boundary
+  content:
+  - type: text
+    text: 경계를 표현하는 가상 노드
+correctPairs:
+- leftId: prev
+  rightId: back
+- leftId: next
+  rightId: forward
+- leftId: sentinel
+  rightId: boundary
+explanation:
+- type: text
+  text: prev와 next는 서로 반대 방향의 이동을 제공하고, sentinel은 첫·마지막 경계 처리를 단순하게 만드는 가상 노드입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- doubly-linked-list
+difficulty: 2

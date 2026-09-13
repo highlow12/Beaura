@@ -1,0 +1,47 @@
+id: algo.asymptotic.match-01
+type: matching
+prompt:
+- type: text
+  text: 점근 표기와 의미를 연결하세요.
+leftItems:
+- id: big-o
+  content:
+  - type: text
+    text: O(f(n))
+- id: omega
+  content:
+  - type: text
+    text: Ω(f(n))
+- id: theta
+  content:
+  - type: text
+    text: Θ(f(n))
+rightItems:
+- id: upper
+  content:
+  - type: text
+    text: 성장의 상한
+- id: lower
+  content:
+  - type: text
+    text: 성장의 하한
+- id: tight
+  content:
+  - type: text
+    text: 상한과 하한이 같은 경계
+correctPairs:
+- leftId: big-o
+  rightId: upper
+- leftId: omega
+  rightId: lower
+- leftId: theta
+  rightId: tight
+explanation:
+- type: text
+  text: O는 위에서 제한하고 Ω는 아래에서 제한합니다. 두 경계가 같은 함수라면 Θ로 정확한 성장 차수를 표현합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- asymptotic
+difficulty: 2

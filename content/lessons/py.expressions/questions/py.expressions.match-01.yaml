@@ -1,0 +1,47 @@
+id: py.expressions.match-01
+type: matching
+prompt:
+- type: text
+  text: 표현식과 관련된 용어를 알맞게 연결하세요.
+leftItems:
+- id: literal
+  content:
+  - type: text
+    text: 리터럴
+- id: name
+  content:
+  - type: text
+    text: 이름
+- id: operator
+  content:
+  - type: text
+    text: 연산자
+rightItems:
+- id: direct
+  content:
+  - type: text
+    text: 코드에 직접 쓴 값
+- id: reference
+  content:
+  - type: text
+    text: 값을 가리키는 식별자
+- id: combine
+  content:
+  - type: text
+    text: 값을 계산하거나 비교하는 기호
+correctPairs:
+- leftId: literal
+  rightId: direct
+- leftId: name
+  rightId: reference
+- leftId: operator
+  rightId: combine
+explanation:
+- type: text
+  text: 리터럴은 코드에 적힌 값이고 이름은 현재 값에 접근합니다. 연산자는 값들을 조합해 새로운 결과를 계산합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- values
+difficulty: 2

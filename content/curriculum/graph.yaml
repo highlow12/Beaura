@@ -1,57 +1,5 @@
 schemaVersion: 1
 nodes:
-  - lesson: py.variables
-    requires: []
-  - lesson: py.types
-    requires:
-      - py.variables
-  - lesson: py.io
-    requires:
-      - py.types
-  - lesson: py.conditionals
-    requires:
-      - py.io
-  - lesson: py.loops
-    requires:
-      - py.conditionals
-  - lesson: py.functions
-    requires:
-      - py.loops
-  - lesson: py.lists
-    requires:
-      - py.loops
-  - lesson: ds.array
-    requires:
-      - py.lists
-  - lesson: ds.stack
-    requires:
-      - ds.array
-  - lesson: ds.queue
-    requires:
-      - ds.array
-  - lesson: ds.tree
-    requires:
-      - ds.array
-  - lesson: ds.graph
-    requires:
-      - ds.array
-  - lesson: algo.search
-    requires:
-      - ds.array
-  - lesson: algo.sort
-    requires:
-      - ds.array
-  - lesson: algo.traversal
-    requires:
-      - ds.tree
-      - ds.graph
-      - py.functions
-      - ds.stack
-      - ds.queue
-  - lesson: algo.shortest-path
-    requires:
-      - ds.graph
-      - ds.queue
   - lesson: arch.binary
     requires: []
   - lesson: math.propositions
@@ -68,3 +16,212 @@ nodes:
   - lesson: sys.graphics
     requires:
       - arch.cpu
+  - lesson: py.variables
+    requires: []
+  - lesson: py.types
+    requires:
+      - py.variables
+  - lesson: py.expressions
+    requires:
+      - py.types
+  - lesson: py.precedence
+    requires:
+      - py.expressions
+  - lesson: py.io
+    requires:
+      - py.types
+  - lesson: py.conditionals
+    requires:
+      - py.io
+  - lesson: py.loops
+    requires:
+      - py.conditionals
+  - lesson: py.functions
+    requires:
+      - py.loops
+  - lesson: py.scopes
+    requires:
+      - py.functions
+  - lesson: py.lists
+    requires:
+      - py.loops
+  - lesson: py.tuples
+    requires:
+      - py.lists
+  - lesson: py.dictionaries
+    requires:
+      - py.lists
+  - lesson: py.sets
+    requires:
+      - py.lists
+  - lesson: py.slicing
+    requires:
+      - py.lists
+  - lesson: py.comprehensions
+    requires:
+      - py.slicing
+      - py.functions
+  - lesson: py.enumerate-zip
+    requires:
+      - py.lists
+      - py.loops
+  - lesson: py.modules
+    requires:
+      - py.functions
+  - lesson: py.exceptions
+    requires:
+      - py.modules
+  - lesson: ds.adt
+    requires:
+      - py.functions
+  - lesson: ds.memory
+    requires:
+      - ds.adt
+      - arch.binary
+  - lesson: ds.array
+    requires:
+      - py.lists
+      - ds.adt
+  - lesson: ds.dynamic-array
+    requires:
+      - ds.array
+  - lesson: ds.linked-list
+    requires:
+      - ds.array
+      - ds.memory
+  - lesson: ds.doubly-linked-list
+    requires:
+      - ds.linked-list
+  - lesson: ds.stack
+    requires:
+      - ds.array
+  - lesson: ds.queue
+    requires:
+      - ds.array
+  - lesson: ds.circular-queue
+    requires:
+      - ds.queue
+  - lesson: ds.deque
+    requires:
+      - ds.queue
+  - lesson: ds.hash-function
+    requires:
+      - py.functions
+      - math.propositions
+  - lesson: ds.hash-table
+    requires:
+      - ds.hash-function
+      - ds.dynamic-array
+  - lesson: ds.tree
+    requires:
+      - ds.array
+  - lesson: ds.tree-traversal
+    requires:
+      - ds.tree
+      - ds.stack
+      - ds.queue
+  - lesson: ds.bst
+    requires:
+      - ds.tree
+  - lesson: ds.heap
+    requires:
+      - ds.tree
+      - ds.dynamic-array
+  - lesson: ds.priority-queue
+    requires:
+      - ds.heap
+  - lesson: ds.graph
+    requires:
+      - ds.array
+  - lesson: ds.graph-representation
+    requires:
+      - ds.graph
+      - ds.linked-list
+  - lesson: ds.union-find
+    requires:
+      - ds.array
+  - lesson: algo.cost
+    requires:
+      - ds.adt
+  - lesson: algo.big-o
+    requires:
+      - algo.cost
+  - lesson: algo.asymptotic
+    requires:
+      - algo.big-o
+  - lesson: algo.search
+    requires:
+      - ds.array
+      - algo.big-o
+  - lesson: algo.sort
+    requires:
+      - ds.array
+      - algo.big-o
+  - lesson: algo.insertion-sort
+    requires:
+      - algo.sort
+  - lesson: algo.merge-sort
+    requires:
+      - algo.sort
+      - algo.recursion
+  - lesson: algo.quicksort
+    requires:
+      - algo.sort
+      - algo.recursion
+  - lesson: algo.heap-sort
+    requires:
+      - algo.sort
+      - ds.heap
+  - lesson: algo.recursion
+    requires:
+      - py.functions
+  - lesson: algo.traversal
+    requires:
+      - ds.tree-traversal
+      - ds.graph-representation
+  - lesson: algo.connected-components
+    requires:
+      - algo.traversal
+  - lesson: algo.topological-sort
+    requires:
+      - algo.traversal
+  - lesson: algo.unweighted-shortest-path
+    requires:
+      - algo.traversal
+      - ds.queue
+  - lesson: algo.shortest-path
+    requires:
+      - ds.graph-representation
+      - ds.priority-queue
+  - lesson: algo.bellman-ford
+    requires:
+      - algo.shortest-path
+  - lesson: algo.mst
+    requires:
+      - ds.graph-representation
+  - lesson: algo.kruskal
+    requires:
+      - algo.mst
+      - ds.union-find
+  - lesson: algo.prim
+    requires:
+      - algo.mst
+      - ds.priority-queue
+  - lesson: algo.backtracking
+    requires:
+      - algo.recursion
+  - lesson: algo.dynamic-programming
+    requires:
+      - algo.recursion
+      - algo.big-o
+  - lesson: algo.greedy
+    requires:
+      - algo.big-o
+  - lesson: algo.astar
+    requires:
+      - algo.shortest-path
+      - ds.priority-queue
+  - lesson: algo.correctness
+    requires:
+      - algo.big-o
+      - math.propositions

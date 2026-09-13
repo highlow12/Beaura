@@ -1,0 +1,22 @@
+id: algo.big-o.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 중첩 반복의 출력 결과를 고르세요.
+language: python
+code: "n = 3\ncount = 0\nfor i in range(n):\n    for j in range(n):\n        count += 1\nprint(count)"
+choices:
+- '9'
+- '3'
+- '6'
+acceptedOutputs:
+- '9'
+explanation:
+- type: text
+  text: 바깥 3회마다 안쪽 3회가 실행되어 3 곱하기 3, 총 9회의 증가가 일어납니다. 이런 구조는 O(n²)입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- big-o
+difficulty: 2

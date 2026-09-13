@@ -1,0 +1,47 @@
+id: algo.insertion-sort.match-01
+type: matching
+prompt:
+- type: text
+  text: 삽입 정렬 용어와 의미를 연결하세요.
+leftItems:
+- id: key
+  content:
+  - type: text
+    text: key
+- id: prefix
+  content:
+  - type: text
+    text: sorted prefix
+- id: shift
+  content:
+  - type: text
+    text: 이동
+rightItems:
+- id: item
+  content:
+  - type: text
+    text: 현재 삽입할 원소
+- id: invariant
+  content:
+  - type: text
+    text: 반복 전에 정렬되어 있는 앞부분
+- id: make-room
+  content:
+  - type: text
+    text: 큰 원소를 한 칸 오른쪽으로 보내는 동작
+correctPairs:
+- leftId: key
+  rightId: item
+- leftId: prefix
+  rightId: invariant
+- leftId: shift
+  rightId: make-room
+explanation:
+- type: text
+  text: key를 정렬된 prefix 안에 삽입하기 위해 더 큰 원소를 shift합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- insertion-sort
+difficulty: 2

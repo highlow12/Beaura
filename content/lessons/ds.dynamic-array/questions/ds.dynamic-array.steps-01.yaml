@@ -1,0 +1,37 @@
+id: ds.dynamic-array.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 동적 배열이 가득 찼을 때 append가 처리되는 순서를 배열하세요.
+items:
+- id: full
+  content:
+  - type: text
+    text: 현재 capacity에 빈 칸이 없는지 확인한다
+- id: allocate
+  content:
+  - type: text
+    text: 더 큰 연속 공간을 확보한다
+- id: copy
+  content:
+  - type: text
+    text: 기존 원소를 새 공간으로 복사한다
+- id: write
+  content:
+  - type: text
+    text: 새 원소를 마지막 사용 위치에 쓴다
+correctOrder:
+- full
+- allocate
+- copy
+- write
+explanation:
+- type: text
+  text: 공간이 가득 차면 먼저 더 큰 공간을 확보하고 기존 데이터를 복사한 다음 새 원소를 기록합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- array
+- dynamic-array
+- amortized
+difficulty: 2

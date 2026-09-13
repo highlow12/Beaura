@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.recursion.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: 재귀 함수를 설계하는 기본 순서를 배열하세요.
+items:
+- id: base
+  content:
+  - type: text
+    text: 기저 사례와 반환값을 정한다
+- id: reduce
+  content:
+  - type: text
+    text: 다음 호출에서 입력이 작아지도록 정한다
+- id: call
+  content:
+  - type: text
+    text: 더 작은 입력으로 재귀 호출한다
+- id: combine
+  content:
+  - type: text
+    text: 반환된 부분 결과를 현재 결과에 결합한다
+correctOrder:
+- base
+- reduce
+- call
+- combine
+explanation:
+- type: text
+  text: 먼저 멈출 조건을 정하고, 입력을 줄인 호출을 만든 뒤, 호출에서 돌아온 결과를 결합합니다.
+tags:
+- recursion
+- base-case
+- execution-order
+difficulty: 2

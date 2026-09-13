@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: algo.bellman-ford.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: 다음 완화가 끝난 뒤 B의 거리를 고르세요.
+language: python
+code: |-
+  distance = {"A": 0, "B": 10}
+  edges = [("A", "B", 3)]
+  for u, v, weight in edges:
+      candidate = distance[u] + weight
+      if candidate < distance[v]:
+          distance[v] = candidate
+  print(distance["B"])
+choices:
+- '3'
+- '7'
+- '10'
+acceptedOutputs:
+- '3'
+explanation:
+- type: text
+  text: A에서 B로 가는 후보 비용 0 + 3은 기존 10보다 작으므로 B의 거리가 3으로 갱신됩니다.
+tags:
+- shortest-path
+- bellman-ford
+- relaxation
+- code-output
+difficulty: 2

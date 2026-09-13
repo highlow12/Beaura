@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: algo.mst.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: 선택한 MST 간선들의 총 가중치를 고르세요.
+language: python
+code: |-
+  chosen = [("A", "B", 1), ("B", "C", 2), ("C", "D", 3)]
+  total = 0
+  for _, _, weight in chosen:
+      total += weight
+  print(total)
+choices:
+- '6'
+- '5'
+- '7'
+acceptedOutputs:
+- '6'
+explanation:
+- type: text
+  text: 선택한 간선의 가중치 1, 2, 3을 더하면 총 비용은 6입니다.
+tags:
+- graph
+- mst
+- code-output
+difficulty: 2

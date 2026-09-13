@@ -1,0 +1,30 @@
+id: py.scopes.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 코드의 출력 결과를 고르세요.
+language: python
+code: "name = \"global\"\ndef show():\n    name = \"local\"\n    print(name)\nshow()\nprint(name)"
+choices:
+- 'local
+
+  global'
+- 'global
+
+  local'
+- 'local
+
+  local'
+acceptedOutputs:
+- 'local
+
+  global'
+explanation:
+- type: text
+  text: 함수 안에서는 지역 name이 먼저 선택되어 local이 출력되고, 함수 밖에서는 전역 name인 global이 출력됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- functions
+- scope
+difficulty: 2

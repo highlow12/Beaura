@@ -1,0 +1,37 @@
+id: algo.merge-sort.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 병합 정렬의 전체 흐름을 배열하세요.
+items:
+- id: split
+  content:
+  - type: text
+    text: 배열을 두 부분으로 나눈다
+- id: solve
+  content:
+  - type: text
+    text: 각 부분을 재귀적으로 정렬한다
+- id: compare
+  content:
+  - type: text
+    text: 두 정렬 부분의 앞 원소를 비교한다
+- id: merge
+  content:
+  - type: text
+    text: 작은 원소부터 결과에 넣는다
+correctOrder:
+- split
+- solve
+- compare
+- merge
+explanation:
+- type: text
+  text: 부분 문제를 정렬한 뒤 두 결과의 앞 원소를 비교하며 하나의 정렬된 배열로 합칩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- merge-sort
+- divide-conquer
+difficulty: 2

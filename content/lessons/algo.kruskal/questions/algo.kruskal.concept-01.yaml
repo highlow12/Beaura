@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.kruskal.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Kruskal 알고리즘이 간선을 선택하는 기본 규칙은 무엇인가요?
+options:
+- id: sorted-safe
+  content:
+  - type: text
+    text: 가중치가 작은 순서로 보며 사이클을 만들지 않는 간선을 추가한다
+- id: vertex-first
+  content:
+  - type: text
+    text: 정점 이름 순서로 간선을 모두 추가한다
+- id: largest
+  content:
+  - type: text
+    text: 가장 무거운 간선부터 추가한다
+correctOptionId: sorted-safe
+shuffleOptions: true
+explanation:
+- type: text
+  text: Kruskal은 간선 오름차순과 사이클 회피를 결합해 MST의 안전한 간선을 선택합니다.
+tags:
+- graph
+- mst
+- kruskal
+difficulty: 1

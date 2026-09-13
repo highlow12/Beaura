@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: algo.dynamic-programming.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: 피보나치 전이에서 바로 앞의 두 값을 더하는 식을 완성하세요.
+- type: code
+  language: python
+  code: dp[n] = dp[n - 1] {{blank:combine}} dp[n - 2]
+choices:
+- +
+- "-"
+- "*"
+acceptedAnswers:
+- +
+explanation:
+- type: text
+  text: 피보나치 수는 앞의 두 항의 합으로 다음 항을 만듭니다.
+tags:
+- dynamic-programming
+- recurrence
+- code-completion
+difficulty: 2

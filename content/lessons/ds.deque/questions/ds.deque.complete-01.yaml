@@ -1,0 +1,24 @@
+id: ds.deque.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 덱의 앞쪽에 값을 추가하도록 빈칸의 연산을 고르세요.
+language: python
+template: d.{{blank:operation}}(1)
+blanks:
+- id: operation
+  choices:
+  - appendleft
+  - append
+  - popleft
+  acceptedAnswers:
+  - appendleft
+explanation:
+- type: text
+  text: appendleft는 앞에 추가하고 append는 뒤에 추가합니다. popleft는 앞에서 값을 제거합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- deque
+difficulty: 2

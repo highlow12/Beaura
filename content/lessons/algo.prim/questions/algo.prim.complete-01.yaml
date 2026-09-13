@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: algo.prim.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: Prim에서 이미 트리에 들어온 정점을 다시 추가하지 않도록 조건을 완성하세요.
+- type: code
+  language: python
+  code: |-
+    if {{blank:membership}} not in visited:
+choices:
+- neighbor
+- neighbor in
+- weight
+acceptedAnswers:
+- neighbor
+explanation:
+- type: text
+  text: 간선의 반대편 neighbor가 visited에 없을 때만 새 정점과 간선을 트리에 추가합니다.
+tags:
+- graph
+- mst
+- prim
+- code-completion
+difficulty: 2

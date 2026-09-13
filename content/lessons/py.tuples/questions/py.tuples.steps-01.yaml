@@ -1,0 +1,36 @@
+id: py.tuples.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 튜플을 만들고 읽는 과정을 배열하세요.
+items:
+- id: create
+  content:
+  - type: text
+    text: 괄호와 쉼표로 값을 묶는다
+- id: bind
+  content:
+  - type: text
+    text: 튜플을 변수에 연결한다
+- id: index
+  content:
+  - type: text
+    text: 필요한 위치의 인덱스로 원소를 읽는다
+- id: protect
+  content:
+  - type: text
+    text: 원소를 바꾸지 않고 고정된 구조로 사용한다
+correctOrder:
+- create
+- bind
+- index
+- protect
+explanation:
+- type: text
+  text: 튜플은 먼저 고정된 묶음을 만들고 이름에 연결한 뒤 인덱스로 읽습니다. 생성 후 원소 변경은 하지 않습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- tuple
+difficulty: 2

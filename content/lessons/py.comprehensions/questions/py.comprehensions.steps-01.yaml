@@ -1,0 +1,36 @@
+id: py.comprehensions.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 컴프리헨션이 결과를 만드는 순서를 배열하세요.
+items:
+- id: source
+  content:
+  - type: text
+    text: for 뒤의 자료에서 원소를 꺼낸다
+- id: bind
+  content:
+  - type: text
+    text: 현재 원소를 변수에 연결한다
+- id: filter
+  content:
+  - type: text
+    text: if 조건이 있으면 통과 여부를 확인한다
+- id: transform
+  content:
+  - type: text
+    text: 앞의 표현식을 계산해 결과에 추가한다
+correctOrder:
+- source
+- bind
+- filter
+- transform
+explanation:
+- type: text
+  text: 원소를 순회 변수에 연결하고 조건을 통과한 경우에만 앞의 표현식을 계산해 결과 리스트에 추가합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- comprehension
+difficulty: 2

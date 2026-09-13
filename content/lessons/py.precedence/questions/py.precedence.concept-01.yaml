@@ -1,0 +1,33 @@
+id: py.precedence.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 다음 표현식에서 곱셈이 덧셈보다 먼저 계산되는 이유는 무엇인가요?
+options:
+- id: rule
+  content:
+  - type: text
+    text: 곱셈의 우선순위가 덧셈보다 높기 때문이다
+- id: left
+  content:
+  - type: text
+    text: Python은 항상 가장 왼쪽 값을 먼저 계산하기 때문이다
+- id: string
+  content:
+  - type: text
+    text: 숫자가 문자열로 자동 변환되기 때문이다
+- id: random
+  content:
+  - type: text
+    text: 연산 순서가 실행할 때마다 무작위로 정해지기 때문이다
+correctOptionId: rule
+shuffleOptions: true
+explanation:
+- type: text
+  text: Python은 연산자별 우선순위를 사용합니다. 괄호가 없다면 곱셈과 나눗셈을 덧셈과 뺄셈보다 먼저 처리합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- precedence
+difficulty: 2

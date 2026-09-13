@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.backtracking.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: 백트래킹 재귀 한 단계의 실행 순서를 배열하세요.
+items:
+- id: choose
+  content:
+  - type: text
+    text: 다음 후보를 선택한다
+- id: check
+  content:
+  - type: text
+    text: 현재 부분 해답이 유효한지 검사한다
+- id: recurse
+  content:
+  - type: text
+    text: 유효하면 다음 단계로 재귀 호출한다
+- id: remove
+  content:
+  - type: text
+    text: 호출이 끝난 뒤 선택을 제거한다
+correctOrder:
+- choose
+- check
+- recurse
+- remove
+explanation:
+- type: text
+  text: 선택을 추가한 뒤 검사하고, 유효한 경우에만 내려갑니다. 재귀가 끝나면 선택을 제거해 상태를 복구합니다.
+tags:
+- backtracking
+- pruning
+- execution-order
+difficulty: 2

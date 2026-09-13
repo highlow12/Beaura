@@ -1,0 +1,47 @@
+id: ds.heap.match-01
+type: matching
+prompt:
+- type: text
+  text: 힙 용어와 의미를 연결하세요.
+leftItems:
+- id: min-heap
+  content:
+  - type: text
+    text: min-heap
+- id: root
+  content:
+  - type: text
+    text: 루트
+- id: heapify
+  content:
+  - type: text
+    text: heapify
+rightItems:
+- id: smallest
+  content:
+  - type: text
+    text: 최솟값이 우선인 힙
+- id: top
+  content:
+  - type: text
+    text: 우선순위 원소가 있는 트리의 시작
+- id: build
+  content:
+  - type: text
+    text: 배열을 힙 규칙으로 바꾸는 작업
+correctPairs:
+- leftId: min-heap
+  rightId: smallest
+- leftId: root
+  rightId: top
+- leftId: heapify
+  rightId: build
+explanation:
+- type: text
+  text: min-heap의 루트에는 최솟값이 있고 heapify는 기존 배열을 이 규칙에 맞게 재배열합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- heap
+difficulty: 2

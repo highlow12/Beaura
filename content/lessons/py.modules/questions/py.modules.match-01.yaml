@@ -1,0 +1,47 @@
+id: py.modules.match-01
+type: matching
+prompt:
+- type: text
+  text: 모듈 관련 문법과 의미를 연결하세요.
+leftItems:
+- id: import
+  content:
+  - type: text
+    text: import math
+- id: from
+  content:
+  - type: text
+    text: from math import sqrt
+- id: qualified
+  content:
+  - type: text
+    text: math.sqrt(9)
+rightItems:
+- id: module
+  content:
+  - type: text
+    text: 모듈 전체를 이름 공간으로 가져온다
+- id: name
+  content:
+  - type: text
+    text: 모듈 안의 특정 이름을 직접 가져온다
+- id: access
+  content:
+  - type: text
+    text: 모듈 이름을 통해 함수를 호출한다
+correctPairs:
+- leftId: import
+  rightId: module
+- leftId: from
+  rightId: name
+- leftId: qualified
+  rightId: access
+explanation:
+- type: text
+  text: import는 모듈을 가져오고 from 구문은 특정 이름을 가져옵니다. 점 표기는 모듈의 출처를 명시한 접근입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- modules
+- import
+difficulty: 2

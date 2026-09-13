@@ -1,0 +1,33 @@
+id: ds.heap.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: min-heap에서 루트가 보장하는 것은 무엇인가요?
+options:
+- id: minimum
+  content:
+  - type: text
+    text: 현재 힙의 최솟값이 루트에 있다
+- id: maximum
+  content:
+  - type: text
+    text: 항상 최댓값만 루트에 있다
+- id: sorted
+  content:
+  - type: text
+    text: 배열 전체가 오름차순이다
+- id: fifo
+  content:
+  - type: text
+    text: 삽입 순서가 그대로 유지된다
+correctOptionId: minimum
+shuffleOptions: true
+explanation:
+- type: text
+  text: min-heap은 부모가 자식보다 작거나 같은 규칙을 지켜 최솟값을 루트에 둡니다. 나머지 원소 전체가 정렬되는 것은 아닙니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- heap
+difficulty: 2

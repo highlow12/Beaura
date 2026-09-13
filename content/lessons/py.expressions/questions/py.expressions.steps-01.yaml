@@ -1,0 +1,36 @@
+id: py.expressions.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 표현식을 계산하고 결과를 사용하는 순서를 배열하세요.
+items:
+- id: read
+  content:
+  - type: text
+    text: 표현식에 사용된 값과 이름을 확인한다
+- id: apply
+  content:
+  - type: text
+    text: 연산자를 적용해 중간 결과를 계산한다
+- id: store
+  content:
+  - type: text
+    text: 필요하면 결과를 변수에 할당한다
+- id: use
+  content:
+  - type: text
+    text: 출력이나 다음 계산에서 결과를 사용한다
+correctOrder:
+- read
+- apply
+- store
+- use
+explanation:
+- type: text
+  text: 먼저 재료 값을 읽고 연산을 평가한 뒤, 결과를 저장하거나 바로 다음 동작에 전달합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- values
+difficulty: 2

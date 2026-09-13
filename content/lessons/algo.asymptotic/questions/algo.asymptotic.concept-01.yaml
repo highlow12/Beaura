@@ -1,0 +1,33 @@
+id: algo.asymptotic.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: Θ(n) 표기가 의미하는 것은 무엇인가요?
+options:
+- id: tight
+  content:
+  - type: text
+    text: 비용이 위와 아래에서 모두 n의 상수 배로 제한된다
+- id: upper
+  content:
+  - type: text
+    text: 비용이 n보다 빠르지 않다는 상한만 안다
+- id: lower
+  content:
+  - type: text
+    text: 비용이 n보다 느리지 않다는 하한만 안다
+- id: exact
+  content:
+  - type: text
+    text: 모든 입력에서 비용이 정확히 n번이다
+correctOptionId: tight
+shuffleOptions: true
+explanation:
+- type: text
+  text: Θ는 O 상한과 Ω 하한을 함께 만족하는 tight bound입니다. 상수 배와 작은 항은 허용하므로 항상 정확히 n번이라는 뜻은 아닙니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- asymptotic
+difficulty: 2

@@ -1,0 +1,28 @@
+id: ds.heap.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 min-heap 코드의 출력 결과를 고르세요.
+language: python
+code: 'import heapq
+
+  values = [5, 2, 8]
+
+  heapq.heapify(values)
+
+  print(values[0])'
+choices:
+- '2'
+- '5'
+- '8'
+acceptedOutputs:
+- '2'
+explanation:
+- type: text
+  text: heapify가 min-heap을 만들면 최솟값 2가 루트인 인덱스 0에 놓입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- heap
+difficulty: 2

@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: algo.dynamic-programming.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: 다음 bottom-up DP가 출력하는 피보나치 값을 고르세요.
+language: python
+code: |-
+  dp = [0, 1]
+  for n in range(2, 6):
+      dp.append(dp[n - 1] + dp[n - 2])
+  print(dp[5])
+choices:
+- '5'
+- '3'
+- '8'
+acceptedOutputs:
+- '5'
+explanation:
+- type: text
+  text: dp는 0, 1, 1, 2, 3, 5 순서로 채워지므로 dp[5]는 5입니다.
+tags:
+- dynamic-programming
+- tabulation
+- code-output
+difficulty: 2

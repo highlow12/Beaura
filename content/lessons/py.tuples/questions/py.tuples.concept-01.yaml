@@ -1,0 +1,33 @@
+id: py.tuples.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 튜플에 대한 설명으로 가장 알맞은 것은 무엇인가요?
+options:
+- id: fixed
+  content:
+  - type: text
+    text: 순서를 유지하지만 생성 후 원소를 바꿀 수 없는 묶음
+- id: mutable
+  content:
+  - type: text
+    text: 항상 원소를 추가하고 삭제할 수 있는 묶음
+- id: unique
+  content:
+  - type: text
+    text: 중복을 자동으로 제거하는 묶음
+- id: mapped
+  content:
+  - type: text
+    text: 키와 값만 연결하는 자료형
+correctOptionId: fixed
+shuffleOptions: true
+explanation:
+- type: text
+  text: 튜플은 순서와 인덱스를 가지지만 원소 변경이 불가능합니다. 변경 가능한 순서 묶음은 리스트입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- tuple
+difficulty: 2

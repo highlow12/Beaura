@@ -1,0 +1,25 @@
+id: py.enumerate-zip.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 두 목록의 같은 위치 값을 짝지어 순회하도록 빈칸의 함수를 고르세요.
+language: python
+template: "for name, score in {{blank:function}}(names, scores):\n    print(name, score)"
+blanks:
+- id: function
+  choices:
+  - zip
+  - enumerate
+  - range
+  acceptedAnswers:
+  - zip
+explanation:
+- type: text
+  text: zip은 여러 시퀀스에서 같은 위치의 원소를 묶습니다. enumerate는 한 시퀀스에 인덱스를 붙이는 함수입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- iteration
+- enumerate
+- zip
+difficulty: 2

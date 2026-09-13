@@ -1,0 +1,28 @@
+id: ds.doubly-linked-list.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 양방향 연결 코드의 출력 결과를 고르세요.
+language: python
+code: 'second = {"value": "B", "prev": None, "next": None}
+
+  first = {"value": "A", "prev": None, "next": second}
+
+  second["prev"] = first
+
+  print(second["prev"]["value"])'
+choices:
+- A
+- B
+- None
+acceptedOutputs:
+- A
+explanation:
+- type: text
+  text: second의 prev에 first를 연결했으므로 prev 노드의 value인 A가 출력됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- doubly-linked-list
+difficulty: 2

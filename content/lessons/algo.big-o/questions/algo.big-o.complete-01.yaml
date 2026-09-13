@@ -1,0 +1,24 @@
+id: algo.big-o.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: n번 반복 안에 n번 반복하는 비용의 Big-O 항을 고르세요.
+language: python
+template: complexity = O({{blank:term}})
+blanks:
+- id: term
+  choices:
+  - n^2
+  - n
+  - '1'
+  acceptedAnswers:
+  - n^2
+explanation:
+- type: text
+  text: 두 반복 횟수가 각각 n에 비례하고 서로 중첩되므로 곱해져 n² 규모가 됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- big-o
+difficulty: 2

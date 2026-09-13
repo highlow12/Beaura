@@ -1,0 +1,26 @@
+id: py.modules.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: math 모듈을 불러오도록 빈칸의 문장을 고르세요.
+language: python
+template: '{{blank:statement}}
+
+  print(math.sqrt(16))'
+blanks:
+- id: statement
+  choices:
+  - import math
+  - from math
+  - include math
+  acceptedAnswers:
+  - import math
+explanation:
+- type: text
+  text: import math가 math 모듈을 현재 파일에 연결합니다. 그 뒤 math.sqrt처럼 모듈 이름을 붙여 사용할 수 있습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- modules
+- import
+difficulty: 2

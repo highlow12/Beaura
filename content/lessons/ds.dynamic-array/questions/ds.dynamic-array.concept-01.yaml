@@ -1,0 +1,34 @@
+id: ds.dynamic-array.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 동적 배열에서 capacity가 의미하는 것은 무엇인가요?
+options:
+- id: reserved
+  content:
+  - type: text
+    text: 현재 원소 수와 별개로 확보해 둔 저장 칸의 수
+- id: used
+  content:
+  - type: text
+    text: 현재 실제로 저장된 원소의 수만
+- id: index
+  content:
+  - type: text
+    text: 특정 원소를 가리키는 위치 하나
+- id: hash
+  content:
+  - type: text
+    text: 키를 숫자로 바꾼 결과
+correctOptionId: reserved
+shuffleOptions: true
+explanation:
+- type: text
+  text: size는 사용 중인 원소 수이고 capacity는 재할당 전까지 저장할 수 있도록 확보한 칸 수입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- array
+- dynamic-array
+- amortized
+difficulty: 2

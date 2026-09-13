@@ -1,0 +1,36 @@
+id: ds.deque.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 덱의 양 끝 연산을 실행하는 순서를 배열하세요.
+items:
+- id: side
+  content:
+  - type: text
+    text: 앞 또는 뒤 어느 끝을 사용할지 정한다
+- id: operation
+  content:
+  - type: text
+    text: 해당 끝의 삽입·삭제 연산을 고른다
+- id: update
+  content:
+  - type: text
+    text: 덱의 끝 상태를 갱신한다
+- id: continue
+  content:
+  - type: text
+    text: 다음 양 끝 요청을 처리한다
+correctOrder:
+- side
+- operation
+- update
+- continue
+explanation:
+- type: text
+  text: 먼저 사용할 끝을 정하고 그 방향의 연산을 실행한 뒤 상태를 갱신합니다. 요청마다 이 결정을 반복합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- deque
+difficulty: 2

@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: algo.kruskal.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: Kruskal의 한 간선 처리 순서를 배열하세요.
+items:
+- id: next-edge
+  content:
+  - type: text
+    text: 다음으로 가벼운 간선을 고른다
+- id: compare
+  content:
+  - type: text
+    text: 두 끝점의 대표를 확인한다
+- id: choose
+  content:
+  - type: text
+    text: 대표가 다르면 간선을 MST에 추가한다
+- id: merge
+  content:
+  - type: text
+    text: 두 묶음을 union으로 합친다
+correctOrder:
+- next-edge
+- compare
+- choose
+- merge
+explanation:
+- type: text
+  text: 같은 대표라면 간선을 건너뛰고, 다른 대표일 때만 선택한 뒤 두 묶음을 합칩니다.
+tags:
+- graph
+- mst
+- kruskal
+- execution-order
+difficulty: 2

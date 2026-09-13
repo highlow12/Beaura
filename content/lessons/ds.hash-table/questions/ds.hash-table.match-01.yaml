@@ -1,0 +1,48 @@
+id: ds.hash-table.match-01
+type: matching
+prompt:
+- type: text
+  text: 해시 테이블 용어와 의미를 연결하세요.
+leftItems:
+- id: key
+  content:
+  - type: text
+    text: key
+- id: bucket
+  content:
+  - type: text
+    text: bucket
+- id: collision
+  content:
+  - type: text
+    text: collision
+rightItems:
+- id: lookup
+  content:
+  - type: text
+    text: 값을 찾기 위한 입력 이름
+- id: slot
+  content:
+  - type: text
+    text: 해시된 위치의 저장 칸
+- id: same-slot
+  content:
+  - type: text
+    text: 서로 다른 키가 같은 칸을 얻는 상황
+correctPairs:
+- leftId: key
+  rightId: lookup
+- leftId: bucket
+  rightId: slot
+- leftId: collision
+  rightId: same-slot
+explanation:
+- type: text
+  text: 키가 조회 입력이고 버킷은 후보 저장 칸입니다. 서로 다른 키가 같은 버킷으로 가면 충돌 처리가 필요합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-table
+- collision
+difficulty: 2

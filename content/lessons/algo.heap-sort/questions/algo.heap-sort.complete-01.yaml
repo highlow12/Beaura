@@ -1,0 +1,25 @@
+id: algo.heap-sort.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 힙에서 최우선 원소를 제거하도록 빈칸을 고르세요.
+language: python
+template: value = heapq.{{blank:operation}}(heap)
+blanks:
+- id: operation
+  choices:
+  - heappop
+  - heappush
+  - heapify
+  acceptedAnswers:
+  - heappop
+explanation:
+- type: text
+  text: heappop은 루트인 최솟값을 제거하고 힙을 복구합니다. heappush는 삽입, heapify는 초기 힙 구성입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- heap-sort
+- heap
+difficulty: 2

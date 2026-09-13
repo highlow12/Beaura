@@ -1,0 +1,24 @@
+id: ds.heap.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 힙에 새 원소를 넣는 연산을 완성하세요.
+language: python
+template: heapq.{{blank:operation}}(heap, 1)
+blanks:
+- id: operation
+  choices:
+  - heappush
+  - heappop
+  - heapify
+  acceptedAnswers:
+  - heappush
+explanation:
+- type: text
+  text: heappush는 원소를 넣고 힙 규칙을 복구합니다. heappop은 루트를 제거하고 heapify는 전체 배열을 힙으로 만듭니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- heap
+difficulty: 2

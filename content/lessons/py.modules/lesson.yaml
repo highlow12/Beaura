@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.modules
+revision: 1
+track: python
+title: 모듈과 import
+description: 파일 단위 코드를 모듈로 나누고 import로 이름 공간을 사용하는 방법을 익힌다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.modules.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: py.modules.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.modules.complete-01
+- type: question
+  ref: py.modules.steps-01
+- type: question
+  ref: py.modules.match-01

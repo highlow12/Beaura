@@ -1,0 +1,48 @@
+id: ds.linked-list.match-01
+type: matching
+prompt:
+- type: text
+  text: 연결 리스트 용어와 의미를 연결하세요.
+leftItems:
+- id: head
+  content:
+  - type: text
+    text: head
+- id: node
+  content:
+  - type: text
+    text: 노드
+- id: next
+  content:
+  - type: text
+    text: next
+rightItems:
+- id: first
+  content:
+  - type: text
+    text: 첫 노드를 가리키는 시작 참조
+- id: unit
+  content:
+  - type: text
+    text: 값과 연결을 가진 한 항목
+- id: forward
+  content:
+  - type: text
+    text: 다음 노드로 이동하는 참조
+correctPairs:
+- leftId: head
+  rightId: first
+- leftId: node
+  rightId: unit
+- leftId: next
+  rightId: forward
+explanation:
+- type: text
+  text: head는 시작점을 기억하고 각 node는 값을 저장합니다. next를 반복해서 읽으면 한 방향으로 리스트를 순회합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- node
+- pointer
+difficulty: 2

@@ -1,0 +1,33 @@
+id: ds.hash-function.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 해시 함수가 해시 테이블에서 하는 일은 무엇인가요?
+options:
+- id: index
+  content:
+  - type: text
+    text: 키를 숫자로 바꾸어 저장·조회할 버킷 위치를 계산한다
+- id: sort
+  content:
+  - type: text
+    text: 모든 키를 알파벳 순서로 정렬한다
+- id: encrypt
+  content:
+  - type: text
+    text: 키를 복호화할 수 없게 암호화한다
+- id: remove
+  content:
+  - type: text
+    text: 중복 키를 자동으로 삭제한다
+correctOptionId: index
+shuffleOptions: true
+explanation:
+- type: text
+  text: 해시 함수는 키에서 숫자 해시값을 만들고 이를 버킷 인덱스로 매핑합니다. 정렬과 암호화는 해시 함수의 기본 역할이 아닙니다.
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-function
+difficulty: 2

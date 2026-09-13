@@ -1,0 +1,26 @@
+id: py.slicing.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 리스트의 두 번째부터 네 번째 직전까지 선택하도록 슬라이스를 완성하세요.
+language: python
+template: 'values = [10, 20, 30, 40]
+
+  part = values[{{blank:range}}]'
+blanks:
+- id: range
+  choices:
+  - '1:3'
+  - 0:2
+  - '2:4'
+  acceptedAnswers:
+  - '1:3'
+explanation:
+- type: text
+  text: 인덱스 1부터 3 직전까지 선택하면 두 번째와 세 번째 원소인 20, 30을 얻습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- slicing
+difficulty: 2

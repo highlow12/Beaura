@@ -1,0 +1,33 @@
+id: ds.doubly-linked-list.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 이중 연결 리스트가 단일 연결 리스트와 다른 점은 무엇인가요?
+options:
+- id: both
+  content:
+  - type: text
+    text: 각 노드가 이전 prev와 다음 next 참조를 모두 가진다
+- id: sorted
+  content:
+  - type: text
+    text: 모든 값이 자동으로 정렬되어 저장된다
+- id: indexed
+  content:
+  - type: text
+    text: 모든 노드가 배열처럼 연속된 주소에 있다
+- id: hashed
+  content:
+  - type: text
+    text: 각 값이 해시 버킷에만 저장된다
+correctOptionId: both
+shuffleOptions: true
+explanation:
+- type: text
+  text: 이중 연결 리스트는 prev와 next를 함께 유지해 양방향 이동을 지원합니다. 정렬 여부나 메모리 연속성은 별도 속성입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- doubly-linked-list
+difficulty: 2

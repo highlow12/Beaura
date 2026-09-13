@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: algo.unweighted-shortest-path.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: 현재 정점에서 한 간선 떨어진 이웃의 거리를 계산하세요.
+- type: code
+  language: python
+  code: distance[next] = distance[current] {{blank:step}}
+choices:
+- + 1
+- "- 1"
+- "+ 2"
+acceptedAnswers:
+- + 1
+explanation:
+- type: text
+  text: 비가중치 그래프의 간선 하나는 비용 1이므로 이웃 거리는 현재 거리보다 1 큽니다.
+tags:
+- graph
+- shortest-path
+- bfs
+- code-completion
+difficulty: 2

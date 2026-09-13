@@ -1,0 +1,24 @@
+id: py.sets.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 set 코드의 출력 결과를 고르세요.
+language: python
+code: 'values = {1, 1, 2, 3}
+
+  print(len(values))'
+choices:
+- '3'
+- '4'
+- '2'
+acceptedOutputs:
+- '3'
+explanation:
+- type: text
+  text: set은 같은 1을 하나만 저장하므로 원소는 1, 2, 3 세 개입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- set
+difficulty: 2

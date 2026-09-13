@@ -1,0 +1,47 @@
+id: ds.tree-traversal.match-01
+type: matching
+prompt:
+- type: text
+  text: 트리 순회 방식과 순서를 연결하세요.
+leftItems:
+- id: preorder
+  content:
+  - type: text
+    text: 전위 순회
+- id: inorder
+  content:
+  - type: text
+    text: 중위 순회
+- id: postorder
+  content:
+  - type: text
+    text: 후위 순회
+rightItems:
+- id: root-first
+  content:
+  - type: text
+    text: 현재-왼쪽-오른쪽
+- id: root-middle
+  content:
+  - type: text
+    text: 왼쪽-현재-오른쪽
+- id: root-last
+  content:
+  - type: text
+    text: 왼쪽-오른쪽-현재
+correctPairs:
+- leftId: preorder
+  rightId: root-first
+- leftId: inorder
+  rightId: root-middle
+- leftId: postorder
+  rightId: root-last
+explanation:
+- type: text
+  text: 세 순회는 현재 노드가 두 하위 트리보다 앞·중간·뒤 중 어디에 놓이는지로 구분합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- traversal
+difficulty: 2

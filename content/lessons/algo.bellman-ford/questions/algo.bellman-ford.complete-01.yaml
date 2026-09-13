@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: algo.bellman-ford.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: 간선 u → v를 완화할 때 v의 후보 거리를 완성하세요.
+- type: code
+  language: python
+  code: candidate = distance[u] {{blank:edge}}
+choices:
+- + weight
+- "- weight"
+- "* weight"
+acceptedAnswers:
+- + weight
+explanation:
+- type: text
+  text: u까지의 현재 거리와 간선 가중치 weight를 더한 값이 v로 가는 후보입니다.
+tags:
+- shortest-path
+- bellman-ford
+- relaxation
+- code-completion
+difficulty: 2

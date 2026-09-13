@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: algo.recursion.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: n이 0일 때 재귀 호출을 멈추고 1을 반환하도록 빈칸을 고르세요.
+- type: code
+  language: python
+  code: |-
+    def factorial(n):
+        if n == 0:
+            return {{blank:base}}
+        return n * factorial(n - 1)
+choices:
+- '1'
+- '0'
+- n
+acceptedAnswers:
+- '1'
+explanation:
+- type: text
+  text: 0!은 1이고, 이 반환이 factorial 호출을 더 깊게 내려가지 않게 하는 기저 결과입니다.
+tags:
+- recursion
+- base-case
+- code-completion
+difficulty: 2

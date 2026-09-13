@@ -1,0 +1,48 @@
+id: algo.quicksort.match-01
+type: matching
+prompt:
+- type: text
+  text: 퀵 정렬 용어와 의미를 연결하세요.
+leftItems:
+- id: pivot
+  content:
+  - type: text
+    text: pivot
+- id: partition
+  content:
+  - type: text
+    text: partition
+- id: base
+  content:
+  - type: text
+    text: 기저 사례
+rightItems:
+- id: reference
+  content:
+  - type: text
+    text: 분할의 기준 원소
+- id: split
+  content:
+  - type: text
+    text: 기준보다 작은 쪽과 큰 쪽으로 나누는 과정
+- id: stop
+  content:
+  - type: text
+    text: 길이 0 또는 1이라 재귀를 끝내는 조건
+correctPairs:
+- leftId: pivot
+  rightId: reference
+- leftId: partition
+  rightId: split
+- leftId: base
+  rightId: stop
+explanation:
+- type: text
+  text: pivot으로 partition을 수행하고, 더 나눌 수 없는 작은 부분에서는 기저 사례로 재귀를 멈춥니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- quicksort
+- partition
+difficulty: 2

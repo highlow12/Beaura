@@ -1,0 +1,48 @@
+id: ds.bst.match-01
+type: matching
+prompt:
+- type: text
+  text: BST 용어와 의미를 연결하세요.
+leftItems:
+- id: invariant
+  content:
+  - type: text
+    text: 정렬 불변식
+- id: path
+  content:
+  - type: text
+    text: 탐색 경로
+- id: inorder
+  content:
+  - type: text
+    text: 중위 순회
+rightItems:
+- id: order
+  content:
+  - type: text
+    text: 왼쪽-현재-오른쪽 값 관계
+- id: branch
+  content:
+  - type: text
+    text: 비교 결과로 선택한 노드들의 줄
+- id: sorted
+  content:
+  - type: text
+    text: 오름차순 결과를 만드는 방문
+correctPairs:
+- leftId: invariant
+  rightId: order
+- leftId: path
+  rightId: branch
+- leftId: inorder
+  rightId: sorted
+explanation:
+- type: text
+  text: 정렬 불변식이 탐색 방향을 결정하고, 그 방향으로 선택된 노드들이 경로를 이룹니다. 중위 순회는 정렬된 결과를 냅니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- bst
+- search
+difficulty: 2

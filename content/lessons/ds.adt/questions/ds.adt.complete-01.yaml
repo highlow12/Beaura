@@ -1,0 +1,24 @@
+id: ds.adt.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 스택의 맨 위에 값을 넣는 연산을 표현하도록 빈칸을 고르세요.
+language: python
+template: stack.{{blank:operation}}("A")
+blanks:
+- id: operation
+  choices:
+  - push
+  - pop
+  - peek
+  acceptedAnswers:
+  - push
+explanation:
+- type: text
+  text: push는 스택의 맨 위에 값을 추가합니다. pop은 꺼내고 peek은 꺼내지 않고 맨 위를 확인합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- adt
+- interface
+difficulty: 2

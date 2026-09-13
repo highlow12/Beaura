@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.bellman-ford.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Dijkstra 대신 Bellman-Ford를 선택해야 하는 대표적인 이유는 무엇인가요?
+options:
+- id: negative
+  content:
+  - type: text
+    text: 음수 가중치 간선을 포함할 수 있어서
+- id: sorted
+  content:
+  - type: text
+    text: 정점 이름이 정렬되어 있어서
+- id: constant
+  content:
+  - type: text
+    text: 모든 간선 비용이 항상 1이라서
+correctOptionId: negative
+shuffleOptions: true
+explanation:
+- type: text
+  text: Bellman-Ford는 음수 간선을 허용하고, 추가 검사로 음수 사이클도 감지할 수 있습니다.
+tags:
+- shortest-path
+- bellman-ford
+- negative-edges
+difficulty: 1

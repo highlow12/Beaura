@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.bellman-ford
+revision: 1
+track: algorithms
+title: Bellman-Ford
+description: 모든 간선을 반복해서 완화해 음수 가중치와 음수 사이클을 다루는 방법을 익힌다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.bellman-ford.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.bellman-ford.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.bellman-ford.steps-01
+- type: question
+  ref: algo.bellman-ford.complete-01
+- type: question
+  ref: algo.bellman-ford.trace-01

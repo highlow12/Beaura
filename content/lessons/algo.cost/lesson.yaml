@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.cost
+revision: 1
+track: algorithms
+title: 알고리즘 비용
+description: 입력 크기와 기본 연산 횟수로 알고리즘의 비용을 세는 방법을 익힌다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.cost.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.cost.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.cost.complete-01
+- type: question
+  ref: algo.cost.steps-01
+- type: question
+  ref: algo.cost.match-01

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: algo.recursion.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: 재귀 함수의 기저 사례가 필요한 이유는 무엇인가요?
+options:
+- id: stop
+  content:
+  - type: text
+    text: 더 이상 자신을 호출하지 않고 재귀를 멈추기 위해
+- id: repeat
+  content:
+  - type: text
+    text: 호출 횟수를 무한히 늘리기 위해
+- id: sort
+  content:
+  - type: text
+    text: 입력을 자동으로 정렬하기 위해
+correctOptionId: stop
+shuffleOptions: true
+explanation:
+- type: text
+  text: 기저 사례가 있어야 입력이 더 작아지는 호출이 언젠가 바로 결과를 반환하고 재귀가 종료됩니다.
+tags:
+- recursion
+- base-case
+difficulty: 1

@@ -1,0 +1,36 @@
+id: py.precedence.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 표현식의 계산 순서를 배열하세요.
+items:
+- id: paren
+  content:
+  - type: text
+    text: 괄호 안의 표현식을 계산한다
+- id: high
+  content:
+  - type: text
+    text: 곱셈과 나눗셈을 계산한다
+- id: low
+  content:
+  - type: text
+    text: 덧셈과 뺄셈을 계산한다
+- id: result
+  content:
+  - type: text
+    text: 최종 결과를 사용한다
+correctOrder:
+- paren
+- high
+- low
+- result
+explanation:
+- type: text
+  text: 괄호를 먼저 처리하고, 높은 우선순위 연산을 계산한 뒤 낮은 우선순위 연산과 최종 사용으로 넘어갑니다.
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- precedence
+difficulty: 2

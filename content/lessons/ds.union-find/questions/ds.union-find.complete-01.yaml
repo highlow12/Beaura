@@ -1,0 +1,24 @@
+id: ds.union-find.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 두 집합의 대표를 하나로 연결하는 연산을 완성하세요.
+language: python
+template: sets.{{blank:operation}}(a, b)
+blanks:
+- id: operation
+  choices:
+  - union
+  - find
+  - merge-sort
+  acceptedAnswers:
+  - union
+explanation:
+- type: text
+  text: union은 두 집합을 합칩니다. find는 대표를 찾고 merge-sort는 정렬 알고리즘의 이름입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- disjoint-set
+- union-find
+difficulty: 2

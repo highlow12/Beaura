@@ -1,0 +1,23 @@
+id: algo.merge-sort.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 두 정렬 리스트의 병합 결과를 고르세요.
+language: python
+code: "left = [1, 4]\nright = [2, 3]\nresult = []\ni = j = 0\nwhile i < len(left) and j < len(right):\n    if left[i] <= right[j]:\n        result.append(left[i]); i += 1\n    else:\n        result.append(right[j]); j += 1\nresult += left[i:]\nresult += right[j:]\nprint(result)"
+choices:
+- '[1, 2, 3, 4]'
+- '[1, 4, 2, 3]'
+- '[2, 3, 1, 4]'
+acceptedOutputs:
+- '[1, 2, 3, 4]'
+explanation:
+- type: text
+  text: 두 앞 원소 중 작은 값을 차례로 결과에 넣고 남은 원소를 덧붙이므로 [1, 2, 3, 4]가 됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- merge-sort
+- divide-conquer
+difficulty: 2

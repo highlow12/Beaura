@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.quicksort
+revision: 1
+track: algorithms
+title: 퀵 정렬
+description: pivot으로 원소를 분할하고 부분 배열을 재귀 정렬하는 퀵 정렬을 익힌다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.quicksort.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.quicksort.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.quicksort.complete-01
+- type: question
+  ref: algo.quicksort.steps-01
+- type: question
+  ref: algo.quicksort.match-01

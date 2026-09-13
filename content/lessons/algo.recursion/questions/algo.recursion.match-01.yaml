@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: algo.recursion.match-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: 다음 재귀 함수가 출력하는 값을 고르세요.
+language: python
+code: |-
+  def countdown(n):
+      if n == 0:
+          return 0
+      return n + countdown(n - 1)
+  print(countdown(3))
+choices:
+- '6'
+- '3'
+- '0'
+acceptedOutputs:
+- '6'
+explanation:
+- type: text
+  text: countdown(3)은 3 + 2 + 1 + countdown(0)을 계산하고, 기저 사례의 0을 더해 6을 반환합니다.
+tags:
+- recursion
+- call-stack
+- code-output
+difficulty: 2

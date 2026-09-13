@@ -1,0 +1,33 @@
+id: py.scopes.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 함수 안에서 대입한 지역 이름의 특징은 무엇인가요?
+options:
+- id: local
+  content:
+  - type: text
+    text: 그 함수 호출의 범위에서 우선 사용되고 호출이 끝나면 사라진다
+- id: global
+  content:
+  - type: text
+    text: 프로그램 어디서나 자동으로 같은 값이 된다
+- id: constant
+  content:
+  - type: text
+    text: 한 번 정하면 절대 바뀌지 않는다
+- id: module
+  content:
+  - type: text
+    text: 항상 별도 파일에 저장된다
+correctOptionId: local
+shuffleOptions: true
+explanation:
+- type: text
+  text: 함수 안에서 대입한 이름은 기본적으로 지역 이름입니다. 호출이 끝나면 그 지역 공간도 사라지므로 바깥 이름과 구분됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- functions
+- scope
+difficulty: 2

@@ -1,0 +1,47 @@
+id: py.exceptions.match-01
+type: matching
+prompt:
+- type: text
+  text: 예외 처리 용어와 의미를 연결하세요.
+leftItems:
+- id: try
+  content:
+  - type: text
+    text: try
+- id: except
+  content:
+  - type: text
+    text: except ValueError
+- id: value-error
+  content:
+  - type: text
+    text: ValueError
+rightItems:
+- id: risky
+  content:
+  - type: text
+    text: 실패할 수 있는 작업을 감싼 영역
+- id: handler
+  content:
+  - type: text
+    text: 특정 예외가 났을 때 실행할 처리기
+- id: bad-input
+  content:
+  - type: text
+    text: 값의 형식이 기대와 맞지 않을 때의 예외
+correctPairs:
+- leftId: try
+  rightId: risky
+- leftId: except
+  rightId: handler
+- leftId: value-error
+  rightId: bad-input
+explanation:
+- type: text
+  text: try는 위험 구간, except는 예외 처리기, ValueError는 값 형식이 맞지 않을 때 자주 발생하는 구체적 예외입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- errors
+- exceptions
+difficulty: 2

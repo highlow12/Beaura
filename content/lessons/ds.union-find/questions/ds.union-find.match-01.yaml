@@ -1,0 +1,47 @@
+id: ds.union-find.match-01
+type: matching
+prompt:
+- type: text
+  text: union-find 용어와 의미를 연결하세요.
+leftItems:
+- id: find
+  content:
+  - type: text
+    text: find
+- id: union
+  content:
+  - type: text
+    text: union
+- id: representative
+  content:
+  - type: text
+    text: 대표
+rightItems:
+- id: locate
+  content:
+  - type: text
+    text: 소속 집합의 대표를 찾는 연산
+- id: join
+  content:
+  - type: text
+    text: 두 집합을 하나로 합치는 연산
+- id: root
+  content:
+  - type: text
+    text: 부모가 자기 자신인 그룹 식별자
+correctPairs:
+- leftId: find
+  rightId: locate
+- leftId: union
+  rightId: join
+- leftId: representative
+  rightId: root
+explanation:
+- type: text
+  text: find는 대표를 찾고 union은 대표가 다른 그룹을 결합합니다. 대표는 각 집합을 대신해 비교되는 root입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- disjoint-set
+- union-find
+difficulty: 2

@@ -1,0 +1,47 @@
+id: py.sets.match-01
+type: matching
+prompt:
+- type: text
+  text: set 관련 표현과 의미를 연결하세요.
+leftItems:
+- id: membership
+  content:
+  - type: text
+    text: item in values
+- id: union
+  content:
+  - type: text
+    text: left | right
+- id: intersection
+  content:
+  - type: text
+    text: left & right
+rightItems:
+- id: contains
+  content:
+  - type: text
+    text: 값의 포함 여부를 검사한다
+- id: combine
+  content:
+  - type: text
+    text: 두 집합의 모든 원소를 합친다
+- id: common
+  content:
+  - type: text
+    text: 두 집합에 모두 있는 원소를 구한다
+correctPairs:
+- leftId: membership
+  rightId: contains
+- leftId: union
+  rightId: combine
+- leftId: intersection
+  rightId: common
+explanation:
+- type: text
+  text: in은 membership 검사, |는 합집합, &는 교집합을 뜻합니다. 세 연산 모두 중복 없는 원소 집합을 대상으로 합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- set
+difficulty: 2

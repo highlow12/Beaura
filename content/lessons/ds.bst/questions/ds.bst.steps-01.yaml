@@ -1,0 +1,37 @@
+id: ds.bst.steps-01
+type: ordering
+prompt:
+- type: text
+  text: BST에서 값을 탐색하는 순서를 배열하세요.
+items:
+- id: compare
+  content:
+  - type: text
+    text: 현재 노드의 값과 target을 비교한다
+- id: finish
+  content:
+  - type: text
+    text: 같으면 찾았다고 반환한다
+- id: branch
+  content:
+  - type: text
+    text: 작으면 왼쪽, 크면 오른쪽으로 이동한다
+- id: repeat
+  content:
+  - type: text
+    text: 새 노드에서 비교를 반복한다
+correctOrder:
+- compare
+- finish
+- branch
+- repeat
+explanation:
+- type: text
+  text: 비교 결과가 같으면 끝내고, 다르면 크기 관계에 맞는 한쪽으로 이동해 같은 절차를 반복합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- bst
+- search
+difficulty: 2

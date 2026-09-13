@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: algo.mst.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: 정점 V개로 이루어진 신장 트리의 간선 수를 완성하세요.
+- type: code
+  language: python
+  code: edge_count = {{blank:count}}
+choices:
+- V - 1
+- V
+- V + 1
+acceptedAnswers:
+- V - 1
+explanation:
+- type: text
+  text: 트리는 정점을 하나씩 연결할 때마다 간선 하나를 추가하므로 V개 정점에는 V - 1개 간선이 필요합니다.
+tags:
+- graph
+- mst
+- spanning-tree
+- code-completion
+difficulty: 2

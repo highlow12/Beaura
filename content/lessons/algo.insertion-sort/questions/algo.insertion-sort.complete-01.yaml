@@ -1,0 +1,24 @@
+id: algo.insertion-sort.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: key보다 큰 원소를 오른쪽으로 밀도록 비교 연산자를 고르세요.
+language: python
+template: "while j >= 0 and values[j] {{blank:compare}} key:\n    values[j + 1] = values[j]"
+blanks:
+- id: compare
+  choices:
+  - '>'
+  - <
+  - ==
+  acceptedAnswers:
+  - '>'
+explanation:
+- type: text
+  text: 정렬된 앞부분에서 key보다 큰 값을 오른쪽으로 밀어야 빈 자리에 key를 넣을 수 있으므로 >를 사용합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- insertion-sort
+difficulty: 2

@@ -1,0 +1,22 @@
+id: algo.cost.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 코드가 출력하는 기본 연산 횟수를 고르세요.
+language: python
+code: "def count_to(n):\n    count = 0\n    for _ in range(n):\n        count += 1\n    return count\nprint(count_to(4))"
+choices:
+- '4'
+- '1'
+- '16'
+acceptedOutputs:
+- '4'
+explanation:
+- type: text
+  text: range(4)의 반복은 네 번이고 매번 count += 1을 한 번씩 실행하므로 결과가 4입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- cost
+difficulty: 2

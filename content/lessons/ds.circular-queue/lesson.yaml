@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.circular-queue
+revision: 1
+track: data-structures
+title: 원형 큐
+description: 고정 배열의 끝에서 처음으로 돌아가며 공간을 재사용하는 원형 큐를 학습한다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.circular-queue.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.circular-queue.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.circular-queue.complete-01
+- type: question
+  ref: ds.circular-queue.steps-01
+- type: question
+  ref: ds.circular-queue.match-01

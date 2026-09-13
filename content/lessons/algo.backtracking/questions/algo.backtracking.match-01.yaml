@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.backtracking.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: 백트래킹 단계와 역할을 연결하세요.
+leftItems:
+- id: choice
+  content:
+  - type: text
+    text: 선택 추가
+- id: constraint
+  content:
+  - type: text
+    text: 제약 검사
+- id: undo
+  content:
+  - type: text
+    text: 되돌리기
+rightItems:
+- id: extend
+  content:
+  - type: text
+    text: 부분 해답을 다음 단계로 확장한다
+- id: prune
+  content:
+  - type: text
+    text: 불가능한 가지를 더 탐색하지 않는다
+- id: clean
+  content:
+  - type: text
+    text: 형제 가지를 위해 상태를 원래대로 복구한다
+correctPairs:
+- leftId: choice
+  rightId: extend
+- leftId: constraint
+  rightId: prune
+- leftId: undo
+  rightId: clean
+explanation:
+- type: text
+  text: 선택을 쌓고 검사한 뒤 재귀가 돌아오면 undo로 상태를 복구해야 각 가지가 독립적으로 탐색됩니다.
+tags:
+- backtracking
+- pruning
+- recursion
+difficulty: 2

@@ -1,0 +1,31 @@
+id: py.enumerate-zip.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 enumerate 코드의 출력 결과를 고르세요.
+language: python
+code: "names = [\"Ada\", \"Lin\"]\nfor index, name in enumerate(names):\n    print(index, name)"
+choices:
+- '0 Ada
+
+  1 Lin'
+- '1 Ada
+
+  2 Lin'
+- 'Ada 0
+
+  Lin 1'
+acceptedOutputs:
+- '0 Ada
+
+  1 Lin'
+explanation:
+- type: text
+  text: enumerate의 인덱스는 기본적으로 0부터 시작하고 각 인덱스가 해당 이름과 함께 출력됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- iteration
+- enumerate
+- zip
+difficulty: 2

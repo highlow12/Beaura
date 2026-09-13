@@ -1,0 +1,28 @@
+id: py.expressions.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 두 값을 더한 결과를 total에 저장하도록 연산자의 선택지를 고르세요.
+language: python
+template: 'left = 6
+
+  right = 4
+
+  total = left {{blank:operator}} right'
+blanks:
+- id: operator
+  choices:
+  - +
+  - '*'
+  - ==
+  acceptedAnswers:
+  - +
+explanation:
+- type: text
+  text: 두 값을 더하는 표현식에는 + 연산자를 사용합니다. ==는 두 결과가 같은지 확인하는 비교 표현식입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- values
+difficulty: 2

@@ -1,0 +1,32 @@
+id: ds.circular-queue.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 원형 버퍼 코드의 출력 결과를 고르세요.
+language: python
+code: 'buffer = ["A", None, "Z"]
+
+  front = 2
+
+  size = 1
+
+  index = (front + size) % len(buffer)
+
+  buffer[index] = "B"
+
+  print(buffer)'
+choices:
+- '["B", None, "Z"]'
+- '["A", "B", "Z"]'
+- '["A", None, "B"]'
+acceptedOutputs:
+- '["B", None, "Z"]'
+explanation:
+- type: text
+  text: front가 2이고 size가 1이면 다음 위치는 (2 + 1) % 3 = 0입니다. 따라서 B가 처음 칸에 기록됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- circular-buffer
+difficulty: 2

@@ -1,0 +1,36 @@
+id: ds.heap.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 힙에 원소를 삽입하는 내부 처리 순서를 배열하세요.
+items:
+- id: append
+  content:
+  - type: text
+    text: 새 원소를 배열의 끝에 둔다
+- id: compare
+  content:
+  - type: text
+    text: 부모와 우선순위를 비교한다
+- id: swap
+  content:
+  - type: text
+    text: 규칙을 어기면 부모와 교환한다
+- id: stop
+  content:
+  - type: text
+    text: 규칙을 만족하거나 루트에 도달하면 멈춘다
+correctOrder:
+- append
+- compare
+- swap
+- stop
+explanation:
+- type: text
+  text: 끝에 추가한 뒤 부모와 비교하며 필요한 동안 위로 올립니다. 규칙이 맞으면 더 이상 교환하지 않습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- heap
+difficulty: 2

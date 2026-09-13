@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.merge-sort
+revision: 1
+track: algorithms
+title: 병합 정렬
+description: 부분 배열을 나누고 정렬된 결과를 병합하는 병합 정렬의 분할·정복·결합을 익힌다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.merge-sort.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.merge-sort.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.merge-sort.complete-01
+- type: question
+  ref: algo.merge-sort.steps-01
+- type: question
+  ref: algo.merge-sort.match-01

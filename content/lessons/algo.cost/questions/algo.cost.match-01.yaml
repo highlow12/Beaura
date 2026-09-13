@@ -1,0 +1,47 @@
+id: algo.cost.match-01
+type: matching
+prompt:
+- type: text
+  text: 비용 분석 용어와 의미를 연결하세요.
+leftItems:
+- id: input-size
+  content:
+  - type: text
+    text: 입력 크기
+- id: basic-operation
+  content:
+  - type: text
+    text: 기본 연산
+- id: cost
+  content:
+  - type: text
+    text: 비용
+rightItems:
+- id: n
+  content:
+  - type: text
+    text: 문제 데이터의 규모를 나타내는 값
+- id: unit
+  content:
+  - type: text
+    text: 반복 횟수를 셀 작은 작업
+- id: resources
+  content:
+  - type: text
+    text: 알고리즘이 사용하는 자원의 양
+correctPairs:
+- leftId: input-size
+  rightId: n
+- leftId: basic-operation
+  rightId: unit
+- leftId: cost
+  rightId: resources
+explanation:
+- type: text
+  text: 입력 크기 n을 기준으로 기본 연산의 횟수를 세면 시간 비용의 증가를 근사할 수 있습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- cost
+difficulty: 2

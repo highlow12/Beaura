@@ -1,0 +1,33 @@
+id: py.exceptions.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: try와 except의 역할을 올바르게 설명한 것은 무엇인가요?
+options:
+- id: handle
+  content:
+  - type: text
+    text: try에서 발생할 수 있는 예외를 except에서 받아 처리한다
+- id: ignore
+  content:
+  - type: text
+    text: 모든 오류를 자동으로 없애고 원인을 기록하지 않는다
+- id: repeat
+  content:
+  - type: text
+    text: 예외가 나면 같은 문장을 무한 반복한다
+- id: convert
+  content:
+  - type: text
+    text: 모든 문자열을 숫자로 바꾼다
+correctOptionId: handle
+shuffleOptions: true
+explanation:
+- type: text
+  text: try는 위험한 작업을 감싸고 except는 지정한 예외가 발생했을 때 복구나 안내를 실행합니다. 예외를 무조건 숨기는 것은 안전하지 않습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- errors
+- exceptions
+difficulty: 2

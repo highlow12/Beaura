@@ -1,0 +1,25 @@
+id: algo.quicksort.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: pivot보다 작은 원소를 왼쪽에 모으도록 비교 연산자를 고르세요.
+language: python
+template: "if value {{blank:compare}} pivot:\n    smaller.append(value)"
+blanks:
+- id: compare
+  choices:
+  - <
+  - '>'
+  - ==
+  acceptedAnswers:
+  - <
+explanation:
+- type: text
+  text: 작은 쪽 목록에는 value가 pivot보다 작을 때만 추가하므로 <를 사용합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- quicksort
+- partition
+difficulty: 2

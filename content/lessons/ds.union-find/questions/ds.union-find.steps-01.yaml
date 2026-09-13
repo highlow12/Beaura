@@ -1,0 +1,36 @@
+id: ds.union-find.steps-01
+type: ordering
+prompt:
+- type: text
+  text: union-find로 두 원소의 연결을 갱신하는 순서를 배열하세요.
+items:
+- id: singletons
+  content:
+  - type: text
+    text: 각 원소를 자기 자신이 대표인 집합으로 시작한다
+- id: find
+  content:
+  - type: text
+    text: 두 원소의 대표를 찾는다
+- id: union
+  content:
+  - type: text
+    text: 대표가 다르면 두 집합을 연결한다
+- id: query
+  content:
+  - type: text
+    text: 대표가 같은지 다시 확인한다
+correctOrder:
+- singletons
+- find
+- union
+- query
+explanation:
+- type: text
+  text: 처음에는 각 원소가 독립 집합입니다. 대표를 비교해 다를 때 합치고, 같은 대표인지로 연결 여부를 질의합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- disjoint-set
+- union-find
+difficulty: 2

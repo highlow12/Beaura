@@ -1,0 +1,36 @@
+id: algo.asymptotic.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 점근적 bound를 정하는 순서를 배열하세요.
+items:
+- id: formula
+  content:
+  - type: text
+    text: 연산 횟수의 식을 세운다
+- id: upper
+  content:
+  - type: text
+    text: 상한 Big-O를 찾는다
+- id: lower
+  content:
+  - type: text
+    text: 하한 Ω를 찾는다
+- id: tight
+  content:
+  - type: text
+    text: 두 경계가 같으면 Θ로 묶는다
+correctOrder:
+- formula
+- upper
+- lower
+- tight
+explanation:
+- type: text
+  text: 먼저 비용 식을 만들고 상한과 하한을 따로 확인합니다. 두 경계가 같은 성장률이면 tight bound Θ가 됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- asymptotic
+difficulty: 2

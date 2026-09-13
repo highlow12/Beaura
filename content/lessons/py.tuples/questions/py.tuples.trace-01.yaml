@@ -1,0 +1,24 @@
+id: py.tuples.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 튜플 코드의 출력 결과를 고르세요.
+language: python
+code: 'point = (3, 4)
+
+  print(point[1])'
+choices:
+- '4'
+- '3'
+- (3, 4)
+acceptedOutputs:
+- '4'
+explanation:
+- type: text
+  text: 튜플도 인덱스가 0부터 시작하므로 point[1]은 두 번째 원소인 4를 읽습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- tuple
+difficulty: 2

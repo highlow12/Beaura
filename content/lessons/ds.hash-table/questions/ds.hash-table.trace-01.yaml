@@ -1,0 +1,25 @@
+id: ds.hash-table.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 딕셔너리 조회 코드의 출력 결과를 고르세요.
+language: python
+code: 'table = {"id-1": "Ada"}
+
+  print(table["id-1"])'
+choices:
+- Ada
+- id-1
+- None
+acceptedOutputs:
+- Ada
+explanation:
+- type: text
+  text: 키 id-1에 연결된 값이 Ada이므로 해당 값을 출력합니다. 해시 테이블의 조회 결과는 키가 아니라 값입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-table
+- collision
+difficulty: 2

@@ -1,0 +1,34 @@
+id: algo.quicksort.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 퀵 정렬에서 pivot의 역할은 무엇인가요?
+options:
+- id: partition
+  content:
+  - type: text
+    text: 값들을 pivot보다 작은 쪽과 큰 쪽으로 나누는 기준
+- id: minimum
+  content:
+  - type: text
+    text: 항상 전체 최솟값을 저장하는 자리
+- id: queue
+  content:
+  - type: text
+    text: 다음 작업을 FIFO로 꺼내는 자료구조
+- id: merge
+  content:
+  - type: text
+    text: 두 정렬 배열을 바로 합치는 버퍼
+correctOptionId: partition
+shuffleOptions: true
+explanation:
+- type: text
+  text: pivot은 분할의 기준이 되어 부분 배열을 나눕니다. 전체 최솟값이나 큐를 뜻하지 않습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- quicksort
+- partition
+difficulty: 2

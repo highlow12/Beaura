@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.sets
+revision: 1
+track: python
+title: 집합
+description: 중복 없는 집합과 membership·합집합 연산을 Python set으로 표현한다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.sets.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: py.sets.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.sets.complete-01
+- type: question
+  ref: py.sets.steps-01
+- type: question
+  ref: py.sets.match-01

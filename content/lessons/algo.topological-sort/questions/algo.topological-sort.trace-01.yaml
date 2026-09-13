@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: algo.topological-sort.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: A와 B가 C의 선행 조건일 때 다음 Kahn 알고리즘의 출력 결과를 고르세요.
+language: python
+code: |-
+  graph = {"A": ["C"], "B": ["C"], "C": []}
+  indegree = {"A": 0, "B": 0, "C": 2}
+  queue = ["A", "B"]
+  order = []
+  while queue:
+      node = queue.pop(0)
+      order.append(node)
+      for nxt in graph[node]:
+          indegree[nxt] -= 1
+          if indegree[nxt] == 0:
+              queue.append(nxt)
+  print(" ".join(order))
+choices:
+- A B C
+- C A B
+- A C B
+acceptedOutputs:
+- A B C
+explanation:
+- type: text
+  text: A와 B는 처음부터 진입 차수가 0이고, 둘을 처리한 뒤 C의 진입 차수가 0이 되어 마지막에 나옵니다.
+tags:
+- graph
+- topological-sort
+- code-output
+difficulty: 3

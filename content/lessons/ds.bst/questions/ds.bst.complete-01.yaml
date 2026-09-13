@@ -1,0 +1,25 @@
+id: ds.bst.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: target이 현재 노드보다 작을 때 비교 연산자를 완성하세요.
+language: python
+template: "if target {{blank:compare}} node[\"value\"]:\n    node = node[\"left\"]"
+blanks:
+- id: compare
+  choices:
+  - <
+  - '>'
+  - ==
+  acceptedAnswers:
+  - <
+explanation:
+- type: text
+  text: target이 현재 값보다 작으면 왼쪽으로 가야 하므로 <를 사용합니다. ==는 찾은 경우이고 >는 오른쪽 이동입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- bst
+- search
+difficulty: 2

@@ -1,0 +1,34 @@
+id: ds.memory.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: b = a처럼 대입했을 때 변경 가능한 리스트에 대해 올바른 설명은 무엇인가요?
+options:
+- id: alias
+  content:
+  - type: text
+    text: a와 b가 같은 리스트 객체를 가리킬 수 있다
+- id: clone
+  content:
+  - type: text
+    text: Python이 항상 리스트를 깊이 복사한다
+- id: value-only
+  content:
+  - type: text
+    text: 리스트의 원소는 어떤 방법으로도 바뀌지 않는다
+- id: address-free
+  content:
+  - type: text
+    text: 참조 없이 변수 이름에 값이 저장된다
+correctOptionId: alias
+shuffleOptions: true
+explanation:
+- type: text
+  text: 리스트 대입은 보통 같은 객체를 가리키는 참조를 하나 더 만듭니다. 원본과 독립된 복사본이 필요하면 명시적으로 복사해야 합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- memory
+- representation
+- reference
+difficulty: 2

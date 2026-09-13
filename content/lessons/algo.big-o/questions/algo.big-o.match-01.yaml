@@ -1,0 +1,47 @@
+id: algo.big-o.match-01
+type: matching
+prompt:
+- type: text
+  text: Big-O 예와 성장률을 연결하세요.
+leftItems:
+- id: constant
+  content:
+  - type: text
+    text: O(1)
+- id: linear
+  content:
+  - type: text
+    text: O(n)
+- id: quadratic
+  content:
+  - type: text
+    text: O(n^2)
+rightItems:
+- id: fixed
+  content:
+  - type: text
+    text: 입력과 무관한 일정한 횟수
+- id: scan
+  content:
+  - type: text
+    text: 입력을 한 번 훑는 규모
+- id: nested
+  content:
+  - type: text
+    text: 두 선형 반복이 중첩된 규모
+correctPairs:
+- leftId: constant
+  rightId: fixed
+- leftId: linear
+  rightId: scan
+- leftId: quadratic
+  rightId: nested
+explanation:
+- type: text
+  text: O(1)은 일정한 비용, O(n)은 한 번의 선형 순회, O(n²)은 두 선형 반복이 중첩된 경우의 대표 표기입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- big-o
+difficulty: 2

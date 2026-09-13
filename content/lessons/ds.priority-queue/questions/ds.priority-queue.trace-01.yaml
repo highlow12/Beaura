@@ -1,0 +1,26 @@
+id: ds.priority-queue.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 우선순위 튜플의 선택 결과를 고르세요.
+language: python
+code: 'tasks = [(2, "normal"), (1, "urgent")]
+
+  next_task = min(tasks)
+
+  print(next_task[1])'
+choices:
+- urgent
+- normal
+- '2'
+acceptedOutputs:
+- urgent
+explanation:
+- type: text
+  text: 튜플의 첫 값 priority를 비교하면 1이 2보다 먼저 선택되므로 urgent가 출력됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- priority-queue
+difficulty: 2

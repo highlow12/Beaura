@@ -1,0 +1,34 @@
+id: ds.linked-list.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 단일 연결 리스트의 노드는 무엇을 저장하나요?
+options:
+- id: next
+  content:
+  - type: text
+    text: 자신의 값과 다음 노드를 가리키는 next 참조
+- id: index
+  content:
+  - type: text
+    text: 전체 배열에서의 정수 인덱스만
+- id: parent
+  content:
+  - type: text
+    text: 항상 부모 노드를 가리키는 두 개의 참조
+- id: bucket
+  content:
+  - type: text
+    text: 해시 함수의 결과만
+correctOptionId: next
+shuffleOptions: true
+explanation:
+- type: text
+  text: 단일 연결 리스트의 기본 노드는 값과 다음 노드 참조를 가집니다. 마지막 next는 None으로 끝을 나타냅니다.
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- node
+- pointer
+difficulty: 2

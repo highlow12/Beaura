@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: algo.astar.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: f = g + h가 가장 작은 후보의 이름을 고르세요.
+language: python
+code: |-
+  g = {"A": 2, "B": 4, "C": 1}
+  h = {"A": 5, "B": 2, "C": 6}
+  score = {node: g[node] + h[node] for node in g}
+  print(min(score, key=score.get))
+choices:
+- B
+- A
+- C
+acceptedOutputs:
+- B
+explanation:
+- type: text
+  text: A의 f는 7, B의 f는 6, C의 f는 7이므로 B가 가장 먼저 선택됩니다.
+tags:
+- shortest-path
+- astar
+- heuristic
+- code-output
+difficulty: 3

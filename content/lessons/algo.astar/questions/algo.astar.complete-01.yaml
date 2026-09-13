@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: algo.astar.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: A*의 후보 우선순위 f를 계산하는 식을 완성하세요.
+- type: code
+  language: python
+  code: f = {{blank:score}}
+choices:
+- g + h
+- g - h
+- g * h
+acceptedAnswers:
+- g + h
+explanation:
+- type: text
+  text: 실제로 온 비용 g와 목표까지의 추정 비용 h를 더한 값이 f입니다.
+tags:
+- shortest-path
+- astar
+- heuristic
+- code-completion
+difficulty: 2

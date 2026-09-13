@@ -1,0 +1,24 @@
+id: py.scopes.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 함수 안에서 전역 count에 대입하도록 선언을 완성하세요.
+language: python
+template: "count = 0\ndef increase():\n    {{blank:statement}}\n    count += 1"
+blanks:
+- id: statement
+  choices:
+  - global count
+  - local count
+  - scope count
+  acceptedAnswers:
+  - global count
+explanation:
+- type: text
+  text: 함수 안에서 바깥 전역 이름에 대입하려면 global count를 명시해야 합니다. 다만 반환값으로 상태를 전달하는 설계가 보통 더 안전합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- functions
+- scope
+difficulty: 2

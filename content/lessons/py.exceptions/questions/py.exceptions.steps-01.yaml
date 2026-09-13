@@ -1,0 +1,36 @@
+id: py.exceptions.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 예외가 발생했을 때의 제어 흐름을 배열하세요.
+items:
+- id: try
+  content:
+  - type: text
+    text: 실패할 수 있는 작업을 try에 둔다
+- id: raise
+  content:
+  - type: text
+    text: 작업 중 예외가 발생한다
+- id: match
+  content:
+  - type: text
+    text: 일치하는 except 유형을 찾는다
+- id: recover
+  content:
+  - type: text
+    text: except의 복구 동작을 실행한다
+correctOrder:
+- try
+- raise
+- match
+- recover
+explanation:
+- type: text
+  text: try 안의 작업에서 예외가 발생하면 Python은 일치하는 except 처리기로 이동해 지정된 복구 동작을 실행합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- errors
+- exceptions
+difficulty: 2

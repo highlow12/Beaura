@@ -1,0 +1,24 @@
+id: algo.cost.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 입력 크기 n만큼 반복하도록 range의 빈칸을 완성하세요.
+language: python
+template: "for _ in range({{blank:size}}):\n    work()"
+blanks:
+- id: size
+  choices:
+  - n
+  - n * n
+  - '1'
+  acceptedAnswers:
+  - n
+explanation:
+- type: text
+  text: range(n)은 0부터 n-1까지 n개의 값을 내므로 작업이 입력 크기에 비례해 반복됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- cost
+difficulty: 2

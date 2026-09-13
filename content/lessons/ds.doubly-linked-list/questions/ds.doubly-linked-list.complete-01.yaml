@@ -1,0 +1,24 @@
+id: ds.doubly-linked-list.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 현재 노드의 이전 노드로 이동하도록 빈칸을 고르세요.
+language: python
+template: previous = node["{{blank:link}}"]
+blanks:
+- id: link
+  choices:
+  - prev
+  - next
+  - value
+  acceptedAnswers:
+  - prev
+explanation:
+- type: text
+  text: 이중 연결 리스트에서 prev는 이전 노드, next는 다음 노드를 가리킵니다. value는 연결이 아니라 데이터입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- doubly-linked-list
+difficulty: 2

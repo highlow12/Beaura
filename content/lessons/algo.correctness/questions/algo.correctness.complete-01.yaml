@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: algo.correctness.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: 반복 중 계속 참으로 유지된다고 주장하는 성질을 무엇이라고 하나요?
+- type: code
+  language: python
+  code: loop_{{blank:property}} = true
+choices:
+- invariant
+- variable
+- output
+acceptedAnswers:
+- invariant
+explanation:
+- type: text
+  text: loop invariant는 반복문이 진행되는 동안 유지되는 성질입니다.
+tags:
+- correctness
+- invariant
+- code-completion
+difficulty: 1

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.backtracking
+revision: 1
+track: algorithms
+title: 백트래킹
+description: 선택을 쌓아 가다가 조건을 어기면 즉시 되돌아오는 탐색과 가지치기를 익힌다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.backtracking.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.backtracking.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.backtracking.steps-01
+- type: question
+  ref: algo.backtracking.complete-01
+- type: question
+  ref: algo.backtracking.trace-01

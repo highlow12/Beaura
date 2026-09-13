@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: algo.connected-components.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: 방문하지 않은 정점에서 새 탐색을 시작할 때 요소 수를 하나 늘리는 식을 완성하세요.
+- type: code
+  language: python
+  code: count = {{blank:increment}}
+choices:
+- count + 1
+- count - 1
+- count
+acceptedAnswers:
+- count + 1
+explanation:
+- type: text
+  text: 새 시작점은 아직 세지 않은 연결 요소를 발견했다는 뜻이므로 count를 1 증가시킵니다.
+tags:
+- graph
+- connected-components
+- code-completion
+difficulty: 2

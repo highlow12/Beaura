@@ -1,0 +1,33 @@
+id: ds.deque.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 덱(deque)이 지원하는 기본 특징은 무엇인가요?
+options:
+- id: ends
+  content:
+  - type: text
+    text: 앞과 뒤 양쪽에서 삽입과 삭제를 할 수 있다
+- id: middle
+  content:
+  - type: text
+    text: 항상 가운데 원소만 제거한다
+- id: priority
+  content:
+  - type: text
+    text: 값의 우선순위를 자동으로 계산한다
+- id: unique
+  content:
+  - type: text
+    text: 중복 원소를 자동으로 제거한다
+correctOptionId: ends
+shuffleOptions: true
+explanation:
+- type: text
+  text: 덱은 양 끝 연산을 지원합니다. 우선순위나 중복 제거는 덱의 기본 계약이 아닙니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- deque
+difficulty: 2

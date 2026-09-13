@@ -1,0 +1,24 @@
+id: py.tuples.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: x와 y를 튜플로 묶도록 빈칸에 들어갈 값을 고르세요.
+language: python
+template: point = (3, {{blank:value}})
+blanks:
+- id: value
+  choices:
+  - '4'
+  - '[4]'
+  - '"4"'
+  acceptedAnswers:
+  - '4'
+explanation:
+- type: text
+  text: 숫자 3과 4를 괄호와 쉼표로 묶으면 두 원소를 가진 튜플이 됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- tuple
+difficulty: 2

@@ -1,0 +1,33 @@
+id: ds.circular-queue.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 원형 큐가 배열 끝에서 사용하는 방식은 무엇인가요?
+options:
+- id: wrap
+  content:
+  - type: text
+    text: 나머지 연산으로 처음 인덱스로 돌아가 빈 칸을 재사용한다
+- id: shift
+  content:
+  - type: text
+    text: 삽입할 때마다 모든 원소를 배열 앞쪽으로 이동한다
+- id: sort
+  content:
+  - type: text
+    text: 항상 우선순위에 따라 원소를 정렬한다
+- id: delete
+  content:
+  - type: text
+    text: dequeue한 칸을 다시 사용하지 않는다
+correctOptionId: wrap
+shuffleOptions: true
+explanation:
+- type: text
+  text: 원형 큐는 인덱스를 capacity로 나눈 나머지로 계산해 끝에서 처음으로 순환합니다. 이 방식으로 dequeue 후 공간을 재사용합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- circular-buffer
+difficulty: 2

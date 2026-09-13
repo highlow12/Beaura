@@ -1,0 +1,28 @@
+id: ds.adt.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 스택 동작 코드의 출력 결과를 고르세요.
+language: python
+code: 'items = []
+
+  items.append("A")
+
+  items.append("B")
+
+  print(items.pop())'
+choices:
+- B
+- A
+- '["A", "B"]'
+acceptedOutputs:
+- B
+explanation:
+- type: text
+  text: append로 B가 마지막에 들어갔으므로 pop은 마지막 원소인 B를 꺼냅니다. 이는 스택 ADT의 LIFO 규칙입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- adt
+- interface
+difficulty: 2

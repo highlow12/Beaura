@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.topological-sort.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: 위상 정렬의 용어와 역할을 연결하세요.
+leftItems:
+- id: indegree
+  content:
+  - type: text
+    text: 진입 차수
+- id: zero
+  content:
+  - type: text
+    text: 진입 차수 0
+- id: cycle
+  content:
+  - type: text
+    text: 사이클
+rightItems:
+- id: incoming
+  content:
+  - type: text
+    text: 정점으로 들어오는 간선의 수
+- id: ready
+  content:
+  - type: text
+    text: 바로 순서에 넣을 수 있는 후보
+- id: impossible
+  content:
+  - type: text
+    text: 모든 간선 조건을 만족하는 순서를 막는 구조
+correctPairs:
+- leftId: indegree
+  rightId: incoming
+- leftId: zero
+  rightId: ready
+- leftId: cycle
+  rightId: impossible
+explanation:
+- type: text
+  text: Kahn 알고리즘은 진입 차수 0인 정점을 준비된 후보로 사용하고, 사이클이 남으면 후보가 고갈됩니다.
+tags:
+- graph
+- topological-sort
+- dag
+difficulty: 2

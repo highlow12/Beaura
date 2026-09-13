@@ -1,0 +1,34 @@
+id: algo.merge-sort.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 병합 정렬의 핵심 과정은 무엇인가요?
+options:
+- id: split-merge
+  content:
+  - type: text
+    text: 배열을 나누고 각 부분을 정렬한 뒤 병합한다
+- id: neighbor
+  content:
+  - type: text
+    text: 이웃 원소만 반복해서 교환한다
+- id: pivot
+  content:
+  - type: text
+    text: 하나의 기준값으로 양쪽을 나눈다
+- id: heap-root
+  content:
+  - type: text
+    text: 항상 힙 루트만 제거한다
+correctOptionId: split-merge
+shuffleOptions: true
+explanation:
+- type: text
+  text: 병합 정렬은 분할해 작은 문제를 만든 뒤 정렬된 두 부분을 병합합니다. 이웃 교환은 버블, pivot 분할은 퀵 정렬의 핵심입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- merge-sort
+- divide-conquer
+difficulty: 2

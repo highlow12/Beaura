@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.astar.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: A*가 다음 후보를 고를 때 사용하는 기본 우선순위는 무엇인가요?
+options:
+- id: g-plus-h
+  content:
+  - type: text
+    text: 지금까지 비용 g와 예상 비용 h의 합
+- id: g-only
+  content:
+  - type: text
+    text: 지금까지 비용 g만 사용
+- id: h-minus-g
+  content:
+  - type: text
+    text: 예상 비용 h에서 실제 비용 g를 뺀 값
+correctOptionId: g-plus-h
+shuffleOptions: true
+explanation:
+- type: text
+  text: A*는 f = g + h를 최소화하는 후보를 먼저 확장합니다. h가 0이면 Dijkstra와 같은 선택이 됩니다.
+tags:
+- graph
+- shortest-path
+- astar
+difficulty: 1

@@ -1,0 +1,47 @@
+id: py.slicing.match-01
+type: matching
+prompt:
+- type: text
+  text: 슬라이싱 문법과 의미를 연결하세요.
+leftItems:
+- id: prefix
+  content:
+  - type: text
+    text: values[:3]
+- id: suffix
+  content:
+  - type: text
+    text: values[2:]
+- id: stride
+  content:
+  - type: text
+    text: values[::2]
+rightItems:
+- id: from-start
+  content:
+  - type: text
+    text: 처음부터 인덱스 3 직전까지
+- id: to-end
+  content:
+  - type: text
+    text: 인덱스 2부터 끝까지
+- id: every-two
+  content:
+  - type: text
+    text: 두 칸 간격으로 선택
+correctPairs:
+- leftId: prefix
+  rightId: from-start
+- leftId: suffix
+  rightId: to-end
+- leftId: stride
+  rightId: every-two
+explanation:
+- type: text
+  text: 콜론 앞이나 뒤를 생략하면 범위의 시작 또는 끝을 기본값으로 사용합니다. 세 번째 항은 step입니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- slicing
+difficulty: 2

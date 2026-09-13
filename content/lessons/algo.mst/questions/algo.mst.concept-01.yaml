@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.mst.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: 최소 신장 트리가 반드시 만족해야 하는 조건은 무엇인가요?
+options:
+- id: connected-acyclic
+  content:
+  - type: text
+    text: 모든 정점을 연결하고 사이클이 없으며 가중치 합이 최소다
+- id: shortest-pair
+  content:
+  - type: text
+    text: 임의의 두 정점 사이 최단 경로 하나만 가진다
+- id: all-edges
+  content:
+  - type: text
+    text: 그래프의 모든 간선을 포함한다
+correctOptionId: connected-acyclic
+shuffleOptions: true
+explanation:
+- type: text
+  text: 신장 트리는 모든 정점을 연결하는 사이클 없는 부분 그래프이고, MST는 그중 가중치 합이 최소인 것입니다.
+tags:
+- graph
+- mst
+- spanning-tree
+difficulty: 1

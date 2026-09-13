@@ -1,0 +1,47 @@
+id: ds.deque.match-01
+type: matching
+prompt:
+- type: text
+  text: 덱 연산과 의미를 연결하세요.
+leftItems:
+- id: appendleft
+  content:
+  - type: text
+    text: appendleft(x)
+- id: append
+  content:
+  - type: text
+    text: append(x)
+- id: popleft
+  content:
+  - type: text
+    text: popleft()
+rightItems:
+- id: front-insert
+  content:
+  - type: text
+    text: 앞에 원소를 추가한다
+- id: back-insert
+  content:
+  - type: text
+    text: 뒤에 원소를 추가한다
+- id: front-remove
+  content:
+  - type: text
+    text: 앞에서 원소를 제거한다
+correctPairs:
+- leftId: appendleft
+  rightId: front-insert
+- leftId: append
+  rightId: back-insert
+- leftId: popleft
+  rightId: front-remove
+explanation:
+- type: text
+  text: 연산 이름의 left와 동작 이름을 함께 읽으면 어느 끝에서 삽입·삭제하는지 구분할 수 있습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- deque
+difficulty: 2

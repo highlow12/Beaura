@@ -1,0 +1,28 @@
+id: py.expressions.trace-01
+type: code-output
+prompt:
+- type: text
+  text: 다음 표현식의 출력 결과를 고르세요.
+language: python
+code: 'left = 2
+
+  right = 3
+
+  value = left + right * 4
+
+  print(value)'
+choices:
+- '14'
+- '20'
+- '24'
+acceptedOutputs:
+- '14'
+explanation:
+- type: text
+  text: 곱셈 표현식 right * 4가 먼저 12가 되고, 그 값을 left와 더해 14가 됩니다.
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- values
+difficulty: 2

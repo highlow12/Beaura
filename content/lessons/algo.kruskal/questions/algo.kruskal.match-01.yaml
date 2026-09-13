@@ -1,0 +1,49 @@
+schemaVersion: 1
+id: algo.kruskal.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: Kruskal의 자료구조와 연산을 역할에 맞게 연결하세요.
+leftItems:
+- id: edge-sort
+  content:
+  - type: text
+    text: 간선 정렬
+- id: find
+  content:
+  - type: text
+    text: find
+- id: union
+  content:
+  - type: text
+    text: union
+rightItems:
+- id: weight-order
+  content:
+  - type: text
+    text: 가중치가 작은 간선부터 보게 한다
+- id: representative
+  content:
+  - type: text
+    text: 정점이 속한 묶음의 대표를 찾는다
+- id: merge
+  content:
+  - type: text
+    text: 서로 다른 묶음을 하나로 합친다
+correctPairs:
+- leftId: edge-sort
+  rightId: weight-order
+- leftId: find
+  rightId: representative
+- leftId: union
+  rightId: merge
+explanation:
+- type: text
+  text: 두 끝점의 대표가 다를 때만 union을 수행하고 간선을 선택합니다.
+tags:
+- graph
+- mst
+- kruskal
+- union-find
+difficulty: 2

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.greedy.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: 활동 선택 그리디 알고리즘의 실행 순서를 배열하세요.
+items:
+- id: sort
+  content:
+  - type: text
+    text: 활동을 종료 시간 순으로 정렬한다
+- id: candidate
+  content:
+  - type: text
+    text: 아직 고려하지 않은 다음 활동을 본다
+- id: compatible
+  content:
+  - type: text
+    text: 마지막 선택과 겹치지 않으면 활동을 고른다
+- id: boundary
+  content:
+  - type: text
+    text: 마지막 종료 시간을 갱신한다
+correctOrder:
+- sort
+- candidate
+- compatible
+- boundary
+explanation:
+- type: text
+  text: 종료 시간이 빠른 순으로 보고 호환되는 활동만 선택하면 남은 시간에 더 많은 활동을 배치할 수 있습니다.
+tags:
+- greedy
+- activity-selection
+- execution-order
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.linked-list
+revision: 1
+track: data-structures
+title: 단일 연결 리스트
+description: 노드의 next 참조를 한 방향으로 연결하는 단일 연결 리스트의 탐색과 삽입을 익힌다.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.linked-list.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.linked-list.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.linked-list.complete-01
+- type: question
+  ref: ds.linked-list.steps-01
+- type: question
+  ref: ds.linked-list.match-01

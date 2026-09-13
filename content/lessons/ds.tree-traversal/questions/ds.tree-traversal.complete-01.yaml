@@ -1,0 +1,26 @@
+id: ds.tree-traversal.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 전위 순회에서 현재 노드 뒤에 방문할 자식을 완성하세요.
+language: python
+template: 'visit(node)
+
+  visit(node["{{blank:child}}"])'
+blanks:
+- id: child
+  choices:
+  - left
+  - value
+  - parent
+  acceptedAnswers:
+  - left
+explanation:
+- type: text
+  text: 전위 순회는 현재 노드를 방문한 뒤 왼쪽 하위 트리로 내려갑니다. value는 데이터이고 parent는 이 표현에 없습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- traversal
+difficulty: 2

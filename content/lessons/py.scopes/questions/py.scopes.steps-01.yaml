@@ -1,0 +1,36 @@
+id: py.scopes.steps-01
+type: ordering
+prompt:
+- type: text
+  text: 함수 호출과 스코프의 흐름을 배열하세요.
+items:
+- id: call
+  content:
+  - type: text
+    text: 함수를 호출한다
+- id: create
+  content:
+  - type: text
+    text: 호출을 위한 지역 스코프가 생긴다
+- id: lookup
+  content:
+  - type: text
+    text: 지역에서 이름을 먼저 찾는다
+- id: return
+  content:
+  - type: text
+    text: 함수가 끝나며 결과와 함께 지역 스코프가 사라진다
+correctOrder:
+- call
+- create
+- lookup
+- return
+explanation:
+- type: text
+  text: 호출마다 지역 공간이 만들어지고 이름은 그 공간에서 먼저 검색됩니다. 함수가 끝나면 지역 공간은 더 이상 유지되지 않습니다.
+schemaVersion: 1
+revision: 1
+tags:
+- functions
+- scope
+difficulty: 2

@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.backtracking.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: 백트래킹에서 현재 부분 해답이 제약을 위반하면 어떻게 하나요?
+options:
+- id: prune
+  content:
+  - type: text
+    text: 그 가지를 더 확장하지 않고 이전 선택으로 돌아간다
+- id: continue
+  content:
+  - type: text
+    text: 제약을 무시하고 항상 끝까지 내려간다
+- id: restart
+  content:
+  - type: text
+    text: 이미 탐색한 모든 가지를 처음부터 다시 시작한다
+correctOptionId: prune
+shuffleOptions: true
+explanation:
+- type: text
+  text: 백트래킹은 유효하지 않은 부분 해답 아래에 해답이 없다는 사실을 이용해 가지를 잘라 냅니다.
+tags:
+- backtracking
+- search
+- pruning
+difficulty: 1

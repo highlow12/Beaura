@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.connected-components.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: 연결 요소를 세는 알고리즘의 구성 요소와 역할을 연결하세요.
+leftItems:
+- id: visited
+  content:
+  - type: text
+    text: visited 집합
+- id: outer-loop
+  content:
+  - type: text
+    text: 바깥 반복
+- id: traversal
+  content:
+  - type: text
+    text: BFS 또는 DFS
+rightItems:
+- id: mark
+  content:
+  - type: text
+    text: 이미 포함한 정점을 다시 세지 않는다
+- id: scan
+  content:
+  - type: text
+    text: 모든 정점을 새 시작점 후보로 확인한다
+- id: explore
+  content:
+  - type: text
+    text: 시작점에서 같은 요소의 정점을 모두 찾는다
+correctPairs:
+- leftId: visited
+  rightId: mark
+- leftId: outer-loop
+  rightId: scan
+- leftId: traversal
+  rightId: explore
+explanation:
+- type: text
+  text: 바깥 반복은 새 요소를 발견하고, BFS나 DFS는 그 요소 전체를 방문합니다. visited는 중복 집계를 막습니다.
+tags:
+- graph
+- connected-components
+- traversal
+difficulty: 2

@@ -1,0 +1,24 @@
+id: py.comprehensions.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: 각 원소를 두 배로 바꾸도록 컴프리헨션의 빈칸을 고르세요.
+language: python
+template: doubled = [x {{blank:expression}} for x in values]
+blanks:
+- id: expression
+  choices:
+  - '* 2'
+  - + 2
+  - == 2
+  acceptedAnswers:
+  - '* 2'
+explanation:
+- type: text
+  text: 앞부분의 표현식 x * 2가 각 원소의 변환 결과가 되어 새 리스트에 들어갑니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- comprehension
+difficulty: 2

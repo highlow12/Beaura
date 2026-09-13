@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.recursion.trace-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: 재귀 실행의 요소와 역할을 연결하세요.
+leftItems:
+- id: call
+  content:
+  - type: text
+    text: 재귀 호출
+- id: stack
+  content:
+  - type: text
+    text: 호출 스택
+- id: return
+  content:
+  - type: text
+    text: 반환
+rightItems:
+- id: smaller
+  content:
+  - type: text
+    text: 더 작은 입력으로 같은 함수를 다시 실행한다
+- id: frame
+  content:
+  - type: text
+    text: 각 호출의 지역 상태와 다음 작업을 보관한다
+- id: unwind
+  content:
+  - type: text
+    text: 깊은 호출의 결과를 이전 호출로 전달한다
+correctPairs:
+- leftId: call
+  rightId: smaller
+- leftId: stack
+  rightId: frame
+- leftId: return
+  rightId: unwind
+explanation:
+- type: text
+  text: 호출마다 프레임이 쌓이고, 가장 깊은 호출부터 반환되며 결과가 바깥 호출로 올라옵니다.
+tags:
+- recursion
+- call-stack
+- execution
+difficulty: 2

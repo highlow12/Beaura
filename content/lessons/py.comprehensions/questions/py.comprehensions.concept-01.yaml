@@ -1,0 +1,33 @@
+id: py.comprehensions.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 리스트 컴프리헨션의 앞부분 [식 for 원소 in 자료]에서 식의 역할은 무엇인가요?
+options:
+- id: transform
+  content:
+  - type: text
+    text: 각 원소로 결과 리스트에 넣을 값을 계산한다
+- id: source
+  content:
+  - type: text
+    text: 반복할 원본 자료를 지정한다
+- id: filter
+  content:
+  - type: text
+    text: 반드시 원소를 제거하는 조건만 적는다
+- id: sort
+  content:
+  - type: text
+    text: 결과를 자동으로 정렬한다
+correctOptionId: transform
+shuffleOptions: true
+explanation:
+- type: text
+  text: 컴프리헨션의 앞 식은 각 원소를 변환해 결과에 추가할 값을 만듭니다. 원본 지정은 for 뒤가 담당합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- comprehension
+difficulty: 2

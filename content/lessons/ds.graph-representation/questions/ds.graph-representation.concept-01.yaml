@@ -1,0 +1,33 @@
+id: ds.graph-representation.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: 인접 리스트의 표현 방식은 무엇인가요?
+options:
+- id: neighbors
+  content:
+  - type: text
+    text: 각 정점에 연결된 이웃 정점을 목록으로 저장한다
+- id: all-pairs
+  content:
+  - type: text
+    text: 모든 정점 쌍을 항상 표의 모든 칸에 저장한다
+- id: stack
+  content:
+  - type: text
+    text: 정점 하나만 마지막 순서로 저장한다
+- id: sorted
+  content:
+  - type: text
+    text: 간선을 값의 크기순으로만 저장한다
+correctOptionId: neighbors
+shuffleOptions: true
+explanation:
+- type: text
+  text: 인접 리스트는 정점별 이웃 목록을 보관합니다. 인접 행렬은 모든 정점 쌍의 연결을 표로 표현합니다.
+schemaVersion: 1
+revision: 1
+tags:
+- graph
+- representation
+difficulty: 2
