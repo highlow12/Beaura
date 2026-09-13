@@ -15,9 +15,12 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - run: npm run content:audit | tee content-quality-report.txt
       - run: npm run verify
       - run: npx cap sync android
       - uses: actions/upload-artifact@v4
         with:
           name: cs-duolingo-web
-          path: build/
+          path: |
+            build/
+            content-quality-report.txt
