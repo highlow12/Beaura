@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: py.conditionals
-revision: 1
+revision: 2
 track: python
 title: 조건문과 비교
 description: 비교 연산자의 결과에 따라 실행할 코드를 선택하는 방법을 학습한다.
@@ -20,6 +20,8 @@ flow:
     ref: py.conditionals.decision-order-01
   - type: question
     ref: py.conditionals.comparison-meanings-01
+  - type: content
+    ref: content/branches.md
   - type: question
     ref: py.conditionals.output-01
   - type: question

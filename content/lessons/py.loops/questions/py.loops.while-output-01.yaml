@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: py.loops.while-output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 Python 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  count = 0
+  while count < 3:
+      count += 1
+  print(count)
+choices:
+  - '3'
+  - '2'
+  - '4'
+acceptedOutputs:
+  - '3'
+explanation:
+  - type: text
+    text: count는 0, 1, 2일 때 반복문에 들어가 각각 1씩 증가하고, 3이 되면 조건이 거짓이 되어 종료됩니다.
+tags:
+  - loops
+  - while
+  - code-output
+difficulty: 2

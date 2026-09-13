@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: py.functions.return-flow-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 Python 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  def add_one(number):
+      return number + 1
+
+  value = add_one(4)
+  print(value)
+choices:
+  - '5'
+  - '4'
+  - '1'
+acceptedOutputs:
+  - '5'
+explanation:
+  - type: text
+    text: 호출 시 number는 4가 되고 함수가 5를 반환하므로 value에는 5가 저장됩니다.
+tags:
+  - functions
+  - return
+  - code-output
+difficulty: 1

@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: py.functions.return-keyword-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: 두 수의 곱을 호출한 곳으로 돌려주도록 빈칸을 채우세요.
+language: python
+template: |-
+  def multiply(a, b):
+      {{blank:return-keyword}} a * b
+blanks:
+  - id: return-keyword
+    choices:
+      - return
+      - print
+      - def
+    acceptedAnswers:
+      - return
+explanation:
+  - type: text
+    text: return은 계산 결과를 호출한 곳으로 돌려주고 함수 실행을 끝냅니다.
+tags:
+  - functions
+  - return
+  - code-completion
+difficulty: 1
