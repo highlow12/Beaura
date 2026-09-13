@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.sequential.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "순차 회로와 플립플롭에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "플립플롭은 클록의 정해진 시점에 입력을 저장해 다음 시점까지 상태를 유지한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "플립플롭은 입력이 바뀔 때마다 즉시 모든 과거 값을 저장한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "순차 회로의 출력은 현재 입력만으로 항상 결정된다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "플립플롭은 클록의 정해진 시점에 입력을 저장해 다음 시점까지 상태를 유지한다."
+  - type: text
+    text: "순차 회로의 출력은 현재 입력과 내부 상태에 의해 결정됩니다. 플립플롭은 한 비트 상태를 저장하고 클록의 특정 에지에서 새 입력을 받아들입니다."
+tags: [sequential-circuit, flip-flop, clock]
+difficulty: 2

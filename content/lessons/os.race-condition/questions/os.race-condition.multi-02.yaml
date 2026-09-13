@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.race-condition.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "경쟁 조건에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "읽기와 쓰기가 원자적으로 묶이지 않으면 증가 연산 결과가 누락될 수 있다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "공유 데이터의 임계 구역을 동기화하면 경쟁 조건을 줄일 수 있다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "두 스레드가 같은 값을 읽어도 최종 쓰기 순서는 항상 결과를 두 배로 만든다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "경쟁 조건은 데이터가 공유되지 않아도 반드시 생긴다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "읽기와 쓰기가 원자적으로 묶이지 않으면 증가 연산 결과가 누락될 수 있다. 공유 데이터의 임계 구역을 동기화하면 경쟁 조건을 줄일 수 있다."
+  - type: text
+    text: "임계 구역을 넓게 잠그면 안전하지만 병렬성이 줄어듭니다. 보호 범위를 작게 만들되 불변식이 깨지는 모든 접근을 빠짐없이 포함해야 합니다."
+tags: [race-condition, concurrency, synchronization]
+difficulty: 3

@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.race-condition.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "경쟁 조건의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: read
+    content:
+      - type: text
+        text: "실행 흐름이 공유 상태를 읽는다"
+  - id: interleave
+    content:
+      - type: text
+        text: "다른 흐름의 읽기·쓰기가 중간에 끼어든다"
+  - id: race
+    content:
+      - type: text
+        text: "순서에 따라 서로 다른 결과가 저장된다"
+correctOrder: [read, interleave, race]
+explanation:
+  - type: text
+    text: "실행 흐름이 공유 상태를 읽는다 단계가 먼저이고, 그 결과를 이용해 다른 흐름의 읽기·쓰기가 중간에 끼어든다 단계가 이어집니다."
+  - type: text
+    text: "순서에 따라 서로 다른 결과가 저장된다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [race-condition, concurrency, synchronization]
+difficulty: 3

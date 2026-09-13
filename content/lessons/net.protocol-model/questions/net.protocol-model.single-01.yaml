@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.protocol-model.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "패킷과 계층 모델에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "프로토콜은 메시지 교환 규칙이고 계층은 통신 책임을 단계별로 나누는 구조다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "패킷은 네트워크 전체에서 항상 하나의 고정 크기 파일이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "계층 모델에서는 모든 계층이 같은 주소와 오류 처리만 공유한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "프로토콜은 메시지 교환 규칙이고 계층은 통신 책임을 단계별로 나누는 구조다."
+  - type: text
+    text: "프로토콜은 통신 주체가 메시지 형식과 순서를 합의한 규칙이고, 패킷은 전송을 위해 헤더와 데이터로 나눈 단위입니다. 계층 모델은 주소 지정·전달·응용 의미를 분리합니다."
+tags: [network, protocol, encapsulation]
+difficulty: 1

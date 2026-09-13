@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.protocol-model
+revision: 1
+track: networks
+title: 패킷과 계층 모델
+description: 네트워크에서 패킷·프로토콜·계층이 역할을 나누는 이유를 이해한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: net.protocol-model.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: net.protocol-model.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: net.protocol-model.fill-03
+  - type: question
+    ref: net.protocol-model.ordering-04
+  - type: question
+    ref: net.protocol-model.matching-05

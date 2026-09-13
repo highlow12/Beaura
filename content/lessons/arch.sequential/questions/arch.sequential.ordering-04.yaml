@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.sequential.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "순차 회로와 플립플롭의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: sample
+    content:
+      - type: text
+        text: "클록 에지에서 입력을 샘플링한다"
+  - id: store
+    content:
+      - type: text
+        text: "샘플링한 값을 내부 상태로 저장한다"
+  - id: hold
+    content:
+      - type: text
+        text: "다음 갱신 시점까지 저장값을 출력한다"
+correctOrder: [sample, store, hold]
+explanation:
+  - type: text
+    text: "클록 에지에서 입력을 샘플링한다 단계가 먼저이고, 그 결과를 이용해 샘플링한 값을 내부 상태로 저장한다 단계가 이어집니다."
+  - type: text
+    text: "다음 갱신 시점까지 저장값을 출력한다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+tags: [sequential-circuit, flip-flop, clock]
+difficulty: 3

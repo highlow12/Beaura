@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.address-space.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "프로세스 주소 공간에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "가상 주소"
+  - "MAC 주소"
+  - "opcode"
+acceptedAnswers:
+  - "가상 주소"
+explanation:
+  - type: text
+    text: "가상 주소은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "프로세스 주소 공간은 해당 프로세스가 사용할 수 있는 가상 주소의 범위입니다. 일반적으로 코드, 전역 데이터, 동적으로 늘어나는 힙, 함수 호출이 쌓이는 스택 영역으로 구분합니다."
+tags: [process, virtual-memory, address-space]
+difficulty: 2

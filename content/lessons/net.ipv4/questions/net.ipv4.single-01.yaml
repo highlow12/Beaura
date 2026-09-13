@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.ipv4.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "IP 주소와 IPv4 패킷에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "IPv4 패킷은 목적지 IP를 기준으로 여러 라우터를 거치는 최선형 네트워크 계층 단위다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "IPv4 주소는 링크 안에서만 쓰이는 48비트 MAC 주소다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "IP는 손실된 패킷을 항상 자동 재전송해 신뢰성을 보장한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "IPv4 패킷은 목적지 IP를 기준으로 여러 라우터를 거치는 최선형 네트워크 계층 단위다."
+  - type: text
+    text: "IPv4 주소는 32비트 값으로 네트워크 부분과 호스트 부분을 구분해 사용합니다. IP 패킷은 출발지·목적지 주소와 TTL 같은 헤더를 가지고 라우터를 거칩니다."
+tags: [ip, ipv4, internet-layer]
+difficulty: 2

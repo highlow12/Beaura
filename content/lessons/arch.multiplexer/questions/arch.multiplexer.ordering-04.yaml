@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.multiplexer.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "멀티플렉서의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: read
+    content:
+      - type: text
+        text: "데이터 입력들과 선택 신호를 읽는다"
+  - id: select
+    content:
+      - type: text
+        text: "선택 신호가 가리키는 입력 경로를 활성화한다"
+  - id: forward
+    content:
+      - type: text
+        text: "선택된 값만 출력으로 전달한다"
+correctOrder: [read, select, forward]
+explanation:
+  - type: text
+    text: "데이터 입력들과 선택 신호를 읽는다 단계가 먼저이고, 그 결과를 이용해 선택 신호가 가리키는 입력 경로를 활성화한다 단계가 이어집니다."
+  - type: text
+    text: "선택된 값만 출력으로 전달한다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+tags: [multiplexer, combinational-circuit, datapath]
+difficulty: 3

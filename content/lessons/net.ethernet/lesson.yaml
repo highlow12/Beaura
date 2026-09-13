@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.ethernet
+revision: 1
+track: networks
+title: 이더넷 프레임
+description: 같은 링크 안에서 이더넷 프레임과 MAC 주소가 데이터를 전달하는 방식을 배운다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: net.ethernet.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: net.ethernet.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: net.ethernet.fill-03
+  - type: question
+    ref: net.ethernet.ordering-04
+  - type: question
+    ref: net.ethernet.matching-05

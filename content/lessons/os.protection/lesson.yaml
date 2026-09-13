@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.protection
+revision: 1
+track: operating-systems
+title: 권한과 프로세스 격리
+description: 페이지 권한·특권 명령·프로세스 격리로 오류와 공격의 범위를 제한하는 원리를 배운다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.protection.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.protection.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.protection.fill-03
+  - type: question
+    ref: os.protection.ordering-04
+  - type: question
+    ref: os.protection.matching-05

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.scheduling.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "CPU 스케줄링에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "라운드 로빈"
+  - "캐시 일관성"
+  - "깊이 우선 탐색"
+acceptedAnswers:
+  - "라운드 로빈"
+explanation:
+  - type: text
+    text: "라운드 로빈은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "CPU 스케줄러는 준비 상태의 실행 단위 중 다음에 실행할 것을 선택합니다. FCFS, 라운드 로빈, 우선순위 같은 정책은 대기 시간·응답 시간·공정성을 서로 다르게 만듭니다."
+tags: [scheduling, cpu, fairness]
+difficulty: 2

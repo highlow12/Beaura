@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.filesystem.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "파일·디렉터리와 파일시스템에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "파일시스템"
+  - "분기 예측"
+  - "가산기"
+acceptedAnswers:
+  - "파일시스템"
+explanation:
+  - type: text
+    text: "파일시스템은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "파일시스템은 파일의 내용 블록, 크기·소유자·권한 같은 메타데이터, 디렉터리의 이름-파일 연결을 관리합니다. 디렉터리는 파일을 담는 특별한 이름 공간입니다."
+tags: [filesystem, file, directory]
+difficulty: 2

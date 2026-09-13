@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: os.page-table.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "페이지 테이블과 TLB의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "page-table-entry"
+  - id: left-b
+    content:
+      - type: text
+        text: "TLB"
+  - id: left-c
+    content:
+      - type: text
+        text: "permission-bit"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "페이지·프레임·권한 매핑 항목"
+  - id: right-b
+    content:
+      - type: text
+        text: "최근 주소 변환을 저장하는 캐시"
+  - id: right-c
+    content:
+      - type: text
+        text: "읽기·쓰기·실행 허용을 나타내는 비트"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "page-table-entry은 페이지·프레임·권한 매핑 항목, TLB은 최근 주소 변환을 저장하는 캐시입니다."
+  - type: text
+    text: "permission-bit은 읽기·쓰기·실행 허용을 나타내는 비트을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [page-table, tlb, mmu]
+difficulty: 3

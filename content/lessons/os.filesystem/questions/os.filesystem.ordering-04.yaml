@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.filesystem.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "파일·디렉터리와 파일시스템의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: resolve
+    content:
+      - type: text
+        text: "경로의 디렉터리 항목을 따라 파일을 찾는다"
+  - id: metadata
+    content:
+      - type: text
+        text: "파일의 권한·크기·블록 정보를 확인한다"
+  - id: io
+    content:
+      - type: text
+        text: "파일 기술자를 통해 데이터 블록을 읽거나 쓴다"
+correctOrder: [resolve, metadata, io]
+explanation:
+  - type: text
+    text: "경로의 디렉터리 항목을 따라 파일을 찾는다 단계가 먼저이고, 그 결과를 이용해 파일의 권한·크기·블록 정보를 확인한다 단계가 이어집니다."
+  - type: text
+    text: "파일 기술자를 통해 데이터 블록을 읽거나 쓴다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [filesystem, file, directory]
+difficulty: 3

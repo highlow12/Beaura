@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.allocation.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "스택·힙과 메모리 할당의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: request
+    content:
+      - type: text
+        text: "프로그램이 필요한 크기의 메모리를 요청한다"
+  - id: split
+    content:
+      - type: text
+        text: "할당자가 빈 블록을 골라 필요한 크기로 나눈다"
+  - id: free
+    content:
+      - type: text
+        text: "사용이 끝나면 블록을 반환하고 인접 블록과 합칠 수 있다"
+correctOrder: [request, split, free]
+explanation:
+  - type: text
+    text: "프로그램이 필요한 크기의 메모리를 요청한다 단계가 먼저이고, 그 결과를 이용해 할당자가 빈 블록을 골라 필요한 크기로 나눈다 단계가 이어집니다."
+  - type: text
+    text: "사용이 끝나면 블록을 반환하고 인접 블록과 합칠 수 있다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [memory-allocation, stack, heap]
+difficulty: 3

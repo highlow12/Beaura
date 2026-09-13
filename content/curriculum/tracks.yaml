@@ -35,3 +35,15 @@ tracks:
     title: 컴퓨터 시스템 응용
     description: 네트워크와 그래픽스의 기초 개념을 익힌다.
     order: 50
+
+  - id: operating-systems
+    revision: 1
+    title: 운영체제
+    description: 프로세스, 동시성, 메모리와 입출원을 관리하는 운영체제의 핵심 원리를 익힌다.
+    order: 55
+
+  - id: networks
+    revision: 1
+    title: 네트워크
+    description: 링크 계층부터 웹 보안까지 데이터가 네트워크를 이동하는 원리를 익힌다.
+    order: 60

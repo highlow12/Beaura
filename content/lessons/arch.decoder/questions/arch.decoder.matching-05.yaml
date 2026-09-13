@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.decoder.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "디코더와 주소 선택의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "input-code"
+  - id: left-b
+    content:
+      - type: text
+        text: "one-hot"
+  - id: left-c
+    content:
+      - type: text
+        text: "enable"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "선택을 표현한 n비트 입력"
+  - id: right-b
+    content:
+      - type: text
+        text: "한 출력만 활성인 선택 형태"
+  - id: right-c
+    content:
+      - type: text
+        text: "디코더 동작을 허용하는 제어 신호"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "input-code은 선택을 표현한 n비트 입력, one-hot은 한 출력만 활성인 선택 형태입니다."
+  - type: text
+    text: "enable은 디코더 동작을 허용하는 제어 신호을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [decoder, address, digital-logic]
+difficulty: 2

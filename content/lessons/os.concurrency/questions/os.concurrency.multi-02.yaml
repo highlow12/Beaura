@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.concurrency.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "동시성과 원자성에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "단일 코어의 빠른 교대도 여러 작업의 동시성을 만들 수 있다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "원자 연산은 공유 값의 읽기와 갱신을 끼어들 수 없는 한 단위로 처리한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "다중 코어에서는 동기화가 필요 없으므로 모든 메모리 연산이 자동 원자적이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "병렬 실행의 처리량은 작업 간 의존성과 무관하게 항상 코어 수만큼 증가한다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "단일 코어의 빠른 교대도 여러 작업의 동시성을 만들 수 있다. 원자 연산은 공유 값의 읽기와 갱신을 끼어들 수 없는 한 단위로 처리한다."
+  - type: text
+    text: "병렬성은 처리량을 높이지만 동기화·캐시 일관성·디버깅 비용을 추가합니다. 원자 연산은 작은 상태에는 편리하지만 복잡한 불변식에는 락이나 트랜잭션이 필요할 수 있습니다."
+tags: [concurrency, parallelism, atomicity]
+difficulty: 4

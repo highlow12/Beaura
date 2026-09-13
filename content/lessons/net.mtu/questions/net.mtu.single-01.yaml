@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.mtu.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "MTU와 단편화에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "MTU는 링크가 운반할 수 있는 패킷 크기의 한계이며 경로의 최소 MTU가 전송 크기에 영향을 준다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "MTU는 DNS 캐시가 보관하는 이름 레코드 수를 뜻한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "MTU보다 큰 패킷은 어떤 프로토콜에서도 자동으로 무한히 전송된다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "MTU는 링크가 운반할 수 있는 패킷 크기의 한계이며 경로의 최소 MTU가 전송 크기에 영향을 준다."
+  - type: text
+    text: "MTU(Maximum Transmission Unit)는 링크가 한 프레임에 담을 수 있는 IP payload의 최대 크기와 관련된 한계입니다. 경로의 가장 작은 MTU가 종단 간 전송 크기를 제한합니다."
+tags: [mtu, fragmentation, ip]
+difficulty: 3

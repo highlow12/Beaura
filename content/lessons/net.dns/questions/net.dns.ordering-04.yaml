@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.dns.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "DNS 이름 해석의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: cache
+    content:
+      - type: text
+        text: "로컬·재귀 캐시에서 이름을 먼저 조회한다"
+  - id: delegate
+    content:
+      - type: text
+        text: "루트·TLD·권한 서버로 질의를 위임한다"
+  - id: answer
+    content:
+      - type: text
+        text: "IP 레코드를 받아 TTL과 함께 캐시한다"
+correctOrder: [cache, delegate, answer]
+explanation:
+  - type: text
+    text: "로컬·재귀 캐시에서 이름을 먼저 조회한다 단계가 먼저이고, 그 결과를 이용해 루트·TLD·권한 서버로 질의를 위임한다 단계가 이어집니다."
+  - type: text
+    text: "IP 레코드를 받아 TTL과 함께 캐시한다 단계에서 결과가 다음 네트워크 계층이나 응용으로 전달됩니다."
+tags: [dns, name-resolution, cache]
+difficulty: 3

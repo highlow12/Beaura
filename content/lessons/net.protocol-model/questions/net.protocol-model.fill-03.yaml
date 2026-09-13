@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: net.protocol-model.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "패킷과 계층 모델에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "캡슐화"
+  - "오버플로"
+  - "페이지 폴트"
+acceptedAnswers:
+  - "캡슐화"
+explanation:
+  - type: text
+    text: "캡슐화은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "프로토콜은 통신 주체가 메시지 형식과 순서를 합의한 규칙이고, 패킷은 전송을 위해 헤더와 데이터로 나눈 단위입니다. 계층 모델은 주소 지정·전달·응용 의미를 분리합니다."
+tags: [network, protocol, encapsulation]
+difficulty: 1

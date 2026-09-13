@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.arithmetic.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "이진 산술과 오버플로의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: low
+    content:
+      - type: text
+        text: "가장 낮은 자리부터 두 비트를 더한다"
+  - id: carry
+    content:
+      - type: text
+        text: "합이 2 이상이면 다음 자리로 자리올림한다"
+  - id: check
+    content:
+      - type: text
+        text: "고정 폭을 넘었는지 오버플로를 판정한다"
+correctOrder: [low, carry, check]
+explanation:
+  - type: text
+    text: "가장 낮은 자리부터 두 비트를 더한다 단계가 먼저이고, 그 결과를 이용해 합이 2 이상이면 다음 자리로 자리올림한다 단계가 이어집니다."
+  - type: text
+    text: "고정 폭을 넘었는지 오버플로를 판정한다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+tags: [binary-arithmetic, carry, overflow]
+difficulty: 3

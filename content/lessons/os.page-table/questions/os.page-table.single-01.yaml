@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.page-table.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "페이지 테이블과 TLB에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "TLB는 최근 가상 페이지와 물리 프레임 매핑을 캐시해 주소 변환을 빠르게 한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "TLB는 파일 내용을 네트워크로 전송하는 큐다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "페이지 테이블은 모든 프로세스가 권한 없이 공유하는 단일 배열이다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "TLB는 최근 가상 페이지와 물리 프레임 매핑을 캐시해 주소 변환을 빠르게 한다."
+  - type: text
+    text: "페이지 테이블은 가상 페이지 번호와 물리 프레임 번호, 읽기·쓰기·실행 권한을 기록합니다. TLB는 자주 쓰는 변환을 저장하는 작은 캐시입니다."
+tags: [page-table, tlb, mmu]
+difficulty: 3

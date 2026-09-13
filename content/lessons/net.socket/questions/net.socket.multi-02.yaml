@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.socket.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "소켓과 클라이언트·서버에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "서버는 보통 bind와 listen으로 연결을 기다린 뒤 accept로 연결을 받는다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "소켓 read/write는 응용 데이터와 전송 계층 사이의 인터페이스가 된다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "한 리스닝 소켓은 동시에 하나의 클라이언트 연결만 절대 처리할 수 없다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "소켓 write가 호출되면 상대 응용 프로그램이 반드시 전체 데이터를 즉시 읽는다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "서버는 보통 bind와 listen으로 연결을 기다린 뒤 accept로 연결을 받는다. 소켓 read/write는 응용 데이터와 전송 계층 사이의 인터페이스가 된다."
+  - type: text
+    text: "소켓 추상화는 응용 개발을 단순하게 하지만 타임아웃·부분 read/write·동시 연결 수를 관리해야 합니다. 블로킹과 이벤트 기반 API 선택도 서버 구조에 영향을 줍니다."
+tags: [socket, client-server, api]
+difficulty: 3

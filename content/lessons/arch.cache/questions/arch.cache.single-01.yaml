@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.cache.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "캐시와 지역성에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "캐시 hit는 요청한 메모리 블록이 빠른 캐시에 있어 바로 사용할 수 있는 경우다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "캐시 miss는 데이터가 영구적으로 삭제되었다는 뜻이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "공간 지역성은 같은 주소를 시간이 지나 다시 접근하는 성질이다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "캐시 hit는 요청한 메모리 블록이 빠른 캐시에 있어 바로 사용할 수 있는 경우다."
+  - type: text
+    text: "캐시는 자주 접근할 것 같은 메모리 블록을 더 빠른 저장소에 보관하는 계층입니다. 시간 지역성은 같은 데이터를 다시 쓰는 경향이고, 공간 지역성은 가까운 주소를 함께 쓰는 경향입니다."
+tags: [cache, locality, memory-hierarchy]
+difficulty: 2

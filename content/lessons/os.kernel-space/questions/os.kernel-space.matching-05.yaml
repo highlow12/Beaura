@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: os.kernel-space.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "커널 공간과 사용자 공간의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "user-space"
+  - id: left-b
+    content:
+      - type: text
+        text: "kernel-space"
+  - id: left-c
+    content:
+      - type: text
+        text: "privilege"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "제한된 권한으로 앱이 실행되는 영역"
+  - id: right-b
+    content:
+      - type: text
+        text: "운영체제 핵심 코드가 실행되는 영역"
+  - id: right-c
+    content:
+      - type: text
+        text: "명령어·메모리 접근을 허용하는 권한 수준"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "user-space은 제한된 권한으로 앱이 실행되는 영역, kernel-space은 운영체제 핵심 코드가 실행되는 영역입니다."
+  - type: text
+    text: "privilege은 명령어·메모리 접근을 허용하는 권한 수준을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [kernel, user-space, protection]
+difficulty: 1

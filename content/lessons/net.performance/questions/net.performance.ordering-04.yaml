@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.performance.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "지연·대역폭·손실의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: measure
+    content:
+      - type: text
+        text: "왕복 시간·손실·처리량을 측정한다"
+  - id: locate
+    content:
+      - type: text
+        text: "전파·전송·큐잉 병목을 구분한다"
+  - id: tune
+    content:
+      - type: text
+        text: "버퍼·혼잡 제어·전송 방식을 조정한다"
+correctOrder: [measure, locate, tune]
+explanation:
+  - type: text
+    text: "왕복 시간·손실·처리량을 측정한다 단계가 먼저이고, 그 결과를 이용해 전파·전송·큐잉 병목을 구분한다 단계가 이어집니다."
+  - type: text
+    text: "버퍼·혼잡 제어·전송 방식을 조정한다 단계에서 결과가 다음 네트워크 계층이나 응용으로 전달됩니다."
+tags: [network-performance, latency, bandwidth]
+difficulty: 3

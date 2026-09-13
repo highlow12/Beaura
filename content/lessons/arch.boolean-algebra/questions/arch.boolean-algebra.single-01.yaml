@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.boolean-algebra.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "불 대수와 XOR에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "XOR는 두 입력 중 정확히 하나가 1일 때 1을 출력한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "XOR는 입력 중 하나 이상이 1이면 항상 1을 출력한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "XOR는 두 입력이 모두 1일 때만 1을 출력한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "XOR는 두 입력 중 정확히 하나가 1일 때 1을 출력한다."
+  - type: text
+    text: "불 대수에서는 변수 값이 0 또는 1이고 AND는 곱, OR는 합, NOT은 보수처럼 다룹니다. XOR는 두 입력이 서로 다를 때만 1인 연산입니다."
+tags: [boolean-algebra, xor, logic]
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.socket
+revision: 1
+track: networks
+title: 소켓과 클라이언트·서버
+description: 소켓 API가 응용 프로그램의 통신 종단점을 만들고 연결을 관리하는 흐름을 익힌다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: net.socket.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: net.socket.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: net.socket.fill-03
+  - type: question
+    ref: net.socket.ordering-04
+  - type: question
+    ref: net.socket.matching-05

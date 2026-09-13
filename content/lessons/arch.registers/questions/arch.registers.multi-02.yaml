@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.registers.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "레지스터와 상태 저장에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "프로그램 카운터는 다음에 가져올 명령어 주소를 저장하는 특수 레지스터다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "레지스터 파일의 쓰기는 보통 제어 신호와 클록에 맞춰 일어난다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "레지스터 접근은 일반적으로 메모리 접근보다 느리다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "레지스터 수가 많을수록 저장 용량이 무한히 커진다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "프로그램 카운터는 다음에 가져올 명령어 주소를 저장하는 특수 레지스터다. 레지스터 파일의 쓰기는 보통 제어 신호와 클록에 맞춰 일어난다."
+  - type: text
+    text: "레지스터는 빠르지만 개수와 면적이 제한됩니다. 컴파일러가 자주 쓰는 값을 레지스터에 배치하려는 이유는 메모리 접근 횟수와 지연을 줄이기 위해서입니다."
+tags: [register, register-file, cpu-state]
+difficulty: 3

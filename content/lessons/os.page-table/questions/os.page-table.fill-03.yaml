@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.page-table.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "페이지 테이블과 TLB에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "TLB"
+  - "ALU"
+  - "프레임버퍼"
+acceptedAnswers:
+  - "TLB"
+explanation:
+  - type: text
+    text: "TLB은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "페이지 테이블은 가상 페이지 번호와 물리 프레임 번호, 읽기·쓰기·실행 권한을 기록합니다. TLB는 자주 쓰는 변환을 저장하는 작은 캐시입니다."
+tags: [page-table, tlb, mmu]
+difficulty: 3

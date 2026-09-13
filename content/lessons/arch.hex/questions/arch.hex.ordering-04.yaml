@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.hex.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "16진수와 바이트의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: group
+    content:
+      - type: text
+        text: "이진수를 오른쪽부터 4비트씩 묶는다"
+  - id: map
+    content:
+      - type: text
+        text: "각 묶음을 0~F 기호로 대응시킨다"
+  - id: write
+    content:
+      - type: text
+        text: "필요하면 0x 접두사와 함께 이어 쓴다"
+correctOrder: [group, map, write]
+explanation:
+  - type: text
+    text: "이진수를 오른쪽부터 4비트씩 묶는다 단계가 먼저이고, 그 결과를 이용해 각 묶음을 0~F 기호로 대응시킨다 단계가 이어집니다."
+  - type: text
+    text: "필요하면 0x 접두사와 함께 이어 쓴다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+tags: [hexadecimal, bits, byte]
+difficulty: 2

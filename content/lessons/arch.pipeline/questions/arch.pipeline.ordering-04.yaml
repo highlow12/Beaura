@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.pipeline.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "파이프라인과 해저드의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: overlap
+    content:
+      - type: text
+        text: "서로 다른 명령어를 각 단계에 배치한다"
+  - id: detect
+    content:
+      - type: text
+        text: "데이터·제어 의존성으로 해저드를 감지한다"
+  - id: resolve
+    content:
+      - type: text
+        text: "forwarding·stall·예측으로 충돌을 처리한다"
+correctOrder: [overlap, detect, resolve]
+explanation:
+  - type: text
+    text: "서로 다른 명령어를 각 단계에 배치한다 단계가 먼저이고, 그 결과를 이용해 데이터·제어 의존성으로 해저드를 감지한다 단계가 이어집니다."
+  - type: text
+    text: "forwarding·stall·예측으로 충돌을 처리한다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+tags: [pipeline, hazard, cpu-performance]
+difficulty: 4

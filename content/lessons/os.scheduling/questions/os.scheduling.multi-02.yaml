@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.scheduling.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "CPU 스케줄링에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "라운드 로빈은 작업마다 시간 조각을 주어 준비 큐를 순환한다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "높은 우선순위만 계속 선택하면 낮은 우선순위 작업이 굶을 수 있다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "대기 시간과 응답 시간은 어떤 스케줄링 정책에서도 항상 같다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "스케줄링의 목표에는 공정성이나 처리량이 포함될 수 없다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "라운드 로빈은 작업마다 시간 조각을 주어 준비 큐를 순환한다. 높은 우선순위만 계속 선택하면 낮은 우선순위 작업이 굶을 수 있다."
+  - type: text
+    text: "우선순위 정책은 중요한 작업의 지연을 줄일 수 있지만 낮은 우선순위 작업의 기아를 만들 수 있습니다. aging이나 공정한 시간 배분으로 이를 완화합니다."
+tags: [scheduling, cpu, fairness]
+difficulty: 3

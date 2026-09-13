@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.ipv4.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "IP 주소와 IPv4 패킷의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: route-check
+    content:
+      - type: text
+        text: "목적지가 로컬인지 게이트웨이인지 판단한다"
+  - id: forward
+    content:
+      - type: text
+        text: "라우팅 표에서 다음 홉을 고른다"
+  - id: decrement
+    content:
+      - type: text
+        text: "홉마다 TTL을 줄이고 다음 링크로 보낸다"
+correctOrder: [route-check, forward, decrement]
+explanation:
+  - type: text
+    text: "목적지가 로컬인지 게이트웨이인지 판단한다 단계가 먼저이고, 그 결과를 이용해 라우팅 표에서 다음 홉을 고른다 단계가 이어집니다."
+  - type: text
+    text: "홉마다 TTL을 줄이고 다음 링크로 보낸다 단계에서 결과가 다음 네트워크 계층이나 응용으로 전달됩니다."
+tags: [ip, ipv4, internet-layer]
+difficulty: 3

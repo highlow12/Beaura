@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.context-switch.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "컨텍스트 스위치에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "컨텍스트 스위치"
+  - "정규식 매칭"
+  - "패킷 라우팅"
+acceptedAnswers:
+  - "컨텍스트 스위치"
+explanation:
+  - type: text
+    text: "컨텍스트 스위치은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "컨텍스트 스위치는 현재 실행 단위의 레지스터·프로그램 카운터·스택 포인터 등을 저장하고 다음 단위의 상태를 복원하는 전환입니다."
+tags: [context-switch, scheduler, process]
+difficulty: 2

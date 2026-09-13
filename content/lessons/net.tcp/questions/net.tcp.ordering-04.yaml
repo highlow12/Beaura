@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.tcp.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "TCP 연결과 신뢰성의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: syn
+    content:
+      - type: text
+        text: "클라이언트가 연결 시작과 초기 시퀀스를 보낸다"
+  - id: syn-ack
+    content:
+      - type: text
+        text: "서버가 수신을 확인하고 자신의 시퀀스를 보낸다"
+  - id: ack
+    content:
+      - type: text
+        text: "클라이언트가 확인해 연결을 성립시킨다"
+correctOrder: [syn, syn-ack, ack]
+explanation:
+  - type: text
+    text: "클라이언트가 연결 시작과 초기 시퀀스를 보낸다 단계가 먼저이고, 그 결과를 이용해 서버가 수신을 확인하고 자신의 시퀀스를 보낸다 단계가 이어집니다."
+  - type: text
+    text: "클라이언트가 확인해 연결을 성립시킨다 단계에서 결과가 다음 네트워크 계층이나 응용으로 전달됩니다."
+tags: [tcp, reliability, handshake]
+difficulty: 3

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.routing.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "라우팅과 다음 홉에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "라우터는 목적지 IP와 가장 구체적으로 일치하는 라우팅 표 항목으로 다음 홉을 선택한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "라우터는 패킷의 출발지 프로그램을 실행해 경로를 스스로 계산하지 않는다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "라우팅은 MAC 주소의 길이만 비교해 무작위 포트를 고르는 과정이다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "라우터는 목적지 IP와 가장 구체적으로 일치하는 라우팅 표 항목으로 다음 홉을 선택한다."
+  - type: text
+    text: "라우팅은 목적지 네트워크까지의 경로를 계산하고 포워딩하는 과정입니다. 라우팅 표에는 목적지 프리픽스, 다음 홉, 출력 인터페이스, 비용이 들어갈 수 있습니다."
+tags: [routing, router, forwarding]
+difficulty: 2

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.socket.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "소켓과 클라이언트·서버에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "소켓은 프로세스가 네트워크 통신을 읽고 쓰는 운영체제 관리 종단점이다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "소켓은 라우터 안에서만 존재하는 물리 케이블의 이름이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "accept는 DNS 서버가 도메인 레코드를 권한 서버에 등록하는 호출이다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "소켓은 프로세스가 네트워크 통신을 읽고 쓰는 운영체제 관리 종단점이다."
+  - type: text
+    text: "소켓은 프로세스가 네트워크로 데이터를 보내고 받는 추상적인 통신 종단점입니다. 서버는 주소에 bind·listen·accept하고, 클라이언트는 connect한 뒤 send·receive를 사용합니다."
+tags: [socket, client-server, api]
+difficulty: 2

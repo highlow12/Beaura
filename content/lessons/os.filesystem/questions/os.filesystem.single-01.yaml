@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.filesystem.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "파일·디렉터리와 파일시스템에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "파일시스템은 파일 내용과 메타데이터, 디렉터리 이름 공간을 저장장치 위에서 관리한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "파일시스템은 CPU의 명령어 파이프라인 단계만 기록한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "디렉터리 이름만 있으면 파일 내용 블록 위치와 권한은 필요하지 않다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "파일시스템은 파일 내용과 메타데이터, 디렉터리 이름 공간을 저장장치 위에서 관리한다."
+  - type: text
+    text: "파일시스템은 파일의 내용 블록, 크기·소유자·권한 같은 메타데이터, 디렉터리의 이름-파일 연결을 관리합니다. 디렉터리는 파일을 담는 특별한 이름 공간입니다."
+tags: [filesystem, file, directory]
+difficulty: 2

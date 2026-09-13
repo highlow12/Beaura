@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: net.ethernet.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "이더넷 프레임의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "frame"
+  - id: left-b
+    content:
+      - type: text
+        text: "MAC"
+  - id: left-c
+    content:
+      - type: text
+        text: "switch"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "링크 계층에서 전달하는 캡슐화 단위"
+  - id: right-b
+    content:
+      - type: text
+        text: "링크 인터페이스를 식별하는 주소"
+  - id: right-c
+    content:
+      - type: text
+        text: "LAN 프레임을 포트 사이에 전달하는 장치"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "frame은 링크 계층에서 전달하는 캡슐화 단위, MAC은 링크 인터페이스를 식별하는 주소입니다."
+  - type: text
+    text: "switch은 LAN 프레임을 포트 사이에 전달하는 장치을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [ethernet, mac, link-layer]
+difficulty: 1

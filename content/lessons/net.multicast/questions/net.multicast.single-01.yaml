@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.multicast.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "브로드캐스트와 멀티캐스트에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "브로드캐스트는 같은 영역 전체, 멀티캐스트는 특정 그룹, 유니캐스트는 한 수신자를 대상으로 한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "유니캐스트는 네트워크의 모든 장치가 반드시 복사해 받는 전송이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "멀티캐스트 그룹에 가입하지 않은 모든 장치도 항상 payload를 처리한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "브로드캐스트는 같은 영역 전체, 멀티캐스트는 특정 그룹, 유니캐스트는 한 수신자를 대상으로 한다."
+  - type: text
+    text: "유니캐스트는 한 송신자와 한 수신자, 브로드캐스트는 같은 영역의 모든 수신자, 멀티캐스트는 특정 그룹에 가입한 수신자를 대상으로 합니다."
+tags: [broadcast, multicast, unicast]
+difficulty: 1

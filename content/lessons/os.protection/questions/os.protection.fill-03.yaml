@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.protection.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "권한과 프로세스 격리에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "프로세스 격리"
+  - "공간 지역성"
+  - "자리올림"
+acceptedAnswers:
+  - "프로세스 격리"
+explanation:
+  - type: text
+    text: "프로세스 격리은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "보호는 각 실행 주체가 허용된 메모리·명령어·자원만 사용하도록 검사하는 체계입니다. 페이지의 읽기·쓰기·실행 권한과 CPU 특권 수준이 대표적인 도구입니다."
+tags: [protection, isolation, privilege]
+difficulty: 2

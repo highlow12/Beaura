@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: arch.cache
+revision: 1
+track: computer-architecture
+title: 캐시와 지역성
+description: 메모리 계층의 캐시, 시간·공간 지역성, 캐시 미스의 원인을 구분한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: arch.cache.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: arch.cache.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: arch.cache.fill-03
+  - type: question
+    ref: arch.cache.ordering-04
+  - type: question
+    ref: arch.cache.matching-05

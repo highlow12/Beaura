@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: arch.hex
+revision: 1
+track: computer-architecture
+title: 16진수와 바이트
+description: 긴 이진수를 16진수와 바이트 단위로 읽고 쓰는 방법을 익힌다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: arch.hex.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: arch.hex.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: arch.hex.fill-03
+  - type: question
+    ref: arch.hex.ordering-04
+  - type: question
+    ref: arch.hex.matching-05

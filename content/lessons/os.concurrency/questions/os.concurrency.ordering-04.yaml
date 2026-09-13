@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.concurrency.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "동시성과 원자성의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: interleave
+    content:
+      - type: text
+        text: "작업의 실행 조각이 겹쳐 진행된다"
+  - id: share
+    content:
+      - type: text
+        text: "여러 흐름이 같은 상태에 접근한다"
+  - id: atomic-update
+    content:
+      - type: text
+        text: "중간 상태를 숨긴 채 갱신을 완료한다"
+correctOrder: [interleave, share, atomic-update]
+explanation:
+  - type: text
+    text: "작업의 실행 조각이 겹쳐 진행된다 단계가 먼저이고, 그 결과를 이용해 여러 흐름이 같은 상태에 접근한다 단계가 이어집니다."
+  - type: text
+    text: "중간 상태를 숨긴 채 갱신을 완료한다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [concurrency, parallelism, atomicity]
+difficulty: 4

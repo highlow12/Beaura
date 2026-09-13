@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.interrupt-dma.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "인터럽트와 DMA에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "장치 인터럽트가 오면 CPU는 핸들러를 실행하기 위해 현재 상태를 보존한다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "DMA가 끝난 뒤 완료 인터럽트로 드라이버에 알릴 수 있다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "DMA는 메모리와 장치 사이에서 데이터를 옮기지 않고 항상 CPU 레지스터만 수정한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "인터럽트가 많을수록 각 처리 비용은 0이 된다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "장치 인터럽트가 오면 CPU는 핸들러를 실행하기 위해 현재 상태를 보존한다. DMA가 끝난 뒤 완료 인터럽트로 드라이버에 알릴 수 있다."
+  - type: text
+    text: "인터럽트와 DMA는 CPU 개입과 복사 비용을 줄이지만 너무 많은 작은 인터럽트는 오버헤드를 만듭니다. 버퍼 크기와 배치 처리로 처리량과 지연을 조정합니다."
+tags: [interrupt, dma, io]
+difficulty: 3

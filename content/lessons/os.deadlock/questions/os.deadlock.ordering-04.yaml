@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.deadlock.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "교착상태의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: hold
+    content:
+      - type: text
+        text: "각 흐름이 이미 자원을 보유한다"
+  - id: wait
+    content:
+      - type: text
+        text: "다른 흐름이 가진 자원을 추가로 요청한다"
+  - id: cycle
+    content:
+      - type: text
+        text: "대기 그래프에 순환이 생겨 진행이 멈춘다"
+correctOrder: [hold, wait, cycle]
+explanation:
+  - type: text
+    text: "각 흐름이 이미 자원을 보유한다 단계가 먼저이고, 그 결과를 이용해 다른 흐름이 가진 자원을 추가로 요청한다 단계가 이어집니다."
+  - type: text
+    text: "대기 그래프에 순환이 생겨 진행이 멈춘다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [deadlock, lock-order, concurrency]
+difficulty: 4

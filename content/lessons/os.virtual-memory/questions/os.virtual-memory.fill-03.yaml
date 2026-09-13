@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.virtual-memory.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "가상 메모리에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "페이지 폴트"
+  - "분기 예측"
+  - "소켓"
+acceptedAnswers:
+  - "페이지 폴트"
+explanation:
+  - type: text
+    text: "페이지 폴트은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "가상 메모리는 프로세스에 연속적이고 독립적인 주소 공간을 보여 주고, 실제 물리 프레임으로 필요할 때 매핑하는 메모리 관리 기법입니다."
+tags: [virtual-memory, page, memory-protection]
+difficulty: 2

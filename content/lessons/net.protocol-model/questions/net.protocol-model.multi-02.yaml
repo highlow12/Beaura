@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.protocol-model.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "패킷과 계층 모델에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "하위 계층은 상위 데이터에 헤더를 붙여 캡슐화할 수 있다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "수신자는 계층별 헤더를 해석한 뒤 payload를 다음 계층에 전달한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "HTTP 요청은 어떤 전송·인터넷 계층에도 실리지 않고 바로 전선으로 전송된다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "계층화하면 각 계층이 서로의 세부 구현을 모두 알아야 한다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "하위 계층은 상위 데이터에 헤더를 붙여 캡슐화할 수 있다. 수신자는 계층별 헤더를 해석한 뒤 payload를 다음 계층에 전달한다."
+  - type: text
+    text: "계층화는 구현 교체와 문제 격리를 쉽게 하지만 헤더와 변환 비용이 늘어납니다. 한 계층의 책임을 다른 계층에 중복 구현하면 디버깅과 호환성이 나빠집니다."
+tags: [network, protocol, encapsulation]
+difficulty: 2

@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.subnet.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "서브넷과 CIDR에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "네트워크 주소는 IP와 서브넷 마스크의 비트 AND로 계산할 수 있다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "`/24` IPv4 서브넷은 24비트 프리픽스와 8비트 호스트 부분을 가진다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "`/24`의 프리픽스는 주소의 마지막 24비트다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "브로드캐스트 주소는 어떤 서브넷에서도 호스트 주소로 자유롭게 할당된다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "네트워크 주소는 IP와 서브넷 마스크의 비트 AND로 계산할 수 있다. `/24` IPv4 서브넷은 24비트 프리픽스와 8비트 호스트 부분을 가진다."
+  - type: text
+    text: "짧은 프리픽스는 많은 호스트를 담지만 브로드캐스트 범위가 커지고, 긴 프리픽스는 주소를 아껴 쓰는 대신 서브넷이 많아집니다. VLSM과 CIDR은 필요한 크기에 맞게 범위를 나누게 합니다."
+tags: [subnet, cidr, ipv4]
+difficulty: 3

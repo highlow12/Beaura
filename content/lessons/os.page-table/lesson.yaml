@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.page-table
+revision: 1
+track: operating-systems
+title: 페이지 테이블과 TLB
+description: 페이지 테이블 매핑과 TLB 캐시가 가상 주소 변환을 빠르게 하는 구조를 이해한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.page-table.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.page-table.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.page-table.fill-03
+  - type: question
+    ref: os.page-table.ordering-04
+  - type: question
+    ref: os.page-table.matching-05

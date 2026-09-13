@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.cache.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "캐시와 지역성의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: lookup
+    content:
+      - type: text
+        text: "주소로 캐시 세트와 태그를 조회한다"
+  - id: hit-miss
+    content:
+      - type: text
+        text: "태그가 맞으면 hit, 없으면 miss로 판정한다"
+  - id: fill
+    content:
+      - type: text
+        text: "miss이면 하위 계층의 블록을 캐시에 채운다"
+correctOrder: [lookup, hit-miss, fill]
+explanation:
+  - type: text
+    text: "주소로 캐시 세트와 태그를 조회한다 단계가 먼저이고, 그 결과를 이용해 태그가 맞으면 hit, 없으면 miss로 판정한다 단계가 이어집니다."
+  - type: text
+    text: "miss이면 하위 계층의 블록을 캐시에 채운다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+tags: [cache, locality, memory-hierarchy]
+difficulty: 3

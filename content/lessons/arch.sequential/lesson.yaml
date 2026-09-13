@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: arch.sequential
+revision: 1
+track: computer-architecture
+title: 순차 회로와 플립플롭
+description: 현재 입력뿐 아니라 이전 상태를 기억하는 순차 회로와 클록의 역할을 구분한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: arch.sequential.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: arch.sequential.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: arch.sequential.fill-03
+  - type: question
+    ref: arch.sequential.ordering-04
+  - type: question
+    ref: arch.sequential.matching-05

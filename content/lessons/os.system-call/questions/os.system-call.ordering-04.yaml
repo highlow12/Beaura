@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.system-call.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "시스템 호출의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: marshal
+    content:
+      - type: text
+        text: "호출 번호와 인자를 준비한다"
+  - id: trap
+    content:
+      - type: text
+        text: "CPU가 커널 진입점으로 전환한다"
+  - id: validate
+    content:
+      - type: text
+        text: "커널이 권한과 인자를 확인한 뒤 결과를 반환한다"
+correctOrder: [marshal, trap, validate]
+explanation:
+  - type: text
+    text: "호출 번호와 인자를 준비한다 단계가 먼저이고, 그 결과를 이용해 CPU가 커널 진입점으로 전환한다 단계가 이어집니다."
+  - type: text
+    text: "커널이 권한과 인자를 확인한 뒤 결과를 반환한다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [system-call, kernel, api]
+difficulty: 2

@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.interrupt-dma.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "인터럽트와 DMA의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: program
+    content:
+      - type: text
+        text: "드라이버가 DMA 버퍼와 전송을 설정한다"
+  - id: transfer
+    content:
+      - type: text
+        text: "장치 컨트롤러가 메모리와 데이터를 직접 옮긴다"
+  - id: interrupt
+    content:
+      - type: text
+        text: "완료 신호로 CPU에 처리할 사건을 알린다"
+correctOrder: [program, transfer, interrupt]
+explanation:
+  - type: text
+    text: "드라이버가 DMA 버퍼와 전송을 설정한다 단계가 먼저이고, 그 결과를 이용해 장치 컨트롤러가 메모리와 데이터를 직접 옮긴다 단계가 이어집니다."
+  - type: text
+    text: "완료 신호로 CPU에 처리할 사건을 알린다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [interrupt, dma, io]
+difficulty: 3

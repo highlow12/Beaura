@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: os.storage.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "HDD·SSD와 블록 장치의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "block-device"
+  - id: left-b
+    content:
+      - type: text
+        text: "seek"
+  - id: left-c
+    content:
+      - type: text
+        text: "wear-leveling"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "고정 블록으로 읽고 쓰는 장치 인터페이스"
+  - id: right-b
+    content:
+      - type: text
+        text: "HDD 헤드가 트랙으로 이동하는 시간"
+  - id: right-c
+    content:
+      - type: text
+        text: "SSD 셀의 쓰기를 고르게 분산하는 기법"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "block-device은 고정 블록으로 읽고 쓰는 장치 인터페이스, seek은 HDD 헤드가 트랙으로 이동하는 시간입니다."
+  - type: text
+    text: "wear-leveling은 SSD 셀의 쓰기를 고르게 분산하는 기법을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [storage, hdd, ssd]
+difficulty: 2

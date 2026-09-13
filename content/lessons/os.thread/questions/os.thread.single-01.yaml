@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.thread.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "스레드와 동시성에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "같은 프로세스의 스레드는 주소 공간을 공유하면서 각자의 실행 상태와 스택을 가진다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "스레드는 서로 다른 컴퓨터에서만 실행되며 메모리를 공유할 수 없다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "같은 프로세스의 모든 스레드는 하나의 프로그램 카운터만 사용한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "같은 프로세스의 스레드는 주소 공간을 공유하면서 각자의 실행 상태와 스택을 가진다."
+  - type: text
+    text: "스레드는 프로세스 안의 독립적인 실행 흐름입니다. 스레드마다 PC와 레지스터·스택은 따로 가지지만 같은 프로세스의 코드·힙·열린 파일을 공유합니다."
+tags: [thread, concurrency, shared-memory]
+difficulty: 2

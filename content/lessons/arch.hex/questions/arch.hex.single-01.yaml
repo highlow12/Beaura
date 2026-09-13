@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.hex.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "16진수와 바이트에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "16진수 한 자리는 4비트의 모든 조합을 하나의 기호로 나타낸다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "16진수 한 자리는 항상 16바이트를 저장한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "16진수는 이진수와 다른 값을 저장하는 별도의 메모리 형식이다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "16진수 한 자리는 4비트의 모든 조합을 하나의 기호로 나타낸다."
+  - type: text
+    text: "16진수 한 자리는 0부터 F까지 16가지 값을 나타내며, 정확히 4개의 비트와 대응합니다. 따라서 두 자리는 8비트인 한 바이트를 간결하게 표시합니다."
+tags: [hexadecimal, bits, byte]
+difficulty: 1

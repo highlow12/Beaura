@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: os.filesystem.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "파일·디렉터리와 파일시스템의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "directory"
+  - id: left-b
+    content:
+      - type: text
+        text: "metadata"
+  - id: left-c
+    content:
+      - type: text
+        text: "file-descriptor"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "이름과 파일·하위 디렉터리를 연결하는 구조"
+  - id: right-b
+    content:
+      - type: text
+        text: "크기·권한·소유자 같은 파일 정보"
+  - id: right-c
+    content:
+      - type: text
+        text: "열린 파일 상태를 가리키는 핸들"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "directory은 이름과 파일·하위 디렉터리를 연결하는 구조, metadata은 크기·권한·소유자 같은 파일 정보입니다."
+  - type: text
+    text: "file-descriptor은 열린 파일 상태를 가리키는 핸들을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [filesystem, file, directory]
+difficulty: 2

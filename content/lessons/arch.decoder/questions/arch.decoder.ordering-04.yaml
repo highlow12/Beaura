@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.decoder.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "디코더와 주소 선택의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: encode
+    content:
+      - type: text
+        text: "입력 비트를 주소 코드로 읽는다"
+  - id: decode
+    content:
+      - type: text
+        text: "코드와 대응하는 출력선을 계산한다"
+  - id: enable
+    content:
+      - type: text
+        text: "허용 신호가 있을 때 선택선을 활성화한다"
+correctOrder: [encode, decode, enable]
+explanation:
+  - type: text
+    text: "입력 비트를 주소 코드로 읽는다 단계가 먼저이고, 그 결과를 이용해 코드와 대응하는 출력선을 계산한다 단계가 이어집니다."
+  - type: text
+    text: "허용 신호가 있을 때 선택선을 활성화한다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+tags: [decoder, address, digital-logic]
+difficulty: 3

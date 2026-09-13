@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.routing.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "라우팅과 다음 홉에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "longest prefix match는 더 긴 네트워크 프리픽스를 우선한다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "라우팅 표에는 다음 홉이나 출력 인터페이스가 포함될 수 있다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "기본 경로가 있으면 더 구체적인 경로를 항상 무시한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "동적 라우팅은 링크 장애가 나도 경로를 갱신할 수 없다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "longest prefix match는 더 긴 네트워크 프리픽스를 우선한다. 라우팅 표에는 다음 홉이나 출력 인터페이스가 포함될 수 있다."
+  - type: text
+    text: "정적 경로는 예측 가능하지만 토폴로지 변화에 직접 수정해야 합니다. 동적 라우팅은 장애에 적응하지만 프로토콜 교환과 수렴 시간을 필요로 합니다."
+tags: [routing, router, forwarding]
+difficulty: 3

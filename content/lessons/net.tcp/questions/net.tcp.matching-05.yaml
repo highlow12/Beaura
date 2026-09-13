@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: net.tcp.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "TCP 연결과 신뢰성의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "sequence-number"
+  - id: left-b
+    content:
+      - type: text
+        text: "acknowledgment"
+  - id: left-c
+    content:
+      - type: text
+        text: "retransmission"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "스트림 바이트 위치를 표시하는 번호"
+  - id: right-b
+    content:
+      - type: text
+        text: "수신 범위를 확인하는 응답"
+  - id: right-c
+    content:
+      - type: text
+        text: "손실이 의심된 데이터를 다시 보내는 동작"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "sequence-number은 스트림 바이트 위치를 표시하는 번호, acknowledgment은 수신 범위를 확인하는 응답입니다."
+  - type: text
+    text: "retransmission은 손실이 의심된 데이터를 다시 보내는 동작을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [tcp, reliability, handshake]
+difficulty: 2

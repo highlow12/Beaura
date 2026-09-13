@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: arch.registers.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "레지스터와 상태 저장에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "프로그램 카운터"
+  - "페이지 테이블"
+  - "패킷 헤더"
+acceptedAnswers:
+  - "프로그램 카운터"
+explanation:
+  - type: text
+    text: "프로그램 카운터은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "레지스터는 플립플롭을 묶은 매우 작은 저장 공간으로, 명령어 피연산자·주소·중간 결과를 보관합니다. 레지스터마다 용도와 비트 폭이 정해질 수 있습니다."
+tags: [register, register-file, cpu-state]
+difficulty: 2

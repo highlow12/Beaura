@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.semaphore.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "세마포어와 자원 수의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: wait
+    content:
+      - type: text
+        text: "자원 카운터를 감소시키며 자원을 요청한다"
+  - id: use
+    content:
+      - type: text
+        text: "허용된 실행 흐름이 자원을 사용한다"
+  - id: signal
+    content:
+      - type: text
+        text: "자원을 반납하고 대기 중인 흐름을 깨운다"
+correctOrder: [wait, use, signal]
+explanation:
+  - type: text
+    text: "자원 카운터를 감소시키며 자원을 요청한다 단계가 먼저이고, 그 결과를 이용해 허용된 실행 흐름이 자원을 사용한다 단계가 이어집니다."
+  - type: text
+    text: "자원을 반납하고 대기 중인 흐름을 깨운다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [semaphore, synchronization, producer-consumer]
+difficulty: 3

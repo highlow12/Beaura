@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.thread.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "스레드와 동시성에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "스레드"
+  - "페이지"
+  - "게이트"
+acceptedAnswers:
+  - "스레드"
+explanation:
+  - type: text
+    text: "스레드은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "스레드는 프로세스 안의 독립적인 실행 흐름입니다. 스레드마다 PC와 레지스터·스택은 따로 가지지만 같은 프로세스의 코드·힙·열린 파일을 공유합니다."
+tags: [thread, concurrency, shared-memory]
+difficulty: 2

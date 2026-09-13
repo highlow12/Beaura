@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.twos-complement.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "2의 보수 정수의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: magnitude
+    content:
+      - type: text
+        text: "절댓값을 고정된 비트 수로 쓴다"
+  - id: invert
+    content:
+      - type: text
+        text: "모든 비트를 반전한다"
+  - id: add-one
+    content:
+      - type: text
+        text: "반전한 결과에 1을 더한다"
+correctOrder: [magnitude, invert, add-one]
+explanation:
+  - type: text
+    text: "절댓값을 고정된 비트 수로 쓴다 단계가 먼저이고, 그 결과를 이용해 모든 비트를 반전한다 단계가 이어집니다."
+  - type: text
+    text: "반전한 결과에 1을 더한다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+tags: [integer, twos-complement, overflow]
+difficulty: 3

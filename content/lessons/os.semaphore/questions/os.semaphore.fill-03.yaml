@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.semaphore.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "세마포어와 자원 수에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "세마포어"
+  - "가수"
+  - "프로그램 카운터"
+acceptedAnswers:
+  - "세마포어"
+explanation:
+  - type: text
+    text: "세마포어은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "세마포어는 정수 카운터와 원자적인 wait(P), signal(V) 연산으로 자원 수나 사건을 표현합니다. 카운터가 0이면 wait 호출자는 자원이 생길 때까지 대기합니다."
+tags: [semaphore, synchronization, producer-consumer]
+difficulty: 2

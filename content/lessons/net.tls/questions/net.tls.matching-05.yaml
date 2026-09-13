@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: net.tls.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "TLS와 인증서의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "certificate"
+  - id: left-b
+    content:
+      - type: text
+        text: "session-key"
+  - id: left-c
+    content:
+      - type: text
+        text: "certificate-authority"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "공개키와 서버 신원을 연결하는 증명서"
+  - id: right-b
+    content:
+      - type: text
+        text: "연결 데이터 암호화에 사용하는 임시 대칭 키"
+  - id: right-c
+    content:
+      - type: text
+        text: "인증서 서명을 검증하는 신뢰 주체"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "certificate은 공개키와 서버 신원을 연결하는 증명서, session-key은 연결 데이터 암호화에 사용하는 임시 대칭 키입니다."
+  - type: text
+    text: "certificate-authority은 인증서 서명을 검증하는 신뢰 주체을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [tls, https, security]
+difficulty: 2

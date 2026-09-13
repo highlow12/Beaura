@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: arch.memory.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "SRAM과 DRAM에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "refresh"
+  - "렌더링"
+  - "라우팅"
+acceptedAnswers:
+  - "refresh"
+explanation:
+  - type: text
+    text: "refresh은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "SRAM은 플립플롭과 비슷한 회로로 상태를 유지해 빠르지만 셀 면적이 큽니다. DRAM은 커패시터의 전하로 비트를 저장해 조밀하지만 주기적 refresh가 필요합니다."
+tags: [memory, sram, dram]
+difficulty: 2

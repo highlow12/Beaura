@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: os.mutex.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "뮤텍스와 임계 구역의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "mutex"
+  - id: left-b
+    content:
+      - type: text
+        text: "lock"
+  - id: left-c
+    content:
+      - type: text
+        text: "unlock"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "동시에 한 소유자만 허용하는 잠금"
+  - id: right-b
+    content:
+      - type: text
+        text: "임계 구역 진입을 요청하는 연산"
+  - id: right-c
+    content:
+      - type: text
+        text: "소유자가 잠금을 풀어 대기자를 깨우는 연산"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "mutex은 동시에 한 소유자만 허용하는 잠금, lock은 임계 구역 진입을 요청하는 연산입니다."
+  - type: text
+    text: "unlock은 소유자가 잠금을 풀어 대기자를 깨우는 연산을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [mutex, lock, critical-section]
+difficulty: 2

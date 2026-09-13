@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.arithmetic.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "이진 산술과 오버플로에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "고정 비트 폭의 덧셈 결과가 표현 가능한 범위를 벗어나면 오버플로가 발생한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "자리올림이 한 번이라도 생기면 항상 오버플로다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "오버플로는 실수 연산에서만 발생하는 현상이다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "고정 비트 폭의 덧셈 결과가 표현 가능한 범위를 벗어나면 오버플로가 발생한다."
+  - type: text
+    text: "이진 덧셈은 0+0, 0+1, 1+0, 1+1의 네 경우를 반복합니다. `1+1`은 현재 자리에 0을 쓰고 다음 자리로 1을 올립니다."
+tags: [binary-arithmetic, carry, overflow]
+difficulty: 2

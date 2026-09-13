@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.mtu.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "MTU와 단편화의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: discover
+    content:
+      - type: text
+        text: "경로의 링크 MTU 제약을 파악한다"
+  - id: size
+    content:
+      - type: text
+        text: "세그먼트·패킷 크기를 한계에 맞춘다"
+  - id: fragment-reassemble
+    content:
+      - type: text
+        text: "필요하면 조각을 만들고 수신지에서 재조립한다"
+correctOrder: [discover, size, fragment-reassemble]
+explanation:
+  - type: text
+    text: "경로의 링크 MTU 제약을 파악한다 단계가 먼저이고, 그 결과를 이용해 세그먼트·패킷 크기를 한계에 맞춘다 단계가 이어집니다."
+  - type: text
+    text: "필요하면 조각을 만들고 수신지에서 재조립한다 단계에서 결과가 다음 네트워크 계층이나 응용으로 전달됩니다."
+tags: [mtu, fragmentation, ip]
+difficulty: 4

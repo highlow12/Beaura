@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: net.dns.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "DNS 이름 해석에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "TTL"
+  - "opcode"
+  - "뮤텍스"
+acceptedAnswers:
+  - "TTL"
+explanation:
+  - type: text
+    text: "TTL은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "DNS는 도메인 이름과 레코드를 계층적으로 관리하는 분산 이름 시스템입니다. 리졸버는 캐시를 먼저 확인하고 필요하면 루트·TLD·권한 서버를 따라 질의합니다."
+tags: [dns, name-resolution, cache]
+difficulty: 2

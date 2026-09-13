@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.registers.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "레지스터와 상태 저장에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "레지스터는 CPU 내부에서 자주 쓰는 값을 짧은 지연으로 저장하는 제한된 비트 폭의 저장 공간이다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "레지스터는 SSD처럼 전원이 꺼져도 모든 파일을 보존한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "레지스터는 어떤 크기의 데이터든 무제한으로 저장한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "레지스터는 CPU 내부에서 자주 쓰는 값을 짧은 지연으로 저장하는 제한된 비트 폭의 저장 공간이다."
+  - type: text
+    text: "레지스터는 플립플롭을 묶은 매우 작은 저장 공간으로, 명령어 피연산자·주소·중간 결과를 보관합니다. 레지스터마다 용도와 비트 폭이 정해질 수 있습니다."
+tags: [register, register-file, cpu-state]
+difficulty: 2

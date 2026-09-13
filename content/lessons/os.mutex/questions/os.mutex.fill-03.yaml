@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.mutex.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "뮤텍스와 임계 구역에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "뮤텍스"
+  - "디코더"
+  - "DNS"
+acceptedAnswers:
+  - "뮤텍스"
+explanation:
+  - type: text
+    text: "뮤텍스은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "뮤텍스(mutex)는 상호 배제를 제공하는 잠금입니다. 한 실행 흐름이 lock을 획득하면 unlock할 때까지 다른 흐름은 같은 임계 구역에 들어갈 수 없습니다."
+tags: [mutex, lock, critical-section]
+difficulty: 2

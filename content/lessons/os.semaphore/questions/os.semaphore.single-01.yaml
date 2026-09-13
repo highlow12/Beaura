@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.semaphore.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "세마포어와 자원 수에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "세마포어는 카운터와 wait/signal로 제한된 자원 수나 사건을 조정한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "세마포어는 CPU의 명령어를 0과 1로 인코딩하는 형식이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "세마포어는 카운터와 상관없이 언제나 하나의 작업만 허용한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "세마포어는 카운터와 wait/signal로 제한된 자원 수나 사건을 조정한다."
+  - type: text
+    text: "세마포어는 정수 카운터와 원자적인 wait(P), signal(V) 연산으로 자원 수나 사건을 표현합니다. 카운터가 0이면 wait 호출자는 자원이 생길 때까지 대기합니다."
+tags: [semaphore, synchronization, producer-consumer]
+difficulty: 2

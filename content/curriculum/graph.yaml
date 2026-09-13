@@ -1,18 +1,7 @@
 schemaVersion: 1
 nodes:
-  - lesson: arch.binary
-    requires: []
   - lesson: math.propositions
     requires: []
-  - lesson: arch.logic
-    requires:
-      - arch.binary
-  - lesson: arch.cpu
-    requires:
-      - arch.logic
-  - lesson: sys.network
-    requires:
-      - arch.cpu
   - lesson: sys.graphics
     requires:
       - arch.cpu
@@ -225,3 +214,176 @@ nodes:
     requires:
       - algo.big-o
       - math.propositions
+  - lesson: arch.binary
+    requires: []
+  - lesson: arch.hex
+    requires:
+      - arch.binary
+  - lesson: arch.arithmetic
+    requires:
+      - arch.binary
+  - lesson: arch.twos-complement
+    requires:
+      - arch.arithmetic
+  - lesson: arch.floating-point
+    requires:
+      - arch.arithmetic
+  - lesson: arch.logic
+    requires:
+      - arch.binary
+  - lesson: arch.boolean-algebra
+    requires:
+      - arch.logic
+  - lesson: arch.multiplexer
+    requires:
+      - arch.boolean-algebra
+  - lesson: arch.decoder
+    requires:
+      - arch.boolean-algebra
+  - lesson: arch.adder
+    requires:
+      - arch.boolean-algebra
+  - lesson: arch.sequential
+    requires:
+      - arch.logic
+  - lesson: arch.registers
+    requires:
+      - arch.sequential
+  - lesson: arch.memory
+    requires:
+      - arch.registers
+  - lesson: arch.alu
+    requires:
+      - arch.adder
+      - arch.registers
+  - lesson: arch.cpu
+    requires:
+      - arch.alu
+      - arch.registers
+  - lesson: arch.isa
+    requires:
+      - arch.cpu
+  - lesson: arch.cache
+    requires:
+      - arch.memory
+      - arch.cpu
+  - lesson: arch.pipeline
+    requires:
+      - arch.isa
+      - arch.cache
+  - lesson: sys.network
+    requires:
+      - arch.cpu
+  - lesson: os.kernel-space
+    requires:
+      - arch.cpu
+  - lesson: os.system-call
+    requires:
+      - os.kernel-space
+  - lesson: os.process
+    requires:
+      - os.system-call
+  - lesson: os.address-space
+    requires:
+      - os.process
+  - lesson: os.context-switch
+    requires:
+      - os.process
+  - lesson: os.thread
+    requires:
+      - os.process
+  - lesson: os.concurrency
+    requires:
+      - os.thread
+  - lesson: os.race-condition
+    requires:
+      - os.concurrency
+  - lesson: os.mutex
+    requires:
+      - os.race-condition
+  - lesson: os.semaphore
+    requires:
+      - os.mutex
+  - lesson: os.deadlock
+    requires:
+      - os.mutex
+      - os.semaphore
+  - lesson: os.scheduling
+    requires:
+      - os.context-switch
+      - os.thread
+  - lesson: os.virtual-memory
+    requires:
+      - os.address-space
+  - lesson: os.page-table
+    requires:
+      - os.virtual-memory
+  - lesson: os.allocation
+    requires:
+      - os.address-space
+  - lesson: os.storage
+    requires:
+      - arch.memory
+  - lesson: os.filesystem
+    requires:
+      - os.storage
+      - os.system-call
+  - lesson: os.interrupt-dma
+    requires:
+      - os.system-call
+      - arch.memory
+  - lesson: os.protection
+    requires:
+      - os.kernel-space
+      - os.address-space
+  - lesson: net.protocol-model
+    requires:
+      - sys.network
+      - os.system-call
+  - lesson: net.ethernet
+    requires:
+      - net.protocol-model
+  - lesson: net.switch
+    requires:
+      - net.ethernet
+  - lesson: net.arp
+    requires:
+      - net.switch
+  - lesson: net.ipv4
+    requires:
+      - net.ethernet
+  - lesson: net.subnet
+    requires:
+      - net.ipv4
+  - lesson: net.routing
+    requires:
+      - net.subnet
+  - lesson: net.mtu
+    requires:
+      - net.ipv4
+  - lesson: net.multicast
+    requires:
+      - net.ipv4
+  - lesson: net.transport
+    requires:
+      - net.ipv4
+  - lesson: net.tcp
+    requires:
+      - net.transport
+  - lesson: net.dns
+    requires:
+      - net.ipv4
+  - lesson: net.http
+    requires:
+      - net.tcp
+      - net.dns
+  - lesson: net.tls
+    requires:
+      - net.http
+  - lesson: net.socket
+    requires:
+      - net.transport
+      - os.system-call
+  - lesson: net.performance
+    requires:
+      - net.tcp

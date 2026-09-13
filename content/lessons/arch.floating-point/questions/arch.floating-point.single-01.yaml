@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.floating-point.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "부동소수점 표현에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "부동소수점은 부호·지수·가수 필드로 값을 근사해 넓은 범위와 제한된 정밀도를 제공한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "부동소수점은 모든 십진 소수를 오차 없이 저장한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "지수 필드는 소수점 이하 자릿수를 문자열로 저장한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "부동소수점은 부호·지수·가수 필드로 값을 근사해 넓은 범위와 제한된 정밀도를 제공한다."
+  - type: text
+    text: "부동소수점 비트는 보통 부호(sign), 지수(exponent), 가수(significand) 필드로 나뉩니다. 값의 소수점 위치를 지수로 옮겨 넓은 범위를 표현합니다."
+tags: [floating-point, ieee-754, precision]
+difficulty: 2

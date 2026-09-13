@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: os.concurrency.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "동시성과 원자성의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "concurrency"
+  - id: left-b
+    content:
+      - type: text
+        text: "parallelism"
+  - id: left-c
+    content:
+      - type: text
+        text: "atomicity"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "여러 작업이 겹쳐 진행될 수 있는 구조"
+  - id: right-b
+    content:
+      - type: text
+        text: "여러 코어가 실제 동시에 실행하는 성질"
+  - id: right-c
+    content:
+      - type: text
+        text: "연산이 하나의 관찰 가능한 단위인 성질"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "concurrency은 여러 작업이 겹쳐 진행될 수 있는 구조, parallelism은 여러 코어가 실제 동시에 실행하는 성질입니다."
+  - type: text
+    text: "atomicity은 연산이 하나의 관찰 가능한 단위인 성질을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [concurrency, parallelism, atomicity]
+difficulty: 3

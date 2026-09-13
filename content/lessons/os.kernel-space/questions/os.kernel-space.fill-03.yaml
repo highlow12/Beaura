@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.kernel-space.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "커널 공간과 사용자 공간에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "사용자 공간"
+  - "캐시 라인"
+  - "링크 계층"
+acceptedAnswers:
+  - "사용자 공간"
+explanation:
+  - type: text
+    text: "사용자 공간은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "사용자 공간은 일반 프로그램이 제한된 권한으로 실행되는 영역이고, 커널 공간은 운영체제 핵심 코드가 하드웨어와 보호 자원에 접근하는 영역입니다."
+tags: [kernel, user-space, protection]
+difficulty: 1

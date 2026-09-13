@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: net.switch.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "스위치와 LAN의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "mac-table"
+  - id: left-b
+    content:
+      - type: text
+        text: "flooding"
+  - id: left-c
+    content:
+      - type: text
+        text: "vlan"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "MAC과 스위치 포트의 매핑"
+  - id: right-b
+    content:
+      - type: text
+        text: "여러 포트에 프레임을 복사하는 동작"
+  - id: right-c
+    content:
+      - type: text
+        text: "논리적으로 나눈 브로드캐스트 영역"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "mac-table은 MAC과 스위치 포트의 매핑, flooding은 여러 포트에 프레임을 복사하는 동작입니다."
+  - type: text
+    text: "vlan은 논리적으로 나눈 브로드캐스트 영역을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [switch, lan, mac-table]
+difficulty: 2

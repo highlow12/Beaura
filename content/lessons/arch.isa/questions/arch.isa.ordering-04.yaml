@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.isa.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "명령어와 ISA의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: fetch
+    content:
+      - type: text
+        text: "메모리에서 명령어 비트 패턴을 가져온다"
+  - id: decode
+    content:
+      - type: text
+        text: "opcode와 operand 필드를 해석한다"
+  - id: execute
+    content:
+      - type: text
+        text: "지정된 연산과 데이터 이동을 수행한다"
+correctOrder: [fetch, decode, execute]
+explanation:
+  - type: text
+    text: "메모리에서 명령어 비트 패턴을 가져온다 단계가 먼저이고, 그 결과를 이용해 opcode와 operand 필드를 해석한다 단계가 이어집니다."
+  - type: text
+    text: "지정된 연산과 데이터 이동을 수행한다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+tags: [isa, instruction, opcode]
+difficulty: 3

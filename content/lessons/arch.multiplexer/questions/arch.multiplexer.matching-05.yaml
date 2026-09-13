@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.multiplexer.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "멀티플렉서의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "data-input"
+  - id: left-b
+    content:
+      - type: text
+        text: "select"
+  - id: left-c
+    content:
+      - type: text
+        text: "output"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "고를 후보가 되는 값"
+  - id: right-b
+    content:
+      - type: text
+        text: "출력 경로를 고르는 신호"
+  - id: right-c
+    content:
+      - type: text
+        text: "선택된 하나의 결과"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "data-input은 고를 후보가 되는 값, select은 출력 경로를 고르는 신호입니다."
+  - type: text
+    text: "output은 선택된 하나의 결과을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [multiplexer, combinational-circuit, datapath]
+difficulty: 2

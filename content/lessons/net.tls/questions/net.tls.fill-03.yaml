@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: net.tls.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "TLS와 인증서에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "인증서"
+  - "서브넷"
+  - "컨텍스트 스위치"
+acceptedAnswers:
+  - "인증서"
+explanation:
+  - type: text
+    text: "인증서은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "TLS는 핸드셰이크에서 암호 알고리즘과 키를 협상하고 인증서로 서버 공개키의 신원을 검증한 뒤, 세션 키로 데이터를 암호화하는 프로토콜입니다."
+tags: [tls, https, security]
+difficulty: 2

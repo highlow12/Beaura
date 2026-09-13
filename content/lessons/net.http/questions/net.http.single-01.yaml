@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.http.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "HTTP 요청과 응답에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "HTTP는 요청과 응답 메시지의 메서드·상태 코드·헤더·본문 의미를 정의한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "HTTP 상태 코드 404는 항상 서버가 요청을 성공적으로 저장했다는 뜻이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "HTTP는 DNS 레코드만 교환하고 웹 자원의 본문은 다루지 않는다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "HTTP는 요청과 응답 메시지의 메서드·상태 코드·헤더·본문 의미를 정의한다."
+  - type: text
+    text: "HTTP는 요청 메서드, 대상 경로, 헤더, 선택적 본문과 서버의 상태 코드·헤더·본문으로 구성된 요청-응답 프로토콜입니다."
+tags: [http, web, request-response]
+difficulty: 1

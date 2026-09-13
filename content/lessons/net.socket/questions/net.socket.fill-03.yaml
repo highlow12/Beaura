@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: net.socket.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "소켓과 클라이언트·서버에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "소켓"
+  - "페이지 프레임"
+  - "가산기"
+acceptedAnswers:
+  - "소켓"
+explanation:
+  - type: text
+    text: "소켓은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "소켓은 프로세스가 네트워크로 데이터를 보내고 받는 추상적인 통신 종단점입니다. 서버는 주소에 bind·listen·accept하고, 클라이언트는 connect한 뒤 send·receive를 사용합니다."
+tags: [socket, client-server, api]
+difficulty: 2

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.performance.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "지연·대역폭·손실에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "지연은 전달 시간이고 대역폭은 가능한 전송량이며 실제 처리량은 손실·혼잡의 영향을 받는다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "대역폭이 높으면 어떤 거리에서도 왕복 지연이 반드시 0이 된다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "패킷 손실은 데이터가 버려져도 전송 속도나 응용 동작에 영향을 주지 않는다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "지연은 전달 시간이고 대역폭은 가능한 전송량이며 실제 처리량은 손실·혼잡의 영향을 받는다."
+  - type: text
+    text: "지연(latency)은 데이터가 목적지까지 도착하는 데 걸리는 시간이고, 대역폭은 단위 시간에 전달 가능한 최대 비트량입니다. 처리량은 실제로 성공한 데이터 속도이며 손실과 혼잡의 영향을 받습니다."
+tags: [network-performance, latency, bandwidth]
+difficulty: 2

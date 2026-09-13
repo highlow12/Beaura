@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.switch.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "스위치와 LAN의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: learn
+    content:
+      - type: text
+        text: "출발지 MAC과 입력 포트를 표에 기록한다"
+  - id: lookup
+    content:
+      - type: text
+        text: "목적지 MAC의 출력 포트를 찾는다"
+  - id: flood-forward
+    content:
+      - type: text
+        text: "미지 목적지는 플러딩하고 알려진 목적지는 전달한다"
+correctOrder: [learn, lookup, flood-forward]
+explanation:
+  - type: text
+    text: "출발지 MAC과 입력 포트를 표에 기록한다 단계가 먼저이고, 그 결과를 이용해 목적지 MAC의 출력 포트를 찾는다 단계가 이어집니다."
+  - type: text
+    text: "미지 목적지는 플러딩하고 알려진 목적지는 전달한다 단계에서 결과가 다음 네트워크 계층이나 응용으로 전달됩니다."
+tags: [switch, lan, mac-table]
+difficulty: 3

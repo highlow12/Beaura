@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.kernel-space.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "커널 공간과 사용자 공간에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "사용자 공간은 제한된 권한으로 실행되고 커널 공간은 보호 자원과 하드웨어를 관리한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "모든 프로그램은 동일한 권한으로 커널 메모리를 직접 수정한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "커널 공간은 전원이 꺼져도 프로그램 데이터를 보관하는 디스크 영역이다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "사용자 공간은 제한된 권한으로 실행되고 커널 공간은 보호 자원과 하드웨어를 관리한다."
+  - type: text
+    text: "사용자 공간은 일반 프로그램이 제한된 권한으로 실행되는 영역이고, 커널 공간은 운영체제 핵심 코드가 하드웨어와 보호 자원에 접근하는 영역입니다."
+tags: [kernel, user-space, protection]
+difficulty: 1

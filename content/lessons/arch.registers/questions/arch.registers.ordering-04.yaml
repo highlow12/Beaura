@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.registers.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "레지스터와 상태 저장의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: address
+    content:
+      - type: text
+        text: "읽거나 쓸 레지스터 번호를 지정한다"
+  - id: read-write
+    content:
+      - type: text
+        text: "읽기 포트로 값을 내보내거나 쓰기 입력을 준비한다"
+  - id: clock
+    content:
+      - type: text
+        text: "쓰기 허용과 클록 에지에서 상태를 갱신한다"
+correctOrder: [address, read-write, clock]
+explanation:
+  - type: text
+    text: "읽거나 쓸 레지스터 번호를 지정한다 단계가 먼저이고, 그 결과를 이용해 읽기 포트로 값을 내보내거나 쓰기 입력을 준비한다 단계가 이어집니다."
+  - type: text
+    text: "쓰기 허용과 클록 에지에서 상태를 갱신한다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+tags: [register, register-file, cpu-state]
+difficulty: 3

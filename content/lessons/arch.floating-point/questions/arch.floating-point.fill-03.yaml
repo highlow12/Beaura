@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: arch.floating-point.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "부동소수점 표현에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "가수"
+  - "포트"
+  - "페이지"
+acceptedAnswers:
+  - "가수"
+explanation:
+  - type: text
+    text: "가수은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "부동소수점 비트는 보통 부호(sign), 지수(exponent), 가수(significand) 필드로 나뉩니다. 값의 소수점 위치를 지수로 옮겨 넓은 범위를 표현합니다."
+tags: [floating-point, ieee-754, precision]
+difficulty: 2

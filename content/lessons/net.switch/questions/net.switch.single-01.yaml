@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.switch.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "스위치와 LAN에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "스위치는 MAC 주소 표를 이용해 LAN 프레임을 적절한 포트로 전달한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "스위치는 도메인 이름을 IP 주소로 변환하는 서버다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "스위치는 모든 프레임을 전송 계층에서 재조립해 TCP로 바꾼다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "스위치는 MAC 주소 표를 이용해 LAN 프레임을 적절한 포트로 전달한다."
+  - type: text
+    text: "스위치는 링크 계층에서 MAC 주소 학습 표를 만들고 프레임을 해당 포트로 전달합니다. 목적지를 아직 모르거나 브로드캐스트이면 같은 VLAN의 여러 포트로 플러딩할 수 있습니다."
+tags: [switch, lan, mac-table]
+difficulty: 2

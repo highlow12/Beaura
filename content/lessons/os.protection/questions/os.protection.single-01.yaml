@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.protection.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "권한과 프로세스 격리에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "보호 체계는 권한과 주소 공간 격리로 실행 주체가 허용된 자원만 사용하게 한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "보호는 모든 프로그램에 커널 특권을 부여해 오류를 빠르게 처리한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "프로세스 격리는 프로세스들이 같은 메모리를 무제한으로 공유하게 한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "보호 체계는 권한과 주소 공간 격리로 실행 주체가 허용된 자원만 사용하게 한다."
+  - type: text
+    text: "보호는 각 실행 주체가 허용된 메모리·명령어·자원만 사용하도록 검사하는 체계입니다. 페이지의 읽기·쓰기·실행 권한과 CPU 특권 수준이 대표적인 도구입니다."
+tags: [protection, isolation, privilege]
+difficulty: 2

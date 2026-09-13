@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.address-space.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "프로세스 주소 공간에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "프로세스 주소 공간은 프로세스가 보는 가상 주소의 범위와 영역 배치를 뜻한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "프로세스 주소 공간은 시스템의 모든 물리 RAM을 하나의 이름으로 직접 노출한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "주소 공간의 스택과 힙은 항상 같은 방향과 같은 크기로 고정된다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "프로세스 주소 공간은 프로세스가 보는 가상 주소의 범위와 영역 배치를 뜻한다."
+  - type: text
+    text: "프로세스 주소 공간은 해당 프로세스가 사용할 수 있는 가상 주소의 범위입니다. 일반적으로 코드, 전역 데이터, 동적으로 늘어나는 힙, 함수 호출이 쌓이는 스택 영역으로 구분합니다."
+tags: [process, virtual-memory, address-space]
+difficulty: 2

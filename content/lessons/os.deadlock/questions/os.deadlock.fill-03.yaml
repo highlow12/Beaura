@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.deadlock.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "교착상태에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "순환 대기"
+  - "공간 지역성"
+  - "주소 변환"
+acceptedAnswers:
+  - "순환 대기"
+explanation:
+  - type: text
+    text: "순환 대기은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "데드락은 여러 실행 흐름이 서로가 가진 자원을 기다려 누구도 진행할 수 없는 상태입니다. 상호 배제, 점유하며 대기, 선점 불가, 순환 대기의 네 조건이 함께 성립할 때 발생합니다."
+tags: [deadlock, lock-order, concurrency]
+difficulty: 3

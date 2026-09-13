@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: arch.adder.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "가산기와 ALU의 덧셈에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "전가산기"
+  - "반전기"
+  - "분기 예측기"
+acceptedAnswers:
+  - "전가산기"
+explanation:
+  - type: text
+    text: "전가산기은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "반가산기는 두 입력의 sum과 carry를 계산하고, 전가산기는 여기에 이전 자리에서 온 carry-in까지 계산합니다. 전가산기를 이어 붙이면 다중 비트 가산기가 됩니다."
+tags: [adder, carry, alu]
+difficulty: 2

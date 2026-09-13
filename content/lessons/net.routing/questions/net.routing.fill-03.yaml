@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: net.routing.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "라우팅과 다음 홉에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "다음 홉"
+  - "임계 구역"
+  - "가수"
+acceptedAnswers:
+  - "다음 홉"
+explanation:
+  - type: text
+    text: "다음 홉은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "라우팅은 목적지 네트워크까지의 경로를 계산하고 포워딩하는 과정입니다. 라우팅 표에는 목적지 프리픽스, 다음 홉, 출력 인터페이스, 비용이 들어갈 수 있습니다."
+tags: [routing, router, forwarding]
+difficulty: 2

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.storage.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "HDD·SSD와 블록 장치에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "블록 장치는 저장장치를 고정 크기 블록 단위로 노출하고 HDD와 SSD는 내부 접근 특성이 다르다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "SSD의 모든 쓰기는 HDD처럼 헤드 탐색 시간을 기다린다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "블록 장치는 파일 이름과 디렉터리 권한을 직접 해석하는 응용 프로그램이다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "블록 장치는 저장장치를 고정 크기 블록 단위로 노출하고 HDD와 SSD는 내부 접근 특성이 다르다."
+  - type: text
+    text: "블록 장치는 고정 크기 블록 단위로 읽고 쓰는 저장장치 인터페이스입니다. HDD는 회전 플래터와 헤드 이동이 지배적이고, SSD는 플래시 셀과 컨트롤러를 사용합니다."
+tags: [storage, hdd, ssd]
+difficulty: 2

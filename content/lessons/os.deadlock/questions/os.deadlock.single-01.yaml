@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.deadlock.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "교착상태에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "데드락은 실행 흐름들이 서로 보유 자원을 기다려 영원히 진행하지 못하는 상태다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "데드락은 CPU가 한 프로세스만 실행해 처리량이 높아지는 현상이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "데드락은 네트워크에서 패킷이 한 번 중복된 것만을 뜻한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "데드락은 실행 흐름들이 서로 보유 자원을 기다려 영원히 진행하지 못하는 상태다."
+  - type: text
+    text: "데드락은 여러 실행 흐름이 서로가 가진 자원을 기다려 누구도 진행할 수 없는 상태입니다. 상호 배제, 점유하며 대기, 선점 불가, 순환 대기의 네 조건이 함께 성립할 때 발생합니다."
+tags: [deadlock, lock-order, concurrency]
+difficulty: 3

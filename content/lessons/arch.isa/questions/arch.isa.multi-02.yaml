@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.isa.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "명령어와 ISA에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "opcode는 명령어가 수행할 동작 종류를 나타낸다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "같은 ISA를 구현한 CPU들은 내부 마이크로구조가 달라도 기계어 호환성을 가질 수 있다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "operand는 항상 네트워크 포트 번호만 의미한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "ISA가 바뀌어도 컴파일러와 바이너리 해석에는 영향을 주지 않는다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "opcode는 명령어가 수행할 동작 종류를 나타낸다. 같은 ISA를 구현한 CPU들은 내부 마이크로구조가 달라도 기계어 호환성을 가질 수 있다."
+  - type: text
+    text: "ISA를 확장하면 기능을 추가할 수 있지만 명령어 디코더와 컴파일러 지원이 복잡해집니다. 단순한 고정 형식은 해석과 파이프라인을 쉽게 하지만 표현력이 제한될 수 있습니다."
+tags: [isa, instruction, opcode]
+difficulty: 3

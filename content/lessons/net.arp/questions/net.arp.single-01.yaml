@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.arp.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "ARP와 로컬 주소 찾기에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "ARP는 같은 로컬 IPv4 링크에서 IP 주소에 대응하는 MAC 주소를 찾는다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "ARP는 인터넷 전체 라우팅 경로를 계산하는 전송 계층 프로토콜이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "ARP 요청은 목적지 IP와 무관하게 항상 다른 서브넷의 모든 라우터가 응답한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "ARP는 같은 로컬 IPv4 링크에서 IP 주소에 대응하는 MAC 주소를 찾는다."
+  - type: text
+    text: "ARP는 로컬 IPv4 네트워크에서 IP 주소에 대응하는 MAC 주소를 질의하는 프로토콜입니다. 결과는 ARP 캐시에 일정 시간 저장되어 반복 브로드캐스트를 줄입니다."
+tags: [arp, ipv4, mac]
+difficulty: 2

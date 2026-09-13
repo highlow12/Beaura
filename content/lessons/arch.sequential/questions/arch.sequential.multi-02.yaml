@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.sequential.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "순차 회로와 플립플롭에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "여러 플립플롭을 묶으면 여러 비트를 저장하는 레지스터가 된다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "순차 회로에는 현재 입력 외에 내부 상태가 존재한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "클록은 순차 회로에서 필요하지 않다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "플립플롭은 한 번 저장한 값을 전원이 꺼져도 영구 보존한다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "여러 플립플롭을 묶으면 여러 비트를 저장하는 레지스터가 된다. 순차 회로에는 현재 입력 외에 내부 상태가 존재한다."
+  - type: text
+    text: "클록 주기를 짧게 하면 더 자주 상태를 갱신할 수 있지만 신호가 안정될 시간과 전력·타이밍 여유가 줄어듭니다. setup/hold 조건을 어기면 잘못된 상태가 저장될 수 있습니다."
+tags: [sequential-circuit, flip-flop, clock]
+difficulty: 3

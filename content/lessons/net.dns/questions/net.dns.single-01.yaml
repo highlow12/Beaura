@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.dns.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "DNS 이름 해석에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "DNS는 계층적 레코드와 캐시를 이용해 도메인 이름을 IP 주소로 해석한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "DNS는 TCP 스트림의 바이트를 순서대로 재조립하는 프로토콜이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "DNS 이름은 한 중앙 서버의 메모리에만 저장되어 캐시할 수 없다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "DNS는 계층적 레코드와 캐시를 이용해 도메인 이름을 IP 주소로 해석한다."
+  - type: text
+    text: "DNS는 도메인 이름과 레코드를 계층적으로 관리하는 분산 이름 시스템입니다. 리졸버는 캐시를 먼저 확인하고 필요하면 루트·TLD·권한 서버를 따라 질의합니다."
+tags: [dns, name-resolution, cache]
+difficulty: 2

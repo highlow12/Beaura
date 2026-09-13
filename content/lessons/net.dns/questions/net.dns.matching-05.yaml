@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: net.dns.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "DNS 이름 해석의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "resolver"
+  - id: left-b
+    content:
+      - type: text
+        text: "authoritative"
+  - id: left-c
+    content:
+      - type: text
+        text: "ttl"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "클라이언트를 대신해 DNS 질의를 수행하는 서버"
+  - id: right-b
+    content:
+      - type: text
+        text: "특정 도메인의 최종 레코드를 관리하는 서버"
+  - id: right-c
+    content:
+      - type: text
+        text: "캐시 응답의 유효 기간"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "resolver은 클라이언트를 대신해 DNS 질의를 수행하는 서버, authoritative은 특정 도메인의 최종 레코드를 관리하는 서버입니다."
+  - type: text
+    text: "ttl은 캐시 응답의 유효 기간을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [dns, name-resolution, cache]
+difficulty: 2

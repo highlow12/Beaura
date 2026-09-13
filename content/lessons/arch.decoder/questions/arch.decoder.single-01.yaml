@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.decoder.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "디코더와 주소 선택에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "디코더는 입력 이진 코드에 대응하는 출력선 하나를 선택해 활성화한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "디코더는 여러 입력의 합을 하나의 산술 결과로 계산한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "디코더는 입력 코드를 압축해 더 적은 출력선으로 만든다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "디코더는 입력 이진 코드에 대응하는 출력선 하나를 선택해 활성화한다."
+  - type: text
+    text: "디코더는 n개의 입력 비트 조합을 최대 2^n개의 출력선 중 하나의 활성 신호로 변환합니다. 한 번에 하나만 켜지는 one-hot 형태가 대표적입니다."
+tags: [decoder, address, digital-logic]
+difficulty: 2

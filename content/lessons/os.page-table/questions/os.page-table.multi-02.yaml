@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.page-table.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "페이지 테이블과 TLB에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "TLB miss가 나면 페이지 테이블 조회가 추가로 필요할 수 있다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "페이지 테이블 항목에는 접근 권한 비트가 포함될 수 있다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "TLB hit는 항상 페이지 폴트가 발생했다는 뜻이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "주소 공간이 바뀌어도 기존 매핑을 아무 표시 없이 그대로 사용한다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "TLB miss가 나면 페이지 테이블 조회가 추가로 필요할 수 있다. 페이지 테이블 항목에는 접근 권한 비트가 포함될 수 있다."
+  - type: text
+    text: "TLB는 변환 지연을 줄이지만 작고 비싼 캐시라 모든 페이지를 담지 못합니다. 페이지 크기를 키우면 TLB 도달 범위가 늘지만 내부 단편화가 증가할 수 있습니다."
+tags: [page-table, tlb, mmu]
+difficulty: 4

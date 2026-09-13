@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.multiplexer.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "멀티플렉서에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "2-to-1 MUX는 선택 비트 하나로 두 데이터 입력 중 하나를 고른다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "MUX의 기본 동작은 현재 입력과 선택선에 즉시 의존한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "선택선이 바뀌어도 MUX는 이전 결과를 계속 기억한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "입력이 네 개인 MUX를 만들려면 선택 비트가 하나만 필요하다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "2-to-1 MUX는 선택 비트 하나로 두 데이터 입력 중 하나를 고른다. MUX의 기본 동작은 현재 입력과 선택선에 즉시 의존한다."
+  - type: text
+    text: "MUX를 계층적으로 연결하면 더 많은 입력을 선택할 수 있지만 게이트와 전파 지연이 증가합니다. 선택 신호와 데이터 신호를 혼동하면 출력 경로를 잘못 읽게 됩니다."
+tags: [multiplexer, combinational-circuit, datapath]
+difficulty: 3

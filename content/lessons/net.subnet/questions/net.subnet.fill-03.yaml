@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: net.subnet.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "서브넷과 CIDR에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "서브넷 마스크"
+  - "캐시 태그"
+  - "시스템 호출"
+acceptedAnswers:
+  - "서브넷 마스크"
+explanation:
+  - type: text
+    text: "서브넷 마스크은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "CIDR 표기의 `/n`은 앞 n비트가 네트워크 프리픽스임을 뜻합니다. 나머지 비트가 호스트 공간이 되어 같은 서브넷의 주소 범위를 결정합니다."
+tags: [subnet, cidr, ipv4]
+difficulty: 2

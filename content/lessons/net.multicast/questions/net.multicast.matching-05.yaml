@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: net.multicast.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "브로드캐스트와 멀티캐스트의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "unicast"
+  - id: left-b
+    content:
+      - type: text
+        text: "broadcast"
+  - id: left-c
+    content:
+      - type: text
+        text: "multicast"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "한 송신자와 한 수신자"
+  - id: right-b
+    content:
+      - type: text
+        text: "같은 브로드캐스트 영역의 모든 수신자"
+  - id: right-c
+    content:
+      - type: text
+        text: "특정 그룹에 가입한 수신자 집합"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "unicast은 한 송신자와 한 수신자, broadcast은 같은 브로드캐스트 영역의 모든 수신자입니다."
+  - type: text
+    text: "multicast은 특정 그룹에 가입한 수신자 집합을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [broadcast, multicast, unicast]
+difficulty: 1

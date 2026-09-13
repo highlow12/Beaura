@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.storage.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "HDD·SSD와 블록 장치에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "wear leveling"
+  - "진리표"
+  - "컨텍스트 스위치"
+acceptedAnswers:
+  - "wear leveling"
+explanation:
+  - type: text
+    text: "wear leveling은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "블록 장치는 고정 크기 블록 단위로 읽고 쓰는 저장장치 인터페이스입니다. HDD는 회전 플래터와 헤드 이동이 지배적이고, SSD는 플래시 셀과 컨트롤러를 사용합니다."
+tags: [storage, hdd, ssd]
+difficulty: 2

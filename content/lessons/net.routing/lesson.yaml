@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.routing
+revision: 1
+track: networks
+title: 라우팅과 다음 홉
+description: 라우터가 목적지 프리픽스와 라우팅 표로 다음 홉을 선택하는 원리를 이해한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: net.routing.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: net.routing.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: net.routing.fill-03
+  - type: question
+    ref: net.routing.ordering-04
+  - type: question
+    ref: net.routing.matching-05

@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.thread.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "스레드와 동시성의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: spawn
+    content:
+      - type: text
+        text: "프로세스 안에 새 실행 흐름을 만든다"
+  - id: share
+    content:
+      - type: text
+        text: "코드·힙 같은 프로세스 자원을 공유한다"
+  - id: synchronize
+    content:
+      - type: text
+        text: "공유 상태 접근 순서를 조정한다"
+correctOrder: [spawn, share, synchronize]
+explanation:
+  - type: text
+    text: "프로세스 안에 새 실행 흐름을 만든다 단계가 먼저이고, 그 결과를 이용해 코드·힙 같은 프로세스 자원을 공유한다 단계가 이어집니다."
+  - type: text
+    text: "공유 상태 접근 순서를 조정한다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [thread, concurrency, shared-memory]
+difficulty: 3

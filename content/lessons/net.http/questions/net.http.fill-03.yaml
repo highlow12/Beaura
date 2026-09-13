@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: net.http.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "HTTP 요청과 응답에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "상태 코드"
+  - "MAC 주소"
+  - "페이지 테이블"
+acceptedAnswers:
+  - "상태 코드"
+explanation:
+  - type: text
+    text: "상태 코드은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "HTTP는 요청 메서드, 대상 경로, 헤더, 선택적 본문과 서버의 상태 코드·헤더·본문으로 구성된 요청-응답 프로토콜입니다."
+tags: [http, web, request-response]
+difficulty: 1

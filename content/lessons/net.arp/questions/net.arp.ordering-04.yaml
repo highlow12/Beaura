@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.arp.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "ARP와 로컬 주소 찾기의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: broadcast
+    content:
+      - type: text
+        text: "IP를 담아 로컬 링크에 ARP 요청을 보낸다"
+  - id: reply
+    content:
+      - type: text
+        text: "해당 IP 장치가 자신의 MAC으로 응답한다"
+  - id: cache
+    content:
+      - type: text
+        text: "IP-MAC 매핑을 저장하고 프레임을 전송한다"
+correctOrder: [broadcast, reply, cache]
+explanation:
+  - type: text
+    text: "IP를 담아 로컬 링크에 ARP 요청을 보낸다 단계가 먼저이고, 그 결과를 이용해 해당 IP 장치가 자신의 MAC으로 응답한다 단계가 이어집니다."
+  - type: text
+    text: "IP-MAC 매핑을 저장하고 프레임을 전송한다 단계에서 결과가 다음 네트워크 계층이나 응용으로 전달됩니다."
+tags: [arp, ipv4, mac]
+difficulty: 3

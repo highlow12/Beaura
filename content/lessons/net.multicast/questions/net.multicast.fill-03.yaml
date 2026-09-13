@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: net.multicast.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "브로드캐스트와 멀티캐스트에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "멀티캐스트"
+  - "페이지 폴트"
+  - "가상 함수"
+acceptedAnswers:
+  - "멀티캐스트"
+explanation:
+  - type: text
+    text: "멀티캐스트은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "유니캐스트는 한 송신자와 한 수신자, 브로드캐스트는 같은 영역의 모든 수신자, 멀티캐스트는 특정 그룹에 가입한 수신자를 대상으로 합니다."
+tags: [broadcast, multicast, unicast]
+difficulty: 1

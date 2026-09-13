@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: arch.multiplexer.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "멀티플렉서에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "선택 신호"
+  - "클록 주파수"
+  - "캐시 태그"
+acceptedAnswers:
+  - "선택 신호"
+explanation:
+  - type: text
+    text: "선택 신호은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "멀티플렉서(MUX)는 선택 신호를 보고 여러 데이터 입력 중 하나를 출력으로 전달하는 조합 회로입니다. 입력이 2^n개라면 보통 n개의 선택 비트가 필요합니다."
+tags: [multiplexer, combinational-circuit, datapath]
+difficulty: 2

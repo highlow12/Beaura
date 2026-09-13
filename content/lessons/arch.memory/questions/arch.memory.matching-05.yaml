@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.memory.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "SRAM과 DRAM의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "SRAM"
+  - id: left-b
+    content:
+      - type: text
+        text: "DRAM"
+  - id: left-c
+    content:
+      - type: text
+        text: "volatile"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "빠르고 셀 면적이 큰 메모리"
+  - id: right-b
+    content:
+      - type: text
+        text: "refresh가 필요한 조밀한 메모리"
+  - id: right-c
+    content:
+      - type: text
+        text: "전원 공급이 끊기면 상태를 잃는 특성"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "SRAM은 빠르고 셀 면적이 큰 메모리, DRAM은 refresh가 필요한 조밀한 메모리입니다."
+  - type: text
+    text: "volatile은 전원 공급이 끊기면 상태를 잃는 특성을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [memory, sram, dram]
+difficulty: 2

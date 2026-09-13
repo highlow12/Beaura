@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.multiplexer.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "멀티플렉서에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "멀티플렉서는 선택 신호에 따라 여러 데이터 입력 중 하나를 출력으로 전달하는 조합 회로다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "멀티플렉서는 입력 값을 시계에 맞춰 영구 저장하는 회로다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "멀티플렉서는 항상 모든 입력을 동시에 합산해 출력한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "멀티플렉서는 선택 신호에 따라 여러 데이터 입력 중 하나를 출력으로 전달하는 조합 회로다."
+  - type: text
+    text: "멀티플렉서(MUX)는 선택 신호를 보고 여러 데이터 입력 중 하나를 출력으로 전달하는 조합 회로입니다. 입력이 2^n개라면 보통 n개의 선택 비트가 필요합니다."
+tags: [multiplexer, combinational-circuit, datapath]
+difficulty: 2

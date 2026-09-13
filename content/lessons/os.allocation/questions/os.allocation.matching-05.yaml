@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: os.allocation.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "스택·힙과 메모리 할당의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "stack"
+  - id: left-b
+    content:
+      - type: text
+        text: "heap"
+  - id: left-c
+    content:
+      - type: text
+        text: "fragmentation"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "호출 프레임을 자동으로 관리하는 영역"
+  - id: right-b
+    content:
+      - type: text
+        text: "동적 할당 객체를 보관하는 영역"
+  - id: right-c
+    content:
+      - type: text
+        text: "빈 공간이 조각나 활용이 어려운 상태"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "stack은 호출 프레임을 자동으로 관리하는 영역, heap은 동적 할당 객체를 보관하는 영역입니다."
+  - type: text
+    text: "fragmentation은 빈 공간이 조각나 활용이 어려운 상태을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [memory-allocation, stack, heap]
+difficulty: 2

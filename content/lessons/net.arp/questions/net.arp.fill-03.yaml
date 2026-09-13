@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: net.arp.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "ARP와 로컬 주소 찾기에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "ARP"
+  - "HTTP"
+  - "DMA"
+acceptedAnswers:
+  - "ARP"
+explanation:
+  - type: text
+    text: "ARP은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "ARP는 로컬 IPv4 네트워크에서 IP 주소에 대응하는 MAC 주소를 질의하는 프로토콜입니다. 결과는 ARP 캐시에 일정 시간 저장되어 반복 브로드캐스트를 줄입니다."
+tags: [arp, ipv4, mac]
+difficulty: 2

@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.decoder.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "디코더와 주소 선택에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "2-to-4 디코더는 네 가지 입력 조합을 네 출력선 중 하나와 대응시킬 수 있다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "enable이 비활성이라면 올바른 주소가 와도 출력 선택이 막힐 수 있다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "디코더의 출력 수는 입력 비트 수와 항상 같다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "모든 입력 조합에서 디코더 출력선 네 개가 동시에 활성화된다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "2-to-4 디코더는 네 가지 입력 조합을 네 출력선 중 하나와 대응시킬 수 있다. enable이 비활성이라면 올바른 주소가 와도 출력 선택이 막힐 수 있다."
+  - type: text
+    text: "디코더는 주소를 물리적 선택선으로 바꾸기 쉽지만 출력 수가 지수적으로 늘어나 큰 회로가 됩니다. 계층적 디코더와 enable 신호로 규모를 관리합니다."
+tags: [decoder, address, digital-logic]
+difficulty: 3

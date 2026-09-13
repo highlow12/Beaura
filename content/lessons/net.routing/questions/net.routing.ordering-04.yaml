@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.routing.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "라우팅과 다음 홉의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: inspect
+    content:
+      - type: text
+        text: "목적지 IP를 라우팅 표와 비교한다"
+  - id: match
+    content:
+      - type: text
+        text: "가장 긴 일치 프리픽스 항목을 선택한다"
+  - id: forward
+    content:
+      - type: text
+        text: "다음 홉의 인터페이스로 패킷을 전송한다"
+correctOrder: [inspect, match, forward]
+explanation:
+  - type: text
+    text: "목적지 IP를 라우팅 표와 비교한다 단계가 먼저이고, 그 결과를 이용해 가장 긴 일치 프리픽스 항목을 선택한다 단계가 이어집니다."
+  - type: text
+    text: "다음 홉의 인터페이스로 패킷을 전송한다 단계에서 결과가 다음 네트워크 계층이나 응용으로 전달됩니다."
+tags: [routing, router, forwarding]
+difficulty: 3

@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.process.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "프로세스와 실행 단위에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "운영체제는 프로세스마다 실행 상태와 주소 공간 정보를 관리한다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "한 프로그램을 여러 프로세스로 실행하면 서로 다른 자원 격리를 얻을 수 있다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "모든 프로세스는 반드시 같은 주소 공간을 공유한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "프로세스는 입출력을 기다리는 동안에도 항상 실행 상태다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "운영체제는 프로세스마다 실행 상태와 주소 공간 정보를 관리한다. 한 프로그램을 여러 프로세스로 실행하면 서로 다른 자원 격리를 얻을 수 있다."
+  - type: text
+    text: "프로세스 격리는 안전성과 장애 격리를 제공하지만 주소 공간과 커널 자료구조를 별도로 유지해야 합니다. 가벼운 작업 공유에는 스레드가 더 적합할 수 있습니다."
+tags: [process, address-space, lifecycle]
+difficulty: 2

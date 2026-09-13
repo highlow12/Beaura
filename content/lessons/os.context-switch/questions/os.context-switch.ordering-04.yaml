@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.context-switch.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "컨텍스트 스위치의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: save
+    content:
+      - type: text
+        text: "현재 실행 단위의 레지스터 상태를 저장한다"
+  - id: choose
+    content:
+      - type: text
+        text: "스케줄러가 다음 실행 단위를 고른다"
+  - id: restore
+    content:
+      - type: text
+        text: "선택된 단위의 상태를 복원하고 실행을 재개한다"
+correctOrder: [save, choose, restore]
+explanation:
+  - type: text
+    text: "현재 실행 단위의 레지스터 상태를 저장한다 단계가 먼저이고, 그 결과를 이용해 스케줄러가 다음 실행 단위를 고른다 단계가 이어집니다."
+  - type: text
+    text: "선택된 단위의 상태를 복원하고 실행을 재개한다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [context-switch, scheduler, process]
+difficulty: 3

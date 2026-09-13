@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.kernel-space.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "커널 공간과 사용자 공간의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: request
+    content:
+      - type: text
+        text: "사용자 프로그램이 보호 자원을 요청한다"
+  - id: switch
+    content:
+      - type: text
+        text: "CPU가 정해진 진입점으로 권한 모드를 바꾼다"
+  - id: return
+    content:
+      - type: text
+        text: "커널이 결과를 전달하고 사용자 모드로 돌아간다"
+correctOrder: [request, switch, return]
+explanation:
+  - type: text
+    text: "사용자 프로그램이 보호 자원을 요청한다 단계가 먼저이고, 그 결과를 이용해 CPU가 정해진 진입점으로 권한 모드를 바꾼다 단계가 이어집니다."
+  - type: text
+    text: "커널이 결과를 전달하고 사용자 모드로 돌아간다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [kernel, user-space, protection]
+difficulty: 2

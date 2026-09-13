@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.transport.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "UDP와 포트의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: bind
+    content:
+      - type: text
+        text: "응용 프로그램이 소켓을 포트에 연결한다"
+  - id: datagram
+    content:
+      - type: text
+        text: "UDP 헤더와 payload를 데이터그램으로 만든다"
+  - id: deliver
+    content:
+      - type: text
+        text: "수신 호스트가 포트 큐로 데이터그램을 전달한다"
+correctOrder: [bind, datagram, deliver]
+explanation:
+  - type: text
+    text: "응용 프로그램이 소켓을 포트에 연결한다 단계가 먼저이고, 그 결과를 이용해 UDP 헤더와 payload를 데이터그램으로 만든다 단계가 이어집니다."
+  - type: text
+    text: "수신 호스트가 포트 큐로 데이터그램을 전달한다 단계에서 결과가 다음 네트워크 계층이나 응용으로 전달됩니다."
+tags: [udp, transport, port]
+difficulty: 2

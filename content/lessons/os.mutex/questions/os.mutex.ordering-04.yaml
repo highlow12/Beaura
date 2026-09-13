@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.mutex.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "뮤텍스와 임계 구역의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: lock
+    content:
+      - type: text
+        text: "임계 구역 진입 전에 잠금을 획득한다"
+  - id: update
+    content:
+      - type: text
+        text: "공유 상태를 검사하고 갱신한다"
+  - id: unlock
+    content:
+      - type: text
+        text: "작업을 마친 뒤 모든 경로에서 잠금을 해제한다"
+correctOrder: [lock, update, unlock]
+explanation:
+  - type: text
+    text: "임계 구역 진입 전에 잠금을 획득한다 단계가 먼저이고, 그 결과를 이용해 공유 상태를 검사하고 갱신한다 단계가 이어집니다."
+  - type: text
+    text: "작업을 마친 뒤 모든 경로에서 잠금을 해제한다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [mutex, lock, critical-section]
+difficulty: 3

@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.protection.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "권한과 프로세스 격리의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: identify
+    content:
+      - type: text
+        text: "실행 주체와 접근하려는 자원을 식별한다"
+  - id: check
+    content:
+      - type: text
+        text: "페이지·특권·파일 권한을 검사한다"
+  - id: isolate
+    content:
+      - type: text
+        text: "허용되지 않은 접근을 차단하고 예외를 보고한다"
+correctOrder: [identify, check, isolate]
+explanation:
+  - type: text
+    text: "실행 주체와 접근하려는 자원을 식별한다 단계가 먼저이고, 그 결과를 이용해 페이지·특권·파일 권한을 검사한다 단계가 이어집니다."
+  - type: text
+    text: "허용되지 않은 접근을 차단하고 예외를 보고한다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [protection, isolation, privilege]
+difficulty: 3

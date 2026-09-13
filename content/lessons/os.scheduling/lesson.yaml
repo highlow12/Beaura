@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.scheduling
+revision: 1
+track: operating-systems
+title: CPU 스케줄링
+description: 준비 큐의 작업을 CPU에 배치하고 지연과 공정성 사이를 조정하는 스케줄링을 배운다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.scheduling.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.scheduling.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.scheduling.fill-03
+  - type: question
+    ref: os.scheduling.ordering-04
+  - type: question
+    ref: os.scheduling.matching-05

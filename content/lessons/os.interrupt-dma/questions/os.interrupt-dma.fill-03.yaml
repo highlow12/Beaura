@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: os.interrupt-dma.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "인터럽트와 DMA에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "DMA"
+  - "TLB"
+  - "opcode"
+acceptedAnswers:
+  - "DMA"
+explanation:
+  - type: text
+    text: "DMA은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "인터럽트는 장치나 타이머가 CPU에 처리할 사건이 있음을 알리는 신호입니다. DMA는 장치 컨트롤러가 CPU 대신 메모리와 장치 사이의 큰 데이터 블록을 전송하는 기능입니다."
+tags: [interrupt, dma, io]
+difficulty: 2

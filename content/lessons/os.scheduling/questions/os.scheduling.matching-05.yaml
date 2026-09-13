@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: os.scheduling.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "CPU 스케줄링의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "ready-queue"
+  - id: left-b
+    content:
+      - type: text
+        text: "time-quantum"
+  - id: left-c
+    content:
+      - type: text
+        text: "starvation"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "CPU를 기다리는 실행 단위 목록"
+  - id: right-b
+    content:
+      - type: text
+        text: "한 작업에 연속으로 줄 시간 조각"
+  - id: right-c
+    content:
+      - type: text
+        text: "특정 작업이 계속 선택되지 않는 상태"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "ready-queue은 CPU를 기다리는 실행 단위 목록, time-quantum은 한 작업에 연속으로 줄 시간 조각입니다."
+  - type: text
+    text: "starvation은 특정 작업이 계속 선택되지 않는 상태을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [scheduling, cpu, fairness]
+difficulty: 2

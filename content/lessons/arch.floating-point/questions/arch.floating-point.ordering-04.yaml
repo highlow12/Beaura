@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.floating-point.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "부동소수점 표현의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: normalize
+    content:
+      - type: text
+        text: "값을 유효 숫자와 2의 거듭제곱 꼴로 정규화한다"
+  - id: encode
+    content:
+      - type: text
+        text: "부호·지수·가수를 각각 비트 필드에 넣는다"
+  - id: round
+    content:
+      - type: text
+        text: "표현할 수 없는 비트는 반올림해 저장한다"
+correctOrder: [normalize, encode, round]
+explanation:
+  - type: text
+    text: "값을 유효 숫자와 2의 거듭제곱 꼴로 정규화한다 단계가 먼저이고, 그 결과를 이용해 부호·지수·가수를 각각 비트 필드에 넣는다 단계가 이어집니다."
+  - type: text
+    text: "표현할 수 없는 비트는 반올림해 저장한다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+tags: [floating-point, ieee-754, precision]
+difficulty: 3

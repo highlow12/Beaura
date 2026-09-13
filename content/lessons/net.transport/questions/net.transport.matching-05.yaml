@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: net.transport.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "UDP와 포트의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "port"
+  - id: left-b
+    content:
+      - type: text
+        text: "datagram"
+  - id: left-c
+    content:
+      - type: text
+        text: "best-effort"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "호스트 안의 통신 종단점 식별자"
+  - id: right-b
+    content:
+      - type: text
+        text: "UDP의 독립적인 전송 단위"
+  - id: right-c
+    content:
+      - type: text
+        text: "전달·순서를 기본 보장하지 않는 모델"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "port은 호스트 안의 통신 종단점 식별자, datagram은 UDP의 독립적인 전송 단위입니다."
+  - type: text
+    text: "best-effort은 전달·순서를 기본 보장하지 않는 모델을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [udp, transport, port]
+difficulty: 1

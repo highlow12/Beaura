@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: arch.floating-point
+revision: 1
+track: computer-architecture
+title: 부동소수점 표현
+description: IEEE 754 부동소수점의 부호·지수·가수 구조와 정밀도 한계를 살펴본다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: arch.floating-point.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: arch.floating-point.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: arch.floating-point.fill-03
+  - type: question
+    ref: arch.floating-point.ordering-04
+  - type: question
+    ref: arch.floating-point.matching-05

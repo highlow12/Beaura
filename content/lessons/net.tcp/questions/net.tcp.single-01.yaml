@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.tcp.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "TCP 연결과 신뢰성에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "TCP는 시퀀스·ACK·재전송으로 IP 위에 순서 있는 신뢰성 바이트 스트림을 제공한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "TCP는 연결을 만들지 않고 각 패킷을 독립적으로만 전달한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "TCP의 ACK는 수신한 바이트가 아니라 스위치 포트의 MAC을 확인한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "TCP는 시퀀스·ACK·재전송으로 IP 위에 순서 있는 신뢰성 바이트 스트림을 제공한다."
+  - type: text
+    text: "TCP는 연결 상태를 유지하는 바이트 스트림 프로토콜입니다. 시퀀스 번호, 확인 응답, 재전송, 흐름·혼잡 제어로 수신자가 순서 있는 데이터를 받도록 돕습니다."
+tags: [tcp, reliability, handshake]
+difficulty: 2

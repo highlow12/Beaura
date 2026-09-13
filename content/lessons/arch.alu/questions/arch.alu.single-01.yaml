@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.alu.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "ALU와 산술 논리 연산에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "ALU는 제어 신호가 선택한 산술 또는 논리 연산을 입력 값에 적용하고 결과를 낸다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "ALU는 디스크 파일을 장기 저장하는 장치다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "ALU는 제어 신호와 무관하게 항상 덧셈만 수행한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "ALU는 제어 신호가 선택한 산술 또는 논리 연산을 입력 값에 적용하고 결과를 낸다."
+  - type: text
+    text: "ALU는 덧셈·뺄셈·AND·OR·비교 같은 연산을 수행하는 조합 회로입니다. 제어 신호가 어떤 연산을 선택할지 정하고 결과와 함께 zero, carry 등의 플래그를 만들 수 있습니다."
+tags: [alu, arithmetic, control]
+difficulty: 2

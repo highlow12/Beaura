@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.memory.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "SRAM과 DRAM에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "캐시는 지연을 줄이기 위해 SRAM을 사용하는 경우가 많다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "DRAM은 커패시터 전하가 새기 때문에 refresh가 필요하다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "DRAM은 refresh 없이도 전원이 공급되는 동안 항상 같은 전하를 유지한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "SRAM은 대용량 주기억장치보다 일반적으로 더 저렴하다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "캐시는 지연을 줄이기 위해 SRAM을 사용하는 경우가 많다. DRAM은 커패시터 전하가 새기 때문에 refresh가 필요하다."
+  - type: text
+    text: "SRAM은 빠르고 refresh가 없어 제어가 단순하지만 비싸고 용량 확장이 어렵습니다. DRAM은 비트당 면적과 비용이 낮지만 refresh와 행 활성화 지연이 있습니다."
+tags: [memory, sram, dram]
+difficulty: 3

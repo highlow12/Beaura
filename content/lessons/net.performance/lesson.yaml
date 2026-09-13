@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.performance
+revision: 1
+track: networks
+title: 지연·대역폭·손실
+description: 네트워크 성능을 지연, 대역폭, 처리량, 패킷 손실로 나누어 분석하는 법을 배운다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: net.performance.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: net.performance.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: net.performance.fill-03
+  - type: question
+    ref: net.performance.ordering-04
+  - type: question
+    ref: net.performance.matching-05

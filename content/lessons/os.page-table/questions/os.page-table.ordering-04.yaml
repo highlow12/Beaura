@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.page-table.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "페이지 테이블과 TLB의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: tlb-lookup
+    content:
+      - type: text
+        text: "가상 페이지 번호로 TLB를 먼저 조회한다"
+  - id: page-walk
+    content:
+      - type: text
+        text: "miss이면 페이지 테이블에서 프레임과 권한을 읽는다"
+  - id: access
+    content:
+      - type: text
+        text: "검증된 물리 주소로 메모리에 접근한다"
+correctOrder: [tlb-lookup, page-walk, access]
+explanation:
+  - type: text
+    text: "가상 페이지 번호로 TLB를 먼저 조회한다 단계가 먼저이고, 그 결과를 이용해 miss이면 페이지 테이블에서 프레임과 권한을 읽는다 단계가 이어집니다."
+  - type: text
+    text: "검증된 물리 주소로 메모리에 접근한다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [page-table, tlb, mmu]
+difficulty: 4

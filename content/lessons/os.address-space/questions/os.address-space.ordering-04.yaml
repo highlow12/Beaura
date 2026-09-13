@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.address-space.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "프로세스 주소 공간의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: virtual
+    content:
+      - type: text
+        text: "프로그램이 가상 주소를 생성한다"
+  - id: translate
+    content:
+      - type: text
+        text: "MMU가 페이지 테이블로 물리 위치를 찾는다"
+  - id: protect
+    content:
+      - type: text
+        text: "권한 비트를 확인해 접근을 허용하거나 예외를 낸다"
+correctOrder: [virtual, translate, protect]
+explanation:
+  - type: text
+    text: "프로그램이 가상 주소를 생성한다 단계가 먼저이고, 그 결과를 이용해 MMU가 페이지 테이블로 물리 위치를 찾는다 단계가 이어집니다."
+  - type: text
+    text: "권한 비트를 확인해 접근을 허용하거나 예외를 낸다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [process, virtual-memory, address-space]
+difficulty: 3

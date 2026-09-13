@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: arch.decoder.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "디코더와 주소 선택에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "디코더"
+  - "레지스터"
+  - "스케줄러"
+acceptedAnswers:
+  - "디코더"
+explanation:
+  - type: text
+    text: "디코더은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "디코더는 n개의 입력 비트 조합을 최대 2^n개의 출력선 중 하나의 활성 신호로 변환합니다. 한 번에 하나만 켜지는 one-hot 형태가 대표적입니다."
+tags: [decoder, address, digital-logic]
+difficulty: 2

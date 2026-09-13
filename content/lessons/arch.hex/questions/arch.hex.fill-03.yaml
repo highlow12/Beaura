@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: arch.hex.fill-03
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "16진수와 바이트에서 핵심이 되는 용어는 ___입니다."
+choices:
+  - "16진수"
+  - "8진수"
+  - "부동소수점"
+acceptedAnswers:
+  - "16진수"
+explanation:
+  - type: text
+    text: "16진수은(는) 이 레슨에서 다룬 핵심 개념입니다."
+  - type: text
+    text: "16진수 한 자리는 0부터 F까지 16가지 값을 나타내며, 정확히 4개의 비트와 대응합니다. 따라서 두 자리는 8비트인 한 바이트를 간결하게 표시합니다."
+tags: [hexadecimal, bits, byte]
+difficulty: 1

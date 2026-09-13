@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.tls
+revision: 1
+track: networks
+title: TLS와 인증서
+description: TLS가 암호화·무결성·서버 인증으로 HTTPS를 보호하는 기본 흐름을 이해한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: net.tls.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: net.tls.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: net.tls.fill-03
+  - type: question
+    ref: net.tls.ordering-04
+  - type: question
+    ref: net.tls.matching-05

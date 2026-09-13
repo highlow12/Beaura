@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.adder.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "가산기와 ALU의 덧셈에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "전가산기는 두 데이터 비트와 이전 자리의 carry-in을 받아 sum과 carry-out을 만든다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "반가산기는 이전 자리의 carry-in까지 항상 처리한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "가산기에서는 자리올림이 다음 비트에 영향을 주지 않는다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "전가산기는 두 데이터 비트와 이전 자리의 carry-in을 받아 sum과 carry-out을 만든다."
+  - type: text
+    text: "반가산기는 두 입력의 sum과 carry를 계산하고, 전가산기는 여기에 이전 자리에서 온 carry-in까지 계산합니다. 전가산기를 이어 붙이면 다중 비트 가산기가 됩니다."
+tags: [adder, carry, alu]
+difficulty: 2

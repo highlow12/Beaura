@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: os.interrupt-dma.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "인터럽트와 DMA의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "interrupt"
+  - id: left-b
+    content:
+      - type: text
+        text: "DMA"
+  - id: left-c
+    content:
+      - type: text
+        text: "handler"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "CPU에 비동기 사건을 알리는 신호"
+  - id: right-b
+    content:
+      - type: text
+        text: "CPU 개입을 줄이는 메모리-장치 전송"
+  - id: right-c
+    content:
+      - type: text
+        text: "인터럽트 사건을 처리하는 커널 코드"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "interrupt은 CPU에 비동기 사건을 알리는 신호, DMA은 CPU 개입을 줄이는 메모리-장치 전송입니다."
+  - type: text
+    text: "handler은 인터럽트 사건을 처리하는 커널 코드을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [interrupt, dma, io]
+difficulty: 2

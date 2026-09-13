@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: net.subnet.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "서브넷과 CIDR의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "prefix"
+  - id: left-b
+    content:
+      - type: text
+        text: "host-bits"
+  - id: left-c
+    content:
+      - type: text
+        text: "broadcast"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "네트워크를 식별하는 앞쪽 비트"
+  - id: right-b
+    content:
+      - type: text
+        text: "호스트를 구분하는 나머지 비트"
+  - id: right-c
+    content:
+      - type: text
+        text: "서브넷의 모든 호스트를 대상으로 하는 주소"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "prefix은 네트워크를 식별하는 앞쪽 비트, host-bits은 호스트를 구분하는 나머지 비트입니다."
+  - type: text
+    text: "broadcast은 서브넷의 모든 호스트를 대상으로 하는 주소을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [subnet, cidr, ipv4]
+difficulty: 2

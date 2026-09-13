@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.storage.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "HDD·SSD와 블록 장치의 기본 처리 흐름을 올바른 순서로 배열하세요."
+items:
+  - id: queue
+    content:
+      - type: text
+        text: "블록 요청을 장치 큐에 배치한다"
+  - id: translate
+    content:
+      - type: text
+        text: "컨트롤러가 논리 블록을 물리 위치로 매핑한다"
+  - id: persist
+    content:
+      - type: text
+        text: "장치가 데이터를 기록하고 완료를 알린다"
+correctOrder: [queue, translate, persist]
+explanation:
+  - type: text
+    text: "블록 요청을 장치 큐에 배치한다 단계가 먼저이고, 그 결과를 이용해 컨트롤러가 논리 블록을 물리 위치로 매핑한다 단계가 이어집니다."
+  - type: text
+    text: "장치가 데이터를 기록하고 완료를 알린다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+tags: [storage, hdd, ssd]
+difficulty: 3

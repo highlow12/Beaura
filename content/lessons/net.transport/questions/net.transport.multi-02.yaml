@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.transport.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "UDP와 포트에 해당하는 설명을 모두 고르세요."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "포트는 같은 호스트의 여러 통신 프로그램을 구분하는 데 쓰인다."
+  - id: correct-b
+    content:
+      - type: text
+        text: "UDP 데이터그램은 손실이나 순서 변경을 응용 프로그램이 처리해야 할 수 있다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "UDP는 전송 계층이 아니라 링크 계층의 MAC 주소를 할당한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "UDP를 사용하면 데이터가 항상 목적지에 도착한다."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "포트는 같은 호스트의 여러 통신 프로그램을 구분하는 데 쓰인다. UDP 데이터그램은 손실이나 순서 변경을 응용 프로그램이 처리해야 할 수 있다."
+  - type: text
+    text: "UDP는 헤더와 상태가 작아 지연이 낮지만 신뢰성 기능을 앱이 필요에 따라 구현해야 합니다. 손실이 허용되지 않는 스트림에는 TCP 같은 전송 프로토콜이 더 적합합니다."
+tags: [udp, transport, port]
+difficulty: 2

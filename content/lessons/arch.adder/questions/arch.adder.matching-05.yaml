@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.adder.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "가산기와 ALU의 덧셈의 용어와 역할을 알맞게 연결하세요."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "half-adder"
+  - id: left-b
+    content:
+      - type: text
+        text: "full-adder"
+  - id: left-c
+    content:
+      - type: text
+        text: "ripple-carry"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "carry-in 없이 두 비트를 더하는 회로"
+  - id: right-b
+    content:
+      - type: text
+        text: "carry-in까지 포함해 더하는 회로"
+  - id: right-c
+    content:
+      - type: text
+        text: "자리올림이 다음 자리로 순차 전파되는 구조"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "half-adder은 carry-in 없이 두 비트를 더하는 회로, full-adder은 carry-in까지 포함해 더하는 회로입니다."
+  - type: text
+    text: "ripple-carry은 자리올림이 다음 자리로 순차 전파되는 구조을 뜻하므로 세 역할을 구분해야 합니다."
+tags: [adder, carry, alu]
+difficulty: 2

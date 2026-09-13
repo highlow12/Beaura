@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.subnet.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "서브넷과 CIDR에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "CIDR `/n`은 IPv4 주소의 앞 n비트를 네트워크 프리픽스로 지정한다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "CIDR 숫자는 전송 계층 포트의 비트 수를 의미한다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "서브넷을 나누면 모든 주소가 서로 다른 물리 케이블에만 존재한다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "CIDR `/n`은 IPv4 주소의 앞 n비트를 네트워크 프리픽스로 지정한다."
+  - type: text
+    text: "CIDR 표기의 `/n`은 앞 n비트가 네트워크 프리픽스임을 뜻합니다. 나머지 비트가 호스트 공간이 되어 같은 서브넷의 주소 범위를 결정합니다."
+tags: [subnet, cidr, ipv4]
+difficulty: 2

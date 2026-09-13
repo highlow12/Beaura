@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.interrupt-dma.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "인터럽트와 DMA에 대한 설명으로 가장 정확한 것은 무엇인가요?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "DMA는 장치와 메모리 사이의 데이터 블록 이동을 CPU 대신 수행하고 완료를 알릴 수 있다."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "DMA는 CPU의 권한 모드를 사용자 모드로 바꾸는 명령이다."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "인터럽트는 CPU가 장치 상태를 영원히 폴링해야 한다는 뜻이다."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "DMA는 장치와 메모리 사이의 데이터 블록 이동을 CPU 대신 수행하고 완료를 알릴 수 있다."
+  - type: text
+    text: "인터럽트는 장치나 타이머가 CPU에 처리할 사건이 있음을 알리는 신호입니다. DMA는 장치 컨트롤러가 CPU 대신 메모리와 장치 사이의 큰 데이터 블록을 전송하는 기능입니다."
+tags: [interrupt, dma, io]
+difficulty: 2

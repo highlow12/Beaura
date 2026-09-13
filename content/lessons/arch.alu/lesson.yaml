@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: arch.alu
+revision: 1
+track: computer-architecture
+title: ALU와 산술 논리 연산
+description: ALU가 제어 신호에 따라 산술·논리 연산을 수행하고 상태 플래그를 만드는 과정을 익힌다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: arch.alu.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: arch.alu.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: arch.alu.fill-03
+  - type: question
+    ref: arch.alu.ordering-04
+  - type: question
+    ref: arch.alu.matching-05
