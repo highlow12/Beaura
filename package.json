@@ -45,6 +45,7 @@
     "@capacitor/android": "^8.5.1",
     "@capacitor/core": "^8.5.1",
     "@capacitor/ios": "^8.5.1",
+    "@sentry/sveltekit": "^10.74.0",
     "dexie": "^4.4.5",
     "ts-fsrs": "^5.4.2",
     "yaml": "^2.9.0"

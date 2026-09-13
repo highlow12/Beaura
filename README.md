@@ -25,7 +25,7 @@ npm run dev
 - Dexie 트랜잭션 기반 학습 기록, 중복 제출 방지, 완료 상태 보존.
 - ts-fsrs 복습 일정, 복습 세션, 경험치·로컬 날짜 연속 학습.
 - 진행도, 일일 목표, JSON 백업·복원, 기록 초기화.
-- 전역 브라우저/SvelteKit 오류 자동 진단과 GitHub 기반 수동 문제 신고.
+- 명시적 동의 뒤에만 동작하는 Sentry 전역 브라우저/SvelteKit 오류 자동 집계, 로컬 진단과 GitHub 기반 수동 문제 신고.
 - 빌드 시 안전하게 변환한 Markdown, 전체 학습 자료 오프라인 캐시, 학습을 방해하지 않는 업데이트 적용.
 - Capacitor Android/iOS 소스 프로젝트와 CI.
 
@@ -48,7 +48,7 @@ Python → 자료구조 → 알고리즘으로 이어지고, 컴퓨터 구조와
 
 ## 오류 보고
 
-모든 화면 하단의 `문제 신고`에서 증상을 적고 GitHub Issue를 만들 수 있습니다. 최근 자동 진단 정보가 함께 첨부되며 학습 답안과 학습 기록은 포함하지 않습니다. 원격 자동 집계 설정과 수집 데이터 형식은 [docs/ERROR_REPORTING.md](docs/ERROR_REPORTING.md)를 참고하세요.
+모든 화면 하단의 `문제 신고`에서 증상을 적고 GitHub Issue를 만들 수 있습니다. 최근 자동 진단 정보가 함께 첨부되며 학습 답안과 학습 기록은 포함하지 않습니다. Sentry 오류 자동 보고는 첫 방문 동의 뒤에만 활성화되며 설정에서 언제든지 철회할 수 있습니다. 자세한 수집·국외 이전·보유 기간은 [개인정보 처리방침](https://highlow12.github.io/cs-duolingo/privacy)과 [docs/ERROR_REPORTING.md](docs/ERROR_REPORTING.md)를 참고하세요.
 
 ## 주요 명령
 

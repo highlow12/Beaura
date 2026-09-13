@@ -7,6 +7,12 @@
   import HeartIndicator from "$lib/components/HeartIndicator.svelte";
   import ReportIssue from "$lib/components/ReportIssue.svelte";
   import { installGlobalErrorReporting } from "$lib/application/error-reporting";
+  import { disableSentry, initSentry } from "$lib/application/sentry";
+  import {
+    readTelemetryConsent,
+    setTelemetryConsent,
+    type TelemetryConsent,
+  } from "$lib/application/privacy";
   import {
     applyThemeToDocument,
     emitThemeChange,
@@ -28,6 +34,8 @@
   let currentPath = $derived(page.url.pathname);
   let theme = $state<Theme>("light");
   let themeChoice = $state<ThemeChoice>("system");
+  let telemetryConsent = $state<TelemetryConsent>("unknown");
+  let consentEligibilityConfirmed = $state(false);
 
   const navItems = [
     { href: `${base}/learn`, label: "학습" },
@@ -44,7 +52,20 @@
     theme = setThemePreference(theme === "dark" ? "light" : "dark");
   }
 
+  function chooseTelemetryConsent(choice: Exclude<TelemetryConsent, "unknown">) {
+    if (choice === "granted" && !consentEligibilityConfirmed) return;
+    telemetryConsent = choice;
+    setTelemetryConsent(choice);
+    if (choice === "granted") {
+      initSentry();
+    } else {
+      void disableSentry();
+    }
+  }
+
   onMount(() => {
+    telemetryConsent = readTelemetryConsent();
+    if (telemetryConsent === "granted") initSentry();
     const uninstallErrorReporting = installGlobalErrorReporting();
     let storage: Storage | null = null;
     try {
@@ -123,11 +144,65 @@
   {@render children()}
 </main>
 
+{#if telemetryConsent === "unknown"}
+  <div class="consent-backdrop">
+    <div
+      class="consent-dialog card stack"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="telemetry-consent-title"
+    >
+      <p class="consent-eyebrow">개인정보 / 선택 사항</p>
+      <h2 id="telemetry-consent-title">오류 자동 보고를 허용할까요?</h2>
+      <p>
+        오류를 고치는 데 필요한 진단 정보만 Sentry로 보내는 기능입니다. 오류 메시지·오류 위치·앱
+        버전과 같은 기술 정보가 포함될 수 있으며, 사용자 식별자·쿠키·답안·학습 기록은 보내지 않도록
+        설정되어 있습니다.
+      </p>
+      <p class="muted">
+        허용하지 않아도 학습, 복습, 로컬 저장과 문제 신고를 모두 사용할 수 있습니다. 동의는 설정에서
+        언제든지 철회할 수 있습니다.
+      </p>
+      <div class="consent-summary">
+        <p><strong>국외 이전 안내</strong></p>
+        <ul>
+          <li>받는 자: Functional Software, Inc. (Sentry)</li>
+          <li>국가·방법: 오류 발생 시 독일 수집 서버로 HTTPS 자동 전송</li>
+          <li>항목: 오류 메시지·stack trace·화면 경로·앱 버전과 기술 정보</li>
+          <li>목적·기간: 오류 진단 및 안정성 개선·전송일로부터 30일</li>
+        </ul>
+        <p>동의를 거부해도 불이익이 없으며, 설정에서 철회하면 이후 전송이 중단됩니다.</p>
+      </div>
+      <label class="consent-check">
+        <input type="checkbox" bind:checked={consentEligibilityConfirmed} />
+        <span>만 14세 이상이며 위 오류 자동 보고와 개인정보 국외 이전에 동의합니다.</span>
+      </label>
+      <a class="text-link" href={`${base}/privacy`} target="_blank" rel="noreferrer">
+        개인정보 처리방침 자세히 보기
+      </a>
+      <div class="actions consent-actions">
+        <button class="button secondary" type="button" onclick={() => chooseTelemetryConsent("denied")}>
+          허용하지 않음
+        </button>
+        <button
+          class="button"
+          type="button"
+          disabled={!consentEligibilityConfirmed}
+          onclick={() => chooseTelemetryConsent("granted")}
+        >
+          오류 자동 보고 허용
+        </button>
+      </div>
+    </div>
+  </div>
+{/if}
+
 <footer class="site-footer">
   <div class="shell footer-inner">
     <span>CS 듀오링고</span>
     <div class="footer-meta">
       <ReportIssue />
+      <a class="privacy-link" href={`${base}/privacy`}>개인정보 처리방침</a>
       {#if buildCommitUrl}
         <a class="build-commit" href={buildCommitUrl}>배포 기준 {buildCommitShort}</a>
       {:else}
@@ -165,6 +240,80 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 0.7rem;
+  }
+
+  .consent-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    overflow: auto;
+    padding: var(--space-4);
+    background: var(--scrim);
+  }
+
+  .consent-dialog {
+    width: min(100%, 600px);
+    max-height: calc(100dvh - 2 * var(--space-4));
+    overflow: auto;
+  }
+
+  .consent-dialog h2,
+  .consent-dialog p {
+    margin-top: 0;
+  }
+
+  .consent-dialog h2 {
+    margin-bottom: var(--space-2);
+  }
+
+  .consent-dialog p {
+    line-height: 1.7;
+  }
+
+  .consent-eyebrow {
+    margin-bottom: var(--space-1) !important;
+    color: var(--primary);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.75rem;
+    font-weight: 650;
+  }
+
+  .consent-check {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .consent-summary {
+    padding: var(--space-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface-muted);
+    font-size: 0.84rem;
+  }
+
+  .consent-summary p,
+  .consent-summary ul {
+    margin: 0;
+  }
+
+  .consent-summary ul {
+    padding-left: 1.2rem;
+  }
+
+  .consent-check input {
+    flex: 0 0 auto;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 0.15rem;
+  }
+
+  .consent-actions {
+    justify-content: flex-end;
   }
 
   .build-commit {

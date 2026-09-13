@@ -1,3 +1,5 @@
+import { hasTelemetryConsent } from '$lib/application/privacy';
+
 const STORAGE_KEY = 'cs-duolingo:error-reports';
 const MAX_REPORTS = 20;
 const MAX_MESSAGE = 1000;
@@ -100,6 +102,10 @@ export function createErrorReport(options: CaptureOptions): ClientErrorReport {
 }
 
 async function sendRemote(report: ClientErrorReport) {
+  // Local diagnostics are useful without consent; any automatic network
+  // destination, including an optional custom collector, is not.
+  if (!hasTelemetryConsent()) return;
+
   const endpoint = import.meta.env.PUBLIC_ERROR_REPORT_ENDPOINT;
   if (!endpoint || typeof fetch === 'undefined') return;
   try {

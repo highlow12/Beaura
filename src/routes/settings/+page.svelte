@@ -1,9 +1,16 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { onMount } from 'svelte';
   import { learningRepository } from '$lib/storage/repositories/learning-repository';
   import { contentRepository } from '$lib/content/repository/static-content-repository';
   import { errorMessage } from '$lib/application/dashboard';
   import { readThemeChoice, setThemePreference, subscribeThemeChanges, type ThemeChoice } from '$lib/application/theme';
+  import { disableSentry, initSentry } from '$lib/application/sentry';
+  import {
+    readTelemetryConsent,
+    setTelemetryConsent,
+    type TelemetryConsent,
+  } from '$lib/application/privacy';
   let dailyGoal = $state(30);
   let reviewLimit = $state(10);
   let buildId = $state('');
@@ -17,6 +24,8 @@
   let resetOpen = $state(false);
   let resetText = $state('');
   let themeChoice = $state<ThemeChoice>('system');
+  let telemetryConsent = $state<TelemetryConsent>('unknown');
+  let consentEligibilityConfirmed = $state(false);
 
   function setTheme(choice: ThemeChoice) {
     themeChoice = choice;
@@ -28,12 +37,31 @@
     let storage: Storage | null = null;
     try { storage = window.localStorage; } catch { /* system theme is still available */ }
     themeChoice = readThemeChoice(storage);
+    telemetryConsent = readTelemetryConsent(storage);
     const unsubscribe = subscribeThemeChanges((change) => {
       themeChoice = change.choice;
     });
     void load().catch((e)=>{error=errorMessage(e);});
     return unsubscribe;
   });
+  function enableTelemetry() {
+    if (!consentEligibilityConfirmed) {
+      error = '오류 자동 보고를 켜려면 연령 및 법정대리인 동의 여부를 확인해 주세요.';
+      return;
+    }
+    telemetryConsent = 'granted';
+    setTelemetryConsent('granted');
+    initSentry();
+    message = '오류 자동 보고 동의를 저장했습니다.';
+    error = '';
+  }
+  async function withdrawTelemetry() {
+    telemetryConsent = 'denied';
+    setTelemetryConsent('denied');
+    await disableSentry();
+    message = '오류 자동 보고 동의를 철회했습니다. 이후 오류는 이 기기에만 기록됩니다.';
+    error = '';
+  }
   async function action(work:()=>Promise<void>,success:string) { if(busy)return;busy=true;error='';message='';try {await work();message=success;}catch(e){error=errorMessage(e);}finally{busy=false;} }
   function save() { return action(async()=>{await learningRepository.updateSettings({dailyGoal,reviewLimit});},'학습 목표를 저장했습니다.'); }
   function exportData() { return action(async()=>{const json=await learningRepository.exportBackup();const url=URL.createObjectURL(new Blob([json],{type:'application/json'}));const anchor=document.createElement('a');const exportedAt=new Date();anchor.href=url;anchor.download=`cs-duolingo-backup-${exportedAt.toISOString().replace(/\.\d{3}Z$/,'Z').replaceAll(':','-')}.json`;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),30000);},'백업 파일을 만들었습니다. 다운로드한 파일을 보관해 주세요.'); }
@@ -49,6 +77,17 @@
   {#if !loaded && !error}<p class="card">설정을 불러오는 중입니다…</p>
   {:else if loaded}
     <section class="card stack theme-settings"><div class="section-heading"><h2>화면 테마</h2><span class="system-mark" aria-hidden="true">◐</span></div><p class="muted">기기의 설정을 따르거나 원하는 테마를 선택할 수 있어요. 선택은 이 기기에 저장됩니다.</p><label for="theme-choice">테마<select id="theme-choice" bind:value={themeChoice} onchange={(event)=>setTheme((event.currentTarget as HTMLSelectElement).value as ThemeChoice)} disabled={busy}><option value="system">기기 설정</option><option value="light">라이트</option><option value="dark">다크</option></select></label></section>
+    <section class="card stack privacy-settings">
+      <div class="section-heading"><h2>오류 자동 보고</h2><span class="consent-status" data-consent={telemetryConsent}>{telemetryConsent === 'granted' ? '허용됨' : telemetryConsent === 'denied' ? '허용하지 않음' : '선택하지 않음'}</span></div>
+      <p class="muted">오류를 고치는 데 필요한 기술 진단 정보만 Sentry로 보냅니다. 사용자 식별자, 쿠키, 답안과 학습 기록은 보내지 않도록 설정되어 있습니다. 동의하지 않아도 앱의 학습 기능에는 영향이 없습니다.</p>
+      <label class="consent-check"><input type="checkbox" bind:checked={consentEligibilityConfirmed} /><span>만 14세 이상이며 개인정보 처리방침의 오류 자동 보고와 국외 이전에 동의합니다.</span></label>
+      {#if telemetryConsent === 'granted'}
+        <div class="actions"><button class="button secondary" type="button" disabled={busy} onclick={() => { void withdrawTelemetry(); }}>동의 철회</button></div>
+      {:else}
+        <div class="actions"><button class="button" type="button" disabled={busy || !consentEligibilityConfirmed} onclick={enableTelemetry}>오류 자동 보고 허용</button></div>
+      {/if}
+      <a class="text-link" href={`${base}/privacy`}>개인정보 처리방침 확인</a>
+    </section>
     <form class="card stack" onsubmit={(e)=>{e.preventDefault();void save();}}><h2>학습 목표</h2><label>하루 목표 XP<select bind:value={dailyGoal} disabled={busy}>{#each [10,20,30,50,100] as goal}<option value={goal}>{goal} XP</option>{/each}</select></label><label>한 번에 복습할 문제<select bind:value={reviewLimit} disabled={busy}>{#each [5,10,20,30,50] as limit}<option value={limit}>{limit}개</option>{/each}</select></label><button class="button" disabled={busy}>목표 저장</button></form>
     <section class="card stack"><h2>학습 기록 백업</h2><p class="muted">기록은 이 브라우저와 기기에 저장됩니다. 기기를 바꾸거나 브라우저 데이터를 지우기 전에 백업하세요.</p><div class="actions"><button class="button secondary" disabled={busy} onclick={exportData}>백업 다운로드</button><label class="file-label">백업 파일 선택<input type="file" accept=".json,application/json" disabled={busy} onchange={selectFile}/></label></div>
       {#if importData}<div class="confirmation" role="group" aria-label="백업 복원 확인"><strong>{importName}</strong>{#if importExportedAt !== null}<p class="muted">백업 생성 시각: {new Date(importExportedAt).toLocaleString()}</p>{/if}<p>현재 학습 기록을 이 백업으로 교체합니다. 필요한 기록은 먼저 다운로드해 주세요.</p><div class="actions"><button class="button" disabled={busy} onclick={restore}>이 백업으로 복원</button><button class="button secondary" disabled={busy} onclick={()=>{importData=null;importName='';importExportedAt=null;}}>취소</button></div></div>{/if}
@@ -66,6 +105,12 @@
   .section-heading h2{margin:0}
   .system-mark{display:grid;place-items:center;width:2rem;height:2rem;border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--primary);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
   .theme-settings{border-top:3px solid var(--primary)}
+  .privacy-settings{border-top:3px solid var(--border-strong)}
+  .consent-status{border:1px solid var(--border);border-radius:999px;padding:.25rem .55rem;color:var(--muted);font-size:.75rem;font-weight:650}
+  .consent-status[data-consent='granted']{border-color:var(--success);color:var(--success)}
+  .consent-status[data-consent='denied']{border-color:var(--border-strong)}
+  .consent-check{display:flex;align-items:flex-start;gap:var(--space-2);font-size:.9rem;line-height:1.5}
+  .consent-check input{flex:0 0 auto;width:1.1rem;height:1.1rem;margin-top:.15rem}
   .confirmation{border:1px solid var(--border);border-radius:var(--radius-md);padding:var(--space-4);background:var(--primary-soft);overflow-wrap:anywhere}
   .file-label{font-weight:600;font-size:.9rem}
   .file-label input{max-width:100%}
