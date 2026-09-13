@@ -22,10 +22,10 @@
   import { layoutCurriculumDag } from "$lib/curriculum/dag-layout";
 
   type SwipeStart = { pointerId: number; x: number; y: number };
-  type ExternalPrerequisite = { trackTitle: string; lessonTitle: string };
-  type PrerequisitePopover = {
+  type PrerequisiteItem = { trackTitle: string; lessonTitle: string };
+  type LessonPopover = {
     lessonId: string;
-    items: ExternalPrerequisite[];
+    missingPrerequisites: PrerequisiteItem[];
     left: number;
     top: number;
     arrowLeft: number;
@@ -42,7 +42,7 @@
   let suppressPopoverUntilClick = false;
   let reducedMotion = $state(false);
   let dagScroll = $state<HTMLDivElement | null>(null);
-  let prerequisitePopover = $state<PrerequisitePopover | null>(null);
+  let lessonPopover = $state<LessonPopover | null>(null);
 
   function trackMotif(trackId: string): string {
     switch (trackId) {
@@ -99,6 +99,15 @@
       selectedLessons[0] ??
       null,
   );
+  let popoverLesson = $derived(
+    data?.lessons.find((lesson) => lesson.id === lessonPopover?.lessonId) ??
+      null,
+  );
+  let popoverStatus: keyof typeof statusLabels | null = $derived(
+    popoverLesson && data
+      ? lessonStatus(popoverLesson, data.curriculum, data.snapshot.lessonStates)
+      : null,
+  );
   let completedLessonCount = $derived(
     data && selectedTrack
       ? selectedLessons.filter(
@@ -111,25 +120,6 @@
         ).length
       : 0,
   );
-  let selectedRequiredIds = $derived(
-    selectedLesson && data
-      ? (data.curriculum.nodes.find(
-          (node) => node.lesson === selectedLesson!.id,
-        )?.requires ?? [])
-      : [],
-  );
-  let selectedMissingIds = $derived(
-    selectedLesson && data
-      ? new Set(
-          missingPrerequisites(
-            selectedLesson.id,
-            data.curriculum,
-            data.snapshot.lessonStates,
-          ),
-        )
-      : new Set<string>(),
-  );
-
   $effect(() => {
     const trackId = selectedTrack?.id;
     const layoutWidth = dagLayout.width;
@@ -237,7 +227,7 @@
     const nextIndex = tracks.findIndex((track) => track.id === trackId);
     if (nextIndex < 0 || nextIndex === selectedTrackIndex) return;
     transitionDirection = nextIndex > selectedTrackIndex ? "next" : "previous";
-    prerequisitePopover = null;
+    lessonPopover = null;
     selectedTrackId = trackId;
     if (data) {
       const nextLessons = data.lessons.filter(
@@ -297,10 +287,8 @@
     selectedLessonId = lessonId;
   }
 
-  function externalMissingPrerequisites(
-    lessonId: string,
-  ): ExternalPrerequisite[] {
-    if (!data || !selectedTrack) return [];
+  function prerequisiteItems(lessonId: string): PrerequisiteItem[] {
+    if (!data) return [];
     const missing = new Set(
       missingPrerequisites(
         lessonId,
@@ -321,7 +309,7 @@
     return required.flatMap((requiredId) => {
       if (!missing.has(requiredId)) return [];
       const lesson = lessonsById.get(requiredId);
-      if (!lesson || lesson.track === selectedTrack.id) return [];
+      if (!lesson) return [];
       return [
         {
           trackTitle: tracksById.get(lesson.track)?.title ?? lesson.track,
@@ -337,11 +325,6 @@
       suppressPopoverUntilClick = false;
       return;
     }
-    const items = externalMissingPrerequisites(lessonId);
-    if (!items.length) {
-      prerequisitePopover = null;
-      return;
-    }
 
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
     const width = Math.min(280, window.innerWidth - 24);
@@ -350,28 +333,30 @@
       Math.max(12, anchor - width / 2),
       window.innerWidth - width - 12,
     );
-    prerequisitePopover = {
+    lessonPopover = {
       lessonId,
-      items,
+      missingPrerequisites: prerequisiteItems(lessonId),
       left,
       top: rect.top - 8,
       arrowLeft: anchor - left,
     };
   }
 
-  function dismissPrerequisitePopover() {
-    prerequisitePopover = null;
+  function dismissLessonPopover() {
+    lessonPopover = null;
   }
 
-  function handleWindowPointerDown() {
-    if (!prerequisitePopover) return;
-    prerequisitePopover = null;
+  function handleWindowPointerDown(event: PointerEvent) {
+    const target = event.target;
+    if (target instanceof Element && target.closest(".popover-action")) return;
+    if (!lessonPopover) return;
+    lessonPopover = null;
     suppressPopoverUntilClick = true;
     window.setTimeout(() => (suppressPopoverUntilClick = false), 0);
   }
 
   function handleWindowKeydown(event: KeyboardEvent) {
-    if (event.key === "Escape") dismissPrerequisitePopover();
+    if (event.key === "Escape") dismissLessonPopover();
   }
 
   function handlePointerUp(event: PointerEvent) {
@@ -403,8 +388,8 @@
 <svelte:window
   onpointerdown={handleWindowPointerDown}
   onkeydown={handleWindowKeydown}
-  onresize={dismissPrerequisitePopover}
-  onscroll={dismissPrerequisitePopover}
+  onresize={dismissLessonPopover}
+  onscroll={dismissLessonPopover}
 />
 
 <svelte:head><title>학습 경로 | CS 듀오링고</title></svelte:head>
@@ -608,9 +593,9 @@
                             aria-pressed={lesson.id === selectedLesson?.id}
                             aria-label={`${lesson.title}, ${statusLabels[status]}${node.externalPrerequisiteCount ? `, 외부 선행 ${node.externalPrerequisiteCount}개` : ""}`}
                             style={`--node-x: ${node.x}px; --node-y: ${node.y}px; --node-width: ${node.width}px; --node-height: ${node.height}px;`}
-                            aria-describedby={prerequisitePopover?.lessonId ===
+                            aria-describedby={lessonPopover?.lessonId ===
                             lesson.id
-                              ? "external-prerequisite-popover"
+                              ? "lesson-popover"
                               : undefined}
                             onclick={(event) =>
                               handleLessonClick(event, lesson.id)}
@@ -643,81 +628,6 @@
                 좌우로 움직일 수 있어요.
               </p>
             </section>
-
-            {#if selectedLesson}
-              {@const selectedStatus = lessonStatus(
-                selectedLesson,
-                data.curriculum,
-                data.snapshot.lessonStates,
-              )}
-              <section
-                class="lesson-detail"
-                data-track={selectedTrack.id}
-                aria-live="polite"
-                aria-labelledby={`lesson-detail-title-${selectedLesson.id}`}
-              >
-                <div class="detail-status-row">
-                  <span
-                    class="detail-status"
-                    class:success={selectedStatus === "completed"}
-                  >
-                    <span aria-hidden="true"
-                      >{selectedStatus === "completed"
-                        ? "✓"
-                        : trackMotif(selectedTrack.id)}</span
-                    >
-                    {statusLabels[selectedStatus]}
-                  </span>
-                  <code>{selectedLesson.id}</code>
-                </div>
-                <div class="detail-content">
-                  <h3 id={`lesson-detail-title-${selectedLesson.id}`}>
-                    {selectedLesson.title}
-                  </h3>
-                  <p>{selectedLesson.description}</p>
-                  {#if selectedRequiredIds.length}
-                    <div class="detail-prerequisites">
-                      <span class="detail-label">선행 레슨</span>
-                      <div class="prerequisite-list">
-                        {#each selectedRequiredIds as prerequisiteId}
-                          <span
-                            class:unmet={selectedMissingIds.has(prerequisiteId)}
-                            class="prerequisite-chip"
-                          >
-                            <span aria-hidden="true"
-                              >{selectedMissingIds.has(prerequisiteId)
-                                ? "·"
-                                : "✓"}</span
-                            >
-                            {data.lessons.find(
-                              (lesson) => lesson.id === prerequisiteId,
-                            )?.title ?? prerequisiteId}
-                          </span>
-                        {/each}
-                      </div>
-                    </div>
-                  {/if}
-                </div>
-                <div class="detail-action">
-                  {#if selectedStatus !== "locked"}
-                    <a
-                      class="button"
-                      href={`${base}/learn/${selectedLesson.id}`}
-                      aria-label={`${selectedLesson.title} ${selectedStatus === "completed" ? "다시 읽기" : "학습하기"}`}
-                      >{selectedStatus === "completed"
-                        ? "다시 읽기"
-                        : selectedStatus === "in-progress"
-                          ? "이어하기"
-                          : "시작하기"}</a
-                    >
-                  {:else}
-                    <span class="detail-locked"
-                      >선행 레슨을 모두 완료하면 시작할 수 있어요.</span
-                    >
-                  {/if}
-                </div>
-              </section>
-            {/if}
           </div>
         {/key}
       </div>
@@ -725,19 +635,41 @@
   {/if}
 </div>
 
-{#if prerequisitePopover}
+{#if lessonPopover && popoverLesson && popoverStatus}
   <div
-    id="external-prerequisite-popover"
-    class="prerequisite-popover"
-    role="status"
-    style={`--popover-left: ${prerequisitePopover.left}px; --popover-top: ${prerequisitePopover.top}px; --popover-arrow-left: ${prerequisitePopover.arrowLeft}px;`}
+    id="lesson-popover"
+    class="lesson-popover"
+    role="dialog"
+    aria-labelledby="lesson-popover-title"
+    style={`--popover-left: ${lessonPopover.left}px; --popover-top: ${lessonPopover.top}px; --popover-arrow-left: ${lessonPopover.arrowLeft}px;`}
   >
-    <strong>먼저 다른 트랙에서 들어야 해요</strong>
-    <ul>
-      {#each prerequisitePopover.items as item}
-        <li><span>{item.trackTitle}</span> · {item.lessonTitle}</li>
-      {/each}
-    </ul>
+    <span class:success={popoverStatus === "completed"} class="popover-status"
+      >{statusLabels[popoverStatus]}</span
+    >
+    <strong id="lesson-popover-title">{popoverLesson.title}</strong>
+    <p>{popoverLesson.description}</p>
+    {#if lessonPopover.missingPrerequisites.length}
+      <div class="popover-prerequisites">
+        <span>먼저 들어야 해요</span>
+        <ul>
+          {#each lessonPopover.missingPrerequisites as item}
+            <li><strong>{item.trackTitle}</strong> · {item.lessonTitle}</li>
+          {/each}
+        </ul>
+      </div>
+    {/if}
+    {#if popoverStatus !== "locked"}
+      <a
+        class="button popover-action"
+        href={`${base}/learn/${popoverLesson.id}`}
+        aria-label={`${popoverLesson.title} ${popoverStatus === "completed" ? "다시 읽기" : "학습하기"}`}
+        >{popoverStatus === "completed"
+          ? "다시 읽기"
+          : popoverStatus === "in-progress"
+            ? "이어하기"
+            : "시작하기"}</a
+      >
+    {/if}
   </div>
 {/if}
 
@@ -1170,7 +1102,7 @@
     font-size: 0.78rem;
   }
 
-  .prerequisite-popover {
+  .lesson-popover {
     position: fixed;
     z-index: 100;
     top: var(--popover-top);
@@ -1183,10 +1115,10 @@
     color: var(--text);
     padding: 0.75rem 0.85rem;
     transform: translateY(-100%);
-    pointer-events: none;
+    pointer-events: auto;
   }
 
-  .prerequisite-popover::after {
+  .lesson-popover::after {
     position: absolute;
     top: 100%;
     left: var(--popover-arrow-left);
@@ -1201,136 +1133,63 @@
     transform: translate(-50%, -50%) rotate(45deg);
   }
 
-  .prerequisite-popover strong {
-    color: var(--warning);
-    font-size: 0.8rem;
+  .lesson-popover > strong {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.95rem;
   }
 
-  .prerequisite-popover ul {
+  .lesson-popover > p {
+    margin: 0.35rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .popover-status {
+    color: var(--track-accent, var(--primary));
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .popover-status.success {
+    color: var(--success);
+  }
+
+  .popover-prerequisites {
     display: grid;
     gap: 0.25rem;
-    margin: 0.45rem 0 0;
+    margin-top: 0.65rem;
+    border-top: 1px solid var(--border);
+    padding-top: 0.55rem;
+  }
+
+  .popover-prerequisites > span {
+    color: var(--warning);
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .popover-prerequisites ul {
+    display: grid;
+    gap: 0.25rem;
+    margin: 0;
     padding: 0;
     list-style: none;
   }
 
-  .prerequisite-popover li {
+  .popover-prerequisites li {
     font-size: 0.78rem;
     line-height: 1.4;
   }
 
-  .prerequisite-popover li span {
-    font-weight: 650;
+  .popover-prerequisites li strong {
+    color: var(--text);
   }
 
-  .lesson-detail {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    align-items: start;
-    gap: var(--space-4);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--track-accent, var(--primary));
-    border-radius: var(--radius-md);
-    background: var(--surface);
-    padding: var(--space-4);
-  }
-
-  .detail-status-row {
-    display: grid;
-    align-content: start;
-    gap: var(--space-2);
-    min-width: 7rem;
-  }
-
-  .detail-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    width: fit-content;
-    color: var(--track-accent, var(--primary));
-    font-size: 0.82rem;
-    font-weight: 650;
-  }
-
-  .detail-status.success {
-    color: var(--success);
-  }
-
-  .detail-status-row code {
-    width: fit-content;
-    overflow-wrap: anywhere;
-    color: var(--text-muted);
-    font-size: 0.72rem;
-  }
-
-  .detail-content {
-    min-width: 0;
-  }
-
-  .detail-content h3 {
-    margin: 0;
-    font-size: 1.05rem;
-  }
-
-  .detail-content p {
-    margin: var(--space-2) 0 0;
-    color: var(--text-muted);
-  }
-
-  .detail-prerequisites {
-    display: grid;
-    gap: var(--space-2);
-    margin-top: var(--space-4);
-  }
-
-  .detail-label {
-    color: var(--text-muted);
-    font-size: 0.78rem;
-    font-weight: 650;
-  }
-
-  .prerequisite-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-
-  .prerequisite-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    max-width: 100%;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    background: var(--surface-muted);
-    color: var(--text-muted);
-    padding: 0.35rem 0.5rem;
-    font-size: 0.78rem;
-    overflow-wrap: anywhere;
-  }
-
-  .prerequisite-chip.unmet {
-    border-color: color-mix(in srgb, var(--warning) 55%, var(--border));
-    background: var(--warning-soft);
-    color: var(--warning);
-  }
-
-  .detail-action {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    min-width: 7rem;
-  }
-
-  .detail-action .button {
-    white-space: nowrap;
-  }
-
-  .detail-locked {
-    color: var(--warning);
-    font-size: 0.78rem;
-    line-height: 1.45;
-    text-align: right;
+  .popover-action {
+    width: 100%;
+    margin-top: 0.7rem;
   }
 
   @media (max-width: 540px) {
@@ -1355,31 +1214,6 @@
 
     .dag-legend {
       justify-content: flex-start;
-    }
-
-    .lesson-detail {
-      grid-template-columns: minmax(0, 1fr);
-      gap: var(--space-3);
-    }
-
-    .detail-status-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-width: 0;
-    }
-
-    .detail-action {
-      justify-content: stretch;
-      min-width: 0;
-    }
-
-    .detail-action .button {
-      width: 100%;
-    }
-
-    .detail-locked {
-      text-align: left;
     }
   }
 
