@@ -5,6 +5,8 @@
   import "../app.css";
   import OfflineStatus from "$lib/components/OfflineStatus.svelte";
   import HeartIndicator from "$lib/components/HeartIndicator.svelte";
+  import ReportIssue from "$lib/components/ReportIssue.svelte";
+  import { installGlobalErrorReporting } from "$lib/application/error-reporting";
   import {
     applyThemeToDocument,
     emitThemeChange,
@@ -43,6 +45,7 @@
   }
 
   onMount(() => {
+    const uninstallErrorReporting = installGlobalErrorReporting();
     let storage: Storage | null = null;
     try {
       storage = window.localStorage;
@@ -75,6 +78,7 @@
     else media?.addListener?.(onSystemThemeChange);
 
     return () => {
+      uninstallErrorReporting();
       unsubscribe();
       if (media?.removeEventListener) media.removeEventListener("change", onSystemThemeChange);
       else media?.removeListener?.(onSystemThemeChange);
@@ -123,6 +127,7 @@
   <div class="shell footer-inner">
     <span>CS 듀오링고</span>
     <div class="footer-meta">
+      <ReportIssue />
       {#if buildCommitUrl}
         <a class="build-commit" href={buildCommitUrl}>배포 기준 {buildCommitShort}</a>
       {:else}
