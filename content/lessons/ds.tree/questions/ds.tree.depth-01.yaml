@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: ds.tree.depth-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 루트 A의 자식이 B이고 B의 자식이 C라면 C의 깊이는 얼마인가요?
+options:
+  - id: depth-2
+    content:
+      - type: text
+        text: '2'
+  - id: depth-1
+    content:
+      - type: text
+        text: '1'
+  - id: depth-3
+    content:
+      - type: text
+        text: '3'
+correctOptionId: depth-2
+shuffleOptions: true
+explanation:
+  - type: text
+    text: A에서 C까지 A-B, B-C 두 개의 간선을 지나므로 C의 깊이는 2입니다.
+tags:
+  - tree
+  - depth
+  - path
+difficulty: 1

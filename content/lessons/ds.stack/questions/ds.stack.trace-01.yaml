@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: ds.stack.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 Python 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  stack = []
+  stack.append("A")
+  stack.append("B")
+  stack.pop()
+  stack.append("C")
+  print(stack[-1])
+choices:
+  - C
+  - B
+  - A
+acceptedOutputs:
+  - C
+explanation:
+  - type: text
+    text: B가 pop으로 제거된 뒤 C가 마지막에 들어가므로 top은 C입니다.
+tags:
+  - stack
+  - lifo
+  - trace
+difficulty: 2

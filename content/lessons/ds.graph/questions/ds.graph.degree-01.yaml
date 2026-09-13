@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: ds.graph.degree-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 무방향 그래프에서 A가 B, C, D와 각각 하나의 간선으로 연결되어 있다면 A의 차수는 얼마인가요?
+options:
+  - id: degree-3
+    content:
+      - type: text
+        text: '3'
+  - id: degree-2
+    content:
+      - type: text
+        text: '2'
+  - id: degree-4
+    content:
+      - type: text
+        text: '4'
+correctOptionId: degree-3
+shuffleOptions: true
+explanation:
+  - type: text
+    text: A에 닿는 간선이 세 개이므로 A의 차수는 3입니다.
+tags:
+  - graph
+  - degree
+  - undirected
+difficulty: 1

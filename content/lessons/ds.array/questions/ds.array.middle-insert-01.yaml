@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: ds.array.middle-insert-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 배열 [A, B, C, D]의 인덱스 1에 X를 삽입하면서 기존 순서를 유지하려면 최소 몇 개의 기존 원소를 뒤로 옮겨야 하나요?
+options:
+  - id: move-3
+    content:
+      - type: text
+        text: 3개
+  - id: move-1
+    content:
+      - type: text
+        text: 1개
+  - id: move-4
+    content:
+      - type: text
+        text: 4개
+correctOptionId: move-3
+shuffleOptions: true
+explanation:
+  - type: text
+    text: B, C, D 세 원소가 한 칸씩 뒤로 이동해야 X가 인덱스 1에 들어갈 수 있습니다.
+tags:
+  - array
+  - insertion
+  - complexity
+difficulty: 2

@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: ds.array.offset-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 원소 하나가 4바이트인 배열에서 인덱스 3 원소는 시작 위치에서 몇 바이트 떨어져 있나요?
+options:
+  - id: offset-12
+    content:
+      - type: text
+        text: 12바이트
+  - id: offset-3
+    content:
+      - type: text
+        text: 3바이트
+  - id: offset-16
+    content:
+      - type: text
+        text: 16바이트
+correctOptionId: offset-12
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 인덱스 3의 오프셋은 3 × 4 = 12바이트입니다.
+tags:
+  - array
+  - indexing
+  - memory
+difficulty: 2

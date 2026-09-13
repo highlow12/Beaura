@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: ds.stack.undo-order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 편집 작업을 A, B, C 순서로 수행했다면 실행 취소가 적용되는 순서대로 배열하세요.
+items:
+  - id: undo-a
+    content:
+      - type: text
+        text: A를 취소한다.
+  - id: undo-b
+    content:
+      - type: text
+        text: B를 취소한다.
+  - id: undo-c
+    content:
+      - type: text
+        text: C를 취소한다.
+correctOrder:
+  - undo-c
+  - undo-b
+  - undo-a
+explanation:
+  - type: text
+    text: 스택은 가장 최근 작업부터 꺼내므로 C, B, A 순서로 취소됩니다.
+tags:
+  - stack
+  - lifo
+  - undo
+difficulty: 1
