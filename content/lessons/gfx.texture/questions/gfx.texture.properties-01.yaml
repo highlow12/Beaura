@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.texture.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 텍스처 좌표와 샘플링에 대한 올바른 설명을 모두 고르세요.
+options:
+  - id: uv-address
+    content:
+      - type: text
+        text: UV는 텍스처에서 읽을 위치를 지정한다
+  - id: interpolate
+    content:
+      - type: text
+        text: 정점의 UV는 삼각형 내부 fragment 위치에 맞춰 보간될 수 있다
+  - id: wrap
+    content:
+      - type: text
+        text: 0 ~ 1 밖의 UV에는 repeat나 clamp 같은 주소 규칙을 적용할 수 있다
+  - id: texture-is-light
+    content:
+      - type: text
+        text: 텍스처는 항상 광원 방향만 저장하고 이미지는 저장하지 않는다
+correctOptionIds: [uv-address, interpolate, wrap]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: UV는 이미지 주소이며 정점에서 fragment로 보간됩니다. 범위를 벗어난 좌표는 선택한 wrap 모드에 따라 처리됩니다.
+tags: [graphics, texture, uv]
+difficulty: 3

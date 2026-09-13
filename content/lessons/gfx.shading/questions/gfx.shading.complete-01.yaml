@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.shading.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: fragment 셰이더가 보간된 색을 최종 색 변수에 전달하도록 빈칸을 완성하세요.
+language: python
+template: |-
+  interpolated_color = (0.2, 0.4, 0.8)
+  output_color = {{blank:value}}
+blanks:
+  - id: value
+    choices: ["interpolated_color", "vertex_position", "depth_buffer"]
+    acceptedAnswers: ["interpolated_color"]
+explanation:
+  - type: text
+    text: fragment 셰이더의 색 출력에는 현재 샘플에서 사용할 보간 색을 전달해야 합니다. 위치나 깊이 버퍼 자체는 색 출력이 아닙니다.
+tags: [graphics, shading, fragment-shader, code-completion]
+difficulty: 1

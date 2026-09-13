@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.homogeneous.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: 2차원 점의 동차좌표에서 이동을 나타낼 마지막 성분을 완성하세요.
+language: python
+template: |-
+  point = (4, 5)
+  homogeneous = (point[0], point[1], {{blank:last}})
+blanks:
+  - id: last
+    choices: ["1", "0", "5"]
+    acceptedAnswers: ["1"]
+explanation:
+  - type: text
+    text: 점을 동차좌표로 나타낼 때 마지막 성분 w를 1로 둡니다. 방향 벡터는 w=0을 쓰는 등 다른 규칙이 있지만 이 문제는 점입니다.
+tags: [graphics, homogeneous-coordinates, code-completion]
+difficulty: 1

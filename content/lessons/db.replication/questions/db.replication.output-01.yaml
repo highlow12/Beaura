@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.replication.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: primary의 로그를 replica가 따라간 뒤 값이 같아지는 상황을 표현한 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  primary = 10
+  replica = 8
+  log_delta = primary - replica
+  replica += log_delta
+  print(replica)
+choices: ["10", "18", "2"]
+acceptedOutputs: ["10"]
+explanation:
+  - type: text
+    text: replica가 뒤처진 2만큼 로그를 적용하므로 8+2=10이 되어 primary와 같아집니다.
+tags: [database, replication, code-output]
+difficulty: 1

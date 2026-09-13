@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.camera.inverse-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 카메라의 월드 변환과 뷰 행렬의 관계로 가장 알맞은 것은 무엇인가요?
+options:
+  - id: inverse
+    content:
+      - type: text
+        text: 뷰 행렬은 카메라 월드 변환의 역변환으로 볼 수 있다
+  - id: same
+    content:
+      - type: text
+        text: 두 행렬은 항상 같은 숫자를 가진다
+  - id: color
+    content:
+      - type: text
+        text: 뷰 행렬은 픽셀의 RGB만 저장한다
+correctOptionId: inverse
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 카메라를 원점으로 옮겨 보는 효과를 만들려면 카메라가 월드에서 만든 변환을 반대로 적용해야 합니다.
+tags: [graphics, camera, view-matrix]
+difficulty: 2

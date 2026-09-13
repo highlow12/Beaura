@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.consistency.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 분산 데이터베이스 일관성의 설계 판단으로 올바른 것을 모두 고르세요.
+options:
+  - id: product-specific
+    content:
+      - type: text
+        text: 결제와 조회수는 허용할 수 있는 오래된 읽기의 정도가 다를 수 있다
+  - id: latency
+    content:
+      - type: text
+        text: 강한 일관성은 노드 확인과 네트워크 지연 비용을 높일 수 있다
+  - id: stale
+    content:
+      - type: text
+        text: 최종 일관성에서는 복제 지연 중 오래된 값을 읽을 수 있다
+  - id: free-guarantee
+    content:
+      - type: text
+        text: 복제본이 여러 개면 어떤 읽기도 자동으로 최신 값을 보장한다
+correctOptionIds: [product-specific, latency, stale]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 일관성은 데이터의 위험도와 UX 요구사항에 맞춰 선택하고, 강한 보장은 지연 비용을, 최종 보장은 오래된 읽기 가능성을 동반합니다.
+tags: [database, consistency, distributed]
+difficulty: 3

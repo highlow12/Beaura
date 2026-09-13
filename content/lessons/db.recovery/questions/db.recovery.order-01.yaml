@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: db.recovery.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: WAL을 사용하는 트랜잭션 변경의 일반적인 순서를 배열하세요.
+items:
+  - id: log
+    content:
+      - type: text
+        text: 변경 내용을 로그에 기록한다
+  - id: page
+    content:
+      - type: text
+        text: 데이터 페이지를 변경한다
+  - id: commit-log
+    content:
+      - type: text
+        text: commit 사실을 로그에 남긴다
+  - id: ack
+    content:
+      - type: text
+        text: 클라이언트에 성공을 알린다
+correctOrder: [log, page, commit-log, ack]
+explanation:
+  - type: text
+    text: WAL은 데이터 페이지보다 로그가 먼저 안전하게 기록되도록 합니다. commit 응답도 commit 사실을 복구할 수 있는 시점 뒤에 보내야 지속성을 지킬 수 있습니다.
+tags: [database, recovery, wal, order]
+difficulty: 3

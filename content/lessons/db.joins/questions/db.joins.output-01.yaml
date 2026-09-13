@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.joins.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 학생 목록에 수강 정보가 있으면 이름을 반복하고 없으면 None을 넣는 LEFT JOIN 모형의 결과 길이를 고르세요.
+language: python
+code: |-
+  students = [("A", 1), ("B", 2)]
+  enrollments = [(1, "CS"), (1, "Math")]
+  joined = []
+  for name, student_id in students:
+      matches = [course for sid, course in enrollments if sid == student_id]
+      joined.extend((name, course) for course in (matches or [None]))
+  print(len(joined))
+choices: ["3", "2", "1"]
+acceptedOutputs: ["3"]
+explanation:
+  - type: text
+    text: A는 두 과목과 매칭되어 두 행, B는 매칭이 없어 None을 가진 한 행이 남으므로 결과는 3행입니다. LEFT JOIN의 왼쪽 보존을 표현한 예입니다.
+tags: [database, sql, joins, code-output]
+difficulty: 3

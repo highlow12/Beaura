@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.joins.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: JOIN 종류와 결과에 남기는 행을 연결하세요.
+leftItems:
+  - id: inner
+    content:
+      - type: text
+        text: INNER JOIN
+  - id: left
+    content:
+      - type: text
+        text: LEFT JOIN
+  - id: condition
+    content:
+      - type: text
+        text: ON 조건
+rightItems:
+  - id: matched
+    content:
+      - type: text
+        text: 양쪽에 일치 행이 있는 결과
+  - id: preserve-left
+    content:
+      - type: text
+        text: 왼쪽 행을 모두 보존하고 짝이 없으면 NULL
+  - id: pair-rule
+    content:
+      - type: text
+        text: 어떤 두 행을 연결할지 정하는 식
+correctPairs:
+  - leftId: inner
+    rightId: matched
+  - leftId: left
+    rightId: preserve-left
+  - leftId: condition
+    rightId: pair-rule
+explanation:
+  - type: text
+    text: INNER와 LEFT의 차이는 미매칭 행 보존 여부이고, ON은 매칭 규칙입니다. JOIN 종류를 고르기 전에 어느 쪽 행을 반드시 남길지 정하세요.
+tags: [database, sql, joins]
+difficulty: 2

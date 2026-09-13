@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.replication.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 복제 용어와 역할을 연결하세요.
+leftItems:
+  - id: primary
+    content:
+      - type: text
+        text: primary
+  - id: replica
+    content:
+      - type: text
+        text: replica
+  - id: failover
+    content:
+      - type: text
+        text: failover
+rightItems:
+  - id: writes
+    content:
+      - type: text
+        text: 기본 쓰기를 받고 변경의 기준이 되는 노드
+  - id: copy
+    content:
+      - type: text
+        text: primary의 변경을 따라가는 복제 노드
+  - id: promote
+    content:
+      - type: text
+        text: 장애 시 다른 노드를 새 primary로 전환
+correctPairs:
+  - leftId: primary
+    rightId: writes
+  - leftId: replica
+    rightId: copy
+  - leftId: failover
+    rightId: promote
+explanation:
+  - type: text
+    text: primary는 쓰기의 기준, replica는 복사본, failover는 장애에 따른 역할 전환입니다. 실제 제품은 다중 primary 등 다른 구조도 지원할 수 있습니다.
+tags: [database, replication]
+difficulty: 1

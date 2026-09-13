@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.joins.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 두 테이블에서 어떤 행끼리 연결할지 지정하는 JOIN 절의 조건 키워드를 고르세요.
+choices: ["ON", "AS", "LIMIT"]
+acceptedAnswers: ["ON"]
+explanation:
+  - type: text
+    text: ON 뒤에 `Student.id = Enrollment.student_id` 같은 조인 조건을 작성합니다. AS는 별칭, LIMIT은 반환 행 수 제한에 사용됩니다.
+tags: [database, sql, joins]
+difficulty: 1

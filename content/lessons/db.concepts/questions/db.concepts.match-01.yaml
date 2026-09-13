@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.concepts.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 데이터베이스 용어와 역할을 연결하세요.
+leftItems:
+  - id: database
+    content:
+      - type: text
+        text: 데이터베이스
+  - id: dbms
+    content:
+      - type: text
+        text: DBMS
+  - id: schema
+    content:
+      - type: text
+        text: 스키마
+rightItems:
+  - id: organized-data
+    content:
+      - type: text
+        text: 규칙에 따라 저장된 데이터 집합
+  - id: manager
+    content:
+      - type: text
+        text: 질의와 저장·복구를 관리하는 소프트웨어
+  - id: structure
+    content:
+      - type: text
+        text: 데이터 구조와 제약을 설명하는 정의
+correctPairs:
+  - leftId: database
+    rightId: organized-data
+  - leftId: dbms
+    rightId: manager
+  - leftId: schema
+    rightId: structure
+explanation:
+  - type: text
+    text: 데이터베이스는 저장된 데이터, DBMS는 그것을 관리하는 실행 소프트웨어, 스키마는 구조의 계약입니다.
+tags: [database, dbms, schema]
+difficulty: 1

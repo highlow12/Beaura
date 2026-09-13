@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.recovery.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 장애 복구 용어와 역할을 연결하세요.
+leftItems:
+  - id: wal
+    content:
+      - type: text
+        text: WAL
+  - id: checkpoint
+    content:
+      - type: text
+        text: checkpoint
+  - id: redo
+    content:
+      - type: text
+        text: redo
+rightItems:
+  - id: log-first
+    content:
+      - type: text
+        text: 데이터 페이지보다 로그를 먼저 기록한다
+  - id: recovery-marker
+    content:
+      - type: text
+        text: 복구가 참고할 지점을 남긴다
+  - id: committed-change
+    content:
+      - type: text
+        text: 로그의 확정 변경을 다시 적용한다
+correctPairs:
+  - leftId: wal
+    rightId: log-first
+  - leftId: checkpoint
+    rightId: recovery-marker
+  - leftId: redo
+    rightId: committed-change
+explanation:
+  - type: text
+    text: WAL은 기록 순서, checkpoint는 복구 범위, redo는 확정된 변경의 재적용을 설명하는 개념입니다. 미완료 변경에는 undo가 쓰일 수 있습니다.
+tags: [database, recovery, wal]
+difficulty: 2

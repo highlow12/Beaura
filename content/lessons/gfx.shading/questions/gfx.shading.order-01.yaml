@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: gfx.shading.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 정점 속성 하나가 fragment 색에 반영되는 과정을 순서대로 배열하세요.
+items:
+  - id: vertex-value
+    content:
+      - type: text
+        text: 정점에 색 또는 법선을 저장한다
+  - id: vertex-output
+    content:
+      - type: text
+        text: 정점 셰이더가 값을 출력한다
+  - id: interpolate
+    content:
+      - type: text
+        text: 래스터화 단계가 샘플 위치에 맞춰 보간한다
+  - id: fragment-use
+    content:
+      - type: text
+        text: fragment 셰이더가 보간 값을 사용한다
+correctOrder: [vertex-value, vertex-output, interpolate, fragment-use]
+explanation:
+  - type: text
+    text: 정점 속성은 셰이더 출력으로 파이프라인을 지나고, 래스터화에서 샘플별 값으로 보간된 뒤 fragment 계산에 사용됩니다.
+tags: [graphics, shading, interpolation, order]
+difficulty: 2

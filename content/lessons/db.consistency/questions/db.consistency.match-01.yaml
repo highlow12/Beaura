@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.consistency.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 분산 일관성 용어와 특징을 연결하세요.
+leftItems:
+  - id: strong
+    content:
+      - type: text
+        text: 강한 일관성
+  - id: eventual
+    content:
+      - type: text
+        text: 최종 일관성
+  - id: stale-read
+    content:
+      - type: text
+        text: 오래된 읽기
+rightItems:
+  - id: latest
+    content:
+      - type: text
+        text: 성공한 쓰기 뒤 최신 값을 읽는 것을 목표로 한다
+  - id: converge
+    content:
+      - type: text
+        text: 시간이 지나 replica 값이 수렴하면 된다
+  - id: lag-observation
+    content:
+      - type: text
+        text: 아직 복제를 따라잡지 못한 노드의 이전 값
+correctPairs:
+  - leftId: strong
+    rightId: latest
+  - leftId: eventual
+    rightId: converge
+  - leftId: stale-read
+    rightId: lag-observation
+explanation:
+  - type: text
+    text: 일관성 모델은 쓰기와 읽기 사이에 허용하는 관찰 시점을 정의합니다. 최종 일관성에서는 복제 지연으로 오래된 읽기가 잠시 가능할 수 있습니다.
+tags: [database, consistency, distributed]
+difficulty: 2

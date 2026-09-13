@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.concurrency.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 두 트랜잭션의 차감이 순차적으로 적용되는 모형의 최종 재고를 고르세요.
+language: python
+code: |-
+  stock = 5
+  for requested in [1, 2]:
+      if stock >= requested:
+          stock -= requested
+  print(stock)
+choices: ["2", "4", "5"]
+acceptedOutputs: ["2"]
+explanation:
+  - type: text
+    text: 첫 요청 뒤 재고는 4, 두 번째 요청 뒤 2입니다. 실제 동시 실행에서는 격리와 원자적 조건이 이 순차 결과를 보장할지 결정합니다.
+tags: [database, concurrency, code-output]
+difficulty: 2

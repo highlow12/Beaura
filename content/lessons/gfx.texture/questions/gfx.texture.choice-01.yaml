@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.texture.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 물체가 화면에서 아주 작아져 텍스처를 축소해서 보게 될 때 특히 유용한 것은 무엇인가요?
+options:
+  - id: mipmap
+    content:
+      - type: text
+        text: 미리 만든 밉맵 레벨 중 알맞은 해상도를 선택한다
+  - id: enlarge
+    content:
+      - type: text
+        text: 항상 원본 텍스처를 가장 크게 확대한다
+  - id: no-sample
+    content:
+      - type: text
+        text: UV 샘플링을 끄고 표면 색을 무시한다
+correctOptionId: mipmap
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 밉맵은 축소된 텍스처를 준비해 한 픽셀에 대응하는 텍셀 영역이 커질 때 aliasing과 비용을 줄이는 데 도움을 줍니다.
+tags: [graphics, texture, mipmap]
+difficulty: 2

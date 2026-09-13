@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: gfx.texture
+revision: 1
+track: computer-graphics
+title: 텍스처와 샘플링
+description: UV 좌표로 이미지를 표면에 매핑하고 텍스처 필터링과 밉맵을 선택하는 기초를 익힌다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.texture.match-01
+  - type: question
+    ref: gfx.texture.output-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: gfx.texture.fill-01
+  - type: question
+    ref: gfx.texture.choice-01
+  - type: question
+    ref: gfx.texture.properties-01

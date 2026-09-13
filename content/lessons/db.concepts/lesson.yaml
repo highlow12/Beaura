@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.concepts
+revision: 1
+track: databases
+title: 데이터베이스와 DBMS
+description: 데이터베이스, DBMS, 스키마와 애플리케이션의 역할을 구분한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.concepts.match-01
+  - type: question
+    ref: db.concepts.choice-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: db.concepts.output-01
+  - type: question
+    ref: db.concepts.fill-01
+  - type: question
+    ref: db.concepts.properties-01

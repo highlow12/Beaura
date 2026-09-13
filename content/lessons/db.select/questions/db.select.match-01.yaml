@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.select.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: SELECT 질의 절과 역할을 연결하세요.
+leftItems:
+  - id: select
+    content:
+      - type: text
+        text: SELECT
+  - id: from
+    content:
+      - type: text
+        text: FROM
+  - id: order-by
+    content:
+      - type: text
+        text: ORDER BY
+rightItems:
+  - id: columns
+    content:
+      - type: text
+        text: 반환할 열을 지정한다
+  - id: table
+    content:
+      - type: text
+        text: 읽을 테이블을 지정한다
+  - id: sort
+    content:
+      - type: text
+        text: 결과의 정렬 기준을 지정한다
+correctPairs:
+  - leftId: select
+    rightId: columns
+  - leftId: from
+    rightId: table
+  - leftId: order-by
+    rightId: sort
+explanation:
+  - type: text
+    text: SELECT는 결과 열, FROM은 원본, ORDER BY는 표시 순서를 표현합니다. WHERE는 이 목록에는 없지만 행 조건을 담당합니다.
+tags: [database, sql, select]
+difficulty: 1

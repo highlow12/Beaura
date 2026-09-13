@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.transforms.types-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 기하 변환과 그 효과를 연결하세요.
+leftItems:
+  - id: translation
+    content:
+      - type: text
+        text: 이동
+  - id: rotation
+    content:
+      - type: text
+        text: 회전
+  - id: scale
+    content:
+      - type: text
+        text: 크기 조절
+rightItems:
+  - id: position
+    content:
+      - type: text
+        text: 위치를 다른 곳으로 옮긴다
+  - id: angle
+    content:
+      - type: text
+        text: 기준점 주변의 방향을 바꾼다
+  - id: length
+    content:
+      - type: text
+        text: 축 방향 길이를 늘리거나 줄인다
+correctPairs:
+  - leftId: translation
+    rightId: position
+  - leftId: rotation
+    rightId: angle
+  - leftId: scale
+    rightId: length
+explanation:
+  - type: text
+    text: 이동·회전·크기 조절은 위치, 방향, 길이라는 서로 다른 기하 속성을 바꿉니다.
+tags: [graphics, transforms]
+difficulty: 1

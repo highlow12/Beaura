@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.camera.direction-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 안정적인 look-at 방향 계산에 관한 올바른 설명을 모두 고르세요.
+options:
+  - id: target-minus-eye
+    content:
+      - type: text
+        text: 바라보는 방향의 기본 벡터는 target - eye로 구할 수 있다
+  - id: up-parallel
+    content:
+      - type: text
+        text: up과 전방 방향이 거의 평행하면 기저 계산이 불안정해질 수 있다
+  - id: eye-plus-target
+    content:
+      - type: text
+        text: 방향은 항상 eye + target이어야 한다
+  - id: no-camera
+    content:
+      - type: text
+        text: 카메라 위치는 뷰 변환에서 무시된다
+correctOptionIds: [target-minus-eye, up-parallel]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 시선은 출발점 eye에서 목표 target으로 향하므로 target - eye입니다. 전방과 up이 평행하면 외적으로 새 축을 만들기 어렵습니다.
+tags: [graphics, camera, look-at]
+difficulty: 3

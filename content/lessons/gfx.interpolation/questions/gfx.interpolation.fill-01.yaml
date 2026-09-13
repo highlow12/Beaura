@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.interpolation.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 삼각형 내부의 바리센트릭 가중치 세 개가 만족해야 하는 합을 고르세요.
+choices: ["1", "0", "3"]
+acceptedAnswers: ["1"]
+explanation:
+  - type: text
+    text: 바리센트릭 좌표의 가중치 합은 1입니다. 각 가중치가 0 이상이면 세 정점의 볼록 조합으로 삼각형 내부를 나타냅니다.
+tags: [graphics, interpolation, barycentric]
+difficulty: 1

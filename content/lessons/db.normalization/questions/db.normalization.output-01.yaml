@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: db.normalization.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 한 칸에 들어 있던 과목 목록을 행으로 분리한 결과의 개수를 출력합니다. 결과를 고르세요.
+language: python
+code: |-
+  courses = "CS,Math,Art".split(",")
+  normalized_rows = [(7, course) for course in courses]
+  print(len(normalized_rows))
+choices: ["3", "1", "2"]
+acceptedOutputs: ["3"]
+explanation:
+  - type: text
+    text: 쉼표로 결합된 세 과목을 각각 하나의 행으로 분리했으므로 normalized_rows는 3개입니다. 이는 1NF의 원자 값 원칙을 단순화한 예입니다.
+tags: [database, normalization, first-normal-form, code-output]
+difficulty: 2

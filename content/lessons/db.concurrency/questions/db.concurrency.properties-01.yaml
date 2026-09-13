@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.concurrency.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 데이터베이스 동시성 제어의 올바른 설명을 모두 고르세요.
+options:
+  - id: isolation-tradeoff
+    content:
+      - type: text
+        text: 격리를 강하게 하면 병렬성·대기 비용이 늘 수 있다
+  - id: deadlock
+    content:
+      - type: text
+        text: 여러 잠금의 순서가 꼬이면 deadlock이 생길 수 있다
+  - id: retry
+    content:
+      - type: text
+        text: deadlock이나 충돌을 감지한 뒤 재시도 정책을 둘 수 있다
+  - id: no-interleaving
+    content:
+      - type: text
+        text: 트랜잭션은 실제 시스템에서 절대 interleaving되지 않는다
+correctOptionIds: [isolation-tradeoff, deadlock, retry]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 격리 수준은 정확성과 병렬성 사이의 절충이고, 잠금은 deadlock을 일으킬 수 있으므로 감지·재시도와 일관된 순서가 중요합니다.
+tags: [database, concurrency, isolation, deadlock]
+difficulty: 3

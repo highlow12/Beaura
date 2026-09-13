@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.homogeneous.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 동차좌표 개념과 역할을 연결하세요.
+leftItems:
+  - id: extra
+    content:
+      - type: text
+        text: 확장 성분
+  - id: affine
+    content:
+      - type: text
+        text: 아핀 변환
+  - id: perspective
+    content:
+      - type: text
+        text: 원근 나눗셈
+rightItems:
+  - id: w
+    content:
+      - type: text
+        text: 점에 w 좌표를 추가한다
+  - id: compose
+    content:
+      - type: text
+        text: 이동과 선형 변환을 행렬로 합성한다
+  - id: normalize
+    content:
+      - type: text
+        text: x, y, z를 w로 나누어 NDC를 만든다
+correctPairs:
+  - leftId: extra
+    rightId: w
+  - leftId: affine
+    rightId: compose
+  - leftId: perspective
+    rightId: normalize
+explanation:
+  - type: text
+    text: 동차좌표의 핵심은 추가된 w 성분입니다. w는 변환을 합성할 때도 쓰이고 투영 뒤 정규화할 때도 쓰입니다.
+tags: [graphics, homogeneous-coordinates]
+difficulty: 2

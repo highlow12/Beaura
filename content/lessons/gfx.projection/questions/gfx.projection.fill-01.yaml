@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.projection.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 카메라 앞뒤로 잘라낼 두 경계면을 부르는 이름을 고르세요.
+choices: ["near와 far 평면", "red와 blue 채널", "left와 right 셰이더"]
+acceptedAnswers: ["near와 far 평면"]
+explanation:
+  - type: text
+    text: near와 far 평면은 시야체의 깊이 범위를 정하고, 그 사이를 벗어난 점은 클리핑 대상이 됩니다.
+tags: [graphics, projection, clipping]
+difficulty: 1

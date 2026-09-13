@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: gfx.homogeneous.affine-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 2차원 점을 동차좌표로 확장한 표현은 무엇인가요?
+options:
+  - id: point
+    content:
+      - type: code
+        language: text
+        code: (x, y, 1)
+  - id: vector
+    content:
+      - type: code
+        language: text
+        code: (x, y)
+  - id: color
+    content:
+      - type: code
+        language: text
+        code: (r, g, b, a, 1)
+correctOptionId: point
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 2차원 점은 마지막 성분을 1로 둔 `(x, y, 1)`로 확장하면 이동을 3×3 행렬 곱에 포함할 수 있습니다.
+tags: [graphics, homogeneous-coordinates]
+difficulty: 1

@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.pipeline.fragment-choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: fragment 셰이더가 같은 삼각형의 두 샘플에서 주로 계산할 수 있는 값은 무엇인가요?
+options:
+  - id: color
+    content:
+      - type: text
+        text: 각 샘플에 기록할 색
+  - id: keyboard
+    content:
+      - type: text
+        text: 사용자가 누른 키의 스캔 코드
+  - id: source-file
+    content:
+      - type: text
+        text: 셰이더 소스 파일의 경로
+correctOptionId: color
+shuffleOptions: true
+explanation:
+  - type: text
+    text: fragment 셰이더는 래스터화로 만들어진 샘플마다 색, 깊이 등의 출력을 계산합니다.
+tags: [graphics, fragment-shader]
+difficulty: 1

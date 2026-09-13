@@ -65,3 +65,15 @@ tracks:
     title: 확률과 통계
     description: 불확실성을 모델링하고 데이터의 분포와 요약을 해석하는 기초를 익힌다.
     order: 80
+
+  - id: computer-graphics
+    revision: 1
+    title: 컴퓨터 그래픽스
+    description: 좌표 변환부터 래스터화, 셰이딩과 광선 추적까지 그래픽 파이프라인을 익힌다.
+    order: 90
+
+  - id: databases
+    revision: 1
+    title: 데이터베이스
+    description: 관계 모델, SQL, 인덱스와 트랜잭션을 통해 데이터를 신뢰성 있게 다루는 원리를 익힌다.
+    order: 95

@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: gfx.pipeline.stage-output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 변환된 정점 세 개를 도형으로 묶는 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  vertices = ["A", "B", "C"]
+  triangle = tuple(vertices)
+  print(len(triangle))
+choices: ["3", "2", "1"]
+acceptedOutputs: ["3"]
+explanation:
+  - type: text
+    text: 세 정점 A, B, C를 tuple로 묶었으므로 원소 수는 3입니다. 이 문제의 tuple은 파이프라인에서 primitive를 구성한 결과를 단순화한 표현입니다.
+tags: [graphics, pipeline, code-output]
+difficulty: 1

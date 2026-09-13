@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: db.aggregation.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 그룹별 평균을 계산하려면 어떤 SQL 조합이 핵심인가요?
+options:
+  - id: avg-group
+    content:
+      - type: code
+        language: sql
+        code: AVG(score) with GROUP BY class
+  - id: order-only
+    content:
+      - type: code
+        language: sql
+        code: ORDER BY score
+  - id: where-only
+    content:
+      - type: code
+        language: sql
+        code: WHERE score
+correctOptionId: avg-group
+shuffleOptions: true
+explanation:
+  - type: text
+    text: AVG(score)가 수치를 평균내고 GROUP BY class가 반별 그룹을 만듭니다. ORDER BY는 정렬, WHERE는 행 필터입니다.
+tags: [database, sql, aggregation, group-by]
+difficulty: 2

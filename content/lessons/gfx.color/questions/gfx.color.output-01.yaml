@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: gfx.color.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 세 RGB 채널을 각각 반전하는 간단한 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  rgb = (10, 40, 200)
+  inverted = tuple(255 - channel for channel in rgb)
+  print(inverted)
+choices: ["(245, 215, 55)", "(10, 40, 200)", "(265, 295, 455)"]
+acceptedOutputs: ["(245, 215, 55)"]
+explanation:
+  - type: text
+    text: 각 채널을 255에서 빼면 245, 215, 55가 됩니다. 이 계산은 채널 표현을 연습한 것이며 실제 감마 보정과는 별개의 단계입니다.
+tags: [graphics, color, rgb, code-output]
+difficulty: 1

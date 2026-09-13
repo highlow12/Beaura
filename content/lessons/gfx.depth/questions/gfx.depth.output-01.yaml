@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.depth.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 깊이가 더 작은 fragment만 남기는 간단한 테스트의 출력 색을 고르세요.
+language: python
+code: |-
+  depth_buffer = 0.6
+  fragment_depth = 0.4
+  color = "old"
+  if fragment_depth < depth_buffer:
+      depth_buffer = fragment_depth
+      color = "new"
+  print(color)
+choices: ["new", "old", "0.4"]
+acceptedOutputs: ["new"]
+explanation:
+  - type: text
+    text: 0.4가 기존 0.6보다 작으므로 fragment가 더 가까운 것으로 보고 색을 new로 바꿉니다.
+tags: [graphics, depth-buffer, code-output]
+difficulty: 1

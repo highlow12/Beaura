@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: gfx.pipeline.stage-match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 그래픽 파이프라인 단계와 주된 역할을 알맞게 연결하세요.
+leftItems:
+  - id: vertex
+    content:
+      - type: text
+        text: 정점 셰이더
+  - id: raster
+    content:
+      - type: text
+        text: 래스터화
+  - id: fragment
+    content:
+      - type: text
+        text: fragment 셰이더
+rightItems:
+  - id: position
+    content:
+      - type: text
+        text: 정점 위치와 전달 값을 계산한다
+  - id: coverage
+    content:
+      - type: text
+        text: 도형이 덮는 화면 샘플을 만든다
+  - id: color
+    content:
+      - type: text
+        text: 샘플의 색과 깊이를 계산한다
+correctPairs:
+  - leftId: vertex
+    rightId: position
+  - leftId: raster
+    rightId: coverage
+  - leftId: fragment
+    rightId: color
+explanation:
+  - type: text
+    text: 정점 셰이더는 정점 단위, 래스터화는 도형의 화면 점유 영역, fragment 셰이더는 샘플 단위 계산을 담당합니다.
+  - type: text
+    text: 단계의 출력이 다음 단계의 입력이 된다는 관점으로 역할을 연결하면 파이프라인을 외우기보다 추적할 수 있습니다.
+tags: [graphics, pipeline, rendering]
+difficulty: 2

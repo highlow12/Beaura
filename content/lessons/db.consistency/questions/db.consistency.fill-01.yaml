@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.consistency.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 복제 지연이 사라지고 시간이 지나 replica 값이 같은 상태로 모이는 일관성 모델을 고르세요.
+choices: ["최종 일관성", "강한 일관성", "무작위 일관성"]
+acceptedAnswers: ["최종 일관성"]
+explanation:
+  - type: text
+    text: 최종 일관성은 일시적인 오래된 읽기를 허용할 수 있지만, 정상적인 동기화가 계속되면 replica가 같은 상태로 수렴한다는 모델입니다.
+tags: [database, consistency, eventual]
+difficulty: 1

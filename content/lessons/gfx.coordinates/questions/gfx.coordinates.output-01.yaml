@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: gfx.coordinates.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 좌표 공간 변환 목록에서 월드 좌표 다음 단계의 이름을 출력합니다. 결과를 고르세요.
+language: python
+code: |-
+  spaces = ["model", "world", "view", "clip"]
+  print(spaces[spaces.index("world") + 1])
+choices: ["view", "model", "clip", "viewport"]
+acceptedOutputs: ["view"]
+explanation:
+  - type: text
+    text: 목록에서 world 바로 다음 원소는 view입니다. 카메라 기준으로 바꾸는 뷰 좌표가 월드 좌표 뒤에 옵니다.
+tags: [graphics, coordinates, code-output]
+difficulty: 2

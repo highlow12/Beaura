@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.functional-dependency.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 함수적 종속을 설계에 적용할 때 올바른 설명을 모두 고르세요.
+options:
+  - id: rule
+    content:
+      - type: text
+        text: 함수적 종속은 데이터 샘플보다 업무 규칙에 근거해야 한다
+  - id: redundancy
+    content:
+      - type: text
+        text: 키 일부가 결정하는 속성을 반복 저장하면 갱신 이상이 생길 수 있다
+  - id: key-link
+    content:
+      - type: text
+        text: 후보 키는 모든 속성을 결정하는 최소 속성 집합과 관련 있다
+  - id: reverse-always
+    content:
+      - type: text
+        text: X → Y이면 언제나 Y → X도 성립한다
+correctOptionIds: [rule, redundancy, key-link]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 함수적 종속은 도메인 규칙이고, 부분 결정으로 인한 반복은 정규화 동기가 됩니다. 화살표 방향은 자동으로 뒤집히지 않습니다.
+tags: [database, functional-dependency, normalization]
+difficulty: 3

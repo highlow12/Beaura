@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.replication.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 데이터베이스 복제의 설계 고려 사항으로 올바른 것을 모두 고르세요.
+options:
+  - id: read-scale
+    content:
+      - type: text
+        text: replica로 읽기를 분산해 primary 부하를 줄일 수 있다
+  - id: lag
+    content:
+      - type: text
+        text: 비동기 복제에서는 복제 지연으로 오래된 읽기가 보일 수 있다
+  - id: split-brain
+    content:
+      - type: text
+        text: failover에서는 두 노드가 동시에 primary가 되는 문제를 막아야 한다
+  - id: instant-sync
+    content:
+      - type: text
+        text: replica가 있으면 모든 읽기가 항상 최신 값을 즉시 보장한다
+correctOptionIds: [read-scale, lag, split-brain]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 복제는 읽기 확장과 가용성에 도움을 주지만, 지연과 failover·split-brain 정책을 함께 설계해야 최신 읽기를 무조건 보장하지는 않습니다.
+tags: [database, replication, consistency]
+difficulty: 3

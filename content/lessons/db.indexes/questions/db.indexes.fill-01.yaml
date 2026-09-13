@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.indexes.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 인덱스가 질의를 빠르게 하는 대신 INSERT와 UPDATE에 추가하는 대표 비용을 고르세요.
+choices: ["인덱스 갱신 비용", "화면 렌더링 비용", "픽셀 보간 비용"]
+acceptedAnswers: ["인덱스 갱신 비용"]
+explanation:
+  - type: text
+    text: 원본 값이 바뀌면 인덱스의 정렬 구조도 유지해야 하므로 쓰기와 저장 공간 비용이 늘어납니다.
+tags: [database, indexes, trade-off]
+difficulty: 2

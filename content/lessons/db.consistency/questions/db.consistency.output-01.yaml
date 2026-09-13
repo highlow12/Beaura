@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.consistency.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: replica가 한 번의 동기화 단계마다 primary와의 차이를 절반으로 줄이는 모형의 결과를 고르세요.
+language: python
+code: |-
+  primary = 10
+  replica = 2
+  for _ in range(2):
+      replica += (primary - replica) / 2
+  print(replica)
+choices: ["8.0", "6.0", "10"]
+acceptedOutputs: ["8.0"]
+explanation:
+  - type: text
+    text: 첫 단계에서 2가 6, 두 번째에서 8이 됩니다. 이 단순 모델처럼 최종 일관성은 replica가 시간에 따라 최신 값으로 수렴하는 모습을 설명합니다.
+tags: [database, consistency, replication, code-output]
+difficulty: 2

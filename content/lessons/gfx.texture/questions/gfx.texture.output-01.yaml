@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: gfx.texture.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 2×2 텍스처에서 UV (1, 0)에 해당하는 값을 단순히 정수 인덱스로 읽은 결과를 고르세요.
+language: python
+code: |-
+  texture = [["red", "green"], ["blue", "white"]]
+  u, v = 1, 0
+  print(texture[v][u])
+choices: ["green", "blue", "red"]
+acceptedOutputs: ["green"]
+explanation:
+  - type: text
+    text: 이 예시에서는 texture[행=v][열=u]로 읽으므로 texture[0][1]인 green이 선택됩니다. 실제 UV는 보통 정규화 좌표와 필터를 함께 사용합니다.
+tags: [graphics, texture, uv, code-output]
+difficulty: 2

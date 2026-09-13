@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.replication.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 비동기 복제의 특징으로 가장 알맞은 것은 무엇인가요?
+options:
+  - id: lag
+    content:
+      - type: text
+        text: primary가 먼저 응답할 수 있지만 replica가 잠시 뒤처질 수 있다
+  - id: zero-lag
+    content:
+      - type: text
+        text: 모든 replica의 기록 확인 전에는 절대 응답하지 않는다
+  - id: no-copy
+    content:
+      - type: text
+        text: 다른 노드로 데이터를 복사하지 않는다
+correctOptionId: lag
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 비동기 방식은 replica 확인을 응답의 필수 조건으로 삼지 않아 지연을 줄일 수 있지만, 복제 지연과 장애 시 손실 가능성을 관리해야 합니다.
+tags: [database, replication, asynchronous]
+difficulty: 2

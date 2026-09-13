@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: gfx.interpolation
+revision: 1
+track: computer-graphics
+title: 보간과 바리센트릭 좌표
+description: 삼각형 내부의 속성을 바리센트릭 가중치로 보간하고 원근 보정의 필요성을 이해한다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.interpolation.output-01
+  - type: question
+    ref: gfx.interpolation.fill-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: gfx.interpolation.match-01
+  - type: question
+    ref: gfx.interpolation.choice-01
+  - type: question
+    ref: gfx.interpolation.complete-01

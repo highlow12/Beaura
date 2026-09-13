@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: db.select.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: CS 전공 학생의 이름만 선택하는 질의 표현을 완성하세요.
+language: python
+template: |-
+  query = "SELECT name FROM Student {{blank:filter}} major = 'CS'"
+blanks:
+  - id: filter
+    choices: ["WHERE", "ORDER BY", "GROUP BY"]
+    acceptedAnswers: ["WHERE"]
+explanation:
+  - type: text
+    text: 행 조건은 WHERE 뒤에 작성합니다. 이 질의는 Student에서 major가 CS인 행의 name만 반환합니다.
+tags: [database, sql, where, code-completion]
+difficulty: 1

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.lighting.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 조명 용어와 역할을 연결하세요.
+leftItems:
+  - id: normal
+    content:
+      - type: text
+        text: 법선
+  - id: diffuse
+    content:
+      - type: text
+        text: diffuse
+  - id: specular
+    content:
+      - type: text
+        text: specular
+rightItems:
+  - id: surface-direction
+    content:
+      - type: text
+        text: 표면이 향하는 기준 방향
+  - id: broad-light
+    content:
+      - type: text
+        text: 빛을 여러 방향으로 퍼뜨리는 밝기
+  - id: highlight
+    content:
+      - type: text
+        text: 반사와 시선 정렬로 생기는 하이라이트
+correctPairs:
+  - leftId: normal
+    rightId: surface-direction
+  - leftId: diffuse
+    rightId: broad-light
+  - leftId: specular
+    rightId: highlight
+explanation:
+  - type: text
+    text: 법선은 표면 방향을 제공하고, diffuse는 입사각에 따른 넓은 밝기, specular는 관찰 방향에 따른 반짝임을 모델링합니다.
+tags: [graphics, lighting]
+difficulty: 1

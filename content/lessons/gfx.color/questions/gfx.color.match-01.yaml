@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.color.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 색 처리 용어와 의미를 연결하세요.
+leftItems:
+  - id: rgb
+    content:
+      - type: text
+        text: RGB
+  - id: linear
+    content:
+      - type: text
+        text: 선형 색 공간
+  - id: srgb
+    content:
+      - type: text
+        text: sRGB
+rightItems:
+  - id: channels
+    content:
+      - type: text
+        text: 빨강·초록·파랑 채널 조합
+  - id: light-math
+    content:
+      - type: text
+        text: 채널 수치가 빛의 세기 비례로 해석되는 공간
+  - id: encoded
+    content:
+      - type: text
+        text: 표시와 저장에 널리 쓰이는 비선형 인코딩
+correctPairs:
+  - leftId: rgb
+    rightId: channels
+  - leftId: linear
+    rightId: light-math
+  - leftId: srgb
+    rightId: encoded
+explanation:
+  - type: text
+    text: RGB는 채널 구성, 선형 공간은 산술의 의미, sRGB는 표시·저장을 위한 인코딩이라는 서로 다른 층위를 구분해야 합니다.
+tags: [graphics, color, gamma]
+difficulty: 2

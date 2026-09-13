@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.functional-dependency.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 함수적 종속 용어와 의미를 연결하세요.
+leftItems:
+  - id: determinant
+    content:
+      - type: text
+        text: determinant
+  - id: dependent
+    content:
+      - type: text
+        text: dependent
+  - id: candidate-key
+    content:
+      - type: text
+        text: 후보 키
+rightItems:
+  - id: left-side
+    content:
+      - type: text
+        text: 화살표 왼쪽에서 값을 결정하는 속성
+  - id: right-side
+    content:
+      - type: text
+        text: 결정되는 속성
+  - id: minimal-superkey
+    content:
+      - type: text
+        text: 모든 속성을 결정하는 최소 집합
+correctPairs:
+  - leftId: determinant
+    rightId: left-side
+  - leftId: dependent
+    rightId: right-side
+  - leftId: candidate-key
+    rightId: minimal-superkey
+explanation:
+  - type: text
+    text: X → Y에서 X가 determinant이고 Y가 dependent입니다. 후보 키는 전체 행을 식별하는 최소 determinant로 생각할 수 있습니다.
+tags: [database, functional-dependency, keys]
+difficulty: 2

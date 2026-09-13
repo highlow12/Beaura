@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.depth.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 깊이 버퍼에 대한 올바른 설명을 모두 고르세요.
+options:
+  - id: opaque
+    content:
+      - type: text
+        text: 불투명 표면의 가시성 순서를 정하는 데 유용하다
+  - id: transparent-limit
+    content:
+      - type: text
+        text: 반투명 색을 올바르게 섞는 문제는 별도로 고려해야 한다
+  - id: precision
+    content:
+      - type: text
+        text: 깊이 정밀도가 부족하면 z-fighting이 생길 수 있다
+  - id: only-color
+    content:
+      - type: text
+        text: 깊이 버퍼는 색 채널만 저장한다
+correctOptionIds: [opaque, transparent-limit, precision]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 깊이 버퍼는 불투명 가시성에 적합하지만 반투명 블렌딩을 대체하지 않습니다. 깊이가 가까운 값으로 양자화되면 z-fighting 위험도 있습니다.
+tags: [graphics, depth-buffer, transparency]
+difficulty: 3

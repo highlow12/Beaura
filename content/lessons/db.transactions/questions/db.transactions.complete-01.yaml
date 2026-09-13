@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.transactions.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: 모든 변경이 성공했을 때 트랜잭션을 확정하는 동작을 완성하세요.
+language: python
+template: |-
+  changes_ok = True
+  if changes_ok:
+      transaction.{{blank:action}}()
+blanks:
+  - id: action
+    choices: ["commit", "rollback", "select"]
+    acceptedAnswers: ["commit"]
+explanation:
+  - type: text
+    text: 모든 변경이 성공했을 때 commit을 호출해 트랜잭션 결과를 확정합니다. 실패 경로에서는 rollback을 사용합니다.
+tags: [database, transactions, commit, code-completion]
+difficulty: 1

@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.functional-dependency.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "`student_id → student_name`이 의미하는 것으로 가장 알맞은 것은 무엇인가요?"
+options:
+  - id: determines
+    content:
+      - type: text
+        text: 같은 student_id를 가진 행은 같은 student_name을 가져야 한다
+  - id: reverse
+    content:
+      - type: text
+        text: 같은 student_name이면 반드시 같은 student_id다
+  - id: unrelated
+    content:
+      - type: text
+        text: 두 열 사이에 어떤 제약도 없다
+correctOptionId: determines
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 함수적 종속의 화살표는 결정 방향을 나타냅니다. 주어진 규칙만으로는 역방향 종속이나 이름의 유일성을 결론내릴 수 없습니다.
+tags: [database, functional-dependency]
+difficulty: 2

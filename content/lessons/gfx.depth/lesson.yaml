@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: gfx.depth
+revision: 1
+track: computer-graphics
+title: 깊이 버퍼
+description: 깊이 테스트와 깊이 버퍼가 겹치는 표면 중 보이는 fragment를 선택하는 원리를 익힌다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.depth.choice-01
+  - type: question
+    ref: gfx.depth.output-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: gfx.depth.match-01
+  - type: question
+    ref: gfx.depth.fill-01
+  - type: question
+    ref: gfx.depth.properties-01

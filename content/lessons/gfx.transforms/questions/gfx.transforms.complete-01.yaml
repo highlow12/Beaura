@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: gfx.transforms.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: 균일한 크기 조절로 점의 두 좌표를 모두 두 배로 만드는 코드를 완성하세요.
+language: python
+template: |-
+  point = (2, 3)
+  scale = 2
+  result = (point[0] {{blank:op}}, point[1] {{blank:op2}})
+blanks:
+  - id: op
+    choices: ["* scale", "+ scale", "- scale"]
+    acceptedAnswers: ["* scale"]
+  - id: op2
+    choices: ["* scale", "+ scale", "- scale"]
+    acceptedAnswers: ["* scale"]
+explanation:
+  - type: text
+    text: 균일한 scale은 각 축의 좌표에 같은 배율을 곱합니다. 두 빈칸 모두 `* scale`이어야 합니다.
+tags: [graphics, transforms, scale, code-completion]
+difficulty: 2

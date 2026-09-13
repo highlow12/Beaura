@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: gfx.transforms.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 점 (1, 0)을 원점 기준으로 90도 회전한 뒤 x 방향으로 2만큼 이동하는 계산 순서를 배열하세요.
+items:
+  - id: start
+    content:
+      - type: text
+        text: 점 (1, 0)에서 시작한다
+  - id: rotate
+    content:
+      - type: text
+        text: 90도 회전해 (0, 1)을 얻는다
+  - id: translate
+    content:
+      - type: text
+        text: x에 2를 더해 (2, 1)을 얻는다
+correctOrder: [start, rotate, translate]
+explanation:
+  - type: text
+    text: 회전 결과에 이동을 적용해야 목표 결과가 됩니다. 변환 행렬을 합성할 때도 같은 연산 순서를 보존해야 합니다.
+tags: [graphics, transforms, order]
+difficulty: 2

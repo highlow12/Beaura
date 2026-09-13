@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.transactions.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 트랜잭션과 ACID에 대한 올바른 설명을 모두 고르세요.
+options:
+  - id: boundary
+    content:
+      - type: text
+        text: 하나의 업무 규칙을 깨뜨릴 수 없는 변경들을 한 경계로 묶을 수 있다
+  - id: atomicity
+    content:
+      - type: text
+        text: 원자성은 일부 변경만 남는 상태를 막는 보장이다
+  - id: durability
+    content:
+      - type: text
+        text: 지속성은 commit된 결과가 장애 뒤에도 남는다는 뜻이다
+  - id: commit-undo
+    content:
+      - type: text
+        text: commit은 항상 이미 확정된 결과를 자동으로 취소한다
+correctOptionIds: [boundary, atomicity, durability]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 트랜잭션 경계는 불가분 업무 단위를 기준으로 정하고, 원자성은 전부 또는 전무, 지속성은 확정 결과의 보존을 뜻합니다.
+tags: [database, transactions, acid]
+difficulty: 3

@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.normalization.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 학생 이름이 등록 테이블의 여러 행에 반복될 때 별도 Student 테이블로 분리하는 가장 직접적인 이점은 무엇인가요?
+options:
+  - id: update
+    content:
+      - type: text
+        text: 이름 변경을 한 곳에서 관리해 갱신 이상을 줄인다
+  - id: no-join
+    content:
+      - type: text
+        text: 모든 질의에서 JOIN이 절대 필요하지 않게 된다
+  - id: duplicate-more
+    content:
+      - type: text
+        text: 같은 이름을 더 많은 행에 복사하게 된다
+correctOptionId: update
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 학생 사실을 Student 한 곳에 두면 이름 변경 시 여러 등록 행을 찾아 고칠 필요가 줄어듭니다. 대신 필요한 화면에서는 Enrollment와 JOIN할 수 있습니다.
+tags: [database, normalization, update-anomaly]
+difficulty: 2

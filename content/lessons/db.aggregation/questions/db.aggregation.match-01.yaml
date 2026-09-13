@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.aggregation.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 집계 개념과 역할을 연결하세요.
+leftItems:
+  - id: count
+    content:
+      - type: text
+        text: COUNT
+  - id: sum
+    content:
+      - type: text
+        text: SUM
+  - id: having
+    content:
+      - type: text
+        text: HAVING
+rightItems:
+  - id: number
+    content:
+      - type: text
+        text: 행이나 값의 개수를 센다
+  - id: total
+    content:
+      - type: text
+        text: 수치 열의 합을 계산한다
+  - id: group-filter
+    content:
+      - type: text
+        text: 집계된 그룹을 조건으로 걸러낸다
+correctPairs:
+  - leftId: count
+    rightId: number
+  - leftId: sum
+    rightId: total
+  - leftId: having
+    rightId: group-filter
+explanation:
+  - type: text
+    text: COUNT와 SUM은 집계 함수이고, HAVING은 GROUP BY 결과인 그룹을 필터링하는 절입니다. 개별 행 조건에는 WHERE를 사용합니다.
+tags: [database, sql, aggregation]
+difficulty: 2

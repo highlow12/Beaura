@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: db.relational-model.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 학생 tuple에서 두 번째 attribute를 읽어 출력하는 코드의 결과를 고르세요.
+language: python
+code: |-
+  student = (7, "Mina", "CS")
+  print(student[1])
+choices: ["Mina", "7", "CS"]
+acceptedOutputs: ["Mina"]
+explanation:
+  - type: text
+    text: Python 인덱스 1은 tuple의 두 번째 값인 Mina를 가리킵니다. 관계 모델에서 이 값은 name attribute에 해당합니다.
+tags: [database, relational-model, tuple, code-output]
+difficulty: 1

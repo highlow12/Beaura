@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.indexes.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 인덱스 설계의 올바른 설명을 모두 고르세요.
+options:
+  - id: lookup
+    content:
+      - type: text
+        text: WHERE나 ORDER BY에 자주 쓰는 열이 인덱스 후보가 될 수 있다
+  - id: write-cost
+    content:
+      - type: text
+        text: 인덱스가 많아지면 쓰기 때 유지 비용이 늘 수 있다
+  - id: composite-order
+    content:
+      - type: text
+        text: 복합 인덱스는 열의 선두 순서가 질의 활용에 영향을 준다
+  - id: guarantee
+    content:
+      - type: text
+        text: 인덱스가 있으면 DBMS가 항상 인덱스만 사용한다
+correctOptionIds: [lookup, write-cost, composite-order]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 인덱스는 질의 패턴에 맞춰 선택하고 쓰기 비용을 감수하는 구조입니다. 최종 사용 여부는 데이터 분포와 실행 계획에 따라 DBMS가 결정합니다.
+tags: [database, indexes, composite-index]
+difficulty: 3

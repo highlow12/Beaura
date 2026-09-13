@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.recovery.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 장애 시 commit된 변경을 복구하기 위해 로그의 변경을 다시 데이터 페이지에 적용하는 작업은 무엇인가요?
+options:
+  - id: redo
+    content:
+      - type: text
+        text: redo
+  - id: undo
+    content:
+      - type: text
+        text: undo
+  - id: join
+    content:
+      - type: text
+        text: JOIN
+correctOptionId: redo
+shuffleOptions: true
+explanation:
+  - type: text
+    text: redo는 복구 시 로그에 기록된 확정 변경을 다시 적용하는 작업입니다. commit되지 않은 변경을 제거하는 쪽은 undo입니다.
+tags: [database, recovery, redo]
+difficulty: 1

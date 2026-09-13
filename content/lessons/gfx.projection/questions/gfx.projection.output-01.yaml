@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.projection.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 단순한 깊이 스케일 모델에서 멀리 있는 점의 화면 x 좌표를 출력합니다. 결과를 고르세요.
+language: python
+code: |-
+  camera_x = 4
+  depth = 2
+  screen_x = camera_x / depth
+  print(screen_x)
+choices: ["2.0", "8", "6.0"]
+acceptedOutputs: ["2.0"]
+explanation:
+  - type: text
+    text: 원근 효과를 단순화해 x를 깊이 2로 나누면 4 / 2 = 2.0입니다. 실제 GPU는 투영 행렬과 w 나눗셈으로 이 관계를 만듭니다.
+tags: [graphics, projection, code-output]
+difficulty: 2

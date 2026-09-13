@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.color.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: sRGB 값을 선형 색 공간에서 계산하기 전에 거치는 변환을 고르세요.
+choices: ["디코딩", "깊이 테스트", "삼각형 조립"]
+acceptedAnswers: ["디코딩"]
+explanation:
+  - type: text
+    text: 저장된 sRGB 인코딩을 선형 값으로 디코딩한 뒤 조명과 블렌딩을 계산하고, 표시 시 다시 인코딩하는 흐름을 사용합니다.
+tags: [graphics, color, gamma]
+difficulty: 2

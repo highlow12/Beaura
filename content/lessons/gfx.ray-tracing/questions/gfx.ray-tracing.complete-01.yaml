@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: gfx.ray-tracing.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: 교차점에서 광원까지 직접 보이는지 검사하는 조건을 완성하세요.
+language: python
+template: |-
+  hit_distance = 3
+  blocker_distance = 5
+  visible = blocker_distance {{blank:comparison}} hit_distance
+blanks:
+  - id: comparison
+    choices: [">", "<", "=="]
+    acceptedAnswers: [">"]
+explanation:
+  - type: text
+    text: 가림 물체의 교차 거리가 광원까지의 거리보다 커야 광원보다 뒤에 있다는 뜻이므로 광원이 보입니다. 5 > 3입니다.
+tags: [graphics, ray-tracing, shadows, code-completion]
+difficulty: 2

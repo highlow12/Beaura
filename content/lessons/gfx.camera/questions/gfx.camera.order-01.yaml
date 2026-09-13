@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: gfx.camera.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: look-at 방향을 만드는 기본 계산을 순서대로 배열하세요.
+items:
+  - id: direction
+    content:
+      - type: text
+        text: target - eye로 바라보는 방향을 구한다
+  - id: basis
+    content:
+      - type: text
+        text: 방향과 up으로 직교 기저를 만든다
+  - id: matrix
+    content:
+      - type: text
+        text: 기저와 카메라 위치로 뷰 행렬을 만든다
+  - id: transform
+    content:
+      - type: text
+        text: 월드 점에 뷰 행렬을 적용한다
+correctOrder: [direction, basis, matrix, transform]
+explanation:
+  - type: text
+    text: 먼저 시선 방향을 정하고, 그 방향에 맞는 기저와 행렬을 만든 뒤 점을 변환합니다.
+tags: [graphics, camera, look-at, order]
+difficulty: 3

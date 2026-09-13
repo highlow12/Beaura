@@ -1,0 +1,55 @@
+schemaVersion: 1
+id: gfx.coordinates.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 좌표 공간과 대표적인 의미를 연결하세요.
+leftItems:
+  - id: model
+    content:
+      - type: text
+        text: 모델 좌표
+  - id: world
+    content:
+      - type: text
+        text: 월드 좌표
+  - id: view
+    content:
+      - type: text
+        text: 뷰 좌표
+  - id: clip
+    content:
+      - type: text
+        text: 클립 좌표
+rightItems:
+  - id: local
+    content:
+      - type: text
+        text: 물체 자신의 기준으로 표현한 위치
+  - id: scene
+    content:
+      - type: text
+        text: 장면 전체의 공통 기준으로 표현한 위치
+  - id: camera
+    content:
+      - type: text
+        text: 카메라를 기준으로 표현한 위치
+  - id: visible
+    content:
+      - type: text
+        text: 투영 뒤 가시 범위를 판정하기 위한 위치
+correctPairs:
+  - leftId: model
+    rightId: local
+  - leftId: world
+    rightId: scene
+  - leftId: view
+    rightId: camera
+  - leftId: clip
+    rightId: visible
+explanation:
+  - type: text
+    text: 좌표 공간은 같은 점을 서로 다른 기준으로 표현한 것입니다. 모델은 물체, 월드는 장면, 뷰는 카메라, 클립은 투영과 클리핑 기준을 강조합니다.
+tags: [graphics, coordinates, spaces]
+difficulty: 2

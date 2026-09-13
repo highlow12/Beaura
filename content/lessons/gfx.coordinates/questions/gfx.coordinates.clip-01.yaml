@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.coordinates.clip-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 정점이 화면에 보일 수 있는 범위를 판정하기 직전의 좌표 공간을 고르세요.
+choices: ["클립 좌표", "모델 좌표", "오디오 좌표"]
+acceptedAnswers: ["클립 좌표"]
+explanation:
+  - type: text
+    text: 클립 좌표는 투영 결과를 가시 범위와 비교해 잘라내기 위한 단계입니다. 모델 좌표는 훨씬 앞선 로컬 공간입니다.
+tags: [graphics, coordinates, clipping]
+difficulty: 1

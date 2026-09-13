@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.color.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: RGB·감마·알파에 관한 올바른 설명을 모두 고르세요.
+options:
+  - id: rgb-channels
+    content:
+      - type: text
+        text: RGB는 빨강·초록·파랑 채널의 조합이다
+  - id: gamma
+    content:
+      - type: text
+        text: sRGB 같은 인코딩은 숫자와 선형 광량 사이의 관계를 바꾼다
+  - id: alpha
+    content:
+      - type: text
+        text: 알파는 일반적으로 투명도 또는 혼합 비율을 나타낸다
+  - id: alpha-red
+    content:
+      - type: text
+        text: 알파는 항상 빨강 채널의 다른 이름이다
+correctOptionIds: [rgb-channels, gamma, alpha]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: RGB 채널과 알파는 서로 다른 값이고, 감마 인코딩은 저장·표시 숫자와 선형 광량의 관계를 조정합니다.
+tags: [graphics, color, rgb, alpha]
+difficulty: 3

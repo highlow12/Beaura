@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.shading.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 셰이딩 방식의 비교로 올바른 설명을 모두 고르세요.
+options:
+  - id: flat-uniform
+    content:
+      - type: text
+        text: flat 셰이딩은 한 면이 균일하게 보이도록 할 수 있다
+  - id: gouraud-cost
+    content:
+      - type: text
+        text: Gouraud는 정점에서 조명을 계산하고 결과를 보간한다
+  - id: phong-detail
+    content:
+      - type: text
+        text: Phong은 fragment마다 조명을 계산해 세밀한 변화를 표현할 수 있다
+  - id: vertex-only-final
+    content:
+      - type: text
+        text: fragment 셰이더는 항상 실행되지 않는다
+correctOptionIds: [flat-uniform, gouraud-cost, phong-detail]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: flat·Gouraud·Phong은 값을 계산하고 보간하는 위치가 다릅니다. 일반적인 래스터 파이프라인에서는 fragment 셰이더가 최종 샘플을 처리합니다.
+tags: [graphics, shading]
+difficulty: 3

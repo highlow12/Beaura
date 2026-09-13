@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.ray-tracing.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 레이 트레이싱에서 카메라 광선이 여러 물체와 교차할 때 표면 색 계산에 우선 사용하는 교차점은 무엇인가요?
+options:
+  - id: nearest
+    content:
+      - type: text
+        text: 광선 원점에서 가장 가까운 유효 교차점
+  - id: farthest
+    content:
+      - type: text
+        text: 항상 가장 먼 교차점
+  - id: random
+    content:
+      - type: text
+        text: 거리와 무관하게 무작위로 고른 교차점
+correctOptionId: nearest
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 카메라에서 먼저 만나는 표면이 가시 표면이므로 가장 가까운 유효 교차점을 선택합니다.
+tags: [graphics, ray-tracing, intersection]
+difficulty: 1

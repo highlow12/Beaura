@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.normalization.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 정규화 개념과 목적을 연결하세요.
+leftItems:
+  - id: first-nf
+    content:
+      - type: text
+        text: 1NF
+  - id: second-nf
+    content:
+      - type: text
+        text: 2NF
+  - id: third-nf
+    content:
+      - type: text
+        text: 3NF
+rightItems:
+  - id: atomic
+    content:
+      - type: text
+        text: 각 칸을 원자 값으로 둔다
+  - id: partial
+    content:
+      - type: text
+        text: 복합 키 일부에만 종속되는 속성을 분리한다
+  - id: transitive
+    content:
+      - type: text
+        text: 비키 속성 사이의 이행 종속을 줄인다
+correctPairs:
+  - leftId: first-nf
+    rightId: atomic
+  - leftId: second-nf
+    rightId: partial
+  - leftId: third-nf
+    rightId: transitive
+explanation:
+  - type: text
+    text: 입문 수준에서 1NF·2NF·3NF는 원자성, 부분 종속, 이행 종속을 차례로 줄이는 기준으로 기억할 수 있습니다.
+tags: [database, normalization]
+difficulty: 2

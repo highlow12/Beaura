@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.geometry.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 삼각형과 메시의 설명으로 올바른 것을 모두 고르세요.
+options:
+  - id: three-vertices
+    content:
+      - type: text
+        text: 삼각형은 세 정점으로 정의되는 기본 표면 단위다
+  - id: winding
+    content:
+      - type: text
+        text: 정점 순서는 앞면·뒷면 판정에 영향을 줄 수 있다
+  - id: shared
+    content:
+      - type: text
+        text: 인접 삼각형은 정점을 공유해 저장 공간을 절약할 수 있다
+  - id: no-normal
+    content:
+      - type: text
+        text: 법선은 조명 계산과 전혀 관련이 없다
+correctOptionIds: [three-vertices, winding, shared]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 삼각형은 세 정점의 연결이고, winding은 면 방향 판정에 쓰이며, 정점 공유는 메시 표현을 압축합니다. 법선은 표면 방향과 조명에 직접 연결됩니다.
+tags: [graphics, geometry, mesh, winding]
+difficulty: 3

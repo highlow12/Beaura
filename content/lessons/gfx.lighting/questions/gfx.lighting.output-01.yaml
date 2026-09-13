@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.lighting.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 정규화된 법선과 빛 방향의 diffuse 세기를 계산한 결과를 고르세요.
+language: python
+code: |-
+  normal = (0, 1)
+  light = (0, 1)
+  diffuse = max(normal[0] * light[0] + normal[1] * light[1], 0)
+  print(diffuse)
+choices: ["1", "0", "2"]
+acceptedOutputs: ["1"]
+explanation:
+  - type: text
+    text: 두 벡터의 내적은 0×0 + 1×1 = 1이고 음수가 아니므로 diffuse 세기는 1입니다.
+tags: [graphics, lighting, diffuse, code-output]
+difficulty: 1

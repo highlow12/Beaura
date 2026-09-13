@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: gfx.geometry.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 정점 인덱스가 구성하는 삼각형의 개수를 출력합니다. 결과를 고르세요.
+language: python
+code: |-
+  indices = [0, 1, 2, 2, 3, 0]
+  triangle_count = len(indices) // 3
+  print(triangle_count)
+choices: ["2", "6", "3"]
+acceptedOutputs: ["2"]
+explanation:
+  - type: text
+    text: 삼각형 하나는 인덱스 세 개를 사용하므로 6 // 3 = 2개입니다. 네 점으로 사각형을 표현한 대표적인 두 삼각형 예시이기도 합니다.
+tags: [graphics, geometry, mesh, code-output]
+difficulty: 1

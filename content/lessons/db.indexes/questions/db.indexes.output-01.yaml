@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: db.indexes.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 정렬된 인덱스 키에서 범위 조건에 맞는 키의 개수를 세는 코드 결과를 고르세요.
+language: python
+code: |-
+  keys = [10, 20, 30, 40, 50]
+  matches = [key for key in keys if 20 <= key <= 40]
+  print(len(matches))
+choices: ["3", "2", "5"]
+acceptedOutputs: ["3"]
+explanation:
+  - type: text
+    text: 20, 30, 40 세 키가 범위에 포함되므로 결과는 3입니다. B-tree의 정렬 특성은 이런 범위 후보를 찾는 데 활용됩니다.
+tags: [database, indexes, b-tree, code-output]
+difficulty: 1

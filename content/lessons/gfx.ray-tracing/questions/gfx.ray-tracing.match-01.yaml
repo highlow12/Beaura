@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.ray-tracing.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 레이 트레이싱 용어와 역할을 연결하세요.
+leftItems:
+  - id: ray
+    content:
+      - type: text
+        text: 광선
+  - id: intersection
+    content:
+      - type: text
+        text: 교차점
+  - id: bvh
+    content:
+      - type: text
+        text: BVH
+rightItems:
+  - id: origin-direction
+    content:
+      - type: text
+        text: 원점과 방향으로 정의한 선
+  - id: nearest-hit
+    content:
+      - type: text
+        text: 광선이 장면 표면과 만나는 위치
+  - id: accelerate
+    content:
+      - type: text
+        text: 교차 검사 후보를 줄이는 공간 구조
+correctPairs:
+  - leftId: ray
+    rightId: origin-direction
+  - leftId: intersection
+    rightId: nearest-hit
+  - leftId: bvh
+    rightId: accelerate
+explanation:
+  - type: text
+    text: 광선은 교차를 요청하는 입력이고, 가장 가까운 교차점이 표면 셰이딩의 출발점입니다. BVH는 모든 도형을 매번 검사하지 않도록 돕습니다.
+tags: [graphics, ray-tracing]
+difficulty: 2

@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: gfx.pipeline.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 삼각형 정점이 화면 색으로 바뀌는 기본 흐름을 순서대로 배열하세요.
+items:
+  - id: vertex-transform
+    content:
+      - type: text
+        text: 정점 위치를 변환한다
+  - id: primitive
+    content:
+      - type: text
+        text: 정점으로 삼각형을 구성한다
+  - id: rasterize
+    content:
+      - type: text
+        text: 삼각형을 화면 샘플로 나눈다
+  - id: fragment-color
+    content:
+      - type: text
+        text: 각 샘플의 색을 계산한다
+  - id: framebuffer
+    content:
+      - type: text
+        text: 결과를 프레임버퍼에 기록한다
+correctOrder:
+  [vertex-transform, primitive, rasterize, fragment-color, framebuffer]
+explanation:
+  - type: text
+    text: 정점을 먼저 변환하고 도형을 구성한 뒤 샘플을 생성하고 색을 계산해야 프레임버퍼에 기록할 수 있습니다.
+tags: [graphics, pipeline, order]
+difficulty: 2

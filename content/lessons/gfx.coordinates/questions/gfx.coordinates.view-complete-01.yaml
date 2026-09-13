@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: gfx.coordinates.view-complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: 카메라가 오른쪽으로 이동한 상황에서 화면 기준 반대 방향을 나타내도록 빈칸을 완성하세요.
+language: python
+template: |-
+  camera_x = 3
+  object_x = 8
+  view_x = object_x {{blank:operator}} camera_x
+blanks:
+  - id: operator
+    choices: ["-", "+", "*"]
+    acceptedAnswers: ["-"]
+explanation:
+  - type: text
+    text: 뷰 좌표에서는 카메라 위치를 기준으로 물체를 읽으므로 간단한 1차원 모델에서 object_x - camera_x를 사용합니다.
+tags: [graphics, coordinates, view-space, code-completion]
+difficulty: 2

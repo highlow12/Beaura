@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.shading.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 셰이더와 셰이딩 방식을 설명과 연결하세요.
+leftItems:
+  - id: vertex-shader
+    content:
+      - type: text
+        text: 정점 셰이더
+  - id: fragment-shader
+    content:
+      - type: text
+        text: fragment 셰이더
+  - id: gouraud
+    content:
+      - type: text
+        text: Gouraud 셰이딩
+rightItems:
+  - id: per-vertex
+    content:
+      - type: text
+        text: 정점마다 위치와 전달 속성을 계산한다
+  - id: per-sample
+    content:
+      - type: text
+        text: 샘플마다 최종 색을 계산한다
+  - id: interpolate-color
+    content:
+      - type: text
+        text: 정점에서 구한 색을 화면에서 보간한다
+correctPairs:
+  - leftId: vertex-shader
+    rightId: per-vertex
+  - leftId: fragment-shader
+    rightId: per-sample
+  - leftId: gouraud
+    rightId: interpolate-color
+explanation:
+  - type: text
+    text: 셰이더의 실행 단위가 다르고, Gouraud는 정점 조명 결과를 보간하는 대표적인 방식입니다. Phong은 보간된 법선으로 fragment마다 조명을 계산합니다.
+tags: [graphics, shading, shaders]
+difficulty: 2

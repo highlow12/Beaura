@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.texture.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 텍스처의 주변 texel을 섞어 부드러운 값을 만드는 대표적인 필터를 고르세요.
+choices: ["linear", "nearest", "depth"]
+acceptedAnswers: ["linear"]
+explanation:
+  - type: text
+    text: linear 필터는 샘플 위치 주변의 값을 가중 평균해 nearest보다 부드러운 결과를 만듭니다.
+tags: [graphics, texture, filtering]
+difficulty: 1

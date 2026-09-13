@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.relational-model.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 관계 모델 용어와 의미를 연결하세요.
+leftItems:
+  - id: relation
+    content:
+      - type: text
+        text: relation
+  - id: tuple
+    content:
+      - type: text
+        text: tuple
+  - id: attribute
+    content:
+      - type: text
+        text: attribute
+rightItems:
+  - id: table-set
+    content:
+      - type: text
+        text: 같은 속성의 행으로 이뤄진 테이블
+  - id: row
+    content:
+      - type: text
+        text: 한 행의 레코드
+  - id: column
+    content:
+      - type: text
+        text: 이름과 domain을 가진 열
+correctPairs:
+  - leftId: relation
+    rightId: table-set
+  - leftId: tuple
+    rightId: row
+  - leftId: attribute
+    rightId: column
+explanation:
+  - type: text
+    text: relation은 행들의 집합, tuple은 행 하나, attribute는 열 하나를 가리킵니다.
+tags: [database, relational-model]
+difficulty: 1

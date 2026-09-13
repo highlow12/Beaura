@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.concurrency.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 동시에 접근하는 트랜잭션의 충돌을 제한하기 위해 DBMS가 사용할 수 있는 장치를 고르세요.
+choices: ["잠금", "RGB", "정규화"]
+acceptedAnswers: ["잠금"]
+explanation:
+  - type: text
+    text: 잠금은 특정 데이터에 대한 동시 접근을 제한해 변경 충돌을 줄입니다. MVCC처럼 잠금 외의 기법도 있지만 RGB는 무관합니다.
+tags: [database, concurrency, locks]
+difficulty: 1

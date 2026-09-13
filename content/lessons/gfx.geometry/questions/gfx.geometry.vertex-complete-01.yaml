@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.geometry.vertex-complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: 삼각형을 구성할 정점 인덱스를 세 개씩 묶도록 빈칸을 완성하세요.
+language: python
+template: |-
+  indices = [0, 1, 2, 2, 3, 0]
+  first_triangle = indices[{{blank:start}}:{{blank:end}}]
+blanks:
+  - id: start
+    choices: ["0", "1", "2"]
+    acceptedAnswers: ["0"]
+  - id: end
+    choices: ["3", "2", "6"]
+    acceptedAnswers: ["3"]
+explanation:
+  - type: text
+    text: 첫 삼각형은 목록의 처음 세 인덱스이므로 `indices[0:3]`으로 잘라 [0, 1, 2]를 얻습니다.
+tags: [graphics, geometry, mesh, code-completion]
+difficulty: 2

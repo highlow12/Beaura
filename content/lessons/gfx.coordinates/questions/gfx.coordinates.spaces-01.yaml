@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: gfx.coordinates.spaces-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 일반적인 그래픽스 좌표 변환 흐름에 포함되는 공간을 모두 고르세요.
+options:
+  - id: model
+    content:
+      - type: text
+        text: 모델 좌표
+  - id: world
+    content:
+      - type: text
+        text: 월드 좌표
+  - id: view
+    content:
+      - type: text
+        text: 뷰 좌표
+  - id: clip
+    content:
+      - type: text
+        text: 클립 좌표
+  - id: audio
+    content:
+      - type: text
+        text: 오디오 좌표
+correctOptionIds: [model, world, view, clip]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 모델, 월드, 뷰, 클립 좌표는 물체에서 카메라와 투영을 거쳐 화면으로 가는 그래픽스 흐름의 공간입니다.
+tags: [graphics, coordinates]
+difficulty: 2

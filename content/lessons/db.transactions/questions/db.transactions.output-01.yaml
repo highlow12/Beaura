@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.transactions.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 실패 시 이전 값으로 되돌리는 트랜잭션 모형의 출력 잔액을 고르세요.
+language: python
+code: |-
+  balance = 100
+  before = balance
+  balance -= 30
+  transfer_ok = False
+  if not transfer_ok:
+      balance = before
+  print(balance)
+choices: ["100", "70", "30"]
+acceptedOutputs: ["100"]
+explanation:
+  - type: text
+    text: transfer_ok가 False이므로 before인 100으로 되돌립니다. rollback은 이처럼 트랜잭션의 중간 변경을 외부 최종 상태에서 제거합니다.
+tags: [database, transactions, rollback, code-output]
+difficulty: 2

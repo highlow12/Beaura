@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.aggregation.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 점포별 판매 금액 합계를 계산한 뒤 가장 큰 합계를 출력합니다. 결과를 고르세요.
+language: python
+code: |-
+  sales = [("A", 10), ("B", 7), ("A", 5)]
+  totals = {}
+  for store, amount in sales:
+      totals[store] = totals.get(store, 0) + amount
+  print(max(totals.values()))
+choices: ["15", "10", "22"]
+acceptedOutputs: ["15"]
+explanation:
+  - type: text
+    text: A의 합은 10+5=15, B의 합은 7이므로 가장 큰 그룹 합계는 15입니다. SQL에서는 GROUP BY store와 SUM(amount)의 조합으로 표현할 수 있습니다.
+tags: [database, sql, aggregation, code-output]
+difficulty: 2

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.keys.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 데이터베이스 키 용어와 의미를 연결하세요.
+leftItems:
+  - id: candidate
+    content:
+      - type: text
+        text: 후보 키
+  - id: primary
+    content:
+      - type: text
+        text: 기본 키
+  - id: foreign
+    content:
+      - type: text
+        text: 외래 키
+rightItems:
+  - id: minimal-unique
+    content:
+      - type: text
+        text: 행을 유일하게 식별하는 최소 속성 집합
+  - id: selected-identifier
+    content:
+      - type: text
+        text: 후보 키 중 대표로 선택한 식별자
+  - id: reference
+    content:
+      - type: text
+        text: 다른 테이블의 키를 참조하는 열
+correctPairs:
+  - leftId: candidate
+    rightId: minimal-unique
+  - leftId: primary
+    rightId: selected-identifier
+  - leftId: foreign
+    rightId: reference
+explanation:
+  - type: text
+    text: 후보 키는 선택 가능한 최소 식별자이고, 기본 키는 그중 하나를 대표로 정한 것입니다. 외래 키는 테이블 사이의 참조를 표현합니다.
+tags: [database, keys, integrity]
+difficulty: 2

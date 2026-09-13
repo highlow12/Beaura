@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.projection.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 투영 방식과 특징을 연결하세요.
+leftItems:
+  - id: orthographic
+    content:
+      - type: text
+        text: 직교 투영
+  - id: perspective
+    content:
+      - type: text
+        text: 원근 투영
+  - id: frustum
+    content:
+      - type: text
+        text: 시야체
+rightItems:
+  - id: parallel
+    content:
+      - type: text
+        text: 깊이에 따른 크기 변화가 없다
+  - id: depth-size
+    content:
+      - type: text
+        text: 멀리 있는 물체가 작게 보인다
+  - id: visible-volume
+    content:
+      - type: text
+        text: 카메라가 볼 수 있는 3차원 영역
+correctPairs:
+  - leftId: orthographic
+    rightId: parallel
+  - leftId: perspective
+    rightId: depth-size
+  - leftId: frustum
+    rightId: visible-volume
+explanation:
+  - type: text
+    text: 직교 투영은 평행성을 보존하고, 원근 투영은 깊이에 따른 축척을 만듭니다. 시야체는 두 방식 모두에서 보이는 영역을 표현합니다.
+tags: [graphics, projection]
+difficulty: 2

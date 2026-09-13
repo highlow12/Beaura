@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.transactions.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 계좌 이체 중 입금 단계가 실패했을 때 출금만 남지 않게 하는 동작은 무엇인가요?
+options:
+  - id: rollback
+    content:
+      - type: text
+        text: 트랜잭션을 rollback한다
+  - id: commit
+    content:
+      - type: text
+        text: 실패한 상태를 commit한다
+  - id: select
+    content:
+      - type: text
+        text: 조회 SELECT만 다시 실행한다
+correctOptionId: rollback
+shuffleOptions: true
+explanation:
+  - type: text
+    text: rollback은 트랜잭션 안의 변경을 취소해 출금과 입금이 함께 성공하거나 함께 사라지게 합니다.
+tags: [database, transactions, rollback]
+difficulty: 1

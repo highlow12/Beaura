@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.rasterization.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 래스터화 용어와 설명을 연결하세요.
+leftItems:
+  - id: sample
+    content:
+      - type: text
+        text: 샘플
+  - id: edge-function
+    content:
+      - type: text
+        text: edge function
+  - id: aliasing
+    content:
+      - type: text
+        text: aliasing
+rightItems:
+  - id: test-point
+    content:
+      - type: text
+        text: 픽셀 안에서 덮임을 검사하는 위치
+  - id: sign-test
+    content:
+      - type: text
+        text: 변의 어느 쪽에 점이 있는지 계산하는 식
+  - id: jagged
+    content:
+      - type: text
+        text: 경계가 계단처럼 보이는 현상
+correctPairs:
+  - leftId: sample
+    rightId: test-point
+  - leftId: edge-function
+    rightId: sign-test
+  - leftId: aliasing
+    rightId: jagged
+explanation:
+  - type: text
+    text: 샘플은 검사 위치, edge function은 내부 판정 도구, aliasing은 이산 샘플링으로 생기는 계단 현상입니다.
+tags: [graphics, rasterization, sampling]
+difficulty: 2

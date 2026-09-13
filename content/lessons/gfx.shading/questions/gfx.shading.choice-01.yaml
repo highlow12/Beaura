@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.shading.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 작은 specular 하이라이트를 삼각형 내부에서도 잘 표현하려면 어느 방식이 더 적합한가요?
+options:
+  - id: phong
+    content:
+      - type: text
+        text: 법선을 보간해 fragment마다 조명을 계산하는 Phong 셰이딩
+  - id: gouraud
+    content:
+      - type: text
+        text: 정점 세 곳에서만 조명을 계산하는 Gouraud 셰이딩
+  - id: flat
+    content:
+      - type: text
+        text: 한 primitive의 값을 전체에 복사하는 flat 셰이딩
+correctOptionId: phong
+shuffleOptions: true
+explanation:
+  - type: text
+    text: Phong 셰이딩은 fragment 위치별로 조명 식을 평가하므로 정점 사이에 있는 좁은 하이라이트를 놓칠 가능성이 작습니다.
+tags: [graphics, shading, phong]
+difficulty: 2

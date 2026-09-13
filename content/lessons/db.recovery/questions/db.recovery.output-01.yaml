@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: db.recovery.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 복구 대상 로그 중 commit된 변경만 다시 적용하는 코드의 최종 값을 고르세요.
+language: python
+code: |-
+  value = 10
+  log = [("T1", 3, True), ("T2", 5, False)]
+  for _, delta, committed in log:
+      if committed:
+          value += delta
+  print(value)
+choices: ["13", "18", "10"]
+acceptedOutputs: ["13"]
+explanation:
+  - type: text
+    text: T1만 commit된 로그이므로 10+3=13을 redo합니다. T2의 미완료 변경 5는 복구 후 반영하지 않습니다.
+tags: [database, recovery, redo, code-output]
+difficulty: 2

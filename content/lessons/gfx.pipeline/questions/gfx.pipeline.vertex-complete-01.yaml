@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.pipeline.vertex-complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: 정점 셰이더가 입력 정점의 위치를 다음 단계로 전달하도록 빈칸을 완성하세요.
+language: python
+template: |-
+  vertex = {"position": (1, 2)}
+  output = vertex[{{blank:key}}]
+blanks:
+  - id: key
+    choices: ['"position"', '"color"', '"depth"']
+    acceptedAnswers: ['"position"']
+explanation:
+  - type: text
+    text: 입력 딕셔너리에서 position 키를 선택해야 정점 위치 (1, 2)를 다음 단계로 전달할 수 있습니다.
+tags: [graphics, pipeline, code-completion]
+difficulty: 2

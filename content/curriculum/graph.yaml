@@ -1,8 +1,5 @@
 schemaVersion: 1
 nodes:
-  - lesson: sys.graphics
-    requires:
-      - arch.cpu
   - lesson: py.variables
     requires: []
   - lesson: py.types
@@ -542,3 +539,114 @@ nodes:
       - prob.expectation
       - ds.hash-table
       - algo.big-o
+  - lesson: sys.graphics
+    requires:
+      - arch.cpu
+  - lesson: gfx.pipeline
+    requires:
+      - sys.graphics
+      - la.vectors
+  - lesson: gfx.coordinates
+    requires:
+      - gfx.pipeline
+      - la.coordinates
+  - lesson: gfx.transforms
+    requires:
+      - gfx.coordinates
+      - la.linear-transformations
+  - lesson: gfx.homogeneous
+    requires:
+      - gfx.transforms
+      - la.homogeneous-coordinates
+  - lesson: gfx.camera
+    requires:
+      - gfx.coordinates
+      - gfx.transforms
+  - lesson: gfx.projection
+    requires:
+      - gfx.camera
+      - gfx.homogeneous
+  - lesson: gfx.geometry
+    requires:
+      - gfx.transforms
+      - la.cross-product
+  - lesson: gfx.rasterization
+    requires:
+      - gfx.geometry
+      - gfx.projection
+  - lesson: gfx.depth
+    requires:
+      - gfx.rasterization
+  - lesson: gfx.interpolation
+    requires:
+      - gfx.rasterization
+      - la.projection
+  - lesson: gfx.lighting
+    requires:
+      - gfx.geometry
+      - la.dot-product
+  - lesson: gfx.shading
+    requires:
+      - gfx.lighting
+      - gfx.interpolation
+  - lesson: gfx.texture
+    requires:
+      - gfx.interpolation
+      - gfx.shading
+  - lesson: gfx.color
+    requires:
+      - gfx.shading
+  - lesson: gfx.ray-tracing
+    requires:
+      - gfx.lighting
+      - calc.derivatives
+  - lesson: db.concepts
+    requires:
+      - algo.correctness
+      - os.filesystem
+  - lesson: db.relational-model
+    requires:
+      - db.concepts
+  - lesson: db.select
+    requires:
+      - db.relational-model
+  - lesson: db.aggregation
+    requires:
+      - db.select
+  - lesson: db.keys
+    requires:
+      - db.relational-model
+  - lesson: db.joins
+    requires:
+      - db.select
+      - db.keys
+  - lesson: db.functional-dependency
+    requires:
+      - db.keys
+  - lesson: db.normalization
+    requires:
+      - db.functional-dependency
+  - lesson: db.indexes
+    requires:
+      - db.select
+      - ds.bst
+  - lesson: db.transactions
+    requires:
+      - db.concepts
+      - os.concurrency
+  - lesson: db.concurrency
+    requires:
+      - db.transactions
+      - os.mutex
+  - lesson: db.recovery
+    requires:
+      - db.transactions
+      - os.storage
+  - lesson: db.replication
+    requires:
+      - db.transactions
+      - net.tcp
+  - lesson: db.consistency
+    requires:
+      - db.replication
+      - db.concurrency

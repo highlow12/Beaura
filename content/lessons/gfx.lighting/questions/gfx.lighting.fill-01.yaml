@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.lighting.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 표면 법선 n과 빛 방향 l 사이의 기본 diffuse 세기를 계산할 때 사용하는 연산을 고르세요.
+choices: ["내적", "외적", "문자열 연결"]
+acceptedAnswers: ["내적"]
+explanation:
+  - type: text
+    text: 두 단위 방향의 내적은 서로 얼마나 같은 방향인지 나타내므로 Lambert diffuse 항의 출발점이 됩니다.
+tags: [graphics, lighting, diffuse]
+difficulty: 1

@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.relational-model.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 관계 모델에서 한 행의 레코드를 부르는 용어를 고르세요.
+choices: ["tuple", "attribute", "domain"]
+acceptedAnswers: ["tuple"]
+explanation:
+  - type: text
+    text: tuple은 relation에 포함된 행 하나이며, attribute는 그 행의 열 값과 열 정의를 가리킵니다.
+tags: [database, relational-model]
+difficulty: 1

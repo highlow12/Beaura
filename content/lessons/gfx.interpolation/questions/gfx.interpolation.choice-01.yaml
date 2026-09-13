@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.interpolation.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 바리센트릭 가중치가 (1, 0, 0)일 때 보간된 값은 어느 정점의 값인가요?
+options:
+  - id: first
+    content:
+      - type: text
+        text: 첫 번째 정점
+  - id: second
+    content:
+      - type: text
+        text: 두 번째 정점
+  - id: average
+    content:
+      - type: text
+        text: 세 정점의 평균
+correctOptionId: first
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 첫 번째 가중치만 1이고 나머지가 0이므로 가중합은 첫 번째 정점의 값과 같습니다.
+tags: [graphics, interpolation, barycentric]
+difficulty: 1

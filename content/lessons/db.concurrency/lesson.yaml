@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.concurrency
+revision: 1
+track: databases
+title: 동시성과 격리
+description: 경쟁 조건, 잠금, 격리 수준이 동시에 실행되는 트랜잭션의 결과를 제어하는 방식을 익힌다.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.concurrency.match-01
+  - type: question
+    ref: db.concurrency.choice-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: db.concurrency.fill-01
+  - type: question
+    ref: db.concurrency.output-01
+  - type: question
+    ref: db.concurrency.properties-01

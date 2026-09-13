@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: db.functional-dependency.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: student_id가 결정하는 이름을 딕셔너리에서 찾는 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  names = {7: "Mina", 8: "Joon"}
+  student_id = 7
+  print(names[student_id])
+choices: ["Mina", "Joon", "7"]
+acceptedOutputs: ["Mina"]
+explanation:
+  - type: text
+    text: 키 7이 값 Mina를 결정하므로 names[7]의 출력은 Mina입니다. 딕셔너리는 함수적 종속의 방향을 직관적으로 보여 주는 단순한 모델입니다.
+tags: [database, functional-dependency, code-output]
+difficulty: 1

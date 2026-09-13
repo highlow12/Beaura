@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.lighting.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: specular 하이라이트가 강해지는 상황으로 가장 알맞은 것은 무엇인가요?
+options:
+  - id: aligned
+    content:
+      - type: text
+        text: 반사 방향과 관찰자 방향이 잘 맞을 때
+  - id: hidden
+    content:
+      - type: text
+        text: 표면 법선이 항상 빛과 반대일 때
+  - id: no-view
+    content:
+      - type: text
+        text: 관찰자 방향을 조명 계산에서 제거했을 때
+correctOptionId: aligned
+shuffleOptions: true
+explanation:
+  - type: text
+    text: specular는 반사광이 관찰자에게 향하는 정도를 모델링하므로 반사 방향과 시선 방향의 정렬이 중요합니다.
+tags: [graphics, lighting, specular]
+difficulty: 2

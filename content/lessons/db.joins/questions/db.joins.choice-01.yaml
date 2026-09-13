@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.joins.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 수강하지 않은 학생도 목록에 보여 주려면 어떤 JOIN을 선택해야 하나요?
+options:
+  - id: left
+    content:
+      - type: text
+        text: Student를 왼쪽에 둔 LEFT JOIN
+  - id: inner
+    content:
+      - type: text
+        text: INNER JOIN
+  - id: cross
+    content:
+      - type: text
+        text: JOIN 조건 없는 곱집합
+correctOptionId: left
+shuffleOptions: true
+explanation:
+  - type: text
+    text: Student를 왼쪽에 두고 LEFT JOIN하면 수강 행이 없는 학생도 유지되고, 오른쪽 열은 NULL이 됩니다.
+tags: [database, sql, joins, left-join]
+difficulty: 2

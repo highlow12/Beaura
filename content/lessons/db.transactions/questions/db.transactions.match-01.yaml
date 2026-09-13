@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.transactions.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: ACID 속성과 의미를 연결하세요.
+leftItems:
+  - id: atomicity
+    content:
+      - type: text
+        text: 원자성
+  - id: isolation
+    content:
+      - type: text
+        text: 격리성
+  - id: durability
+    content:
+      - type: text
+        text: 지속성
+rightItems:
+  - id: all-or-none
+    content:
+      - type: text
+        text: 변경 전체가 반영되거나 전부 취소된다
+  - id: interference
+    content:
+      - type: text
+        text: 동시에 실행되는 작업의 간섭을 제한한다
+  - id: after-commit
+    content:
+      - type: text
+        text: commit 결과가 장애 뒤에도 보존된다
+correctPairs:
+  - leftId: atomicity
+    rightId: all-or-none
+  - leftId: isolation
+    rightId: interference
+  - leftId: durability
+    rightId: after-commit
+explanation:
+  - type: text
+    text: ACID의 네 글자는 서로 다른 보장입니다. 일관성은 이 문제의 짝에는 없지만 트랜잭션 전후에 제약을 지키는 상태를 뜻합니다.
+tags: [database, transactions, acid]
+difficulty: 2

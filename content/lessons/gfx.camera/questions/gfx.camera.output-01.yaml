@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.camera.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 카메라 기준의 간단한 x 좌표를 계산한 결과를 고르세요.
+language: python
+code: |-
+  object_x = 10
+  camera_x = 4
+  view_x = object_x - camera_x
+  print(view_x)
+choices: ["6", "14", "4"]
+acceptedOutputs: ["6"]
+explanation:
+  - type: text
+    text: 카메라를 원점으로 보는 단순한 x축 모델에서는 물체 위치 10에서 카메라 위치 4를 빼서 6을 얻습니다.
+tags: [graphics, camera, view-space, code-output]
+difficulty: 1

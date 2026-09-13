@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.concurrency.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 동시성 용어와 설명을 연결하세요.
+leftItems:
+  - id: race
+    content:
+      - type: text
+        text: 경쟁 조건
+  - id: lock
+    content:
+      - type: text
+        text: 잠금
+  - id: serializable
+    content:
+      - type: text
+        text: serializable 격리
+rightItems:
+  - id: timing
+    content:
+      - type: text
+        text: 실행 순서에 따라 결과가 달라지는 문제
+  - id: exclusive
+    content:
+      - type: text
+        text: 동시에 접근하는 작업을 제한하는 장치
+  - id: serial-result
+    content:
+      - type: text
+        text: 직렬 실행과 같은 결과를 목표로 하는 수준
+correctPairs:
+  - leftId: race
+    rightId: timing
+  - leftId: lock
+    rightId: exclusive
+  - leftId: serializable
+    rightId: serial-result
+explanation:
+  - type: text
+    text: 경쟁 조건은 시간 순서의 문제이고, 잠금은 충돌을 제한하는 도구입니다. serializable은 가장 강한 격리 목표 중 하나입니다.
+tags: [database, concurrency, isolation, locks]
+difficulty: 2

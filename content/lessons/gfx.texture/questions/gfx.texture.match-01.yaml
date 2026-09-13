@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.texture.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 텍스처 용어와 역할을 연결하세요.
+leftItems:
+  - id: uv
+    content:
+      - type: text
+        text: UV 좌표
+  - id: nearest
+    content:
+      - type: text
+        text: nearest 필터
+  - id: mipmap
+    content:
+      - type: text
+        text: 밉맵
+rightItems:
+  - id: location
+    content:
+      - type: text
+        text: 이미지에서 읽을 위치
+  - id: one-texel
+    content:
+      - type: text
+        text: 가장 가까운 texel 하나를 선택한다
+  - id: reduced-levels
+    content:
+      - type: text
+        text: 축소된 여러 해상도의 텍스처 묶음
+correctPairs:
+  - leftId: uv
+    rightId: location
+  - leftId: nearest
+    rightId: one-texel
+  - leftId: mipmap
+    rightId: reduced-levels
+explanation:
+  - type: text
+    text: UV는 주소이고 nearest는 주소 주변에서 하나를 선택하는 필터입니다. 밉맵은 축소 상황에서 사용할 여러 해상도를 준비합니다.
+tags: [graphics, texture, sampling]
+difficulty: 1

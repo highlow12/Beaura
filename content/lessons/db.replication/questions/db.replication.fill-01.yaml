@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.replication.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 장애 시 replica를 새 쓰기 기준 노드로 바꾸는 절차를 고르세요.
+choices: ["failover", "rollback", "rasterization"]
+acceptedAnswers: ["failover"]
+explanation:
+  - type: text
+    text: failover는 장애가 난 primary를 대신해 replica 같은 다른 노드를 새 primary로 승격하는 절차입니다.
+tags: [database, replication, failover]
+difficulty: 1

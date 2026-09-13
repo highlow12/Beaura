@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.keys.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 자식 테이블의 행이 부모 테이블에 존재하는 키를 가리키도록 하는 제약을 고르세요.
+choices: ["참조 무결성", "색상 보정", "래스터화"]
+acceptedAnswers: ["참조 무결성"]
+explanation:
+  - type: text
+    text: 외래 키와 참조 무결성 제약은 존재하지 않는 부모를 가리키는 자식 행을 막아 테이블 관계를 보호합니다.
+tags: [database, keys, referential-integrity]
+difficulty: 1

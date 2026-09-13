@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.transforms.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 간단한 이동 변환을 적용한 점의 x 좌표를 출력합니다. 결과를 고르세요.
+language: python
+code: |-
+  point_x = 4
+  translation_x = -1
+  transformed_x = point_x + translation_x
+  print(transformed_x)
+choices: ["3", "5", "-4"]
+acceptedOutputs: ["3"]
+explanation:
+  - type: text
+    text: 이동은 점의 좌표에 이동량을 더하므로 4 + (-1) = 3입니다.
+tags: [graphics, transforms, translation, code-output]
+difficulty: 1

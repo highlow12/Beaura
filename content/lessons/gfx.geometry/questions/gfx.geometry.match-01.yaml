@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.geometry.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 기하 용어와 역할을 알맞게 연결하세요.
+leftItems:
+  - id: vertex
+    content:
+      - type: text
+        text: 정점
+  - id: mesh
+    content:
+      - type: text
+        text: 메시
+  - id: normal
+    content:
+      - type: text
+        text: 법선
+rightItems:
+  - id: point
+    content:
+      - type: text
+        text: 위치와 여러 속성을 담는 데이터 단위
+  - id: surface
+    content:
+      - type: text
+        text: 삼각형들의 묶음으로 표현한 표면
+  - id: perpendicular
+    content:
+      - type: text
+        text: 표면에 수직인 방향
+correctPairs:
+  - leftId: vertex
+    rightId: point
+  - leftId: mesh
+    rightId: surface
+  - leftId: normal
+    rightId: perpendicular
+explanation:
+  - type: text
+    text: 정점은 속성을 담고, 메시가 정점과 삼각형 연결로 표면을 구성하며, 법선은 조명에 필요한 방향을 제공합니다.
+tags: [graphics, geometry, mesh]
+difficulty: 1

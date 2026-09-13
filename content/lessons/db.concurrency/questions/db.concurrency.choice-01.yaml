@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.concurrency.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 두 요청이 같은 재고 1개를 읽고 각각 1개씩 판매하는 lost update를 막는 설계로 가장 알맞은 것은 무엇인가요?
+options:
+  - id: atomic-update
+    content:
+      - type: text
+        text: 재고 조건을 포함한 원자적 UPDATE 또는 적절한 잠금을 사용한다
+  - id: client-read
+    content:
+      - type: text
+        text: 클라이언트에서 읽은 값을 나중에 무조건 덮어쓴다
+  - id: display
+    content:
+      - type: text
+        text: 화면에 현재 재고만 표시하고 DB 변경은 하지 않는다
+correctOptionId: atomic-update
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "`UPDATE ... SET stock = stock - 1 WHERE stock > 0`처럼 조건과 변경을 DB의 원자적 작업으로 묶거나 잠금으로 읽기-쓰기 사이를 보호해야 합니다."
+tags: [database, concurrency, lost-update]
+difficulty: 3

@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.select.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: SQL에서 행을 조건으로 걸러내는 절을 고르세요.
+choices: ["WHERE", "FROM", "ORDER BY"]
+acceptedAnswers: ["WHERE"]
+explanation:
+  - type: text
+    text: WHERE 절은 각 행이 조건을 만족하는지 검사해 결과에 포함할 행을 제한합니다. FROM은 원본 테이블, ORDER BY는 정렬을 지정합니다.
+tags: [database, sql, where]
+difficulty: 1

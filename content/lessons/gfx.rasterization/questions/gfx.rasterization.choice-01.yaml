@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.rasterization.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 래스터화 단계의 직접적인 결과로 가장 알맞은 것은 무엇인가요?
+options:
+  - id: fragments
+    content:
+      - type: text
+        text: 도형이 덮는 화면 샘플에 대한 fragment 후보
+  - id: vertices
+    content:
+      - type: text
+        text: 원본 메시의 새 정점만
+  - id: shader-source
+    content:
+      - type: text
+        text: 셰이더 프로그램의 소스 코드
+correctOptionId: fragments
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 래스터화는 삼각형을 화면 샘플로 분해해 fragment 후보를 만들며, 색 계산은 보통 fragment 셰이더가 이어서 담당합니다.
+tags: [graphics, rasterization]
+difficulty: 1

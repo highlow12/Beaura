@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.ray-tracing.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 레이 트레이싱의 특징으로 올바른 것을 모두 고르세요.
+options:
+  - id: shadows
+    content:
+      - type: text
+        text: 그림자 광선의 가시성 검사로 직접 그림자를 표현할 수 있다
+  - id: reflection
+    content:
+      - type: text
+        text: 반사 방향으로 새 광선을 보내 반사를 모델링할 수 있다
+  - id: bvh
+    content:
+      - type: text
+        text: BVH 같은 구조로 교차 검사 후보를 줄일 수 있다
+  - id: no-intersection
+    content:
+      - type: text
+        text: 광선은 장면 도형과 교차할 필요가 없다
+correctOptionIds: [shadows, reflection, bvh]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 레이 트레이싱은 교차점을 중심으로 그림자와 반사를 통일적으로 표현하며, 공간 자료구조로 많은 교차 계산을 가속합니다.
+tags: [graphics, ray-tracing, shadows, reflection]
+difficulty: 3

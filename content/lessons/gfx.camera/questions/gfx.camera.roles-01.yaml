@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.camera.roles-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 카메라 용어와 역할을 연결하세요.
+leftItems:
+  - id: eye
+    content:
+      - type: text
+        text: eye
+  - id: target
+    content:
+      - type: text
+        text: target
+  - id: view
+    content:
+      - type: text
+        text: 뷰 행렬
+rightItems:
+  - id: position
+    content:
+      - type: text
+        text: 카메라의 위치
+  - id: look-point
+    content:
+      - type: text
+        text: 카메라가 바라볼 점
+  - id: world-camera
+    content:
+      - type: text
+        text: 월드 점을 카메라 기준으로 변환
+correctPairs:
+  - leftId: eye
+    rightId: position
+  - leftId: target
+    rightId: look-point
+  - leftId: view
+    rightId: world-camera
+explanation:
+  - type: text
+    text: eye와 target은 look-at 입력이고, 뷰 행렬은 그 카메라 기준을 실제 좌표 변환으로 구현합니다.
+tags: [graphics, camera, view-matrix]
+difficulty: 1

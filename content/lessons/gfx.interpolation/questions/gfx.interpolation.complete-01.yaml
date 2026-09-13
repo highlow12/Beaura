@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: gfx.interpolation.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: 세 가중치로 값을 보간하는 식을 완성하세요.
+language: python
+template: |-
+  values = [10, 20, 40]
+  weights = [0.5, 0.25, 0.25]
+  result = values[0] {{blank:op1}} weights[0] {{blank:op2}} values[1] * weights[1] + values[2] * weights[2]
+blanks:
+  - id: op1
+    choices: ["*", "+", "-"]
+    acceptedAnswers: ["*"]
+  - id: op2
+    choices: ["+", "-", "*"]
+    acceptedAnswers: ["+"]
+explanation:
+  - type: text
+    text: 각 정점 값을 해당 가중치와 곱한 뒤 더해야 합니다. 첫 항은 `values[0] * weights[0]`이고 항 사이 연산은 `+`입니다.
+tags: [graphics, interpolation, code-completion]
+difficulty: 2

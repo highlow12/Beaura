@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: db.select.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 이름을 오름차순으로 반환하려는 SQL에 필요한 절은 무엇인가요?
+options:
+  - id: order-by
+    content:
+      - type: code
+        language: sql
+        code: ORDER BY name ASC
+  - id: where
+    content:
+      - type: code
+        language: sql
+        code: WHERE name
+  - id: from
+    content:
+      - type: code
+        language: sql
+        code: FROM name
+correctOptionId: order-by
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "`ORDER BY name ASC`가 name 열의 오름차순을 명시합니다. WHERE는 필터이고 FROM은 테이블 지정입니다."
+tags: [database, sql, order-by]
+difficulty: 1

@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.depth.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 깊이 테스트가 통과한 fragment에 대해 일반적으로 함께 갱신하는 값은 무엇인가요?
+options:
+  - id: color-depth
+    content:
+      - type: text
+        text: 색 버퍼와 깊이 버퍼
+  - id: keyboard
+    content:
+      - type: text
+        text: 키보드 입력 큐와 오디오 버퍼
+  - id: vertices
+    content:
+      - type: text
+        text: 원본 메시의 정점 순서만
+correctOptionId: color-depth
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 더 가까운 fragment가 선택되면 화면 색을 기록하고 다음 비교를 위해 깊이 버퍼도 새 깊이로 바꿉니다.
+tags: [graphics, depth-buffer]
+difficulty: 1

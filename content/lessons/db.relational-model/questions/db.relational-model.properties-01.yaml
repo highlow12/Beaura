@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.relational-model.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 관계 모델과 값의 의미에 대한 올바른 설명을 모두 고르세요.
+options:
+  - id: domain
+    content:
+      - type: text
+        text: attribute에는 허용되는 값의 domain을 정할 수 있다
+  - id: "null"
+    content:
+      - type: text
+        text: NULL은 0이나 빈 문자열과 같은 값이라고 단정할 수 없다
+  - id: set-order
+    content:
+      - type: text
+        text: relation의 행 순서는 본질적인 의미가 아니다
+  - id: comma-list
+    content:
+      - type: text
+        text: 한 열에 쉼표로 여러 독립 값을 넣는 것이 항상 가장 좋은 모델이다
+correctOptionIds: [domain, "null", set-order]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: domain은 값의 제약을 표현하고, NULL은 특수한 미확정 상태이며, 관계 자체는 행 순서를 보장하지 않습니다. 다중 값을 한 칸에 모으면 질의와 무결성이 어려워집니다.
+tags: [database, relational-model, "null"]
+difficulty: 3

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.depth.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 깊이 처리 용어와 역할을 연결하세요.
+leftItems:
+  - id: depth-buffer
+    content:
+      - type: text
+        text: 깊이 버퍼
+  - id: depth-test
+    content:
+      - type: text
+        text: 깊이 테스트
+  - id: z-fighting
+    content:
+      - type: text
+        text: z-fighting
+rightItems:
+  - id: stored-value
+    content:
+      - type: text
+        text: 화면 위치별로 현재 깊이를 저장하는 배열
+  - id: compare
+    content:
+      - type: text
+        text: 새 fragment와 저장 깊이를 비교하는 규칙
+  - id: flicker
+    content:
+      - type: text
+        text: 비슷한 깊이의 표면이 경쟁해 깜빡이는 현상
+correctPairs:
+  - leftId: depth-buffer
+    rightId: stored-value
+  - leftId: depth-test
+    rightId: compare
+  - leftId: z-fighting
+    rightId: flicker
+explanation:
+  - type: text
+    text: 버퍼는 상태를 저장하고 테스트는 통과 여부를 결정합니다. 깊이 정밀도가 부족하면 두 표면이 번갈아 선택되는 z-fighting이 생길 수 있습니다.
+tags: [graphics, depth-buffer]
+difficulty: 2

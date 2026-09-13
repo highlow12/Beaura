@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.concepts.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 질의, 동시 접근, 복구를 관리하는 데이터베이스 소프트웨어를 부르는 약어를 고르세요.
+choices: ["DBMS", "RGB", "CPU"]
+acceptedAnswers: ["DBMS"]
+explanation:
+  - type: text
+    text: DBMS는 Database Management System의 약어로 데이터 저장과 질의 처리, 트랜잭션 등을 관리합니다.
+tags: [database, dbms]
+difficulty: 1

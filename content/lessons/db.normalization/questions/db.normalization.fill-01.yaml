@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.normalization.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 한 셀에 쉼표로 여러 독립 값을 넣지 않고 각 칸을 하나의 값으로 두는 정규형 기준을 고르세요.
+choices: ["1NF", "2NF", "3NF"]
+acceptedAnswers: ["1NF"]
+explanation:
+  - type: text
+    text: 1NF는 각 attribute 값이 원자적이고 반복 그룹이 없는 형태를 요구하는 출발점입니다.
+tags: [database, normalization, first-normal-form]
+difficulty: 1

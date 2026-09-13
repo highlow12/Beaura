@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.color.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 조명과 색 혼합을 계산할 때 선형 색 공간을 먼저 사용하는 주된 이유는 무엇인가요?
+options:
+  - id: light-meaning
+    content:
+      - type: text
+        text: 채널의 산술이 빛의 세기 합성에 더 가깝게 해석되기 때문이다
+  - id: more-channels
+    content:
+      - type: text
+        text: RGB 채널의 개수가 자동으로 늘어나기 때문이다
+  - id: no-conversion
+    content:
+      - type: text
+        text: 모든 이미지가 이미 선형 값이기 때문이다
+correctOptionId: light-meaning
+shuffleOptions: true
+explanation:
+  - type: text
+    text: sRGB 숫자는 비선형 인코딩일 수 있으므로 그대로 평균내면 물리적 광량 합성으로 해석하기 어렵습니다. 선형화 후 계산하면 의미가 맞습니다.
+tags: [graphics, color, linear-space]
+difficulty: 2

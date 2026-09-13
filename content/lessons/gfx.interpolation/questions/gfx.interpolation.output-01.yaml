@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.interpolation.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 세 정점 값의 바리센트릭 가중합을 계산한 결과를 고르세요.
+language: python
+code: |-
+  values = [10, 20, 40]
+  weights = [0.5, 0.25, 0.25]
+  value = sum(v * w for v, w in zip(values, weights))
+  print(value)
+choices: ["20.0", "25.0", "70.0"]
+acceptedOutputs: ["20.0"]
+explanation:
+  - type: text
+    text: 10×0.5 + 20×0.25 + 40×0.25 = 5 + 5 + 10 = 20.0입니다. 가중치 합이 1이므로 평균 형태의 보간입니다.
+tags: [graphics, interpolation, barycentric, code-output]
+difficulty: 2

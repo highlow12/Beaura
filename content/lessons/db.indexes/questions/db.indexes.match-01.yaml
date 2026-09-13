@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.indexes.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 인덱스 개념과 설명을 연결하세요.
+leftItems:
+  - id: index
+    content:
+      - type: text
+        text: 인덱스
+  - id: btree
+    content:
+      - type: text
+        text: B-tree
+  - id: scan
+    content:
+      - type: text
+        text: 전체 테이블 스캔
+rightItems:
+  - id: lookup-structure
+    content:
+      - type: text
+        text: 특정 열을 빠르게 찾기 위한 보조 구조
+  - id: ordered-balanced
+    content:
+      - type: text
+        text: 정렬된 키와 균형을 이용하는 트리 구조
+  - id: all-rows
+    content:
+      - type: text
+        text: 조건과 무관하게 행을 순서대로 읽는 방식
+correctPairs:
+  - leftId: index
+    rightId: lookup-structure
+  - leftId: btree
+    rightId: ordered-balanced
+  - leftId: scan
+    rightId: all-rows
+explanation:
+  - type: text
+    text: 인덱스는 보조 검색 구조이고 B-tree는 대표적인 정렬 트리입니다. 인덱스를 쓰지 않는 실행 계획에서는 테이블 전체를 읽을 수 있습니다.
+tags: [database, indexes, b-tree]
+difficulty: 1

@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.indexes.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 값의 종류가 거의 하나뿐인 열에 인덱스를 만들어도 큰 도움이 되지 않을 수 있는 이유는 무엇인가요?
+options:
+  - id: low-selectivity
+    content:
+      - type: text
+        text: 대부분의 행이 후보가 되어 인덱스 선택도가 낮기 때문이다
+  - id: no-storage
+    content:
+      - type: text
+        text: 인덱스는 저장 공간을 전혀 사용하지 않기 때문이다
+  - id: always-order
+    content:
+      - type: text
+        text: 인덱스가 있으면 모든 결과가 자동으로 원하는 순서가 되기 때문이다
+correctOptionId: low-selectivity
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 같은 값이 대부분의 행에 있으면 인덱스로 후보를 줄이지 못해 전체 읽기가 더 나을 수 있습니다. 실제 실행 계획으로 확인해야 합니다.
+tags: [database, indexes, selectivity]
+difficulty: 2

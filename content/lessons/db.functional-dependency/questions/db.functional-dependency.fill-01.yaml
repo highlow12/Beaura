@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.functional-dependency.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 함수적 종속 X → Y에서 X를 부르는 용어를 고르세요.
+choices: ["determinant", "dependent", "tuple"]
+acceptedAnswers: ["determinant"]
+explanation:
+  - type: text
+    text: 화살표 왼쪽 X가 오른쪽 Y의 값을 결정하므로 X는 determinant입니다. Y는 dependent입니다.
+tags: [database, functional-dependency]
+difficulty: 1

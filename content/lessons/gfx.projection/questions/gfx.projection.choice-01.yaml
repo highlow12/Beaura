@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.projection.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 멀리 있는 산이 가까운 나무보다 작게 보이는 장면에 적합한 투영은 무엇인가요?
+options:
+  - id: perspective
+    content:
+      - type: text
+        text: 원근 투영
+  - id: orthographic
+    content:
+      - type: text
+        text: 직교 투영
+  - id: none
+    content:
+      - type: text
+        text: 투영을 적용하지 않는다
+correctOptionId: perspective
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 원근 투영은 깊이에 따라 화면 크기를 줄여 실제 시야의 크기 단서와 가까운 효과를 만듭니다.
+tags: [graphics, projection, perspective]
+difficulty: 1

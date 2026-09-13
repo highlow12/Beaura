@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.select.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: WHERE 조건을 통과한 학생 이름만 출력하는 코드의 결과를 고르세요.
+language: python
+code: |-
+  students = [
+      {"name": "Mina", "major": "CS"},
+      {"name": "Joon", "major": "Math"},
+      {"name": "Ara", "major": "CS"},
+  ]
+  result = [row["name"] for row in students if row["major"] == "CS"]
+  print(result)
+choices: ["['Mina', 'Ara']", "['Joon']", "['Mina', 'Joon', 'Ara']"]
+acceptedOutputs: ["['Mina', 'Ara']"]
+explanation:
+  - type: text
+    text: major가 CS인 행은 Mina와 Ara이므로 조건을 통과한 name 목록은 ['Mina', 'Ara']입니다. 이는 SQL의 SELECT name ... WHERE major = 'CS'를 단순화한 코드입니다.
+tags: [database, sql, select, code-output]
+difficulty: 2

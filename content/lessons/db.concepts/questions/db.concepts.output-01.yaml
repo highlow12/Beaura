@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: db.concepts.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 데이터베이스에 저장할 레코드 수를 세는 코드의 출력 결과를 고르세요.
+language: python
+code: |-
+  records = [{"id": 1}, {"id": 2}, {"id": 3}]
+  print(len(records))
+choices: ["3", "2", "1"]
+acceptedOutputs: ["3"]
+explanation:
+  - type: text
+    text: records 목록에 딕셔너리 세 개가 있으므로 레코드 수는 3입니다. DBMS는 이런 저장과 검색을 더 큰 규모에서 관리합니다.
+tags: [database, records, code-output]
+difficulty: 1

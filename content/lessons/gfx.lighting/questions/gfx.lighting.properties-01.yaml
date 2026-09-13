@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.lighting.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: 기본 diffuse 조명 계산에 관한 올바른 설명을 모두 고르세요.
+options:
+  - id: dot
+    content:
+      - type: text
+        text: 법선과 빛 방향의 내적이 입사각의 단서가 된다
+  - id: clamp
+    content:
+      - type: text
+        text: 음수인 내적은 보통 max(..., 0)으로 잘라낸다
+  - id: normalize
+    content:
+      - type: text
+        text: 방향 벡터를 정규화하면 내적을 각도의 코사인으로 해석하기 쉽다
+  - id: eye-only
+    content:
+      - type: text
+        text: diffuse는 빛 방향 없이 관찰자 위치만으로 계산한다
+correctOptionIds: [dot, clamp, normalize]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: diffuse의 핵심 입력은 표면 법선과 빛 방향입니다. 정규화와 음수 제거는 단순 Lambert 모델의 해석과 시각적 범위를 맞춥니다.
+tags: [graphics, lighting, diffuse]
+difficulty: 3

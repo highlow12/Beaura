@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.depth.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 불투명 표면의 깊이 테스트를 위해 프레임 시작 시 깊이 버퍼를 보통 어느 쪽 값으로 지우는지 고르세요.
+choices: ["far", "near", "임의의 색"]
+acceptedAnswers: ["far"]
+explanation:
+  - type: text
+    text: 깊이가 작은 값을 가까운 표면으로 비교하는 설정에서는 초기값을 far로 두어 첫 fragment가 통과할 수 있게 합니다.
+tags: [graphics, depth-buffer, clear]
+difficulty: 2
