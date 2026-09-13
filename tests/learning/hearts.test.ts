@@ -12,7 +12,8 @@ import {
 
 let database: LearningDatabase | undefined;
 let databaseCounter = 0;
-let currentTime = Date.UTC(2026, 0, 1, 12);
+const INITIAL_LOCAL_TIME = new Date(2026, 0, 1, 12).getTime();
+let currentTime = INITIAL_LOCAL_TIME;
 
 function lesson(id: string): Lesson {
   return {
@@ -44,7 +45,7 @@ afterEach(async () => {
     current.close();
     await current.delete();
   }
-  currentTime = Date.UTC(2026, 0, 1, 12);
+  currentTime = INITIAL_LOCAL_TIME;
 });
 
 describe("lesson hearts", () => {
@@ -136,8 +137,10 @@ describe("lesson hearts", () => {
     await repo.startLesson(lesson("lesson.three"));
     expect((await repo.getHeartStatus()).count).toBe(0);
 
-    // The test runner's local timezone is not assumed to be UTC.
-    currentTime = Date.UTC(2026, 0, 2, 5, 1);
+    const nextLocalDay = new Date(currentTime);
+    nextLocalDay.setDate(nextLocalDay.getDate() + 1);
+    nextLocalDay.setHours(0, 1, 0, 0);
+    currentTime = nextLocalDay.getTime();
     expect((await repo.getHeartStatus()).count).toBe(3);
   });
 
