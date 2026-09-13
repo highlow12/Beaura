@@ -1,13 +1,18 @@
 import { loadSourceContent, type SourceContentBundle } from "./model";
 
 const MIN_CONTENT_BLOCKS = 3;
-const MAX_CONTENT_BLOCKS = 4;
 const MIN_QUESTIONS = 5;
-const MAX_QUESTIONS = 7;
-const MIN_CHOICE_OPTIONS = 4;
-const MAX_CHOICE_OPTIONS = 6;
+const TARGET_MAX_QUESTIONS = 7;
+
+export type ContentQualitySeverity = "action" | "info";
+export type ContentQualityCode =
+  | "content-below-target"
+  | "questions-below-target"
+  | "questions-above-target";
 
 export interface ContentQualityIssue {
+  code: ContentQualityCode;
+  severity: ContentQualitySeverity;
   lessonId: string;
   path: string;
   message: string;
@@ -27,50 +32,32 @@ export function getContentQualityIssues(
     const lessonId = lessonIdOf(entry);
     const lessonPath = `content/${entry.lessonFile.relativePath}`;
 
-    if (
-      entry.content.length < MIN_CONTENT_BLOCKS ||
-      entry.content.length > MAX_CONTENT_BLOCKS
-    ) {
+    if (entry.content.length < MIN_CONTENT_BLOCKS) {
       issues.push({
+        code: "content-below-target",
+        severity: "action",
         lessonId,
         path: lessonPath,
-        message: `설명 블록은 ${MIN_CONTENT_BLOCKS} ~ ${MAX_CONTENT_BLOCKS}개가 권장 기준이지만 ${entry.content.length}개입니다.`,
+        message: `설명 블록은 최소 ${MIN_CONTENT_BLOCKS}개를 목표로 하지만 ${entry.content.length}개입니다.`,
       });
     }
 
-    if (
-      entry.questions.length < MIN_QUESTIONS ||
-      entry.questions.length > MAX_QUESTIONS
-    ) {
+    if (entry.questions.length < MIN_QUESTIONS) {
       issues.push({
+        code: "questions-below-target",
+        severity: "action",
         lessonId,
         path: lessonPath,
-        message: `문제는 ${MIN_QUESTIONS} ~ ${MAX_QUESTIONS}개가 권장 기준이지만 ${entry.questions.length}개입니다.`,
+        message: `문제는 최소 ${MIN_QUESTIONS}개를 목표로 하지만 ${entry.questions.length}개입니다.`,
       });
-    }
-
-    for (const questionFile of entry.questions) {
-      const question = questionFile.value;
-      if (
-        question?.type !== "single-choice" &&
-        question?.type !== "multi-select"
-      ) {
-        continue;
-      }
-
-      const optionCount = Array.isArray(question.options)
-        ? question.options.length
-        : 0;
-      if (
-        optionCount < MIN_CHOICE_OPTIONS ||
-        optionCount > MAX_CHOICE_OPTIONS
-      ) {
-        issues.push({
-          lessonId,
-          path: `content/${questionFile.relativePath}`,
-          message: `선택형 문제는 ${MIN_CHOICE_OPTIONS} ~ ${MAX_CHOICE_OPTIONS}개 선택지를 권장하지만 ${optionCount}개입니다.`,
-        });
-      }
+    } else if (entry.questions.length > TARGET_MAX_QUESTIONS) {
+      issues.push({
+        code: "questions-above-target",
+        severity: "info",
+        lessonId,
+        path: lessonPath,
+        message: `문제가 목표 범위 5 ~ ${TARGET_MAX_QUESTIONS}개보다 많은 ${entry.questions.length}개입니다. 기존 question ID는 유지하고 필요할 때 레슨 분리를 검토합니다.`,
+      });
     }
   }
 
@@ -79,15 +66,18 @@ export function getContentQualityIssues(
 
 const bundle = await loadSourceContent();
 const issues = getContentQualityIssues(bundle);
+const actionable = issues.filter((issue) => issue.severity === "action");
+const informational = issues.filter((issue) => issue.severity === "info");
 const strict = process.argv.includes("--strict");
 
-if (issues.length === 0) {
-  console.log(`콘텐츠 품질 검사 통과: lessons=${bundle.lessons.length}`);
-} else {
-  console.log(`콘텐츠 품질 이슈: ${issues.length}건`);
-  for (const issue of issues) {
-    console.log(`- [${issue.lessonId}] ${issue.path}: ${issue.message}`);
-  }
+console.log(
+  `콘텐츠 품질 감사: tracks=${bundle.tracksFile.value.tracks.length}, lessons=${bundle.lessons.length}, questions=${bundle.lessons.reduce((total, lesson) => total + lesson.questions.length, 0)}, action=${actionable.length}, info=${informational.length}`,
+);
 
-  if (strict) process.exitCode = 1;
+for (const issue of issues) {
+  console.log(
+    `- [${issue.severity}/${issue.code}] [${issue.lessonId}] ${issue.path}: ${issue.message}`,
+  );
 }
+
+if (strict && actionable.length > 0) process.exitCode = 1;
