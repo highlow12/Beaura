@@ -7,7 +7,7 @@ describe("compiled Markdown boundary", () => {
     expect(html).toContain("<h1>변수</h1>");
     expect(html).toContain("&lt;b&gt;");
     expect(html).toContain('<span class="syntax-builtin">print</span>');
-    expect(html).toContain('<span class="syntax-string">&quot;&lt;b&gt;&quot;</span>');
+    expect(html).toContain('<span class="syntax-string">"&lt;b&gt;"</span>');
   });
 
   it("removes executable HTML, unsafe links and external images", () => {
