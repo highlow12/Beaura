@@ -64,12 +64,12 @@
   }
   async function action(work:()=>Promise<void>,success:string) { if(busy)return;busy=true;error='';message='';try {await work();message=success;}catch(e){error=errorMessage(e);}finally{busy=false;} }
   function save() { return action(async()=>{await learningRepository.updateSettings({dailyGoal,reviewLimit});},'학습 목표를 저장했습니다.'); }
-  function exportData() { return action(async()=>{const json=await learningRepository.exportBackup();const url=URL.createObjectURL(new Blob([json],{type:'application/json'}));const anchor=document.createElement('a');const exportedAt=new Date();anchor.href=url;anchor.download=`cs-duolingo-backup-${exportedAt.toISOString().replace(/\.\d{3}Z$/,'Z').replaceAll(':','-')}.json`;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),30000);},'백업 파일을 만들었습니다. 다운로드한 파일을 보관해 주세요.'); }
+  function exportData() { return action(async()=>{const json=await learningRepository.exportBackup();const url=URL.createObjectURL(new Blob([json],{type:'application/json'}));const anchor=document.createElement('a');const exportedAt=new Date();anchor.href=url;anchor.download=`beaura-backup-${exportedAt.toISOString().replace(/\.\d{3}Z$/,'Z').replaceAll(':','-')}.json`;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),30000);},'백업 파일을 만들었습니다. 다운로드한 파일을 보관해 주세요.'); }
   async function selectFile(event:Event) { const input=event.target as HTMLInputElement;const file=input.files?.[0];input.value='';if(!file)return;error='';message='';importExportedAt=null;if(file.size>20*1024*1024){error='20MB 이하의 백업 파일을 선택해 주세요.';return;}try{const json=await file.text();const parsed=JSON.parse(json) as {exportedAt?:unknown};importData=json;importName=file.name;importExportedAt=typeof parsed.exportedAt==='number'&&Number.isFinite(parsed.exportedAt)?parsed.exportedAt:null;}catch(e){importData=null;importName='';error=errorMessage(e);} }
   function restore() { if(!importData)return;const json=importData;return action(async()=>{await learningRepository.importBackup(json);importData=null;importName='';importExportedAt=null;await load();},'백업을 복원했습니다. 학습 기록을 확인해 주세요.'); }
   function reset() { if(resetText!=='초기화')return;return action(async()=>{await learningRepository.resetProgress();resetOpen=false;resetText='';await load();},'학습 기록을 초기화했습니다.'); }
 </script>
-<svelte:head><title>설정 | CS 듀오링고</title></svelte:head>
+<svelte:head><title>설정 | Beaura</title></svelte:head>
 <div class="stack settings-shell">
   <div class="page-heading"><span class="page-kicker">앱 / 나의 학습</span><h1>설정</h1><p class="muted">학습 리듬과 이 기기의 표시 방식을 조절해요.</p></div>
   {#if error}<div class="card error" role="alert">{error}{#if !loaded}<button class="button secondary" onclick={()=>{error='';void load().catch((e)=>{error=errorMessage(e);});}}>다시 시도</button>{/if}</div>{/if}

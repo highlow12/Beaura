@@ -102,7 +102,7 @@
     finally { if(epoch === navigationEpoch) saving = false; }
   }
 </script>
-<svelte:head><title>{lesson?.title ?? '레슨'} | CS 듀오링고</title></svelte:head>
+<svelte:head><title>{lesson?.title ?? '레슨'} | Beaura</title></svelte:head>
 {#if loading}<p class="card" role="status">레슨을 준비하는 중입니다…</p>
 {:else if error}<section class="card error" role="alert"><h1>레슨을 열지 못했어요</h1><p>{error}</p><a class="button secondary" href={`${base}/learn`}>학습 경로로</a></section>
 {:else if blocked.length}<section class="card blocked-lesson"><span class="blocked-mark" aria-hidden="true">/</span><h1>먼저 배울 개념이 있어요</h1><p>{blocked.join(', ')} 레슨을 완료하면 {lesson?.title} 레슨이 열립니다.</p><a class="button" href={`${base}/learn`}>학습 경로로</a></section>

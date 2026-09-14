@@ -25,7 +25,7 @@
   function next() { if(!ready) return; index++;ready=false; }
   async function refresh() { started=false;data=null;await load(); }
 </script>
-<svelte:head><title>오늘의 복습 | CS 듀오링고</title></svelte:head>
+<svelte:head><title>오늘의 복습 | Beaura</title></svelte:head>
 <div class="stack review-shell">
   <div class="page-heading"><span class="review-prompt" aria-hidden="true">복습 / queue</span><h1>오늘의 복습</h1><p class="muted">다시 떠올리면 오래 남아요.</p></div>
   {#if error}<div class="card error" role="alert">{error}<button class="button secondary" onclick={load}>다시 시도</button></div>

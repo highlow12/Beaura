@@ -1,4 +1,4 @@
-/* CS DUO — semantic design tokens
+/* Beaura — semantic design tokens
    The DOM theme attribute is set before the app boots (see app.html), so a
    chosen theme never needs a reload and does not flash the other palette. */
 :root {

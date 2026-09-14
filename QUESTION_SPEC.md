@@ -1,4 +1,4 @@
-# CS 듀오링고 Question Engine 상세 명세 v1
+# Beaura Question Engine 상세 명세 v1
 
 > 이 문서는 검증된 Question 콘텐츠를 앱에서 표시하고 평가하는 런타임 계약을 정의한다. 작성 YAML과 generated Question 구조는 `CONTENT_SPEC.md`, 상위 아키텍처와 도메인 경계는 `SYSTEM_SPEC.md`를 따른다.
 

@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-  <title>개인정보 처리방침 | CS 듀오링고</title>
-  <meta name="description" content="CS 듀오링고의 개인정보 처리방침과 오류 자동 보고 동의 안내" />
+  <title>개인정보 처리방침 | Beaura</title>
+  <meta name="description" content="Beaura의 개인정보 처리방침과 오류 자동 보고 동의 안내" />
 </svelte:head>
 
 <article class="policy stack">
@@ -17,7 +17,7 @@
   <section class="card stack">
     <h2>1. 기본 원칙</h2>
     <p>
-      CS 듀오링고는 계정 없이 학습하는 오프라인 우선 앱입니다. 학습에 필요한 기록은 기본적으로 이
+      Beaura는 계정 없이 학습하는 오프라인 우선 앱입니다. 학습에 필요한 기록은 기본적으로 이
       브라우저 또는 기기에 저장하며, 학습 기록을 운영자 서버로 자동 전송하지 않습니다.
     </p>
     <p>
@@ -30,7 +30,7 @@
   <section class="card stack">
     <h2>2. 처리 주체와 문의</h2>
     <dl class="details">
-      <div><dt>운영 주체</dt><dd>CS 듀오링고 프로젝트 운영자(highlow12)</dd></div>
+      <div><dt>운영 주체</dt><dd>Beaura 프로젝트 운영자(highlow12)</dd></div>
       <div>
         <dt>일반 문의 및 권리 행사 안내</dt>
         <dd>

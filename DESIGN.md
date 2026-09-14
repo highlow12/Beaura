@@ -1,8 +1,8 @@
-# CS DUO design system
+# Beaura design system
 
 ## Visual Theme & Atmosphere
 
-CS DUO is a quiet computer-science study desk: clear paper-like surfaces, a
+Beaura is a quiet computer-science study desk: clear paper-like surfaces, a
 small amount of terminal notation, and an interface that gets more energetic
 only when a learner earns something. The visual language is flat modernism with
 thin technical rules, compact square-ish controls, and a very light touch of

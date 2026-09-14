@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>{status} | CS 듀오링고</title>
+	<title>{status} | Beaura</title>
 	<meta name="description" content={message} />
 </svelte:head>
 
