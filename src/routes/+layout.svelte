@@ -113,7 +113,12 @@
 <header class="site-header">
   <div class="shell header-inner">
     <a class="brand" href={`${base}/`} aria-label="Beaura 홈">
-      <span class="brand-mark" aria-hidden="true">B</span>
+      <img
+        class="brand-mark brand-logo"
+        src={`${base}/brand/beaura/mark.svg`}
+        alt=""
+        aria-hidden="true"
+      />
       <span>Beaura</span>
     </a>
     <nav class="primary-nav" aria-label="주요 메뉴">
@@ -217,6 +222,16 @@
 </footer>
 
 <style>
+  .brand-logo {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    object-fit: contain;
+  }
+
   .nav-glyph {
     display: none;
     margin-right: 0.3rem;
