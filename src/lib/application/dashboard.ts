@@ -1,6 +1,6 @@
 import { contentRepository } from '$lib/content/repository/static-content-repository';
 import { learningRepository } from '$lib/storage/repositories/learning-repository';
-import { lessonStatus } from '$lib/curriculum/progress';
+import { nextLessonForDashboard } from '$lib/application/dashboard-selection';
 
 export async function loadDashboard() {
   const [curriculum, manifest, snapshot] = await Promise.all([
@@ -11,8 +11,7 @@ export async function loadDashboard() {
     Promise.all(manifest.questions.map((id) => contentRepository.getQuestion(id)))
   ]);
   const queue = await learningRepository.getReviewQueue(questions);
-  const nextLesson = lessons.find((l) => lessonStatus(l, curriculum, snapshot.lessonStates) === 'in-progress')
-    ?? lessons.find((l) => lessonStatus(l, curriculum, snapshot.lessonStates) === 'available');
+  const nextLesson = nextLessonForDashboard(curriculum, lessons, snapshot.lessonStates);
   return { curriculum, manifest, snapshot, lessons, questions, queue, nextLesson };
 }
 export type Dashboard = Awaited<ReturnType<typeof loadDashboard>>;
