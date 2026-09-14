@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { ContentBlock } from '$lib/content/types';
+	import SyntaxHighlightedCode from '$lib/components/SyntaxHighlightedCode.svelte';
 
 	let { block } = $props<{ block: ContentBlock }>();
 </script>
@@ -9,7 +10,7 @@
 {:else if block.type === 'markdown'}
 	{#if block.html}<div class="prose">{@html block.html}</div>{:else}<div class="plain-text">{block.markdown}</div>{/if}
 {:else if block.type === 'code'}
-	<pre class="code"><code class={`language-${block.language}`}>{block.code}</code></pre>
+	<SyntaxHighlightedCode code={block.code} language={block.language} />
 {:else if block.type === 'image'}
 	<figure>
 		<img src={block.src} alt={block.alt} />
@@ -28,7 +29,6 @@
 	}
 
 	.plain-text,
-	.code,
 	.diagram pre {
 		margin: var(--space-4) 0;
 		border: 1px solid var(--border);
@@ -64,6 +64,12 @@
   .prose :global(h2) { font-size:1.25rem;margin-top:1.75rem; }
   .prose :global(pre) { border:1px solid color-mix(in srgb,var(--primary) 35%,var(--border)); background:var(--code-bg);color:var(--code-text);padding:1.25rem;border-radius:var(--radius-md);line-height:1.7;white-space:pre; }
   .prose :global(pre code) { background:transparent;color:inherit;padding:0; }
+  .prose :global(.syntax-keyword) { color:#c586c0; }
+  .prose :global(.syntax-builtin) { color:#4ec9b0; }
+  .prose :global(.syntax-string) { color:#ce9178; }
+  .prose :global(.syntax-number) { color:#b5cea8; }
+  .prose :global(.syntax-comment) { color:#6a9955; }
+  .prose :global(.syntax-decorator),.prose :global(.syntax-definition) { color:#dcdcaa; }
   .prose :global(a) { color:var(--primary);text-underline-offset:3px; }
   .prose :global(img) { max-width:100%;height:auto; }
   .prose :global(table) { display:block;overflow-x:auto;border-collapse:collapse; }
