@@ -54,11 +54,12 @@ Python → 자료구조 → 알고리즘으로 이어지고, 컴퓨터 구조와
 
 ```bash
 npm run content:validate  # YAML, ID, 참조, 정답, DAG 검증
+npm run content:quality   # 설명·문제 최소 수 품질 게이트
 npm run content:build     # 작성 원본 → 정적 JSON과 정제된 HTML
 npm run check            # Svelte·TypeScript·콘텐츠 검사
 npm test                 # 도메인·콘텐츠·오프라인 캐시 테스트
 npm run build            # build/ 정적 웹 배포 산출물
-npm run verify           # 전체 검증과 빌드
+npm run verify           # 콘텐츠 품질, 전체 검증과 빌드
 npm run mobile:sync      # 웹 빌드 + Android/iOS 동기화
 npm run mobile:android   # Android Studio로 열기
 npm run mobile:ios       # Xcode로 열기 (macOS)

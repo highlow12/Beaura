@@ -22,7 +22,7 @@
     "mobile:sync": "npm run build && cap sync",
     "mobile:android": "cap open android",
     "mobile:ios": "cap open ios",
-    "verify": "npm run content:build && npm run check && npm test && npm run build"
+    "verify": "npm run content:build && npm run content:quality && npm run check && npm test && npm run build"
   },
   "devDependencies": {
     "@capacitor/cli": "^8.5.1",
