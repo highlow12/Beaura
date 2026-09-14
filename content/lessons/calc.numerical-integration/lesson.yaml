@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.numerical-integration
-revision: 1
+revision: 2
 track: calculus
 title: "수치 적분"
 description: "사다리꼴과 직사각형 합으로 표본 데이터의 누적량을 근사한다."
@@ -12,6 +12,8 @@ flow:
     ref: calc.numerical-integration.definition-01
   - type: question
     ref: calc.numerical-integration.application-01
+  - type: content
+    ref: content/connection.md
   - type: content
     ref: content/practice.md
   - type: question

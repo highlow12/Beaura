@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.partial-derivatives
-revision: 1
+revision: 2
 track: calculus
 title: "편미분"
 description: "여러 변수 함수에서 한 변수만 변화시켜 편미분을 계산한다."
@@ -12,6 +12,8 @@ flow:
     ref: calc.partial-derivatives.definition-01
   - type: question
     ref: calc.partial-derivatives.application-01
+  - type: content
+    ref: content/connection.md
   - type: content
     ref: content/practice.md
   - type: question

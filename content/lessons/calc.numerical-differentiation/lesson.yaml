@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.numerical-differentiation
-revision: 1
+revision: 2
 track: calculus
 title: "수치 미분"
 description: "함숫값 표에서 유한 차분으로 도함수를 근사하고 오차를 이해한다."
@@ -12,6 +12,8 @@ flow:
     ref: calc.numerical-differentiation.definition-01
   - type: question
     ref: calc.numerical-differentiation.application-01
+  - type: content
+    ref: content/connection.md
   - type: content
     ref: content/practice.md
   - type: question

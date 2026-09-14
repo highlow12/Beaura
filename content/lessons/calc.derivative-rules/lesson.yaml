@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.derivative-rules
-revision: 1
+revision: 2
 track: calculus
 title: "미분법칙"
 description: "합·상수배·곱·연쇄 법칙으로 복합 함수의 도함수를 구한다."
@@ -12,6 +12,8 @@ flow:
     ref: calc.derivative-rules.definition-01
   - type: question
     ref: calc.derivative-rules.application-01
+  - type: content
+    ref: content/connection.md
   - type: content
     ref: content/practice.md
   - type: question
