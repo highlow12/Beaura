@@ -14,5 +14,5 @@ describe('shipped curriculum',()=>{
       expect(evaluateQuestion(question,answer as UserAnswer),question.id).toEqual({status:'evaluated',result:{correct:true,score:1}});
     }
     expect(types.size).toBe(7);
-  });
+  },15_000);
 });

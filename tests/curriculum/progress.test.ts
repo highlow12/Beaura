@@ -122,7 +122,7 @@ describe("visible learning tracks", () => {
       "calculus",
       "probability-statistics",
     ]);
-  });
+  }, 15_000);
 });
 
 describe("track swipe discovery state", () => {

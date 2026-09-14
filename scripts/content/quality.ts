@@ -1,4 +1,6 @@
 import { loadSourceContent, type SourceContentBundle } from "./model";
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const MIN_CONTENT_BLOCKS = 3;
 const MIN_QUESTIONS = 5;
@@ -31,14 +33,18 @@ export function getContentQualityIssues(
   for (const entry of bundle.lessons) {
     const lessonId = lessonIdOf(entry);
     const lessonPath = `content/${entry.lessonFile.relativePath}`;
+    const contentBlockCount = Array.isArray(entry.lessonFile.value?.flow)
+      ? entry.lessonFile.value.flow.filter((item) => item.type === "content")
+          .length
+      : 0;
 
-    if (entry.content.length < MIN_CONTENT_BLOCKS) {
+    if (contentBlockCount < MIN_CONTENT_BLOCKS) {
       issues.push({
         code: "content-below-target",
         severity: "action",
         lessonId,
         path: lessonPath,
-        message: `설명 블록은 최소 ${MIN_CONTENT_BLOCKS}개를 목표로 하지만 ${entry.content.length}개입니다.`,
+        message: `flow의 설명 블록은 최소 ${MIN_CONTENT_BLOCKS}개를 목표로 하지만 ${contentBlockCount}개입니다.`,
       });
     }
 
@@ -64,20 +70,29 @@ export function getContentQualityIssues(
   return issues;
 }
 
-const bundle = await loadSourceContent();
-const issues = getContentQualityIssues(bundle);
-const actionable = issues.filter((issue) => issue.severity === "action");
-const informational = issues.filter((issue) => issue.severity === "info");
-const strict = process.argv.includes("--strict");
+async function main(): Promise<void> {
+  const bundle = await loadSourceContent();
+  const issues = getContentQualityIssues(bundle);
+  const actionable = issues.filter((issue) => issue.severity === "action");
+  const informational = issues.filter((issue) => issue.severity === "info");
+  const strict = process.argv.includes("--strict");
 
-console.log(
-  `콘텐츠 품질 감사: tracks=${bundle.tracksFile.value.tracks.length}, lessons=${bundle.lessons.length}, questions=${bundle.lessons.reduce((total, lesson) => total + lesson.questions.length, 0)}, action=${actionable.length}, info=${informational.length}`,
-);
-
-for (const issue of issues) {
   console.log(
-    `- [${issue.severity}/${issue.code}] [${issue.lessonId}] ${issue.path}: ${issue.message}`,
+    `콘텐츠 품질 감사: tracks=${bundle.tracksFile.value.tracks.length}, lessons=${bundle.lessons.length}, questions=${bundle.lessons.reduce((total, lesson) => total + lesson.questions.length, 0)}, action=${actionable.length}, info=${informational.length}`,
   );
+
+  for (const issue of issues) {
+    console.log(
+      `- [${issue.severity}/${issue.code}] [${issue.lessonId}] ${issue.path}: ${issue.message}`,
+    );
+  }
+
+  if (strict && actionable.length > 0) process.exitCode = 1;
 }
 
-if (strict && actionable.length > 0) process.exitCode = 1;
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(resolve(process.argv[1])).href
+) {
+  await main();
+}
