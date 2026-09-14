@@ -1,5 +1,6 @@
 <script lang="ts">
   import ContentBlockRenderer from "$lib/components/ContentBlockRenderer.svelte";
+  import { highlightCode } from "$lib/content/syntax-highlight";
   import type { QuestionRendererProps } from "$lib/questions/renderer-contract";
   import { shuffleDistinct } from "$lib/questions/shuffle";
 
@@ -87,7 +88,7 @@
     <ContentBlockRenderer {block} />
   {/each}
 
-  <pre class="code-preview" aria-label="빈칸이 포함된 Python 코드"><code>{previewTemplate()}</code></pre>
+  <pre class="code-preview" aria-label="빈칸이 포함된 Python 코드"><code>{@html highlightCode(previewTemplate(), question.language)}</code></pre>
 
   <div class="blank-sections">
     {#each orderedBlanks() as blank, index}
@@ -124,7 +125,13 @@
 <style>
   .question-body { display: grid; gap: var(--space-4); }
   .code-preview { margin: 0; overflow-x: auto; border:1px solid color-mix(in srgb,var(--primary) 35%,var(--border)); border-radius: var(--radius-md); background: var(--code-bg); color:var(--code-text); padding: 1rem; font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; line-height: 1.8; white-space: pre-wrap; }
-  .code-preview code { display: block; background: transparent; padding: 0; font-size: inherit; white-space: inherit; }
+  .code-preview code { display: block; background: transparent; color: inherit; padding: 0; font-size: inherit; white-space: inherit; }
+  .code-preview :global(.syntax-keyword) { color: #c586c0; }
+  .code-preview :global(.syntax-builtin) { color: #4ec9b0; }
+  .code-preview :global(.syntax-string) { color: #ce9178; }
+  .code-preview :global(.syntax-number) { color: #b5cea8; }
+  .code-preview :global(.syntax-comment) { color: #6a9955; }
+  .code-preview :global(.syntax-decorator), .code-preview :global(.syntax-definition) { color: #dcdcaa; }
   .blank-sections { display: grid; gap: var(--space-4); }
   .blank-section { display: grid; gap: var(--space-2); }
   .blank-label { margin: 0; color: var(--text-muted); font-size: 0.78rem; font-weight: 600; }
