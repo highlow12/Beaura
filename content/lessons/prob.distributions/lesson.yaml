@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.distributions
-revision: 1
+revision: 2
 track: probability-statistics
 title: "대표 확률분포"
 description: "Bernoulli·binomial·normal 분포의 모양과 매개변수를 구분한다."
@@ -14,6 +14,8 @@ flow:
     ref: prob.distributions.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/model.md
   - type: question
     ref: prob.distributions.term-01
   - type: question

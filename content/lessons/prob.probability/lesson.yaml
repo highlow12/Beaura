@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.probability
-revision: 1
+revision: 2
 track: probability-statistics
 title: "확률의 기본"
 description: "표본공간과 사건을 정의하고 균등한 경우의 확률을 계산한다."
@@ -14,6 +14,8 @@ flow:
     ref: prob.probability.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/model.md
   - type: question
     ref: prob.probability.term-01
   - type: question

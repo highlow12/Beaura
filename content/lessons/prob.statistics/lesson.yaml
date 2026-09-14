@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.statistics
-revision: 1
+revision: 2
 track: probability-statistics
 title: "기술통계"
 description: "평균·중앙값·상관의 차이를 이용해 자료의 중심과 관계를 요약한다."
@@ -14,6 +14,8 @@ flow:
     ref: prob.statistics.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/model.md
   - type: question
     ref: prob.statistics.term-01
   - type: question

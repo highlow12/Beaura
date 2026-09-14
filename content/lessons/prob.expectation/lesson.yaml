@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.expectation
-revision: 1
+revision: 2
 track: probability-statistics
 title: "기대값"
 description: "확률변수의 가중 평균인 기대값과 선형성을 계산한다."
@@ -14,6 +14,8 @@ flow:
     ref: prob.expectation.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/model.md
   - type: question
     ref: prob.expectation.term-01
   - type: question
