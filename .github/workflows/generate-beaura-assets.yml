@@ -1,0 +1,81 @@
+name: Generate Beaura brand assets
+
+on:
+  push:
+    paths:
+      - "static/brand/beaura/mark.svg"
+      - ".github/workflows/generate-beaura-assets.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install render tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin imagemagick
+
+      - name: Render brand assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p static/icons static/brand/beaura .tmp/beaura
+
+          render_mark() {
+            local size="$1"
+            local output="$2"
+            rsvg-convert -w "$size" -h "$size" static/brand/beaura/mark.svg > "$output"
+          }
+
+          make_bg() {
+            local size="$1"
+            local output="$2"
+            convert -size "${size}x${size}" 'gradient:#faf7f5-#f0eded' "$output"
+          }
+
+          make_icon() {
+            local size="$1"
+            local output="$2"
+            make_bg "$size" ".tmp/beaura/bg-${size}.png"
+            render_mark "$size" ".tmp/beaura/mark-${size}.png"
+            convert ".tmp/beaura/bg-${size}.png" ".tmp/beaura/mark-${size}.png" -gravity center -composite "$output"
+          }
+
+          render_mark 1024 static/brand/beaura/mark-1024.png
+          make_icon 1024 static/brand/beaura/app-store-1024.png
+          make_icon 512 static/brand/beaura/play-store-512.png
+          make_icon 512 static/icons/icon-512.png
+          make_icon 192 static/icons/icon-192.png
+          make_icon 180 static/icons/apple-touch-icon-180.png
+          make_icon 48 static/icons/favicon-48.png
+          make_icon 32 static/icons/favicon-32.png
+          make_icon 16 static/icons/favicon-16.png
+
+          make_bg 512 .tmp/beaura/maskable-bg.png
+          rsvg-convert -w 410 -h 410 static/brand/beaura/mark.svg > .tmp/beaura/maskable-mark.png
+          convert .tmp/beaura/maskable-bg.png .tmp/beaura/maskable-mark.png -gravity center -composite static/icons/icon-maskable-512.png
+
+          convert static/icons/favicon-16.png static/icons/favicon-32.png static/icons/favicon-48.png static/icons/favicon.ico
+
+      - name: Commit generated assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add static/brand/beaura/*.png static/icons/*.png static/icons/favicon.ico
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: regenerate Beaura brand assets"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
