@@ -964,7 +964,6 @@ export function getValidationErrors(bundle: SourceContentBundle): string[] {
       )
       .filter(Boolean);
     const seen = new Set<string>(),
-      flowContent = new Set<string>(),
       flowQuestions: string[] = [];
     if (!Array.isArray(lesson.flow) || !lesson.flow.length)
       errors.push(`${at}.flow: 하나 이상의 항목이 필요합니다.`);
@@ -982,7 +981,6 @@ export function getValidationErrors(bundle: SourceContentBundle): string[] {
         if (seen.has(key)) errors.push(`${here}: 중복 flow 참조입니다.`);
         seen.add(key);
         if (flow.type === "content") {
-          flowContent.add(flow.ref);
           if (
             !/^content\/[^/]+\.md$/.test(flow.ref) ||
             !contentRefs.has(flow.ref)
@@ -996,11 +994,6 @@ export function getValidationErrors(bundle: SourceContentBundle): string[] {
             errors.push(`${here}.ref: 같은 lesson의 question ID여야 합니다.`);
         }
       });
-    for (const contentRef of contentRefs)
-      if (!flowContent.has(contentRef))
-        errors.push(
-          `${at}.flow: content ${contentRef}을 정확히 한 번 참조해야 합니다.`,
-        );
     for (const questionId of localQuestions)
       if (!flowQuestions.includes(questionId))
         errors.push(
