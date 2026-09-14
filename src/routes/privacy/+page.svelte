@@ -34,7 +34,7 @@
       <div>
         <dt>일반 문의 및 권리 행사 안내</dt>
         <dd>
-          <a href="https://github.com/highlow12/cs-duolingo/issues" target="_blank" rel="noreferrer">GitHub Issues</a>
+          <a href="https://github.com/highlow12/Beaura/issues" target="_blank" rel="noreferrer">GitHub Issues</a>
           에 문의해 주세요. 공개 게시판에 이름, 연락처, 오류 원문 등 개인정보를 적지 말고, 개인정보
           관련 요청이라는 사실만 남긴 뒤 운영자의 안내를 따라 주세요.
         </dd>

@@ -38,7 +38,7 @@ const report: ClientErrorReport = {
 describe('error reporting', () => {
   it('builds a GitHub issue with user description and diagnostics', () => {
     const url = new URL(buildGithubIssueUrl('제출 버튼이 동작하지 않음', [report]));
-    expect(url.origin + url.pathname).toBe('https://github.com/highlow12/cs-duolingo/issues/new');
+    expect(url.origin + url.pathname).toBe('https://github.com/highlow12/Beaura/issues/new');
     expect(url.searchParams.get('title')).toBe('[Beta] 문제 신고');
     const body = url.searchParams.get('body') ?? '';
     expect(body).toContain('제출 버튼이 동작하지 않음');

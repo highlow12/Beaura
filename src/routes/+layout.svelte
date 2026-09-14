@@ -28,7 +28,7 @@
   const buildCommit = import.meta.env.PUBLIC_BUILD_COMMIT;
   const buildCommitShort = buildCommit?.slice(0, 7);
   const buildCommitUrl = buildCommit
-    ? `https://github.com/highlow12/cs-duolingo/commit/${buildCommit}`
+    ? `https://github.com/highlow12/Beaura/commit/${buildCommit}`
     : null;
 
   let { children } = $props();
