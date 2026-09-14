@@ -1,0 +1,76 @@
+/* Reveal-state answer markers should decorate cards instead of consuming text width. */
+body .item,
+body .memory-card,
+body .option,
+body .blank-choice {
+  position: relative;
+}
+
+body .item.item:has(.answer-marker),
+body .memory-card.memory-card:has(.answer-marker),
+body .option.option:has(.answer-marker),
+body .blank-choice.blank-choice:has(.answer-marker) {
+  padding-top: 2rem;
+}
+
+body .memory-card.memory-card:has(.answer-marker) {
+  overflow: visible;
+}
+
+body .item .answer-marker,
+body .memory-card .answer-marker,
+body .option .answer-marker,
+body .blank-choice .answer-marker {
+  position: absolute;
+  top: -0.55rem;
+  right: 0.65rem;
+  z-index: 3;
+  max-width: calc(100% - 1.3rem);
+  border: 1px solid color-mix(in srgb, var(--primary) 38%, var(--border));
+  box-shadow: 0 3px 10px rgb(10 20 15 / 14%);
+  pointer-events: none;
+}
+
+body .item .answer-marker + .answer-marker,
+body .memory-card .answer-marker + .answer-marker,
+body .option .answer-marker + .answer-marker,
+body .blank-choice .answer-marker + .answer-marker {
+  top: 0.72rem;
+}
+
+/* Graph-path nodes use the same sticker language without changing node geometry. */
+body .node .answer-marker {
+  position: absolute;
+  top: -0.6rem;
+  right: -1rem;
+  z-index: 3;
+  border: 1px solid color-mix(in srgb, var(--primary) 38%, var(--border));
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary-strong);
+  padding: 0.16rem 0.38rem;
+  box-shadow: 0 3px 10px rgb(10 20 15 / 14%);
+  pointer-events: none;
+}
+
+body .node .answer-marker + .answer-marker {
+  top: 0.65rem;
+}
+
+@media (max-width: 640px) {
+  body .item.item:has(.answer-marker),
+  body .memory-card.memory-card:has(.answer-marker),
+  body .option.option:has(.answer-marker),
+  body .blank-choice.blank-choice:has(.answer-marker) {
+    padding-top: 1.9rem;
+  }
+
+  body .item .answer-marker,
+  body .memory-card .answer-marker,
+  body .option .answer-marker,
+  body .blank-choice .answer-marker {
+    right: 0.5rem;
+    max-width: calc(100% - 1rem);
+    font-size: 0.7rem;
+  }
+}
