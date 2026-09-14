@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.rasterization
-revision: 1
+revision: 2
 track: computer-graphics
 title: 삼각형 래스터화
 description: 연속적인 삼각형을 화면 샘플과 fragment로 바꾸는 래스터화의 기본 판정을 익힌다.
@@ -13,6 +13,8 @@ flow:
     ref: gfx.rasterization.choice-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/coverage.md
   - type: question
     ref: gfx.rasterization.output-01
   - type: question

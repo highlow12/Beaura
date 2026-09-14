@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.color
-revision: 1
+revision: 2
 track: computer-graphics
 title: 색과 감마
 description: RGB 채널, 선형 색 공간과 sRGB 감마 인코딩의 차이를 그래픽스 파이프라인에서 이해한다.
@@ -13,6 +13,8 @@ flow:
     ref: gfx.color.match-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/linear-blending.md
   - type: question
     ref: gfx.color.choice-01
   - type: question

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.ray-tracing
-revision: 1
+revision: 2
 track: computer-graphics
 title: 그림자와 레이 트레이싱
 description: 광선을 쏘아 교차를 찾는 레이 트레이싱과 래스터화의 차이, 그림자·반사의 기본을 살펴본다.
@@ -13,6 +13,8 @@ flow:
     ref: gfx.ray-tracing.order-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/ray-interval.md
   - type: question
     ref: gfx.ray-tracing.choice-01
   - type: question

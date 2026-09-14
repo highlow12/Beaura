@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.coordinates
-revision: 1
+revision: 2
 track: computer-graphics
 title: 그래픽스 좌표계
 description: 모델, 월드, 뷰, 클립 좌표계가 장면을 화면으로 보내는 역할을 구분한다.
@@ -13,6 +13,8 @@ flow:
     ref: gfx.coordinates.match-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/space-trace.md
   - type: question
     ref: gfx.coordinates.clip-01
   - type: question

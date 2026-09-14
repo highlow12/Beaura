@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.camera
-revision: 1
+revision: 2
 track: computer-graphics
 title: 카메라와 뷰 행렬
 description: 카메라의 위치와 방향을 뷰 좌표로 바꾸는 원리와 look-at 관점을 익힌다.
@@ -13,6 +13,8 @@ flow:
     ref: gfx.camera.inverse-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/view-basis.md
   - type: question
     ref: gfx.camera.order-01
   - type: question

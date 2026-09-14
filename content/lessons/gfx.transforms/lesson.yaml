@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.transforms
-revision: 1
+revision: 2
 track: computer-graphics
 title: 기하 변환
 description: 이동, 회전, 크기 조절과 변환 합성의 순서가 물체에 미치는 영향을 학습한다.
@@ -13,6 +13,8 @@ flow:
     ref: gfx.transforms.order-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/composition.md
   - type: question
     ref: gfx.transforms.output-01
   - type: question

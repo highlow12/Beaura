@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.shading
-revision: 1
+revision: 2
 track: computer-graphics
 title: 셰이딩 방식
 description: 정점 셰이더와 fragment 셰이더의 경계, flat·Gouraud·Phong 셰이딩을 비교한다.
@@ -13,6 +13,8 @@ flow:
     ref: gfx.shading.choice-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/shading-cost.md
   - type: question
     ref: gfx.shading.order-01
   - type: question
