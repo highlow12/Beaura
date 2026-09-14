@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.indexes
-revision: 1
+revision: 2
 track: databases
 title: 인덱스와 B-tree
 description: 인덱스가 질의를 빠르게 하는 방식과 저장·갱신 비용의 trade-off를 이해한다.
@@ -13,6 +13,8 @@ flow:
     ref: db.indexes.output-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
   - type: question
     ref: db.indexes.fill-01
   - type: question

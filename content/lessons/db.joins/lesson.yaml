@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.joins
-revision: 1
+revision: 2
 track: databases
 title: 테이블 JOIN
 description: 공통 키를 기준으로 여러 관계를 연결하고 inner·outer join의 결과 차이를 이해한다.
@@ -13,6 +13,8 @@ flow:
     ref: db.joins.output-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
   - type: question
     ref: db.joins.choice-01
   - type: question

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.functional-dependency
-revision: 1
+revision: 2
 track: databases
 title: 함수적 종속
 description: X가 Y를 결정한다는 함수적 종속과 키·중복 문제의 관계를 이해한다.
@@ -13,6 +13,8 @@ flow:
     ref: db.functional-dependency.choice-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
   - type: question
     ref: db.functional-dependency.output-01
   - type: question

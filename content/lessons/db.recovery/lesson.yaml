@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.recovery
-revision: 1
+revision: 2
 track: databases
 title: 로그와 장애 복구
 description: WAL 로그, checkpoint, redo·undo로 장애 뒤 트랜잭션 상태를 복원하는 흐름을 이해한다.
@@ -13,6 +13,8 @@ flow:
     ref: db.recovery.match-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
   - type: question
     ref: db.recovery.choice-01
   - type: question
