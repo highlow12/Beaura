@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.sets
-revision: 1
+revision: 2
 track: discrete-math
 title: "집합과 기본 연산"
 description: "집합의 원소와 부분집합을 이해하고 합집합·교집합·차집합을 계산한다."
@@ -12,6 +12,8 @@ flow:
     ref: math.sets.definition-01
   - type: question
     ref: math.sets.application-01
+  - type: content
+    ref: content/cardinality.md
   - type: content
     ref: content/practice.md
   - type: question
