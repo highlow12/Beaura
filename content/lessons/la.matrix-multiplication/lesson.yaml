@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.matrix-multiplication
-revision: 1
+revision: 2
 track: linear-algebra
 title: "행렬 곱셈"
 description: "행렬 곱의 차원 조건과 행·열 내적을 이용한 계산을 익힌다."
@@ -14,6 +14,8 @@ flow:
     ref: la.matrix-multiplication.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
   - type: question
     ref: la.matrix-multiplication.term-01
   - type: question

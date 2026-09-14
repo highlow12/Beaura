@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.randomized-hashing
-revision: 1
+revision: 2
 track: probability-statistics
 title: "무작위 알고리즘과 해싱 확률"
 description: "무작위 선택의 기대 성능과 해시 충돌 확률을 직관적으로 이해한다."
@@ -14,6 +14,8 @@ flow:
     ref: prob.randomized-hashing.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/model.md
   - type: question
     ref: prob.randomized-hashing.term-01
   - type: question

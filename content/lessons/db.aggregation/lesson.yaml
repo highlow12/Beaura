@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.aggregation
-revision: 1
+revision: 2
 track: databases
 title: 집계와 GROUP BY
 description: COUNT, SUM, AVG와 GROUP BY로 여러 행을 요약하고 그룹 조건을 구분한다.
@@ -13,6 +13,8 @@ flow:
     ref: db.aggregation.match-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
   - type: question
     ref: db.aggregation.choice-01
   - type: question

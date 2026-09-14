@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.relational-model
-revision: 1
+revision: 2
 track: databases
 title: 관계 모델
 description: relation, tuple, attribute와 도메인으로 표 형태의 데이터를 읽고 제약을 이해한다.
@@ -13,6 +13,8 @@ flow:
     ref: db.relational-model.choice-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
   - type: question
     ref: db.relational-model.output-01
   - type: question

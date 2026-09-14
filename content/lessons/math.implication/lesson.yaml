@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.implication
-revision: 1
+revision: 2
 track: discrete-math
 title: "함의와 관련 명제"
 description: "함의의 진리 조건과 역·이·대우를 구분하고 논리적으로 연결한다."
@@ -12,6 +12,8 @@ flow:
     ref: math.implication.definition-01
   - type: question
     ref: math.implication.application-01
+  - type: content
+    ref: content/refutation.md
   - type: content
     ref: content/practice.md
   - type: question

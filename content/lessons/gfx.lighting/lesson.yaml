@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.lighting
-revision: 1
+revision: 2
 track: computer-graphics
 title: 확산광과 반사광
 description: 표면 법선과 빛 방향의 관계로 diffuse 및 specular 조명을 계산하는 기초를 익힌다.
@@ -13,6 +13,8 @@ flow:
     ref: gfx.lighting.match-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/light-vectors.md
   - type: question
     ref: gfx.lighting.properties-01
   - type: question

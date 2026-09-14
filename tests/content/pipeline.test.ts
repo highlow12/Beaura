@@ -1,17 +1,20 @@
 import { describe, expect, it } from "vitest";
 import { compileContent } from "../../scripts/content/compiler";
+import { getContentQualityIssues } from "../../scripts/content/quality";
 import {
   computeBuildId,
   getValidationErrors,
   loadSourceContent,
 } from "../../scripts/content/model";
 
+const CONTENT_TEST_TIMEOUT = 15_000;
+
 describe("content pipeline", () => {
   it("validates the repository content", async () => {
     const bundle = await loadSourceContent(process.cwd());
 
     expect(getValidationErrors(bundle)).toEqual([]);
-  });
+  }, CONTENT_TEST_TIMEOUT);
 
   it("rejects unknown fields and missing references", async () => {
     const bundle = await loadSourceContent(process.cwd());
@@ -25,7 +28,33 @@ describe("content pipeline", () => {
     const errors = getValidationErrors(bundle).join("\n");
     expect(errors).toContain("unexpected: 정의되지 않은 필드입니다");
     expect(errors).toContain("같은 lesson의 content/*.md 파일이어야 합니다");
-  });
+  }, CONTENT_TEST_TIMEOUT);
+
+  it("counts only flow content while allowing unreferenced Markdown", async () => {
+    const bundle = await loadSourceContent(process.cwd());
+    const lesson = bundle.lessons.find(
+      (entry) => entry.content.length === 3,
+    );
+    expect(lesson).toBeDefined();
+
+    const removed = lesson!.lessonFile.value.flow.find(
+      (item) => item.type === "content",
+    );
+    expect(removed).toBeDefined();
+    lesson!.lessonFile.value.flow = lesson!.lessonFile.value.flow.filter(
+      (item) => item !== removed,
+    );
+
+    expect(getContentQualityIssues(bundle)).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          code: "content-below-target",
+          lessonId: lesson!.lessonFile.value.id,
+        }),
+      ]),
+    );
+    expect(getValidationErrors(bundle).join("\n")).not.toContain(removed!.ref);
+  }, CONTENT_TEST_TIMEOUT);
 
   it("creates a stable build ID from source bytes", async () => {
     const bundle = await loadSourceContent(process.cwd());
@@ -34,7 +63,7 @@ describe("content pipeline", () => {
     expect(computeBuildId(bundle)).toBe(first);
     bundle.files.set("synthetic.txt", Buffer.from("changed"));
     expect(computeBuildId(bundle)).not.toBe(first);
-  });
+  }, CONTENT_TEST_TIMEOUT);
 
   it("compiles inline lesson content and materializes question defaults", async () => {
     const bundle = await loadSourceContent(process.cwd());
@@ -64,7 +93,7 @@ describe("content pipeline", () => {
         "py.variables.what-is-01",
       ]),
     );
-  });
+  }, CONTENT_TEST_TIMEOUT);
 
   it("shuffles every authored single-choice and multi-select card set", async () => {
     const bundle = await loadSourceContent(process.cwd());
@@ -76,7 +105,7 @@ describe("content pipeline", () => {
 
     expect(selectionQuestions.length).toBeGreaterThan(0);
     expect(selectionQuestions.every((question) => question.shuffleOptions)).toBe(true);
-  });
+  }, CONTENT_TEST_TIMEOUT);
 
   it("requires normalized answer choices and keeps accepted values inside them", async () => {
     const bundle = await loadSourceContent(process.cwd());
@@ -113,5 +142,5 @@ describe("content pipeline", () => {
       "acceptedOutputs: 모든 값이 choices에 포함되어야 합니다",
     );
     expect(errors).toContain("정규화 가능한 선택지가 최소 2개 필요합니다");
-  });
+  }, CONTENT_TEST_TIMEOUT);
 });

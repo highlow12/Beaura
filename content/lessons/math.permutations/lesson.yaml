@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.permutations
-revision: 1
+revision: 2
 track: discrete-math
 title: "순열과 배열"
 description: "순서를 고려한 선택과 배열을 팩토리얼과 순열 수로 계산한다."
@@ -12,6 +12,8 @@ flow:
     ref: math.permutations.definition-01
   - type: question
     ref: math.permutations.application-01
+  - type: content
+    ref: content/repetition.md
   - type: content
     ref: content/practice.md
   - type: question

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.pipeline
-revision: 1
+revision: 2
 track: computer-graphics
 title: 그래픽 파이프라인
 description: 정점 데이터가 화면의 픽셀로 바뀌는 렌더링 파이프라인의 흐름을 이해한다.
@@ -13,6 +13,8 @@ flow:
     ref: gfx.pipeline.order-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/stage-boundaries.md
   - type: question
     ref: gfx.pipeline.fragment-choice-01
   - type: question

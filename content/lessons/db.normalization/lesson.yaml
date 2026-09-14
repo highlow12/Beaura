@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.normalization
-revision: 1
+revision: 2
 track: databases
 title: 정규화
 description: 반복과 부분·이행 종속을 줄이도록 1NF부터 3NF까지 테이블을 분해하는 이유를 익힌다.
@@ -13,6 +13,8 @@ flow:
     ref: db.normalization.output-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
   - type: question
     ref: db.normalization.fill-01
   - type: question

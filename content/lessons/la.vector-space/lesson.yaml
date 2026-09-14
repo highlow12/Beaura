@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.vector-space
-revision: 1
+revision: 2
 track: linear-algebra
 title: "기저와 차원"
 description: "기저 벡터의 독립성과 공간을 생성하는 성질로 차원을 이해한다."
@@ -14,6 +14,8 @@ flow:
     ref: la.vector-space.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
   - type: question
     ref: la.vector-space.term-01
   - type: question

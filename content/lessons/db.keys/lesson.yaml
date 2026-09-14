@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.keys
-revision: 1
+revision: 2
 track: databases
 title: 기본 키와 외래 키
 description: 후보 키, 기본 키, 외래 키와 무결성 제약으로 행을 식별하고 관계를 연결한다.
@@ -13,6 +13,8 @@ flow:
     ref: db.keys.properties-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
   - type: question
     ref: db.keys.output-01
   - type: question

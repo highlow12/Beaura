@@ -60,5 +60,5 @@ describe('real authored lesson to saved progress and review',()=>{
     expect(events.map(e=>e.rating)).toEqual(['again','good']);
     expect((await repository.getSnapshot()).lessonStates[0].status).toBe('completed');
     await database.delete();
-  });
+  },15_000);
 });

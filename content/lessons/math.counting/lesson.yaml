@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.counting
-revision: 1
+revision: 2
 track: discrete-math
 title: "합의 법칙과 곱의 법칙"
 description: "서로 배타적인 선택과 연속 선택의 경우의 수를 합과 곱으로 계산한다."
@@ -12,6 +12,8 @@ flow:
     ref: math.counting.definition-01
   - type: question
     ref: math.counting.application-01
+  - type: content
+    ref: content/decision-tree.md
   - type: content
     ref: content/practice.md
   - type: question

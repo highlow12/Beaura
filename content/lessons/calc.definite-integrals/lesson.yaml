@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.definite-integrals
-revision: 1
+revision: 2
 track: calculus
 title: "정적분과 넓이"
 description: "구간의 정적분을 원시함수의 끝점 차이와 누적량으로 계산한다."
@@ -12,6 +12,8 @@ flow:
     ref: calc.definite-integrals.definition-01
   - type: question
     ref: calc.definite-integrals.application-01
+  - type: content
+    ref: content/connection.md
   - type: content
     ref: content/practice.md
   - type: question

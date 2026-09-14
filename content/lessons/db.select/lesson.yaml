@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.select
-revision: 1
+revision: 2
 track: databases
 title: SELECT로 행 찾기
 description: SELECT, WHERE, ORDER BY로 필요한 열과 행을 선언적으로 선택한다.
@@ -13,6 +13,8 @@ flow:
     ref: db.select.fill-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
   - type: question
     ref: db.select.match-01
   - type: question

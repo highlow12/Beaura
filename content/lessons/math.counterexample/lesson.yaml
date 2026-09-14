@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.counterexample
-revision: 1
+revision: 2
 track: discrete-math
 title: "반례로 명제 반박하기"
 description: "전칭 명제가 거짓임을 하나의 반례로 보이는 방법을 익힌다."
@@ -12,6 +12,8 @@ flow:
     ref: math.counterexample.definition-01
   - type: question
     ref: math.counterexample.application-01
+  - type: content
+    ref: content/witness.md
   - type: content
     ref: content/practice.md
   - type: question

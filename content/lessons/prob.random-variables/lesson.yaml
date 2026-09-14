@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.random-variables
-revision: 1
+revision: 2
 track: probability-statistics
 title: "확률변수와 기대값의 준비"
 description: "확률 실험의 결과를 수치로 매핑하는 확률변수와 확률질량을 읽는다."
@@ -14,6 +14,8 @@ flow:
     ref: prob.random-variables.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/model.md
   - type: question
     ref: prob.random-variables.term-01
   - type: question

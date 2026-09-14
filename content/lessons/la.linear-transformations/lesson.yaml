@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.linear-transformations
-revision: 1
+revision: 2
 track: linear-algebra
 title: "선형 변환"
 description: "덧셈과 스칼라배를 보존하는 선형 변환을 행렬로 표현한다."
@@ -14,6 +14,8 @@ flow:
     ref: la.linear-transformations.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
   - type: question
     ref: la.linear-transformations.term-01
   - type: question

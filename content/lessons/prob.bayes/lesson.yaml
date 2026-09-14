@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.bayes
-revision: 1
+revision: 2
 track: probability-statistics
 title: "베이즈 정리"
 description: "조건부 확률의 방향을 바꾸어 사후 확률을 계산하고 기저율을 해석한다."
@@ -14,6 +14,8 @@ flow:
     ref: prob.bayes.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/model.md
   - type: question
     ref: prob.bayes.term-01
   - type: question

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.limits
-revision: 1
+revision: 2
 track: calculus
 title: "극한의 직관"
 description: "입력이 한 값에 가까워질 때 함수값이 다가가는 값을 극한으로 이해한다."
@@ -12,6 +12,8 @@ flow:
     ref: calc.limits.definition-01
   - type: question
     ref: calc.limits.application-01
+  - type: content
+    ref: content/connection.md
   - type: content
     ref: content/practice.md
   - type: question

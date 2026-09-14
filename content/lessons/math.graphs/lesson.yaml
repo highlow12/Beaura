@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.graphs
-revision: 1
+revision: 2
 track: discrete-math
 title: "그래프의 구성 요소"
 description: "정점과 간선, 방향과 차수를 사용해 그래프를 표현하고 읽는다."
@@ -12,6 +12,8 @@ flow:
     ref: math.graphs.definition-01
   - type: question
     ref: math.graphs.application-01
+  - type: content
+    ref: content/representation-choice.md
   - type: content
     ref: content/practice.md
   - type: question

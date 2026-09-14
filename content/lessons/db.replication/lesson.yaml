@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.replication
-revision: 1
+revision: 2
 track: databases
 title: 복제와 읽기 확장
 description: primary와 replica, 동기·비동기 복제가 장애 대응과 읽기 확장에 미치는 영향을 이해한다.
@@ -13,6 +13,8 @@ flow:
     ref: db.replication.choice-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
   - type: question
     ref: db.replication.output-01
   - type: question

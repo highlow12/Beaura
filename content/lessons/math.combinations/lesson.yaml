@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.combinations
-revision: 1
+revision: 2
 track: discrete-math
 title: "조합과 선택"
 description: "순서를 무시한 선택을 조합으로 계산하고 순열과의 관계를 이해한다."
@@ -12,6 +12,8 @@ flow:
     ref: math.combinations.definition-01
   - type: question
     ref: math.combinations.application-01
+  - type: content
+    ref: content/role-selection.md
   - type: content
     ref: content/practice.md
   - type: question
