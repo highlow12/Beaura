@@ -30,7 +30,7 @@ describe("content pipeline", () => {
     expect(errors).toContain("같은 lesson의 content/*.md 파일이어야 합니다");
   }, CONTENT_TEST_TIMEOUT);
 
-  it("counts only content referenced by the lesson flow", async () => {
+  it("counts only flow content while allowing unreferenced Markdown", async () => {
     const bundle = await loadSourceContent(process.cwd());
     const lesson = bundle.lessons.find(
       (entry) => entry.content.length === 3,
@@ -53,9 +53,7 @@ describe("content pipeline", () => {
         }),
       ]),
     );
-    expect(getValidationErrors(bundle).join("\n")).toContain(
-      `content ${removed!.ref}을 정확히 한 번 참조해야 합니다`,
-    );
+    expect(getValidationErrors(bundle).join("\n")).not.toContain(removed!.ref);
   }, CONTENT_TEST_TIMEOUT);
 
   it("creates a stable build ID from source bytes", async () => {
