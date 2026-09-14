@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.projection
-revision: 1
+revision: 2
 track: linear-algebra
 title: "투영과 성분"
 description: "내적을 이용해 한 벡터를 다른 방향에 투영하고 평행·수직 성분을 나눈다."
@@ -14,6 +14,8 @@ flow:
     ref: la.projection.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
   - type: question
     ref: la.projection.term-01
   - type: question

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.eigenvectors
-revision: 1
+revision: 2
 track: linear-algebra
 title: "고유값과 고유벡터"
 description: "행렬 변환 후 방향은 유지되고 크기만 배율로 바뀌는 고유벡터를 이해한다."
@@ -14,6 +14,8 @@ flow:
     ref: la.eigenvectors.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
   - type: question
     ref: la.eigenvectors.term-01
   - type: question

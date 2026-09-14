@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.cross-product
-revision: 1
+revision: 2
 track: linear-algebra
 title: "3차원 외적"
 description: "3차원 벡터의 외적이 수직 벡터와 넓이를 만드는 원리를 익힌다."
@@ -14,6 +14,8 @@ flow:
     ref: la.cross-product.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
   - type: question
     ref: la.cross-product.term-01
   - type: question

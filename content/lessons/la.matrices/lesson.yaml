@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.matrices
-revision: 1
+revision: 2
 track: linear-algebra
 title: "행렬과 좌표"
 description: "행렬의 행·열 구조와 행렬이 데이터를 표로 표현하는 방식을 이해한다."
@@ -14,6 +14,8 @@ flow:
     ref: la.matrices.application-01
   - type: content
     ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
   - type: question
     ref: la.matrices.term-01
   - type: question
