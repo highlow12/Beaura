@@ -169,5 +169,5 @@ export function buildGithubIssueUrl(description = '', reports = getRecentErrorRe
     '> 진단 정보에는 최근 오류 메시지, 발생 시각, 화면 경로, 앱 빌드 정보가 포함됩니다. 학습 답안과 학습 기록은 포함하지 않습니다.',
   ].join('\n');
   const params = new URLSearchParams({ title: '[Beta] 문제 신고', body });
-  return `https://github.com/highlow12/cs-duolingo/issues/new?${params.toString()}`;
+  return `https://github.com/highlow12/Beaura/issues/new?${params.toString()}`;
 }

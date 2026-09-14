@@ -1,8 +1,8 @@
-# CS 듀오링고
+# Beaura (배우라)
 
 짧은 설명과 7종 문제, 개인 복습 일정으로 컴퓨터과학을 익히는 **오프라인 우선 학습 앱 베타**입니다. Svelte 5 + SvelteKit 정적 SPA이며 계정이나 서버 없이 동작합니다.
 
-👉 **[GitHub Pages에서 바로 실행하기](https://highlow12.github.io/cs-duolingo/)**
+👉 **[GitHub Pages에서 바로 실행하기](https://highlow12.github.io/Beaura/)**
 
 ## 실행
 
@@ -48,7 +48,7 @@ Python → 자료구조 → 알고리즘으로 이어지고, 컴퓨터 구조와
 
 ## 오류 보고
 
-모든 화면 하단의 `문제 신고`에서 증상을 적고 GitHub Issue를 만들 수 있습니다. 최근 자동 진단 정보가 함께 첨부되며 학습 답안과 학습 기록은 포함하지 않습니다. Sentry 오류 자동 보고는 첫 방문 동의 뒤에만 활성화되며 설정에서 언제든지 철회할 수 있습니다. 자세한 수집·국외 이전·보유 기간은 [개인정보 처리방침](https://highlow12.github.io/cs-duolingo/privacy)과 [docs/ERROR_REPORTING.md](docs/ERROR_REPORTING.md)를 참고하세요.
+모든 화면 하단의 `문제 신고`에서 증상을 적고 GitHub Issue를 만들 수 있습니다. 최근 자동 진단 정보가 함께 첨부되며 학습 답안과 학습 기록은 포함하지 않습니다. Sentry 오류 자동 보고는 첫 방문 동의 뒤에만 활성화되며 설정에서 언제든지 철회할 수 있습니다. 자세한 수집·국외 이전·보유 기간은 [개인정보 처리방침](https://highlow12.github.io/Beaura/privacy)과 [docs/ERROR_REPORTING.md](docs/ERROR_REPORTING.md)를 참고하세요.
 
 ## 주요 명령
 

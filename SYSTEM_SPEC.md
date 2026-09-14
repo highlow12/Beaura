@@ -1,10 +1,10 @@
-# CS 듀오링고 전체 시스템 상세 명세 v1
+# Beaura 전체 시스템 상세 명세 v1
 
-> 이 문서는 CS 듀오링고 프로젝트의 상위 시스템 명세다. 하위 명세와 구현은 이 문서의 아키텍처 원칙과 도메인 경계를 기준으로 한다.
+> 이 문서는 Beaura 프로젝트의 상위 시스템 명세다. 하위 명세와 구현은 이 문서의 아키텍처 원칙과 도메인 경계를 기준으로 한다.
 
 ## 1. 제품 정의
 
-CS 듀오링고는 컴퓨터공학을 짧은 설명과 반복적인 문제 풀이로 학습하는 웹 기반 학습 앱이다. 목표는 단순 입문을 넘어 학부 컴퓨터공학 과정의 주요 내용을 단계적으로 학습할 수 있는 수준이다.
+Beaura는 컴퓨터공학을 짧은 설명과 반복적인 문제 풀이로 학습하는 웹 기반 학습 앱이다. 목표는 단순 입문을 넘어 학부 컴퓨터공학 과정의 주요 내용을 단계적으로 학습할 수 있는 수준이다.
 
 핵심 학습 사이클은 다음과 같다.
 
@@ -1158,7 +1158,7 @@ QuestionState LessonState
 
 ## 44. 시스템 정의
 
-CS 듀오링고는 세 핵심 시스템의 결합으로 본다.
+Beaura는 세 핵심 시스템의 결합으로 본다.
 
 1. **Content System** — Curriculum Graph + Lesson + Question Plugin
 2. **Learning System** — Evaluator + StudyEvent + Progress State + FSRS
@@ -1218,4 +1218,4 @@ Question Plugin, UserAnswer, Evaluator와 Renderer의 런타임 계약은 `QUEST
 
 ## 47. 한 문장 아키텍처
 
-**CS 듀오링고는 YAML/Markdown으로 작성한 학부 수준 CS 콘텐츠를 빌드 타임에 검증된 정적 JSON으로 변환하고, SvelteKit 기반 Offline First 앱이 재사용 가능한 Question Plugin과 독립 Evaluator를 통해 이를 실행하며, StudyEvent와 FSRS를 이용해 장기 학습 진행도와 복습을 관리하고, 동일한 앱을 PWA와 Capacitor를 통해 웹·Android·iOS에 제공하는 시스템이다.**
+**Beaura는 YAML/Markdown으로 작성한 학부 수준 CS 콘텐츠를 빌드 타임에 검증된 정적 JSON으로 변환하고, SvelteKit 기반 Offline First 앱이 재사용 가능한 Question Plugin과 독립 Evaluator를 통해 이를 실행하며, StudyEvent와 FSRS를 이용해 장기 학습 진행도와 복습을 관리하고, 동일한 앱을 PWA와 Capacitor를 통해 웹·Android·iOS에 제공하는 시스템이다.**

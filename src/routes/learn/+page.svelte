@@ -392,7 +392,7 @@
   onscroll={dismissLessonPopover}
 />
 
-<svelte:head><title>학습 경로 | CS 듀오링고</title></svelte:head>
+<svelte:head><title>학습 경로 | Beaura</title></svelte:head>
 
 <div class="stack">
   <div class="page-heading">

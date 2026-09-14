@@ -28,7 +28,7 @@
   const buildCommit = import.meta.env.PUBLIC_BUILD_COMMIT;
   const buildCommitShort = buildCommit?.slice(0, 7);
   const buildCommitUrl = buildCommit
-    ? `https://github.com/highlow12/cs-duolingo/commit/${buildCommit}`
+    ? `https://github.com/highlow12/Beaura/commit/${buildCommit}`
     : null;
 
   let { children } = $props();
@@ -112,9 +112,9 @@
 
 <header class="site-header">
   <div class="shell header-inner">
-    <a class="brand" href={`${base}/`} aria-label="CS 듀오링고 홈">
-      <span class="brand-mark" aria-hidden="true">λ</span>
-      <span>CS 듀오링고</span>
+    <a class="brand" href={`${base}/`} aria-label="Beaura 홈">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span>Beaura</span>
     </a>
     <nav class="primary-nav" aria-label="주요 메뉴">
       {#each navItems as item}
@@ -202,7 +202,7 @@
 
 <footer class="site-footer">
   <div class="shell footer-inner">
-    <span>CS 듀오링고</span>
+    <span>Beaura</span>
     <div class="footer-meta">
       <ReportIssue />
       <a class="privacy-link" href={`${base}/privacy`}>개인정보 처리방침</a>

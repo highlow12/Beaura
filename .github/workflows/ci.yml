@@ -20,7 +20,7 @@ jobs:
       - run: npx cap sync android
       - uses: actions/upload-artifact@v4
         with:
-          name: cs-duolingo-web
+          name: beaura-web
           path: |
             build/
             content-quality-report.txt

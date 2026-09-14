@@ -7,7 +7,7 @@
   async function load() { error='';try { data=await loadDashboard(); } catch(e) { error=errorMessage(e); } }
   onMount(() => { void load(); });
 </script>
-<svelte:head><title>나의 학습 기록 | CS 듀오링고</title></svelte:head>
+<svelte:head><title>나의 학습 기록 | Beaura</title></svelte:head>
 <div class="stack">
   <div class="page-heading"><span class="page-kicker">진행도 / 이 기기의 기록</span><h1>나의 진행도</h1><p class="muted">작은 학습이 쌓인 기록을 한눈에 확인해요.</p></div>
   {#if error}<div class="card error" role="alert">{error}<button class="button secondary" onclick={load}>다시 시도</button></div>

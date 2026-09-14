@@ -7,7 +7,7 @@
   async function load() { error = ''; try { data = await loadDashboard(); } catch (e) { error = errorMessage(e); } }
   onMount(() => { void load(); });
 </script>
-<svelte:head><title>오늘의 학습 | CS 듀오링고</title></svelte:head>
+<svelte:head><title>오늘의 학습 | Beaura</title></svelte:head>
 <div class="stack">
   <div class="page-heading home-heading">
     <span class="home-prompt" aria-hidden="true">&gt;_ / today</span>
