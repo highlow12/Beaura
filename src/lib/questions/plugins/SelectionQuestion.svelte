@@ -1,5 +1,6 @@
 <script lang="ts">
   import ContentBlockRenderer from "$lib/components/ContentBlockRenderer.svelte";
+  import { highlightCode } from "$lib/content/syntax-highlight";
   import { contentLabel } from "$lib/questions/presentation";
   import type { QuestionRendererProps } from "$lib/questions/renderer-contract";
   import { shuffleDistinct } from "$lib/questions/shuffle";
@@ -154,7 +155,7 @@
   {/each}
 
   {#if question.type === "code-output"}
-    <pre class="code" aria-label="실행할 Python 코드"><code>{question.code}</code></pre>
+    <pre class="code" aria-label="실행할 Python 코드"><code>{@html highlightCode(question.code, question.language)}</code></pre>
   {/if}
 
   <div
@@ -270,7 +271,13 @@
     line-height: 1.6;
     white-space: pre-wrap;
   }
-  .code code { display: block; background: transparent; padding: 0; font-size: inherit; white-space: inherit; }
+  .code code { display: block; background: transparent; color: inherit; padding: 0; font-size: inherit; white-space: inherit; }
+  .code :global(.syntax-keyword) { color: #c586c0; }
+  .code :global(.syntax-builtin) { color: #4ec9b0; }
+  .code :global(.syntax-string) { color: #ce9178; }
+  .code :global(.syntax-number) { color: #b5cea8; }
+  .code :global(.syntax-comment) { color: #6a9955; }
+  .code :global(.syntax-decorator), .code :global(.syntax-definition) { color: #dcdcaa; }
   .answer-marker {
     flex: 0 0 auto;
     border-radius: 999px;
