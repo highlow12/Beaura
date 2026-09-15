@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: py.modules
-revision: 1
+revision: 2
 track: python
 title: 모듈과 import
 description: 파일 단위 코드를 모듈로 나누고 import로 이름 공간을 사용하는 방법을 익힌다.

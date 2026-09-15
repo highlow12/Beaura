@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: py.loops
-revision: 2
+revision: 3
 track: python
 title: 반복문
 description: for와 while로 반복 작업을 표현하고 누적값을 계산한다.

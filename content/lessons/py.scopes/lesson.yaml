@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: py.scopes
-revision: 1
+revision: 2
 track: python
 title: 이름과 스코프
 description: 함수 호출마다 생기는 지역 스코프와 바깥 이름을 찾는 규칙을 익힌다.
