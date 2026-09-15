@@ -1,6 +1,6 @@
 # 콘텐츠 로딩 구조
 
-Beaura의 authored content는 빌드 단계에서 정적 JSON으로 변환되며, 런타임에서는 화면에 필요한 범위만 읽는다. 오프라인 지원을 위해 서비스 워커는 전체 generated content를 캐시하지만 설치 중 요청 폭주를 피하도록 작은 배치로 나누어 저장한다.
+Beaura의 authored content는 빌드 단계에서 정적 JSON으로 변환되며, 런타임에서는 화면에 필요한 범위만 읽는다. 오프라인 지원을 위해 서비스 워커는 앱 셸과 전체 generated content를 캐시하지만 설치 중 요청 폭주를 피하도록 작은 배치로 나누어 저장한다.
 
 ```mermaid
 flowchart TD
@@ -39,4 +39,4 @@ flowchart TD
 
 ## 오프라인 캐시
 
-서비스 워커는 installed release가 완전한 오프라인 콘텐츠를 갖도록 generated content 전체를 precache한다. 단, `Cache.addAll()`에 전체 파일 목록을 한 번에 넘기지 않고 12개 단위 배치로 순차 처리한다. 따라서 오프라인 완전성은 유지하면서 설치 시 동시 네트워크 요청 수를 제한한다.
+서비스 워커는 installed release가 완전한 오프라인 상태를 갖도록 앱 셸과 generated content 전체를 precache한다. 단, `Cache.addAll()`에 전체 파일 목록을 한 번에 넘기지 않고 각각 12개 단위 배치로 순차 처리한다. 따라서 오프라인 완전성은 유지하면서 설치 시 동시 네트워크 요청 수를 제한한다.
