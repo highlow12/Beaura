@@ -1,12 +1,12 @@
 import { lessonStatus } from "$lib/curriculum/progress";
-import type { Curriculum, Lesson } from "$lib/content/types";
+import type { Curriculum, LessonMetadata } from "$lib/content/types";
 import type { LessonState } from "$lib/learning/domain/states";
 
 export function nextLessonForDashboard(
   curriculum: Curriculum,
-  lessons: readonly Lesson[],
+  lessons: readonly LessonMetadata[],
   states: readonly LessonState[],
-): Lesson | undefined {
+): LessonMetadata | undefined {
   const lessonById = new Map(lessons.map((lesson) => [lesson.id, lesson]));
   const recentState = [...states]
     .filter(

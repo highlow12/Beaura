@@ -1,18 +1,18 @@
 import { contentRepository } from '$lib/content/repository/static-content-repository';
 import { learningRepository } from '$lib/storage/repositories/learning-repository';
 import { nextLessonForDashboard } from '$lib/application/dashboard-selection';
+import { reviewCandidates } from '$lib/application/review-candidates';
 
 export async function loadDashboard() {
-  const [curriculum, manifest, snapshot] = await Promise.all([
-    contentRepository.getCurriculum(), contentRepository.getManifest(), learningRepository.getSnapshot()
+  const [curriculum, catalog, snapshot] = await Promise.all([
+    contentRepository.getCurriculum(),
+    contentRepository.getCatalog(),
+    learningRepository.getSnapshot()
   ]);
-  const [lessons, questions] = await Promise.all([
-    Promise.all(curriculum.nodes.map((n) => contentRepository.getLesson(n.lesson))),
-    Promise.all(manifest.questions.map((id) => contentRepository.getQuestion(id)))
-  ]);
-  const queue = await learningRepository.getReviewQueue(questions);
+  const lessons = catalog.lessons;
+  const queue = reviewCandidates(catalog.questions, snapshot.questionStates);
   const nextLesson = nextLessonForDashboard(curriculum, lessons, snapshot.lessonStates);
-  return { curriculum, manifest, snapshot, lessons, questions, queue, nextLesson };
+  return { curriculum, catalog, snapshot, lessons, queue, nextLesson };
 }
 export type Dashboard = Awaited<ReturnType<typeof loadDashboard>>;
 export function errorMessage(error: unknown) {

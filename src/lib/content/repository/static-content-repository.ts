@@ -1,5 +1,10 @@
 import { base } from "$app/paths";
-import type { ContentManifest, Curriculum, Lesson } from "$lib/content/types";
+import type {
+  ContentCatalog,
+  ContentManifest,
+  Curriculum,
+  Lesson,
+} from "$lib/content/types";
 import type { Question } from "$lib/questions/types";
 import type { ContentRepository } from "./content-repository";
 
@@ -28,6 +33,10 @@ async function getJson<T>(path: string): Promise<T> {
 export class StaticContentRepository implements ContentRepository {
   async getManifest(): Promise<ContentManifest> {
     return getJson<ContentManifest>(contentPath("manifest.json"));
+  }
+
+  async getCatalog(): Promise<ContentCatalog> {
+    return getJson<ContentCatalog>(contentPath("catalog.json"));
   }
 
   async getCurriculum(): Promise<Curriculum> {

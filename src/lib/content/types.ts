@@ -28,14 +28,29 @@ export type LessonFlowItem =
   | { type: "content"; blocks: ContentBlock[] }
   | { type: "question"; ref: string };
 
-export interface Lesson {
-  schemaVersion: 1;
+export interface LessonMetadata {
   id: string;
   revision: number;
   track: string;
   title: string;
   description: string;
+}
+
+export interface Lesson extends LessonMetadata {
+  schemaVersion: 1;
   flow: LessonFlowItem[];
+}
+
+export interface QuestionMetadata {
+  id: string;
+  revision: number;
+  lessonId: string;
+}
+
+export interface ContentCatalog {
+  schemaVersion: 1;
+  lessons: LessonMetadata[];
+  questions: QuestionMetadata[];
 }
 
 export interface ContentManifest {

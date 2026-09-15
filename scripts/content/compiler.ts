@@ -150,6 +150,30 @@ export function compileContent(bundle: SourceContentBundle) {
         transformQuestion(file.value, file.relativePath, lesson.id, assets),
       );
   }
+  const catalog = {
+    schemaVersion: 1,
+    lessons: bundle.lessons
+      .map((entry) => {
+        const lesson = entry.lessonFile.value;
+        return {
+          id: lesson.id,
+          revision: lesson.revision,
+          track: lesson.track,
+          title: lesson.title,
+          description: lesson.description,
+        };
+      })
+      .sort((left, right) => left.id.localeCompare(right.id)),
+    questions: bundle.lessons
+      .flatMap((entry) =>
+        entry.questions.map((file) => ({
+          id: file.value.id,
+          revision: file.value.revision,
+          lessonId: entry.lessonFile.value.id,
+        })),
+      )
+      .sort((left, right) => left.id.localeCompare(right.id)),
+  };
   const manifest = {
     schemaVersion: 1,
     buildId: computeBuildId(bundle),
@@ -164,6 +188,7 @@ export function compileContent(bundle: SourceContentBundle) {
       tracks: bundle.tracksFile.value.tracks,
       nodes: bundle.graphFile.value.nodes,
     },
+    catalog,
     lessons,
     questions,
     manifest,
@@ -181,6 +206,7 @@ export async function buildContent(
   await rm(output, { recursive: true, force: true });
   await rm(publicOutput, { recursive: true, force: true });
   await writeJson(join(output, "curriculum.json"), compiled.curriculum);
+  await writeJson(join(output, "catalog.json"), compiled.catalog);
   for (const [id, lesson] of compiled.lessons)
     await writeJson(join(output, "lessons", `${id}.json`), lesson);
   for (const [id, question] of compiled.questions)
