@@ -4,6 +4,7 @@ const shellCache = `cs-duolingo-shell-${version}`;
 const contentCache = `cs-duolingo-content-${version}`;
 const migrationCache = "cs-duolingo-migrations";
 const serviceWorkerFetchError = "BEAURA_SERVICE_WORKER_FETCH_ERROR";
+const contentCacheBatchSize = 12;
 const pagesBasePathMigration = new URL(
   "migration-pages-base-path-v2",
   self.registration.scope,
@@ -55,6 +56,12 @@ async function cacheFirst(request: Request, cacheName: string) {
   }
 }
 
+async function addAllInBatches(cache: Cache, assets: string[]) {
+  for (let start = 0; start < assets.length; start += contentCacheBatchSize) {
+    await cache.addAll(assets.slice(start, start + contentCacheBatchSize));
+  }
+}
+
 async function navigationResponse(request: Request) {
   const cache = await caches.open(shellCache);
   // Keep the app shell and content on the same installed release until activation.
@@ -83,7 +90,7 @@ self.addEventListener("install", (event) => {
 
       await shell.addAll(appAssets);
       await shell.add(shellUrl);
-      await content.addAll(contentAssets);
+      await addAllInBatches(content, contentAssets);
 
       // One-time recovery for releases that cached root-relative Pages URLs.
       // Later updates continue waiting for the learner's confirmation.
