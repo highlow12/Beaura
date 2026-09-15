@@ -1,4 +1,8 @@
-import type { Curriculum, Lesson, Track } from "$lib/content/types";
+import type {
+  Curriculum,
+  LessonMetadata,
+  Track,
+} from "$lib/content/types";
 import type { LessonState } from "$lib/learning/domain/states";
 
 export function missingPrerequisites(
@@ -15,7 +19,7 @@ export function missingPrerequisites(
     : [id];
 }
 export function lessonStatus(
-  lesson: Lesson,
+  lesson: Pick<LessonMetadata, "id">,
   curriculum: Curriculum,
   states: readonly LessonState[],
 ) {
@@ -36,7 +40,7 @@ export function lessonStatus(
  */
 export function visibleTracks(
   curriculum: Curriculum,
-  lessons: readonly Lesson[],
+  lessons: readonly LessonMetadata[],
   states: readonly LessonState[],
 ): Track[] {
   return [...curriculum.tracks]
