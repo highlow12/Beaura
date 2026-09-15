@@ -117,7 +117,7 @@ Backend / Sync
 ## 5. 저장소 구조
 
 ```text
-cs-duolingo/
+Beaura/
 ├─ content/
 ├─ src/
 ├─ scripts/
@@ -309,7 +309,9 @@ type Question =
   | OrderingQuestion
   | MatchingQuestion
   | CodeOutputQuestion
-  | CodeCompletionQuestion;
+  | CodeCompletionQuestion
+  | GraphPathQuestion
+  | InteractiveSimulationQuestion;
 ```
 
 공통 필드:
@@ -328,7 +330,7 @@ interface QuestionBase {
 
 Question ID는 절대로 재사용하지 않는다.
 
-### 10.1 초기 문제 템플릿 7종
+### 10.1 현재 문제 템플릿 9종
 
 1. `single-choice`: 하나의 정답 선택
 2. `multi-select`: 복수 정답 선택
@@ -337,15 +339,12 @@ Question ID는 절대로 재사용하지 않는다.
 5. `matching`: 두 집합 항목 연결
 6. `code-output`: 코드의 출력 결과 예측
 7. `code-completion`: 제한된 형태의 코드 완성
+8. `graph-path`: 연결 가능한 node를 선택해 허용된 그래프 경로 구성
+9. `interactive-simulation`: 현재 state에서 action을 골라 목표 state까지 전이
 
 초기 `code-completion`은 자유 코드 실행보다 제한된 빈칸 기반 완성을 우선한다.
 
-향후 CS 전용 Plugin 후보:
-
-- `graph-path`
-- `tree-traversal`
-- `memory-layout`
-- `interactive-simulation`
+`tree-traversal`은 `ordering`, `memory-layout`은 `matching`과 콘텐츠 블록을 조합해 표현한다. 문제 유형 분리 기준과 결정 근거는 `docs/QUESTION_TYPE_DECISIONS.md`를 따른다.
 
 ## 11. Question Plugin Registry
 

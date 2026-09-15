@@ -1,0 +1,27 @@
+Beaura dual-license notice
+
+Copyright (c) 2026 Beaura contributors
+
+This repository uses two licenses:
+
+1. Software
+
+   Unless stated otherwise, the software source code, build scripts,
+   configuration, project documentation, and original interface assets are
+   licensed under the GNU General Public License version 3.0 only.
+   See LICENSE-CODE.
+
+2. Educational material
+
+   The authored curriculum and lesson material under content/, together with
+   mechanically generated copies of that material under static/generated/,
+   are licensed under the Creative Commons Attribution-ShareAlike 4.0
+   International license. See LICENSE-CONTENT.
+
+   Attribution: "Beaura contributors"
+   Source: https://github.com/highlow12/Beaura
+
+Files that carry their own license notice, and third-party dependencies or
+assets, remain subject to their respective licenses. Generated files do not
+change the license of their source material.
+

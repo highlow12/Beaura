@@ -16,27 +16,27 @@ track, lesson, state, or piece of content.
 
 ## Light Theme Palette
 
-| Token | Value | Role |
-| --- | --- | --- |
-| `--bg` | `#f5f7f4` | quiet page background |
-| `--surface` | `#ffffff` | readable content and interactive surfaces |
+| Token              | Value     | Role                                                |
+| ------------------ | --------- | --------------------------------------------------- |
+| `--bg`             | `#f5f7f4` | quiet page background                               |
+| `--surface`        | `#ffffff` | readable content and interactive surfaces           |
 | `--surface-raised` | `#ffffff` | selected/raised surface, paired with a small shadow |
-| `--surface-muted` | `#edf1ee` | secondary regions, code and disabled surfaces |
-| `--text` | `#17211d` | primary text |
-| `--text-muted` | `#5d6a63` | supporting copy and metadata |
-| `--border` | `#d5ded8` | thin structural rule |
-| `--border-strong` | `#aab8ae` | focused/pressed structural rule |
-| `--primary` | `#2563eb` | primary action and neutral progress |
-| `--primary-strong` | `#1d4ed8` | primary action pressed state |
-| `--primary-soft` | `#eff6ff` | selected/quiet primary tint |
-| `--success` | `#16734b` | correct/completed state |
-| `--success-soft` | `#e1f3e9` | correct state surface |
-| `--danger` | `#b7473c` | destructive/wrong state |
-| `--danger-soft` | `#fbe9e7` | wrong/destructive state surface |
-| `--warning` | `#9b681e` | caution and pending state |
-| `--warning-soft` | `#fff2d8` | caution surface |
-| `--focus` | `#3c83c6` | accessible focus ring |
-| `--heart` | `#c64b55` | heart status only |
+| `--surface-muted`  | `#edf1ee` | secondary regions, code and disabled surfaces       |
+| `--text`           | `#17211d` | primary text                                        |
+| `--text-muted`     | `#5d6a63` | supporting copy and metadata                        |
+| `--border`         | `#d5ded8` | thin structural rule                                |
+| `--border-strong`  | `#aab8ae` | focused/pressed structural rule                     |
+| `--primary`        | `#2563eb` | primary action and neutral progress                 |
+| `--primary-strong` | `#1d4ed8` | primary action pressed state                        |
+| `--primary-soft`   | `#eff6ff` | selected/quiet primary tint                         |
+| `--success`        | `#16734b` | correct/completed state                             |
+| `--success-soft`   | `#e1f3e9` | correct state surface                               |
+| `--danger`         | `#b7473c` | destructive/wrong state                             |
+| `--danger-soft`    | `#fbe9e7` | wrong/destructive state surface                     |
+| `--warning`        | `#9b681e` | caution and pending state                           |
+| `--warning-soft`   | `#fff2d8` | caution surface                                     |
+| `--focus`          | `#3c83c6` | accessible focus ring                               |
+| `--heart`          | `#c64b55` | reserved heart status; beta UI disabled             |
 
 ## Dark Theme Palette
 
@@ -45,43 +45,43 @@ deep green-black, surfaces are only slightly lighter, and borders are quieter.
 Text remains warm-neutral and accents are softened so long sessions do not feel
 neon.
 
-| Token | Value | Role |
-| --- | --- | --- |
-| `--bg` | `#111714` | page background |
-| `--surface` | `#18211d` | content surface |
-| `--surface-raised` | `#202b25` | selected/raised surface |
-| `--surface-muted` | `#202a25` | secondary region and code background |
-| `--text` | `#edf3ee` | primary text |
-| `--text-muted` | `#a8b8ae` | supporting copy and metadata |
-| `--border` | `#2c3b33` | quiet structural rule |
-| `--border-strong` | `#557064` | focused/pressed structural rule |
-| `--primary` | `#60a5fa` | primary action and neutral progress |
-| `--primary-strong` | `#93c5fd` | primary action pressed state |
-| `--primary-soft` | `#172554` | selected/quiet primary tint |
-| `--success` | `#7bd6a5` | correct/completed state |
-| `--success-soft` | `#1d3b2d` | correct state surface |
-| `--danger` | `#f08b82` | destructive/wrong state |
-| `--danger-soft` | `#452725` | wrong/destructive state surface |
-| `--warning` | `#e5b86b` | caution and pending state |
-| `--warning-soft` | `#403521` | caution surface |
-| `--focus` | `#79b7eb` | accessible focus ring |
-| `--heart` | `#ed8991` | heart status only |
+| Token              | Value     | Role                                    |
+| ------------------ | --------- | --------------------------------------- |
+| `--bg`             | `#111714` | page background                         |
+| `--surface`        | `#18211d` | content surface                         |
+| `--surface-raised` | `#202b25` | selected/raised surface                 |
+| `--surface-muted`  | `#202a25` | secondary region and code background    |
+| `--text`           | `#edf3ee` | primary text                            |
+| `--text-muted`     | `#a8b8ae` | supporting copy and metadata            |
+| `--border`         | `#2c3b33` | quiet structural rule                   |
+| `--border-strong`  | `#557064` | focused/pressed structural rule         |
+| `--primary`        | `#60a5fa` | primary action and neutral progress     |
+| `--primary-strong` | `#93c5fd` | primary action pressed state            |
+| `--primary-soft`   | `#172554` | selected/quiet primary tint             |
+| `--success`        | `#7bd6a5` | correct/completed state                 |
+| `--success-soft`   | `#1d3b2d` | correct state surface                   |
+| `--danger`         | `#f08b82` | destructive/wrong state                 |
+| `--danger-soft`    | `#452725` | wrong/destructive state surface         |
+| `--warning`        | `#e5b86b` | caution and pending state               |
+| `--warning-soft`   | `#403521` | caution surface                         |
+| `--focus`          | `#79b7eb` | accessible focus ring                   |
+| `--heart`          | `#ed8991` | reserved heart status; beta UI disabled |
 
 ## Track Colors
 
 Track identity is carried by a small accent rule, node outline, icon, progress
 fill, or selected tab. It must not flood the page background or body copy.
 
-| Track id | Accent | Motif |
-| --- | --- | --- |
-| `python` | `#2e8b70` light / `#82d7af` dark | `>_` |
-| `computer-architecture` / `architecture` | `#b36a25` / `#e6ad69` | CPU chip |
-| `discrete-math` / `math` | `#6653a8` / `#aaa0ec` | `Σ` |
-| `data-structures` | `#1c7390` / `#73c1d9` | linked node |
-| `algorithms` | `#b64f71` / `#e38ba8` | graph path |
-| `networks` / `network` | `#2f6eac` / `#7fb8ee` | connected nodes |
-| `computer-graphics` / `graphics` | `#a24f91` / `#df91c8` | triangle/pixel |
-| `computer-systems` / `systems` | `#58704f` / `#a8cf99` | `0101` |
+| Track id                                 | Accent                           | Motif           |
+| ---------------------------------------- | -------------------------------- | --------------- |
+| `python`                                 | `#2e8b70` light / `#82d7af` dark | `>_`            |
+| `computer-architecture` / `architecture` | `#b36a25` / `#e6ad69`            | CPU chip        |
+| `discrete-math` / `math`                 | `#6653a8` / `#aaa0ec`            | `Σ`             |
+| `data-structures`                        | `#1c7390` / `#73c1d9`            | linked node     |
+| `algorithms`                             | `#b64f71` / `#e38ba8`            | graph path      |
+| `networks` / `network`                   | `#2f6eac` / `#7fb8ee`            | connected nodes |
+| `computer-graphics` / `graphics`         | `#a24f91` / `#df91c8`            | triangle/pixel  |
+| `computer-systems` / `systems`           | `#58704f` / `#a8cf99`            | `0101`          |
 
 Unknown future track IDs use `--primary` until metadata supplies a signature
 color. Track accents must meet contrast requirements for text and controls.
@@ -178,8 +178,10 @@ compact; achievement emphasis is reserved for the completion event.
 ## Navigation
 
 Desktop has a compact top header with the `>_` brand mark, four labeled routes,
-theme control, and heart status. Mobile keeps the brand and heart in the top
-bar and moves route navigation into a fixed bottom bar with safe-area padding.
+and theme control. Mobile keeps the brand and theme control in the top bar and
+moves route navigation into a fixed bottom bar with safe-area padding. The heart
+slot is rendered only when the heart feature is enabled; it is hidden in the
+current beta configuration.
 Active navigation is a single accent marker and text weight, never a filled
 pill plus an icon. Bottom targets are at least 44px high.
 
