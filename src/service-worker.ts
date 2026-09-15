@@ -4,7 +4,7 @@ const shellCache = `cs-duolingo-shell-${version}`;
 const contentCache = `cs-duolingo-content-${version}`;
 const migrationCache = "cs-duolingo-migrations";
 const serviceWorkerFetchError = "BEAURA_SERVICE_WORKER_FETCH_ERROR";
-const contentCacheBatchSize = 12;
+const precacheBatchSize = 12;
 const pagesBasePathMigration = new URL(
   "migration-pages-base-path-v2",
   self.registration.scope,
@@ -57,8 +57,8 @@ async function cacheFirst(request: Request, cacheName: string) {
 }
 
 async function addAllInBatches(cache: Cache, assets: string[]) {
-  for (let start = 0; start < assets.length; start += contentCacheBatchSize) {
-    await cache.addAll(assets.slice(start, start + contentCacheBatchSize));
+  for (let start = 0; start < assets.length; start += precacheBatchSize) {
+    await cache.addAll(assets.slice(start, start + precacheBatchSize));
   }
 }
 
@@ -88,7 +88,7 @@ self.addEventListener("install", (event) => {
           key.startsWith("cs-duolingo-shell-") && key !== shellCache,
       );
 
-      await shell.addAll(appAssets);
+      await addAllInBatches(shell, appAssets);
       await shell.add(shellUrl);
       await addAllInBatches(content, contentAssets);
 
