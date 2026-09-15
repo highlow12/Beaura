@@ -93,6 +93,32 @@ describe("content pipeline", () => {
         "py.variables.what-is-01",
       ]),
     );
+    expect(
+      compiled.catalog.lessons.find((item) => item.id === "py.variables"),
+    ).toMatchObject({
+      id: "py.variables",
+      track: "python",
+      title: expect.any(String),
+      description: expect.any(String),
+      revision: expect.any(Number),
+    });
+    expect(
+      compiled.catalog.lessons.find((item) => item.id === "py.variables"),
+    ).not.toHaveProperty("flow");
+    expect(
+      compiled.catalog.questions.find(
+        (item) => item.id === "py.variables.what-is-01",
+      ),
+    ).toEqual({
+      id: "py.variables.what-is-01",
+      lessonId: "py.variables",
+      revision: expect.any(Number),
+    });
+    expect(
+      compiled.catalog.questions.find(
+        (item) => item.id === "py.variables.what-is-01",
+      ),
+    ).not.toHaveProperty("prompt");
   }, CONTENT_TEST_TIMEOUT);
 
   it("shuffles every authored single-choice and multi-select card set", async () => {
