@@ -688,7 +688,9 @@ a.build-commit:focus-visible {
 [data-track="math"] { --track-accent: var(--track-math); }
 [data-track="data-structures"] { --track-accent: var(--track-data-structures); }
 [data-track="algorithms"] { --track-accent: var(--track-algorithms); }
+[data-track="networks"],
 [data-track="network"] { --track-accent: var(--track-network); }
+[data-track="computer-graphics"],
 [data-track="graphics"] { --track-accent: var(--track-graphics); }
 [data-track="computer-systems"],
 [data-track="systems"] { --track-accent: var(--track-systems); }

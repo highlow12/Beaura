@@ -1,7 +1,7 @@
 schemaVersion: 1
 id: sys.network
-revision: 2
-track: computer-systems
+revision: 3
+track: networks
 title: 네트워크 기초
 description: 주소, 패킷, 프로토콜이 데이터를 주고받는 방식을 소개한다.
 flow:

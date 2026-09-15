@@ -56,8 +56,10 @@
         return "•—•";
       case "algorithms":
         return "↗";
-      case "computer-systems":
-        return "0101";
+      case "networks":
+        return "NET";
+      case "computer-graphics":
+        return "△";
       default:
         return "[]";
     }

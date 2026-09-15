@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.animation.value-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 시작 위치 10과 끝 위치 30을 선형 보간하는 코드의 출력을 고르세요.
+language: python
+code: |-
+  start = 10
+  end = 30
+  t = 0.25
+  print(start + (end - start) * t)
+choices: ["15.0", "20.0", "25.0"]
+acceptedOutputs: ["15.0"]
+explanation:
+  - type: text
+    text: 10 + (30 - 10) × 0.25 = 15이므로 전체 거리의 25%만큼 이동한 값입니다.
+tags: [graphics, animation, lerp, code-output]
+difficulty: 2

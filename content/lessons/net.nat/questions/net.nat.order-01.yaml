@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: net.nat.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 내부 장치가 보낸 요청의 응답이 돌아오는 흐름을 순서대로 배열하세요.
+items:
+  - id: outbound
+    content: [{ type: text, text: 라우터가 내부 출발지 주소와 포트를 변환한다. }]
+  - id: remember
+    content: [{ type: text, text: 라우터가 변환 대응을 테이블에 기록한다. }]
+  - id: response
+    content: [{ type: text, text: 응답이 공인 주소와 변환된 포트로 도착한다. }]
+  - id: restore
+    content: [{ type: text, text: 라우터가 원래 내부 목적지로 복원해 전달한다. }]
+correctOrder: [outbound, remember, response, restore]
+explanation:
+  - type: text
+    text: 나가는 패킷을 변환하며 대응을 기억해야, 돌아온 응답의 목적지를 원래 내부 소켓으로 복원할 수 있습니다.
+tags: [network, nat, packet-flow]
+difficulty: 3

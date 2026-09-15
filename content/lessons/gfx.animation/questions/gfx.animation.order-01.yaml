@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: gfx.animation.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: 현재 프레임의 애니메이션 변환을 구하는 순서를 배열하세요.
+items:
+  - id: interval
+    content: [{ type: text, text: 현재 시간을 포함하는 키프레임 구간을 찾는다. }]
+  - id: ratio
+    content: [{ type: text, text: 구간 안의 시간 비율을 계산한다. }]
+  - id: values
+    content: [{ type: text, text: 위치·회전·크기 값을 보간한다. }]
+  - id: matrix
+    content: [{ type: text, text: 평가된 값으로 변환을 구성한다. }]
+correctOrder: [interval, ratio, values, matrix]
+explanation:
+  - type: text
+    text: 구간을 선택하고 정규화된 시간 비율을 구해야 그 비율로 속성을 평가하고 최종 변환을 만들 수 있습니다.
+tags: [graphics, animation, transform]
+difficulty: 2

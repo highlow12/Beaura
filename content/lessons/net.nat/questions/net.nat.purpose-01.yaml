@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: net.nat.purpose-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 여러 사설 IPv4 장치가 공인 IPv4 주소 하나를 공유할 때 연결을 구분하는 값은 무엇인가요?
+options:
+  - id: translated-port
+    content:
+      - type: text
+        text: 변환된 출발지 포트
+  - id: ttl
+    content:
+      - type: text
+        text: 모든 패킷의 TTL
+  - id: mac-only
+    content:
+      - type: text
+        text: 인터넷 전체에서 유지되는 MAC 주소
+correctOptionId: translated-port
+shuffleOptions: true
+explanation:
+  - type: text
+    text: PAT는 공인 주소와 서로 다른 포트 번호의 조합으로 여러 내부 연결을 구분합니다.
+tags: [network, nat, pat]
+difficulty: 2

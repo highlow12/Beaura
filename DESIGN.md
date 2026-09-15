@@ -79,8 +79,8 @@ fill, or selected tab. It must not flood the page background or body copy.
 | `discrete-math` / `math` | `#6653a8` / `#aaa0ec` | `Σ` |
 | `data-structures` | `#1c7390` / `#73c1d9` | linked node |
 | `algorithms` | `#b64f71` / `#e38ba8` | graph path |
-| `network` | `#2f6eac` / `#7fb8ee` | connected nodes |
-| `graphics` | `#a24f91` / `#df91c8` | triangle/pixel |
+| `networks` / `network` | `#2f6eac` / `#7fb8ee` | connected nodes |
+| `computer-graphics` / `graphics` | `#a24f91` / `#df91c8` | triangle/pixel |
 | `computer-systems` / `systems` | `#58704f` / `#a8cf99` | `0101` |
 
 Unknown future track IDs use `--primary` until metadata supplies a signature

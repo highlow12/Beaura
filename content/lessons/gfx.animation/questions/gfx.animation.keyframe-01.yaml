@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: gfx.animation.keyframe-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 키프레임 기반 애니메이션에서 두 키프레임 사이의 상태는 일반적으로 어떻게 구하나요?
+options:
+  - id: interpolate
+    content: [{ type: text, text: 현재 시간의 구간 비율을 구해 속성 값을 보간한다. }]
+  - id: random
+    content: [{ type: text, text: 매 프레임 무작위 변환을 선택한다. }]
+  - id: raster
+    content: [{ type: text, text: 깊이 버퍼의 값만 복사한다. }]
+correctOptionId: interpolate
+shuffleOptions: true
+explanation:
+  - type: text
+    text: 현재 시간이 속한 키프레임 구간과 그 안의 비율을 구한 뒤 위치·회전·크기 등의 값을 평가합니다.
+tags: [graphics, animation, keyframe]
+difficulty: 1

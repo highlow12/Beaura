@@ -30,6 +30,7 @@ tracks:
     description: 탐색, 정렬, 순회와 최단 경로의 기본
     order: 45
 
+  # 영구 ID 정책에 따라 보존한다. 소속 레슨은 networks와 computer-graphics로 이전했다.
   - id: computer-systems
     revision: 1
     title: 컴퓨터 시스템 응용
@@ -43,7 +44,7 @@ tracks:
     order: 55
 
   - id: networks
-    revision: 1
+    revision: 2
     title: 네트워크
     description: 링크 계층부터 웹 보안까지 데이터가 네트워크를 이동하는 원리를 익힌다.
     order: 60
@@ -67,7 +68,7 @@ tracks:
     order: 80
 
   - id: computer-graphics
-    revision: 1
+    revision: 2
     title: 컴퓨터 그래픽스
     description: 좌표 변환부터 래스터화, 셰이딩과 광선 추적까지 그래픽 파이프라인을 익힌다.
     order: 90

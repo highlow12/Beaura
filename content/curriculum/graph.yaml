@@ -382,6 +382,10 @@ nodes:
   - lesson: net.performance
     requires:
       - net.tcp
+  - lesson: net.nat
+    requires:
+      - net.routing
+      - net.transport
   - lesson: math.propositions
     requires: []
   - lesson: math.implication
@@ -600,6 +604,10 @@ nodes:
     requires:
       - gfx.lighting
       - calc.derivatives
+  - lesson: gfx.animation
+    requires:
+      - gfx.transforms
+      - gfx.interpolation
   - lesson: db.concepts
     requires:
       - algo.correctness

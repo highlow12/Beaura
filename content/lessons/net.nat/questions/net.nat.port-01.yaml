@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: net.nat.port-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: 외부 포트 8443을 내부 서버 192.168.0.20의 443번 포트로 고정 연결하는 설정은 ___입니다.
+choices: [포트 포워딩, 서브넷 마스크, ARP 캐시]
+acceptedAnswers: [포트 포워딩]
+explanation:
+  - type: text
+    text: 포트 포워딩은 외부의 특정 주소·포트로 들어온 연결을 지정한 내부 주소·포트로 전달합니다.
+tags: [network, nat, port-forwarding]
+difficulty: 2

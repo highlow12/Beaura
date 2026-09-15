@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: gfx.animation.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 애니메이션 용어와 역할을 연결하세요.
+leftItems:
+  - id: keyframe
+    content: [{ type: text, text: 키프레임 }]
+  - id: lerp
+    content: [{ type: text, text: LERP }]
+  - id: slerp
+    content: [{ type: text, text: SLERP }]
+rightItems:
+  - id: state
+    content: [{ type: text, text: 특정 시점의 중요한 상태 }]
+  - id: linear
+    content: [{ type: text, text: 두 값 사이의 선형 보간 }]
+  - id: spherical
+    content: [{ type: text, text: 회전에 활용되는 구면 선형 보간 }]
+correctPairs:
+  - leftId: keyframe
+    rightId: state
+  - leftId: lerp
+    rightId: linear
+  - leftId: slerp
+    rightId: spherical
+explanation:
+  - type: text
+    text: 키프레임은 상태를 기록하고, LERP와 SLERP는 서로 다른 값과 경로를 보간하는 데 사용됩니다.
+tags: [graphics, animation, interpolation]
+difficulty: 2

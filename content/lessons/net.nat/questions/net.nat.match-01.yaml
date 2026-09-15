@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.nat.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: 용어와 역할을 연결하세요.
+leftItems:
+  - id: private
+    content: [{ type: text, text: 사설 주소 }]
+  - id: pat
+    content: [{ type: text, text: PAT }]
+  - id: forward
+    content: [{ type: text, text: 포트 포워딩 }]
+rightItems:
+  - id: local
+    content: [{ type: text, text: 내부 네트워크에서 사용하는 비공개 주소 }]
+  - id: multiplex
+    content: [{ type: text, text: 포트까지 변환하여 연결을 구분하는 방식 }]
+  - id: inbound
+    content: [{ type: text, text: 특정 외부 포트를 내부 서비스에 고정 연결하는 규칙 }]
+correctPairs:
+  - leftId: private
+    rightId: local
+  - leftId: pat
+    rightId: multiplex
+  - leftId: forward
+    rightId: inbound
+explanation:
+  - type: text
+    text: 사설 주소, 포트 기반 변환, 외부 연결을 위한 고정 매핑은 서로 다른 역할을 가집니다.
+tags: [network, nat, port-forwarding]
+difficulty: 2
