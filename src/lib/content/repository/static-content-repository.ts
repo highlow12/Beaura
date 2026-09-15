@@ -8,7 +8,15 @@ function contentPath(path: string): string {
 }
 
 async function getJson<T>(path: string): Promise<T> {
-  const response = await fetch(path);
+  let response: Response;
+
+  try {
+    response = await fetch(path);
+  } catch (error) {
+    const detail = error instanceof Error ? `: ${error.message}` : "";
+    throw new Error(`콘텐츠 네트워크 요청 실패: ${path}${detail}`);
+  }
+
   if (!response.ok) {
     throw new Error(
       `콘텐츠를 불러오지 못했습니다: ${path} (${response.status})`,
