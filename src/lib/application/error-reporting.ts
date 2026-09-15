@@ -1,14 +1,22 @@
 import { hasTelemetryConsent } from '$lib/application/privacy';
+import { captureSentryException } from '$lib/application/sentry';
 
 const STORAGE_KEY = 'cs-duolingo:error-reports';
 const MAX_REPORTS = 20;
 const MAX_MESSAGE = 1000;
 const MAX_STACK = 6000;
+const SERVICE_WORKER_FETCH_ERROR = 'BEAURA_SERVICE_WORKER_FETCH_ERROR';
+
+type ServiceWorkerFetchFailure = {
+  type: typeof SERVICE_WORKER_FETCH_ERROR;
+  kind: 'asset' | 'navigation';
+  path: string;
+};
 
 export type ClientErrorReport = {
   id: string;
   occurredAt: string;
-  kind: 'error' | 'unhandledrejection' | 'sveltekit';
+  kind: 'error' | 'unhandledrejection' | 'sveltekit' | 'network';
   message: string;
   stack?: string;
   path: string;
@@ -74,6 +82,17 @@ function makeId() {
   return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 }
 
+function isServiceWorkerFetchFailure(value: unknown): value is ServiceWorkerFetchFailure {
+  if (!value || typeof value !== 'object') return false;
+  const candidate = value as Record<string, unknown>;
+  return (
+    candidate.type === SERVICE_WORKER_FETCH_ERROR &&
+    (candidate.kind === 'asset' || candidate.kind === 'navigation') &&
+    typeof candidate.path === 'string' &&
+    candidate.path.startsWith('/')
+  );
+}
+
 export function getRecentErrorReports(storage: Storage | null = browserStorage()) {
   return readStoredReports(storage);
 }
@@ -130,6 +149,17 @@ export function captureClientError(options: CaptureOptions) {
   return report;
 }
 
+function captureServiceWorkerFetchFailure(failure: ServiceWorkerFetchFailure) {
+  const path = truncate(failure.path.split(/[?#]/, 1)[0] || '/', MAX_MESSAGE);
+  const error = new Error(`Service worker ${failure.kind} fetch failed: ${path}`);
+  const report = captureClientError({ kind: 'network', error, path });
+  captureSentryException(error, {
+    source: 'service-worker',
+    fetch_kind: failure.kind,
+  });
+  return report;
+}
+
 export function installGlobalErrorReporting(target: Window = window) {
   const onError = (event: ErrorEvent) => {
     captureClientError({ kind: 'error', error: event.error ?? event.message, path: target.location.pathname });
@@ -137,11 +167,20 @@ export function installGlobalErrorReporting(target: Window = window) {
   const onUnhandledRejection = (event: PromiseRejectionEvent) => {
     captureClientError({ kind: 'unhandledrejection', error: event.reason, path: target.location.pathname });
   };
+  const onServiceWorkerMessage = (event: MessageEvent) => {
+    if (!isServiceWorkerFetchFailure(event.data)) return;
+    captureServiceWorkerFetchFailure(event.data);
+  };
+
   target.addEventListener('error', onError);
   target.addEventListener('unhandledrejection', onUnhandledRejection);
+  const serviceWorker = 'serviceWorker' in target.navigator ? target.navigator.serviceWorker : undefined;
+  serviceWorker?.addEventListener('message', onServiceWorkerMessage);
+
   return () => {
     target.removeEventListener('error', onError);
     target.removeEventListener('unhandledrejection', onUnhandledRejection);
+    serviceWorker?.removeEventListener('message', onServiceWorkerMessage);
   };
 }
 

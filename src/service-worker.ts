@@ -3,6 +3,7 @@ import { build, files, version } from "$service-worker";
 const shellCache = `cs-duolingo-shell-${version}`;
 const contentCache = `cs-duolingo-content-${version}`;
 const migrationCache = "cs-duolingo-migrations";
+const serviceWorkerFetchError = "BEAURA_SERVICE_WORKER_FETCH_ERROR";
 const pagesBasePathMigration = new URL(
   "migration-pages-base-path-v2",
   self.registration.scope,
@@ -12,8 +13,29 @@ const shellAssets = files.filter((asset) => !asset.includes("/generated/"));
 const appAssets = [...build, ...shellAssets];
 let reloadForPagesMigration = false;
 
+type FetchFailureKind = "asset" | "navigation";
+
 function isSameOrigin(request: Request) {
   return new URL(request.url).origin === self.location.origin;
+}
+
+async function notifyFetchFailure(request: Request, kind: FetchFailureKind) {
+  try {
+    const clients = await self.clients.matchAll({
+      type: "window",
+      includeUncontrolled: true,
+    });
+    const path = new URL(request.url).pathname;
+    for (const client of clients) {
+      client.postMessage({
+        type: serviceWorkerFetchError,
+        kind,
+        path,
+      });
+    }
+  } catch {
+    // Diagnostics must never change the existing offline fallback behavior.
+  }
 }
 
 async function cacheFirst(request: Request, cacheName: string) {
@@ -28,6 +50,7 @@ async function cacheFirst(request: Request, cacheName: string) {
     }
     return response;
   } catch {
+    await notifyFetchFailure(request, "asset");
     return Response.error();
   }
 }
@@ -41,6 +64,7 @@ async function navigationResponse(request: Request) {
   try {
     return await fetch(request);
   } catch {
+    await notifyFetchFailure(request, "navigation");
     return Response.error();
   }
 }

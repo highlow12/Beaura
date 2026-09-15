@@ -47,6 +47,12 @@ export function sanitizeSentryEvent<T extends Sentry.Event>(event: T): T {
   return sanitized;
 }
 
+export function captureSentryException(error: unknown, tags: Record<string, string> = {}) {
+  if (!sentryClient || !hasTelemetryConsent()) return false;
+  Sentry.captureException(error, { tags });
+  return true;
+}
+
 /**
  * Initialize Sentry's browser SDK once, early in the client hook.
  *

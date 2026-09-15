@@ -1,13 +1,15 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { setTelemetryConsent } from '../src/lib/application/privacy';
 
-const { sentryInit, sentryClose } = vi.hoisted(() => ({
+const { sentryInit, sentryClose, sentryCaptureException } = vi.hoisted(() => ({
   sentryInit: vi.fn(),
   sentryClose: vi.fn(async () => true),
+  sentryCaptureException: vi.fn(),
 }));
 
 vi.mock('@sentry/sveltekit', () => ({
   init: sentryInit,
+  captureException: sentryCaptureException,
 }));
 
 function storage(): Storage {
@@ -29,12 +31,13 @@ Object.defineProperty(globalThis, 'window', {
 
 describe('Sentry consent gate', async () => {
   vi.stubEnv('PUBLIC_SENTRY_ENABLED', 'true');
-  const { disableSentry, initSentry } = await import('../src/lib/application/sentry');
+  const { captureSentryException, disableSentry, initSentry } = await import('../src/lib/application/sentry');
 
   afterEach(async () => {
     await disableSentry();
     sentryInit.mockClear();
     sentryClose.mockClear();
+    sentryCaptureException.mockClear();
     window.localStorage.clear();
   });
 
@@ -50,6 +53,25 @@ describe('Sentry consent gate', async () => {
     sentryInit.mockReturnValueOnce(client);
     expect(initSentry()).toBe(true);
     expect(sentryInit).toHaveBeenCalledTimes(1);
+  });
+
+  it('captures an explicit exception only after consent and initialization', () => {
+    const store = storage();
+    Object.defineProperty(window, 'localStorage', { configurable: true, value: store });
+    const error = new Error('service worker fetch failed');
+
+    expect(captureSentryException(error, { source: 'service-worker' })).toBe(false);
+    expect(sentryCaptureException).not.toHaveBeenCalled();
+
+    setTelemetryConsent('granted', store);
+    const client = { getOptions: () => ({ enabled: true }), close: sentryClose };
+    sentryInit.mockReturnValueOnce(client);
+    expect(initSentry()).toBe(true);
+
+    expect(captureSentryException(error, { source: 'service-worker' })).toBe(true);
+    expect(sentryCaptureException).toHaveBeenCalledWith(error, {
+      tags: { source: 'service-worker' },
+    });
   });
 
   it('drops an event if consent is withdrawn before send', async () => {
