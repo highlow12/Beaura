@@ -1,28 +1,24 @@
 schemaVersion: 1
 id: arch.memory.ordering-04
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
-    text: "SRAM과 DRAM의 기본 처리 흐름을 올바른 순서로 배열하세요."
+    text: "캐시로 사용하는 SRAM과 주기억장치로 사용하는 DRAM을 빠른 순서대로 배열하세요."
 items:
-  - id: address
+  - id: sram
     content:
       - type: text
-        text: "행과 열 주소로 셀 위치를 선택한다"
-  - id: sense
+        text: "SRAM 캐시"
+  - id: dram
     content:
       - type: text
-        text: "셀의 전하나 논리 상태를 읽는다"
-  - id: refresh
-    content:
-      - type: text
-        text: "DRAM이면 약해진 전하를 다시 보충한다"
-correctOrder: [address, sense, refresh]
+        text: "DRAM 주기억장치"
+correctOrder: [sram, dram]
 explanation:
   - type: text
-    text: "행과 열 주소로 셀 위치를 선택한다 단계가 먼저이고, 그 결과를 이용해 셀의 전하나 논리 상태를 읽는다 단계가 이어집니다."
+    text: "일반적으로 CPU 가까이의 SRAM 캐시가 DRAM 주기억장치보다 빠릅니다."
   - type: text
-    text: "DRAM이면 약해진 전하를 다시 보충한다 단계에서 최종 결과가 다음 회로 또는 프로그램으로 전달됩니다."
+    text: "DRAM refresh는 모든 읽기 직후에 수행되는 고정 단계가 아니라, 데이터 보존을 위해 각 행을 일정 시간 안에 갱신하도록 관리되는 별도 작업입니다."
 tags: [memory, sram, dram]
-difficulty: 3
+difficulty: 2

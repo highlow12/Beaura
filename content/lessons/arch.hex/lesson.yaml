@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.hex
-revision: 1
+revision: 2
 track: computer-architecture
 title: 16진수와 바이트
 description: 긴 이진수를 16진수와 바이트 단위로 읽고 쓰는 방법을 익힌다.

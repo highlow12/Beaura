@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.sequential
-revision: 1
+revision: 2
 track: computer-architecture
 title: 순차 회로와 플립플롭
 description: 현재 입력뿐 아니라 이전 상태를 기억하는 순차 회로와 클록의 역할을 구분한다.

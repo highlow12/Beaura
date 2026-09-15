@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: arch.multiplexer.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "멀티플렉서에서 핵심이 되는 용어는 ___입니다."
+    text: "2:1 멀티플렉서에서 D0=0, D1=1이고 select=1이면 출력은 ___입니다."
 choices:
-  - "선택 신호"
-  - "클록 주파수"
-  - "캐시 태그"
+  - "1"
+  - "0"
+  - "2"
 acceptedAnswers:
-  - "선택 신호"
+  - "1"
 explanation:
   - type: text
-    text: "선택 신호은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "멀티플렉서(MUX)는 선택 신호를 보고 여러 데이터 입력 중 하나를 출력으로 전달하는 조합 회로입니다. 입력이 2^n개라면 보통 n개의 선택 비트가 필요합니다."
+    text: "select=1은 D1을 선택하므로 출력은 D1의 값인 1입니다."
 tags: [multiplexer, combinational-circuit, datapath]
 difficulty: 2

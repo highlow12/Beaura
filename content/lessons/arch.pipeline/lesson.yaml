@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.pipeline
-revision: 1
+revision: 2
 track: computer-architecture
 title: 파이프라인과 해저드
 description: 명령어 파이프라인의 단계 중첩과 데이터·제어 해저드의 기본 대응을 배운다.

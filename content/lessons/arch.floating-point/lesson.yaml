@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.floating-point
-revision: 1
+revision: 2
 track: computer-architecture
 title: 부동소수점 표현
 description: IEEE 754 부동소수점의 부호·지수·가수 구조와 정밀도 한계를 살펴본다.

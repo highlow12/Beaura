@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.decoder
-revision: 1
+revision: 2
 track: computer-architecture
 title: 디코더와 주소 선택
 description: 이진 선택 코드를 하나의 활성 출력으로 바꾸는 디코더를 이해한다.

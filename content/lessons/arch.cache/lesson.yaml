@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.cache
-revision: 1
+revision: 2
 track: computer-architecture
 title: 캐시와 지역성
 description: 메모리 계층의 캐시, 시간·공간 지역성, 캐시 미스의 원인을 구분한다.

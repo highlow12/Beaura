@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.adder
-revision: 1
+revision: 2
 track: computer-architecture
 title: 가산기와 ALU의 덧셈
 description: 반가산기와 전가산기가 carry를 전달하며 여러 비트 덧셈을 만드는 과정을 익힌다.

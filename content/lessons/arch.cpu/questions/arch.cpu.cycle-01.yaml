@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.cpu.cycle-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -18,20 +18,15 @@ items:
     content:
       - type: text
         text: ALU나 다른 장치로 명령을 수행한다
-  - id: store
-    content:
-      - type: text
-        text: 계산 결과를 레지스터나 메모리에 기록한다
 correctOrder:
   - fetch
   - decode
   - execute
-  - store
 explanation:
   - type: text
-    text: CPU는 명령을 가져와 해석하고 실행한 뒤 결과를 기록합니다.
+    text: 입문 수준의 기본 사이클은 fetch → decode → execute로 구분합니다.
   - type: text
-    text: 구현에 따라 세부 단계가 더 나뉘어도 이 네 동작의 의존 순서는 유지됩니다.
+    text: 결과 기록이 필요한 명령은 실행 과정에서 또는 별도의 write-back 단계에서 결과를 기록하지만, 분기처럼 모든 명령이 값을 기록하는 것은 아닙니다.
 tags:
   - cpu
   - instruction-cycle

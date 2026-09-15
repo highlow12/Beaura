@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: arch.arithmetic.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "이진 산술과 오버플로에서 핵심이 되는 용어는 ___입니다."
+    text: "4비트 부호 없는 수에서 `1111 + 0001` 뒤 저장되는 결과는 ___입니다."
 choices:
-  - "carry"
-  - "캐시"
-  - "opcode"
+  - "0000"
+  - "10000"
+  - "1110"
 acceptedAnswers:
-  - "carry"
+  - "0000"
 explanation:
   - type: text
-    text: "carry은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "이진 덧셈은 0+0, 0+1, 1+0, 1+1의 네 경우를 반복합니다. `1+1`은 현재 자리에 0을 쓰고 다음 자리로 1을 올립니다."
+    text: "수학적 결과 16은 4비트 범위를 벗어나므로 낮은 4비트인 0000만 저장됩니다."
 tags: [binary-arithmetic, carry, overflow]
 difficulty: 2

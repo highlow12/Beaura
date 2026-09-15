@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: arch.twos-complement.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "2의 보수 정수에서 핵심이 되는 용어는 ___입니다."
+    text: "4비트에서 `0011`의 비트를 뒤집고 1을 더하면 ___입니다."
 choices:
-  - "2의 보수"
-  - "1의 보수"
-  - "부호-크기"
+  - "1101"
+  - "1100"
+  - "0011"
 acceptedAnswers:
-  - "2의 보수"
+  - "1101"
 explanation:
   - type: text
-    text: "2의 보수은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "2의 보수 표현에서는 최상위 비트를 부호 판단에 사용하고, 음수는 비트를 뒤집은 뒤 1을 더해 만듭니다. n비트 범위는 -2^(n-1)부터 2^(n-1)-1까지입니다."
+    text: "0011을 반전하면 1100이고, 여기에 1을 더하면 -3의 표현인 1101입니다."
 tags: [integer, twos-complement, overflow]
 difficulty: 2

@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: arch.pipeline.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "파이프라인과 해저드에서 핵심이 되는 용어는 ___입니다."
+    text: "분기 예측이 틀리면 잘못된 경로의 명령을 버리고 파이프라인을 다시 ___야 합니다."
 choices:
-  - "forwarding"
-  - "refresh"
-  - "broadcast"
+  - "채워"
+  - "멈춰 두어"
+  - "삭제하지 않아"
 acceptedAnswers:
-  - "forwarding"
+  - "채워"
 explanation:
   - type: text
-    text: "forwarding은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "파이프라인은 fetch, decode, execute 같은 단계를 나누고 서로 다른 명령어를 각 단계에서 동시에 처리합니다. 처리량은 높아지지만 한 명령어의 전체 지연이 반드시 줄어드는 것은 아닙니다."
+    text: "올바른 분기 주소부터 명령을 다시 가져와 파이프라인을 채워야 합니다."
 tags: [pipeline, hazard, cpu-performance]
 difficulty: 3

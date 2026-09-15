@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.cpu
-revision: 2
+revision: 3
 track: computer-architecture
 title: CPU 실행 사이클
 description: CPU가 명령을 가져오고 해석해 실행하는 기본 흐름을 이해한다.

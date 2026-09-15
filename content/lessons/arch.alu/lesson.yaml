@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.alu
-revision: 1
+revision: 2
 track: computer-architecture
 title: ALU와 산술 논리 연산
 description: ALU가 제어 신호에 따라 산술·논리 연산을 수행하고 상태 플래그를 만드는 과정을 익힌다.

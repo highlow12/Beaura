@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.twos-complement
-revision: 1
+revision: 2
 track: computer-architecture
 title: 2의 보수 정수
 description: 음수를 포함한 정수를 비트 패턴으로 표현하는 2의 보수 방식을 이해한다.

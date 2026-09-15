@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.multiplexer
-revision: 1
+revision: 2
 track: computer-architecture
 title: 멀티플렉서
 description: 선택 신호로 여러 입력 중 하나를 골라 출력하는 멀티플렉서의 역할을 배운다.

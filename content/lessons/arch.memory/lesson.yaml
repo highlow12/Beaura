@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.memory
-revision: 1
+revision: 2
 track: computer-architecture
 title: SRAM과 DRAM
 description: 레지스터 다음의 메모리 계층에서 SRAM과 DRAM이 비트를 저장하는 차이를 이해한다.

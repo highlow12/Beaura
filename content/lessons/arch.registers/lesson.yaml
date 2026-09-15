@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.registers
-revision: 1
+revision: 2
 track: computer-architecture
 title: 레지스터와 상태 저장
 description: CPU 레지스터가 작은 용량으로 자주 쓰는 값을 빠르게 보관하는 방식을 배운다.

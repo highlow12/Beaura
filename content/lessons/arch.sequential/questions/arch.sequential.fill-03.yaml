@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: arch.sequential.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "순차 회로와 플립플롭에서 핵심이 되는 용어는 ___입니다."
+    text: "현재 Q=0, D=1일 때 지정된 클록 에지가 오면 Q는 ___로 갱신됩니다."
 choices:
-  - "플립플롭"
-  - "멀티플렉서"
-  - "정류기"
+  - "1"
+  - "0"
+  - "D"
 acceptedAnswers:
-  - "플립플롭"
+  - "1"
 explanation:
   - type: text
-    text: "플립플롭은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "순차 회로의 출력은 현재 입력과 내부 상태에 의해 결정됩니다. 플립플롭은 한 비트 상태를 저장하고 클록의 특정 에지에서 새 입력을 받아들입니다."
+    text: "D 플립플롭은 클록 에지에서 D의 값을 받아 Q에 저장합니다."
 tags: [sequential-circuit, flip-flop, clock]
 difficulty: 2

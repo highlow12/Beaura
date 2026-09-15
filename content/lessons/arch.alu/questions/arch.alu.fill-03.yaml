@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: arch.alu.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "ALU와 산술 논리 연산에서 핵심이 되는 용어는 ___입니다."
+    text: "SUB 연산 결과가 0일 때 설정될 수 있는 상태 비트는 ___ 플래그입니다."
 choices:
-  - "ALU"
-  - "DNS"
-  - "PDA"
+  - "zero"
+  - "carry"
+  - "opcode"
 acceptedAnswers:
-  - "ALU"
+  - "zero"
 explanation:
   - type: text
-    text: "ALU은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "ALU는 덧셈·뺄셈·AND·OR·비교 같은 연산을 수행하는 조합 회로입니다. 제어 신호가 어떤 연산을 선택할지 정하고 결과와 함께 zero, carry 등의 플래그를 만들 수 있습니다."
+    text: "zero 플래그는 ALU의 결과가 0인지 나타냅니다."
 tags: [alu, arithmetic, control]
 difficulty: 2

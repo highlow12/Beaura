@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: arch.cache.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "캐시와 지역성에서 핵심이 되는 용어는 ___입니다."
+    text: "캐시 줄의 주소 tag가 요청 주소의 tag와 같고 valid=1이면 캐시 ___입니다."
 choices:
-  - "캐시 미스"
-  - "명령어 디코드"
-  - "데드락"
+  - "hit"
+  - "miss"
+  - "stall"
 acceptedAnswers:
-  - "캐시 미스"
+  - "hit"
 explanation:
   - type: text
-    text: "캐시 미스은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "캐시는 자주 접근할 것 같은 메모리 블록을 더 빠른 저장소에 보관하는 계층입니다. 시간 지역성은 같은 데이터를 다시 쓰는 경향이고, 공간 지역성은 가까운 주소를 함께 쓰는 경향입니다."
+    text: "유효한 캐시 줄의 tag가 요청 주소와 일치하면 원하는 블록이 캐시에 있는 hit입니다."
 tags: [cache, locality, memory-hierarchy]
 difficulty: 2

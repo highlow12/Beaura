@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.isa
-revision: 1
+revision: 2
 track: computer-architecture
 title: 명령어와 ISA
 description: opcode·operand·ISA가 소프트웨어와 CPU 사이의 계약을 이루는 방식을 이해한다.

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.boolean-algebra
-revision: 1
+revision: 2
 track: computer-architecture
 title: 불 대수와 XOR
 description: 논리식을 불 대수 법칙으로 단순화하고 XOR의 조건을 이해한다.
