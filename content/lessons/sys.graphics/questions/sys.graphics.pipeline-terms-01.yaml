@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: sys.graphics.pipeline-terms-01
-revision: 1
+revision: 2
 type: matching
 prompt:
 - type: text
@@ -42,7 +42,7 @@ explanation:
 - type: text
   text: 픽셀은 색이 기록되는 한 칸, 정점은 도형의 점, 프레임버퍼는 최종 색을 담는 영역입니다.
 - type: text
-  text: 렌더링 흐름에서 정점이 변환되어 픽셀 색이 되고 프레임버퍼에 쌓인다고 연결해 보세요.
+  text: 렌더링 흐름에서 정점이 변환되고 래스터화를 거쳐 계산된 픽셀 결과가 프레임버퍼에 기록된다고 연결해 보세요.
 tags:
 - graphics
 - rendering

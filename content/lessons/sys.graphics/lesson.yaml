@@ -1,9 +1,9 @@
 schemaVersion: 1
 id: sys.graphics
-revision: 3
+revision: 4
 track: computer-graphics
 title: 컴퓨터 그래픽스 입문
-description: 픽셀, 색상, 정점과 프레임버퍼로 화면을 만드는 과정을 소개한다.
+description: 장면의 도형이 변환·래스터화·색 계산을 거쳐 화면의 픽셀이 되는 전체 흐름을 익힌다.
 flow:
 - type: content
   ref: content/intro.md

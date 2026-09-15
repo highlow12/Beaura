@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: sys.network.address-port-01
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -18,11 +18,11 @@ rightItems:
   - id: host
     content:
       - type: text
-        text: 네트워크의 목적지 호스트를 구분한다.
+        text: 패킷을 전달할 네트워크 인터페이스를 식별한다.
   - id: service
     content:
       - type: text
-        text: 호스트 안의 애플리케이션이나 서비스를 구분한다.
+        text: 호스트 안의 통신 끝점을 구분한다.
 correctPairs:
   - leftId: ip
     rightId: host
@@ -30,7 +30,7 @@ correctPairs:
     rightId: service
 explanation:
   - type: text
-    text: IP 주소는 목적지 호스트를, 포트 번호는 그 호스트 안의 통신 대상을 구분합니다.
+    text: IP 주소는 패킷을 전달할 인터페이스를 식별하고, 포트 번호는 호스트 안의 통신 끝점을 구분합니다.
 tags:
   - network
   - ip

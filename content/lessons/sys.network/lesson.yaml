@@ -1,9 +1,9 @@
 schemaVersion: 1
 id: sys.network
-revision: 3
+revision: 4
 track: networks
-title: 네트워크 기초
-description: 주소, 패킷, 프로토콜이 데이터를 주고받는 방식을 소개한다.
+title: 컴퓨터 네트워크 입문
+description: 장치와 링크, 패킷과 프로토콜이 함께 데이터를 전달하는 전체 흐름을 익힌다.
 flow:
 - type: content
   ref: content/intro.md

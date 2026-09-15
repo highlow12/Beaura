@@ -334,7 +334,6 @@ nodes:
   - lesson: net.protocol-model
     requires:
       - sys.network
-      - os.system-call
   - lesson: net.ethernet
     requires:
       - net.protocol-model
@@ -549,7 +548,6 @@ nodes:
   - lesson: gfx.pipeline
     requires:
       - sys.graphics
-      - la.vectors
   - lesson: gfx.coordinates
     requires:
       - gfx.pipeline

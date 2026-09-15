@@ -1,50 +1,50 @@
 schemaVersion: 1
 id: sys.network.terms-01
-revision: 1
+revision: 2
 type: matching
 prompt:
 - type: text
   text: 네트워크 용어와 역할을 알맞게 연결하세요.
 leftItems:
-- id: ip
+- id: host
   content:
   - type: text
-    text: IP 주소
-- id: dns
+    text: 호스트
+- id: packet
   content:
   - type: text
-    text: DNS
-- id: port
+    text: 패킷
+- id: protocol
   content:
   - type: text
-    text: 포트
+    text: 프로토콜
 rightItems:
-- id: location
+- id: endpoint
   content:
   - type: text
-    text: 네트워크에서 장치의 위치를 식별한다
-- id: name-lookup
+    text: 데이터를 만들거나 소비하는 통신의 끝 장치
+- id: unit
   content:
   - type: text
-    text: 도메인 이름을 IP 주소로 찾는다
-- id: process
+    text: 네트워크에서 전달되는 작은 데이터 단위
+- id: rules
   content:
   - type: text
-    text: 장치 안의 통신 프로그램을 구분한다
+    text: 메시지 형식과 처리 방법에 대한 통신 규칙
 correctPairs:
-- leftId: ip
-  rightId: location
-- leftId: dns
-  rightId: name-lookup
-- leftId: port
-  rightId: process
+- leftId: host
+  rightId: endpoint
+- leftId: packet
+  rightId: unit
+- leftId: protocol
+  rightId: rules
 explanation:
 - type: text
-  text: IP는 장치 주소, DNS는 이름 조회, 포트는 장치 안의 통신 대상을 구분합니다.
+  text: 호스트는 데이터를 만들거나 받는 끝 장치이고, 패킷은 전달 단위이며, 프로토콜은 통신 규칙입니다.
 - type: text
-  text: 주소의 범위가 장치인지 프로그램인지 나누어 보면 세 용어를 헷갈리지 않습니다.
+  text: 장치, 데이터 단위, 규칙이라는 서로 다른 범주로 구분하면 네트워크의 기본 구조가 선명해집니다.
 tags:
 - networking
-- ip
-- dns
+- packet
+- protocol
 difficulty: 2
