@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.bellman-ford
-revision: 1
+revision: 2
 track: algorithms
 title: Bellman-Ford
 description: 모든 간선을 반복해서 완화해 음수 가중치와 음수 사이클을 다루는 방법을 익힌다.

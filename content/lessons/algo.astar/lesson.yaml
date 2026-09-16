@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.astar
-revision: 1
+revision: 2
 track: algorithms
 title: A* 경로 탐색
 description: 실제 이동 비용과 목표까지의 추정 비용을 결합해 탐색을 안내하는 A*의 우선순위를 익힌다.

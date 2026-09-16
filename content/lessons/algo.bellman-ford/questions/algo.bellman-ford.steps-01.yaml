@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.bellman-ford.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
 - type: text
@@ -21,7 +21,7 @@ items:
 - id: detect
   content:
   - type: text
-    text: 추가 pass에서 갱신되면 음수 사이클을 표시한다
+    text: 추가 pass에서 도달 가능한 간선이 갱신되면 음수 사이클을 표시한다
 correctOrder:
 - initialize
 - repeat
@@ -29,7 +29,7 @@ correctOrder:
 - detect
 explanation:
 - type: text
-  text: 초기화 후 모든 간선을 충분히 반복하고, 마지막 추가 검사로 음수 사이클 여부를 확인합니다.
+  text: 초기화 후 모든 간선을 충분히 반복하고, 마지막 추가 검사로 시작점에서 도달 가능한 음수 사이클 여부를 확인합니다.
 tags:
 - shortest-path
 - bellman-ford

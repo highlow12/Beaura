@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.astar.trace-01
-revision: 1
+revision: 2
 type: code-output
 prompt:
 - type: text
@@ -9,8 +9,10 @@ language: python
 code: |-
   g = {"A": 2, "B": 4, "C": 1}
   h = {"A": 5, "B": 2, "C": 6}
-  score = {node: g[node] + h[node] for node in g}
-  print(min(score, key=score.get))
+  scores = [(g["A"] + h["A"], "A"),
+            (g["B"] + h["B"], "B"),
+            (g["C"] + h["C"], "C")]
+  print(min(scores)[1])
 choices:
 - B
 - A
@@ -19,7 +21,7 @@ acceptedOutputs:
 - B
 explanation:
 - type: text
-  text: A의 f는 7, B의 f는 6, C의 f는 7이므로 B가 가장 먼저 선택됩니다.
+  text: 각 튜플의 첫 값은 f입니다. A는 7, B는 6, C는 7이고 Python의 min은 첫 값부터 비교하므로 B가 선택됩니다.
 tags:
 - shortest-path
 - astar

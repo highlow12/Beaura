@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.bellman-ford.match-01
-revision: 1
+revision: 2
 type: matching
 prompt:
 - type: text
@@ -30,7 +30,7 @@ rightItems:
 - id: detect
   content:
   - type: text
-    text: 아직 갱신되면 음수 사이클을 의심한다
+    text: 도달 가능한 간선이 아직 갱신되면 음수 사이클을 확인한다
 correctPairs:
 - leftId: relaxation
   rightId: improve
@@ -40,7 +40,7 @@ correctPairs:
   rightId: detect
 explanation:
 - type: text
-  text: V - 1회 반복은 음수 사이클이 없을 때 충분한 횟수이고, 추가 갱신은 음수 사이클의 신호입니다.
+  text: V - 1회 반복은 음수 사이클이 없을 때 충분한 횟수이고, 시작점에서 도달 가능한 간선의 추가 갱신은 음수 사이클의 신호입니다.
 tags:
 - shortest-path
 - bellman-ford

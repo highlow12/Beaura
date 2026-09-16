@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.sort
-revision: 2
+revision: 3
 track: algorithms
 title: 정렬
 description: 정렬의 목적과 기본 알고리즘의 비교·교환 과정을 익힌다.
