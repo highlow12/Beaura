@@ -16,6 +16,51 @@ describe("content pipeline", () => {
     expect(getValidationErrors(bundle)).toEqual([]);
   }, CONTENT_TEST_TIMEOUT);
 
+  it("keeps each lesson's source files grouped and ordered", async () => {
+    const bundle = await loadSourceContent(process.cwd());
+    const expected = new Map<string, {
+      questions: string[];
+      content: Array<[string, Buffer]>;
+    }>();
+    for (const entry of bundle.lessons)
+      expected.set(entry.directory, { questions: [], content: [] });
+
+    for (const [file, bytes] of bundle.files.entries()) {
+      const match = /^lessons\/([^/]+)\//.exec(file);
+      if (!match) continue;
+      const bucket = expected.get(match[1]);
+      if (!bucket) continue;
+      const questionPrefix = `lessons/${match[1]}/questions/`;
+      const contentPrefix = `lessons/${match[1]}/content/`;
+      if (file.startsWith(questionPrefix) && file.endsWith(".yaml"))
+        bucket.questions.push(file);
+      if (file.startsWith(contentPrefix) && file.endsWith(".md"))
+        bucket.content.push([file, bytes]);
+    }
+
+    for (const entry of bundle.lessons) {
+      const bucket = expected.get(entry.directory)!;
+      expect(entry.questions.map((file) => file.relativePath)).toEqual(
+        bucket.questions.sort(),
+      );
+      expect(
+        entry.content.map((file) => [
+          file.relativePath,
+          file.ref,
+          file.markdown,
+        ]),
+      ).toEqual(
+        bucket.content
+          .sort(([a], [b]) => a.localeCompare(b))
+          .map(([file, bytes]) => [
+            file,
+            file.slice(`lessons/${entry.directory}/`.length),
+            bytes.toString("utf8"),
+          ]),
+      );
+    }
+  }, CONTENT_TEST_TIMEOUT);
+
   it("rejects unknown fields and missing references", async () => {
     const bundle = await loadSourceContent(process.cwd());
     const lesson = bundle.lessons[0].lessonFile
