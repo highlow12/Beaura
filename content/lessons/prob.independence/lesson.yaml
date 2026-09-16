@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.independence
-revision: 2
+revision: 3
 track: probability-statistics
 title: "독립 사건"
 description: "한 사건의 발생이 다른 사건의 확률을 바꾸지 않는 독립성을 판별한다."

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.events
-revision: 2
+revision: 3
 track: probability-statistics
 title: "사건의 연산"
 description: "합사건·교사건·여사건과 서로 배반인 사건의 확률을 계산한다."
@@ -10,10 +10,10 @@ flow:
     ref: content/intro.md
   - type: question
     ref: prob.events.definition-01
-  - type: question
-    ref: prob.events.application-01
   - type: content
     ref: content/practice.md
+  - type: question
+    ref: prob.events.application-01
   - type: content
     ref: content/model.md
   - type: question

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.variance
-revision: 2
+revision: 3
 track: probability-statistics
 title: "분산과 표준편차"
 description: "기대값에서의 편차 제곱을 평균내어 퍼짐을 측정하고 표준편차를 해석한다."
@@ -10,10 +10,10 @@ flow:
     ref: content/intro.md
   - type: question
     ref: prob.variance.definition-01
-  - type: question
-    ref: prob.variance.application-01
   - type: content
     ref: content/practice.md
+  - type: question
+    ref: prob.variance.application-01
   - type: content
     ref: content/model.md
   - type: question

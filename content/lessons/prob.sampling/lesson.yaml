@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.sampling
-revision: 2
+revision: 3
 track: probability-statistics
 title: "표본과 추정"
 description: "모집단과 표본을 구분하고 표본평균과 표본 편향의 기초를 이해한다."
@@ -10,10 +10,10 @@ flow:
     ref: content/intro.md
   - type: question
     ref: prob.sampling.definition-01
-  - type: question
-    ref: prob.sampling.application-01
   - type: content
     ref: content/practice.md
+  - type: question
+    ref: prob.sampling.application-01
   - type: content
     ref: content/model.md
   - type: question

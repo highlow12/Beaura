@@ -505,14 +505,14 @@ nodes:
   - lesson: calc.numerical-integration
     requires:
       - calc.definite-integrals
-  - lesson: prob.events
-    requires: []
   - lesson: prob.probability
-    requires:
-      - prob.events
-  - lesson: prob.conditional
+    requires: []
+  - lesson: prob.events
     requires:
       - prob.probability
+  - lesson: prob.conditional
+    requires:
+      - prob.events
   - lesson: prob.independence
     requires:
       - prob.conditional

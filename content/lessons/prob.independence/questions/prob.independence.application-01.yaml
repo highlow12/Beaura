@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.independence.application-01
-revision: 1
+revision: 2
 type: multi-select
 prompt:
   - type: text
@@ -9,7 +9,7 @@ options:
   - id: conditional-same
     content:
       - type: text
-        text: "P(A|B)=P(A)이다"
+        text: "P(B)>0이면 P(A|B)=P(A)이다"
   - id: product
     content:
       - type: text
@@ -26,7 +26,7 @@ correctOptionIds: [conditional-same, product, coin]
 shuffleOptions: true
 explanation:
   - type: text
-    text: "독립은 조건을 알아도 확률이 변하지 않는 성질이며 복원 추출에서는 구성이 유지됩니다."
+    text: "독립은 P(A∩B)=P(A)P(B)로 표현할 수 있고, P(B)>0이면 조건을 알아도 A의 확률이 변하지 않아 P(A|B)=P(A)가 됩니다."
   - type: text
     text: "배반과 독립은 다른 개념이고 양의 확률 사건에서는 함께 성립할 수 없습니다."
 tags:
