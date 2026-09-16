@@ -1,10 +1,10 @@
 schemaVersion: 1
 id: math.graph-connectivity.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
-    text: "BFS로 연결 그래프인지 확인하는 절차를 배열하세요."
+    text: "이웃을 따라 연결 그래프인지 확인하는 절차를 배열하세요."
 items:
   - id: start
     content:
@@ -13,7 +13,7 @@ items:
   - id: search
     content:
       - type: text
-        text: "BFS로 도달 가능한 정점을 모두 방문한다"
+        text: "새로 찾은 정점의 이웃을 반복해서 방문한다"
   - id: count
     content:
       - type: text
@@ -29,7 +29,7 @@ correctOrder:
   - decide
 explanation:
   - type: text
-    text: "한 번의 탐색으로 모든 정점이 방문되는지가 연결성의 기준입니다."
+    text: "한 정점에서 이웃을 따라 모든 정점에 도달할 수 있는지가 연결성의 기준입니다."
   - type: text
     text: "방문하지 못한 정점이 있으면 그래프는 둘 이상의 구성 요소로 나뉩니다."
 tags:

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.logic-equivalence.application-01
-revision: 1
+revision: 2
 type: multi-select
 prompt:
   - type: text
@@ -22,13 +22,13 @@ options:
     content:
       - type: text
         text: "P ∧ Q"
-correctOptionIds: [dnf-one, dnf-two]
+correctOptionIds: [dnf-one, dnf-two, plain]
 shuffleOptions: true
 explanation:
   - type: text
-    text: "DNF는 AND로 묶인 항들을 OR로 결합한 형태입니다."
+    text: "DNF는 하나 이상의 AND 항을 OR로 결합한 형태입니다. 항이 하나뿐인 P ∧ Q도 DNF입니다."
   - type: text
-    text: "(P ∨ Q) ∧ R는 CNF 쪽의 모양이고, 단일 AND 항은 이 분류의 표준형 예로 선택하지 않았습니다."
+    text: "(P ∨ Q) ∧ R는 CNF 형태입니다."
 tags:
   - discrete-math
   - logic

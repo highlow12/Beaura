@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.trees.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -13,19 +13,19 @@ items:
   - id: move-up
     content:
       - type: text
-        text: "root 방향으로 한 간선을 따라간다"
+        text: "root가 아니라면 root 방향으로 한 간선을 따라간다"
   - id: check-root
     content:
       - type: text
-        text: "도착한 정점이 root인지 확인한다"
+        text: "관심 정점이 root인지 확인한다"
   - id: name-parent
     content:
       - type: text
-        text: "직전 정점을 부모로 기록한다"
+        text: "도착한 정점을 부모로 기록하고, root였다면 부모가 없다고 기록한다"
 correctOrder:
   - start-node
-  - move-up
   - check-root
+  - move-up
   - name-parent
 explanation:
   - type: text

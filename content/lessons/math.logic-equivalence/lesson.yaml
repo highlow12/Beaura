@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.logic-equivalence
-revision: 2
+revision: 3
 track: discrete-math
 title: "논리식 변환과 동치"
 description: "논리식의 동치 변환과 드모르간 법칙, CNF·DNF의 기초를 익힌다."
@@ -10,12 +10,12 @@ flow:
     ref: content/intro.md
   - type: question
     ref: math.logic-equivalence.definition-01
+  - type: content
+    ref: content/practice.md
   - type: question
     ref: math.logic-equivalence.application-01
   - type: content
     ref: content/rewrite.md
-  - type: content
-    ref: content/practice.md
   - type: question
     ref: math.logic-equivalence.term-01
   - type: question

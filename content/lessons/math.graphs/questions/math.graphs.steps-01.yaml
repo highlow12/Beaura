@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.graphs.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -17,7 +17,7 @@ items:
   - id: count
     content:
       - type: text
-        text: "v에 붙은 간선마다 카운트를 1 증가한다"
+        text: "v에 한 끝점만 붙은 간선은 1, 자기 루프는 2를 더한다"
   - id: report
     content:
       - type: text
@@ -29,9 +29,9 @@ correctOrder:
   - report
 explanation:
   - type: text
-    text: "각 간선이 정점 v에 붙었는지를 검사해 총 횟수를 세면 차수가 됩니다."
+    text: "각 간선의 양 끝점 중 v에 닿는 끝점 수를 합하면 차수입니다. 자기 루프의 두 끝점은 모두 v에 닿으므로 2를 더합니다."
   - type: text
-    text: "자기 루프를 허용하는 정의에서는 차수에 기여하는 방식이 별도로 정해질 수 있습니다."
+    text: "일반적인 무방향 그래프의 차수는 루프를 두 번 셉니다."
 tags:
   - discrete-math
   - graphs

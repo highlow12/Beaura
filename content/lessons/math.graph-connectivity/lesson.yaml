@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.graph-connectivity
-revision: 2
+revision: 3
 track: discrete-math
 title: "연결성과 구성 요소"
 description: "그래프의 연결 여부와 connected component, bridge를 판별한다."
@@ -10,12 +10,12 @@ flow:
     ref: content/intro.md
   - type: question
     ref: math.graph-connectivity.definition-01
+  - type: content
+    ref: content/practice.md
   - type: question
     ref: math.graph-connectivity.application-01
   - type: content
     ref: content/bridge-test.md
-  - type: content
-    ref: content/practice.md
   - type: question
     ref: math.graph-connectivity.term-01
   - type: question

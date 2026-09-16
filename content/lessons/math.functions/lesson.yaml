@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.functions
-revision: 2
+revision: 3
 track: discrete-math
 title: "함수와 대응"
 description: "함수의 유일한 출력 조건과 단사·전사·전단사의 차이를 판별한다."
@@ -10,12 +10,12 @@ flow:
     ref: content/intro.md
   - type: question
     ref: math.functions.definition-01
+  - type: content
+    ref: content/practice.md
   - type: question
     ref: math.functions.application-01
   - type: content
     ref: content/codomain.md
-  - type: content
-    ref: content/practice.md
   - type: question
     ref: math.functions.term-01
   - type: question

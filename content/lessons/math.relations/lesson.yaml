@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.relations
-revision: 2
+revision: 3
 track: discrete-math
 title: "곱집합과 관계"
 description: "Cartesian product를 만들고 관계를 집합으로 표현하며 정의역과 치역을 읽는다."
@@ -10,12 +10,12 @@ flow:
     ref: content/intro.md
   - type: question
     ref: math.relations.definition-01
+  - type: content
+    ref: content/practice.md
   - type: question
     ref: math.relations.application-01
   - type: content
     ref: content/properties.md
-  - type: content
-    ref: content/practice.md
   - type: question
     ref: math.relations.term-01
   - type: question

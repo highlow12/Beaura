@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.graph-paths
-revision: 2
+revision: 3
 track: discrete-math
 title: "경로와 사이클"
 description: "그래프에서 walk·path·cycle을 구분하고 가중치 경로의 길이를 계산한다."
@@ -10,12 +10,12 @@ flow:
     ref: content/intro.md
   - type: question
     ref: math.graph-paths.definition-01
+  - type: content
+    ref: content/practice.md
   - type: question
     ref: math.graph-paths.application-01
   - type: content
     ref: content/path-shape.md
-  - type: content
-    ref: content/practice.md
   - type: question
     ref: math.graph-paths.term-01
   - type: question

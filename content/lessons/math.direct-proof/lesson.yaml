@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.direct-proof
-revision: 2
+revision: 3
 track: discrete-math
 title: "직접 증명"
 description: "가정을 출발점으로 정의와 규칙을 적용해 결론에 도달하는 직접 증명을 연습한다."
@@ -10,12 +10,12 @@ flow:
     ref: content/intro.md
   - type: question
     ref: math.direct-proof.definition-01
+  - type: content
+    ref: content/practice.md
   - type: question
     ref: math.direct-proof.application-01
   - type: content
     ref: content/definitions.md
-  - type: content
-    ref: content/practice.md
   - type: question
     ref: math.direct-proof.term-01
   - type: question

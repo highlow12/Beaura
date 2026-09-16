@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.contrapositive.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -24,7 +24,7 @@ correctOrder:
   - state-contra
 explanation:
   - type: text
-    text: "원래 명제의 대우는 a²이 홀수가 아니면 a가 홀수가 아니라는 형태로 읽을 수 있습니다."
+    text: "원래 명제 ‘a가 짝수이면 a²이 짝수’의 대우는 ‘a²이 홀수이면 a가 홀수’입니다."
   - type: text
     text: "문장의 부정 표현을 먼저 정확히 풀어 쓰면 증명 방향을 놓치지 않습니다."
 tags:

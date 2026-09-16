@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.trees
-revision: 2
+revision: 3
 track: discrete-math
 title: "트리의 구조"
 description: "트리의 연결·비순환 성질과 rooted tree의 부모·자식 관계를 이해한다."
@@ -10,12 +10,12 @@ flow:
     ref: content/intro.md
   - type: question
     ref: math.trees.definition-01
+  - type: content
+    ref: content/practice.md
   - type: question
     ref: math.trees.application-01
   - type: content
     ref: content/depth.md
-  - type: content
-    ref: content/practice.md
   - type: question
     ref: math.trees.term-01
   - type: question

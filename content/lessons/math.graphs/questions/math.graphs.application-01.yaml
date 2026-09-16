@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.graphs.application-01
-revision: 1
+revision: 2
 type: multi-select
 prompt:
   - type: text
@@ -9,11 +9,11 @@ options:
   - id: incident-one
     content:
       - type: text
-        text: "v에 한 끝점이 붙은 간선"
+        text: "v에 붙은 일반 간선 하나는 차수에 1을 더한다"
   - id: incident-two
     content:
       - type: text
-        text: "v와 이웃을 연결하는 간선"
+        text: "v에서 v로 돌아오는 루프 하나는 차수에 2를 더한다"
   - id: outgoing
     content:
       - type: text
@@ -26,7 +26,7 @@ correctOptionIds: [incident-one, incident-two]
 shuffleOptions: true
 explanation:
   - type: text
-    text: "무방향 그래프의 차수는 정점에 incident한 간선의 수입니다."
+    text: "무방향 그래프의 차수는 정점에 닿는 간선 끝점의 수입니다. 자기 루프는 두 끝점이 모두 v에 닿습니다."
   - type: text
     text: "나가는 방향만 세는 개념은 방향 그래프의 outdegree에 해당합니다."
 tags:
