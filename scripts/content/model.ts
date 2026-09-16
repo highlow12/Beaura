@@ -169,9 +169,30 @@ export async function loadSourceContent(
     loadErrors,
   );
   const directories = new Set<string>();
-  for (const file of files.keys()) {
+  const filesByLesson = new Map<
+    string,
+    { questions: string[]; content: Array<[string, Buffer]> }
+  >();
+  for (const [file, bytes] of files.entries()) {
     const match = /^lessons\/([^/]+)\/lesson\.yaml$/.exec(file);
     if (match) directories.add(match[1]);
+
+    const lessonMatch = /^lessons\/([^/]+)\//.exec(file);
+    if (!lessonMatch) continue;
+    const directory = lessonMatch[1];
+    const questionPrefix = `lessons/${directory}/questions/`;
+    const contentPrefix = `lessons/${directory}/content/`;
+    if (!file.startsWith(questionPrefix) && !file.startsWith(contentPrefix))
+      continue;
+    const indexed = filesByLesson.get(directory) ?? {
+      questions: [],
+      content: [],
+    };
+    if (file.startsWith(questionPrefix) && file.endsWith(".yaml"))
+      indexed.questions.push(file);
+    if (file.startsWith(contentPrefix) && file.endsWith(".md"))
+      indexed.content.push([file, bytes]);
+    filesByLesson.set(directory, indexed);
   }
   const lessons: SourceLessonEntry[] = [];
   for (const directory of [...directories].sort()) {
@@ -182,11 +203,11 @@ export async function loadSourceContent(
       files,
       loadErrors,
     );
-    const questionPrefix = `lessons/${directory}/questions/`;
-    const questions = [...files.keys()]
-      .filter(
-        (file) => file.startsWith(questionPrefix) && file.endsWith(".yaml"),
-      )
+    const indexed = filesByLesson.get(directory) ?? {
+      questions: [],
+      content: [],
+    };
+    const questions = indexed.questions
       .sort()
       .map((file) =>
         yaml<SourceQuestion>(
@@ -196,11 +217,7 @@ export async function loadSourceContent(
           loadErrors,
         ),
       );
-    const contentPrefix = `lessons/${directory}/content/`;
-    const content = [...files.entries()]
-      .filter(
-        ([file]) => file.startsWith(contentPrefix) && file.endsWith(".md"),
-      )
+    const content = indexed.content
       .sort(([a], [b]) => a.localeCompare(b))
       .map(([file, bytes]) => ({
         path: join(contentRoot, ...file.split("/")),

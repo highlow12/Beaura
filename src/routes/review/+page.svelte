@@ -5,6 +5,7 @@
   import { loadDashboard, errorMessage, type Dashboard } from '$lib/application/dashboard';
   import { contentRepository } from '$lib/content/repository/static-content-repository';
   import { learningRepository } from '$lib/storage/repositories/learning-repository';
+  import { loadSelectedReviewQuestions } from '$lib/application/review-queue';
   import type { Question } from '$lib/questions/types';
   let data = $state<Dashboard | null>(null);
   let error = $state('');
@@ -23,9 +24,8 @@
     starting = true;
     error = '';
     try {
-      const candidates = await Promise.all(data.queue.map((item) => contentRepository.getQuestion(item.id)));
-      const ranked = await learningRepository.getReviewQueue(candidates);
-      queue = ranked.slice(0,data.snapshot.settings.reviewLimit);
+      const ranked = await learningRepository.getReviewQueue(data.queue);
+      queue = await loadSelectedReviewQuestions(ranked, data.snapshot.settings.reviewLimit, (id) => contentRepository.getQuestion(id));
       index=0;correct=0;ready=false;savedIds = new Set();started=true;
     } catch(e) {
       error = errorMessage(e);

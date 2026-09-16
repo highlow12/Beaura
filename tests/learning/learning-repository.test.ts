@@ -266,6 +266,24 @@ describe("LearningRepository", () => {
         .equals("content-revision")
         .count(),
     ).toBe(1);
+    // A body fetch can fail after reconciliation; retrying must not duplicate the event.
+    expect((await repo.getReviewQueue([{ id: revised.id, lessonId: revised.lessonId, revision: revised.revision }])).map((item) => item.id)).toEqual([learned.id]);
+    expect(await repo.database.studyEvents.where("eventType").equals("content-revision").count()).toBe(1);
+  });
+
+  it("ranks review candidates using metadata and indexed candidate state reads", async () => {
+    const repo = repository();
+    const learned = question("lesson.one.q1", 1);
+    await repo.saveAttempt({
+      id: "attempt:metadata-queue", question: learned, correct: true,
+      durationMs: 100, mode: "review",
+    });
+    currentTime += 2 * 24 * 60 * 60 * 1000;
+    const fullScan = vi.spyOn(repo.database.questionStates, "toArray");
+    const candidate = { id: learned.id, lessonId: learned.lessonId, revision: learned.revision };
+    expect(await repo.getReviewQueue([candidate])).toEqual([candidate]);
+    expect(fullScan).not.toHaveBeenCalled();
+    fullScan.mockRestore();
   });
 
   it("replays a backup, and rejects an invalid backup without changing current data", async () => {

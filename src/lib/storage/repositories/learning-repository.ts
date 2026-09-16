@@ -1,4 +1,4 @@
-import type { Lesson } from "$lib/content/types";
+import type { Lesson, QuestionMetadata } from "$lib/content/types";
 import {
   createLessonSession,
   type LessonSession,
@@ -183,7 +183,7 @@ function assertLesson(lesson: Lesson): void {
     throw new Error("lesson.flow must be an array");
 }
 
-function assertQuestion(question: Question): void {
+export function assertQuestion(question: Question): void {
   assertId(question?.id, "question.id");
   assertId(question?.lessonId, "question.lessonId");
   nonNegativeInteger(question?.revision, "question.revision");
@@ -1298,13 +1298,17 @@ export class LearningRepository {
     });
   }
 
-  async getReviewQueue(
-    questions: Question[],
+  async getReviewQueue<T extends QuestionMetadata>(
+    questions: T[],
     nowInput?: Date,
-  ): Promise<Question[]> {
+  ): Promise<T[]> {
     if (!Array.isArray(questions))
       throw new Error("questions must be an array");
-    for (const question of questions) assertQuestion(question);
+    for (const question of questions) {
+      assertId(question?.id, "question.id");
+      assertId(question?.lessonId, "question.lessonId");
+      nonNegativeInteger(question?.revision, "question.revision");
+    }
     const now =
       nowInput === undefined
         ? timestamp(this.clock)
@@ -1312,11 +1316,12 @@ export class LearningRepository {
     const unique = new Map(
       questions.map((question) => [question.id, question]),
     );
+    const candidateIds = [...unique.keys()];
     await this.transaction("rw", async () => {
       const profile = await this.profile(now);
       const scheduler = this.scheduler(profile);
-      const states = await this.database.questionStates.toArray();
-      const byId = new Map(states.map((state) => [state.questionId, state]));
+      const states = await this.database.questionStates.bulkGet(candidateIds);
+      const byId = new Map(states.filter((state) => state !== undefined).map((state) => [state.questionId, state]));
       for (const question of unique.values()) {
         const state = byId.get(question.id);
         if (!state || state.contentRevision === question.revision) continue;
@@ -1362,8 +1367,8 @@ export class LearningRepository {
     });
 
     return this.transaction("r", async () => {
-      const states = await this.database.questionStates.toArray();
-      const byId = new Map(states.map((state) => [state.questionId, state]));
+      const states = await this.database.questionStates.bulkGet(candidateIds);
+      const byId = new Map(states.filter((state) => state !== undefined).map((state) => [state.questionId, state]));
       const profile = await this.database.schedulerProfiles.get(
         DEFAULT_SCHEDULER_PROFILE_ID,
       );

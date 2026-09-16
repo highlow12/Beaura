@@ -47,7 +47,11 @@ async function cacheFirst(request: Request, cacheName: string) {
   try {
     const response = await fetch(request);
     if (response.ok && response.type !== "opaque") {
-      await cache.put(request, response.clone());
+      try {
+        await cache.put(request, response.clone());
+      } catch {
+        // A full or unavailable cache must not turn a successful response into a network failure.
+      }
     }
     return response;
   } catch {

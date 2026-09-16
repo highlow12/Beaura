@@ -15,8 +15,8 @@ flowchart TD
     I --> J[해당 lesson.json 로드]
     J --> K[해당 레슨 question JSON 로드]
     H --> L[복습 시작]
-    L --> M[복습 후보 question JSON만 로드]
-    M --> N[FSRS queue 재검증 / 정렬]
+    L --> M[metadata로 FSRS queue 재검증 / 정렬]
+    M --> N[세션 제한 수만큼 question JSON 로드]
 ```
 
 ## generated 산출물
@@ -35,7 +35,7 @@ flowchart TD
 
 레슨 플레이어는 사용자가 선택한 `lesson.json`과 그 lesson flow가 참조하는 question JSON만 로드한다. 다른 레슨 본문은 가져오지 않는다.
 
-복습 화면의 초기 진입에서는 catalog와 저장된 `QuestionState`를 비교해 due 또는 revision 변경 가능성이 있는 문제의 metadata만 고른다. 사용자가 복습 시작을 누르면 해당 후보의 실제 question JSON을 로드하고 `LearningRepository.getReviewQueue()`로 revision 처리와 FSRS 우선순위를 다시 검증한 뒤 review limit를 적용한다.
+복습 화면의 초기 진입에서는 catalog와 저장된 `QuestionState`를 비교해 due 또는 revision 변경 가능성이 있는 문제의 metadata만 고른다. 사용자가 복습 시작을 누르면 `LearningRepository.getReviewQueue()`가 metadata만으로 revision을 처리하고 FSRS 우선순위를 다시 검증한다. review limit를 적용한 뒤 선택한 문제의 JSON만 읽고, 본문 ID와 revision이 catalog와 일치하는지 확인한다.
 
 ## 오프라인 캐시
 
