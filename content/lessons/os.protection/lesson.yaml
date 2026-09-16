@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.protection
-revision: 1
+revision: 2
 track: operating-systems
 title: 권한과 프로세스 격리
 description: 페이지 권한·특권 명령·프로세스 격리로 오류와 공격의 범위를 제한하는 원리를 배운다.

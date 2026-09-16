@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: os.context-switch.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "컨텍스트 스위치에서 핵심이 되는 용어는 ___입니다."
+    text: "중단된 실행을 정확한 명령 위치에서 재개하려면 ___를 저장·복원해야 합니다."
 choices:
-  - "컨텍스트 스위치"
-  - "정규식 매칭"
-  - "패킷 라우팅"
+  - "프로그램 카운터"
+  - "파일 이름"
+  - "화면 해상도"
 acceptedAnswers:
-  - "컨텍스트 스위치"
+  - "프로그램 카운터"
 explanation:
   - type: text
-    text: "컨텍스트 스위치은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "컨텍스트 스위치는 현재 실행 단위의 레지스터·프로그램 카운터·스택 포인터 등을 저장하고 다음 단위의 상태를 복원하는 전환입니다."
+    text: "스레드 A가 타이머로 중단되면 A의 프로그램 카운터(다음 명령 위치)와 스택 포인터(현재 스택 위치) 등을 저장합니다. 스케줄러가 B를 고르면 B의 상태를 복원해 이어 실행합니다. 전환은 상태 저장과 복원 비용이 듭니다."
 tags: [context-switch, scheduler, process]
 difficulty: 2

@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: os.storage.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "HDD·SSD와 블록 장치에서 핵심이 되는 용어는 ___입니다."
+    text: "SSD 셀의 쓰기를 여러 위치에 분산해 마모를 줄이는 기법은 ___입니다."
 choices:
   - "wear leveling"
-  - "진리표"
-  - "컨텍스트 스위치"
+  - "헤드 탐색"
+  - "라운드 로빈"
 acceptedAnswers:
   - "wear leveling"
 explanation:
   - type: text
-    text: "wear leveling은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "블록 장치는 고정 크기 블록 단위로 읽고 쓰는 저장장치 인터페이스입니다. HDD는 회전 플래터와 헤드 이동이 지배적이고, SSD는 플래시 셀과 컨트롤러를 사용합니다."
+    text: "HDD의 임의 읽기에서는 헤드가 목표 트랙으로 이동하는 탐색(seek)과 회전 대기가 발생합니다. SSD는 플래시 페이지에 기록하고 더 큰 블록 단위로 지우며, 셀의 마모가 한곳에 몰리지 않도록 wear leveling으로 쓰기를 분산합니다."
 tags: [storage, hdd, ssd]
 difficulty: 2

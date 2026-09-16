@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.allocation
-revision: 1
+revision: 2
 track: operating-systems
 title: 스택·힙과 메모리 할당
 description: 스택과 힙의 사용 방식, 동적 할당과 단편화 문제를 비교한다.

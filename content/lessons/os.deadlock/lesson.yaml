@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.deadlock
-revision: 1
+revision: 3
 track: operating-systems
 title: 교착상태
 description: 서로 자원을 기다리며 영원히 진행하지 못하는 데드락의 조건과 대응을 배운다.

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.process
-revision: 1
+revision: 2
 track: operating-systems
 title: 프로세스와 실행 단위
 description: 실행 중인 프로그램인 프로세스가 코드·데이터·상태를 묶어 관리되는 방식을 이해한다.

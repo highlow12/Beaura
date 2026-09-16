@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.process.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "process-control-block"
+        text: "프로세스 제어 블록"
   - id: left-b
     content:
       - type: text
-        text: "ready"
+        text: "준비 상태"
   - id: left-c
     content:
       - type: text
-        text: "blocked"
+        text: "대기 상태"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "process-control-block은 프로세스 상태와 자원을 기록한 커널 자료구조, ready은 CPU를 받을 수 있어 대기하는 상태입니다."
-  - type: text
-    text: "blocked은 입출력이나 사건을 기다리는 상태을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "프로세스 제어 블록은 프로세스 상태와 자원을 기록한 커널 자료구조, 준비 상태은 CPU를 받을 수 있어 대기하는 상태, 대기 상태은 입출력이나 사건을 기다리는 상태에 해당합니다."
 tags: [process, address-space, lifecycle]
 difficulty: 1

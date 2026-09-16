@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.mutex
-revision: 1
+revision: 2
 track: operating-systems
 title: 뮤텍스와 임계 구역
 description: 뮤텍스로 한 번에 하나의 실행 흐름만 임계 구역에 들어가게 하는 방법을 익힌다.

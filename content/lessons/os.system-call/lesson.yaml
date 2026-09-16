@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.system-call
-revision: 1
+revision: 2
 track: operating-systems
 title: 시스템 호출
 description: 응용 프로그램이 파일·프로세스·입출력 서비스를 커널에 요청하는 시스템 호출을 배운다.

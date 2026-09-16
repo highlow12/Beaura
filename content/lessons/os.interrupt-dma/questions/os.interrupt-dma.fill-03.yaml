@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: os.interrupt-dma.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "인터럽트와 DMA에서 핵심이 되는 용어는 ___입니다."
+    text: "장치가 CPU 대신 메모리 버퍼로 데이터 블록을 옮기는 기능은 ___입니다."
 choices:
   - "DMA"
-  - "TLB"
-  - "opcode"
+  - "인터럽트 핸들러"
+  - "페이지 테이블"
 acceptedAnswers:
   - "DMA"
 explanation:
   - type: text
-    text: "DMA은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "인터럽트는 장치나 타이머가 CPU에 처리할 사건이 있음을 알리는 신호입니다. DMA는 장치 컨트롤러가 CPU 대신 메모리와 장치 사이의 큰 데이터 블록을 전송하는 기능입니다."
+    text: "장치 컨트롤러가 DMA로 패킷을 메모리 버퍼에 옮기는 동안 CPU가 각 바이트를 직접 복사할 필요는 없습니다. 전송 완료를 알리는 인터럽트가 오면 CPU는 실행 상태를 보존하고 핸들러에서 버퍼 결과를 확인합니다. DMA와 인터럽트는 각각 데이터 전송과 사건 알림의 역할입니다."
 tags: [interrupt, dma, io]
 difficulty: 2

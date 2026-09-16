@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.context-switch
-revision: 1
+revision: 2
 track: operating-systems
 title: 컨텍스트 스위치
 description: CPU가 한 실행 단위의 레지스터 상태를 저장하고 다른 단위의 상태를 복원하는 과정을 배운다.

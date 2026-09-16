@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.address-space.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "text"
+        text: "코드 영역"
   - id: left-b
     content:
       - type: text
-        text: "heap"
+        text: "힙"
   - id: left-c
     content:
       - type: text
-        text: "stack"
+        text: "스택"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "text은 실행할 명령어가 놓인 영역, heap은 동적 할당이 이루어지는 영역입니다."
-  - type: text
-    text: "stack은 함수 호출 프레임이 쌓이는 영역을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "코드 영역은 실행할 명령어가 놓인 영역, 힙은 동적 할당이 이루어지는 영역, 스택은 함수 호출 프레임이 쌓이는 영역에 해당합니다."
 tags: [process, virtual-memory, address-space]
 difficulty: 2

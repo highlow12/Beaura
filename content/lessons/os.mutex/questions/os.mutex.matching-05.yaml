@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.mutex.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "mutex"
+        text: "뮤텍스"
   - id: left-b
     content:
       - type: text
-        text: "lock"
+        text: "잠금 획득"
   - id: left-c
     content:
       - type: text
-        text: "unlock"
+        text: "잠금 해제"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "mutex은 동시에 한 소유자만 허용하는 잠금, lock은 임계 구역 진입을 요청하는 연산입니다."
-  - type: text
-    text: "unlock은 소유자가 잠금을 풀어 대기자를 깨우는 연산을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "뮤텍스은 동시에 한 소유자만 허용하는 잠금, 잠금 획득은 임계 구역 진입을 요청하는 연산, 잠금 해제은 소유자가 잠금을 풀어 대기자를 깨우는 연산에 해당합니다."
 tags: [mutex, lock, critical-section]
 difficulty: 2

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.address-space
-revision: 1
+revision: 2
 track: operating-systems
 title: 프로세스 주소 공간
 description: 코드·데이터·힙·스택으로 나뉜 프로세스 주소 공간의 목적을 익힌다.

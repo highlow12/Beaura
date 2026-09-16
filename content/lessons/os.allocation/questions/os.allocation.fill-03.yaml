@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: os.allocation.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "스택·힙과 메모리 할당에서 핵심이 되는 용어는 ___입니다."
+    text: "힙의 빈 공간이 흩어져 큰 연속 블록을 얻기 어려운 현상은 ___입니다."
 choices:
-  - "힙"
-  - "opcode"
-  - "서브넷"
+  - "외부 단편화"
+  - "스택 반환"
+  - "페이지 적중"
 acceptedAnswers:
-  - "힙"
+  - "외부 단편화"
 explanation:
   - type: text
-    text: "힙은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "스택은 호출 프레임이 후입선출로 자동 관리되는 영역이고, 힙은 실행 중 요청과 해제로 수명이 다양한 객체를 보관합니다. 할당자는 빈 블록 목록을 관리합니다."
+    text: "함수가 호출되어 프레임이 쌓이면 반환 시 스택 포인터가 돌아갑니다. 반면 힙에서 요청한 블록은 사용을 마칠 때 할당자의 규칙에 따라 해제합니다. 빈 공간이 여러 조각으로 흩어져 큰 연속 블록을 얻기 어려우면 외부 단편화라고 합니다."
 tags: [memory-allocation, stack, heap]
 difficulty: 2

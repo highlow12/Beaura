@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.deadlock.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "mutual-exclusion"
+        text: "상호 배제"
   - id: left-b
     content:
       - type: text
-        text: "hold-and-wait"
+        text: "점유하며 대기"
   - id: left-c
     content:
       - type: text
-        text: "circular-wait"
+        text: "순환 대기"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "mutual-exclusion은 자원을 한 흐름만 사용하게 하는 조건, hold-and-wait은 자원을 가진 채 다른 자원을 기다리는 조건입니다."
-  - type: text
-    text: "circular-wait은 대기 관계가 고리로 이어지는 조건을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "상호 배제은 자원을 한 흐름만 사용하게 하는 조건, 점유하며 대기은 자원을 가진 채 다른 자원을 기다리는 조건, 순환 대기은 대기 관계가 고리로 이어지는 조건에 해당합니다."
 tags: [deadlock, lock-order, concurrency]
 difficulty: 3

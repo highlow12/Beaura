@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.interrupt-dma
-revision: 1
+revision: 2
 track: operating-systems
 title: 인터럽트와 DMA
 description: 장치가 CPU에 사건을 알리는 인터럽트와 메모리로 직접 데이터를 옮기는 DMA를 구분한다.

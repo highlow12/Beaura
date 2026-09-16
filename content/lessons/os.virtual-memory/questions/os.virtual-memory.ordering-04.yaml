@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.virtual-memory.ordering-04
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -17,12 +17,12 @@ items:
   - id: fault
     content:
       - type: text
-        text: "매핑이 없으면 페이지를 적재하고 명령을 재시도한다"
+        text: "유효하지만 RAM에 없는 페이지는 적재해 재시도하고, 잘못된 접근은 오류를 낸다"
 correctOrder: [split, lookup, fault]
 explanation:
   - type: text
     text: "가상 주소를 페이지 번호와 오프셋으로 나눈다 단계가 먼저이고, 그 결과를 이용해 페이지 테이블에서 물리 프레임을 찾는다 단계가 이어집니다."
   - type: text
-    text: "매핑이 없으면 페이지를 적재하고 명령을 재시도한다 단계에서 최종 결과가 다음 실행 단계로 전달됩니다."
+    text: "유효한 페이지의 부재와 잘못된 주소·권한 위반은 서로 다르게 처리합니다."
 tags: [virtual-memory, page, memory-protection]
 difficulty: 3

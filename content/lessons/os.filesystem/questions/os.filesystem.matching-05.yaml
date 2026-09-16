@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.filesystem.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "directory"
+        text: "디렉터리"
   - id: left-b
     content:
       - type: text
-        text: "metadata"
+        text: "메타데이터"
   - id: left-c
     content:
       - type: text
-        text: "file-descriptor"
+        text: "파일 기술자"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "directory은 이름과 파일·하위 디렉터리를 연결하는 구조, metadata은 크기·권한·소유자 같은 파일 정보입니다."
-  - type: text
-    text: "file-descriptor은 열린 파일 상태를 가리키는 핸들을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "디렉터리은 이름과 파일·하위 디렉터리를 연결하는 구조, 메타데이터은 크기·권한·소유자 같은 파일 정보, 파일 기술자은 열린 파일 상태를 가리키는 핸들에 해당합니다."
 tags: [filesystem, file, directory]
 difficulty: 2

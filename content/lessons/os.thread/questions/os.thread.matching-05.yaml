@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.thread.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "thread"
+        text: "스레드"
   - id: left-b
     content:
       - type: text
-        text: "stack"
+        text: "호출 스택"
   - id: left-c
     content:
       - type: text
-        text: "shared-heap"
+        text: "공유 힙"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "thread은 프로세스 안의 실행 흐름, stack은 스레드마다 별도로 갖는 호출 저장 영역입니다."
-  - type: text
-    text: "shared-heap은 스레드가 함께 접근할 수 있는 동적 데이터 영역을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "스레드은 프로세스 안의 실행 흐름, 호출 스택은 스레드마다 별도로 갖는 호출 저장 영역, 공유 힙은 스레드가 함께 접근할 수 있는 동적 데이터 영역에 해당합니다."
 tags: [thread, concurrency, shared-memory]
 difficulty: 2

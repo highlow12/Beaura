@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: os.protection.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "권한과 프로세스 격리에서 핵심이 되는 용어는 ___입니다."
+    text: "읽기 전용 페이지에 쓰기를 막는 것은 페이지의 ___ 검사입니다."
 choices:
-  - "프로세스 격리"
-  - "공간 지역성"
-  - "자리올림"
+  - "접근 권한"
+  - "파일 확장자"
+  - "정렬 순서"
 acceptedAnswers:
-  - "프로세스 격리"
+  - "접근 권한"
 explanation:
   - type: text
-    text: "프로세스 격리은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "보호는 각 실행 주체가 허용된 메모리·명령어·자원만 사용하도록 검사하는 체계입니다. 페이지의 읽기·쓰기·실행 권한과 CPU 특권 수준이 대표적인 도구입니다."
+    text: "읽기 전용 코드 페이지에 쓰기를 시도하면 주소 변환 과정의 권한 검사에서 예외가 납니다. 사용자 모드에서 장치 제어 같은 특권 명령을 실행할 수도 없습니다. 파일 쓰기는 시스템 호출로 커널에 요청해야 합니다."
 tags: [protection, isolation, privilege]
 difficulty: 2

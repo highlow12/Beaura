@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.system-call.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "system-call"
+        text: "시스템 호출"
   - id: left-b
     content:
       - type: text
-        text: "file-descriptor"
+        text: "파일 기술자"
   - id: left-c
     content:
       - type: text
-        text: "return-value"
+        text: "반환값"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "system-call은 커널 서비스 요청 인터페이스, file-descriptor은 열린 자원을 가리키는 프로세스별 핸들입니다."
-  - type: text
-    text: "return-value은 성공 결과나 오류를 전달하는 값을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "시스템 호출은 커널 서비스 요청 인터페이스, 파일 기술자은 열린 자원을 가리키는 프로세스별 핸들, 반환값은 성공 결과나 오류를 전달하는 값에 해당합니다."
 tags: [system-call, kernel, api]
 difficulty: 1

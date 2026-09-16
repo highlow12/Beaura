@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.storage
-revision: 1
+revision: 2
 track: operating-systems
 title: HDD·SSD와 블록 장치
 description: 블록 장치와 HDD·SSD의 접근 특성이 파일시스템과 성능에 미치는 영향을 살펴본다.

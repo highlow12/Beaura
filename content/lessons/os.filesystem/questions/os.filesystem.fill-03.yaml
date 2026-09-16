@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: os.filesystem.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "파일·디렉터리와 파일시스템에서 핵심이 되는 용어는 ___입니다."
+    text: "열린 파일을 가리키는 프로세스별 핸들은 ___입니다."
 choices:
-  - "파일시스템"
-  - "분기 예측"
-  - "가산기"
+  - "파일 기술자"
+  - "파일 확장자"
+  - "디렉터리 이름"
 acceptedAnswers:
-  - "파일시스템"
+  - "파일 기술자"
 explanation:
   - type: text
-    text: "파일시스템은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "파일시스템은 파일의 내용 블록, 크기·소유자·권한 같은 메타데이터, 디렉터리의 이름-파일 연결을 관리합니다. 디렉터리는 파일을 담는 특별한 이름 공간입니다."
+    text: "`/home/a/note.txt`를 열 때는 루트부터 home, a, note.txt의 이름을 차례로 찾습니다. 디렉터리는 이름을 파일·하위 디렉터리에 연결하고, 메타데이터는 크기와 권한 같은 정보를 담습니다. 파일 기술자(file descriptor)는 열린 파일을 가리키는 프로세스별 핸들입니다."
 tags: [filesystem, file, directory]
 difficulty: 2

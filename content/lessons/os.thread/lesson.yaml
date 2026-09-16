@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.thread
-revision: 1
+revision: 2
 track: operating-systems
 title: 스레드와 동시성
 description: 프로세스 안에서 주소 공간을 공유하는 스레드와 동시 실행의 기본 위험을 이해한다.

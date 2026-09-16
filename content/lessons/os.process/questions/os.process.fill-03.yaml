@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: os.process.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "프로세스와 실행 단위에서 핵심이 되는 용어는 ___입니다."
+    text: "같은 실행 파일을 두 번 실행하면 서로 다른 ___가 생길 수 있습니다."
 choices:
   - "프로세스"
-  - "논리 게이트"
-  - "서브넷"
+  - "파일 형식"
+  - "명령어 집합"
 acceptedAnswers:
   - "프로세스"
 explanation:
   - type: text
-    text: "프로세스은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "프로세스는 실행 중인 프로그램의 주소 공간, 레지스터 상태, 열린 파일과 같은 자원을 묶은 운영체제 관리 단위입니다. 같은 프로그램도 여러 프로세스로 실행될 수 있습니다."
+    text: "같은 브라우저 프로그램을 두 번 실행해도 각각 주소 공간, 실행 레지스터, 열린 파일 상태를 가진 별도 프로세스가 될 수 있습니다. 실행 파일은 디스크의 데이터이고 프로세스는 운영체제가 관리하는 실행 상태와 자원의 묶음입니다."
 tags: [process, address-space, lifecycle]
 difficulty: 1

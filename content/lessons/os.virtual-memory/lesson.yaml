@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.virtual-memory
-revision: 1
+revision: 2
 track: operating-systems
 title: 가상 메모리
 description: 가상 주소와 페이지를 이용해 프로세스별 큰 주소 공간과 메모리 보호를 제공하는 방식을 배운다.

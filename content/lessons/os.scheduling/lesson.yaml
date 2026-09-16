@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.scheduling
-revision: 1
+revision: 2
 track: operating-systems
 title: CPU 스케줄링
 description: 준비 큐의 작업을 CPU에 배치하고 지연과 공정성 사이를 조정하는 스케줄링을 배운다.

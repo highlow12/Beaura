@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: os.kernel-space.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "커널 공간과 사용자 공간에서 핵심이 되는 용어는 ___입니다."
+    text: "응용 프로그램이 제한된 권한으로 실행되는 영역은 ___입니다."
 choices:
   - "사용자 공간"
-  - "캐시 라인"
-  - "링크 계층"
+  - "커널 코드 영역"
+  - "장치 레지스터"
 acceptedAnswers:
   - "사용자 공간"
 explanation:
   - type: text
-    text: "사용자 공간은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "사용자 공간은 일반 프로그램이 제한된 권한으로 실행되는 영역이고, 커널 공간은 운영체제 핵심 코드가 하드웨어와 보호 자원에 접근하는 영역입니다."
+    text: "응용 프로그램이 파일을 쓰려면 제한된 사용자 공간에서 커널에 요청합니다. CPU가 허용된 진입점을 통해 커널 모드로 전환하고 커널이 인자와 권한을 확인한 뒤 서비스를 수행합니다. 사용자 공간 코드가 커널 메모리를 직접 고치는 것은 허용되지 않습니다."
 tags: [kernel, user-space, protection]
 difficulty: 1

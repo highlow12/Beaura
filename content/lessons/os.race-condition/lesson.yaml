@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.race-condition
-revision: 1
+revision: 2
 track: operating-systems
 title: 경쟁 조건
 description: 공유 상태를 여러 실행 흐름이 동시에 읽고 쓸 때 결과가 실행 순서에 의존하는 문제를 이해한다.

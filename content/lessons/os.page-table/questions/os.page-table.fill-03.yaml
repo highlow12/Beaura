@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: os.page-table.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "페이지 테이블과 TLB에서 핵심이 되는 용어는 ___입니다."
+    text: "TLB에서 변환을 찾지 못했을 때 확인하는 매핑 자료구조는 ___입니다."
 choices:
-  - "TLB"
-  - "ALU"
-  - "프레임버퍼"
+  - "페이지 테이블"
+  - "우선순위 큐"
+  - "파일 이름"
 acceptedAnswers:
-  - "TLB"
+  - "페이지 테이블"
 explanation:
   - type: text
-    text: "TLB은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "페이지 테이블은 가상 페이지 번호와 물리 프레임 번호, 읽기·쓰기·실행 권한을 기록합니다. TLB는 자주 쓰는 변환을 저장하는 작은 캐시입니다."
+    text: "가상 주소의 페이지 번호가 TLB에 있으면 캐시된 프레임 번호와 권한을 이용해 접근합니다. TLB에 없으면 페이지 테이블을 확인합니다. 이때 유효한 매핑을 찾으면 TLB를 채울 수 있지만, 페이지가 RAM에 없다면 페이지 폴트를 처리해야 합니다. 매핑이 없거나 권한이 없으면 접근 오류가 될 수도 있습니다."
 tags: [page-table, tlb, mmu]
 difficulty: 3

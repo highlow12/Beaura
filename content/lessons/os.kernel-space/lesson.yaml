@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.kernel-space
-revision: 1
+revision: 2
 track: operating-systems
 title: 커널 공간과 사용자 공간
 description: 운영체제가 권한이 필요한 작업과 일반 프로그램을 분리하는 이유를 이해한다.

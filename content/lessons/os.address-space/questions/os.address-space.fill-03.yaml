@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: os.address-space.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "프로세스 주소 공간에서 핵심이 되는 용어는 ___입니다."
+    text: "두 프로세스의 같은 가상 주소가 서로 다른 물리 위치를 가리킬 수 있는 이유는 ___이 다르기 때문입니다."
 choices:
-  - "가상 주소"
-  - "MAC 주소"
-  - "opcode"
+  - "페이지 매핑"
+  - "파일 이름"
+  - "CPU 주파수"
 acceptedAnswers:
-  - "가상 주소"
+  - "페이지 매핑"
 explanation:
   - type: text
-    text: "가상 주소은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "프로세스 주소 공간은 해당 프로세스가 사용할 수 있는 가상 주소의 범위입니다. 일반적으로 코드, 전역 데이터, 동적으로 늘어나는 힙, 함수 호출이 쌓이는 스택 영역으로 구분합니다."
+    text: "같은 가상 주소 `0x1000`을 두 프로세스가 사용해도 서로 다른 물리 프레임에 매핑하면 데이터가 섞이지 않습니다. 코드 영역(text)은 실행할 명령어, 힙(heap)은 동적 할당, 스택(stack)은 호출 프레임을 담습니다. 주소를 읽거나 쓸 때는 변환 결과뿐 아니라 해당 접근 권한도 확인합니다."
 tags: [process, virtual-memory, address-space]
 difficulty: 2

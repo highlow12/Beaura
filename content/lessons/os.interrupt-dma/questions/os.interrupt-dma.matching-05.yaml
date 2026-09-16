@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: os.interrupt-dma.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,7 +9,7 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "interrupt"
+        text: "인터럽트"
   - id: left-b
     content:
       - type: text
@@ -17,7 +17,7 @@ leftItems:
   - id: left-c
     content:
       - type: text
-        text: "handler"
+        text: "인터럽트 핸들러"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "interrupt은 CPU에 비동기 사건을 알리는 신호, DMA은 CPU 개입을 줄이는 메모리-장치 전송입니다."
-  - type: text
-    text: "handler은 인터럽트 사건을 처리하는 커널 코드을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "인터럽트은 CPU에 비동기 사건을 알리는 신호, DMA은 CPU 개입을 줄이는 메모리-장치 전송, 인터럽트 핸들러은 인터럽트 사건을 처리하는 커널 코드에 해당합니다."
 tags: [interrupt, dma, io]
 difficulty: 2
