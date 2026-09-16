@@ -23,9 +23,15 @@
 
   type SwipeStart = { pointerId: number; x: number; y: number };
   type PrerequisiteItem = { trackTitle: string; lessonTitle: string };
+  type UnlockSummary = {
+    opensExternalTrack: boolean;
+    opensExternalLesson: boolean;
+  };
   type LessonPopover = {
     lessonId: string;
     missingPrerequisites: PrerequisiteItem[];
+    opensExternalTrack: boolean;
+    opensExternalLesson: boolean;
     left: number;
     top: number;
     arrowLeft: number;
@@ -321,6 +327,37 @@
     });
   }
 
+  function completionUnlockSummary(lessonId: string): UnlockSummary {
+    if (!data || !selectedTrack) {
+      return { opensExternalTrack: false, opensExternalLesson: false };
+    }
+
+    const unlockedIds = new Set(
+      data.curriculum.nodes.flatMap((node) => {
+        const missing = missingPrerequisites(
+          node.lesson,
+          data!.curriculum,
+          data!.snapshot.lessonStates,
+        );
+        return missing.length === 1 && missing[0] === lessonId
+          ? [node.lesson]
+          : [];
+      }),
+    );
+    const visibleTrackIds = new Set(tracks.map((track) => track.id));
+    let opensExternalTrack = false;
+    let opensExternalLesson = false;
+
+    for (const lesson of data.lessons) {
+      if (!unlockedIds.has(lesson.id) || lesson.track === selectedTrack.id)
+        continue;
+      if (visibleTrackIds.has(lesson.track)) opensExternalLesson = true;
+      else opensExternalTrack = true;
+    }
+
+    return { opensExternalTrack, opensExternalLesson };
+  }
+
   function handleLessonClick(event: MouseEvent, lessonId: string) {
     selectLesson(lessonId);
     if (suppressPopoverUntilClick) {
@@ -335,9 +372,11 @@
       Math.max(12, anchor - width / 2),
       window.innerWidth - width - 12,
     );
+    const unlockSummary = completionUnlockSummary(lessonId);
     lessonPopover = {
       lessonId,
       missingPrerequisites: prerequisiteItems(lessonId),
+      ...unlockSummary,
       left,
       top: rect.top - 8,
       arrowLeft: anchor - left,
@@ -658,6 +697,16 @@
             <li><strong>{item.trackTitle}</strong> · {item.lessonTitle}</li>
           {/each}
         </ul>
+      </div>
+    {/if}
+    {#if lessonPopover.opensExternalTrack || lessonPopover.opensExternalLesson}
+      <div class="popover-unlocks" aria-label="완료 후 열리는 학습">
+        {#if lessonPopover.opensExternalTrack}
+          <p>이 레슨을 완료하면 외부의 다른 트랙이 열립니다.</p>
+        {/if}
+        {#if lessonPopover.opensExternalLesson}
+          <p>이 레슨을 완료하면 외부의 다른 레슨이 열립니다.</p>
+        {/if}
       </div>
     {/if}
     {#if popoverStatus !== "locked"}
@@ -1158,7 +1207,8 @@
     color: var(--success);
   }
 
-  .popover-prerequisites {
+  .popover-prerequisites,
+  .popover-unlocks {
     display: grid;
     gap: 0.25rem;
     margin-top: 0.65rem;
@@ -1187,6 +1237,14 @@
 
   .popover-prerequisites li strong {
     color: var(--text);
+  }
+
+  .popover-unlocks p {
+    margin: 0;
+    color: var(--primary-strong);
+    font-size: 0.76rem;
+    font-weight: 650;
+    line-height: 1.4;
   }
 
   .popover-action {
