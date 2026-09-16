@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.socket.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "bind은 소켓을 로컬 주소·포트에 연결하는 단계, listen은 서버가 연결 요청을 대기하게 하는 단계입니다."
-  - type: text
-    text: "accept은 대기 큐에서 연결을 꺼내는 단계을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "bind은 소켓을 로컬 주소·포트에 연결하는 단계, listen은 서버가 연결 요청을 대기하게 하는 단계, accept은 대기 큐에서 연결을 꺼내는 단계에 해당합니다."
 tags: [socket, client-server, api]
 difficulty: 2

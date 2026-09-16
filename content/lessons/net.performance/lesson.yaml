@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.performance
-revision: 1
+revision: 2
 track: networks
 title: 지연·대역폭·손실
 description: 네트워크 성능을 지연, 대역폭, 처리량, 패킷 손실로 나누어 분석하는 법을 배운다.

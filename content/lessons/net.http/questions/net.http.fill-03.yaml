@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: net.http.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "HTTP 요청과 응답에서 핵심이 되는 용어는 ___입니다."
+    text: "HTTP 응답에서 본문의 형식을 알려 주는 헤더는 ___입니다."
 choices:
-  - "상태 코드"
-  - "MAC 주소"
-  - "페이지 테이블"
+  - "Content-Type"
+  - "Host"
+  - "GET"
 acceptedAnswers:
-  - "상태 코드"
+  - "Content-Type"
 explanation:
   - type: text
-    text: "상태 코드은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "HTTP는 요청 메서드, 대상 경로, 헤더, 선택적 본문과 서버의 상태 코드·헤더·본문으로 구성된 요청-응답 프로토콜입니다."
+    text: "`GET /lessons/1`은 자원 읽기를 요청하고 응답 `200`은 성공을 뜻합니다. 응답의 `Content-Type: application/json`은 본문 형식을, `404`는 요청 대상 자원을 찾지 못했음을 나타냅니다. 헤더와 본문을 구분해 읽으면 상태 코드와 데이터의 역할이 명확해집니다."
 tags: [http, web, request-response]
 difficulty: 1

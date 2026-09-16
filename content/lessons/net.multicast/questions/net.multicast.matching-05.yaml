@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.multicast.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "unicast"
+        text: "유니캐스트"
   - id: left-b
     content:
       - type: text
-        text: "broadcast"
+        text: "브로드캐스트"
   - id: left-c
     content:
       - type: text
-        text: "multicast"
+        text: "멀티캐스트"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "unicast은 한 송신자와 한 수신자, broadcast은 같은 브로드캐스트 영역의 모든 수신자입니다."
-  - type: text
-    text: "multicast은 특정 그룹에 가입한 수신자 집합을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "유니캐스트은 한 송신자와 한 수신자, 브로드캐스트은 같은 브로드캐스트 영역의 모든 수신자, 멀티캐스트은 특정 그룹에 가입한 수신자 집합에 해당합니다."
 tags: [broadcast, multicast, unicast]
 difficulty: 1

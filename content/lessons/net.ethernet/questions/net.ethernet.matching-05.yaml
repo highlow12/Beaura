@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.ethernet.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "frame"
+        text: "프레임"
   - id: left-b
     content:
       - type: text
-        text: "MAC"
+        text: "MAC 주소"
   - id: left-c
     content:
       - type: text
-        text: "switch"
+        text: "스위치"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "frame은 링크 계층에서 전달하는 캡슐화 단위, MAC은 링크 인터페이스를 식별하는 주소입니다."
-  - type: text
-    text: "switch은 LAN 프레임을 포트 사이에 전달하는 장치을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "프레임은 링크 계층에서 전달하는 캡슐화 단위, MAC 주소은 링크 인터페이스를 식별하는 주소, 스위치은 LAN 프레임을 포트 사이에 전달하는 장치에 해당합니다."
 tags: [ethernet, mac, link-layer]
 difficulty: 1

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.performance.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "latency"
+        text: "지연"
   - id: left-b
     content:
       - type: text
-        text: "bandwidth"
+        text: "대역폭"
   - id: left-c
     content:
       - type: text
-        text: "throughput"
+        text: "처리량"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "latency은 메시지가 도착하기까지 걸리는 시간, bandwidth은 단위 시간당 가능한 최대 전송량입니다."
-  - type: text
-    text: "throughput은 실제로 성공해 전달된 데이터 속도을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "지연은 메시지가 도착하기까지 걸리는 시간, 대역폭은 단위 시간당 가능한 최대 전송량, 처리량은 실제로 성공해 전달된 데이터 속도에 해당합니다."
 tags: [network-performance, latency, bandwidth]
 difficulty: 2

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.http.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "method"
+        text: "메서드"
   - id: left-b
     content:
       - type: text
-        text: "status-code"
+        text: "상태 코드"
   - id: left-c
     content:
       - type: text
-        text: "header"
+        text: "헤더"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "method은 요청의 의도와 동작을 나타내는 동사, status-code은 처리 결과를 요약하는 숫자입니다."
-  - type: text
-    text: "header은 메시지 메타데이터를 담는 필드을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "메서드은 요청의 의도와 동작을 나타내는 동사, 상태 코드은 처리 결과를 요약하는 숫자, 헤더은 메시지 메타데이터를 담는 필드에 해당합니다."
 tags: [http, web, request-response]
 difficulty: 1

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.ipv4
-revision: 1
+revision: 2
 track: networks
 title: IP 주소와 IPv4 패킷
 description: IP 주소가 네트워크와 호스트를 구분하고 IPv4 패킷이 홉 사이를 이동하는 방식을 익힌다.

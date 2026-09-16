@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: net.switch.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "스위치와 LAN에서 핵심이 되는 용어는 ___입니다."
+    text: "스위치가 새 프레임에서 MAC 주소와 입력 포트를 학습하는 필드는 ___ MAC입니다."
 choices:
-  - "플러딩"
-  - "세마포어"
-  - "부동소수점"
+  - "출발지"
+  - "목적지"
+  - "게이트웨이"
 acceptedAnswers:
-  - "플러딩"
+  - "출발지"
 explanation:
   - type: text
-    text: "플러딩은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "스위치는 링크 계층에서 MAC 주소 학습 표를 만들고 프레임을 해당 포트로 전달합니다. 목적지를 아직 모르거나 브로드캐스트이면 같은 VLAN의 여러 포트로 플러딩할 수 있습니다."
+    text: "스위치가 포트 1에서 출발지 A, 목적지 B인 프레임을 받으면 먼저 A→포트 1을 학습합니다. B의 위치를 모르면 입력 포트를 제외하고 같은 VLAN의 다른 포트로 플러딩합니다. 나중에 B의 출발지 프레임을 보면 B의 포트를 학습해 해당 목적지로만 전달할 수 있습니다."
 tags: [switch, lan, mac-table]
 difficulty: 2

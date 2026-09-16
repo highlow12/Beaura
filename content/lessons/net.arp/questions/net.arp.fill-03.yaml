@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: net.arp.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "ARP와 로컬 주소 찾기에서 핵심이 되는 용어는 ___입니다."
+    text: "다른 네트워크의 서버로 보낼 때 첫 이더넷 프레임에 필요한 MAC은 ___의 MAC입니다."
 choices:
-  - "ARP"
-  - "HTTP"
-  - "DMA"
+  - "기본 게이트웨이"
+  - "최종 서버"
+  - "DNS 권한 서버"
 acceptedAnswers:
-  - "ARP"
+  - "기본 게이트웨이"
 explanation:
   - type: text
-    text: "ARP은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "ARP는 로컬 IPv4 네트워크에서 IP 주소에 대응하는 MAC 주소를 질의하는 프로토콜입니다. 결과는 ARP 캐시에 일정 시간 저장되어 반복 브로드캐스트를 줄입니다."
+    text: "호스트 A가 같은 LAN의 `192.168.1.20`으로 보내는데 MAC을 모른다고 합시다. A는 로컬 링크에 ARP 요청을 브로드캐스트하고, 해당 IP의 장치가 응답하면 IP→MAC 대응을 캐시에 저장합니다. 목적지가 다른 네트워크라면 A는 최종 서버 대신 기본 게이트웨이의 MAC을 찾아 첫 프레임을 보냅니다."
 tags: [arp, ipv4, mac]
 difficulty: 2

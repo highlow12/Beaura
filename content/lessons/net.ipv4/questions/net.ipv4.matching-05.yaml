@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.ipv4.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "ip-address"
+        text: "IP 주소"
   - id: left-b
     content:
       - type: text
-        text: "router"
+        text: "라우터"
   - id: left-c
     content:
       - type: text
-        text: "ttl"
+        text: "TTL"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "ip-address은 인터넷 계층에서 호스트·네트워크를 식별하는 주소, router은 서로 다른 네트워크 사이에서 패킷을 전달하는 장치입니다."
-  - type: text
-    text: "ttl은 홉 수를 제한하는 IP 헤더 필드을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "IP 주소은 인터넷 계층에서 호스트·네트워크를 식별하는 주소, 라우터은 서로 다른 네트워크 사이에서 패킷을 전달하는 장치, TTL은 홉 수를 제한하는 IP 헤더 필드에 해당합니다."
 tags: [ip, ipv4, internet-layer]
 difficulty: 2

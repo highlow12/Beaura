@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: net.ipv4.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "IP 주소와 IPv4 패킷에서 핵심이 되는 용어는 ___입니다."
+    text: "라우터를 지날 때 감소해 무한 순환을 막는 IP 헤더 값은 ___입니다."
 choices:
   - "TTL"
+  - "MAC"
   - "포트"
-  - "가수"
 acceptedAnswers:
   - "TTL"
 explanation:
   - type: text
-    text: "TTL은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "IPv4 주소는 32비트 값으로 네트워크 부분과 호스트 부분을 구분해 사용합니다. IP 패킷은 출발지·목적지 주소와 TTL 같은 헤더를 가지고 라우터를 거칩니다."
+    text: "호스트가 다른 네트워크로 패킷을 보내면 목적지 IP는 최종 서버를 가리킨 채 첫 프레임을 게이트웨이로 보냅니다. 각 라우터는 목적지 IP로 다음 경로를 고르고 TTL을 하나 줄입니다. TTL이 소진되면 패킷을 폐기해 경로 순환이 영원히 이어지지 않게 합니다."
 tags: [ip, ipv4, internet-layer]
 difficulty: 2

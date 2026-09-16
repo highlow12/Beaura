@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.transport
-revision: 1
+revision: 2
 track: networks
 title: UDP와 포트
 description: 전송 계층의 포트와 UDP 데이터그램이 제공하는 단순한 전달 모델을 배운다.

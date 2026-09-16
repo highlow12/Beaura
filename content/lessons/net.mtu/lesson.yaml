@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.mtu
-revision: 1
+revision: 2
 track: networks
 title: MTU와 단편화
 description: 링크의 MTU와 IP 패킷 크기, 단편화·경로 MTU 발견의 관계를 이해한다.

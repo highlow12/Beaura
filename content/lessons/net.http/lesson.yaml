@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.http
-revision: 1
+revision: 2
 track: networks
 title: HTTP 요청과 응답
 description: 웹의 HTTP 메서드·상태 코드·헤더·본문이 요청과 응답을 구성하는 방식을 배운다.

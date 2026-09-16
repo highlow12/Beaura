@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.routing.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "routing-table"
+        text: "라우팅 표"
   - id: left-b
     content:
       - type: text
-        text: "next-hop"
+        text: "다음 홉"
   - id: left-c
     content:
       - type: text
-        text: "default-route"
+        text: "기본 경로"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "routing-table은 목적지와 전달 방향을 기록한 표, next-hop은 패킷을 넘길 다음 라우터 또는 장치입니다."
-  - type: text
-    text: "default-route은 더 구체적인 일치가 없을 때 쓰는 경로을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "라우팅 표은 목적지와 전달 방향을 기록한 표, 다음 홉은 패킷을 넘길 다음 라우터 또는 장치, 기본 경로은 더 구체적인 일치가 없을 때 쓰는 경로에 해당합니다."
 tags: [routing, router, forwarding]
 difficulty: 2

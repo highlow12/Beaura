@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: net.protocol-model.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "패킷과 계층 모델에서 핵심이 되는 용어는 ___입니다."
+    text: "상위 데이터에 각 계층이 헤더를 붙이는 과정은 ___입니다."
 choices:
   - "캡슐화"
-  - "오버플로"
-  - "페이지 폴트"
+  - "역캡슐화"
+  - "주소 해제"
 acceptedAnswers:
   - "캡슐화"
 explanation:
   - type: text
-    text: "캡슐화은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "프로토콜은 통신 주체가 메시지 형식과 순서를 합의한 규칙이고, 패킷은 전송을 위해 헤더와 데이터로 나눈 단위입니다. 계층 모델은 주소 지정·전달·응용 의미를 분리합니다."
+    text: "웹 요청의 HTTP 메시지가 TCP 세그먼트의 데이터가 되고, 다시 IP 패킷과 이더넷 프레임에 담깁니다. 보내는 쪽은 계층마다 헤더를 붙이는 캡슐화를 하고, 받는 쪽은 자기 계층의 헤더를 해석한 뒤 상위 계층으로 넘깁니다. 링크의 MAC 주소와 인터넷의 IP 주소는 담당 범위가 다릅니다."
 tags: [network, protocol, encapsulation]
 difficulty: 1

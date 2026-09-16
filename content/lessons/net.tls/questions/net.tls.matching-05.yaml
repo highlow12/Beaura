@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.tls.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "certificate"
+        text: "인증서"
   - id: left-b
     content:
       - type: text
-        text: "session-key"
+        text: "세션 키"
   - id: left-c
     content:
       - type: text
-        text: "certificate-authority"
+        text: "인증기관"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "certificate은 공개키와 서버 신원을 연결하는 증명서, session-key은 연결 데이터 암호화에 사용하는 임시 대칭 키입니다."
-  - type: text
-    text: "certificate-authority은 인증서 서명을 검증하는 신뢰 주체을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "인증서은 공개키와 서버 신원을 연결하는 증명서, 세션 키은 연결 데이터 암호화에 사용하는 임시 대칭 키, 인증기관은 인증서 서명을 검증하는 신뢰 주체에 해당합니다."
 tags: [tls, https, security]
 difficulty: 2

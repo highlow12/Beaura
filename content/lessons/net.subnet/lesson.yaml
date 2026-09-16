@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.subnet
-revision: 1
+revision: 2
 track: networks
 title: 서브넷과 CIDR
 description: 네트워크 프리픽스와 호스트 범위를 계산해 IPv4 주소를 서브넷으로 나누는 법을 배운다.

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.routing.single-01
-revision: 1
+revision: 2
 type: single-choice
 prompt:
   - type: text
@@ -13,7 +13,7 @@ options:
   - id: wrong-a
     content:
       - type: text
-        text: "라우터는 패킷의 출발지 프로그램을 실행해 경로를 스스로 계산하지 않는다."
+        text: "라우터는 패킷의 출발지 프로그램을 실행해서 다음 홉을 결정한다."
   - id: wrong-b
     content:
       - type: text

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.mtu.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -13,7 +13,7 @@ leftItems:
   - id: left-b
     content:
       - type: text
-        text: "fragment"
+        text: "단편"
   - id: left-c
     content:
       - type: text
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "MTU은 링크가 운반할 수 있는 최대 단위 크기, fragment은 큰 패킷을 나눈 조각입니다."
-  - type: text
-    text: "MSS은 TCP가 한 세그먼트에 담는 데이터 크기 한계을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "MTU은 링크가 운반할 수 있는 최대 단위 크기, 단편은 큰 패킷을 나눈 조각, MSS은 TCP가 한 세그먼트에 담는 데이터 크기 한계에 해당합니다."
 tags: [mtu, fragmentation, ip]
 difficulty: 3

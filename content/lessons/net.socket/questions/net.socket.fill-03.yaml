@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: net.socket.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "소켓과 클라이언트·서버에서 핵심이 되는 용어는 ___입니다."
+    text: "서버가 새 TCP 연결에 대응하는 소켓을 얻는 호출은 ___입니다."
 choices:
-  - "소켓"
-  - "페이지 프레임"
-  - "가산기"
+  - "accept"
+  - "bind"
+  - "listen"
 acceptedAnswers:
-  - "소켓"
+  - "accept"
 explanation:
   - type: text
-    text: "소켓은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "소켓은 프로세스가 네트워크로 데이터를 보내고 받는 추상적인 통신 종단점입니다. 서버는 주소에 bind·listen·accept하고, 클라이언트는 connect한 뒤 send·receive를 사용합니다."
+    text: "서버는 주소와 포트에 bind하고 listen으로 연결을 기다립니다. 클라이언트의 connect 요청이 오면 accept가 별도의 연결 소켓을 돌려주므로, 리스닝 소켓은 다른 연결 요청을 계속 받을 수 있습니다. 연결 소켓으로 데이터를 읽고 쓰며 read는 요청한 바이트 수보다 적게 반환할 수도 있습니다."
 tags: [socket, client-server, api]
 difficulty: 2

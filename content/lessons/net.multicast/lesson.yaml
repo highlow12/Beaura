@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.multicast
-revision: 1
+revision: 2
 track: networks
 title: 브로드캐스트와 멀티캐스트
 description: 하나·전체·그룹 수신자를 대상으로 하는 유니캐스트·브로드캐스트·멀티캐스트를 비교한다.

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.socket
-revision: 1
+revision: 2
 track: networks
 title: 소켓과 클라이언트·서버
 description: 소켓 API가 응용 프로그램의 통신 종단점을 만들고 연결을 관리하는 흐름을 익힌다.

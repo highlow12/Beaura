@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: net.subnet.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "서브넷과 CIDR에서 핵심이 되는 용어는 ___입니다."
+    text: "IPv4 `/24` 서브넷에서 호스트 부분의 비트 수는 ___입니다."
 choices:
-  - "서브넷 마스크"
-  - "캐시 태그"
-  - "시스템 호출"
+  - "8"
+  - "24"
+  - "32"
 acceptedAnswers:
-  - "서브넷 마스크"
+  - "8"
 explanation:
   - type: text
-    text: "서브넷 마스크은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "CIDR 표기의 `/n`은 앞 n비트가 네트워크 프리픽스임을 뜻합니다. 나머지 비트가 호스트 공간이 되어 같은 서브넷의 주소 범위를 결정합니다."
+    text: "`192.168.1.0/24`는 앞 24비트가 네트워크, 뒤 8비트가 호스트입니다. 따라서 이 전통적인 서브넷에서는 `192.168.1.0`이 네트워크 주소, `192.168.1.255`가 브로드캐스트 주소입니다. 두 주소의 네트워크 부분이 같은지 비교하려면 같은 마스크로 각각 AND합니다."
 tags: [subnet, cidr, ipv4]
 difficulty: 2

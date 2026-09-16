@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: net.tls.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "TLS와 인증서에서 핵심이 되는 용어는 ___입니다."
+    text: "TLS에서 접속한 도메인과 비교해 서버 신원을 확인할 때 살피는 것은 ___입니다."
 choices:
-  - "인증서"
-  - "서브넷"
-  - "컨텍스트 스위치"
+  - "인증서의 도메인 이름"
+  - "TCP 포트의 홀짝"
+  - "패킷 TTL"
 acceptedAnswers:
-  - "인증서"
+  - "인증서의 도메인 이름"
 explanation:
   - type: text
-    text: "인증서은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "TLS는 핸드셰이크에서 암호 알고리즘과 키를 협상하고 인증서로 서버 공개키의 신원을 검증한 뒤, 세션 키로 데이터를 암호화하는 프로토콜입니다."
+    text: "브라우저는 서버 인증서의 신뢰 경로와 접속 도메인 이름을 확인합니다. 핸드셰이크에서 키를 합의한 뒤 대칭 세션 키로 데이터를 암호화하고 무결성도 검사합니다. 인증서가 만료되거나 도메인이 다르면 암호화 통신이라도 신뢰할 수 있는 서버라고 판단하지 않습니다."
 tags: [tls, https, security]
 difficulty: 2

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.routing
-revision: 1
+revision: 2
 track: networks
 title: 라우팅과 다음 홉
 description: 라우터가 목적지 프리픽스와 라우팅 표로 다음 홉을 선택하는 원리를 이해한다.

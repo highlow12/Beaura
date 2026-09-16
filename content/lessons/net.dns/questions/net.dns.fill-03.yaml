@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: net.dns.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "DNS 이름 해석에서 핵심이 되는 용어는 ___입니다."
+    text: "도메인 이름에 대응하는 IPv4 주소를 담는 DNS 레코드는 ___입니다."
 choices:
-  - "TTL"
-  - "opcode"
-  - "뮤텍스"
+  - "A"
+  - "AAAA"
+  - "MX"
 acceptedAnswers:
-  - "TTL"
+  - "A"
 explanation:
   - type: text
-    text: "TTL은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "DNS는 도메인 이름과 레코드를 계층적으로 관리하는 분산 이름 시스템입니다. 리졸버는 캐시를 먼저 확인하고 필요하면 루트·TLD·권한 서버를 따라 질의합니다."
+    text: "브라우저가 이름 `www.example.com`의 IP를 찾을 때 캐시된 A 또는 AAAA 레코드가 TTL 안에 있으면 다시 권한 서버까지 질의하지 않아도 됩니다. A 레코드는 IPv4, AAAA 레코드는 IPv6 주소를 담습니다. 캐시가 만료되면 리졸버가 위임을 따라 새 응답을 얻습니다."
 tags: [dns, name-resolution, cache]
 difficulty: 2

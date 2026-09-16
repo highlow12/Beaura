@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.arp
-revision: 1
+revision: 2
 track: networks
 title: ARP와 로컬 주소 찾기
 description: 같은 IPv4 네트워크에서 IP 주소를 MAC 주소로 찾는 ARP의 역할과 캐시를 배운다.

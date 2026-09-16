@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: net.mtu.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "MTU와 단편화에서 핵심이 되는 용어는 ___입니다."
+    text: "MTU 1500바이트와 IPv4 헤더 20바이트라면 단편화 없이 실을 IP 데이터의 최대 크기는 ___바이트입니다."
 choices:
-  - "MTU"
-  - "TTL"
-  - "락 순서"
+  - "1480"
+  - "1500"
+  - "1520"
 acceptedAnswers:
-  - "MTU"
+  - "1480"
 explanation:
   - type: text
-    text: "MTU은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "MTU(Maximum Transmission Unit)는 링크가 한 프레임에 담을 수 있는 IP payload의 최대 크기와 관련된 한계입니다. 경로의 가장 작은 MTU가 종단 간 전송 크기를 제한합니다."
+    text: "이더넷 링크의 MTU가 1500바이트라면 일반적인 IPv4 패킷은 IP 헤더와 데이터의 합이 그 크기를 넘지 않아야 한 프레임에 실립니다. 예를 들어 IP 헤더가 20바이트면 남는 IP 데이터는 최대 1480바이트입니다. IPv4 패킷이 더 크면 조건에 따라 단편화하거나 DF가 설정된 경우 오류를 알릴 수 있습니다."
 tags: [mtu, fragmentation, ip]
 difficulty: 3

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.protocol-model.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "protocol"
+        text: "프로토콜"
   - id: left-b
     content:
       - type: text
-        text: "packet"
+        text: "패킷"
   - id: left-c
     content:
       - type: text
-        text: "layer"
+        text: "계층"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "protocol은 메시지 형식과 교환 순서의 규칙, packet은 헤더와 payload를 가진 전달 단위입니다."
-  - type: text
-    text: "layer은 한 종류의 통신 책임을 묶은 단계을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "프로토콜은 메시지 형식과 교환 순서의 규칙, 패킷은 헤더와 payload를 가진 전달 단위, 계층은 한 종류의 통신 책임을 묶은 단계에 해당합니다."
 tags: [network, protocol, encapsulation]
 difficulty: 1

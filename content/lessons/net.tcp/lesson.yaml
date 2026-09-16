@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.tcp
-revision: 1
+revision: 2
 track: networks
 title: TCP 연결과 신뢰성
 description: TCP 3-way handshake와 순서·확인·재전송으로 신뢰성 있는 바이트 스트림을 만드는 과정을 이해한다.

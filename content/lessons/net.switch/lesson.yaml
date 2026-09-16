@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.switch
-revision: 1
+revision: 2
 track: networks
 title: 스위치와 LAN
 description: 스위치의 MAC 학습·포워딩·플러딩으로 LAN이 동작하는 과정을 이해한다.

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.transport.matching-05
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -9,15 +9,15 @@ leftItems:
   - id: left-a
     content:
       - type: text
-        text: "port"
+        text: "포트"
   - id: left-b
     content:
       - type: text
-        text: "datagram"
+        text: "데이터그램"
   - id: left-c
     content:
       - type: text
-        text: "best-effort"
+        text: "최선형 전달"
 rightItems:
   - id: right-a
     content:
@@ -40,8 +40,6 @@ correctPairs:
     rightId: right-c
 explanation:
   - type: text
-    text: "port은 호스트 안의 통신 종단점 식별자, datagram은 UDP의 독립적인 전송 단위입니다."
-  - type: text
-    text: "best-effort은 전달·순서를 기본 보장하지 않는 모델을 뜻하므로 세 역할을 구분해야 합니다."
+    text: "포트은 호스트 안의 통신 종단점 식별자, 데이터그램은 UDP의 독립적인 전송 단위, 최선형 전달은 전달·순서를 기본 보장하지 않는 모델에 해당합니다."
 tags: [udp, transport, port]
 difficulty: 1

@@ -1,20 +1,18 @@
 schemaVersion: 1
 id: net.multicast.fill-03
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: "브로드캐스트와 멀티캐스트에서 핵심이 되는 용어는 ___입니다."
+    text: "그룹에 가입한 수신자들에게 보내는 방식은 ___입니다."
 choices:
   - "멀티캐스트"
-  - "페이지 폴트"
-  - "가상 함수"
+  - "유니캐스트"
+  - "브로드캐스트"
 acceptedAnswers:
   - "멀티캐스트"
 explanation:
   - type: text
-    text: "멀티캐스트은(는) 이 레슨에서 다룬 핵심 개념입니다."
-  - type: text
-    text: "유니캐스트는 한 송신자와 한 수신자, 브로드캐스트는 같은 영역의 모든 수신자, 멀티캐스트는 특정 그룹에 가입한 수신자를 대상으로 합니다."
+    text: "한 송신자가 A에게만 보내면 유니캐스트, 같은 브로드캐스트 영역 전체에 알리면 브로드캐스트입니다. 그룹 가입자 A와 B에게만 전달하도록 설정하면 멀티캐스트입니다. 스위치·라우터의 그룹 관리가 없으면 복제 범위가 구현에 따라 달라질 수 있습니다."
 tags: [broadcast, multicast, unicast]
 difficulty: 1

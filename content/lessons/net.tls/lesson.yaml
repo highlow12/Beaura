@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.tls
-revision: 1
+revision: 2
 track: networks
 title: TLS와 인증서
 description: TLS가 암호화·무결성·서버 인증으로 HTTPS를 보호하는 기본 흐름을 이해한다.

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: net.dns
-revision: 1
+revision: 2
 track: networks
 title: DNS 이름 해석
 description: 도메인 이름을 IP 주소로 찾는 DNS 질의와 캐시 계층을 이해한다.
