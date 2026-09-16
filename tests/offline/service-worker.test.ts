@@ -3,7 +3,7 @@ import vm from 'node:vm';
 import ts from 'typescript';
 import { describe, expect, it } from 'vitest';
 
-function worker() {
+function worker(options: { rejectRuntimeWrite?: boolean } = {}) {
   const handlers = new Map<string,(event: Record<string,unknown>)=>void>();
   const stored = new Map<string,Map<string,Response>>();
   const normalize=(request:string|URL|Request)=>new URL(typeof request==='string'?request:request instanceof URL?request.href:request.url,'https://app.test/').href;
@@ -12,7 +12,7 @@ function worker() {
   const cachesMock={
     open:async(name:string)=>{
       if(!stored.has(name))stored.set(name,new Map());const cache=stored.get(name)!;
-      return {match:async(r:string|URL|Request)=>cache.get(normalize(r))?.clone(),put:async(r:string|URL|Request,value:Response)=>{cache.set(normalize(r),value);},add:async(r:string|URL|Request)=>{cache.set(normalize(r),await fetcher(r));},addAll:async(items:string[])=>{largestAddAllBatch=Math.max(largestAddAllBatch,items.length);for(const item of items)cache.set(normalize(item),await fetcher(item));}};
+      return {match:async(r:string|URL|Request)=>cache.get(normalize(r))?.clone(),put:async(r:string|URL|Request,value:Response)=>{if(options.rejectRuntimeWrite)throw new Error('QuotaExceededError');cache.set(normalize(r),value);},add:async(r:string|URL|Request)=>{cache.set(normalize(r),await fetcher(r));},addAll:async(items:string[])=>{largestAddAllBatch=Math.max(largestAddAllBatch,items.length);for(const item of items)cache.set(normalize(item),await fetcher(item));}};
     },
     keys:async()=>[...stored.keys()],delete:async(name:string)=>stored.delete(name)
   };
@@ -33,5 +33,9 @@ describe('offline installed app',()=>{
   });
   it('activates an update only after learner confirmation',async()=>{
     const sw=worker();await sw.lifecycle('install');expect(sw.activated()).toBe(false);await sw.lifecycle('message',{type:'ACTIVATE_UPDATE'});expect(sw.activated()).toBe(true);
+  });
+  it('serves a successful network response when runtime caching is full',async()=>{
+    const sw=worker({rejectRuntimeWrite:true});
+    expect(await (await sw.request('/uncached-resource'))?.text()).toBe('https://app.test/uncached-resource');
   });
 });
