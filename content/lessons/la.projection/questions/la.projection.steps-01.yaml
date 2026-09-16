@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.projection.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -9,7 +9,7 @@ items:
   - id: dot
     content:
       - type: text
-        text: "u·v로 평행 성분의 계수를 구한다"
+        text: "u·v와 v·v로 계수 (u·v)/(v·v)를 구한다"
   - id: project
     content:
       - type: text

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.eigenvectors.match-01
-revision: 1
+revision: 2
 type: matching
 prompt:
   - type: text
@@ -26,11 +26,11 @@ rightItems:
   - id: eigenvector-desc
     content:
       - type: text
-        text: "변환 뒤 방향이 유지되는 0이 아닌 벡터"
+        text: "변환 결과가 자신의 스칼라배가 되는 0이 아닌 벡터"
   - id: eigenvalue-desc
     content:
       - type: text
-        text: "그 방향의 배율"
+        text: "그 고유벡터에 곱해지는 배율"
   - id: equation-desc
     content:
       - type: text
@@ -50,9 +50,9 @@ correctPairs:
     rightId: char-desc
 explanation:
   - type: text
-    text: "고유 문제는 행렬 변환을 특별한 방향과 배율의 쌍으로 분석합니다."
+    text: "고유 문제는 행렬 변환을 특별한 벡터와 그에 곱해지는 배율의 쌍으로 분석합니다."
   - type: text
-    text: "방정식과 용어를 함께 기억하면 계산 절차를 재구성하기 쉽습니다."
+    text: "λ=0일 때도 0이 아닌 고유벡터가 존재할 수 있지만 변환 결과는 영벡터가 됩니다."
 tags:
   - linear-algebra
   - eigen

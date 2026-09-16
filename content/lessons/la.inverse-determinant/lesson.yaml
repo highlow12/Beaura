@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.inverse-determinant
-revision: 2
+revision: 3
 track: linear-algebra
 title: "역행렬과 행렬식"
 description: "행렬식이 0인지로 역행렬 가능성을 판단하고 2×2 역행렬을 계산한다."

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.eigenvectors.definition-01
-revision: 1
+revision: 2
 type: single-choice
 prompt:
   - type: text
@@ -28,7 +28,7 @@ explanation:
   - type: text
     text: "영벡터는 모든 λ에 대해 식을 만족하므로 고유벡터의 정보가 되지 않아 제외합니다."
   - type: text
-    text: "고유벡터는 변환 뒤 방향이 유지되는 0이 아닌 벡터입니다."
+    text: "고유벡터는 0이 아닌 벡터 v이며 변환 결과 Av가 v의 스칼라배 λv가 됩니다."
 tags:
   - linear-algebra
   - eigen

@@ -1,10 +1,10 @@
 schemaVersion: 1
 id: la.cross-product.definition-01
-revision: 1
+revision: 2
 type: single-choice
 prompt:
   - type: text
-    text: "u×v가 항상 만족하는 관계는 무엇인가요?"
+    text: "u×v가 영벡터가 아닐 때 반드시 만족하는 관계는 무엇인가요?"
 options:
   - id: perpendicular-both
     content:
@@ -26,9 +26,9 @@ correctOptionId: perpendicular-both
 shuffleOptions: true
 explanation:
   - type: text
-    text: "외적 결과는 두 입력 벡터가 만드는 평면의 법선 방향입니다."
+    text: "0이 아닌 외적 결과는 두 입력 벡터가 만드는 평면에 수직인 법선 방향을 가집니다."
   - type: text
-    text: "3차원에서 정의되는 외적은 벡터를 결과로 냅니다."
+    text: "두 입력이 평행하면 외적은 영벡터가 되어 법선 방향이 정해지지 않습니다."
 tags:
   - linear-algebra
   - cross-product

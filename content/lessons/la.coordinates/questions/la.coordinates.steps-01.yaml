@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.coordinates.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -29,7 +29,7 @@ correctOrder:
   - verify
 explanation:
   - type: text
-    text: "새 기저의 선형 결합을 행렬식으로 세운 뒤 계수 c를 구합니다."
+    text: "새 기저의 선형 결합을 행렬 방정식으로 세운 뒤 계수 c를 구합니다."
   - type: text
     text: "마지막 재구성은 좌표 계산이 맞는지 확인하는 간단한 검산입니다."
 tags:
