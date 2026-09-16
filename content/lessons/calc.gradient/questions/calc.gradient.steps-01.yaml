@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.gradient.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -29,7 +29,7 @@ correctOrder:
   - update
 explanation:
   - type: text
-    text: "감소 방향을 정한 뒤 학습률만큼 이동해 함수값을 낮춥니다."
+    text: "감소 방향을 정한 뒤 학습률만큼 이동합니다. 충분히 작은 학습률에서는 국소적으로 감소를 기대할 수 있지만, 큰 학습률이면 실제 함수값이 오를 수도 있습니다."
   - type: text
     text: "학습률은 방향을 바꾸기보다 이동 거리의 크기를 정합니다."
 tags:

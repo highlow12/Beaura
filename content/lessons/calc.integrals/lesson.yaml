@@ -1,9 +1,9 @@
 schemaVersion: 1
 id: calc.integrals
-revision: 2
+revision: 3
 track: calculus
 title: "적분의 직관"
-description: "적분을 작은 양의 누적과 미분의 역연산으로 이해한다."
+description: "적분을 작은 기여의 누적과 미분의 역연산으로 이해한다."
 
 flow:
   - type: content

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.gradient.application-01
-revision: 1
+revision: 2
 type: multi-select
 prompt:
   - type: text
@@ -9,15 +9,15 @@ options:
   - id: steepest-up
     content:
       - type: text
-        text: "가장 가파르게 증가하는 방향을 가리킨다"
+        text: "∇f가 0이 아닌 점에서는 가장 가파르게 증가하는 방향을 가리킨다"
   - id: contour-perp
     content:
       - type: text
-        text: "등고선에 수직이다"
+        text: "∇f가 0이 아닌 매끄러운 등고선의 점에서는 등고선의 접선에 수직이다"
   - id: descent
     content:
       - type: text
-        text: "−∇f 방향은 함수값을 줄이는 방향이다"
+        text: "∇f가 0이 아닌 점에서 −∇f는 국소적인 감소 방향이다"
   - id: zero-change
     content:
       - type: text
@@ -26,9 +26,9 @@ correctOptionIds: [steepest-up, contour-perp, descent]
 shuffleOptions: true
 explanation:
   - type: text
-    text: "그래디언트는 최대 증가 방향이며, 반대 방향은 국소적으로 감소하는 방향입니다."
+    text: "∇f가 0이 아닌 점에서 그래디언트는 최대 증가 방향이고, 반대 방향은 국소적인 감소 방향입니다."
   - type: text
-    text: "그래디언트가 0인 점은 방향 정보가 사라지는 임계점입니다."
+    text: "그래디언트가 0인 점에서는 1차 방향 정보가 사라지므로 같은 설명을 그대로 적용할 수 없습니다."
 tags:
   - calculus
   - gradient

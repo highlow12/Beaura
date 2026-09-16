@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.derivatives
-revision: 2
+revision: 3
 track: calculus
 title: "미분과 변화율"
 description: "도함수를 순간 변화율과 접선의 기울기로 해석하고 기본 식을 계산한다."

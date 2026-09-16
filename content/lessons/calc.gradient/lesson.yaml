@@ -1,9 +1,9 @@
 schemaVersion: 1
 id: calc.gradient
-revision: 2
+revision: 3
 track: calculus
 title: "그래디언트"
-description: "편미분을 벡터로 묶은 그래디언트와 가장 가파른 증가 방향을 이해한다."
+description: "편미분을 벡터로 묶은 그래디언트와 최대 증가 방향·임계점의 관계를 이해한다."
 
 flow:
   - type: content

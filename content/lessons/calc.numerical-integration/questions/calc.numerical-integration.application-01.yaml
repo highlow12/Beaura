@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.numerical-integration.application-01
-revision: 1
+revision: 2
 type: multi-select
 prompt:
   - type: text
@@ -17,7 +17,7 @@ options:
   - id: increasing
     content:
       - type: text
-        text: "증가 함수에서는 왼쪽 직사각형 합이 실제 넓이보다 작다"
+        text: "f가 양수이고 증가하는 구간에서는 왼쪽 직사각형 합이 실제 넓이보다 작다"
   - id: exact-always
     content:
       - type: text
@@ -28,7 +28,7 @@ explanation:
   - type: text
     text: "표본 간격을 줄이면 곡선을 도형으로 근사하는 오차가 대체로 감소합니다."
   - type: text
-    text: "직선 등 특별한 경우를 제외하면 유한한 도형 합은 근사값입니다."
+    text: "양수인 증가 함수에서는 각 구간의 왼쪽 높이가 구간 내부의 함수값보다 작거나 같아 왼쪽 합이 실제 넓이를 과소평가합니다."
 tags:
   - calculus
   - numerical

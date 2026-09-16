@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.functions
-revision: 2
+revision: 3
 track: calculus
 title: "함수와 그래프"
 description: "함수의 입력·출력 관계와 그래프의 변화 모습을 읽는다."
