@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: ds.adt
-revision: 1
+revision: 2
 track: data-structures
 title: 추상 자료형
 description: 구현 방법과 분리해 자료구조가 제공할 동작을 정의하는 추상 자료형을 이해한다.

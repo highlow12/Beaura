@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: ds.priority-queue
-revision: 1
+revision: 2
 track: data-structures
 title: 우선순위 큐
 description: 도착 순서 대신 우선순위가 높은 항목을 먼저 꺼내는 우선순위 큐를 이해한다.

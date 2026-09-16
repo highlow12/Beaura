@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: ds.heap
-revision: 1
+revision: 2
 track: data-structures
 title: 힙
 description: 완전 이진 트리의 부모 우선순위를 유지해 최솟값·최댓값을 빠르게 확인하는 힙을 학습한다.

@@ -19,17 +19,17 @@ items:
 - id: stop
   content:
   - type: text
-    text: current가 None이면 멈춘다
+    text: current가 None이면 값을 읽지 않고 멈춘다
 correctOrder:
 - start
+- stop
 - visit
 - advance
-- stop
 explanation:
 - type: text
-  text: head에서 시작해 현재 값을 처리하고 next로 이동합니다. 더 이상 노드가 없는 None에 도달하면 순회를 끝냅니다.
+  text: head에서 시작해 current가 None인지 먼저 확인합니다. 노드가 있을 때만 값을 읽고 next로 이동하며, 매 반복 전에 같은 검사를 합니다.
 schemaVersion: 1
-revision: 1
+revision: 2
 tags:
 - linked-list
 - node

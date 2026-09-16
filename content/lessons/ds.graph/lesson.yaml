@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: ds.graph
-revision: 2
+revision: 3
 track: data-structures
 title: 그래프
 description: 정점과 간선으로 관계와 연결을 표현하는 그래프를 이해한다.

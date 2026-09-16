@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: ds.graph-representation
-revision: 1
+revision: 2
 track: data-structures
 title: 그래프 표현
 description: 인접 리스트와 인접 행렬로 그래프의 연결을 표현하고 비용을 비교한다.

@@ -8,16 +8,16 @@ template: stack.{{blank:operation}}("A")
 blanks:
 - id: operation
   choices:
-  - push
+  - append
   - pop
   - peek
   acceptedAnswers:
-  - push
+  - append
 explanation:
 - type: text
-  text: push는 스택의 맨 위에 값을 추가합니다. pop은 꺼내고 peek은 꺼내지 않고 맨 위를 확인합니다.
+  text: ADT의 push를 Python 리스트로 구현하면 끝에 추가하는 append를 씁니다. 리스트의 pop은 끝에서 값을 꺼냅니다.
 schemaVersion: 1
-revision: 1
+revision: 2
 tags:
 - adt
 - interface
