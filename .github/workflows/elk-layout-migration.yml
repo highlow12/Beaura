@@ -24,8 +24,8 @@ jobs:
         run: node scripts/automation/migrate-elk-layout.mjs
       - name: Install ELK
         run: npm install elkjs@0.12.0 --save
-      - name: Format changed files
-        run: npx prettier --write package.json src/lib/curriculum/dag-layout.ts src/routes/learn/+page.svelte tests/curriculum/dag-layout.test.ts
+      - name: Format changed TypeScript and package metadata
+        run: npx prettier --write package.json src/lib/curriculum/dag-layout.ts tests/curriculum/dag-layout.test.ts
       - name: Verify
         run: npm run verify
       - name: Commit verified result
