@@ -19,7 +19,11 @@
     missingPrerequisites,
     statusLabels,
   } from "$lib/curriculum/progress";
-  import { layoutCurriculumDag } from "$lib/curriculum/dag-layout";
+  import {
+    emptyCurriculumDagLayout,
+    layoutCurriculumDag,
+    type DagLayout,
+  } from "$lib/curriculum/dag-layout";
 
   type SwipeStart = { pointerId: number; x: number; y: number };
   type PrerequisiteItem = { trackTitle: string; lessonTitle: string };
@@ -96,12 +100,28 @@
   let lessonById = $derived(
     new Map(selectedLessons.map((lesson) => [lesson.id, lesson])),
   );
-  let dagLayout = $derived(
-    layoutCurriculumDag(
-      selectedLessons.map((lesson) => lesson.id),
-      data?.curriculum.nodes ?? [],
-    ),
-  );
+  let dagLayout = $state<DagLayout>(emptyCurriculumDagLayout());
+  $effect(() => {
+    const lessonIds = selectedLessons.map((lesson) => lesson.id);
+    const curriculumNodes = data?.curriculum.nodes ?? [];
+    let cancelled = false;
+
+    dagLayout = emptyCurriculumDagLayout();
+    if (lessonIds.length) {
+      void layoutCurriculumDag(lessonIds, curriculumNodes)
+        .then((layout) => {
+          if (!cancelled) dagLayout = layout;
+        })
+        .catch((cause) => {
+          if (!cancelled)
+            console.error("Failed to layout curriculum DAG with ELK", cause);
+        });
+    }
+
+    return () => {
+      cancelled = true;
+    };
+  });
   let selectedLesson = $derived(
     selectedLessons.find((lesson) => lesson.id === selectedLessonId) ??
       selectedLessons[0] ??
