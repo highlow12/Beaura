@@ -50,6 +50,7 @@
     "@capacitor/ios": "^8.5.1",
     "@sentry/sveltekit": "^10.74.0",
     "dexie": "^4.4.5",
+    "elkjs": "^0.12.0",
     "ts-fsrs": "^5.4.2",
     "yaml": "^2.9.0"
   }

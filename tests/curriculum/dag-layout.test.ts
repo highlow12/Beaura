@@ -12,8 +12,8 @@ const nodes: CurriculumNode[] = [
 ];
 
 describe("curriculum DAG layout", () => {
-  it("derives ranks and keeps branch/merge edges from curriculum requirements", () => {
-    const layout = layoutCurriculumDag(
+  it("uses a top-to-bottom layered layout for branch and merge dependencies", async () => {
+    const layout = await layoutCurriculumDag(
       ["root", "left", "right", "merge"],
       nodes,
       {
@@ -25,14 +25,20 @@ describe("curriculum DAG layout", () => {
       },
     );
 
-    expect(
-      layout.nodes.map(({ id, rank, lane }) => ({ id, rank, lane })),
-    ).toEqual([
-      { id: "root", rank: 0, lane: 0 },
-      { id: "left", rank: 1, lane: 0 },
-      { id: "right", rank: 1, lane: 1 },
-      { id: "merge", rank: 2, lane: 0 },
+    const byId = new Map(layout.nodes.map((node) => [node.id, node]));
+    expect(layout.nodes.map(({ id, rank }) => ({ id, rank }))).toEqual([
+      { id: "root", rank: 0 },
+      { id: "left", rank: 1 },
+      { id: "right", rank: 1 },
+      { id: "merge", rank: 2 },
     ]);
+    expect(byId.get("root")!.y).toBeLessThan(byId.get("left")!.y);
+    expect(byId.get("root")!.y).toBeLessThan(byId.get("right")!.y);
+    expect(byId.get("left")!.y).toBeLessThan(byId.get("merge")!.y);
+    expect(byId.get("right")!.y).toBeLessThan(byId.get("merge")!.y);
+    expect(byId.get("left")!.x).not.toBe(byId.get("right")!.x);
+    expect(layout.width).toBeGreaterThan(0);
+    expect(layout.height).toBeGreaterThan(0);
     expect(
       layout.edges.map(({ sourceId, targetId }) => [sourceId, targetId]),
     ).toEqual([
@@ -41,16 +47,11 @@ describe("curriculum DAG layout", () => {
       ["left", "merge"],
       ["right", "merge"],
     ]);
-    expect(layout.width).toBe(232);
-    expect(layout.height).toBe(206);
-    expect(layout.nodes.find((node) => node.id === "root")?.x).toBe(66);
-    expect(layout.nodes.find((node) => node.id === "merge")?.x).toBe(66);
-    expect(layout.nodes.find((node) => node.id === "left")?.x).toBe(10);
-    expect(layout.nodes.find((node) => node.id === "right")?.x).toBe(122);
+    expect(layout.edges.every((edge) => edge.path.startsWith("M "))).toBe(true);
   });
 
-  it("retains external prerequisites as node metadata while laying out the selected track", () => {
-    const layout = layoutCurriculumDag(["cross-track"], nodes);
+  it("retains external prerequisites as node metadata while laying out the selected track", async () => {
+    const layout = await layoutCurriculumDag(["cross-track"], nodes);
     expect(layout.nodes).toEqual([
       expect.objectContaining({
         id: "cross-track",
@@ -62,8 +63,11 @@ describe("curriculum DAG layout", () => {
     expect(layout.edges).toEqual([]);
   });
 
-  it("is deterministic for duplicate lesson ids and missing curriculum entries", () => {
-    const layout = layoutCurriculumDag(["root", "root", "unknown"], nodes);
+  it("is deterministic for duplicate lesson ids and missing curriculum entries", async () => {
+    const layout = await layoutCurriculumDag(
+      ["root", "root", "unknown"],
+      nodes,
+    );
     expect(layout.nodes.map((node) => node.id)).toEqual(["root", "unknown"]);
     expect(layout.nodes.find((node) => node.id === "unknown")?.rank).toBe(0);
   });

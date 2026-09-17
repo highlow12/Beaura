@@ -1,3 +1,5 @@
+import ELK from "elkjs/lib/elk.bundled.js";
+import type { ElkNode } from "elkjs/lib/elk-api";
 import type { CurriculumNode } from "$lib/content/types";
 
 export interface DagLayoutOptions {
@@ -43,22 +45,36 @@ const DEFAULTS: Required<DagLayoutOptions> = {
   padding: 16,
 };
 
+const elk = new ELK();
+
+export function emptyCurriculumDagLayout(): DagLayout {
+  return {
+    width: 0,
+    height: 0,
+    rankCount: 0,
+    laneCount: 0,
+    nodes: [],
+    edges: [],
+  };
+}
+
 /**
- * Arrange a subset of curriculum nodes as a top-to-bottom dependency graph.
+ * Arrange a subset of curriculum nodes with ELK's layered layout.
  *
- * Ranks are calculated from the actual `requires` edges. Requirements outside
- * the selected subset remain metadata on the node, so a track can be viewed
- * on its own without pretending that cross-track prerequisites do not exist.
- * The helper is intentionally independent from lesson state and the DOM so it
- * can be reused by other curriculum surfaces and tested with small fixtures.
+ * Only prerequisites inside the selected subset are sent to ELK. Cross-track
+ * requirements remain metadata so a track can still be rendered independently.
+ * The returned rank/lane values are compatibility metadata; ELK owns the actual
+ * node positions and orthogonal edge routing.
  */
-export function layoutCurriculumDag(
+export async function layoutCurriculumDag(
   lessonIds: readonly string[],
   curriculumNodes: readonly CurriculumNode[],
   options: DagLayoutOptions = {},
-): DagLayout {
+): Promise<DagLayout> {
   const config = { ...DEFAULTS, ...options };
   const ids = uniqueIds(lessonIds);
+  if (!ids.length) return emptyCurriculumDagLayout();
+
   const selected = new Set(ids);
   const order = new Map(ids.map((id, index) => [id, index]));
   const sourceById = new Map(
@@ -66,19 +82,129 @@ export function layoutCurriculumDag(
   );
   const prerequisites = new Map<string, string[]>();
   const dependents = new Map<string, string[]>();
+  const edgeMetadata = new Map<
+    string,
+    { sourceId: string; targetId: string }
+  >();
+  const elkEdges: {
+    id: string;
+    sources: string[];
+    targets: string[];
+  }[] = [];
 
+  let edgeIndex = 0;
   for (const id of ids) {
-    const source = sourceById.get(id);
-    const required = source?.requires ?? [];
+    const required = sourceById.get(id)?.requires ?? [];
     const inGraph = required.filter((requiredId) => selected.has(requiredId));
     prerequisites.set(id, inGraph);
+
     for (const requiredId of inGraph) {
       const children = dependents.get(requiredId) ?? [];
       children.push(id);
       dependents.set(requiredId, children);
+
+      const edgeId = `dependency-${edgeIndex++}`;
+      elkEdges.push({
+        id: edgeId,
+        sources: [requiredId],
+        targets: [id],
+      });
+      edgeMetadata.set(edgeId, { sourceId: requiredId, targetId: id });
     }
   }
 
+  const graph: ElkNode = {
+    id: "curriculum",
+    layoutOptions: {
+      "elk.algorithm": "layered",
+      "elk.direction": "DOWN",
+      "elk.edgeRouting": "ORTHOGONAL",
+      "elk.spacing.nodeNode": String(config.horizontalGap),
+      "elk.layered.spacing.nodeNodeBetweenLayers": String(config.verticalGap),
+      "elk.layered.nodePlacement.strategy": "NETWORK_SIMPLEX",
+      "elk.padding": paddingOption(config.padding),
+    },
+    children: ids.map((id) => ({
+      id,
+      width: config.nodeWidth,
+      height: config.nodeHeight,
+    })),
+    edges: elkEdges,
+  };
+  const result = await elk.layout(graph);
+
+  const resultById = new Map(
+    (result.children ?? []).map((node) => [node.id, node]),
+  );
+  const ranks = deriveRanks(ids, prerequisites, dependents, order);
+  const lanes = deriveLanes(ids, ranks, resultById, order);
+
+  const nodes = ids.map<DagLayoutNode>((id) => {
+    const laidOut = resultById.get(id);
+    const required = sourceById.get(id)?.requires ?? [];
+    return {
+      id,
+      rank: ranks.get(id) ?? 0,
+      lane: lanes.get(id) ?? 0,
+      x: laidOut?.x ?? config.padding,
+      y: laidOut?.y ?? config.padding,
+      width: laidOut?.width ?? config.nodeWidth,
+      height: laidOut?.height ?? config.nodeHeight,
+      prerequisites: prerequisites.get(id) ?? [],
+      externalPrerequisiteCount: required.filter(
+        (requiredId) => !selected.has(requiredId),
+      ).length,
+    };
+  });
+  const nodeById = new Map(nodes.map((node) => [node.id, node]));
+  const laidOutEdgeById = new Map(
+    (result.edges ?? []).map((edge) => [edge.id, edge]),
+  );
+  const edges = elkEdges.map<DagLayoutEdge>((edge) => {
+    const metadata = edgeMetadata.get(edge.id)!;
+    const source = nodeById.get(metadata.sourceId)!;
+    const target = nodeById.get(metadata.targetId)!;
+    return {
+      ...metadata,
+      path:
+        elkEdgePath(laidOutEdgeById.get(edge.id)) ??
+        dependencyPath(source, target),
+    };
+  });
+
+  const rankCount = Math.max(1, ...[...ranks.values()].map((rank) => rank + 1));
+  const laneCount = Math.max(
+    1,
+    ...Array.from(
+      { length: rankCount },
+      (_, rank) => nodes.filter((node) => node.rank === rank).length,
+    ),
+  );
+
+  return {
+    width: result.width ?? contentWidth(nodes, config.padding),
+    height: result.height ?? contentHeight(nodes, config.padding),
+    rankCount,
+    laneCount,
+    nodes,
+    edges,
+  };
+}
+
+function uniqueIds(ids: readonly string[]): string[] {
+  return [...new Set(ids.filter((id) => id.trim().length > 0))];
+}
+
+function paddingOption(padding: number): string {
+  return `[top=${padding},left=${padding},bottom=${padding},right=${padding}]`;
+}
+
+function deriveRanks(
+  ids: readonly string[],
+  prerequisites: ReadonlyMap<string, readonly string[]>,
+  dependents: ReadonlyMap<string, readonly string[]>,
+  order: ReadonlyMap<string, number>,
+): Map<string, number> {
   const indegree = new Map(
     ids.map((id) => [id, prerequisites.get(id)?.length ?? 0]),
   );
@@ -103,8 +229,6 @@ export function layoutCurriculumDag(
     }
   }
 
-  // Content validation rejects cycles, but keep the layout finite and
-  // deterministic if a partially edited curriculum reaches this helper.
   if (processed.size !== ids.length) {
     const fallbackRank = Math.max(...ranks.values(), 0) + 1;
     ids
@@ -113,7 +237,18 @@ export function layoutCurriculumDag(
       .forEach((id, index) => ranks.set(id, fallbackRank + index));
   }
 
+  return ranks;
+}
+
+function deriveLanes<T extends { x?: number }>(
+  ids: readonly string[],
+  ranks: ReadonlyMap<string, number>,
+  resultById: ReadonlyMap<string, T>,
+  order: ReadonlyMap<string, number>,
+): Map<string, number> {
+  const lanes = new Map<string, number>();
   const groups = new Map<number, string[]>();
+
   for (const id of ids) {
     const rank = ranks.get(id) ?? 0;
     const group = groups.get(rank) ?? [];
@@ -121,94 +256,48 @@ export function layoutCurriculumDag(
     groups.set(rank, group);
   }
 
-  const laneById = new Map<string, number>();
-  const sortedRanks = [...groups.keys()].sort((left, right) => left - right);
-  for (const rank of sortedRanks) {
-    const group = groups.get(rank)!;
+  for (const group of groups.values()) {
     group.sort((left, right) => {
-      const leftParents = prerequisites.get(left) ?? [];
-      const rightParents = prerequisites.get(right) ?? [];
-      const leftCenter = average(leftParents.map((id) => laneById.get(id)));
-      const rightCenter = average(rightParents.map((id) => laneById.get(id)));
-      return (
-        leftCenter - rightCenter ||
-        (order.get(left) ?? 0) - (order.get(right) ?? 0)
-      );
+      const leftX = resultById.get(left)?.x;
+      const rightX = resultById.get(right)?.x;
+      if (leftX !== undefined && rightX !== undefined && leftX !== rightX) {
+        return leftX - rightX;
+      }
+      return (order.get(left) ?? 0) - (order.get(right) ?? 0);
     });
-    group.forEach((id, lane) => laneById.set(id, lane));
+    group.forEach((id, lane) => lanes.set(id, lane));
   }
 
-  const maxLanes = Math.max(
-    1,
-    ...[...groups.values()].map((group) => group.length),
-  );
-  const nodes = ids.map<DagLayoutNode>((id) => {
-    const rank = ranks.get(id) ?? 0;
-    const lane = laneById.get(id) ?? 0;
-    const rankSize = groups.get(rank)?.length ?? 1;
-    const centeredOffset =
-      ((maxLanes - rankSize) * (config.nodeWidth + config.horizontalGap)) / 2;
-    const source = sourceById.get(id);
-    const required = source?.requires ?? [];
-    return {
-      id,
-      rank,
-      lane,
-      x:
-        config.padding +
-        centeredOffset +
-        lane * (config.nodeWidth + config.horizontalGap),
-      y: config.padding + rank * (config.nodeHeight + config.verticalGap),
-      width: config.nodeWidth,
-      height: config.nodeHeight,
-      prerequisites: prerequisites.get(id) ?? [],
-      externalPrerequisiteCount: required.filter(
-        (requiredId) => !selected.has(requiredId),
-      ).length,
-    };
-  });
-  const nodeById = new Map(nodes.map((node) => [node.id, node]));
-  const edges: DagLayoutEdge[] = [];
+  return lanes;
+}
 
-  for (const target of nodes) {
-    for (const sourceId of target.prerequisites) {
-      const source = nodeById.get(sourceId);
-      if (!source) continue;
-      edges.push({
-        sourceId,
-        targetId: target.id,
-        path: dependencyPath(source, target),
-      });
-    }
+type ElkPointLike = { x?: number; y?: number };
+type ElkEdgeLike = {
+  sections?: readonly {
+    startPoint?: ElkPointLike;
+    bendPoints?: readonly ElkPointLike[];
+    endPoint?: ElkPointLike;
+  }[];
+};
+
+function elkEdgePath(edge: ElkEdgeLike | undefined): string | null {
+  const section = edge?.sections?.[0];
+  if (!section?.startPoint || !section.endPoint) return null;
+
+  const points = [
+    section.startPoint,
+    ...(section.bendPoints ?? []),
+    section.endPoint,
+  ];
+  if (points.some((point) => point.x === undefined || point.y === undefined)) {
+    return null;
   }
 
-  return {
-    width:
-      config.padding * 2 +
-      maxLanes * config.nodeWidth +
-      Math.max(0, maxLanes - 1) * config.horizontalGap,
-    height:
-      config.padding * 2 +
-      Math.max(1, sortedRanks.length) * config.nodeHeight +
-      Math.max(0, sortedRanks.length - 1) * config.verticalGap,
-    rankCount: Math.max(1, sortedRanks.length),
-    laneCount: maxLanes,
-    nodes,
-    edges,
-  };
-}
-
-function uniqueIds(ids: readonly string[]): string[] {
-  return [...new Set(ids.filter((id) => id.trim().length > 0))];
-}
-
-function average(values: (number | undefined)[]): number {
-  const defined = values.filter(
-    (value): value is number => value !== undefined,
-  );
-  return defined.length
-    ? defined.reduce((sum, value) => sum + value, 0) / defined.length
-    : 0;
+  return points
+    .map((point, index) =>
+      index === 0 ? `M ${point.x} ${point.y}` : `L ${point.x} ${point.y}`,
+    )
+    .join(" ");
 }
 
 function dependencyPath(source: DagLayoutNode, target: DagLayoutNode): string {
@@ -219,4 +308,24 @@ function dependencyPath(source: DagLayoutNode, target: DagLayoutNode): string {
   if (sourceX === targetX) return `M ${sourceX} ${sourceY} V ${targetY}`;
   const middleY = sourceY + (targetY - sourceY) / 2;
   return `M ${sourceX} ${sourceY} V ${middleY} H ${targetX} V ${targetY}`;
+}
+
+function contentWidth(
+  nodes: readonly DagLayoutNode[],
+  padding: number,
+): number {
+  return Math.max(
+    padding * 2,
+    ...nodes.map((node) => node.x + node.width + padding),
+  );
+}
+
+function contentHeight(
+  nodes: readonly DagLayoutNode[],
+  padding: number,
+): number {
+  return Math.max(
+    padding * 2,
+    ...nodes.map((node) => node.y + node.height + padding),
+  );
 }
