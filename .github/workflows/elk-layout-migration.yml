@@ -1,0 +1,39 @@
+name: Apply ELK layout migration
+
+on:
+  push:
+    branches:
+      - automation/elk-layout-20260917
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Apply source migration
+        run: node scripts/automation/migrate-elk-layout.mjs
+      - name: Install ELK
+        run: npm install elkjs@0.12.0 --save
+      - name: Format changed files
+        run: npx prettier --write package.json src/lib/curriculum/dag-layout.ts src/routes/learn/+page.svelte tests/curriculum/dag-layout.test.ts
+      - name: Verify
+        run: npm run verify
+      - name: Commit verified result
+        run: |
+          rm scripts/automation/migrate-elk-layout.mjs
+          rm .github/workflows/elk-layout-migration.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "refactor: use ELK for curriculum DAG layout"
+          git push origin HEAD:automation/elk-layout-20260917
