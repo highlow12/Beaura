@@ -22,6 +22,26 @@ jobs:
           cache: npm
       - name: Apply source migration
         run: node scripts/automation/migrate-elk-layout.mjs
+      - name: Fix ELK result typing
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const path = 'src/lib/curriculum/dag-layout.ts';
+          let source = fs.readFileSync(path, 'utf8');
+          source = source.replace(
+            'import ELK from "elkjs/lib/elk.bundled.js";\nimport type { CurriculumNode }',
+            'import ELK from "elkjs/lib/elk.bundled.js";\nimport type { ElkNode } from "elkjs/lib/elk-api";\nimport type { CurriculumNode }',
+          );
+          source = source.replace(
+            '  const result = await elk.layout({',
+            '  const graph: ElkNode = {',
+          );
+          source = source.replace(
+            '    edges: elkEdges,\n  });\n\n  const resultById',
+            '    edges: elkEdges,\n  };\n  const result = await elk.layout(graph);\n\n  const resultById',
+          );
+          fs.writeFileSync(path, source);
+          NODE
       - name: Install ELK
         run: npm install elkjs@0.12.0 --save
       - name: Format changed TypeScript and package metadata
