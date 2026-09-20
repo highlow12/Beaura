@@ -100,6 +100,12 @@
   let lessonById = $derived(
     new Map(selectedLessons.map((lesson) => [lesson.id, lesson])),
   );
+  let allLessonsById = $derived(
+    new Map((data?.lessons ?? []).map((lesson) => [lesson.id, lesson])),
+  );
+  let tracksById = $derived(
+    new Map((data?.curriculum.tracks ?? []).map((track) => [track.id, track])),
+  );
   let dagLayout = $state<DagLayout>(emptyCurriculumDagLayout());
   $effect(() => {
     const lessonIds = selectedLessons.map((lesson) => lesson.id);
@@ -636,8 +642,36 @@
 
                     <div class="dag-nodes">
                       {#each dagLayout.nodes as node (node.id)}
-                        {@const lesson = lessonById.get(node.id)}
-                        {#if lesson}
+                        {@const lesson = allLessonsById.get(node.id)}
+                        {#if lesson && node.isExternal}
+                          {@const externalStatus = lessonStatus(
+                            lesson,
+                            data.curriculum,
+                            data.snapshot.lessonStates,
+                          )}
+                          <div
+                            class="lesson-node external-node"
+                            data-track={lesson.track}
+                            aria-label={`외부 선수과목, ${tracksById.get(lesson.track)?.title ?? lesson.track}, ${lesson.title}, ${statusLabels[externalStatus]}`}
+                            style={`--node-x: ${node.x}px; --node-y: ${node.y}px; --node-width: ${node.width}px; --node-height: ${node.height}px;`}
+                          >
+                            <span class="node-icon" aria-hidden="true"
+                              >{trackMotif(lesson.track)}</span
+                            >
+                            <span class="node-copy">
+                              <span class="node-track"
+                                >{tracksById.get(lesson.track)?.title ??
+                                  lesson.track}</span
+                              >
+                              <strong>{lesson.title}</strong>
+                              <span class="node-status"
+                                >외부 선수과목 · {statusLabels[
+                                  externalStatus
+                                ]}</span
+                              >
+                            </span>
+                          </div>
+                        {:else if lesson}
                           {@const status = lessonStatus(
                             lesson,
                             data.curriculum,
@@ -652,7 +686,7 @@
                             class:locked={status === "locked"}
                             data-track={selectedTrack.id}
                             aria-pressed={lesson.id === selectedLesson?.id}
-                            aria-label={`${lesson.title}, ${statusLabels[status]}${node.externalPrerequisiteCount ? `, 외부 선행 ${node.externalPrerequisiteCount}개` : ""}`}
+                            aria-label={`${lesson.title}, ${statusLabels[status]}`}
                             style={`--node-x: ${node.x}px; --node-y: ${node.y}px; --node-width: ${node.width}px; --node-height: ${node.height}px;`}
                             aria-describedby={lessonPopover?.lessonId ===
                             lesson.id
@@ -671,11 +705,6 @@
                               <span class="node-status"
                                 >{statusLabels[status]}</span
                               >
-                              {#if node.externalPrerequisiteCount}
-                                <span class="node-external"
-                                  >+{node.externalPrerequisiteCount} 외부 선행</span
-                                >
-                              {/if}
                             </span>
                           </button>
                         {/if}
@@ -1059,6 +1088,30 @@
     );
   }
 
+  .external-node {
+    border-color: color-mix(
+      in srgb,
+      var(--track-accent, var(--primary)) 72%,
+      var(--border)
+    );
+    background: color-mix(
+      in srgb,
+      var(--track-accent, var(--primary)) 10%,
+      var(--surface)
+    );
+    pointer-events: none;
+  }
+
+  .node-track {
+    overflow: hidden;
+    color: var(--track-accent, var(--primary));
+    font-size: 0.62rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .lesson-node:active {
     transform: translateY(1px);
   }
@@ -1154,18 +1207,13 @@
     -webkit-line-clamp: 2;
   }
 
-  .node-status,
-  .node-external {
+  .node-status {
     overflow: hidden;
     color: var(--text-muted);
     font-size: 0.67rem;
     line-height: 1.25;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  .node-external {
-    color: var(--warning);
   }
 
   .dag-help {

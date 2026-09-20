@@ -693,7 +693,23 @@ a.build-commit:focus-visible {
 [data-track="computer-graphics"],
 [data-track="graphics"] { --track-accent: var(--track-graphics); }
 [data-track="computer-systems"],
-[data-track="systems"] { --track-accent: var(--track-systems); }
+[data-track="systems"],
+[data-track="operating-systems"],
+[data-track="software-engineering"] {
+  --track-accent: var(--track-systems);
+}
+[data-track="linear-algebra"],
+[data-track="calculus"],
+[data-track="probability-statistics"],
+[data-track="theory-of-computation"] {
+  --track-accent: var(--track-math);
+}
+[data-track="databases"] {
+  --track-accent: var(--track-data-structures);
+}
+[data-track="programming-languages"] {
+  --track-accent: var(--track-python);
+}
 
 .sr-only {
   position: absolute;

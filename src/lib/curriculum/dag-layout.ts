@@ -12,6 +12,7 @@ export interface DagLayoutOptions {
 
 export interface DagLayoutNode {
   id: string;
+  isExternal: boolean;
   rank: number;
   lane: number;
   x: number;
@@ -61,10 +62,10 @@ export function emptyCurriculumDagLayout(): DagLayout {
 /**
  * Arrange a subset of curriculum nodes with ELK's layered layout.
  *
- * Only prerequisites inside the selected subset are sent to ELK. Cross-track
- * requirements remain metadata so a track can still be rendered independently.
- * The returned rank/lane values are compatibility metadata; ELK owns the actual
- * node positions and orthogonal edge routing.
+ * Direct cross-track prerequisites are included near the lesson that needs
+ * them. Their own prerequisites are deliberately not expanded.
+ * ELK chooses a readable horizontal order, then nodes are projected onto a
+ * card-sized grid so every row and column aligns exactly.
  */
 export async function layoutCurriculumDag(
   lessonIds: readonly string[],
@@ -76,12 +77,20 @@ export async function layoutCurriculumDag(
   if (!ids.length) return emptyCurriculumDagLayout();
 
   const selected = new Set(ids);
-  const order = new Map(ids.map((id, index) => [id, index]));
   const sourceById = new Map(
     curriculumNodes.map((node) => [node.lesson, node]),
   );
+  const externalIds = uniqueIds(
+    ids.flatMap((id) =>
+      (sourceById.get(id)?.requires ?? []).filter(
+        (requiredId) => !selected.has(requiredId),
+      ),
+    ),
+  );
+  const external = new Set(externalIds);
+  const graphIds = [...externalIds, ...ids];
+  const order = new Map(graphIds.map((id, index) => [id, index]));
   const prerequisites = new Map<string, string[]>();
-  const dependents = new Map<string, string[]>();
   const edgeMetadata = new Map<
     string,
     { sourceId: string; targetId: string }
@@ -93,16 +102,18 @@ export async function layoutCurriculumDag(
   }[] = [];
 
   let edgeIndex = 0;
-  for (const id of ids) {
-    const required = sourceById.get(id)?.requires ?? [];
-    const inGraph = required.filter((requiredId) => selected.has(requiredId));
+  for (const id of graphIds) {
+    // An external card is context for this track, not the start of recursively
+    // rendering every prerequisite from another track.
+    const required = external.has(id)
+      ? []
+      : (sourceById.get(id)?.requires ?? []);
+    const inGraph = required.filter(
+      (requiredId) => selected.has(requiredId) || external.has(requiredId),
+    );
     prerequisites.set(id, inGraph);
 
     for (const requiredId of inGraph) {
-      const children = dependents.get(requiredId) ?? [];
-      children.push(id);
-      dependents.set(requiredId, children);
-
       const edgeId = `dependency-${edgeIndex++}`;
       elkEdges.push({
         id: edgeId,
@@ -124,7 +135,7 @@ export async function layoutCurriculumDag(
       "elk.layered.nodePlacement.strategy": "NETWORK_SIMPLEX",
       "elk.padding": paddingOption(config.padding),
     },
-    children: ids.map((id) => ({
+    children: graphIds.map((id) => ({
       id,
       width: config.nodeWidth,
       height: config.nodeHeight,
@@ -136,54 +147,59 @@ export async function layoutCurriculumDag(
   const resultById = new Map(
     (result.children ?? []).map((node) => [node.id, node]),
   );
-  const ranks = deriveRanks(ids, prerequisites, dependents, order);
-  const lanes = deriveLanes(ids, ranks, resultById, order);
+  const dependents = deriveDependents(graphIds, prerequisites);
+  const ranks = deriveRanks(graphIds, prerequisites, dependents, order);
+  for (const externalId of externalIds) {
+    const targetRanks = (dependents.get(externalId) ?? []).map(
+      (targetId) => ranks.get(targetId) ?? 1,
+    );
+    if (targetRanks.length) {
+      ranks.set(externalId, Math.max(0, Math.min(...targetRanks) - 1));
+    }
+  }
+  const lanes = deriveLanes(graphIds, ranks, resultById, order);
+  const rankCount = Math.max(1, ...[...ranks.values()].map((rank) => rank + 1));
+  const rankSizes = Array.from(
+    { length: rankCount },
+    (_, rank) => graphIds.filter((id) => ranks.get(id) === rank).length,
+  );
+  const laneCount = Math.max(1, ...rankSizes);
+  const horizontalPitch = config.nodeWidth + config.horizontalGap;
+  const verticalPitch = config.nodeHeight + config.verticalGap;
 
-  const nodes = ids.map<DagLayoutNode>((id) => {
-    const laidOut = resultById.get(id);
-    const required = sourceById.get(id)?.requires ?? [];
+  const nodes = graphIds.map<DagLayoutNode>((id) => {
+    const rank = ranks.get(id) ?? 0;
+    const lane = lanes.get(id) ?? 0;
+    const rowOffset = (laneCount - (rankSizes[rank] ?? 1)) / 2;
     return {
       id,
-      rank: ranks.get(id) ?? 0,
-      lane: lanes.get(id) ?? 0,
-      x: laidOut?.x ?? config.padding,
-      y: laidOut?.y ?? config.padding,
-      width: laidOut?.width ?? config.nodeWidth,
-      height: laidOut?.height ?? config.nodeHeight,
+      isExternal: external.has(id),
+      rank,
+      lane,
+      x: config.padding + (lane + rowOffset) * horizontalPitch,
+      y: config.padding + rank * verticalPitch,
+      width: config.nodeWidth,
+      height: config.nodeHeight,
       prerequisites: prerequisites.get(id) ?? [],
-      externalPrerequisiteCount: required.filter(
-        (requiredId) => !selected.has(requiredId),
+      externalPrerequisiteCount: (prerequisites.get(id) ?? []).filter(
+        (requiredId) => external.has(requiredId),
       ).length,
     };
   });
   const nodeById = new Map(nodes.map((node) => [node.id, node]));
-  const laidOutEdgeById = new Map(
-    (result.edges ?? []).map((edge) => [edge.id, edge]),
-  );
   const edges = elkEdges.map<DagLayoutEdge>((edge) => {
     const metadata = edgeMetadata.get(edge.id)!;
     const source = nodeById.get(metadata.sourceId)!;
     const target = nodeById.get(metadata.targetId)!;
     return {
       ...metadata,
-      path:
-        elkEdgePath(laidOutEdgeById.get(edge.id)) ??
-        dependencyPath(source, target),
+      path: dependencyPath(source, target),
     };
   });
 
-  const rankCount = Math.max(1, ...[...ranks.values()].map((rank) => rank + 1));
-  const laneCount = Math.max(
-    1,
-    ...Array.from(
-      { length: rankCount },
-      (_, rank) => nodes.filter((node) => node.rank === rank).length,
-    ),
-  );
-
   return {
-    width: result.width ?? contentWidth(nodes, config.padding),
-    height: result.height ?? contentHeight(nodes, config.padding),
+    width: contentWidth(nodes, config.padding),
+    height: contentHeight(nodes, config.padding),
     rankCount,
     laneCount,
     nodes,
@@ -197,6 +213,21 @@ function uniqueIds(ids: readonly string[]): string[] {
 
 function paddingOption(padding: number): string {
   return `[top=${padding},left=${padding},bottom=${padding},right=${padding}]`;
+}
+
+function deriveDependents(
+  ids: readonly string[],
+  prerequisites: ReadonlyMap<string, readonly string[]>,
+): Map<string, string[]> {
+  const dependents = new Map<string, string[]>();
+  for (const id of ids) {
+    for (const prerequisite of prerequisites.get(id) ?? []) {
+      const children = dependents.get(prerequisite) ?? [];
+      children.push(id);
+      dependents.set(prerequisite, children);
+    }
+  }
+  return dependents;
 }
 
 function deriveRanks(
@@ -269,35 +300,6 @@ function deriveLanes<T extends { x?: number }>(
   }
 
   return lanes;
-}
-
-type ElkPointLike = { x?: number; y?: number };
-type ElkEdgeLike = {
-  sections?: readonly {
-    startPoint?: ElkPointLike;
-    bendPoints?: readonly ElkPointLike[];
-    endPoint?: ElkPointLike;
-  }[];
-};
-
-function elkEdgePath(edge: ElkEdgeLike | undefined): string | null {
-  const section = edge?.sections?.[0];
-  if (!section?.startPoint || !section.endPoint) return null;
-
-  const points = [
-    section.startPoint,
-    ...(section.bendPoints ?? []),
-    section.endPoint,
-  ];
-  if (points.some((point) => point.x === undefined || point.y === undefined)) {
-    return null;
-  }
-
-  return points
-    .map((point, index) =>
-      index === 0 ? `M ${point.x} ${point.y}` : `L ${point.x} ${point.y}`,
-    )
-    .join(" ");
 }
 
 function dependencyPath(source: DagLayoutNode, target: DagLayoutNode): string {
