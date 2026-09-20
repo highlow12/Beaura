@@ -12,7 +12,6 @@ export interface DagLayoutOptions {
 
 export interface DagLayoutNode {
   id: string;
-  isExternal: boolean;
   rank: number;
   lane: number;
   x: number;
@@ -62,8 +61,6 @@ export function emptyCurriculumDagLayout(): DagLayout {
 /**
  * Arrange a subset of curriculum nodes with ELK's layered layout.
  *
- * Direct cross-track prerequisites are included near the lesson that needs
- * them. Their own prerequisites are deliberately not expanded.
  * ELK chooses a readable horizontal order, then nodes are projected onto a
  * card-sized grid so every row and column aligns exactly.
  */
@@ -80,16 +77,7 @@ export async function layoutCurriculumDag(
   const sourceById = new Map(
     curriculumNodes.map((node) => [node.lesson, node]),
   );
-  const externalIds = uniqueIds(
-    ids.flatMap((id) =>
-      (sourceById.get(id)?.requires ?? []).filter(
-        (requiredId) => !selected.has(requiredId),
-      ),
-    ),
-  );
-  const external = new Set(externalIds);
-  const graphIds = [...externalIds, ...ids];
-  const order = new Map(graphIds.map((id, index) => [id, index]));
+  const order = new Map(ids.map((id, index) => [id, index]));
   const prerequisites = new Map<string, string[]>();
   const edgeMetadata = new Map<
     string,
@@ -102,15 +90,9 @@ export async function layoutCurriculumDag(
   }[] = [];
 
   let edgeIndex = 0;
-  for (const id of graphIds) {
-    // An external card is context for this track, not the start of recursively
-    // rendering every prerequisite from another track.
-    const required = external.has(id)
-      ? []
-      : (sourceById.get(id)?.requires ?? []);
-    const inGraph = required.filter(
-      (requiredId) => selected.has(requiredId) || external.has(requiredId),
-    );
+  for (const id of ids) {
+    const required = sourceById.get(id)?.requires ?? [];
+    const inGraph = required.filter((requiredId) => selected.has(requiredId));
     prerequisites.set(id, inGraph);
 
     for (const requiredId of inGraph) {
@@ -135,7 +117,7 @@ export async function layoutCurriculumDag(
       "elk.layered.nodePlacement.strategy": "NETWORK_SIMPLEX",
       "elk.padding": paddingOption(config.padding),
     },
-    children: graphIds.map((id) => ({
+    children: ids.map((id) => ({
       id,
       width: config.nodeWidth,
       height: config.nodeHeight,
@@ -147,33 +129,24 @@ export async function layoutCurriculumDag(
   const resultById = new Map(
     (result.children ?? []).map((node) => [node.id, node]),
   );
-  const dependents = deriveDependents(graphIds, prerequisites);
-  const ranks = deriveRanks(graphIds, prerequisites, dependents, order);
-  for (const externalId of externalIds) {
-    const targetRanks = (dependents.get(externalId) ?? []).map(
-      (targetId) => ranks.get(targetId) ?? 1,
-    );
-    if (targetRanks.length) {
-      ranks.set(externalId, Math.max(0, Math.min(...targetRanks) - 1));
-    }
-  }
-  const lanes = deriveLanes(graphIds, ranks, resultById, order);
+  const dependents = deriveDependents(ids, prerequisites);
+  const ranks = deriveRanks(ids, prerequisites, dependents, order);
+  const lanes = deriveLanes(ids, ranks, resultById, order);
   const rankCount = Math.max(1, ...[...ranks.values()].map((rank) => rank + 1));
   const rankSizes = Array.from(
     { length: rankCount },
-    (_, rank) => graphIds.filter((id) => ranks.get(id) === rank).length,
+    (_, rank) => ids.filter((id) => ranks.get(id) === rank).length,
   );
   const laneCount = Math.max(1, ...rankSizes);
   const horizontalPitch = config.nodeWidth + config.horizontalGap;
   const verticalPitch = config.nodeHeight + config.verticalGap;
 
-  const nodes = graphIds.map<DagLayoutNode>((id) => {
+  const nodes = ids.map<DagLayoutNode>((id) => {
     const rank = ranks.get(id) ?? 0;
     const lane = lanes.get(id) ?? 0;
     const rowOffset = (laneCount - (rankSizes[rank] ?? 1)) / 2;
     return {
       id,
-      isExternal: external.has(id),
       rank,
       lane,
       x: config.padding + (lane + rowOffset) * horizontalPitch,
@@ -181,8 +154,8 @@ export async function layoutCurriculumDag(
       width: config.nodeWidth,
       height: config.nodeHeight,
       prerequisites: prerequisites.get(id) ?? [],
-      externalPrerequisiteCount: (prerequisites.get(id) ?? []).filter(
-        (requiredId) => external.has(requiredId),
+      externalPrerequisiteCount: (sourceById.get(id)?.requires ?? []).filter(
+        (requiredId) => !selected.has(requiredId),
       ).length,
     };
   });

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { base } from "$app/paths";
+  import { page } from "$app/state";
   import { onMount, tick } from "svelte";
   import { fly } from "svelte/transition";
   import {
@@ -26,7 +27,11 @@
   } from "$lib/curriculum/dag-layout";
 
   type SwipeStart = { pointerId: number; x: number; y: number };
-  type PrerequisiteItem = { trackTitle: string; lessonTitle: string };
+  type PrerequisiteItem = {
+    lessonId: string;
+    trackTitle: string;
+    lessonTitle: string;
+  };
   type UnlockSummary = {
     opensExternalTrack: boolean;
     opensExternalLesson: boolean;
@@ -53,10 +58,6 @@
   let reducedMotion = $state(false);
   let dagScroll = $state<HTMLDivElement | null>(null);
   let lessonPopover = $state<LessonPopover | null>(null);
-  let pendingLessonPopover = $state<{
-    lessonId: string;
-    trackId: string;
-  } | null>(null);
 
   function trackMotif(trackId: string): string {
     switch (trackId) {
@@ -104,12 +105,6 @@
   let lessonById = $derived(
     new Map(selectedLessons.map((lesson) => [lesson.id, lesson])),
   );
-  let allLessonsById = $derived(
-    new Map((data?.lessons ?? []).map((lesson) => [lesson.id, lesson])),
-  );
-  let tracksById = $derived(
-    new Map((data?.curriculum.tracks ?? []).map((track) => [track.id, track])),
-  );
   let dagLayout = $state<DagLayout>(emptyCurriculumDagLayout());
   $effect(() => {
     const lessonIds = selectedLessons.map((lesson) => lesson.id);
@@ -131,32 +126,6 @@
     return () => {
       cancelled = true;
     };
-  });
-  $effect(() => {
-    const pending = pendingLessonPopover;
-    const isReady =
-      pending &&
-      selectedTrack?.id === pending.trackId &&
-      dagLayout.nodes.some(
-        (node) => node.id === pending.lessonId && !node.isExternal,
-      );
-    if (!pending || !isReady) return;
-
-    void tick().then(() => {
-      if (pendingLessonPopover !== pending || !dagScroll) return;
-      requestAnimationFrame(() => {
-        if (pendingLessonPopover !== pending || !dagScroll) return;
-        const target = Array.from(
-          dagScroll.querySelectorAll<HTMLElement>("[data-lesson-id]"),
-        ).find((element) => element.dataset.lessonId === pending.lessonId);
-        if (!target) return;
-
-        target.scrollIntoView({ block: "center", inline: "center" });
-        target.focus({ preventScroll: true });
-        openLessonPopover(target, pending.lessonId);
-        pendingLessonPopover = null;
-      });
-    });
   });
   let selectedLesson = $derived(
     selectedLessons.find((lesson) => lesson.id === selectedLessonId) ??
@@ -249,11 +218,13 @@
         next.lessons,
         next.snapshot.lessonStates,
       );
-      // Track selection is deliberately local to this page. Every fresh entry
-      // starts at the first currently reachable track in curriculum order.
-      selectedTrackId = nextTracks[0]?.id ?? null;
-      const nextLessons = nextTracks[0]
-        ? next.lessons.filter((lesson) => lesson.track === nextTracks[0].id)
+      const requestedTrackId = page.url.searchParams.get("track");
+      const initialTrack =
+        nextTracks.find((track) => track.id === requestedTrackId) ??
+        nextTracks[0];
+      selectedTrackId = initialTrack?.id ?? null;
+      const nextLessons = initialTrack
+        ? next.lessons.filter((lesson) => lesson.track === initialTrack.id)
         : [];
       selectedLessonId = defaultLessonId(
         nextLessons,
@@ -376,6 +347,7 @@
       if (!lesson) return [];
       return [
         {
+          lessonId: lesson.id,
           trackTitle: tracksById.get(lesson.track)?.title ?? lesson.track,
           lessonTitle: lesson.title,
         },
@@ -441,13 +413,6 @@
       top: rect.top - 8,
       arrowLeft: anchor - left,
     };
-  }
-
-  function openExternalLesson(lessonId: string, trackId: string) {
-    if (!tracks.some((track) => track.id === trackId)) return;
-    pendingLessonPopover = { lessonId, trackId };
-    selectTrack(trackId);
-    selectedLessonId = lessonId;
   }
 
   function dismissLessonPopover() {
@@ -683,40 +648,8 @@
 
                     <div class="dag-nodes">
                       {#each dagLayout.nodes as node (node.id)}
-                        {@const lesson = allLessonsById.get(node.id)}
-                        {#if lesson && node.isExternal}
-                          {@const externalStatus = lessonStatus(
-                            lesson,
-                            data.curriculum,
-                            data.snapshot.lessonStates,
-                          )}
-                          <button
-                            type="button"
-                            class="lesson-node external-node"
-                            data-track={lesson.track}
-                            data-lesson-id={lesson.id}
-                            aria-label={`외부 선수과목, ${tracksById.get(lesson.track)?.title ?? lesson.track}, ${lesson.title}, ${statusLabels[externalStatus]}, 해당 트랙으로 이동`}
-                            style={`--node-x: ${node.x}px; --node-y: ${node.y}px; --node-width: ${node.width}px; --node-height: ${node.height}px;`}
-                            onclick={() =>
-                              openExternalLesson(lesson.id, lesson.track)}
-                          >
-                            <span class="node-icon" aria-hidden="true"
-                              >{trackMotif(lesson.track)}</span
-                            >
-                            <span class="node-copy">
-                              <span class="node-track"
-                                >{tracksById.get(lesson.track)?.title ??
-                                  lesson.track}</span
-                              >
-                              <strong>{lesson.title}</strong>
-                              <span class="node-status"
-                                >외부 선수과목 · {statusLabels[
-                                  externalStatus
-                                ]}</span
-                              >
-                            </span>
-                          </button>
-                        {:else if lesson}
+                        {@const lesson = lessonById.get(node.id)}
+                        {#if lesson}
                           {@const status = lessonStatus(
                             lesson,
                             data.curriculum,
@@ -730,7 +663,6 @@
                             class:in-progress={status === "in-progress"}
                             class:locked={status === "locked"}
                             data-track={selectedTrack.id}
-                            data-lesson-id={lesson.id}
                             aria-pressed={lesson.id === selectedLesson?.id}
                             aria-label={`${lesson.title}, ${statusLabels[status]}`}
                             style={`--node-x: ${node.x}px; --node-y: ${node.y}px; --node-width: ${node.width}px; --node-height: ${node.height}px;`}
@@ -789,7 +721,14 @@
         <span>먼저 들어야 해요</span>
         <ul>
           {#each lessonPopover.missingPrerequisites as item}
-            <li><strong>{item.trackTitle}</strong> · {item.lessonTitle}</li>
+            <li>
+              <span><strong>{item.trackTitle}</strong> · {item.lessonTitle}</span>
+              <a
+                class="button secondary prerequisite-action"
+                href={`${base}/learn/${item.lessonId}`}
+                aria-label={`${item.lessonTitle} 레슨으로 바로가기`}>바로가기</a
+              >
+            </li>
           {/each}
         </ul>
       </div>
@@ -1134,66 +1073,6 @@
     );
   }
 
-  .external-node {
-    border-color: color-mix(
-      in srgb,
-      var(--track-accent, var(--primary)) 38%,
-      var(--border)
-    );
-    background: color-mix(
-      in srgb,
-      var(--track-accent, var(--primary)) 4%,
-      var(--surface)
-    );
-    color: var(--text-muted);
-  }
-
-  .external-node:hover,
-  .external-node:focus-visible {
-    border-color: color-mix(
-      in srgb,
-      var(--track-accent, var(--primary)) 58%,
-      var(--border)
-    );
-    background: color-mix(
-      in srgb,
-      var(--track-accent, var(--primary)) 7%,
-      var(--surface)
-    );
-  }
-
-  .external-node .node-icon {
-    border-color: color-mix(
-      in srgb,
-      var(--track-accent, var(--primary)) 32%,
-      var(--border)
-    );
-    background: color-mix(
-      in srgb,
-      var(--track-accent, var(--primary)) 5%,
-      var(--surface)
-    );
-    color: color-mix(
-      in srgb,
-      var(--track-accent, var(--primary)) 65%,
-      var(--text-muted)
-    );
-  }
-
-  .node-track {
-    overflow: hidden;
-    color: color-mix(
-      in srgb,
-      var(--track-accent, var(--primary)) 68%,
-      var(--text-muted)
-    );
-    font-size: 0.62rem;
-    font-weight: 700;
-    line-height: 1.2;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
   .lesson-node:active {
     transform: translateY(1px);
   }
@@ -1381,12 +1260,23 @@
   }
 
   .popover-prerequisites li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
     font-size: 0.78rem;
     line-height: 1.4;
   }
 
   .popover-prerequisites li strong {
     color: var(--text);
+  }
+
+  .prerequisite-action {
+    flex: 0 0 auto;
+    min-height: 2rem;
+    padding: 0.3rem 0.55rem;
+    font-size: 0.72rem;
   }
 
   .popover-unlocks p {
