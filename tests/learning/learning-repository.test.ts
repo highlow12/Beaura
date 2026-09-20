@@ -235,6 +235,7 @@ describe("LearningRepository", () => {
     currentTime += 2 * 24 * 60 * 60 * 1000;
 
     await expect(repo.getSnapshot()).resolves.toMatchObject({
+      studyDates: ["2026-01-01"],
       game: { streak: 0, longestStreak: 1, xp: 10 },
     });
   });

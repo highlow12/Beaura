@@ -79,6 +79,8 @@ export interface SaveAttemptInput {
 export interface LearningSnapshot {
   lessonStates: LessonState[];
   questionStates: QuestionState[];
+  /** Local calendar dates on which at least one study attempt was recorded. */
+  studyDates: string[];
   game: {
     xp: number;
     streak: number;
@@ -853,19 +855,36 @@ export class LearningRepository {
   async getSnapshot(): Promise<LearningSnapshot> {
     const now = timestamp(this.clock);
     const snapshot = await this.transaction("rw", async () => {
-      const [lessonStates, questionStates, savedGame, savedSettings, state] =
-        await Promise.all([
-          this.database.lessonStates.toArray(),
-          this.database.questionStates.toArray(),
-          this.database.gameState.get(LOCAL_ID),
-          this.database.settings.get(LOCAL_ID),
-          this.refreshHeartState(now),
-        ]);
+      const [
+        lessonStates,
+        questionStates,
+        gameEvents,
+        savedGame,
+        savedSettings,
+        state,
+      ] = await Promise.all([
+        this.database.lessonStates.toArray(),
+        this.database.questionStates.toArray(),
+        this.database.gameEvents
+          .where("type")
+          .equals("streak-updated")
+          .toArray(),
+        this.database.gameState.get(LOCAL_ID),
+        this.database.settings.get(LOCAL_ID),
+        this.refreshHeartState(now),
+      ]);
       const game = savedGame ?? defaultGame(now);
       const today = localDateFor(now);
       return {
         lessonStates: clone(lessonStates),
         questionStates: clone(questionStates),
+        studyDates: [
+          ...new Set(
+            gameEvents.map(
+              (event) => event.localDate ?? localDateFor(event.createdAt),
+            ),
+          ),
+        ].sort(),
         game: {
           xp: game.xp,
           streak:
