@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: toc.regular-languages
-revision: 1
+revision: 2
 track: theory-of-computation
 title: 정규 언어
 description: 정규식과 유한 오토마톤으로 표현되는 언어의 성질을 익힌다.

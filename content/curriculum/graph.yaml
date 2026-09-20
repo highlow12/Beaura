@@ -654,11 +654,9 @@ nodes:
   - lesson: toc.language
     requires:
       - math.sets
-      - math.propositions
   - lesson: toc.finite-state-machine
     requires:
       - toc.language
-      - math.relations
   - lesson: toc.dfa
     requires:
       - toc.finite-state-machine
@@ -684,14 +682,13 @@ nodes:
   - lesson: toc.decidability
     requires:
       - toc.turing-machine
-      - math.direct-proof
   - lesson: toc.halting-problem
     requires:
       - toc.decidability
       - math.contradiction
   - lesson: toc.complexity
     requires:
-      - toc.halting-problem
+      - toc.decidability
       - algo.big-o
   - lesson: pl.syntax-semantics
     requires:

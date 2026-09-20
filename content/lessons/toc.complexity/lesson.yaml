@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: toc.complexity
-revision: 1
+revision: 2
 track: theory-of-computation
 title: 계산 복잡도와 P·NP
 description: 효율적으로 풀 수 있는 문제와 빠르게 검증할 수 있는 문제의 관계를 익힌다.

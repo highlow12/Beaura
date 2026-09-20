@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: toc.decidability
-revision: 1
+revision: 2
 track: theory-of-computation
 title: 결정 가능성
 description: 모든 입력에서 멈추며 정답을 내는 문제와 인식 가능한 문제를 구분한다.

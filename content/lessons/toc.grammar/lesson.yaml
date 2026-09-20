@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: toc.grammar
-revision: 1
+revision: 2
 track: theory-of-computation
 title: 형식 문법
 description: 문법의 기호와 생성 규칙으로 문자열을 유도하는 방법을 배운다.
