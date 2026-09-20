@@ -8,11 +8,6 @@
     type QuestionHostClock,
     type QuestionHostState,
   } from "$lib/questions/host";
-  import {
-    describeAnswer,
-    describeCanonicalAnswer,
-    type AnswerDisplay,
-  } from "$lib/questions/presentation";
   import { getQuestionRenderer } from "$lib/questions/renderer-registry";
   import type { Question, EvaluationResult, UserAnswer } from "$lib/questions/types";
 
@@ -196,16 +191,6 @@
     host?.recover();
   }
 
-  function answerDisplay(): AnswerDisplay | null {
-    if (!hostState?.submittedAnswer) return null;
-    return describeAnswer(question, hostState.submittedAnswer);
-  }
-
-  function canonicalDisplay(): AnswerDisplay | null {
-    if (!hostState?.canonicalAnswer) return null;
-    return describeCanonicalAnswer(question, hostState.canonicalAnswer);
-  }
-
   function rendererForQuestion() {
     if (!question || typeof question.type !== "string") return null;
     return getQuestionRenderer(question.type);
@@ -265,8 +250,6 @@
       </div>
     {:else if hostState.phase === "final-feedback"}
       {@const finalResult = hostState.attempts[hostState.attempts.length - 1]}
-      {@const submitted = answerDisplay()}
-      {@const canonical = canonicalDisplay()}
       <section
         class="final-feedback"
         class:final-correct={finalResult?.correct === true}
@@ -277,36 +260,6 @@
         <h2 id="question-final-heading" tabindex="-1" bind:this={finalHeading}>
           {finalResult?.correct ? "정답입니다." : "정답을 확인해 보세요."}
         </h2>
-        {#if submitted && canonical}
-          <div class="answer-comparison">
-            <div class="answer-panel">
-              <h3>{submitted.title}</h3>
-              {#if submitted.kind === "value"}<p>{submitted.value}</p>{/if}
-              {#if submitted.kind === "single" || submitted.kind === "list"}
-                <ol>{#each submitted.values ?? [] as value}<li>{value}</li>{/each}</ol>
-              {/if}
-              {#if submitted.kind === "pairs"}
-                <ul>{#each submitted.pairs ?? [] as pair}<li>{pair.left} ↔ {pair.right}</li>{/each}</ul>
-              {/if}
-              {#if submitted.kind === "blanks"}
-                <ul>{#each submitted.blanks ?? [] as blank}<li><strong>{blank.label}</strong>: {blank.value}</li>{/each}</ul>
-              {/if}
-            </div>
-            <div class="answer-panel canonical-panel">
-              <h3>{canonical.title}</h3>
-              {#if canonical.kind === "value"}<p>{canonical.value}</p>{/if}
-              {#if canonical.kind === "single" || canonical.kind === "list"}
-                <ol>{#each canonical.values ?? [] as value}<li>{value}</li>{/each}</ol>
-              {/if}
-              {#if canonical.kind === "pairs"}
-                <ul>{#each canonical.pairs ?? [] as pair}<li>{pair.left} ↔ {pair.right}</li>{/each}</ul>
-              {/if}
-              {#if canonical.kind === "blanks"}
-                <ul>{#each canonical.blanks ?? [] as blank}<li><strong>{blank.label}</strong>: {blank.value}</li>{/each}</ul>
-              {/if}
-            </div>
-          </div>
-        {/if}
         {#if question.explanation}
           <section class="explanation" aria-labelledby="question-explanation-heading">
             <h3 id="question-explanation-heading">설명</h3>
@@ -331,14 +284,8 @@
   .incorrect { color: var(--danger); }
   .final-feedback h2, .question-error h2 { margin: 0; }
   .final-feedback h2:focus { outline: 2px solid var(--focus); outline-offset: 3px; }
-  .answer-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
-  .answer-panel { min-width: 0; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); padding: var(--space-3); }
-  .answer-panel h3 { margin: 0 0 var(--space-2); font-size: .95rem; }
-  .answer-panel p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
-  .answer-panel ol, .answer-panel ul { display: grid; gap: .35rem; margin: 0; padding-left: 1.25rem; }
-  .canonical-panel { border-color: color-mix(in srgb, var(--success) 58%, var(--border)); }
   .explanation { border-top: 1px solid color-mix(in srgb, var(--success) 35%, var(--border)); padding-top: var(--space-4); }
   .explanation h3 { margin: 0 0 var(--space-2); }
   @keyframes feedback-in { from { opacity:0; transform:translateY(.25rem); } to { opacity:1; transform:translateY(0); } }
-  @media (max-width: 640px) { .answer-comparison { grid-template-columns: 1fr; } .submit-button { width:100%; } }
+  @media (max-width: 640px) { .submit-button { width:100%; } }
 </style>

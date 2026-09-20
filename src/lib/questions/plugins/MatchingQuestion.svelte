@@ -20,6 +20,7 @@
   let selectedRightId = $state<string | null>(null);
   let matchedLeftIds = $state<string[]>([]);
   let matchedRightIds = $state<string[]>([]);
+  let matchedPairs = $state<Array<{ leftId: string; rightId: string }>>([]);
   let renderedKey = $state("");
   let renderedIdentity = $state("");
   let previousRightOrder = $state<typeof question.rightItems | null>(null);
@@ -38,6 +39,7 @@
     selectedRightId = null;
     matchedLeftIds = [];
     matchedRightIds = [];
+    matchedPairs = [];
     announcement = "A와 B에서 카드 한 장씩 골라 짝을 맞추세요.";
     onAnswerChange(null);
   });
@@ -50,10 +52,6 @@
     return side === "left" ? selectedLeftId === id : selectedRightId === id;
   }
 
-  function pairForRight(rightId: string): string | null {
-    return question.correctPairs.find((pair) => pair.rightId === rightId)?.leftId ?? null;
-  }
-
   function emitAnswerIfComplete() {
     if (matchedLeftIds.length !== question.leftItems.length) {
       onAnswerChange(null);
@@ -61,10 +59,7 @@
     }
     onAnswerChange({
       type: "matching",
-      pairs: question.leftItems.map((item) => ({
-        leftId: item.id,
-        rightId: question.correctPairs.find((pair) => pair.leftId === item.id)?.rightId ?? "",
-      })),
+      pairs: matchedPairs.map((pair) => ({ ...pair })),
     });
   }
 
@@ -81,20 +76,13 @@
       return;
     }
 
-    if (pairForRight(rightId) === leftId) {
-      matchedLeftIds = [...matchedLeftIds, leftId];
-      matchedRightIds = [...matchedRightIds, rightId];
-      selectedLeftId = null;
-      selectedRightId = null;
-      announcement = "짝을 맞췄습니다.";
-      emitAnswerIfComplete();
-      return;
-    }
-
+    matchedLeftIds = [...matchedLeftIds, leftId];
+    matchedRightIds = [...matchedRightIds, rightId];
+    matchedPairs = [...matchedPairs, { leftId, rightId }];
     selectedLeftId = null;
     selectedRightId = null;
-    announcement = "짝이 아닙니다. A와 B에서 다시 골라 보세요.";
-    onAnswerChange(null);
+    announcement = "짝으로 연결했습니다.";
+    emitAnswerIfComplete();
   }
 
   function isSubmitted(side: "left" | "right", id: string): boolean {
