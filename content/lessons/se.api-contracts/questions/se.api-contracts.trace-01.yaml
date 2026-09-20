@@ -1,18 +1,18 @@
 schemaVersion: 1
 id: se.api-contracts.trace-01
-revision: 1
+revision: 2
 type: code-output
 prompt:
   - type: text
     text: 사전 조건을 통과한 함수가 반환하는 다음 코드의 출력은 무엇인가요?
 language: python
 code: |-
-  def add_tax(price, rate):
-      if price < 0:
-          raise ValueError("price")
-      return price + rate
+  def add_fee(price, fee):
+      if price < 0 or fee < 0:
+          raise ValueError("price and fee must be nonnegative")
+      return price + fee
 
-  print(add_tax(100, 10))
+  print(add_fee(100, 10))
 choices:
   - "110"
   - "90"
@@ -21,7 +21,7 @@ acceptedOutputs:
   - "110"
 explanation:
   - type: text
-    text: price가 음수가 아니므로 사전 조건 검사를 통과하고 100과 10을 더한 110을 반환합니다.
+    text: price와 fee가 모두 음수가 아니므로 사전 조건 검사를 통과하고 고정 수수료 10을 가격 100에 더해 110을 반환합니다. 이 예제의 fee는 세율(rate)이 아닌 금액입니다.
 tags:
   - software-engineering
   - api

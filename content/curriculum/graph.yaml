@@ -746,7 +746,6 @@ nodes:
   - lesson: se.modularity
     requires:
       - py.modules
-      - pl.syntax-semantics
   - lesson: se.api-contracts
     requires:
       - se.modularity
@@ -764,7 +763,6 @@ nodes:
   - lesson: se.abstraction-dependencies
     requires:
       - se.modularity
-      - pl.types
   - lesson: se.refactoring
     requires:
       - se.testing
@@ -772,7 +770,6 @@ nodes:
   - lesson: se.observability
     requires:
       - se.error-handling
-      - os.system-call
   - lesson: se.cicd
     requires:
       - se.testing

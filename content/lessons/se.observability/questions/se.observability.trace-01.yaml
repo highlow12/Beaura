@@ -1,23 +1,24 @@
 schemaVersion: 1
 id: se.observability.trace-01
-revision: 1
+revision: 2
 type: code-output
 prompt:
   - type: text
-    text: 시작과 성공 사건을 순서대로 연결해 출력하는 다음 코드의 결과는 무엇인가요?
+    text: 한 요청에서 수집한 세 span 중 실행 시간이 가장 긴 구간을 출력합니다. 결과는 무엇인가요?
 language: python
 code: |-
-  events = ["start", "success"]
-  print(" -> ".join(events))
+  spans = [("auth", 12), ("database", 85), ("render", 9)]
+  slowest = max(spans, key=lambda span: span[1])
+  print(slowest[0])
 choices:
-  - start -> success
-  - success -> start
-  - startsuccess
+  - database
+  - auth
+  - render
 acceptedOutputs:
-  - start -> success
+  - database
 explanation:
   - type: text
-    text: join은 events의 두 문자열 사이에 공백을 포함한 화살표를 넣어 요청 흐름처럼 출력합니다.
+    text: span별 실행 시간은 auth 12ms, database 85ms, render 9ms입니다. 가장 긴 span의 이름은 database이며, 이 구간이 느린 이유를 다음으로 조사할 수 있습니다.
 tags:
   - software-engineering
   - observability

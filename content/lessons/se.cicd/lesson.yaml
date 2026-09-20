@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: se.cicd
-revision: 1
+revision: 2
 track: software-engineering
 title: CI/CD
 description: 자동 검증과 배포 파이프라인으로 변경을 반복 가능하게 전달한다.

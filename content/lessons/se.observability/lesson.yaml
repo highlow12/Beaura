@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: se.observability
-revision: 1
+revision: 2
 track: software-engineering
 title: 로깅과 모니터링
 description: 로그·메트릭·트레이스로 운영 중 시스템 상태를 관찰한다.

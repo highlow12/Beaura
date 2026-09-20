@@ -1,23 +1,26 @@
 schemaVersion: 1
 id: se.cicd.trace-01
-revision: 1
+revision: 2
 type: code-output
 prompt:
   - type: text
-    text: 빌드·테스트·배포 단계 목록에서 두 번째 단계를 출력하면 무엇인가요?
+    text: 빌드는 성공했지만 테스트가 실패한 CI/CD 파이프라인입니다. 다음 코드의 출력은 무엇인가요?
 language: python
 code: |-
-  steps = ["build", "test", "deploy"]
-  print(steps[1])
+  steps = [("build", True), ("test", False), ("deploy", True)]
+  for name, passed in steps:
+      if not passed:
+          print(f"stopped:{name}")
+          break
 choices:
-  - test
-  - build
-  - deploy
+  - stopped:test
+  - stopped:build
+  - stopped:deploy
 acceptedOutputs:
-  - test
+  - stopped:test
 explanation:
   - type: text
-    text: Python 리스트의 인덱스 1은 두 번째 항목이므로 test가 출력됩니다.
+    text: build는 통과하지만 test가 False이므로 stopped:test를 출력하고 반복문을 중단합니다. deploy 단계는 실행되지 않습니다. 실패한 검증을 통과한 것으로 처리해 배포하면 안 됩니다.
 tags:
   - software-engineering
   - cicd

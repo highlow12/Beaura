@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: se.api-contracts
-revision: 1
+revision: 2
 track: software-engineering
 title: API와 계약
 description: 인터페이스와 사전·사후 조건으로 모듈의 약속을 명확히 한다.
