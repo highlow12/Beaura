@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: pl.recursive-descent
-revision: 1
+revision: 2
 track: programming-languages
 title: 재귀 하강 파서
 description: 문법의 비단말을 함수로 대응시키는 하향식 파서를 설계한다.

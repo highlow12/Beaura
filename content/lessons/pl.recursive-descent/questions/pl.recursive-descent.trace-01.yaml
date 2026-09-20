@@ -1,17 +1,30 @@
 schemaVersion: 1
 id: pl.recursive-descent.trace-01
-revision: 1
+revision: 2
 type: code-output
 prompt:
   - type: text
-    text: 다음 함수는 재귀 하강 파서가 숫자 토큰을 하나씩 더하는 과정을 단순화합니다. 출력은 무엇인가요?
+    text: 다음 간단한 하향식 파서는 숫자와 + 토큰을 소비하면서 덧셈식을 계산합니다. 출력은 무엇인가요?
 language: python
 code: |-
-  tokens = [2, 3, 4]
-  total = 0
-  for token in tokens:
-      total += token
-  print(total)
+  tokens = ["2", "+", "3", "+", "4"]
+  position = 0
+
+  def parse_number():
+      global position
+      value = int(tokens[position])
+      position += 1
+      return value
+
+  def parse_expression():
+      global position
+      total = parse_number()
+      while position < len(tokens) and tokens[position] == "+":
+          position += 1
+          total += parse_number()
+      return total
+
+  print(parse_expression())
 choices:
   - "9"
   - "24"
@@ -20,7 +33,7 @@ acceptedOutputs:
   - "9"
 explanation:
   - type: text
-    text: 토큰 2, 3, 4를 차례로 누적하므로 9가 됩니다. 실제 파서는 이 흐름으로 AST를 만들고 나중에 평가합니다.
+    text: parse_expression이 첫 숫자 2를 읽고, +를 만날 때마다 다음 숫자 3과 4를 parse_number로 읽어 더합니다. 단순화된 계산형 파서의 결과는 9입니다. AST를 만드는 파서라면 합산 대신 연산 노드를 반환합니다.
 tags:
   - programming-languages
   - recursive-descent

@@ -693,7 +693,6 @@ nodes:
   - lesson: pl.syntax-semantics
     requires:
       - py.modules
-      - toc.grammar
   - lesson: pl.types
     requires:
       - pl.syntax-semantics
@@ -709,7 +708,6 @@ nodes:
   - lesson: pl.memory-model
     requires:
       - pl.functions-closures
-      - os.allocation
   - lesson: pl.lexing
     requires:
       - pl.syntax-semantics

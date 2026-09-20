@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: pl.memory-model
-revision: 1
+revision: 2
 track: programming-languages
 title: 스택과 힙
 description: 실행 중 값의 수명과 스택·힙 메모리 모델을 구분한다.

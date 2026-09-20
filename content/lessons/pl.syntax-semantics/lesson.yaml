@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: pl.syntax-semantics
-revision: 1
+revision: 2
 track: programming-languages
 title: 문법과 의미
 description: 프로그램의 겉모양인 문법과 실행 의미를 구분한다.

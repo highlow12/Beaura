@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: pl.ast
-revision: 1
+revision: 2
 track: programming-languages
 title: 추상 구문 트리
 description: 파싱 결과의 계층 구조와 연산자 우선순위를 AST로 표현한다.

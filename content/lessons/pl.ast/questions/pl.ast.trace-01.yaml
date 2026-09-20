@@ -4,7 +4,7 @@ revision: 1
 type: code-output
 prompt:
   - type: text
-    text: 다음은 AST의 후위 순회를 흉내 내어 계산하는 코드입니다. 출력은 무엇인가요?
+    text: 다음 코드는 중첩된 AST의 곱셈 자식과 덧셈 루트를 표현식으로 평가합니다. 출력은 무엇인가요?
 language: python
 code: |-
   tree = ("+", 2, ("*", 3, 4))
