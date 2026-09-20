@@ -107,7 +107,7 @@ describe("visible learning tracks", () => {
     ).toEqual(["python", "computer-architecture", "discrete-math", "later"]);
   });
 
-  it("ships the programming, architecture, and foundational math tracks as roots", async () => {
+  it("ships programming, architecture, foundational math, and graphics tracks as roots", async () => {
     const compiled = compileContent(await loadSourceContent(process.cwd()));
     const lessons = [...compiled.lessons.values()] as Lesson[];
     expect(
@@ -121,6 +121,7 @@ describe("visible learning tracks", () => {
       "linear-algebra",
       "calculus",
       "probability-statistics",
+      "computer-graphics",
     ]);
   }, 15_000);
 });
