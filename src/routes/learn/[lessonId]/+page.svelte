@@ -6,7 +6,7 @@
   import { contentRepository } from '$lib/content/repository/static-content-repository';
   import { learningRepository } from '$lib/storage/repositories/learning-repository';
   import { missingPrerequisites, newlyUnlockedLessonIds } from '$lib/curriculum/progress';
-  import { advanceLesson, recordAnswer, type LessonSession } from '$lib/lesson/lesson-engine';
+  import { advanceLesson, recordAnswer, retreatLesson, type LessonSession } from '$lib/lesson/lesson-engine';
   import type { Curriculum, Lesson } from '$lib/content/types';
   import type { LessonState } from '$lib/learning/domain/states';
   import type { Question } from '$lib/questions/types';
@@ -28,6 +28,12 @@
   let flow = $derived(lesson && session ? lesson.flow[session.currentIndex] : null);
   let question = $derived(flow?.type === 'question' ? questions[flow.ref] : null);
   let learningPathHref = $derived(lesson ? `${base}/learn?track=${encodeURIComponent(lesson.track)}` : `${base}/learn`);
+
+  function restoreStepState(nextSession: LessonSession, nextLesson: Lesson) {
+    const nextFlow = nextLesson.flow[nextSession.currentIndex];
+    resumedAnswer = nextFlow?.type === 'question' && nextSession.answers.some((answer) => answer.questionId === nextFlow.ref);
+    ready = resumedAnswer;
+  }
 
   function lessonMotif(trackId: string): string {
     switch (trackId) {
@@ -64,9 +70,7 @@
         if(cancelled) return;
         questions = Object.fromEntries(loadedQuestions.map((q) => [q.id,q]));
         lesson = loaded; session = restored;
-        const restoredFlow = loaded.flow[restored.currentIndex];
-        resumedAnswer = restoredFlow?.type === 'question' && restored.answers.some((answer) => answer.questionId === restoredFlow.ref);
-        ready = resumedAnswer;
+        restoreStepState(restored, loaded);
       } catch(e) { if(!cancelled) error = errorMessage(e); }
       finally { if(!cancelled) loading = false; }
     })();
@@ -99,7 +103,18 @@
           lessonStates = snapshot.lessonStates;
         }
       } else await learningRepository.saveSession(advanced);
-      if(epoch === navigationEpoch) { session = advanced; unlockedLessons = newlyUnlocked; ready = false; resumedAnswer = false; }
+      if(epoch === navigationEpoch) { session = advanced; unlockedLessons = newlyUnlocked; restoreStepState(advanced, lesson); }
+    } catch(e) { if(epoch === navigationEpoch) saveError = errorMessage(e); }
+    finally { if(epoch === navigationEpoch) saving = false; }
+  }
+  async function previous() {
+    if(!lesson || !session || saving || session.currentIndex === 0) return;
+    saving = true; saveError = '';
+    const epoch = navigationEpoch;
+    try {
+      const retreated = retreatLesson(session);
+      await learningRepository.saveSession(retreated);
+      if(epoch === navigationEpoch) { session = retreated; restoreStepState(retreated, lesson); }
     } catch(e) { if(epoch === navigationEpoch) saveError = errorMessage(e); }
     finally { if(epoch === navigationEpoch) saving = false; }
   }
@@ -126,7 +141,7 @@
         {/key}
       {/if}
       {#if saveError}<p class="error" role="alert">저장하지 못했어요. {saveError} 아래 버튼으로 다시 시도할 수 있습니다.</p>{/if}
-      <div class="lesson-controls"><a class="text-link" href={learningPathHref}>나중에 이어하기</a><button class="button" disabled={saving || (flow.type === 'question' && !ready)} onclick={next}>{saving ? '저장 중…' : session.currentIndex+1 === lesson.flow.length ? '레슨 완료' : '계속'}</button></div>
+      <div class="lesson-controls"><a class="text-link" href={learningPathHref}>나중에 이어하기</a><div class="lesson-step-actions"><button class="button secondary" disabled={saving || session.currentIndex === 0} onclick={previous}>이전</button><button class="button" disabled={saving || (flow.type === 'question' && !ready)} onclick={next}>{saving ? '저장 중…' : session.currentIndex+1 === lesson.flow.length ? '레슨 완료' : '계속'}</button></div></div>
     </section>
   </div>
 {/if}
@@ -139,6 +154,7 @@
   .learning-card { padding:clamp(var(--space-5),4vw,var(--space-10)); min-height:320px; }
   .content-kicker,.completion-kicker { margin:0 0 var(--space-3); color:var(--track-accent,var(--primary)); font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.7rem; font-weight:650; letter-spacing:.05em; }
   .lesson-controls { display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);margin-top:var(--space-8);padding-top:var(--space-5);border-top:1px solid var(--border); }
+  .lesson-step-actions { display:flex; gap:var(--space-2); }
   .completion,.blocked-lesson { max-width:700px;margin:var(--space-8) auto;text-align:center;padding:clamp(var(--space-8),8vw,var(--space-12)) var(--space-6); }
   .completion { border-top:3px solid var(--track-accent,var(--primary)); }
   .completion p,.blocked-lesson p { line-height:1.7; }
@@ -148,5 +164,5 @@
   .unlock-notice ul { display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-2) var(--space-5);margin:var(--space-2) 0 0;padding:0;list-style:none; }
   .blocked-mark { display:grid;place-items:center;width:3rem;height:3rem;margin:0 auto var(--space-4);border:1px solid var(--warning);border-radius:var(--radius-md);background:var(--warning-soft);color:var(--warning);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:1.4rem; }
   @keyframes completion-pop { from { opacity:0; transform:scale(.96); } to { opacity:1; transform:scale(1); } }
-  @media(max-width:640px) { .lesson-controls { align-items:stretch; flex-direction:column-reverse; } .lesson-controls .button { width:100%; } .completion,.blocked-lesson { margin-top:0; } }
+  @media(max-width:640px) { .lesson-controls { align-items:stretch; flex-direction:column-reverse; } .lesson-step-actions { display:grid; grid-template-columns:1fr 1fr; } .lesson-controls .button { width:100%; } .completion,.blocked-lesson { margin-top:0; } }
 </style>

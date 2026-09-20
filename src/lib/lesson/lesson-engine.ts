@@ -36,6 +36,14 @@ export function advanceLesson(
   };
 }
 
+export function retreatLesson(session: LessonSession): LessonSession {
+  return {
+    ...session,
+    currentIndex: Math.max(0, session.currentIndex - 1),
+    status: "active",
+  };
+}
+
 export function recordAnswer(
   session: LessonSession,
   questionId: string,
