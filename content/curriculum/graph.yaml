@@ -604,9 +604,7 @@ nodes:
       - gfx.transforms
       - gfx.interpolation
   - lesson: db.concepts
-    requires:
-      - algo.correctness
-      - os.filesystem
+    requires: []
   - lesson: db.relational-model
     requires:
       - db.concepts
@@ -616,6 +614,7 @@ nodes:
   - lesson: db.aggregation
     requires:
       - db.select
+      - db.joins
   - lesson: db.keys
     requires:
       - db.relational-model
@@ -648,7 +647,6 @@ nodes:
   - lesson: db.replication
     requires:
       - db.transactions
-      - net.tcp
   - lesson: db.consistency
     requires:
       - db.replication

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.consistency
-revision: 2
+revision: 3
 track: databases
 title: 분산 일관성
 description: 강한 일관성과 최종 일관성, 복제 지연과 읽기 요구사항의 trade-off를 이해한다.

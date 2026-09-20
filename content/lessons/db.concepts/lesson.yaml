@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: db.concepts
-revision: 2
+revision: 3
 track: databases
 title: 데이터베이스와 DBMS
 description: 데이터베이스, DBMS, 스키마와 애플리케이션의 역할을 구분한다.

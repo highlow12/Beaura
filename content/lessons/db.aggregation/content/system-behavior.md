@@ -3,8 +3,8 @@
 집계 결과의 행 수는 어떤 테이블을 기준으로 삼는지에 따라 달라집니다. 모든 점포를 보여 주면서 판매가 없는 점포도 `0`으로 표시하려면 점포를 왼쪽에 둔 `LEFT JOIN`과 오른쪽 키에 대한 `COUNT`를 함께 사용해야 합니다.
 
 ```sql
--- Store: ('A'), ('B')
--- Sale:  ('A', 10), ('A', 5)
+-- Store(name): ('A'), ('B')
+-- Sale(id, store_name, amount): (1, 'A', 10), (2, 'A', 5)
 SELECT s.name, COUNT(sale.id) AS sale_count
 FROM Store AS s
 LEFT JOIN Sale AS sale ON sale.store_name = s.name

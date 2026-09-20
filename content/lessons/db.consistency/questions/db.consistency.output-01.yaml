@@ -1,21 +1,21 @@
 schemaVersion: 1
 id: db.consistency.output-01
-revision: 1
+revision: 2
 type: code-output
 prompt:
   - type: text
-    text: replica가 한 번의 동기화 단계마다 primary와의 차이를 절반으로 줄이는 모형의 결과를 고르세요.
+    text: primary의 변경 로그 버전 3, 4, 5를 replica가 순서대로 모두 적용했을 때 최종 적용 버전을 고르세요.
 language: python
 code: |-
-  primary = 10
-  replica = 2
-  for _ in range(2):
-      replica += (primary - replica) / 2
-  print(replica)
-choices: ["8.0", "6.0", "10"]
-acceptedOutputs: ["8.0"]
+  primary_version = 5
+  replica_version = 2
+  for logged_version in [3, 4, 5]:
+      replica_version = logged_version
+  print(replica_version)
+choices: ["5", "4", "2"]
+acceptedOutputs: ["5"]
 explanation:
   - type: text
-    text: 첫 단계에서 2가 6, 두 번째에서 8이 됩니다. 이 단순 모델처럼 최종 일관성은 replica가 시간에 따라 최신 값으로 수렴하는 모습을 설명합니다.
+    text: 변경 로그의 버전 3, 4, 5를 순서대로 적용하면 replica의 최종 적용 버전은 5로 primary와 같아집니다. 실제 복제는 버전 숫자뿐 아니라 해당 데이터 변경도 함께 적용합니다.
 tags: [database, consistency, replication, code-output]
 difficulty: 2
