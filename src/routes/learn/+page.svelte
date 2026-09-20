@@ -58,6 +58,8 @@
   let reducedMotion = $state(false);
   let dagScroll = $state<HTMLDivElement | null>(null);
   let lessonPopover = $state<LessonPopover | null>(null);
+  let lessonPopoverElement = $state<HTMLDivElement | null>(null);
+  let lessonPopoverTrigger: HTMLElement | null = null;
 
   function trackMotif(trackId: string): string {
     switch (trackId) {
@@ -413,23 +415,31 @@
       top: rect.top - 8,
       arrowLeft: anchor - left,
     };
+    lessonPopoverTrigger = target;
+    void tick().then(() => lessonPopoverElement?.focus());
   }
 
-  function dismissLessonPopover() {
+  function dismissLessonPopover({ restoreFocus = false } = {}) {
     lessonPopover = null;
+    const trigger = lessonPopoverTrigger;
+    lessonPopoverTrigger = null;
+    if (restoreFocus) void tick().then(() => trigger?.focus());
   }
 
   function handleWindowPointerDown(event: PointerEvent) {
     const target = event.target;
-    if (target instanceof Element && target.closest(".popover-action")) return;
+    if (target instanceof Element && target.closest(".lesson-popover")) return;
     if (!lessonPopover) return;
-    lessonPopover = null;
+    dismissLessonPopover();
     suppressPopoverUntilClick = true;
     window.setTimeout(() => (suppressPopoverUntilClick = false), 0);
   }
 
   function handleWindowKeydown(event: KeyboardEvent) {
-    if (event.key === "Escape") dismissLessonPopover();
+    if (event.key === "Escape" && lessonPopover) {
+      event.preventDefault();
+      dismissLessonPopover({ restoreFocus: true });
+    }
   }
 
   function handlePointerUp(event: PointerEvent) {
@@ -461,8 +471,8 @@
 <svelte:window
   onpointerdown={handleWindowPointerDown}
   onkeydown={handleWindowKeydown}
-  onresize={dismissLessonPopover}
-  onscroll={dismissLessonPopover}
+  onresize={() => dismissLessonPopover()}
+  onscroll={() => dismissLessonPopover()}
 />
 
 <svelte:head><title>학습 경로 | Beaura</title></svelte:head>
@@ -705,9 +715,11 @@
 
 {#if lessonPopover && popoverLesson && popoverStatus}
   <div
+    bind:this={lessonPopoverElement}
     id="lesson-popover"
     class="lesson-popover"
     role="dialog"
+    tabindex="-1"
     aria-labelledby="lesson-popover-title"
     style={`--popover-left: ${lessonPopover.left}px; --popover-top: ${lessonPopover.top}px; --popover-arrow-left: ${lessonPopover.arrowLeft}px;`}
   >

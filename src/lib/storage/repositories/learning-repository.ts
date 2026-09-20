@@ -718,9 +718,31 @@ function validateBackup(value: unknown): LearningBackup {
   };
 }
 
-function gameFromEvents(events: GameEvent[], now: number): GameState {
+function gameFromEvents(
+  events: GameEvent[],
+  now: number,
+  studyEvents: StudyEvent[] = [],
+): GameState {
+  const studyOrder = new Map(
+    studyEvents.map((event) => [event.id, event.clientSeq]),
+  );
   let game = defaultGame(now);
-  for (const event of [...events].sort(gameEventSort)) {
+  for (const event of [...events].sort((left, right) => {
+    const timestampOrder = left.createdAt - right.createdAt;
+    if (timestampOrder !== 0) return timestampOrder;
+    const sequenceOrder =
+      (left.eventId === undefined
+        ? Number.MAX_SAFE_INTEGER
+        : (studyOrder.get(left.eventId) ?? Number.MAX_SAFE_INTEGER)) -
+      (right.eventId === undefined
+        ? Number.MAX_SAFE_INTEGER
+        : (studyOrder.get(right.eventId) ?? Number.MAX_SAFE_INTEGER));
+    if (sequenceOrder !== 0) return sequenceOrder;
+    // The streak snapshot is written before the XP event for one attempt.
+    // Preserve that order when both events point at the same study event.
+    if (left.type !== right.type) return left.type === "streak-updated" ? -1 : 1;
+    return left.id.localeCompare(right.id);
+  })) {
     const date = event.localDate ?? localDateFor(event.createdAt);
     if (event.type === "xp-earned") {
       game.xp += event.amount ?? 0;
@@ -1667,7 +1689,7 @@ export class LearningRepository {
       }
       const derivedGame =
         backup.gameEvents.length > 0
-          ? gameFromEvents(backup.gameEvents, now)
+          ? gameFromEvents(backup.gameEvents, now, events)
           : defaultGame(now);
       await this.database.gameState.put(derivedGame);
       if (backup.lessonSessions) {
