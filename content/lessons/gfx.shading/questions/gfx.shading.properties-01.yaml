@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.shading.properties-01
-revision: 1
+revision: 2
 type: multi-select
 prompt:
   - type: text
@@ -21,11 +21,11 @@ options:
   - id: vertex-only-final
     content:
       - type: text
-        text: fragment 셰이더는 항상 실행되지 않는다
+        text: fragment 셰이더는 래스터화된 샘플 수와 무관하게 정점마다 한 번만 실행된다
 correctOptionIds: [flat-uniform, gouraud-cost, phong-detail]
 shuffleOptions: true
 explanation:
   - type: text
-    text: flat·Gouraud·Phong은 값을 계산하고 보간하는 위치가 다릅니다. 일반적인 래스터 파이프라인에서는 fragment 셰이더가 최종 샘플을 처리합니다.
+    text: flat·Gouraud·Phong은 값을 계산하고 보간하는 위치가 다릅니다. 일반적인 래스터 파이프라인에서는 fragment 셰이더가 래스터화된 샘플을 처리합니다. 정점마다 한 번 실행되는 것은 정점 셰이더입니다.
 tags: [graphics, shading]
 difficulty: 3

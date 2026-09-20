@@ -1,21 +1,21 @@
 schemaVersion: 1
 id: gfx.ray-tracing.complete-01
-revision: 1
+revision: 2
 type: code-completion
 prompt:
   - type: text
-    text: 교차점에서 광원까지 직접 보이는지 검사하는 조건을 완성하세요.
+    text: 그림자 광선에서 광원까지 거리가 3이고 첫 번째 차단 물체의 교차 거리가 5일 때, 차단 물체가 광원 뒤에 있어 직접 보이는지 검사하는 조건을 완성하세요.
 language: python
 template: |-
-  hit_distance = 3
+  light_distance = 3
   blocker_distance = 5
-  visible = blocker_distance {{blank:comparison}} hit_distance
+  visible = blocker_distance {{blank:comparison}} light_distance
 blanks:
   - id: comparison
     choices: [">", "<", "=="]
     acceptedAnswers: [">"]
 explanation:
   - type: text
-    text: 가림 물체의 교차 거리가 광원까지의 거리보다 커야 광원보다 뒤에 있다는 뜻이므로 광원이 보입니다. 5 > 3입니다.
+    text: 그림자 광선 방향으로 광원까지 거리가 3이고 차단 물체까지 거리가 5라면 차단 물체가 광원 뒤에 있으므로 광원이 보입니다. 방향 벡터를 단위 길이로 정규화해 같은 거리 단위로 비교합니다.
 tags: [graphics, ray-tracing, shadows, code-completion]
 difficulty: 2

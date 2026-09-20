@@ -1,20 +1,20 @@
 schemaVersion: 1
 id: gfx.homogeneous.output-01
-revision: 1
+revision: 2
 type: code-output
 prompt:
   - type: text
-    text: 동차좌표를 w로 나누는 간단한 코드의 출력 결과를 고르세요.
+    text: 3차원 클립 좌표를 w로 나누어 NDC를 구하는 코드의 출력 결과를 고르세요.
 language: python
 code: |-
-  clip = (6, 4, 2)
-  w = clip[2]
-  ndc = (clip[0] / w, clip[1] / w)
+  clip = (1, 1, 1, 2)
+  w = clip[3]
+  ndc = (clip[0] / w, clip[1] / w, clip[2] / w)
   print(ndc)
-choices: ["(3.0, 2.0)", "(6, 4)", "(12, 8)"]
-acceptedOutputs: ["(3.0, 2.0)"]
+choices: ["(0.5, 0.5, 0.5)", "(1, 1, 1)", "(2, 2, 2)"]
+acceptedOutputs: ["(0.5, 0.5, 0.5)"]
 explanation:
   - type: text
-    text: x와 y를 w=2로 나누므로 각각 3.0과 2.0이 됩니다. Python의 `/`는 이 경우 실수 결과를 출력합니다.
+    text: 클립 좌표는 네 성분이고 마지막 w=2입니다. x, y, z 각각 1/2=0.5가 되어 Python 출력은 (0.5, 0.5, 0.5)입니다.
 tags: [graphics, homogeneous-coordinates, code-output]
 difficulty: 2

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.animation
-revision: 1
+revision: 2
 track: computer-graphics
 title: 애니메이션과 보간
 description: 키프레임 사이의 위치·회전·크기 변환을 시간에 따라 보간해 움직임을 만드는 원리를 익힌다.
@@ -9,8 +9,6 @@ flow:
     ref: content/intro.md
   - type: question
     ref: gfx.animation.keyframe-01
-  - type: question
-    ref: gfx.animation.properties-01
   - type: content
     ref: content/interpolation.md
   - type: question
@@ -19,5 +17,7 @@ flow:
     ref: gfx.animation.order-01
   - type: content
     ref: content/rotation.md
+  - type: question
+    ref: gfx.animation.properties-01
   - type: question
     ref: gfx.animation.match-01

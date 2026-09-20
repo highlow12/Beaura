@@ -1,18 +1,18 @@
 schemaVersion: 1
 id: gfx.projection
-revision: 2
+revision: 3
 track: computer-graphics
 title: 투영과 시야
 description: 직교 투영과 원근 투영이 3차원 장면을 화면 범위로 보내는 방식을 비교한다.
 flow:
   - type: content
     ref: content/intro.md
+  - type: content
+    ref: content/practice.md
   - type: question
     ref: gfx.projection.match-01
   - type: question
     ref: gfx.projection.choice-01
-  - type: content
-    ref: content/practice.md
   - type: content
     ref: content/perspective.md
   - type: question

@@ -543,8 +543,7 @@ nodes:
       - ds.hash-table
       - algo.big-o
   - lesson: sys.graphics
-    requires:
-      - arch.cpu
+    requires: []
   - lesson: gfx.pipeline
     requires:
       - sys.graphics
@@ -582,7 +581,6 @@ nodes:
   - lesson: gfx.interpolation
     requires:
       - gfx.rasterization
-      - la.projection
   - lesson: gfx.lighting
     requires:
       - gfx.geometry
@@ -601,7 +599,6 @@ nodes:
   - lesson: gfx.ray-tracing
     requires:
       - gfx.lighting
-      - calc.derivatives
   - lesson: gfx.animation
     requires:
       - gfx.transforms

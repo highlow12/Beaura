@@ -1,14 +1,14 @@
 schemaVersion: 1
 id: gfx.homogeneous.divide-01
-revision: 1
+revision: 2
 type: fill-blank
 prompt:
   - type: text
-    text: 클립 좌표 (6, 4, 2)를 NDC로 바꿀 때 x와 y를 나눌 값을 고르세요.
-choices: ["w = 2", "x = 6", "y = 4"]
+    text: 3차원 클립 좌표 (1, 1, 1, 2)를 NDC로 바꿀 때 x, y, z를 나눌 값을 고르세요.
+choices: ["w = 2", "x = 1", "y = 1"]
 acceptedAnswers: ["w = 2"]
 explanation:
   - type: text
-    text: 원근 나눗셈은 x, y, z를 동차좌표의 w로 나눕니다. 여기서는 w가 2이므로 NDC는 (3, 2, 1)이 됩니다.
+    text: 원근 나눗셈은 x, y, z를 동차좌표의 w로 나눕니다. 여기서는 네 번째 성분 w가 2이므로 NDC는 (0.5, 0.5, 0.5)가 됩니다.
 tags: [graphics, homogeneous-coordinates, perspective-division]
 difficulty: 2

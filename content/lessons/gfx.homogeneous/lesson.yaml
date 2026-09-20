@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: gfx.homogeneous
-revision: 2
+revision: 3
 track: computer-graphics
 title: 동차좌표
 description: 동차좌표가 이동과 원근 투영을 하나의 행렬 흐름으로 표현하는 이유를 이해한다.
