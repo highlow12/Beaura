@@ -1,4 +1,3 @@
-import ELK from "elkjs/lib/elk.bundled.js";
 import type { ElkNode } from "elkjs/lib/elk-api";
 import type { CurriculumNode } from "$lib/content/types";
 
@@ -45,7 +44,14 @@ const DEFAULTS: Required<DagLayoutOptions> = {
   padding: 16,
 };
 
-const elk = new ELK();
+let elkPromise: Promise<import("elkjs/lib/elk-api").ELK> | null = null;
+
+async function elkInstance(): Promise<import("elkjs/lib/elk-api").ELK> {
+  elkPromise ??= import("elkjs/lib/elk.bundled.js").then(
+    ({ default: ELK }) => new ELK(),
+  );
+  return elkPromise;
+}
 
 export function emptyCurriculumDagLayout(): DagLayout {
   return {
@@ -124,6 +130,7 @@ export async function layoutCurriculumDag(
     })),
     edges: elkEdges,
   };
+  const elk = await elkInstance();
   const result = await elk.layout(graph);
 
   const resultById = new Map(
