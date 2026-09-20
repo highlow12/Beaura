@@ -1,5 +1,6 @@
 <script lang="ts">
   import { base } from "$app/paths";
+  import { page } from "$app/state";
   import { onMount, tick } from "svelte";
   import { fly } from "svelte/transition";
   import {
@@ -217,11 +218,13 @@
         next.lessons,
         next.snapshot.lessonStates,
       );
-      // Track selection is deliberately local to this page. Every fresh entry
-      // starts at the first currently reachable track in curriculum order.
-      selectedTrackId = nextTracks[0]?.id ?? null;
-      const nextLessons = nextTracks[0]
-        ? next.lessons.filter((lesson) => lesson.track === nextTracks[0].id)
+      const requestedTrackId = page.url.searchParams.get("track");
+      const initialTrack =
+        nextTracks.find((track) => track.id === requestedTrackId) ??
+        nextTracks[0];
+      selectedTrackId = initialTrack?.id ?? null;
+      const nextLessons = initialTrack
+        ? next.lessons.filter((lesson) => lesson.track === initialTrack.id)
         : [];
       selectedLessonId = defaultLessonId(
         nextLessons,
