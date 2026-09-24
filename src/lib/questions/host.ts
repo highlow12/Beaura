@@ -57,6 +57,8 @@ export interface QuestionHostOptions {
   clock?: QuestionHostClock | (() => number);
   random?: () => number;
   createAttemptId?: () => string;
+  /** A lesson visit ends after one submission; reviews retain the two-attempt policy. */
+  maxAttempts?: 1 | 2;
   /** SSR can construct a host and start the active timer after client mount. */
   autoStart?: boolean;
 }
@@ -424,7 +426,7 @@ export class QuestionHost {
     if (token !== this.lifecycle) return { status: "ignored", reason: "not-answering" };
 
     const result = outcome.result;
-    const final = result.correct || this.stateValue.attemptNumber === 2;
+    const final = result.correct || this.stateValue.attemptNumber === (this.options.maxAttempts ?? 2);
     let attemptId: string;
     try {
       attemptId = this.createAttemptId();

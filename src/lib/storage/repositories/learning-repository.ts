@@ -200,6 +200,20 @@ function assertSession(session: LessonSession): void {
   }
   if (!Array.isArray(session.answers))
     throw new Error("session.answers must be an array");
+  if (session.retryQueue !== undefined &&
+      (!Array.isArray(session.retryQueue) ||
+       session.retryQueue.some((id) => typeof id !== "string") ||
+       new Set(session.retryQueue).size !== session.retryQueue.length))
+    throw new Error("session.retryQueue is invalid");
+  if (session.retryCursor !== undefined &&
+      (!Number.isSafeInteger(session.retryCursor) || session.retryCursor < 0 ||
+       session.retryCursor > (session.retryQueue?.length ?? 0)))
+    throw new Error("session.retryCursor is invalid");
+  if (session.retryResults !== undefined &&
+      (!Array.isArray(session.retryResults) ||
+       session.retryResults.some((id) => !session.retryQueue?.includes(id)) ||
+       new Set(session.retryResults).size !== session.retryResults.length))
+    throw new Error("session.retryResults is invalid");
   for (const answer of session.answers) {
     assertId(answer?.questionId, "session answer questionId");
     if (typeof answer.correct !== "boolean")
@@ -938,7 +952,13 @@ export class LearningRepository {
       if (
         existingSession?.contentRevision === lesson.revision &&
         existingSession.session.status === "active" &&
-        existingSession.session.currentIndex < lesson.flow.length &&
+        (existingSession.session.currentIndex < lesson.flow.length ||
+          (existingSession.session.currentIndex === lesson.flow.length &&
+            !!existingSession.session.retryQueue?.length &&
+            (existingSession.session.retryCursor ?? 0) < existingSession.session.retryQueue.length)) &&
+        (existingSession.session.retryQueue ?? []).every((id) =>
+          lesson.flow.some((step) => step.type === "question" && step.ref === id),
+        ) &&
         existingSession.session.answers.every((answer) =>
           lesson.flow.some(
             (step) =>
@@ -1042,6 +1062,9 @@ export class LearningRepository {
     ) {
       throw new Error("Cannot complete a lesson with unanswered questions");
     }
+    if ((session.retryQueue?.length ?? 0) > 0 &&
+        session.retryResults?.length !== session.retryQueue?.length)
+      throw new Error("Cannot complete a lesson with unattempted delayed retries");
     const now = timestamp(this.clock);
     await this.transaction("rw", async () => {
       const record = await this.database.lessonSessions.get(lesson.id);

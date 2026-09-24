@@ -16,6 +16,7 @@
   let {
     question,
     paused = false,
+    singleAttempt = false,
     onCompleted = async () => {},
     onReady = () => {},
     // Kept for callers of the prototype API while the lesson route migrates.
@@ -24,6 +25,7 @@
   }: {
     question: Question;
     paused?: boolean;
+    singleAttempt?: boolean;
     onCompleted?: (summary: CompletionSummary) => void | Promise<void>;
     onReady?: () => void;
     onEvaluated?: (result: EvaluationResult) => void;
@@ -109,6 +111,7 @@
     const generation = visitGeneration;
     const next = createQuestionHost(question, {
       autoStart: false,
+      maxAttempts: singleAttempt ? 1 : 2,
       clock: browserClock(),
       random,
       onAttempt: (attempt) => persistAttempt(attempt, identity, generation),

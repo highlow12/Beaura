@@ -83,6 +83,16 @@ describe("QuestionHost lifecycle", () => {
     });
   });
 
+  it("reveals the correct answer after the first wrong lesson attempt", async () => {
+    const host = createQuestionHost(singleQuestion(), {autoStart:false,maxAttempts:1});
+    host.start();
+    host.setAnswer(answer("wrong"));
+    const result = await host.submit();
+    expect(result).toMatchObject({status:"evaluated",attempt:{attemptNumber:1,final:true,result:{correct:false}}});
+    expect(host.state.phase).toBe("final-feedback");
+    expect(host.state.canonicalAnswer).toEqual({type:"single-choice",optionId:"right"});
+  });
+
   it("requires a retry after the first wrong answer and reveals the answer only at the end", async () => {
     const delivered: QuestionAttempt[] = [];
     const host = createQuestionHost(singleQuestion(), {
