@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: se.error-handling.order-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - classify
   - context
   - policy
+unorderedGroups:
+  - [classify, context]
 explanation:
   - type: text
     text: 감지한 오류를 먼저 분류하고 추적 가능한 맥락을 남긴 뒤, 재시도·전파·중단 중 맞는 정책을 적용합니다.

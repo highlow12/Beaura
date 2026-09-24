@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.relations.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - choose-second
   - record
   - repeat
+unorderedGroups:
+  - [choose-first, choose-second]
 explanation:
   - type: text
     text: "각 첫 성분과 둘째 성분의 조합을 빠짐없이 순서쌍으로 기록하면 Cartesian product가 됩니다."

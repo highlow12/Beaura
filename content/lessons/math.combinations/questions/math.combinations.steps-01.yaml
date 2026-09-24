@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.combinations.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - factorial-r
   - denominator
   - divide
+unorderedGroups:
+  - [factorial-n, factorial-r]
 explanation:
   - type: text
     text: "nCr=n!/(r!(n−r)!)의 분자와 분모를 각각 계산한 뒤 나눕니다."

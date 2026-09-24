@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.vector-space.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - span
   - independent
   - conclude
+unorderedGroups:
+  - [span, independent]
 explanation:
   - type: text
     text: "기저 판정은 생성과 독립 두 조건을 모두 필요로 합니다."
