@@ -57,3 +57,11 @@ export function recordAnswer(
     ],
   };
 }
+
+/** Find the nearest preceding explanation, skipping all intervening questions. */
+export function previousContentIndex(lesson: Lesson, fromIndex: number): number {
+  for (let index = fromIndex - 1; index >= 0; index--) {
+    if (lesson.flow[index].type === "content") return index;
+  }
+  return -1;
+}

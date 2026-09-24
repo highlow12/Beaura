@@ -344,6 +344,13 @@ export class QuestionHost {
     return Math.min(Number.MAX_SAFE_INTEGER, Math.max(0, Math.round(this.elapsed)));
   }
 
+  /** Suspend answer time while the learner reads an earlier explanation. */
+  setPaused(paused: boolean): void {
+    if (this.disposed) return;
+    if (paused) this.stopTimer();
+    else if (this.stateValue.phase === "answering") this.resumeTimer();
+  }
+
   setAnswer(answer: UserAnswer | null): void {
     if (this.disposed || this.stateValue.phase !== "answering") return;
     this.stateValue.currentAnswer = answer === null ? null : clone(answer);

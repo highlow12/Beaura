@@ -3,6 +3,7 @@ import {
   advanceLesson,
   createLessonSession,
   retreatLesson,
+  previousContentIndex,
 } from "../../src/lib/lesson/lesson-engine";
 import type { Lesson } from "../../src/lib/content/types";
 
@@ -26,6 +27,21 @@ describe("lesson navigation", () => {
     expect(retreatLesson(session)).toEqual(
       expect.objectContaining({ currentIndex: 0, status: "active" }),
     );
+  });
+
+  it("skips questions and finds the nearest earlier explanation without altering progress", () => {
+    const mixed: Lesson = {...lesson,flow:[
+      {type:"content",blocks:[]},
+      {type:"question",ref:"q1"},
+      {type:"content",blocks:[]},
+      {type:"question",ref:"q2"},
+      {type:"question",ref:"q3"},
+    ]};
+    const session = {...createLessonSession(mixed),currentIndex:4};
+    expect(previousContentIndex(mixed,session.currentIndex)).toBe(2);
+    expect(previousContentIndex(mixed,2)).toBe(0);
+    expect(previousContentIndex(mixed,0)).toBe(-1);
+    expect(session.currentIndex).toBe(4);
   });
 
   it("does not move before the first step", () => {

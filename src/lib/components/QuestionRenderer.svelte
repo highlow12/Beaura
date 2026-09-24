@@ -15,6 +15,7 @@
 
   let {
     question,
+    paused = false,
     onCompleted = async () => {},
     onReady = () => {},
     // Kept for callers of the prototype API while the lesson route migrates.
@@ -22,6 +23,7 @@
     random = Math.random,
   }: {
     question: Question;
+    paused?: boolean;
     onCompleted?: (summary: CompletionSummary) => void | Promise<void>;
     onReady?: () => void;
     onEvaluated?: (result: EvaluationResult) => void;
@@ -138,6 +140,8 @@
     void question.revision;
     installHost();
   });
+
+  $effect(() => { host?.setPaused(paused); });
 
   onMount(() => {
     mounted = true;
