@@ -36,7 +36,10 @@
   });
   let question = $derived(flow?.type === 'question' ? questions[flow.ref] : null);
   let reviewedContent = $derived(lesson && reviewIndex !== null ? lesson.flow[reviewIndex] : null);
-  let previousExplanation = $derived(lesson && session ? previousContentIndex(lesson, reviewIndex ?? session.currentIndex) : -1);
+  let activeSourceIndex = $derived(lesson && session && inDelayedRetry && flow?.type === 'question'
+    ? lesson.flow.findIndex((step) => step.type === 'question' && step.ref === flow.ref)
+    : session?.currentIndex ?? 0);
+  let previousExplanation = $derived(lesson && session ? previousContentIndex(lesson, reviewIndex ?? activeSourceIndex) : -1);
   let learningPathHref = $derived(lesson ? `${base}/learn?track=${encodeURIComponent(lesson.track)}` : `${base}/learn`);
 
   function restoreStepState(nextSession: LessonSession, nextLesson: Lesson) {
