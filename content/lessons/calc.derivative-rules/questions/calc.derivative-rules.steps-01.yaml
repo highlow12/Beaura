@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.derivative-rules.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - inner
   - inner-deriv
   - result
+unorderedGroups:
+  - [outer, inner]
 explanation:
   - type: text
     text: "연쇄 법칙은 바깥 미분을 안쪽에 대입한 뒤 안쪽 도함수를 곱합니다."
