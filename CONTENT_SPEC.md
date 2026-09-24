@@ -634,6 +634,7 @@ interface OrderingQuestionSource extends QuestionBaseSource {
   type: "ordering";
   items: OrderItemSource[];
   correctOrder: string[];
+  unorderedGroups?: string[][];
 }
 
 interface OrderItemSource {
@@ -647,7 +648,7 @@ interface OrderItemSource {
 - `items`는 2개 이상이어야 한다.
 - `correctOrder`는 모든 item ID를 정확히 한 번 포함해야 한다.
 - 런타임은 최초 표시 순서를 섞는다. 가능한 경우 정답과 다른 순서를 사용한다.
-- 제출 배열이 `correctOrder`와 위치별로 모두 같을 때만 정답이다.
+- 기본적으로 `correctOrder`와 위치별로 비교한다. `unorderedGroups: [[upper, lower]]`로 연속된 순서 무관 그룹을 지정하면 해당 구간 내부의 순서는 모두 정답으로 인정한다. 그룹은 중복되거나 불연속일 수 없으며, 문제 revision을 올린다.
 
 ### 11.5 matching
 

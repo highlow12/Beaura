@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.events.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,7 +27,8 @@ correctOrder:
   - p-b
   - overlap
   - combine
-explanation:
+unorderedGroups:
+  - [p-a, p-b, overlap]explanation:
   - type: text
     text: "각 사건과 겹침을 먼저 구한 뒤 포함배제 식에 대입합니다."
   - type: text
