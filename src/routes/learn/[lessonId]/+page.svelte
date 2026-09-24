@@ -28,9 +28,12 @@
   let lessonStates = $state<LessonState[]>([]);
   let unlockedLessons = $state<Lesson[]>([]);
   let inDelayedRetry = $derived(!!lesson && !!session && session.currentIndex >= lesson.flow.length && session.status === 'active');
-  let flow = $derived(lesson && session
-    ? (inDelayedRetry ? lesson.flow.find((step) => step.type === 'question' && step.ref === session.retryQueue?.[session.retryCursor ?? 0]) ?? null : lesson.flow[session.currentIndex])
-    : null);
+  let flow = $derived.by(() => {
+    if (!lesson || !session) return null;
+    if (!inDelayedRetry) return lesson.flow[session.currentIndex] ?? null;
+    const retryQuestionId = session.retryQueue?.[session.retryCursor ?? 0];
+    return lesson.flow.find((step) => step.type === 'question' && step.ref === retryQuestionId) ?? null;
+  });
   let question = $derived(flow?.type === 'question' ? questions[flow.ref] : null);
   let reviewedContent = $derived(lesson && reviewIndex !== null ? lesson.flow[reviewIndex] : null);
   let previousExplanation = $derived(lesson && session ? previousContentIndex(lesson, reviewIndex ?? session.currentIndex) : -1);
