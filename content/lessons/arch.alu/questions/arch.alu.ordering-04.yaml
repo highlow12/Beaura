@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: arch.alu.ordering-04
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -19,6 +19,9 @@ items:
       - type: text
         text: "결과와 조건 플래그를 다음 제어 단계에 전달한다"
 correctOrder: [fetch, select, flag]
+unorderedGroups:
+  - [fetch, select]
+
 explanation:
   - type: text
     text: "레지스터에서 연산 입력을 읽는다 단계가 먼저이고, 그 결과를 이용해 제어 신호로 수행할 연산을 선택한다 단계가 이어집니다."

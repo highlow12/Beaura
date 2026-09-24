@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.dynamic-programming.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
 - type: text
@@ -27,6 +27,8 @@ correctOrder:
 - base
 - transition
 - compute
+unorderedGroups:
+  - [base, transition]
 explanation:
 - type: text
   text: 상태 의미가 분명해야 기저값과 전이 식을 올바르게 정의할 수 있고, 그 뒤 저장 전략을 선택합니다.

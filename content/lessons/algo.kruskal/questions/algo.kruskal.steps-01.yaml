@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.kruskal.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
 - type: text
@@ -27,6 +27,8 @@ correctOrder:
 - compare
 - choose
 - merge
+unorderedGroups:
+  - [choose, merge]
 explanation:
 - type: text
   text: 같은 대표라면 간선을 건너뛰고, 다른 대표일 때만 선택한 뒤 두 묶음을 합칩니다.

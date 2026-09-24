@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.inverse-determinant.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - swap
   - negate
   - scale
+unorderedGroups:
+  - [det, swap, negate]
 explanation:
   - type: text
     text: "공식은 행렬식 계산 후 원소 재배치와 부호 변경, 마지막 스케일링 순서로 적용합니다."
