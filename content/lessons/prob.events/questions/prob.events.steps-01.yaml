@@ -28,7 +28,8 @@ correctOrder:
   - overlap
   - combine
 unorderedGroups:
-  - [p-a, p-b, overlap]explanation:
+  - [p-a, p-b, overlap]
+explanation:
   - type: text
     text: "각 사건과 겹침을 먼저 구한 뒤 포함배제 식에 대입합니다."
   - type: text

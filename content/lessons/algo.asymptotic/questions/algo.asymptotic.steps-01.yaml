@@ -26,7 +26,8 @@ correctOrder:
 - lower
 - tight
 unorderedGroups:
-  - [upper, lower]explanation:
+  - [upper, lower]
+explanation:
 - type: text
   text: 먼저 비용 식을 만들고 상한과 하한을 따로 확인합니다. 두 경계가 같은 성장률이면 tight bound Θ가 됩니다.
 schemaVersion: 1

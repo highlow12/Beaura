@@ -28,7 +28,8 @@ correctOrder:
   - evidence
   - bayes
 unorderedGroups:
-  - [prior, likelihood]explanation:
+  - [prior, likelihood]
+explanation:
   - type: text
     text: "사전확률과 우도를 정한 뒤 증거가 나타날 전체 확률로 정규화해야 사후확률이 됩니다."
   - type: text

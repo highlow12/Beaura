@@ -28,7 +28,8 @@ correctOrder:
   - product
   - compare
 unorderedGroups:
-  - [marginals, intersection]explanation:
+  - [marginals, intersection]
+explanation:
   - type: text
     text: "독립의 필요충분 조건인 교집합 곱셈식을 양쪽에서 계산해 비교합니다."
   - type: text
