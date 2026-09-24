@@ -6,7 +6,7 @@ import { QuestionHost } from '../../src/lib/questions/host';
 import { canonicalAnswer } from '../../src/lib/questions/registry';
 import { LearningDatabase } from '../../src/lib/storage/db';
 import { LearningRepository } from '../../src/lib/storage/repositories/learning-repository';
-import { advanceLesson, recordAnswer } from '../../src/lib/lesson/lesson-engine';
+import { advanceLesson, recordAnswer, recordDelayedRetry } from '../../src/lib/lesson/lesson-engine';
 import { missingPrerequisites } from '../../src/lib/curriculum/progress';
 import type { Lesson, Curriculum } from '../../src/lib/content/types';
 import type { Question, UserAnswer } from '../../src/lib/questions/types';
@@ -22,25 +22,26 @@ describe('real authored lesson to saved progress and review',()=>{
     let session=await repository.startLesson(lesson);
     const studied:Question[]=[];
     while(session.status==='active'){
-      const step=lesson.flow[session.currentIndex];
+      const delayed=session.currentIndex>=lesson.flow.length;
+      const step=delayed ? {type:'question' as const,ref:session.retryQueue![session.retryCursor!]} : lesson.flow[session.currentIndex];
       if(step.type==='question'){
-        const question=compiled.questions.get(step.ref) as Question;studied.push(question);
-        let firstWrong=false;
-        const host=new QuestionHost(question,{onAttempt:async(attempt)=>{
-          if(!attempt.final){firstWrong=true;return;}
-          const correct=attempt.result.correct&&!firstWrong;
+        const question=compiled.questions.get(step.ref) as Question;if(!delayed)studied.push(question);
+        const host=new QuestionHost(question,{maxAttempts:1,onAttempt:async(attempt)=>{
+          const correct=attempt.result.correct;
           await repository.saveAttempt({id:attempt.attemptId,question,correct,durationMs:attempt.durationMs,mode:'lesson'});
-          session=recordAnswer(session,question.id,correct);
+          session=delayed ? recordDelayedRetry(session,question.id) : recordAnswer(session,question.id,correct);
           await repository.saveSession(session);
         }});
-        if(question.type==='single-choice'){
+        if(question.type==='single-choice' && !delayed){
           host.setAnswer({type:'single-choice',optionId:question.options.find(o=>o.id!==question.correctOptionId)!.id});
-          await host.submit();expect(host.state.phase).toBe('retry-feedback');
-          expect((await repository.getSnapshot()).questionStates).toHaveLength(0);
-          host.retry();expect(host.state.phase).toBe('answering');
+          await host.submit();
+          expect(host.state.phase).toBe('final-feedback');
+          expect(host.state.canonicalAnswer).not.toBeNull();
+        } else {
+          host.setAnswer(canonicalAnswer(question) as UserAnswer);
+          await host.submit();
+          expect(host.state.phase).toBe('final-feedback');
         }
-        host.setAnswer(canonicalAnswer(question) as UserAnswer);await host.submit();
-        expect(host.state.phase).toBe('final-feedback');
       }
       session=advanceLesson(session,lesson);
       if(session.status==='completed')await repository.completeLesson(lesson,session);
@@ -57,7 +58,7 @@ describe('real authored lesson to saved progress and review',()=>{
     expect(await repository.getReviewQueue(studied,new Date(now))).toHaveLength(studied.length);
     await repository.saveAttempt({id:crypto.randomUUID(),question:studied[0],correct:true,durationMs:100,mode:'review'});
     const events=await database.studyEvents.where('questionId').equals(studied[0].id).sortBy('clientSeq');
-    expect(events.map(e=>e.rating)).toEqual(['again','good']);
+    expect(events.map(e=>e.rating)).toEqual(['again','good','good']);
     expect((await repository.getSnapshot()).lessonStates[0].status).toBe('completed');
     await database.delete();
   },15_000);
