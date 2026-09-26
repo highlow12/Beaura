@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.random-variables.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - assign
   - nonnegative
   - sum
+unorderedGroups:
+  - [nonnegative, sum]
 explanation:
   - type: text
     text: "가능한 값과 대응 확률을 만든 뒤 공리 조건을 검사합니다."

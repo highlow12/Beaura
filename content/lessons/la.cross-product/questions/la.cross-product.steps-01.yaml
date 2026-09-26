@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.cross-product.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - cross
   - direction
   - normalize
+unorderedGroups:
+  - [direction, normalize]
 explanation:
   - type: text
     text: "두 변이 만드는 평면에 수직인 외적이 표면 법선 후보가 됩니다."

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: calc.limits.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - right
   - compare
   - decide
+unorderedGroups:
+  - [left, right]
 explanation:
   - type: text
     text: "양쪽 접근값이 일치해야 하나의 극한값을 정할 수 있습니다."

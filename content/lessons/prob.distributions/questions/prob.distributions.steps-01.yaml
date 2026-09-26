@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: prob.distributions.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - n
   - p
   - count
+unorderedGroups:
+  - [n, p]
 explanation:
   - type: text
     text: "시행의 구조와 매개변수를 정한 뒤 성공 횟수를 확률변수로 계산합니다."

@@ -25,11 +25,13 @@ correctOrder:
 - basic
 - count
 - growth
+unorderedGroups:
+  - [size, basic]
 explanation:
 - type: text
   text: 입력과 기본 단위를 정한 뒤 연산 횟수를 세고, 그 식이 입력 크기에 따라 어떻게 커지는지 표현합니다.
 schemaVersion: 1
-revision: 1
+revision: 2
 tags:
 - complexity
 - cost

@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.matrix-multiplication.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - pick-col
   - products
   - sum
+unorderedGroups:
+  - [pick-row, pick-col]
 explanation:
   - type: text
     text: "결과 위치 (i,j)에 대해 A의 i행과 B의 j열을 내적합니다."

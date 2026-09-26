@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: pl.optimization.order-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - inspect-effects
   - prove-dead
   - remove
+unorderedGroups:
+  - [inspect-uses, inspect-effects]
 explanation:
   - type: text
     text: 값을 사용하지 않는 것만으로는 부족하며, 실행 자체의 부수 효과가 없다는 사실까지 확인해야 안전하게 지울 수 있습니다.

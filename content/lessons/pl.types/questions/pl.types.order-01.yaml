@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: pl.types.order-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - operator-rule
   - compare
   - result-type
+unorderedGroups:
+  - [lookup, operator-rule]
 explanation:
   - type: text
     text: 자식 식의 타입과 연산자 규칙을 모두 알아야 연산 가능 여부와 결과 타입을 결정할 수 있습니다.

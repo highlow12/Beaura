@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: la.homogeneous-coordinates.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,6 +27,8 @@ correctOrder:
   - matrix
   - multiply
   - interpret
+unorderedGroups:
+  - [extend, matrix]
 explanation:
   - type: text
     text: "점의 w를 1로 만든 뒤 변환 행렬과 곱하면 평행이동까지 포함한 위치가 나옵니다."

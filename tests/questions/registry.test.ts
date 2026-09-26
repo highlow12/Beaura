@@ -25,6 +25,19 @@ function result(question: unknown, answer: unknown) {
   return outcome.result;
 }
 
+describe("interchangeable ordering steps", () => {
+  const q: OrderingQuestion = {schemaVersion:1,id:"test.order",lessonId:"test",revision:2,type:"ordering",prompt,
+    items:["formula","upper","lower","tight"].map(option),correctOrder:["formula","upper","lower","tight"],
+    unorderedGroups:[["upper","lower"]]};
+  it("accepts either order within the group but not across its boundary", () => {
+    expect(result(q,{type:"ordering",orderedItemIds:["formula","lower","upper","tight"]}).correct).toBe(true);
+    expect(result(q,{type:"ordering",orderedItemIds:["lower","formula","upper","tight"]}).correct).toBe(false);
+  });
+  it("rejects noncontiguous groups", () => {
+    expect(evaluateQuestion({...q,unorderedGroups:[["formula","tight"]]},{type:"ordering",orderedItemIds:q.correctOrder}).status).toBe("error");
+  });
+});
+
 describe("question registry", () => {
   it("registers all nine question types", () => {
     expect(questionPlugins.size).toBe(9);

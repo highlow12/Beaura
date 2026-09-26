@@ -582,7 +582,7 @@ type CanonicalAnswerOf<T extends QuestionType> = CanonicalAnswerByType[T];
 
 - single-choice와 multi-select는 정답 option 카드를 강조한다.
 - fill-blank는 `acceptedAnswers[0]`을 정답 choice 카드로 표시한다.
-- ordering은 `correctOrder`를 표시한다.
+- ordering은 `correctOrder`를 예시 순서로 표시한다. `unorderedGroups` 내부의 상대적 순서는 무관하다.
 - matching은 `correctPairs`를 표시한다.
 - code-output은 `acceptedOutputs[0]`을 정답 choice 카드로 표시한다.
 - code-completion은 각 blank의 `acceptedAnswers[0]`을 정답 choice로 표시한다.

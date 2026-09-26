@@ -25,11 +25,13 @@ correctOrder:
 - stop
 - step
 - copy
+unorderedGroups:
+  - [start, stop, step]
 explanation:
 - type: text
   text: 시작과 끝 경계, 선택적 간격을 정한 뒤 반열린 범위에 해당하는 원소가 새 결과로 모입니다.
 schemaVersion: 1
-revision: 1
+revision: 2
 tags:
 - collections
 - slicing

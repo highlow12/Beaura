@@ -137,6 +137,79 @@ describe("LearningRepository", () => {
     });
   });
 
+  it("keeps delayed retries separate from first-pass lesson stats and XP", async () => {
+    const repo = repository();
+    const baseLesson = lesson();
+    const currentLesson: Lesson = {
+      ...baseLesson,
+      flow: [
+        { type: "content", blocks: prompt },
+        { type: "question", ref: `${baseLesson.id}.q1` },
+      ],
+    };
+    const q = question(`${currentLesson.id}.q1`);
+    let session = await repo.startLesson(currentLesson);
+
+    await repo.saveAttempt({
+      id: "attempt:first-pass-wrong",
+      question: q,
+      correct: false,
+      durationMs: 100,
+      mode: "lesson",
+      attemptNumber: 1,
+    });
+    session = await repo.startLesson(currentLesson);
+    session = {
+      ...session,
+      currentIndex: currentLesson.flow.length,
+      status: "active",
+      retryQueue: [q.id],
+      retryCursor: 0,
+      retryResults: [],
+    };
+    await repo.saveSession(session);
+
+    await repo.saveAttempt({
+      id: "attempt:delayed-retry-correct",
+      question: q,
+      correct: true,
+      durationMs: 80,
+      mode: "lesson",
+      attemptNumber: 2,
+    });
+
+    await expect(repo.startLesson(currentLesson)).resolves.toMatchObject({
+      answers: [{ questionId: q.id, correct: false }],
+      retryQueue: [q.id],
+      retryCursor: 0,
+      retryResults: [q.id],
+    });
+    const afterRetry = await repo.getSnapshot();
+    expect(afterRetry.lessonStates.find((state) => state.lessonId === currentLesson.id)).toMatchObject({
+      attemptedQuestions: 1,
+      completedQuestions: 1,
+      correctCount: 0,
+      incorrectCount: 1,
+    });
+    expect(afterRetry.game.xp).toBe(0);
+
+    const backup = await repo.exportBackup();
+    await repo.resetProgress();
+    await repo.importBackup(backup);
+    const restored = await repo.getSnapshot();
+    expect(restored.lessonStates.find((state) => state.lessonId === currentLesson.id)).toMatchObject({
+      attemptedQuestions: 1,
+      completedQuestions: 1,
+      correctCount: 0,
+      incorrectCount: 1,
+    });
+    expect(restored.game.xp).toBe(0);
+    await expect(repo.startLesson(currentLesson)).resolves.toMatchObject({
+      answers: [{ questionId: q.id, correct: false }],
+      retryResults: [q.id],
+    });
+  });
+
   it("makes saveAttempt idempotent for the same event id", async () => {
     const repo = repository();
     const q = question("lesson.one.q1");

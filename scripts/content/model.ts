@@ -546,7 +546,7 @@ const fieldsByType: Record<string, string[]> = {
   "single-choice": ["options", "correctOptionId", "shuffleOptions"],
   "multi-select": ["options", "correctOptionIds", "shuffleOptions"],
   "fill-blank": ["choices", "acceptedAnswers"],
-  ordering: ["items", "correctOrder"],
+  ordering: ["items", "correctOrder", "unorderedGroups"],
   matching: ["leftItems", "rightItems", "correctPairs"],
   "code-output": ["language", "code", "choices", "acceptedOutputs"],
   "code-completion": ["language", "template", "blanks"],
@@ -696,6 +696,27 @@ function question(
         errors.push(
           `${at}.correctOrder: 모든 item ID를 정확히 한 번 포함해야 합니다.`,
         );
+    }
+    if (value.unorderedGroups !== undefined) {
+      if (!Array.isArray(value.unorderedGroups) || value.unorderedGroups.length === 0) {
+        errors.push(`${at}.unorderedGroups: 그룹 배열이어야 합니다.`);
+      } else {
+        const order = Array.isArray(value.correctOrder) ? value.correctOrder as string[] : [];
+        const used = new Set<string>();
+        for (const group of value.unorderedGroups) {
+          if (!Array.isArray(group) || group.length < 2 || !group.every((entry) => typeof entry === "string")) {
+            errors.push(`${at}.unorderedGroups: item ID가 두 개 이상 필요합니다.`);
+            continue;
+          }
+          const positions = group.map((entry: string) => order.indexOf(entry));
+          if (new Set(group).size !== group.length || group.some((entry: string) => used.has(entry)) ||
+              positions.some((index: number) => index < 0) ||
+              Math.max(...positions) - Math.min(...positions) + 1 !== group.length) {
+            errors.push(`${at}.unorderedGroups: 겹치지 않는 연속 구간만 지정할 수 있습니다.`);
+          }
+          group.forEach((entry: string) => used.add(entry));
+        }
+      }
     }
   } else if (type === "matching") {
     const left = items(

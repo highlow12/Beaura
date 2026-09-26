@@ -200,6 +200,20 @@ function assertSession(session: LessonSession): void {
   }
   if (!Array.isArray(session.answers))
     throw new Error("session.answers must be an array");
+  if (session.retryQueue !== undefined &&
+      (!Array.isArray(session.retryQueue) ||
+       session.retryQueue.some((id) => typeof id !== "string") ||
+       new Set(session.retryQueue).size !== session.retryQueue.length))
+    throw new Error("session.retryQueue is invalid");
+  if (session.retryCursor !== undefined &&
+      (!Number.isSafeInteger(session.retryCursor) || session.retryCursor < 0 ||
+       session.retryCursor > (session.retryQueue?.length ?? 0)))
+    throw new Error("session.retryCursor is invalid");
+  if (session.retryResults !== undefined &&
+      (!Array.isArray(session.retryResults) ||
+       session.retryResults.some((id) => !session.retryQueue?.includes(id)) ||
+       new Set(session.retryResults).size !== session.retryResults.length))
+    throw new Error("session.retryResults is invalid");
   for (const answer of session.answers) {
     assertId(answer?.questionId, "session answer questionId");
     if (typeof answer.correct !== "boolean")
@@ -938,7 +952,13 @@ export class LearningRepository {
       if (
         existingSession?.contentRevision === lesson.revision &&
         existingSession.session.status === "active" &&
-        existingSession.session.currentIndex < lesson.flow.length &&
+        (existingSession.session.currentIndex < lesson.flow.length ||
+          (existingSession.session.currentIndex === lesson.flow.length &&
+            !!existingSession.session.retryQueue?.length &&
+            (existingSession.session.retryCursor ?? 0) < existingSession.session.retryQueue.length)) &&
+        (existingSession.session.retryQueue ?? []).every((id) =>
+          lesson.flow.some((step) => step.type === "question" && step.ref === id),
+        ) &&
         existingSession.session.answers.every((answer) =>
           lesson.flow.some(
             (step) =>
@@ -1042,6 +1062,9 @@ export class LearningRepository {
     ) {
       throw new Error("Cannot complete a lesson with unanswered questions");
     }
+    if ((session.retryQueue?.length ?? 0) > 0 &&
+        session.retryResults?.length !== session.retryQueue?.length)
+      throw new Error("Cannot complete a lesson with unattempted delayed retries");
     const now = timestamp(this.clock);
     await this.transaction("rw", async () => {
       const record = await this.database.lessonSessions.get(lesson.id);
@@ -1201,18 +1224,21 @@ export class LearningRepository {
           duplicate.contentRevision !== input.question.revision ||
           duplicate.result !== (input.correct ? "correct" : "incorrect") ||
           duplicate.durationMs !== durationMs ||
-          (duplicate.mode ?? "lesson") !== input.mode
+          (duplicate.mode ?? "lesson") !== input.mode ||
+          (duplicate.attemptNumber ?? 1) !== (input.attemptNumber ?? 1) ||
+          (duplicate.final ?? true) !== (input.final ?? true)
         ) {
           throw new Error("Attempt ID is already used for a different attempt");
         }
         return;
       }
 
-      // Question Host sends one final summary per lifecycle.  `correct` is
-      // first-try-correct, so a retry that eventually succeeds is deliberately
-      // stored as an Again outcome as required by the learning policy.
+      // Question Host sends one final summary per lifecycle. Deferred lesson
+      // retries are separate study events, but attempt 2 must not rewrite the
+      // lesson's first-pass result or award first-pass XP again.
       const finalAttempt = input.final ?? true;
       const attemptNumber = input.attemptNumber ?? 1;
+      const firstPassLessonAttempt = input.mode !== "lesson" || attemptNumber === 1;
       const rating = input.correct ? "good" : "again";
       const profile = await this.profile(now);
       const scheduler = this.scheduler(profile);
@@ -1273,34 +1299,53 @@ export class LearningRepository {
       await this.database.studyEvents.add(event);
       await this.database.questionStates.put(nextState);
       if (input.mode === "lesson") {
-        // Persist the answer together with the attempt.  The lesson player
-        // advances the session in a follow-up saveSession call; keeping the
-        // answer in this transaction closes the crash window between those
-        // two calls, so a reload can skip a question whose result was already
-        // recorded.
+        // Persist lesson-session progress in the same transaction as the study
+        // event. First-pass answers are authoritative for lesson statistics.
+        // A delayed retry only marks that retry as submitted, so a crash before
+        // the page-level save cannot overwrite the original wrong answer.
         const currentSession = await this.database.lessonSessions.get(
           input.question.lessonId,
         );
         if (currentSession && currentSession.session.status === "active") {
-          const answer = {
-            questionId: input.question.id,
-            correct: input.correct,
-            answeredAt: now,
-          };
-          const answerIndex = currentSession.session.answers.findIndex(
-            (existingAnswer) => existingAnswer.questionId === answer.questionId,
-          );
-          const answers = [...currentSession.session.answers];
-          if (answerIndex >= 0) answers[answerIndex] = answer;
-          else answers.push(answer);
-          await this.database.lessonSessions.put({
-            ...currentSession,
-            session: {
-              ...currentSession.session,
-              answers,
-            },
-            updatedAt: now,
-          });
+          if (attemptNumber === 1) {
+            const answer = {
+              questionId: input.question.id,
+              correct: input.correct,
+              answeredAt: now,
+            };
+            const answerIndex = currentSession.session.answers.findIndex(
+              (existingAnswer) => existingAnswer.questionId === answer.questionId,
+            );
+            const answers = [...currentSession.session.answers];
+            if (answerIndex >= 0) answers[answerIndex] = answer;
+            else answers.push(answer);
+            await this.database.lessonSessions.put({
+              ...currentSession,
+              session: {
+                ...currentSession.session,
+                answers,
+              },
+              updatedAt: now,
+            });
+          } else if (
+            currentSession.session.retryQueue?.[
+              currentSession.session.retryCursor ?? 0
+            ] === input.question.id
+          ) {
+            await this.database.lessonSessions.put({
+              ...currentSession,
+              session: {
+                ...currentSession.session,
+                retryResults: [
+                  ...new Set([
+                    ...(currentSession.session.retryResults ?? []),
+                    input.question.id,
+                  ]),
+                ],
+              },
+              updatedAt: now,
+            });
+          }
         }
         const existingLesson = await this.database.lessonStates.get(
           input.question.lessonId,
@@ -1312,18 +1357,23 @@ export class LearningRepository {
             input.question.revision,
             now,
           );
-        const lessonCompleted = finalAttempt;
+        const lessonCompleted = finalAttempt && firstPassLessonAttempt;
         await this.database.lessonStates.put({
           ...lesson,
           userId: eventIdentity.userId,
           status: lesson.status === "completed" ? "completed" : "in-progress",
           startedAt: lesson.startedAt ?? now,
           lastStudiedAt: now,
-          attemptedQuestions: lesson.attemptedQuestions + 1,
+          attemptedQuestions:
+            lesson.attemptedQuestions + (firstPassLessonAttempt ? 1 : 0),
           completedQuestions:
             lesson.completedQuestions + (lessonCompleted ? 1 : 0),
-          correctCount: lesson.correctCount + (input.correct ? 1 : 0),
-          incorrectCount: lesson.incorrectCount + (input.correct ? 0 : 1),
+          correctCount:
+            lesson.correctCount +
+            (firstPassLessonAttempt && input.correct ? 1 : 0),
+          incorrectCount:
+            lesson.incorrectCount +
+            (firstPassLessonAttempt && !input.correct ? 1 : 0),
           updatedAt: now,
         });
       }
@@ -1335,7 +1385,12 @@ export class LearningRepository {
         userId: eventIdentity.userId,
         deviceId: eventIdentity.deviceId,
       });
-      await this.updateGameForStudy(event, input.correct, finalAttempt, now);
+      await this.updateGameForStudy(
+        event,
+        input.correct,
+        finalAttempt && firstPassLessonAttempt,
+        now,
+      );
     });
   }
 
@@ -1662,7 +1717,8 @@ export class LearningRepository {
           const previousLesson = await this.database.lessonStates.get(
             event.lessonId,
           );
-          const finalAttempt = event.final ?? true;
+          const firstPassLessonAttempt = (event.attemptNumber ?? 1) === 1;
+          const finalAttempt = (event.final ?? true) && firstPassLessonAttempt;
           const lesson =
             previousLesson ??
             defaultLessonState(
@@ -1676,13 +1732,16 @@ export class LearningRepository {
             status: lesson.status === "completed" ? "completed" : "in-progress",
             startedAt: lesson.startedAt ?? event.effectiveAt,
             lastStudiedAt: event.effectiveAt,
-            attemptedQuestions: lesson.attemptedQuestions + 1,
+            attemptedQuestions:
+              lesson.attemptedQuestions + (firstPassLessonAttempt ? 1 : 0),
             completedQuestions:
               lesson.completedQuestions + (finalAttempt ? 1 : 0),
             correctCount:
-              lesson.correctCount + (event.result === "correct" ? 1 : 0),
+              lesson.correctCount +
+              (firstPassLessonAttempt && event.result === "correct" ? 1 : 0),
             incorrectCount:
-              lesson.incorrectCount + (event.result === "incorrect" ? 1 : 0),
+              lesson.incorrectCount +
+              (firstPassLessonAttempt && event.result === "incorrect" ? 1 : 0),
             updatedAt: event.effectiveAt,
           });
         }

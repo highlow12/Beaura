@@ -221,7 +221,10 @@
             {/each}
           </span>
           {#if submitted}<span class="answer-marker">내 답 {index + 1}번째</span>{/if}
-          {#if canonical}<span class="answer-marker">정답 위치 {question.correctOrder.indexOf(item.id) + 1}</span>{/if}
+          {#if canonical}
+            {@const group = question.unorderedGroups?.find((ids) => ids.includes(item.id))}
+            <span class="answer-marker">{group ? `정답 구간 ${Math.min(...group.map((id) => question.correctOrder.indexOf(id))) + 1} ~ ${Math.max(...group.map((id) => question.correctOrder.indexOf(id))) + 1} (순서 무관)` : `정답 위치 ${question.correctOrder.indexOf(item.id) + 1}`}</span>
+          {/if}
         </div>
         <div class="move-actions" aria-label={`${contentLabel(item.content)} 이동`}>
           <button

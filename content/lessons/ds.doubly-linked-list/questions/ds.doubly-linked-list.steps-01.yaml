@@ -25,11 +25,13 @@ correctOrder:
 - forward
 - backward
 - detach
+unorderedGroups:
+  - [forward, backward]
 explanation:
 - type: text
   text: 양쪽 이웃을 확인한 뒤 두 방향의 연결을 서로 잇고, 마지막에 삭제 노드의 참조를 정리합니다.
 schemaVersion: 1
-revision: 1
+revision: 2
 tags:
 - linked-list
 - doubly-linked-list

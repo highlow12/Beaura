@@ -434,7 +434,7 @@ function validateFillBlankQuestion(
 function validateOrderingQuestion(
   value: unknown,
 ): ValidationResult<OrderingQuestion> {
-  const errors = validateBase(value, "ordering", ["items", "correctOrder"]);
+  const errors = validateBase(value, "ordering", ["items", "correctOrder", "unorderedGroups"]);
   if (!isObject(value)) return invalid(...errors);
   const items = validateChoiceOptions(value.items, "question.items");
   errors.push(...items.errors);
@@ -445,6 +445,26 @@ function validateOrderingQuestion(
     errors.push(
       "question.correctOrder: 모든 item ID를 정확히 한 번 포함해야 합니다.",
     );
+  if (value.unorderedGroups !== undefined) {
+    if (!Array.isArray(value.unorderedGroups) || value.unorderedGroups.length === 0) {
+      errors.push("question.unorderedGroups: 그룹 배열이어야 합니다.");
+    } else {
+      const used = new Set<string>();
+      for (const group of value.unorderedGroups) {
+        if (!Array.isArray(group) || group.length < 2 || !group.every((id) => typeof id === "string")) {
+          errors.push("question.unorderedGroups: item ID가 두 개 이상 필요합니다.");
+          continue;
+        }
+        const positions = group.map((id: string) => order.indexOf(id));
+        if (new Set(group).size !== group.length || group.some((id: string) => used.has(id)) ||
+            positions.some((index: number) => index < 0) ||
+            Math.max(...positions) - Math.min(...positions) + 1 !== group.length) {
+          errors.push("question.unorderedGroups: 겹치지 않는 연속 구간만 지정할 수 있습니다.");
+        }
+        group.forEach((id: string) => used.add(id));
+      }
+    }
+  }
   return errors.length
     ? invalid(...errors)
     : valid(value as unknown as OrderingQuestion);
@@ -753,9 +773,10 @@ function orderingDefinition(): QuestionDefinition<"ordering"> {
       return valid(value as never);
     },
     evaluate(question, answer) {
-      const correct = answer.orderedItemIds.every(
-        (id, index) => id === question.correctOrder[index],
-      );
+      const correct = answer.orderedItemIds.every((id, index) => {
+        const group = question.unorderedGroups?.find((ids) => ids.includes(question.correctOrder[index]));
+        return group ? group.includes(id) : id === question.correctOrder[index];
+      });
       return { correct, score: correct ? 1 : 0 };
     },
     canonicalAnswer(question) {

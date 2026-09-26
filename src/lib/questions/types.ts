@@ -52,6 +52,7 @@ export interface OrderingQuestion extends QuestionBase {
   type: "ordering";
   items: ChoiceOption[];
   correctOrder: string[];
+  unorderedGroups?: string[][];
 }
 
 export interface MatchingPair {
