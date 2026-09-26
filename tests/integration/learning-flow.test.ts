@@ -28,7 +28,7 @@ describe('real authored lesson to saved progress and review',()=>{
         const question=compiled.questions.get(step.ref) as Question;if(!delayed)studied.push(question);
         const host=new QuestionHost(question,{maxAttempts:1,onAttempt:async(attempt)=>{
           const correct=attempt.result.correct;
-          await repository.saveAttempt({id:attempt.attemptId,question,correct,durationMs:attempt.durationMs,mode:'lesson'});
+          await repository.saveAttempt({id:attempt.attemptId,question,correct,durationMs:attempt.durationMs,mode:'lesson',attemptNumber:delayed?2:1});
           session=delayed ? recordDelayedRetry(session,question.id) : recordAnswer(session,question.id,correct);
           await repository.saveSession(session);
         }});
@@ -54,11 +54,18 @@ describe('real authored lesson to saved progress and review',()=>{
     expect(missingPrerequisites('py.conditionals',compiled.curriculum as Curriculum,snapshot.lessonStates)).toEqual(['py.io']);
     expect(snapshot.questionStates.find(s=>s.questionId===studied[0].id)?.incorrectCount).toBe(1);
     expect(snapshot.questionStates).toHaveLength(studied.length);
+    expect(snapshot.lessonStates.find(s=>s.lessonId===lesson.id)).toMatchObject({
+      attemptedQuestions: studied.length,
+      completedQuestions: studied.length,
+      correctCount: studied.length - 1,
+      incorrectCount: 1,
+    });
     now=Math.max(...snapshot.questionStates.map(s=>s.nextReviewAt??now))+1;
     expect(await repository.getReviewQueue(studied,new Date(now))).toHaveLength(studied.length);
     await repository.saveAttempt({id:crypto.randomUUID(),question:studied[0],correct:true,durationMs:100,mode:'review'});
     const events=await database.studyEvents.where('questionId').equals(studied[0].id).sortBy('clientSeq');
     expect(events.map(e=>e.rating)).toEqual(['again','good','good']);
+    expect(events.map(e=>e.attemptNumber)).toEqual([1,2,1]);
     expect((await repository.getSnapshot()).lessonStates[0].status).toBe('completed');
     await database.delete();
   },15_000);

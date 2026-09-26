@@ -100,9 +100,15 @@
     const current = question;
     const activeSession = session;
     const epoch = navigationEpoch;
-    await learningRepository.saveAttempt({...summary,question:current,mode:'lesson'});
+    const delayed = activeSession.currentIndex >= lesson.flow.length;
+    await learningRepository.saveAttempt({
+      ...summary,
+      question: current,
+      mode: 'lesson',
+      attemptNumber: delayed ? 2 : 1,
+    });
     // The same session answer is replaced on a save retry instead of appended twice.
-    const updated = activeSession.currentIndex >= lesson.flow.length
+    const updated = delayed
       ? recordDelayedRetry(activeSession, current.id)
       : recordAnswer({...activeSession,answers:activeSession.answers.filter((a) => a.questionId !== current.id)},current.id,summary.correct);
     await learningRepository.saveSession(updated);
