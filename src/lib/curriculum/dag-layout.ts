@@ -135,12 +135,13 @@ export async function layoutCurriculumDag(
   const resultById = new Map(
     (result.children ?? []).map((node) => [node.id, node]),
   );
-  const componentPositions = stackComponents(
+  const componentPositions = packComponents(
     ids,
     prerequisites,
     resultById,
     config.nodeWidth,
     config.nodeHeight,
+    config.horizontalGap,
     config.verticalGap,
     config.padding,
   );
@@ -197,12 +198,13 @@ function paddingOption(padding: number): string {
   return `[top=${padding},left=${padding},bottom=${padding},right=${padding}]`;
 }
 
-function stackComponents<T extends { x?: number; y?: number }>(
+function packComponents<T extends { x?: number; y?: number }>(
   ids: readonly string[],
   prerequisites: ReadonlyMap<string, readonly string[]>,
   positions: ReadonlyMap<string, T>,
   nodeWidth: number,
   nodeHeight: number,
+  horizontalGap: number,
   verticalGap: number,
   padding: number,
 ): Map<string, { x: number; y: number }> {
@@ -253,20 +255,41 @@ function stackComponents<T extends { x?: number; y?: number }>(
         Math.min(...points.map((point) => point.y)),
     };
   });
-  const maxWidth = Math.max(...bounds.map((bound) => bound.width));
-  const stacked = new Map<string, { x: number; y: number }>();
-  let top = padding;
-  for (const bound of bounds) {
-    const left = padding + (maxWidth - bound.width) / 2;
+  const width = Math.max(...bounds.map((bound) => bound.width));
+  const packed = new Map<string, { x: number; y: number }>();
+  const place = (bound: (typeof bounds)[number], left: number, top: number) => {
     for (const point of bound.points) {
-      stacked.set(point.id, {
+      packed.set(point.id, {
         x: left + point.x - bound.minX,
         y: top + point.y - bound.minY,
       });
     }
-    top += bound.height + verticalGap;
+  };
+
+  place(bounds[0], padding + (width - bounds[0].width) / 2, padding);
+  const rows: { bounds: (typeof bounds)[number][]; height: number; usedWidth: number }[] = [];
+  for (const bound of bounds.slice(1)) {
+    let row = rows.find(
+      (candidate) => candidate.usedWidth + horizontalGap + bound.width <= width,
+    );
+    if (!row) {
+      row = { bounds: [], height: 0, usedWidth: 0 };
+      rows.push(row);
+    }
+    row.usedWidth += bound.width + (row.usedWidth ? horizontalGap : 0);
+    row.height = Math.max(row.height, bound.height);
+    row.bounds.push(bound);
   }
-  return stacked;
+  let top = padding + bounds[0].height + verticalGap;
+  for (const row of rows) {
+    let left = padding + (width - row.usedWidth) / 2;
+    for (const bound of row.bounds) {
+      place(bound, left, top);
+      left += bound.width + horizontalGap;
+    }
+    top += row.height + verticalGap;
+  }
+  return packed;
 }
 
 function deriveDependents(
