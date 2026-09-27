@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: toc.finite-state-machine.order-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,9 +27,11 @@ correctOrder:
   - consume
   - lookup
   - update
+unorderedGroups:
+  - [current, consume]
 explanation:
   - type: text
-    text: 전이는 현재 상태와 방금 읽은 기호를 함께 입력으로 사용하므로 두 값을 먼저 확인해야 합니다.
+    text: 전이를 조회하기 전에 현재 상태와 입력 기호가 모두 필요합니다. 두 값을 확인하는 순서는 바뀔 수 있고, 둘을 알면 전이를 찾아 다음 상태로 갱신합니다.
 tags:
   - theory-of-computation
   - finite-state-machine

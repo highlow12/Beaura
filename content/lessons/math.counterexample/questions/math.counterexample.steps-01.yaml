@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.counterexample.steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
@@ -27,11 +27,13 @@ correctOrder:
   - choose
   - check-condition
   - break
+unorderedGroups:
+  - [check-condition, break]
 explanation:
   - type: text
-    text: "조건을 벗어난 사례는 반례가 아니므로 조건을 먼저 확인해야 합니다."
+    text: "대상이 조건을 만족하는지와 결론을 깨는지는 어느 순서로 검사해도 됩니다. 반례가 되려면 두 사실이 모두 확인되어야 합니다."
   - type: text
-    text: "마지막에는 결론이 실제로 깨진다는 사실을 명확히 보여 줍니다."
+    text: "조건을 만족하지 않거나 결론이 참인 대상은 반례가 아닙니다."
 tags:
   - discrete-math
   - proof
