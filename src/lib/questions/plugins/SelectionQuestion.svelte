@@ -147,11 +147,19 @@
         return "답을 고르세요";
     }
   }
+
+  function promptBlock(block: ContentBlock): ContentBlock {
+    if (question.type !== "fill-blank" || block.type !== "code") return block;
+    return {
+      ...block,
+      code: block.code.replace(/\{\{blank:[^}]+\}\}/g, selectedKeys[0] ?? "___"),
+    };
+  }
 </script>
 
 <div class="question-body">
   {#each question.prompt as block}
-    <ContentBlockRenderer {block} />
+    <ContentBlockRenderer block={promptBlock(block)} />
   {/each}
 
   {#if question.type === "code-output"}
