@@ -81,13 +81,11 @@ describe("curriculum DAG layout", () => {
         (id) => byId.get(id)!.y + byId.get(id)!.height,
       ),
     );
-    const sideBottom = Math.max(
-      ...["side-root", "side-child"].map(
-        (id) => byId.get(id)!.y + byId.get(id)!.height,
-      ),
-    );
     expect(byId.get("side-root")!.y).toBeGreaterThanOrEqual(mainBottom + 18);
-    expect(byId.get("isolated")!.y).toBeGreaterThanOrEqual(sideBottom + 18);
+    expect(byId.get("isolated")!.y).toBe(byId.get("side-root")!.y);
+    expect(byId.get("isolated")!.x).toBeGreaterThanOrEqual(
+      byId.get("side-root")!.x + byId.get("side-root")!.width + 20,
+    );
     expect(byId.get("side-root")!.y).toBeLessThan(byId.get("side-child")!.y);
     expect(layout.edges).toContainEqual(
       expect.objectContaining({ sourceId: "side-root", targetId: "side-child" }),
