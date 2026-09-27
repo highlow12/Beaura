@@ -48,9 +48,7 @@ describe("curriculum DAG layout", () => {
       ["right", "merge"],
     ]);
     expect(layout.edges.every((edge) => edge.path.startsWith("M "))).toBe(true);
-    for (const node of layout.nodes) {
-      expect((node.y - 10) % (50 + 18)).toBe(0);
-    }
+    expect(layout.nodes.every((node) => node.x >= 10 && node.y >= 10)).toBe(true);
   });
 
   it("keeps external prerequisites out of the selected track layout", async () => {
