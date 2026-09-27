@@ -64,6 +64,36 @@ describe("curriculum DAG layout", () => {
     expect(layout.edges).toEqual([]);
   });
 
+  it("places disconnected smaller graphs below the largest graph", async () => {
+    const layout = await layoutCurriculumDag(
+      ["side-root", "side-child", "isolated", "root", "left", "right", "merge"],
+      [
+        ...nodes,
+        { lesson: "side-root", requires: [] },
+        { lesson: "side-child", requires: ["side-root"] },
+        { lesson: "isolated", requires: [] },
+      ],
+      { nodeHeight: 50, verticalGap: 18, padding: 10 },
+    );
+    const byId = new Map(layout.nodes.map((node) => [node.id, node]));
+    const mainBottom = Math.max(
+      ...["root", "left", "right", "merge"].map(
+        (id) => byId.get(id)!.y + byId.get(id)!.height,
+      ),
+    );
+    const sideBottom = Math.max(
+      ...["side-root", "side-child"].map(
+        (id) => byId.get(id)!.y + byId.get(id)!.height,
+      ),
+    );
+    expect(byId.get("side-root")!.y).toBeGreaterThanOrEqual(mainBottom + 18);
+    expect(byId.get("isolated")!.y).toBeGreaterThanOrEqual(sideBottom + 18);
+    expect(byId.get("side-root")!.y).toBeLessThan(byId.get("side-child")!.y);
+    expect(layout.edges).toContainEqual(
+      expect.objectContaining({ sourceId: "side-root", targetId: "side-child" }),
+    );
+  });
+
   it("is deterministic for duplicate lesson ids and missing curriculum entries", async () => {
     const layout = await layoutCurriculumDag(
       ["root", "root", "unknown"],

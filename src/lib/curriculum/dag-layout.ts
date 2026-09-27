@@ -135,6 +135,15 @@ export async function layoutCurriculumDag(
   const resultById = new Map(
     (result.children ?? []).map((node) => [node.id, node]),
   );
+  const componentPositions = stackComponents(
+    ids,
+    prerequisites,
+    resultById,
+    config.nodeWidth,
+    config.nodeHeight,
+    config.verticalGap,
+    config.padding,
+  );
   const dependents = deriveDependents(ids, prerequisites);
   const ranks = deriveRanks(ids, prerequisites, dependents, order);
   const lanes = deriveLanes(ids, ranks, resultById, order);
@@ -149,8 +158,8 @@ export async function layoutCurriculumDag(
       id,
       rank,
       lane,
-      x: placed?.x ?? config.padding,
-      y: placed?.y ?? config.padding,
+      x: componentPositions.get(id)?.x ?? placed?.x ?? config.padding,
+      y: componentPositions.get(id)?.y ?? placed?.y ?? config.padding,
       width: config.nodeWidth,
       height: config.nodeHeight,
       prerequisites: prerequisites.get(id) ?? [],
@@ -186,6 +195,78 @@ function uniqueIds(ids: readonly string[]): string[] {
 
 function paddingOption(padding: number): string {
   return `[top=${padding},left=${padding},bottom=${padding},right=${padding}]`;
+}
+
+function stackComponents<T extends { x?: number; y?: number }>(
+  ids: readonly string[],
+  prerequisites: ReadonlyMap<string, readonly string[]>,
+  positions: ReadonlyMap<string, T>,
+  nodeWidth: number,
+  nodeHeight: number,
+  verticalGap: number,
+  padding: number,
+): Map<string, { x: number; y: number }> {
+  const neighbors = new Map(ids.map((id) => [id, new Set<string>()]));
+  for (const id of ids) {
+    for (const required of prerequisites.get(id) ?? []) {
+      neighbors.get(id)!.add(required);
+      neighbors.get(required)!.add(id);
+    }
+  }
+
+  const visited = new Set<string>();
+  const components: { ids: string[]; firstIndex: number }[] = [];
+  for (const [index, id] of ids.entries()) {
+    if (visited.has(id)) continue;
+    const component: string[] = [];
+    const queue = [id];
+    visited.add(id);
+    for (let cursor = 0; cursor < queue.length; cursor++) {
+      const current = queue[cursor];
+      component.push(current);
+      for (const neighbor of neighbors.get(current) ?? []) {
+        if (visited.has(neighbor)) continue;
+        visited.add(neighbor);
+        queue.push(neighbor);
+      }
+    }
+    components.push({ ids: component, firstIndex: index });
+  }
+  components.sort(
+    (left, right) =>
+      right.ids.length - left.ids.length || left.firstIndex - right.firstIndex,
+  );
+
+  const bounds = components.map((component) => {
+    const points = component.ids.map((id) => ({
+      id,
+      x: positions.get(id)?.x ?? padding,
+      y: positions.get(id)?.y ?? padding,
+    }));
+    return {
+      points,
+      minX: Math.min(...points.map((point) => point.x)),
+      minY: Math.min(...points.map((point) => point.y)),
+      width: Math.max(...points.map((point) => point.x + nodeWidth)) -
+        Math.min(...points.map((point) => point.x)),
+      height: Math.max(...points.map((point) => point.y + nodeHeight)) -
+        Math.min(...points.map((point) => point.y)),
+    };
+  });
+  const maxWidth = Math.max(...bounds.map((bound) => bound.width));
+  const stacked = new Map<string, { x: number; y: number }>();
+  let top = padding;
+  for (const bound of bounds) {
+    const left = padding + (maxWidth - bound.width) / 2;
+    for (const point of bound.points) {
+      stacked.set(point.id, {
+        x: left + point.x - bound.minX,
+        y: top + point.y - bound.minY,
+      });
+    }
+    top += bound.height + verticalGap;
+  }
+  return stacked;
 }
 
 function deriveDependents(
