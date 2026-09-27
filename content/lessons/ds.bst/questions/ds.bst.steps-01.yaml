@@ -1,37 +1,32 @@
 id: ds.bst.steps-01
 type: ordering
 prompt:
-- type: text
-  text: BST에서 값을 탐색하는 순서를 배열하세요.
+  - type: text
+    text: BST에서 값을 탐색하는 순서를 배열하세요.
 items:
-- id: compare
-  content:
-  - type: text
-    text: 현재 노드의 값과 target을 비교한다
-- id: finish
-  content:
-  - type: text
-    text: 같으면 찾았다고 반환한다
-- id: branch
-  content:
-  - type: text
-    text: 작으면 왼쪽, 크면 오른쪽으로 이동한다
-- id: repeat
-  content:
-  - type: text
-    text: 새 노드에서 비교를 반복한다
+  - id: start
+    content:
+      - type: text
+        text: 루트를 현재 노드로 둔다
+  - id: compare
+    content:
+      - type: text
+        text: 현재 노드의 값과 target을 비교한다
+  - id: decide
+    content:
+      - type: text
+        text: 같으면 반환하고, 다르면 작은 쪽은 왼쪽·큰 쪽은 오른쪽 자식으로 이동해 비교를 반복한다. 자식이 없으면 찾지 못했다고 보고한다
 correctOrder:
-- compare
-- finish
-- branch
-- repeat
+  - start
+  - compare
+  - decide
 explanation:
-- type: text
-  text: 비교 결과가 같으면 끝내고, 다르면 크기 관계에 맞는 한쪽으로 이동해 같은 절차를 반복합니다.
+  - type: text
+    text: 각 노드에서 target과 비교해 같은 값이면 반환합니다. 다르면 한쪽 자식만 선택해 반복하며, 선택할 자식이 없으면 값이 트리에 없습니다.
 schemaVersion: 1
-revision: 1
+revision: 2
 tags:
-- tree
-- bst
-- search
+  - tree
+  - bst
+  - search
 difficulty: 2

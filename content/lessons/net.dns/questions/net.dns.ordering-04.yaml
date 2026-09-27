@@ -1,10 +1,10 @@
 schemaVersion: 1
 id: net.dns.ordering-04
-revision: 1
+revision: 2
 type: ordering
 prompt:
   - type: text
-    text: "DNS 이름 해석의 기본 처리 흐름을 올바른 순서로 배열하세요."
+    text: "캐시 미스가 난 DNS 이름 해석의 처리 흐름을 순서대로 배열하세요."
 items:
   - id: cache
     content:

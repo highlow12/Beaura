@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: math.induction
-revision: 3
+revision: 4
 track: discrete-math
 title: "수학적 귀납법"
 description: "기초 단계와 귀납 단계로 자연수 전체에 대한 명제를 증명한다."

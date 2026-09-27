@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: toc.decidability.order-01
-revision: 2
+revision: 3
 type: ordering
 prompt:
   - type: text
@@ -13,23 +13,18 @@ items:
   - id: simulate
     content:
       - type: text
-        text: 최대 B단계까지 프로그램을 시뮬레이션하도록 정한다.
-  - id: detect-halt
+        text: 최대 B단계까지 실행하되, B단계 이내에 정지하면 시뮬레이션을 끝낸다.
+  - id: report
     content:
       - type: text
-        text: B단계 안에 멈추면 ‘정지’라고 답하도록 정한다.
-  - id: timeout
-    content:
-      - type: text
-        text: B단계까지 안 멈추면 ‘B단계 안에 정지하지 않음’이라고 답하도록 정한다.
+        text: B단계 이내에 정지했으면 ‘B단계 안에 정지’, 아니면 ‘B단계 안에는 정지하지 않음’이라고 답한다.
 correctOrder:
   - set-bound
   - simulate
-  - detect-halt
-  - timeout
+  - report
 explanation:
   - type: text
-    text: 이는 시뮬레이터의 규칙을 구성하는 순서입니다. 실제 실행에서는 ‘중간 정지’와 ‘제한 초과’가 서로 다른 분기이고, 제한을 넘긴 경우에도 나중에 영원히 멈추지 않는다고 결론 내릴 수는 없습니다.
+    text: B단계 안에 멈추는지 여부는 판정할 수 있습니다. 제한 안에 멈추지 않았다는 결과만으로 프로그램이 이후에도 영원히 멈추지 않는다고 결론 내릴 수는 없습니다.
 tags:
   - theory-of-computation
   - decidability
