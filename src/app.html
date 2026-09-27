@@ -50,6 +50,51 @@
         }
       })();
     </script>
+    <script>
+      (function () {
+        var recoveryKey = "beaura:module-recovery-attempted";
+        function recover(error) {
+          var message = String(error && (error.message || error) || "");
+          if (!/dynamically imported module|importing a module script|module script failed/i.test(message)) return;
+
+          var notice = document.getElementById("module-recovery-notice");
+          if (!notice) {
+            notice = document.createElement("div");
+            notice.id = "module-recovery-notice";
+            notice.setAttribute("role", "alert");
+            notice.style.cssText = "position:fixed;inset:0;z-index:9999;display:grid;place-content:center;gap:1rem;padding:2rem;background:#f5f7f4;color:#111714;text-align:center;font:1rem system-ui";
+            notice.innerHTML = '<strong>앱을 불러오지 못했습니다.</strong><button type="button" style="padding:.8rem;border:1px solid;border-radius:.5rem;background:white;color:inherit;font:inherit;cursor:pointer">다시 불러오기</button>';
+            document.body.appendChild(notice);
+            notice.querySelector("button").addEventListener("click", retry);
+          }
+          try {
+            if (sessionStorage.getItem(recoveryKey)) return;
+            sessionStorage.setItem(recoveryKey, "1");
+          } catch (_) { return; }
+          retry();
+        }
+
+        async function retry() {
+          if (!navigator.onLine) return;
+          try {
+            if ("serviceWorker" in navigator) {
+              var registration = await navigator.serviceWorker.getRegistration();
+              if (registration) {
+                await registration.update();
+                if (registration.waiting) registration.waiting.postMessage({ type: "ACTIVATE_UPDATE" });
+                else await registration.unregister();
+              }
+            }
+          } catch (_) { /* Network refresh still works without service worker access. */ }
+          var url = new URL(location.href);
+          url.searchParams.set("module-retry", String(Date.now()));
+          location.replace(url.href);
+        }
+
+        window.addEventListener("unhandledrejection", function (event) { recover(event.reason); });
+        window.addEventListener("error", function (event) { recover(event.error || event.message); }, true);
+      })();
+    </script>
     %sveltekit.head%
   </head>
   <body
