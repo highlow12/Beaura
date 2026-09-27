@@ -67,8 +67,7 @@ export function emptyCurriculumDagLayout(): DagLayout {
 /**
  * Arrange a subset of curriculum nodes with ELK's layered layout.
  *
- * ELK chooses a readable horizontal order, then nodes are projected onto a
- * card-sized grid so every row and column aligns exactly.
+ * ELK determines card positions from the dependency edges.
  */
 export async function layoutCurriculumDag(
   lessonIds: readonly string[],
@@ -140,24 +139,18 @@ export async function layoutCurriculumDag(
   const ranks = deriveRanks(ids, prerequisites, dependents, order);
   const lanes = deriveLanes(ids, ranks, resultById, order);
   const rankCount = Math.max(1, ...[...ranks.values()].map((rank) => rank + 1));
-  const rankSizes = Array.from(
-    { length: rankCount },
-    (_, rank) => ids.filter((id) => ranks.get(id) === rank).length,
-  );
-  const laneCount = Math.max(1, ...rankSizes);
-  const horizontalPitch = config.nodeWidth + config.horizontalGap;
-  const verticalPitch = config.nodeHeight + config.verticalGap;
+  const laneCount = Math.max(1, ...[...lanes.values()].map((lane) => lane + 1));
 
   const nodes = ids.map<DagLayoutNode>((id) => {
     const rank = ranks.get(id) ?? 0;
     const lane = lanes.get(id) ?? 0;
-    const rowOffset = (laneCount - (rankSizes[rank] ?? 1)) / 2;
+    const placed = resultById.get(id);
     return {
       id,
       rank,
       lane,
-      x: config.padding + (lane + rowOffset) * horizontalPitch,
-      y: config.padding + rank * verticalPitch,
+      x: placed?.x ?? config.padding,
+      y: placed?.y ?? config.padding,
       width: config.nodeWidth,
       height: config.nodeHeight,
       prerequisites: prerequisites.get(id) ?? [],
