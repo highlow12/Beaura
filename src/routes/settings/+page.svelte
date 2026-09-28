@@ -98,7 +98,8 @@
   {/if}
 </div>
 <style>
-  .settings-shell{max-width:760px;margin:auto}
+  .settings-shell{max-width:760px;margin:auto;grid-template-columns:minmax(0,1fr)}
+  .settings-shell > .stack{grid-template-columns:minmax(0,1fr)}
   label{display:grid;gap:var(--space-2);font-weight:500}
   form .button{justify-self:start}
   .section-heading{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3)}
@@ -111,9 +112,10 @@
   .consent-status[data-consent='denied']{border-color:var(--border-strong)}
   .consent-check{display:flex;align-items:flex-start;gap:var(--space-2);font-size:.9rem;line-height:1.5}
   .consent-check input{flex:0 0 auto;width:1.1rem;height:1.1rem;margin-top:.15rem}
-  .confirmation{border:1px solid var(--border);border-radius:var(--radius-md);padding:var(--space-4);background:var(--primary-soft);overflow-wrap:anywhere}
+  .confirmation{min-width:0;border:1px solid var(--border);border-radius:var(--radius-md);padding:var(--space-4);background:var(--primary-soft);overflow-wrap:anywhere}
   .file-label{font-weight:600;font-size:.9rem}
-  .file-label input{max-width:100%}
+  .file-label{min-width:0}
+  .file-label input{width:100%;min-width:0;max-width:100%}
   .version{margin:0;font-size:.9rem}
   .danger-button{border-color:var(--danger);background:var(--danger);color:var(--text-on-accent)}
   .danger-button:hover{border-color:var(--danger);background:color-mix(in srgb,var(--danger) 82%,var(--text))}
