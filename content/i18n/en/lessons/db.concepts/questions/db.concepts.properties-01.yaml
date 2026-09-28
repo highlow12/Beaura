@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.concepts.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe the role of a database system."
+options:
+  - id: query
+    content:
+      - type: text
+        text: "Queries for data matching conditions and returns results"
+  - id: concurrency
+    content:
+      - type: text
+        text: "Provides rules when multiple operations access data concurrently"
+  - id: recovery
+    content:
+      - type: text
+        text: "Enables recovery to a consistent state after a failure"
+  - id: replace-app
+    content:
+      - type: text
+        text: "Automatically determines every application screen and the user experience"
+correctOptionIds: [query, concurrency, recovery]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A DBMS focuses on data access and reliability. Screen layout and user experience are the responsibility of the application layer."
+tags: [database, dbms, concurrency, recovery]
+difficulty: 2

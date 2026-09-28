@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: math.graph-connectivity.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for checking whether a graph is connected by following neighbors."
+items:
+  - id: start
+    content:
+      - type: text
+        text: "Choose an arbitrary starting vertex"
+  - id: search
+    content:
+      - type: text
+        text: "Repeatedly visit the neighbors of newly reached vertices"
+  - id: count
+    content:
+      - type: text
+        text: "Count the visited vertices"
+  - id: decide
+    content:
+      - type: text
+        text: "Classify the graph as connected if the count equals the total number of vertices"
+correctOrder:
+  - start
+  - search
+  - count
+  - decide
+explanation:
+  - type: text
+    text: "A graph is connected if every vertex can be reached by following neighbors from one starting vertex."
+  - type: text
+    text: "If any vertex remains unvisited, the graph has two or more components."
+tags:
+  - discrete-math
+  - graphs
+  - bfs
+  - connectivity
+difficulty: 2

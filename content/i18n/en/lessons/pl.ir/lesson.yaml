@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.ir
+revision: 1
+track: programming-languages
+title: Intermediate Representation
+description: Learn why compilers use an intermediate representation between the front end and back end.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.ir.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.ir.match-01
+  - type: question
+    ref: pl.ir.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.ir.order-01
+  - type: question
+    ref: pl.ir.trace-01

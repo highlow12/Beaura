@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.graphs.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The number of edges entering a vertex in a directed graph is called the ___ ."
+choices:
+  - "indegree"
+  - "outdegree"
+  - "degree-total"
+acceptedAnswers:
+  - "indegree"
+explanation:
+  - type: text
+    text: "The indegree is the number of edges that enter the vertex."
+  - type: text
+    text: "Conversely, the number of edges leaving the vertex is the outdegree."
+tags:
+  - discrete-math
+  - graphs
+  - directed-graph
+difficulty: 1

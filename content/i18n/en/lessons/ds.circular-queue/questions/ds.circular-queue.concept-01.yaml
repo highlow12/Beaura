@@ -1,0 +1,33 @@
+id: ds.circular-queue.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What does a circular queue do at the end of the array?"
+options:
+- id: wrap
+  content:
+  - type: text
+    text: "Use modulo to return to the first index and reuse empty slots"
+- id: shift
+  content:
+  - type: text
+    text: "Move every element to the front of the array after each insertion"
+- id: sort
+  content:
+  - type: text
+    text: "Always sort elements by priority"
+- id: delete
+  content:
+  - type: text
+    text: "Never reuse a slot after dequeue"
+correctOptionId: wrap
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A circular queue uses the remainder after dividing an index by capacity to wrap from the end to the beginning. This reuses space after dequeue."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- circular-buffer
+difficulty: 2

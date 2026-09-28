@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.tcp.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic TCP connection and reliability steps in the correct order."
+items:
+  - id: syn
+    content:
+      - type: text
+        text: "The client sends a connection request and its initial sequence number"
+  - id: syn-ack
+    content:
+      - type: text
+        text: "The server acknowledges it and sends its own sequence number"
+  - id: ack
+    content:
+      - type: text
+        text: "The client acknowledges the response and establishes the connection"
+correctOrder: [syn, syn-ack, ack]
+explanation:
+  - type: text
+    text: "First, the client sends a connection request and its initial sequence number; then the server acknowledges it and sends its own sequence number."
+  - type: text
+    text: "At the step where the client acknowledges the response and establishes the connection, the result is passed to the next network layer or application."
+tags: [tcp, reliability, handshake]
+difficulty: 3

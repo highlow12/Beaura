@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.concepts.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the abbreviation for database software that manages queries, concurrent access, and recovery."
+choices: ["DBMS", "RGB", "CPU"]
+acceptedAnswers: ["DBMS"]
+explanation:
+  - type: text
+    text: "DBMS stands for Database Management System. It manages data storage, query processing, transactions, and more."
+tags: [database, dbms]
+difficulty: 1

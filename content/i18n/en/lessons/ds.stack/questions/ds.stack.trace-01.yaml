@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: ds.stack.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  stack = []
+  stack.append("A")
+  stack.append("B")
+  stack.pop()
+  stack.append("C")
+  print(stack[-1])
+choices:
+  - C
+  - B
+  - A
+acceptedOutputs:
+  - C
+explanation:
+  - type: text
+    text: "After B is removed with pop, C is added last, so the top is C."
+tags:
+  - stack
+  - lifo
+  - trace
+difficulty: 2

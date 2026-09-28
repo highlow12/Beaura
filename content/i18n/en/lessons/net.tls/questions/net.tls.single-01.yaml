@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.tls.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about TLS and certificates is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "TLS verifies the peer with a certificate and uses a session key to protect communication confidentiality and integrity."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "TLS is another name for a DNS cache that translates domain names into IP addresses."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "With TLS, users do not need to check the server certificate’s name or validity period."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "TLS verifies the peer with a certificate and uses a session key to protect communication confidentiality and integrity."
+  - type: text
+    text: "TLS is a protocol that negotiates cryptographic algorithms and keys during a handshake, verifies the server’s public-key identity with a certificate, and then encrypts data with a session key."
+tags: [tls, https, security]
+difficulty: 2

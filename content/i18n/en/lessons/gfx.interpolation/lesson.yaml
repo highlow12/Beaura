@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.interpolation
+revision: 2
+track: computer-graphics
+title: "Interpolation and Barycentric Coordinates"
+description: "Learn to interpolate attributes inside a triangle using barycentric weights and understand why perspective correction is needed."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.interpolation.output-01
+  - type: question
+    ref: gfx.interpolation.fill-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/perspective-correction.md
+  - type: question
+    ref: gfx.interpolation.match-01
+  - type: question
+    ref: gfx.interpolation.choice-01
+  - type: question
+    ref: gfx.interpolation.complete-01

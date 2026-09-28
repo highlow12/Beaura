@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.vector-space.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The number of basis vectors in 3D space equals the dimension, ___ ."
+choices:
+  - "1"
+  - "2"
+  - "3"
+  - "infinite"
+acceptedAnswers:
+  - "3"
+explanation:
+  - type: text
+    text: "Dimension is the number of independent vectors in a basis."
+  - type: text
+    text: "Therefore, every basis of a 3D space has three vectors."
+tags:
+  - linear-algebra
+  - space
+  - dimension
+difficulty: 1

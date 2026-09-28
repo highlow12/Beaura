@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.cpu.cycle-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic CPU instruction cycle in order."
+items:
+  - id: fetch
+    content:
+      - type: text
+        text: "Fetch an instruction from memory"
+  - id: decode
+    content:
+      - type: text
+        text: "Decode the instruction type and operands"
+  - id: execute
+    content:
+      - type: text
+        text: "Execute the instruction with the ALU or another unit"
+correctOrder:
+  - fetch
+  - decode
+  - execute
+explanation:
+  - type: text
+    text: "At an introductory level, the basic cycle is fetch → decode → execute."
+  - type: text
+    text: "Instructions that produce a result write it during execution or in a separate write-back stage, but not every instruction writes a value; a branch is one example."
+tags:
+  - cpu
+  - instruction-cycle
+difficulty: 2

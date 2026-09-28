@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: gfx.rasterization.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "This code prints the result of testing three integer samples in a bounding box. Choose the output."
+language: python
+code: |-
+  samples = [(0, 0), (1, 0), (1, 1)]
+  inside = [(x, y) for x, y in samples if x + y <= 1]
+  print(len(inside))
+choices: ["2", "1", "3"]
+acceptedOutputs: ["2"]
+explanation:
+  - type: text
+    text: "`(0, 0)` and `(1, 0)` have `x + y ≤ 1`, while `(1, 1)` sums to 2, so there are two inside candidates. An actual edge rule may handle boundary samples differently depending on the implementation."
+tags: [graphics, rasterization, code-output]
+difficulty: 2

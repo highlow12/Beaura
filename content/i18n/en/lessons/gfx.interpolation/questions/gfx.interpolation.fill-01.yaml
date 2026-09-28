@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.interpolation.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the sum that the three barycentric weights must have for a point inside a triangle."
+choices: ["1", "0", "3"]
+acceptedAnswers: ["1"]
+explanation:
+  - type: text
+    text: "Barycentric weights sum to 1. When each weight is nonnegative, they form a convex combination of the three vertices and represent a point inside the triangle."
+tags: [graphics, interpolation, barycentric]
+difficulty: 1

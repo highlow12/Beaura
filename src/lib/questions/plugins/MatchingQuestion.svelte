@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { locale, t } from "$lib/application/locale";
   import ContentBlockRenderer from "$lib/components/ContentBlockRenderer.svelte";
   import { contentLabel } from "$lib/questions/presentation";
   import type { QuestionRendererProps } from "$lib/questions/renderer-contract";
@@ -24,7 +25,7 @@
   let renderedKey = $state("");
   let renderedIdentity = $state("");
   let previousRightOrder = $state<typeof question.rightItems | null>(null);
-  let announcement = $state("A와 B에서 카드 한 장씩 골라 짝을 맞추세요.");
+  let announcement = $state(t("A와 B에서 카드 한 장씩 골라 짝을 맞추세요.", "Choose one card from A and one from B to match them.", $locale));
 
   $effect(() => {
     const identity = `${question.id}:${question.revision}`;
@@ -40,7 +41,7 @@
     matchedLeftIds = [];
     matchedRightIds = [];
     matchedPairs = [];
-    announcement = "A와 B에서 카드 한 장씩 골라 짝을 맞추세요.";
+    announcement = t("A와 B에서 카드 한 장씩 골라 짝을 맞추세요.", "Choose one card from A and one from B to match them.", $locale);
     onAnswerChange(null);
   });
 
@@ -71,7 +72,7 @@
     const leftId = side === "left" ? id : selectedLeftId;
     const rightId = side === "right" ? id : selectedRightId;
     if (!leftId || !rightId) {
-      announcement = side === "left" ? "B 오른쪽 카드에서 한 장을 더 고르세요." : "A 왼쪽 카드에서 한 장을 더 고르세요.";
+      announcement = side === "left" ? t("B 오른쪽 카드에서 한 장을 더 고르세요.", "Choose another card on the right (B).", $locale) : t("A 왼쪽 카드에서 한 장을 더 고르세요.", "Choose another card on the left (A).", $locale);
       onAnswerChange(null);
       return;
     }
@@ -81,7 +82,7 @@
     matchedPairs = [...matchedPairs, { leftId, rightId }];
     selectedLeftId = null;
     selectedRightId = null;
-    announcement = "짝으로 연결했습니다.";
+    announcement = t("짝으로 연결했습니다.", "Cards paired.", $locale);
     emitAnswerIfComplete();
   }
 
@@ -101,14 +102,14 @@
   function cardLabel(side: "left" | "right", id: string): string {
     const items = side === "left" ? question.leftItems : question.rightItems;
     const item = items.find((candidate) => candidate.id === id);
-    return item ? contentLabel(item.content) : "내용 없음";
+    return item ? contentLabel(item.content) : t("내용 없음", "No content", $locale);
   }
 
   function accessibleLabel(side: "left" | "right", id: string): string {
-    const state = isMatched(side, id) ? ", 짝을 맞춤" : isSelected(side, id) ? ", 선택됨" : "";
-    const submitted = isSubmitted(side, id) ? ", 내 답" : "";
-    const canonical = isCanonical(side, id) ? ", 정답" : "";
-    return `${side === "left" ? "A 왼쪽" : "B 오른쪽"} 카드: ${cardLabel(side, id)}${state}${submitted}${canonical}`;
+    const state = isMatched(side, id) ? t(", 짝을 맞춤", ", matched", $locale) : isSelected(side, id) ? t(", 선택됨", ", selected", $locale) : "";
+    const submitted = isSubmitted(side, id) ? t(", 내 답", ", your answer", $locale) : "";
+    const canonical = isCanonical(side, id) ? t(", 정답", ", correct answer", $locale) : "";
+    return `${side === "left" ? t("A 왼쪽", "A left", $locale) : t("B 오른쪽", "B right", $locale)} ${t("카드", "card", $locale)}: ${cardLabel(side, id)}${state}${submitted}${canonical}`;
   }
 </script>
 
@@ -117,9 +118,9 @@
     <ContentBlockRenderer {block} />
   {/each}
 
-  <div class="matching-board" role="group" aria-label="A와 B의 짝 맞추기">
+  <div class="matching-board" role="group" aria-label={t("A와 B의 짝 맞추기", "Match A and B", $locale)}>
     <section class="matching-column" aria-labelledby={`matching-left-${question.id}`}>
-      <h3 id={`matching-left-${question.id}`}>A · 왼쪽 항목</h3>
+      <h3 id={`matching-left-${question.id}`}>{t("A · 왼쪽 항목", "A · Left items", $locale)}</h3>
       <div class="card-list">
         {#each question.leftItems as item}
           {@const selected = isSelected("left", item.id)}
@@ -137,15 +138,15 @@
             <span class="card-content">
               {#each item.content as block}<ContentBlockRenderer {block} />{/each}
             </span>
-            {#if isSubmitted("left", item.id)}<span class="answer-marker">내 답</span>{/if}
-            {#if isCanonical("left", item.id)}<span class="answer-marker">정답</span>{/if}
+            {#if isSubmitted("left", item.id)}<span class="answer-marker">{t("내 답", "Your answer", $locale)}</span>{/if}
+            {#if isCanonical("left", item.id)}<span class="answer-marker">{t("정답", "Correct answer", $locale)}</span>{/if}
           </button>
         {/each}
       </div>
     </section>
 
     <section class="matching-column" aria-labelledby={`matching-right-${question.id}`}>
-      <h3 id={`matching-right-${question.id}`}>B · 오른쪽 항목</h3>
+      <h3 id={`matching-right-${question.id}`}>{t("B · 오른쪽 항목", "B · Right items", $locale)}</h3>
       <div class="card-list">
         {#each rightItems as item}
           {@const selected = isSelected("right", item.id)}
@@ -163,8 +164,8 @@
             <span class="card-content">
               {#each item.content as block}<ContentBlockRenderer {block} />{/each}
             </span>
-            {#if isSubmitted("right", item.id)}<span class="answer-marker">내 답</span>{/if}
-            {#if isCanonical("right", item.id)}<span class="answer-marker">정답</span>{/if}
+            {#if isSubmitted("right", item.id)}<span class="answer-marker">{t("내 답", "Your answer", $locale)}</span>{/if}
+            {#if isCanonical("right", item.id)}<span class="answer-marker">{t("정답", "Correct answer", $locale)}</span>{/if}
           </button>
         {/each}
       </div>

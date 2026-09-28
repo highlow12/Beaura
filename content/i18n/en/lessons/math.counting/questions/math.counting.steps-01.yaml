@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.counting.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for calculating the number of outcomes in a two-step choice."
+items:
+  - id: identify-first
+    content:
+      - type: text
+        text: "Count the choices in the first step"
+  - id: identify-second
+    content:
+      - type: text
+        text: "For each first choice, count the choices in the second step"
+  - id: multiply
+    content:
+      - type: text
+        text: "Multiply the number of choices at each step"
+  - id: state
+    content:
+      - type: text
+        text: "Write the total number of outcomes and its unit"
+correctOrder:
+  - identify-first
+  - identify-second
+  - multiply
+  - state
+explanation:
+  - type: text
+    text: "In sequential choices, selections at each step are combined, so multiplication counts the total outcomes."
+  - type: text
+    text: "If the number of second-step choices depends on the first choice, calculate each case separately."
+tags:
+  - discrete-math
+  - combinatorics
+  - counting-process
+difficulty: 2

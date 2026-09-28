@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.memory.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe SRAM and DRAM."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Caches often use SRAM to reduce latency."
+  - id: correct-b
+    content:
+      - type: text
+        text: "DRAM needs refresh because charge leaks from its capacitors."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "DRAM always maintains the same charge while powered, even without refresh."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "SRAM is generally cheaper than large-capacity main memory."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Caches often use SRAM to reduce latency. DRAM needs refresh because charge leaks from its capacitors."
+  - type: text
+    text: "SRAM is fast and needs no refresh, which simplifies control, but it is expensive and difficult to scale to large capacities. DRAM has lower area and cost per bit, but requires refresh and has row-activation latency."
+tags: [memory, sram, dram]
+difficulty: 3

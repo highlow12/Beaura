@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.geometry
+revision: 2
+track: computer-graphics
+title: "Geometry Data and Meshes"
+description: "Learn how triangles, meshes, normals, and vertex winding represent 3D objects."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.geometry.match-01
+  - type: question
+    ref: gfx.geometry.output-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/winding.md
+  - type: question
+    ref: gfx.geometry.normal-choice-01
+  - type: question
+    ref: gfx.geometry.vertex-complete-01
+  - type: question
+    ref: gfx.geometry.properties-01

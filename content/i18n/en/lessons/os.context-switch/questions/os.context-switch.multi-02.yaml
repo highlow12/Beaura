@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.context-switch.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to context switches."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "The program counter and stack pointer must be restored to resume interrupted code."
+  - id: correct-b
+    content:
+      - type: text
+        text: "A timer interrupt can trigger a preemptive context switch."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A context switch starts a new program from the beginning without saving any state."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "The cost of a context switch has no effect on caches or the memory hierarchy."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The program counter and stack pointer must be restored to resume interrupted code. A timer interrupt can trigger a preemptive context switch."
+  - type: text
+    text: "Switching enables fair sharing and responsiveness, but saving and restoring state and losing cache locality have costs. If switches happen too often, management overhead can exceed useful work."
+tags: [context-switch, scheduler, process]
+difficulty: 3

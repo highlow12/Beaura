@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.transactions.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe transactions and ACID."
+options:
+  - id: boundary
+    content:
+      - type: text
+        text: "Changes that must not violate one business rule can be grouped within one boundary"
+  - id: atomicity
+    content:
+      - type: text
+        text: "Atomicity guarantees that only some of the changes are not left behind"
+  - id: durability
+    content:
+      - type: text
+        text: "Durability means committed results remain after a failure"
+  - id: commit-undo
+    content:
+      - type: text
+        text: "Commit always automatically cancels an already finalized result"
+correctOptionIds: [boundary, atomicity, durability]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Set transaction boundaries around indivisible business units. Atomicity means all or nothing, and durability means preserving finalized results."
+tags: [database, transactions, acid]
+difficulty: 3

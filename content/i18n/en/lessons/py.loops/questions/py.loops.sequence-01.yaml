@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: py.loops.sequence-01
+revision: 1
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the loop target that prints every item in numbers."
+language: python
+template: |-
+  numbers = [2, 4, 6]
+  for number in {{blank:sequence}}:
+      print(number)
+blanks:
+- id: sequence
+  choices:
+  - numbers
+  - range(numbers)
+  - number
+  acceptedAnswers:
+  - numbers
+explanation:
+- type: text
+  text: "Use the list itself as the target of for so it can take out items one by one."
+- type: text
+  text: "The loop variable number refers to each item in numbers in turn."
+tags:
+- loops
+- for
+- code-completion
+difficulty: 2

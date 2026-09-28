@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.kernel-space
+revision: 2
+track: operating-systems
+title: Kernel Space and User Space
+description: Understand why the operating system separates privileged operations from ordinary programs.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.kernel-space.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.kernel-space.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.kernel-space.fill-03
+  - type: question
+    ref: os.kernel-space.ordering-04
+  - type: question
+    ref: os.kernel-space.matching-05

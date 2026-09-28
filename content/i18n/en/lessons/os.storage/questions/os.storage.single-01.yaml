@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.storage.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about HDDs, SSDs, and block devices is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A block device exposes storage as fixed-size blocks, while HDDs and SSDs have different internal access characteristics."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Every SSD write waits for head-seek time, just like an HDD."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A block device is an application that interprets file names and directory permissions directly."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A block device exposes storage as fixed-size blocks, while HDDs and SSDs have different internal access characteristics."
+  - type: text
+    text: "A block device is a storage interface that reads and writes fixed-size blocks. HDD performance is dominated by spinning platters and head movement, while SSDs use flash cells and controllers."
+tags: [storage, hdd, ssd]
+difficulty: 2

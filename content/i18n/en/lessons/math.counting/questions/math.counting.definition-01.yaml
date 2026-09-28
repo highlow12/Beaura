@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.counting.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "How many outfits can be made by choosing one of 3 shirts and one of 2 pairs of pants?"
+options:
+  - id: five
+    content:
+      - type: text
+        text: "5 ways"
+  - id: six
+    content:
+      - type: text
+        text: "6 ways"
+  - id: one
+    content:
+      - type: text
+        text: "1 way"
+  - id: nine
+    content:
+      - type: text
+        text: "9 ways"
+correctOptionId: six
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Each of the 3 shirt choices can be paired with 2 pairs of pants, so `3×2 = 6`."
+  - type: text
+    text: "Sequential choices are counted with the product rule."
+tags:
+  - discrete-math
+  - combinatorics
+  - product-rule
+difficulty: 1

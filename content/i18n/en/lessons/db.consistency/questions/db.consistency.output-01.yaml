@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.consistency.output-01
+revision: 2
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the final applied version after a replica applies the primary’s change log versions 3, 4, and 5 in order."
+language: python
+code: |-
+  primary_version = 5
+  replica_version = 2
+  for logged_version in [3, 4, 5]:
+      replica_version = logged_version
+  print(replica_version)
+choices: ["5", "4", "2"]
+acceptedOutputs: ["5"]
+explanation:
+  - type: text
+    text: "After applying log versions 3, 4, and 5 in order, the replica’s final applied version is 5, matching the primary. Real replication applies the corresponding data changes as well as version numbers."
+tags: [database, consistency, replication, code-output]
+difficulty: 2

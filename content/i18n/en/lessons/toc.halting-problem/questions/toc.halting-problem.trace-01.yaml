@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: toc.halting-problem.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: This code simplifies D, which loops forever when H predicts “halts.” What does it print when H’s prediction is True?
+language: python
+code: |-
+  prediction = True
+  result = "loop" if prediction else "halt"
+  print(result)
+choices:
+  - loop
+  - halt
+  - undecidable
+acceptedOutputs:
+  - loop
+explanation:
+  - type: text
+    text: When H predicts that the program halts, D chooses `loop` instead. This opposite behavior creates a contradiction on the self-input.
+tags:
+  - theory-of-computation
+  - halting-problem
+  - trace
+difficulty: 2

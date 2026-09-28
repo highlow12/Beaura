@@ -1,0 +1,49 @@
+schemaVersion: 1
+id: net.multicast.matching-05
+revision: 2
+type: matching
+prompt:
+- type: text
+  text: Match each broadcast and multicast term with its role.
+leftItems:
+- id: left-a
+  content:
+  - type: text
+    text: Unicast
+- id: left-b
+  content:
+  - type: text
+    text: Broadcast
+- id: left-c
+  content:
+  - type: text
+    text: Multicast
+rightItems:
+- id: right-a
+  content:
+  - type: text
+    text: One sender and one recipient
+- id: right-b
+  content:
+  - type: text
+    text: All recipients in the same broadcast domain
+- id: right-c
+  content:
+  - type: text
+    text: A set of recipients that joined a specific group
+correctPairs:
+- leftId: left-a
+  rightId: right-a
+- leftId: left-b
+  rightId: right-b
+- leftId: left-c
+  rightId: right-c
+explanation:
+- type: text
+  text: Unicast targets one recipient; broadcast targets all recipients in the same broadcast domain; and multicast targets
+    recipients who joined a specific group.
+tags:
+- broadcast
+- multicast
+- unicast
+difficulty: 1

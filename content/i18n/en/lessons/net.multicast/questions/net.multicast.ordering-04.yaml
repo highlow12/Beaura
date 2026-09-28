@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: net.multicast.ordering-04
+revision: 2
+type: ordering
+prompt:
+- type: text
+  text: Arrange the basic broadcast and multicast processing steps in the correct order.
+items:
+- id: address
+  content:
+  - type: text
+    text: Choose unicast, broadcast, or multicast as the delivery scope
+- id: join
+  content:
+  - type: text
+    text: For multicast, recipients join the group
+- id: replicate
+  content:
+  - type: text
+    text: Network devices copy the frame only to the links that need it
+correctOrder:
+- address
+- join
+- replicate
+unorderedGroups:
+- - address
+  - join
+explanation:
+- type: text
+  text: Choosing a delivery scope and having recipients join a multicast group can happen in either order. The network forwards
+    the frame to the required links based on group membership.
+- type: text
+  text: Network devices copy the frame only to the required links. The result is then delivered to the next network layer
+    or the application.
+tags:
+- broadcast
+- multicast
+- unicast
+difficulty: 2

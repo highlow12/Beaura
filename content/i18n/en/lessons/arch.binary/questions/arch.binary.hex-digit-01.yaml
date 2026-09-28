@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: arch.binary.hex-digit-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "One hexadecimal digit corresponds to how many bits?"
+choices:
+  - "4"
+  - "8"
+  - "16"
+acceptedAnswers:
+  - "4"
+explanation:
+  - type: text
+    text: "Four bits have 2⁴ = 16 possible combinations, which can be represented by one hexadecimal digit."
+tags:
+  - binary
+  - bit-shift
+difficulty: 2

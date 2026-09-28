@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.registers.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic register-file steps in the correct order."
+items:
+  - id: address
+    content:
+      - type: text
+        text: "Specify the register number to read or write"
+  - id: read-write
+    content:
+      - type: text
+        text: "Output the value through a read port or prepare the write input"
+  - id: clock
+    content:
+      - type: text
+        text: "Update state when write enable is active at the clock edge"
+correctOrder: [address, read-write, clock]
+explanation:
+  - type: text
+    text: "First specify the register number to read or write. Then output the value through a read port or prepare the write input."
+  - type: text
+    text: "Finally, update state when write enable is active at the clock edge and pass the result to the next circuit or program."
+tags: [register, register-file, cpu-state]
+difficulty: 3

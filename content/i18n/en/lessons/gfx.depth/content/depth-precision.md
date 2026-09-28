@@ -1,0 +1,5 @@
+## Depth Comparisons and Precision
+
+If the depth test is configured so that smaller values are closer to the camera, a new fragment at `0.4` passes when the stored value is `0.6`, while a new value of `0.8` fails. Clearing the buffer to a far value such as `1.0` at the start of a frame lets the first fragment pass. If you clear only the color buffer and retain depth values, the previous frame's occlusion affects the new frame.
+
+Depth values in a typical perspective projection are not evenly distributed; they are packed more closely near the near plane. Setting the near plane too close or the far plane very far away leaves too little precision for distant regions and increases z-fighting, where two nearly coplanar surfaces alternately pass around the same quantized depth value. Some configurations, such as reversed-Z, instead treat larger values as closer. Do not hard-code “smaller is always in front.” The projection matrix, clear value, and comparison function must all follow the same convention.

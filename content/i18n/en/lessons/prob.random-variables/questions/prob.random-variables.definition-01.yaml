@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.random-variables.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which is the correct definition of a random variable X?"
+options:
+  - id: mapping
+    content:
+      - type: text
+        text: "A function that maps experiment outcomes to numbers"
+  - id: outcome-only
+    content:
+      - type: text
+        text: "A single outcome of the experiment"
+  - id: probability-only
+    content:
+      - type: text
+        text: "The sum of all probabilities"
+  - id: average
+    content:
+      - type: text
+        text: "A single value that is always the mean"
+correctOptionId: mapping
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A random variable maps sample-space outcomes to numbers so they can be analyzed."
+  - type: text
+    text: "A random variable can take multiple values, which should be considered along with its distribution."
+tags:
+  - probability-statistics
+  - random-variables
+  - definition
+difficulty: 1

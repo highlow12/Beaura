@@ -1,0 +1,27 @@
+id: ds.dynamic-array.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following append code."
+language: python
+code: 'values = [1, 2]
+
+  values.append(3)
+
+  print(values)'
+choices:
+- '[1, 2, 3]'
+- '[1, 2]'
+- '[3, 1, 2]'
+acceptedOutputs:
+- '[1, 2, 3]'
+explanation:
+- type: text
+  text: "append adds 3 to the end of the dynamic array, producing [1, 2, 3] while preserving the existing order."
+schemaVersion: 1
+revision: 1
+tags:
+- array
+- dynamic-array
+- amortized
+difficulty: 2

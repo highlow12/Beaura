@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.api-contracts.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: Which choice best describes what an API contract should include?
+options:
+  - id: input-output-errors
+    content:
+      - type: text
+        text: Rules for allowed inputs, guaranteed results, and how failures are expressed
+  - id: implementation-only
+    content:
+      - type: text
+        text: The complete current implementation of internal functions
+  - id: timing-only
+    content:
+      - type: text
+        text: Only the time when the developer wrote the code
+  - id: ui-color
+    content:
+      - type: text
+        text: Only the screen colors, which are unrelated to callers
+correctOptionId: input-output-errors
+shuffleOptions: true
+explanation:
+  - type: text
+    text: A contract defines the inputs callers must provide and the meaning of the results and errors the API guarantees; it does not expose the entire internal implementation.
+tags:
+  - software-engineering
+  - api
+  - contract
+difficulty: 1

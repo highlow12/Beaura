@@ -1,0 +1,32 @@
+id: ds.bst.steps-01
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for searching for a value in a BST."
+items:
+  - id: start
+    content:
+      - type: text
+        text: "Set the root as the current node"
+  - id: compare
+    content:
+      - type: text
+        text: "Compare the current node’s value with target"
+  - id: decide
+    content:
+      - type: text
+        text: "If equal, return; otherwise move left for a smaller target or right for a larger target and repeat. If there is no child, report that the value was not found."
+correctOrder:
+  - start
+  - compare
+  - decide
+explanation:
+  - type: text
+    text: "At each node, compare with target and return if they are equal. Otherwise, choose one child and repeat. If there is no child to choose, the value is not in the tree."
+schemaVersion: 1
+revision: 2
+tags:
+  - tree
+  - bst
+  - search
+difficulty: 2

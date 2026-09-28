@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.bayes.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each Bayes term with its meaning."
+leftItems:
+  - id: prior
+    content:
+      - type: text
+        text: "Prior probability"
+  - id: likelihood
+    content:
+      - type: text
+        text: "Likelihood"
+  - id: evidence
+    content:
+      - type: text
+        text: "Evidence probability"
+  - id: posterior
+    content:
+      - type: text
+        text: "Posterior probability"
+rightItems:
+  - id: prior-desc
+    content:
+      - type: text
+        text: "The probability of a cause before observing the evidence"
+  - id: likelihood-desc
+    content:
+      - type: text
+        text: "The probability of the evidence given a cause"
+  - id: evidence-desc
+    content:
+      - type: text
+        text: "The total probability of the evidence across all causes"
+  - id: posterior-desc
+    content:
+      - type: text
+        text: "The probability of a cause after observing the evidence"
+correctPairs:
+  - leftId: prior
+    rightId: prior-desc
+  - leftId: likelihood
+    rightId: likelihood-desc
+  - leftId: evidence
+    rightId: evidence-desc
+  - leftId: posterior
+    rightId: posterior-desc
+explanation:
+  - type: text
+    text: "Bayesian inference multiplies the prior by the likelihood, then divides by the total probability of the evidence to reverse the direction."
+  - type: text
+    text: "Ignoring the base rate can greatly overestimate the probability of a rare event given a positive result."
+tags:
+  - probability-statistics
+  - bayes
+  - terminology
+difficulty: 2

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.graphs
+revision: 3
+track: discrete-math
+title: "Components of a Graph"
+description: "Represent and read graphs using vertices, edges, direction, and degree."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.graphs.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.graphs.application-01
+  - type: content
+    ref: content/representation-choice.md
+  - type: question
+    ref: math.graphs.term-01
+  - type: question
+    ref: math.graphs.steps-01
+  - type: question
+    ref: math.graphs.match-01

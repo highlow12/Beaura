@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.induction.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the first step to check in mathematical induction?"
+options:
+  - id: base
+    content:
+      - type: text
+        text: "Check that the statement is true at the starting value in the base case"
+  - id: step
+    content:
+      - type: text
+        text: "Calculate every natural number one by one"
+  - id: counter
+    content:
+      - type: text
+        text: "Find a counterexample"
+  - id: end
+    content:
+      - type: text
+        text: "Negate the conclusion"
+correctOptionId: base
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The base case must establish the starting point for the inductive step to continue the chain."
+  - type: text
+    text: "Then prove the inductive step from an arbitrary `k` to the next value."
+tags:
+  - discrete-math
+  - proof
+  - base-case
+difficulty: 1

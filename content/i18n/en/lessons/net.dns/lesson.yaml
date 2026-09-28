@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.dns
+revision: 2
+track: networks
+title: DNS Name Resolution
+description: Understand how DNS queries resolve domain names to IP addresses and how DNS caching works.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: net.dns.single-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: net.dns.multi-02
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: net.dns.fill-03
+- type: question
+  ref: net.dns.ordering-04
+- type: question
+  ref: net.dns.matching-05

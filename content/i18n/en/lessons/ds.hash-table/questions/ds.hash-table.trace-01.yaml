@@ -1,0 +1,25 @@
+id: ds.hash-table.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following dictionary lookup code."
+language: python
+code: 'table = {"id-1": "Ada"}
+
+  print(table["id-1"])'
+choices:
+- Ada
+- id-1
+- None
+acceptedOutputs:
+- Ada
+explanation:
+- type: text
+  text: "The value associated with key id-1 is Ada, so that value is printed. A hash-table lookup returns the value, not the key."
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-table
+- collision
+difficulty: 2

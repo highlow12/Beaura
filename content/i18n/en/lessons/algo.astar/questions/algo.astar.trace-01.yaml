@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.astar.trace-01
+revision: 2
+type: code-output
+prompt:
+- type: text
+  text: "Choose the name of the candidate with the smallest f = g + h."
+language: python
+code: |-
+  g = {"A": 2, "B": 4, "C": 1}
+  h = {"A": 5, "B": 2, "C": 6}
+  scores = [(g["A"] + h["A"], "A"),
+            (g["B"] + h["B"], "B"),
+            (g["C"] + h["C"], "C")]
+  print(min(scores)[1])
+choices:
+- B
+- A
+- C
+acceptedOutputs:
+- B
+explanation:
+- type: text
+  text: "The first value in each tuple is f. A has 7, B has 6, and C has 7. Python’s min compares the first values first, so it selects B."
+tags:
+- shortest-path
+- astar
+- heuristic
+- code-output
+difficulty: 3

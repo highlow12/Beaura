@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.sequential.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic sequential-circuit and flip-flop process in the correct order."
+items:
+  - id: sample
+    content:
+      - type: text
+        text: "Sample the input at the clock edge"
+  - id: store
+    content:
+      - type: text
+        text: "Store the sampled value as internal state"
+  - id: hold
+    content:
+      - type: text
+        text: "Output the stored value until the next update"
+correctOrder: [sample, store, hold]
+explanation:
+  - type: text
+    text: "First, sample the input at the clock edge; then store the sampled value as internal state."
+  - type: text
+    text: "The stored value is output until the next update, passing the final result to the next circuit or program."
+tags: [sequential-circuit, flip-flop, clock]
+difficulty: 3

@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: py.variables.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  coins = 3
+  coins = coins + 2
+  coins = coins * 2
+  print(coins)
+choices:
+  - '10'
+  - '7'
+  - '12'
+acceptedOutputs:
+  - '10'
+explanation:
+  - type: text
+    text: "coins changes from 3 to 5, then doubles to 10."
+tags:
+  - variables
+  - reassignment
+  - code-output
+difficulty: 1

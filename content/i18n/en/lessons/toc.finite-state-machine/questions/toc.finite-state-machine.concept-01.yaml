@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: toc.finite-state-machine.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: What is the most important role of a state in a finite-state machine?
+options:
+  - id: summarize-history
+    content:
+      - type: text
+        text: Summarize the input history needed to determine future transitions.
+  - id: store-all-input
+    content:
+      - type: text
+        text: Store the entire input string read so far.
+  - id: generate-random
+    content:
+      - type: text
+        text: Generate the next input symbol at random.
+  - id: count-memory
+    content:
+      - type: text
+        text: Store every number exactly without limitation.
+correctOptionId: summarize-history
+shuffleOptions: true
+explanation:
+  - type: text
+    text: An FSM state summarizes only the distinctions needed later, rather than the entire past.
+tags:
+  - theory-of-computation
+  - finite-state-machine
+  - state
+difficulty: 1

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.binary.unsigned-byte-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the largest value that can be represented by an unsigned 8-bit integer?"
+options:
+  - id: option-0
+    content:
+      - type: text
+        text: "255"
+  - id: option-1
+    content:
+      - type: text
+        text: "256"
+  - id: option-2
+    content:
+      - type: text
+        text: "8"
+correctOptionId: option-0
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Eight bits represent 2⁸ = 256 combinations. Since counting starts at 0, the largest value is 255."
+tags:
+  - binary
+  - place-value
+difficulty: 1

@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.twos-complement.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe two’s-complement integers."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "The representable range of 4-bit two’s complement is -8 through 7."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Taking the two’s complement of a negative value returns the bit pattern for its original positive magnitude."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "4-bit two’s complement represents -16 through 15."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "To convert to a negative value, invert the bits but do not add 1."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The representable range of 4-bit two’s complement is -8 through 7. Taking the two’s complement of a negative value returns the bit pattern for its original positive magnitude."
+  - type: text
+    text: "Two’s complement has only one representation for 0, and the same adder circuit can handle positive and negative numbers. Its range is asymmetric, however: 4 bits can represent -8 but not +8."
+tags: [integer, twos-complement, overflow]
+difficulty: 3

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: la.homogeneous-coordinates.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for applying a model transform with homogeneous coordinates."
+items:
+  - id: extend
+    content:
+      - type: text
+        text: "Extend point `(x, y, z)` to `(x, y, z, 1)`"
+  - id: matrix
+    content:
+      - type: text
+        text: "Choose a 4×4 transform matrix"
+  - id: multiply
+    content:
+      - type: text
+        text: "Multiply the matrix by the point vector"
+  - id: interpret
+    content:
+      - type: text
+        text: "Interpret the result as the transformed position"
+correctOrder:
+  - extend
+  - matrix
+  - multiply
+  - interpret
+unorderedGroups:
+  - [extend, matrix]
+explanation:
+  - type: text
+    text: "Set the point's `w` to 1 and multiply by the transform matrix to get a position that includes translation."
+  - type: text
+    text: "Use `w = 0` when transforming a direction vector."
+tags:
+  - linear-algebra
+  - coordinates
+  - pipeline
+difficulty: 2

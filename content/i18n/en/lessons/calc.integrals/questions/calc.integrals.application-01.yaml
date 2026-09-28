@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.integrals.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about indefinite integrals."
+options:
+  - id: antiderivative
+    content:
+      - type: text
+        text: "Find an antiderivative whose derivative is the original function"
+  - id: constant
+    content:
+      - type: text
+        text: "Includes a constant of integration C"
+  - id: many
+    content:
+      - type: text
+        text: "Multiple functions can have the same derivative"
+  - id: bounds
+    content:
+      - type: text
+        text: "Always requires interval endpoints"
+correctOptionIds: [antiderivative, constant, many]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "An indefinite integral finds the general form of an antiderivative without an interval, so it needs C."
+  - type: text
+    text: "A definite integral with endpoints is evaluated as a single value."
+tags:
+  - calculus
+  - integrals
+  - indefinite
+difficulty: 2

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.independence
+revision: 3
+track: probability-statistics
+title: "Independent events"
+description: "Determine whether events are independent by checking whether one event changes the probability of another."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: prob.independence.definition-01
+  - type: question
+    ref: prob.independence.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: prob.independence.term-01
+  - type: question
+    ref: prob.independence.steps-01
+  - type: question
+    ref: prob.independence.match-01

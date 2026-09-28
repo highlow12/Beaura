@@ -1,0 +1,48 @@
+id: ds.hash-table.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each hash-table term with its meaning."
+leftItems:
+- id: key
+  content:
+  - type: text
+    text: "key"
+- id: bucket
+  content:
+  - type: text
+    text: "bucket"
+- id: collision
+  content:
+  - type: text
+    text: "collision"
+rightItems:
+- id: lookup
+  content:
+  - type: text
+    text: "The input name used to find a value"
+- id: slot
+  content:
+  - type: text
+    text: "A storage slot at a hashed location"
+- id: same-slot
+  content:
+  - type: text
+    text: "A situation where different keys map to the same slot"
+correctPairs:
+- leftId: key
+  rightId: lookup
+- leftId: bucket
+  rightId: slot
+- leftId: collision
+  rightId: same-slot
+explanation:
+- type: text
+  text: "The key is the lookup input, and the bucket is the candidate storage slot. If different keys map to the same bucket, collision handling is needed."
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-table
+- collision
+difficulty: 2

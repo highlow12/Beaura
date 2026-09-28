@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.vector-space.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the standard basis of the 2D plane?"
+options:
+  - id: standard
+    content:
+      - type: text
+        text: "(1, 0) and (0, 1)"
+  - id: same
+    content:
+      - type: text
+        text: "(1, 0) and (2, 0)"
+  - id: one
+    content:
+      - type: text
+        text: "Only (1, 1)"
+  - id: zero
+    content:
+      - type: text
+        text: "(0, 0) and (0, 1)"
+correctOptionId: standard
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The two standard basis vectors can produce `(x, y) = x(1, 0) + y(0, 1)`."
+  - type: text
+    text: "The vectors point along different axes, so they are also linearly independent."
+tags:
+  - linear-algebra
+  - space
+  - basis
+difficulty: 1

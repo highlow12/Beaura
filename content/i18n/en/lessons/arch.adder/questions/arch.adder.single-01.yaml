@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.adder.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about adders and addition in the ALU is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A full adder takes two data bits and the previous bit’s carry-in, then produces a sum and carry-out."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A half adder always handles the carry-in from the previous bit."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "In an adder, a carry does not affect the next bit."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A full adder takes two data bits and the previous bit’s carry-in, then produces a sum and carry-out."
+  - type: text
+    text: "A half adder calculates the sum and carry of two inputs. A full adder also includes the carry-in from the previous bit. Connecting full adders creates a multi-bit adder."
+tags: [adder, carry, alu]
+difficulty: 2

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.randomized-hashing.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about randomized algorithms and hashing."
+options:
+  - id: expected
+    content:
+      - type: text
+        text: "Even when execution paths vary, expected cost can be analyzed"
+  - id: spread
+    content:
+      - type: text
+        text: "Uniform hashing spreads collisions on average"
+  - id: collision-resolution
+    content:
+      - type: text
+        text: "Chaining can store colliding keys in the same bucket’s structure"
+  - id: zero-collision
+    content:
+      - type: text
+        text: "A good hash function has no collisions for any input"
+correctOptionIds: [expected, spread, collision-resolution]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Randomized analysis uses expected values, while hash quality is about reducing collisions and distributing them evenly."
+  - type: text
+    text: "In a finite hash space, distinct keys can in principle collide."
+tags:
+  - probability-statistics
+  - randomized-algorithms
+  - hashing
+difficulty: 2

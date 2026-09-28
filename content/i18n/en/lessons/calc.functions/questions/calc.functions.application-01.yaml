@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.functions.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about the graph y=f(x)."
+options:
+  - id: height
+    content:
+      - type: text
+        text: "f(a) is the y-value when x=a"
+  - id: vertical
+    content:
+      - type: text
+        text: "If a vertical line intersects the graph more than once, it is not a function"
+  - id: domain
+    content:
+      - type: text
+        text: "The horizontal extent of the graph is related to the domain"
+  - id: horizontal
+    content:
+      - type: text
+        text: "The horizontal line test determines whether a graph is a function"
+correctOptionIds: [height, vertical, domain]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The vertical line test checks whether each input has exactly one output."
+  - type: text
+    text: "The horizontal line test is usually used to check whether a function is one-to-one."
+tags:
+  - calculus
+  - functions
+  - graph
+difficulty: 2

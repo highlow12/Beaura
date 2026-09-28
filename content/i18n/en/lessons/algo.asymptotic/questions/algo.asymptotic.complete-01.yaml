@@ -1,0 +1,24 @@
+id: algo.asymptotic.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the tight bound for a linear cost."
+language: python
+template: bound = Theta({{blank:term}})
+blanks:
+- id: term
+  choices:
+  - n
+  - n^2
+  - '1'
+  acceptedAnswers:
+  - n
+explanation:
+- type: text
+  text: "A loop that runs n times has an upper bound of O(n) and a lower bound of Ω(n), so its tight bound is Θ(n)."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- asymptotic
+difficulty: 2

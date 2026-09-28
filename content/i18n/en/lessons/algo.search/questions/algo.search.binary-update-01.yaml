@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: algo.search.binary-update-01
+revision: 1
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the expression that moves to the right range when the value at mid is smaller than target."
+language: python
+template: |-
+  if values[mid] < target:
+      low = {{blank:update}}
+blanks:
+- id: update
+  choices:
+  - mid + 1
+  - mid - 1
+  - mid
+  acceptedAnswers:
+  - mid + 1
+explanation:
+- type: text
+  text: "If the value at mid is smaller, mid cannot be the answer, so move low to mid + 1."
+- type: text
+  text: "Binary search removes the checked middle element from the candidates and continues with the remaining sorted range."
+tags:
+- search
+- binary-search
+- code-completion
+difficulty: 2

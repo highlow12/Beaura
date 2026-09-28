@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: gfx.animation.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each animation term with its role."
+leftItems:
+  - id: keyframe
+    content: [{ type: text, text: "Keyframe" }]
+  - id: lerp
+    content: [{ type: text, text: LERP }]
+  - id: slerp
+    content: [{ type: text, text: SLERP }]
+rightItems:
+  - id: state
+    content: [{ type: text, text: "An important state at a specific time" }]
+  - id: linear
+    content: [{ type: text, text: "Linear interpolation between two values" }]
+  - id: spherical
+    content: [{ type: text, text: "Spherical linear interpolation used for rotations" }]
+correctPairs:
+  - leftId: keyframe
+    rightId: state
+  - leftId: lerp
+    rightId: linear
+  - leftId: slerp
+    rightId: spherical
+explanation:
+  - type: text
+    text: "Keyframes record states; LERP and SLERP are used to interpolate different kinds of values and paths."
+tags: [graphics, animation, interpolation]
+difficulty: 2

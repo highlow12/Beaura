@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.alu.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "When a SUB operation produces 0, which status bit may be set?"
+choices:
+  - "zero"
+  - "carry"
+  - "opcode"
+acceptedAnswers:
+  - "zero"
+explanation:
+  - type: text
+    text: "The zero flag indicates whether the ALU result is 0."
+tags: [alu, arithmetic, control]
+difficulty: 2

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: os.thread.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each thread and concurrency term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "Thread"
+  - id: left-b
+    content:
+      - type: text
+        text: "Call stack"
+  - id: left-c
+    content:
+      - type: text
+        text: "Shared heap"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "An execution flow within a process"
+  - id: right-b
+    content:
+      - type: text
+        text: "A call-storage region owned separately by each thread"
+  - id: right-c
+    content:
+      - type: text
+        text: "A region of dynamic data that threads can access together"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "A thread is an execution flow within a process; each thread has its own call stack; the shared heap contains dynamic data that threads can access together."
+tags: [thread, concurrency, shared-memory]
+difficulty: 2

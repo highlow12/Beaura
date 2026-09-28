@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.functions.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each function term with its description."
+leftItems:
+  - id: domain
+    content:
+      - type: text
+        text: "Domain"
+  - id: codomain
+    content:
+      - type: text
+        text: "Codomain"
+  - id: range
+    content:
+      - type: text
+        text: "Range"
+  - id: composition
+    content:
+      - type: text
+        text: "Composite function"
+rightItems:
+  - id: domain-desc
+    content:
+      - type: text
+        text: "Set of allowed inputs"
+  - id: codomain-desc
+    content:
+      - type: text
+        text: "Full set designated for outputs"
+  - id: range-desc
+    content:
+      - type: text
+        text: "Set of outputs that actually occur"
+  - id: composition-desc
+    content:
+      - type: text
+        text: "Use one function’s output as the next function’s input"
+correctPairs:
+  - leftId: domain
+    rightId: domain-desc
+  - leftId: codomain
+    rightId: codomain-desc
+  - leftId: range
+    rightId: range-desc
+  - leftId: composition
+    rightId: composition-desc
+explanation:
+  - type: text
+    text: "Domain, codomain, and range distinguish the sets of inputs and outputs."
+  - type: text
+    text: "In a composition, the inner function’s output must meet the outer function’s input requirements."
+tags:
+  - calculus
+  - functions
+  - terminology
+difficulty: 2

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.induction.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each induction term with its role."
+leftItems:
+  - id: base
+    content:
+      - type: text
+        text: "Base case"
+  - id: hypothesis
+    content:
+      - type: text
+        text: "Inductive hypothesis"
+  - id: step
+    content:
+      - type: text
+        text: "Inductive step"
+  - id: p-next
+    content:
+      - type: text
+        text: "P(k+1)"
+rightItems:
+  - id: base-desc
+    content:
+      - type: text
+        text: "The part that checks the statement at the starting number"
+  - id: hypothesis-desc
+    content:
+      - type: text
+        text: "The part that assumes `P(k)` is true"
+  - id: step-desc
+    content:
+      - type: text
+        text: "The part that derives the next statement from the hypothesis"
+  - id: p-next-desc
+    content:
+      - type: text
+        text: "The next statement the inductive step must establish"
+correctPairs:
+  - leftId: base
+    rightId: base-desc
+  - leftId: hypothesis
+    rightId: hypothesis-desc
+  - leftId: step
+    rightId: step-desc
+  - leftId: p-next
+    rightId: p-next-desc
+explanation:
+  - type: text
+    text: "Each induction term has a role: starting point, hypothesis, advancing one step, or the next statement."
+  - type: text
+    text: "Keep the indices distinct so you do not write the inductive hypothesis and the conclusion `P(k + 1)` as the same statement."
+tags:
+  - discrete-math
+  - proof
+  - terminology
+difficulty: 2

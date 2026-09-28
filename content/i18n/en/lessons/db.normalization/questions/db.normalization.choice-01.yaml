@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.normalization.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "When student names repeat across multiple enrollment rows, what is the most direct benefit of splitting them into a separate Student table?"
+options:
+  - id: update
+    content:
+      - type: text
+        text: "Manage a name change in one place to reduce update anomalies"
+  - id: no-join
+    content:
+      - type: text
+        text: "Eliminate the need for JOINs in every query"
+  - id: duplicate-more
+    content:
+      - type: text
+        text: "Copy the same name into even more rows"
+correctOptionId: update
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Keeping student facts in Student reduces the need to find and update multiple enrollment rows when a name changes. You can JOIN with Enrollment for screens that need both."
+tags: [database, normalization, update-anomaly]
+difficulty: 2

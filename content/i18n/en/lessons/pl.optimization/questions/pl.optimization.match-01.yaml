@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.optimization.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each compiler optimization with its example.
+leftItems:
+  - id: constant-folding
+    content:
+      - type: text
+        text: Constant folding
+  - id: constant-propagation
+    content:
+      - type: text
+        text: Constant propagation
+  - id: dead-code
+    content:
+      - type: text
+        text: Dead-code elimination
+rightItems:
+  - id: compute-now
+    content:
+      - type: text
+        text: Compute 2 * 3 as 6 during compilation
+  - id: carry-fact
+    content:
+      - type: text
+        text: Carry the fact x = 6 to the places where x is used
+  - id: remove-unused
+    content:
+      - type: text
+        text: Remove an instruction that affects neither results nor side effects
+correctPairs:
+  - leftId: constant-folding
+    rightId: compute-now
+  - leftId: constant-propagation
+    rightId: carry-fact
+  - leftId: dead-code
+    rightId: remove-unused
+explanation:
+  - type: text
+    text: Constant optimizations use known values, while dead-code elimination relies on reachability and side-effect analysis.
+tags:
+  - programming-languages
+  - optimization
+  - constant-folding
+difficulty: 2

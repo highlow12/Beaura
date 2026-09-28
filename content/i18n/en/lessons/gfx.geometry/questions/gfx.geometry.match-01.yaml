@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.geometry.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each geometry term with its role."
+leftItems:
+  - id: vertex
+    content:
+      - type: text
+        text: "Vertex"
+  - id: mesh
+    content:
+      - type: text
+        text: "Mesh"
+  - id: normal
+    content:
+      - type: text
+        text: "Normal"
+rightItems:
+  - id: point
+    content:
+      - type: text
+        text: "A data unit that contains a position and other attributes"
+  - id: surface
+    content:
+      - type: text
+        text: "A surface represented as a collection of triangles"
+  - id: perpendicular
+    content:
+      - type: text
+        text: "A direction perpendicular to a surface"
+correctPairs:
+  - leftId: vertex
+    rightId: point
+  - leftId: mesh
+    rightId: surface
+  - leftId: normal
+    rightId: perpendicular
+explanation:
+  - type: text
+    text: "Vertices hold attributes, a mesh connects vertices into a surface of triangles, and normals provide directions needed for lighting."
+tags: [graphics, geometry, mesh]
+difficulty: 1

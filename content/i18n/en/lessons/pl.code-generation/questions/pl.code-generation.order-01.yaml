@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pl.code-generation.order-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the code-generation tasks for a simple IR instruction."
+items:
+  - id: analyze-liveness
+    content:
+      - type: text
+        text: "Check the lifetimes and use locations of input values."
+  - id: select
+    content:
+      - type: text
+        text: "Choose a target ISA instruction pattern."
+  - id: allocate
+    content:
+      - type: text
+        text: "Assign registers or memory locations to results and operands."
+  - id: emit
+    content:
+      - type: text
+        text: "Emit instructions that follow the calling convention."
+correctOrder:
+  - analyze-liveness
+  - select
+  - allocate
+  - emit
+unorderedGroups:
+  - - analyze-liveness
+    - select
+explanation:
+  - type: text
+    text: "Knowing value lifetimes lets the allocator reuse registers safely. After allocation, the generator can put the actual operand locations into the emitted instructions."
+tags:
+  - programming-languages
+  - code-generation
+  - pipeline
+difficulty: 3

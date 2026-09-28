@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: gfx.pipeline.stage-match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each graphics pipeline stage with its primary role."
+leftItems:
+  - id: vertex
+    content:
+      - type: text
+        text: "Vertex shader"
+  - id: raster
+    content:
+      - type: text
+        text: "Rasterization"
+  - id: fragment
+    content:
+      - type: text
+        text: "Fragment shader"
+rightItems:
+  - id: position
+    content:
+      - type: text
+        text: "Calculate vertex positions and values passed to later stages"
+  - id: coverage
+    content:
+      - type: text
+        text: "Produce screen samples covered by the shape"
+  - id: color
+    content:
+      - type: text
+        text: "Calculate the color and depth of each sample"
+correctPairs:
+  - leftId: vertex
+    rightId: position
+  - leftId: raster
+    rightId: coverage
+  - leftId: fragment
+    rightId: color
+explanation:
+  - type: text
+    text: "The vertex shader works per vertex, rasterization determines the shape's screen coverage, and the fragment shader calculates values per sample."
+  - type: text
+    text: "Tracing how each stage's output becomes the next stage's input helps you follow the pipeline instead of memorizing it."
+tags: [graphics, pipeline, rendering]
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.asymptotic
+revision: 1
+track: algorithms
+title: Ω and Θ
+description: Use the lower bound Ω and tight bound Θ alongside Big-O to describe growth rates precisely.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.asymptotic.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.asymptotic.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.asymptotic.complete-01
+- type: question
+  ref: algo.asymptotic.steps-01
+- type: question
+  ref: algo.asymptotic.match-01

@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.scheduling.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "In round-robin scheduling, the continuous CPU time allocated to one task is called a ___."
+choices:
+  - "time slice"
+  - "page size"
+  - "block address"
+acceptedAnswers:
+  - "time slice"
+explanation:
+  - type: text
+    text: "With A and B in the ready queue, round-robin scheduling gives A a time slice. If A is not finished, it moves A to the back of the queue so B gets a turn. An overly short time slice increases context-switching costs, while a task that is never selected can starve."
+tags: [scheduling, cpu, fairness]
+difficulty: 2

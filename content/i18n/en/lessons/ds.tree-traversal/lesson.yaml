@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.tree-traversal
+revision: 1
+track: data-structures
+title: Tree Traversal
+description: Learn the ordering rules of preorder, inorder, and postorder tree traversals.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.tree-traversal.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.tree-traversal.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.tree-traversal.complete-01
+- type: question
+  ref: ds.tree-traversal.steps-01
+- type: question
+  ref: ds.tree-traversal.match-01

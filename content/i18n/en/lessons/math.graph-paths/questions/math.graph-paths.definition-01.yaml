@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.graph-paths.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is a closed path called when it starts and ends at the same vertex?"
+options:
+  - id: cycle
+    content:
+      - type: text
+        text: "Cycle"
+  - id: degree
+    content:
+      - type: text
+        text: "Degree"
+  - id: tree
+    content:
+      - type: text
+        text: "Tree"
+  - id: cut
+    content:
+      - type: text
+        text: "Cut"
+correctOptionId: cycle
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A cycle is a closed path that starts and ends at the same vertex."
+  - type: text
+    text: "A simple path generally does not repeat vertices; a cycle adds the condition that the endpoint returns to the start."
+tags:
+  - discrete-math
+  - graphs
+  - cycle
+difficulty: 1

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.homogeneous-coordinates.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "How is the 2D point `(x, y)` represented in homogeneous coordinates?"
+options:
+  - id: point
+    content:
+      - type: text
+        text: "(x,y,1)"
+  - id: direction
+    content:
+      - type: text
+        text: "(x,y,0)"
+  - id: two
+    content:
+      - type: text
+        text: "(x,y)"
+  - id: inverse
+    content:
+      - type: text
+        text: "(1,x,y)"
+correctOptionId: point
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "In homogeneous coordinates, a vector with `w = 1` represents a position."
+  - type: text
+    text: "`w = 0` is used for a direction that is unaffected by translation."
+tags:
+  - linear-algebra
+  - coordinates
+  - homogeneous
+difficulty: 1

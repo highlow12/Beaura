@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.recovery
+revision: 3
+track: databases
+title: Logs and Crash Recovery
+description: Understand how WAL logs, checkpoints, redo, and undo restore transaction state after a failure.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.recovery.order-01
+  - type: question
+    ref: db.recovery.match-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.recovery.choice-01
+  - type: question
+    ref: db.recovery.output-01
+  - type: question
+    ref: db.recovery.fill-01

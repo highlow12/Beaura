@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.routing.single-01
+revision: 2
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about routing and the next hop is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A router selects the next hop using the routing-table entry that most specifically matches the destination IP address."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A router runs the packet’s source program to decide the next hop."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Routing chooses a random port by comparing only MAC address lengths."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A router selects the next hop using the routing-table entry that most specifically matches the destination IP address."
+  - type: text
+    text: "Routing is the process of calculating a path to a destination network and forwarding packets along it. A routing table can contain destination prefixes, next hops, output interfaces, and costs."
+tags: [routing, router, forwarding]
+difficulty: 2

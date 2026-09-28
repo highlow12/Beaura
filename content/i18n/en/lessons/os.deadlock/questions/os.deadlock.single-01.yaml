@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.deadlock.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about deadlock is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "Deadlock is a state in which execution flows wait for resources held by one another and can never proceed."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Deadlock is when the CPU runs only one process and throughput increases."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Deadlock means only that a packet was duplicated once on a network."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Deadlock is a state in which execution flows wait for resources held by one another and can never proceed."
+  - type: text
+    text: "Deadlock is a state in which multiple execution flows wait for resources held by one another, so none can proceed. It occurs when all four conditions hold: mutual exclusion, hold and wait, no preemption, and circular wait."
+tags: [deadlock, lock-order, concurrency]
+difficulty: 3

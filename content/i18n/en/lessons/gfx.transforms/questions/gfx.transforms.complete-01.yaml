@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: gfx.transforms.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Complete the code to double both coordinates of a point with uniform scaling."
+language: python
+template: |-
+  point = (2, 3)
+  scale = 2
+  result = (point[0] {{blank:op}}, point[1] {{blank:op2}})
+blanks:
+  - id: op
+    choices: ["* scale", "+ scale", "- scale"]
+    acceptedAnswers: ["* scale"]
+  - id: op2
+    choices: ["* scale", "+ scale", "- scale"]
+    acceptedAnswers: ["* scale"]
+explanation:
+  - type: text
+    text: "Uniform scaling multiplies the coordinates on each axis by the same factor. Both blanks should contain `* scale`."
+tags: [graphics, transforms, scale, code-completion]
+difficulty: 2

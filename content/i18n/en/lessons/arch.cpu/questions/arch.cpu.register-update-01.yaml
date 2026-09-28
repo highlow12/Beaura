@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.cpu.register-update-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "A register contains 4. If the ALU adds 3 and stores the result in the same register, what is the new value?"
+options:
+  - id: option-0
+    content:
+      - type: text
+        text: "7"
+  - id: option-1
+    content:
+      - type: text
+        text: "4"
+  - id: option-2
+    content:
+      - type: text
+        text: "3"
+correctOptionId: option-0
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The ALU calculates 4 + 3 and writes the result, 7, to the register."
+tags:
+  - cpu
+  - register
+difficulty: 1

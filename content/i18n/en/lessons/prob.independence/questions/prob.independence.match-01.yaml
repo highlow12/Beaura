@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.independence.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each independence term with its description."
+leftItems:
+  - id: independent
+    content:
+      - type: text
+        text: "Independent"
+  - id: dependent
+    content:
+      - type: text
+        text: "Dependent"
+  - id: replacement
+    content:
+      - type: text
+        text: "Sampling with replacement"
+  - id: intersection
+    content:
+      - type: text
+        text: "A∩B"
+rightItems:
+  - id: independent-desc
+    content:
+      - type: text
+        text: "Information about one event does not change the probability of another"
+  - id: dependent-desc
+    content:
+      - type: text
+        text: "The probability changes when the condition is known"
+  - id: replacement-desc
+    content:
+      - type: text
+        text: "Return the item to the original pool after drawing it"
+  - id: intersection-desc
+    content:
+      - type: text
+        text: "The region where both events occur"
+correctPairs:
+  - leftId: independent
+    rightId: independent-desc
+  - leftId: dependent
+    rightId: dependent-desc
+  - leftId: replacement
+    rightId: replacement-desc
+  - leftId: intersection
+    rightId: intersection-desc
+explanation:
+  - type: text
+    text: "Independence and dependence are distinguished by whether information changes probabilities; the sampling method can change that relationship."
+  - type: text
+    text: "Check this intuition with the intersection product rule or conditional probability."
+tags:
+  - probability-statistics
+  - independence
+  - terminology
+difficulty: 2

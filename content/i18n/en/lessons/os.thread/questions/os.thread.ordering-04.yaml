@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.thread.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic thread and concurrency steps in the correct order."
+items:
+  - id: spawn
+    content:
+      - type: text
+        text: "Create a new execution flow within a process"
+  - id: share
+    content:
+      - type: text
+        text: "Share process resources such as code and heap"
+  - id: synchronize
+    content:
+      - type: text
+        text: "Coordinate the order of access to shared state"
+correctOrder: [spawn, share, synchronize]
+explanation:
+  - type: text
+    text: "First, create a new execution flow within a process; then share process resources such as code and the heap."
+  - type: text
+    text: "At the step where access to shared state is coordinated, the final result is passed to the next execution step."
+tags: [thread, concurrency, shared-memory]
+difficulty: 3

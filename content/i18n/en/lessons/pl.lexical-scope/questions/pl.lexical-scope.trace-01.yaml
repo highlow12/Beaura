@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: pl.lexical-scope.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "What does this code print under lexical scoping?"
+language: python
+code: |-
+  x = "global"
+  def outer():
+      x = "outer"
+      def inner():
+          print(x)
+      inner()
+  outer()
+choices:
+  - outer
+  - global
+  - inner
+acceptedOutputs:
+  - outer
+explanation:
+  - type: text
+    text: "inner was defined inside outer, so regardless of where it is called, it captures the nearest outer binding for x and prints outer."
+tags:
+  - programming-languages
+  - lexical-scope
+  - trace
+difficulty: 2

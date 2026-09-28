@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.queue
+revision: 2
+track: data-structures
+title: Queues
+description: Understand the FIFO structure, where the first value in is the first out, and operations at its two ends.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.queue.fifo-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.queue.service-order-01
+- type: question
+  ref: ds.queue.deque-output-01
+- type: content
+  ref: content/invariant.md
+- type: question
+  ref: ds.queue.trace-01
+- type: question
+  ref: ds.queue.ends-01

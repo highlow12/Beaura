@@ -1,0 +1,36 @@
+id: ds.tree-traversal.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for processing one node in preorder traversal."
+items:
+- id: check
+  content:
+  - type: text
+    text: "Check whether the current node is None"
+- id: visit
+  content:
+  - type: text
+    text: "Record a visit to the current node’s value"
+- id: left
+  content:
+  - type: text
+    text: "Recursively traverse the left subtree"
+- id: right
+  content:
+  - type: text
+    text: "Recursively traverse the right subtree"
+correctOrder:
+- check
+- visit
+- left
+- right
+explanation:
+- type: text
+  text: "Skip empty nodes and recursively visit current, left, then right according to preorder."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- traversal
+difficulty: 2

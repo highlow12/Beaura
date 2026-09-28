@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.probability.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for calculating a probability with equally likely outcomes."
+items:
+  - id: space
+    content:
+      - type: text
+        text: "List all possible outcomes in the sample space"
+  - id: event
+    content:
+      - type: text
+        text: "Select the outcomes that belong to the event of interest"
+  - id: count
+    content:
+      - type: text
+        text: "Count the total outcomes and the event outcomes"
+  - id: divide
+    content:
+      - type: text
+        text: "Divide the number of event outcomes by the total number of outcomes"
+correctOrder:
+  - space
+  - event
+  - count
+  - divide
+explanation:
+  - type: text
+    text: "Defining the sample space first ensures that you count the event outcomes against the correct total."
+  - type: text
+    text: "For outcomes that are not equally likely, add the probability of each outcome instead."
+tags:
+  - probability-statistics
+  - probability
+  - procedure
+difficulty: 2

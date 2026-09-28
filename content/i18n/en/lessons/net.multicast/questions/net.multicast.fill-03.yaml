@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.multicast.fill-03
+revision: 2
+type: fill-blank
+prompt:
+- type: text
+  text: The delivery method for recipients who have joined a group is ___.
+choices:
+- multicast
+- unicast
+- broadcast
+acceptedAnswers:
+- multicast
+explanation:
+- type: text
+  text: If a sender sends only to A, that is unicast; if it sends to everyone in the same broadcast domain, that is broadcast.
+    If it is configured to reach only group members A and B, that is multicast. Without group management by switches and routers,
+    the scope of replication can vary by implementation.
+tags:
+- broadcast
+- multicast
+- unicast
+difficulty: 1

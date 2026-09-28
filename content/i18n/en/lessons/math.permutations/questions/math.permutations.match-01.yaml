@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.permutations.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each permutation notation with its meaning."
+leftItems:
+  - id: factorial
+    content:
+      - type: text
+        text: "n!"
+  - id: npr
+    content:
+      - type: text
+        text: "nPr"
+  - id: all-arrangement
+    content:
+      - type: text
+        text: "Arrange all n objects"
+  - id: ordered-choice
+    content:
+      - type: text
+        text: "Choose r of n objects in order"
+rightItems:
+  - id: factorial-desc
+    content:
+      - type: text
+        text: "The product from n down to 1"
+  - id: npr-desc
+    content:
+      - type: text
+        text: "Calculated as n!/(n−r)!"
+  - id: all-arrangement-desc
+    content:
+      - type: text
+        text: "n! arrangements"
+  - id: ordered-choice-desc
+    content:
+      - type: text
+        text: "The product of the number of choices for each position"
+correctPairs:
+  - leftId: factorial
+    rightId: factorial-desc
+  - leftId: npr
+    rightId: npr-desc
+  - leftId: all-arrangement
+    rightId: all-arrangement-desc
+  - leftId: ordered-choice
+    rightId: ordered-choice-desc
+explanation:
+  - type: text
+    text: "All-object arrangements are expressed with a factorial; ordered selections of some objects are expressed with nPr."
+  - type: text
+    text: "Before applying a formula, also check whether objects can be repeated."
+tags:
+  - discrete-math
+  - combinatorics
+  - notation
+difficulty: 2

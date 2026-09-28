@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: py.variables.what-is-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement best describes a Python variable?"
+options:
+  - id: a
+    content:
+      - type: text
+        text: "A name used to store a value."
+  - id: b
+    content:
+      - type: text
+        text: "A command that always terminates a program."
+  - id: c
+    content:
+      - type: text
+        text: "An object that only manages network connections."
+correctOptionId: a
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A variable can be used as a name that refers to a value."

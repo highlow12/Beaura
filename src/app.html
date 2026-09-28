@@ -36,6 +36,27 @@
     <script>
       (function () {
         try {
+          var language = localStorage.getItem("beaura.locale");
+          if (language !== "ko" && language !== "en") {
+            language = sessionStorage.getItem("beaura.locale");
+          }
+          language = language === "en" ? "en" : "ko";
+          document.documentElement.lang = language;
+          var description = document.querySelector('meta[name="description"]');
+          if (description && language === "en") {
+            description.setAttribute(
+              "content",
+              "Learn computer science with short lessons and practice questions.",
+            );
+          }
+        } catch (_) {
+          document.documentElement.lang = "ko";
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        try {
           var key = "cs-duolingo:theme";
           var stored = localStorage.getItem(key);
           var theme = stored === "light" || stored === "dark"
@@ -63,7 +84,8 @@
             notice.id = "module-recovery-notice";
             notice.setAttribute("role", "alert");
             notice.style.cssText = "position:fixed;inset:0;z-index:9999;display:grid;place-content:center;gap:1rem;padding:2rem;background:#f5f7f4;color:#111714;text-align:center;font:1rem system-ui";
-            notice.innerHTML = '<strong>앱을 불러오지 못했습니다.</strong><button type="button" style="padding:.8rem;border:1px solid;border-radius:.5rem;background:white;color:inherit;font:inherit;cursor:pointer">다시 불러오기</button>';
+            var english = document.documentElement.lang === "en";
+            notice.innerHTML = '<strong>' + (english ? 'Could not load the app.' : '앱을 불러오지 못했습니다.') + '</strong><button type="button" style="padding:.8rem;border:1px solid;border-radius:.5rem;background:white;color:inherit;font:inherit;cursor:pointer">' + (english ? 'Reload' : '다시 불러오기') + '</button>';
             document.body.appendChild(notice);
             notice.querySelector("button").addEventListener("click", retry);
           }

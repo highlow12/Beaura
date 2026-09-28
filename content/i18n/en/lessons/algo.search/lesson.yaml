@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.search
+revision: 2
+track: algorithms
+title: Searching
+description: Compare the assumptions and steps of linear and binary search.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.search.linear-choice-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.search.linear-steps-01
+- type: question
+  ref: algo.search.binary-update-01
+- type: content
+  ref: content/bounds.md
+- type: question
+  ref: algo.search.binary-range-01
+- type: question
+  ref: algo.search.linear-comparisons-01

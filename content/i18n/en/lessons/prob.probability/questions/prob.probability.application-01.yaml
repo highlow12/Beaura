@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.probability.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that are basic properties of probability."
+options:
+  - id: range
+    content:
+      - type: text
+        text: "0≤P(A)≤1"
+  - id: whole
+    content:
+      - type: text
+        text: "P(Ω)=1"
+  - id: impossible
+    content:
+      - type: text
+        text: "P(∅)=0"
+  - id: negative
+    content:
+      - type: text
+        text: "Probability can be negative"
+correctOptionIds: [range, whole, impossible]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Probability is between 0 and 1; the certain event and impossible event have probabilities 1 and 0, respectively."
+  - type: text
+    text: "Negative probabilities are not allowed in basic probability models."
+tags:
+  - probability-statistics
+  - probability
+  - axioms
+difficulty: 1

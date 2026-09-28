@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: os.interrupt-dma.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each interrupt and DMA term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "Interrupt"
+  - id: left-b
+    content:
+      - type: text
+        text: "DMA"
+  - id: left-c
+    content:
+      - type: text
+        text: "interrupt handler"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "A signal that notifies the CPU of an asynchronous event"
+  - id: right-b
+    content:
+      - type: text
+        text: "A memory-device transfer that reduces CPU involvement"
+  - id: right-c
+    content:
+      - type: text
+        text: "Kernel code that handles an interrupt event"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "An interrupt is a signal that notifies the CPU of an asynchronous event; DMA transfers data between memory and a device with less CPU involvement; an interrupt handler is kernel code that handles an interrupt."
+tags: [interrupt, dma, io]
+difficulty: 2

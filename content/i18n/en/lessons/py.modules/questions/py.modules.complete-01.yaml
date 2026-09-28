@@ -1,0 +1,26 @@
+id: py.modules.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the statement that fills the blank to import the math module."
+language: python
+template: '{{blank:statement}}
+
+  print(math.sqrt(16))'
+blanks:
+- id: statement
+  choices:
+  - import math
+  - from math
+  - include math
+  acceptedAnswers:
+  - import math
+explanation:
+- type: text
+  text: "`import math` makes the math module available in the current file. You can then use a name prefixed by the module, such as `math.sqrt`."
+schemaVersion: 1
+revision: 1
+tags:
+- modules
+- import
+difficulty: 2

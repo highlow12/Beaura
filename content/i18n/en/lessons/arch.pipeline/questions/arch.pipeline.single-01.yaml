@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.pipeline.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about pipelines and hazards is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A pipeline increases throughput by overlapping different instructions across multiple execution stages."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A pipeline is a single circuit that completes every stage of one instruction at once."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Using a pipeline automatically removes branches and data dependencies."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A pipeline increases throughput by overlapping different instructions across multiple execution stages."
+  - type: text
+    text: "A pipeline divides execution into stages such as fetch, decode, and execute, and processes different instructions in different stages at the same time. This increases throughput, but does not necessarily reduce the total latency of one instruction."
+tags: [pipeline, hazard, cpu-performance]
+difficulty: 3

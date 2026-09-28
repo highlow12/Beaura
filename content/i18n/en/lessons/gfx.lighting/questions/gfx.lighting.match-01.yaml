@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.lighting.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each lighting term with its role."
+leftItems:
+  - id: normal
+    content:
+      - type: text
+        text: "Surface normal"
+  - id: diffuse
+    content:
+      - type: text
+        text: "diffuse"
+  - id: specular
+    content:
+      - type: text
+        text: "specular"
+rightItems:
+  - id: surface-direction
+    content:
+      - type: text
+        text: "The reference direction a surface faces"
+  - id: broad-light
+    content:
+      - type: text
+        text: "Brightness from light scattered in many directions"
+  - id: highlight
+    content:
+      - type: text
+        text: "A highlight created by alignment between reflection and view directions"
+correctPairs:
+  - leftId: normal
+    rightId: surface-direction
+  - leftId: diffuse
+    rightId: broad-light
+  - leftId: specular
+    rightId: highlight
+explanation:
+  - type: text
+    text: "The normal provides the surface direction; diffuse models broad illumination based on the angle of incidence; and specular models shine based on the viewing direction."
+tags: [graphics, lighting]
+difficulty: 1

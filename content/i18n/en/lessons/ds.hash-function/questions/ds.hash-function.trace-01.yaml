@@ -1,0 +1,22 @@
+id: ds.hash-function.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following hash-bucket calculation."
+language: python
+code: "def bucket(key):\n    return len(key) % 4\nprint(bucket(\"cat\"))"
+choices:
+- '3'
+- '1'
+- '4'
+acceptedOutputs:
+- '3'
+explanation:
+- type: text
+  text: "cat has length 3, and 3 % 4 is 3, so bucket index 3 is printed."
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-function
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.relational-model
+revision: 2
+track: databases
+title: The Relational Model
+description: Understand table-shaped data and its constraints through relations, tuples, attributes, and domains.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.relational-model.match-01
+  - type: question
+    ref: db.relational-model.choice-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.relational-model.output-01
+  - type: question
+    ref: db.relational-model.fill-01
+  - type: question
+    ref: db.relational-model.properties-01

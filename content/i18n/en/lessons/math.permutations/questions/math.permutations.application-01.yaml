@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.permutations.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all situations that are counted using permutations."
+options:
+  - id: rank
+    content:
+      - type: text
+        text: "Choose the gold, silver, and bronze medalists from 5 people"
+  - id: line
+    content:
+      - type: text
+        text: "Arrange 6 different books on a shelf"
+  - id: committee
+    content:
+      - type: text
+        text: "Choose 3 committee members from 10 people without regard to order"
+  - id: choose-flavor
+    content:
+      - type: text
+        text: "Choose one ice cream flavor"
+correctOptionIds: [rank, line]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Arrangements in which order changes the result, such as assigning roles or positions, are counted using permutations."
+  - type: text
+    text: "Choosing committee members without regard to order is a combination, and choosing one item is not an arrangement problem."
+tags:
+  - discrete-math
+  - combinatorics
+  - permutation
+difficulty: 2

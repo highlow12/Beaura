@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.error-handling.blank-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: If running the same request multiple times has the same result as running it once, the operation is called ___.
+choices:
+- idempotent
+- random
+- mutable
+acceptedAnswers:
+- idempotent
+explanation:
+- type: text
+  text: Idempotency means that retries or duplicate requests produce the same observable result as a single execution.
+tags:
+- software-engineering
+- error-handling
+- idempotency
+difficulty: 1

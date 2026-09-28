@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: prob.random-variables.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for checking a random-variable distribution table."
+items:
+  - id: list
+    content:
+      - type: text
+        text: "List the values the random variable can take"
+  - id: assign
+    content:
+      - type: text
+        text: "Write each value’s probability in the table"
+  - id: nonnegative
+    content:
+      - type: text
+        text: "Check that no probability is negative"
+  - id: sum
+    content:
+      - type: text
+        text: "Check that the probabilities sum to 1"
+correctOrder:
+  - list
+  - assign
+  - nonnegative
+  - sum
+unorderedGroups:
+  - [nonnegative, sum]
+explanation:
+  - type: text
+    text: "List the possible values and their probabilities, then check the axioms."
+  - type: text
+    text: "If the probabilities do not sum to 1, check for omitted outcomes or incorrect probabilities."
+tags:
+  - probability-statistics
+  - random-variables
+  - validation
+difficulty: 2

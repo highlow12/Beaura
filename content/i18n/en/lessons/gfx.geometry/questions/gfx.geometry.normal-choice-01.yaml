@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.geometry.normal-choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Why is the cross product of two edge vectors used to find a triangle's normal?"
+options:
+  - id: perpendicular
+    content:
+      - type: text
+        text: "It gives a direction perpendicular to the plane containing the two edges."
+  - id: average
+    content:
+      - type: text
+        text: "It automatically averages the colors of the three vertices."
+  - id: index
+    content:
+      - type: text
+        text: "It reduces the length of the index array."
+correctOptionId: perpendicular
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The cross product returns a vector perpendicular to both input vectors, so it can serve as the normal direction of the triangle's surface."
+tags: [graphics, geometry, normal]
+difficulty: 2

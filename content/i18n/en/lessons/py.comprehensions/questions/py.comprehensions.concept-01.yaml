@@ -1,0 +1,33 @@
+id: py.comprehensions.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "In `[expression for item in data]`, what does the expression at the start of a list comprehension do?"
+options:
+- id: transform
+  content:
+  - type: text
+    text: "Computes the value to add to the result list for each item"
+- id: source
+  content:
+  - type: text
+    text: "Specifies the source data to iterate over"
+- id: filter
+  content:
+  - type: text
+    text: "Specifies only a condition that must remove items"
+- id: sort
+  content:
+  - type: text
+    text: "Automatically sorts the result"
+correctOptionId: transform
+shuffleOptions: true
+explanation:
+- type: text
+  text: "The expression at the start transforms each item into a value for the result. The `for` clause specifies the source."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- comprehension
+difficulty: 2

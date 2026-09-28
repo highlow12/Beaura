@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.runtime-gc.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: References that provide the starting points for tracing objects, such as references from the stack and global variables, are called GC ___.
+choices:
+  - roots
+  - leaves
+  - tokens
+acceptedAnswers:
+  - roots
+explanation:
+  - type: text
+    text: The collector marks reachable objects by following references from the roots. If it misses a root, it may incorrectly reclaim a live object.
+tags:
+  - programming-languages
+  - garbage-collection
+  - roots
+difficulty: 1

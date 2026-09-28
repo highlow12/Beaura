@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: algo.search.linear-choice-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which method can be applied directly to find a value in an unsorted array?"
+options:
+- id: linear
+  content:
+  - type: text
+    text: "Linear search, comparing elements one by one from the beginning"
+- id: binary
+  content:
+  - type: text
+    text: "Binary search, repeatedly checking the middle under the assumption that the data is sorted"
+- id: sort-only
+  content:
+  - type: text
+    text: "A method that only sorts the array without searching for a value"
+correctOptionId: linear
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Linear search can compare elements one by one even in an unsorted array."
+- type: text
+  text: "Binary search requires sorted data so it can discard half of the range after each comparison."
+tags:
+- search
+- linear-search
+difficulty: 1

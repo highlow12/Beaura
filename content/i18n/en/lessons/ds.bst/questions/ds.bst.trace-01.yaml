@@ -1,0 +1,27 @@
+id: ds.bst.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following BST comparison code."
+language: python
+code: 'node = 8
+
+  target = 10
+
+  print("right" if target > node else "left")'
+choices:
+- right
+- left
+- '8'
+acceptedOutputs:
+- right
+explanation:
+- type: text
+  text: "Since target 10 is greater than the current value 8, move to the right subtree in a BST."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- bst
+- search
+difficulty: 2

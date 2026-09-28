@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.combinations
+revision: 3
+track: discrete-math
+title: "Combinations and Selection"
+description: "Count selections without regard to order using combinations, and understand their relationship to permutations."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.combinations.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.combinations.application-01
+  - type: content
+    ref: content/role-selection.md
+  - type: question
+    ref: math.combinations.term-01
+  - type: question
+    ref: math.combinations.steps-01
+  - type: question
+    ref: math.combinations.match-01

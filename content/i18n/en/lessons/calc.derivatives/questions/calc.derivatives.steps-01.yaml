@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.derivatives.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for interpreting the limit definition of a derivative."
+items:
+  - id: two-points
+    content:
+      - type: text
+        text: "Evaluate the function at a and a+h"
+  - id: difference
+    content:
+      - type: text
+        text: "Find the change in output f(a+h)−f(a)"
+  - id: divide
+    content:
+      - type: text
+        text: "Divide by the input change h"
+  - id: limit
+    content:
+      - type: text
+        text: "Take the limit as h approaches 0"
+correctOrder:
+  - two-points
+  - difference
+  - divide
+  - limit
+explanation:
+  - type: text
+    text: "First form the average rate of change, then let the distance between the points approach 0 to get the instantaneous rate of change."
+  - type: text
+    text: "Setting the denominator h directly to 0 makes the division undefined, so use a limit instead."
+tags:
+  - calculus
+  - derivatives
+  - definition
+difficulty: 2

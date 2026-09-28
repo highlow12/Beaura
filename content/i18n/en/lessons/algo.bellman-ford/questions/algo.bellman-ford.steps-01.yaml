@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.bellman-ford.steps-01
+revision: 2
+type: ordering
+prompt:
+- type: text
+  text: "Put the basic Bellman–Ford steps in order."
+items:
+- id: initialize
+  content:
+  - type: text
+    text: "Set the start distance to 0 and all others to infinity"
+- id: repeat
+  content:
+  - type: text
+    text: "Repeat for V − 1 passes"
+- id: relax
+  content:
+  - type: text
+    text: "Relax every edge on each pass"
+- id: detect
+  content:
+  - type: text
+    text: "Mark a negative cycle if a reachable edge is updated on an additional pass"
+correctOrder:
+- initialize
+- repeat
+- relax
+- detect
+explanation:
+- type: text
+  text: "After initialization, repeatedly scan all edges enough times. Then use one additional pass to check for a negative cycle reachable from the start."
+tags:
+- shortest-path
+- bellman-ford
+- execution-order
+difficulty: 2

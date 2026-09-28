@@ -1,0 +1,33 @@
+id: py.scopes.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What is a characteristic of a local name assigned inside a function?"
+options:
+- id: local
+  content:
+  - type: text
+    text: "It is used first within that function call and disappears when the call ends"
+- id: global
+  content:
+  - type: text
+    text: "It automatically has the same value everywhere in the program"
+- id: constant
+  content:
+  - type: text
+    text: "It can never change once set"
+- id: module
+  content:
+  - type: text
+    text: "It is always stored in a separate file"
+correctOptionId: local
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A name assigned inside a function is local by default. Its local scope disappears when the call ends, distinguishing it from an outer name."
+schemaVersion: 1
+revision: 1
+tags:
+- functions
+- scope
+difficulty: 2

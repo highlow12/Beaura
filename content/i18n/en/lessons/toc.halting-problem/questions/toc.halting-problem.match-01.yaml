@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.halting-problem.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each component of the halting-problem argument with its role.
+leftItems:
+  - id: h
+    content:
+      - type: text
+        text: Assumed decider H
+  - id: d
+    content:
+      - type: text
+        text: Diagonal program D
+  - id: self-input
+    content:
+      - type: text
+        text: D(D)
+rightItems:
+  - id: prediction
+    content:
+      - type: text
+        text: Procedure assumed to predict whether a program halts
+  - id: opposite
+    content:
+      - type: text
+        text: Program that acts opposite to H’s prediction
+  - id: contradiction
+    content:
+      - type: text
+        text: Execution that creates a contradiction whichever way it is predicted
+correctPairs:
+  - leftId: h
+    rightId: prediction
+  - leftId: d
+    rightId: opposite
+  - leftId: self-input
+    rightId: contradiction
+explanation:
+  - type: text
+    text: D is designed to contradict H’s conclusion and, when given itself as input, conflicts with the assumption that H exists.
+tags:
+  - theory-of-computation
+  - halting-problem
+  - diagonalization
+difficulty: 2

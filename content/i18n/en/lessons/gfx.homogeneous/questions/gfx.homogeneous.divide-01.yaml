@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.homogeneous.divide-01
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the value by which x, y, and z are divided when converting the 3D clip coordinate (1, 1, 1, 2) to NDC."
+choices: ["w = 2", "x = 1", "y = 1"]
+acceptedAnswers: ["w = 2"]
+explanation:
+  - type: text
+    text: "Perspective division divides x, y, and z by the homogeneous coordinate w. Here the fourth component, w, is 2, so the NDC coordinate is (0.5, 0.5, 0.5)."
+tags: [graphics, homogeneous-coordinates, perspective-division]
+difficulty: 2

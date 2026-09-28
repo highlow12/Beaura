@@ -1,0 +1,24 @@
+id: py.precedence.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following code."
+language: python
+code: 'value = 2 + 3 * 4
+
+  print(value)'
+choices:
+- '14'
+- '20'
+- '24'
+acceptedOutputs:
+- '14'
+explanation:
+- type: text
+  text: "`3 * 4` is evaluated first, producing 12; adding 2 then gives 14."
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- precedence
+difficulty: 2

@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: net.performance.single-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which statement about latency, bandwidth, and loss is most accurate?
+options:
+- id: correct
+  content:
+  - type: text
+    text: Latency is delivery time, bandwidth is the possible transfer capacity, and actual throughput is affected by loss
+      and congestion.
+- id: wrong-a
+  content:
+  - type: text
+    text: High bandwidth guarantees zero round-trip latency at any distance.
+- id: wrong-b
+  content:
+  - type: text
+    text: Packet loss has no effect on transfer speed or application behavior, even when data is discarded.
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+- type: text
+  text: Latency is delivery time, bandwidth is the possible transfer capacity, and actual throughput is affected by loss and
+    congestion.
+- type: text
+  text: Latency is the time it takes data to reach its destination, and bandwidth is the maximum number of bits that can be
+    delivered per unit of time. Throughput is the rate of data successfully delivered and is affected by loss and congestion.
+tags:
+- network-performance
+- latency
+- bandwidth
+difficulty: 2

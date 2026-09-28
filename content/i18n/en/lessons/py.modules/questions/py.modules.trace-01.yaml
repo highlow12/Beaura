@@ -1,0 +1,24 @@
+id: py.modules.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following module-usage code."
+language: python
+code: 'import math
+
+  print(math.ceil(2.1))'
+choices:
+- '3'
+- '2'
+- '2.1'
+acceptedOutputs:
+- '3'
+explanation:
+- type: text
+  text: "math.ceil rounds a number up to the smallest integer, so the result for 2.1 is 3."
+schemaVersion: 1
+revision: 1
+tags:
+- modules
+- import
+difficulty: 2

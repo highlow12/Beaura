@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: py.io.print-output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  score = 95
+  print("score:", score)
+choices:
+  - "score: 95"
+  - "score:95"
+  - "95 score:"
+acceptedOutputs:
+  - "score: 95"
+explanation:
+  - type: text
+    text: "When several values are passed to `print()` separated by commas, spaces are inserted between them by default. Therefore there is a space between score: and 95."
+tags:
+  - io
+  - print
+  - code-output
+difficulty: 2

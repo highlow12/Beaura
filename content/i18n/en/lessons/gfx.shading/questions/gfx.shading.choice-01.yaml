@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.shading.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which method is better suited to represent a small specular highlight within a triangle?"
+options:
+  - id: phong
+    content:
+      - type: text
+        text: "Phong shading, which interpolates normals and calculates lighting for each fragment"
+  - id: gouraud
+    content:
+      - type: text
+        text: "Gouraud shading, which calculates lighting only at the three vertices"
+  - id: flat
+    content:
+      - type: text
+        text: "Flat shading, which copies one primitive's value across the whole face"
+correctOptionId: phong
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Phong shading evaluates the lighting equation at each fragment, making it less likely to miss a narrow highlight between vertices."
+tags: [graphics, shading, phong]
+difficulty: 2

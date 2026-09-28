@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: algo.correctness.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "What do we call a property claimed to remain true throughout a loop?"
+- type: code
+  language: python
+  code: loop_{{blank:property}} = true
+choices:
+- invariant
+- variable
+- output
+acceptedAnswers:
+- invariant
+explanation:
+- type: text
+  text: "A loop invariant is a property that remains true as the loop runs."
+tags:
+- correctness
+- invariant
+- code-completion
+difficulty: 1

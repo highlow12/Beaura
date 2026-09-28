@@ -1,0 +1,26 @@
+id: py.comprehensions.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following list comprehension."
+language: python
+code: 'values = [1, 2, 3]
+
+  doubled = [x * 2 for x in values]
+
+  print(doubled)'
+choices:
+- '[2, 4, 6]'
+- '[1, 2, 3]'
+- '[3, 6, 9]'
+acceptedOutputs:
+- '[2, 4, 6]'
+explanation:
+- type: text
+  text: "Each x is multiplied by 2 and added to a new list in order, producing `[2, 4, 6]`."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- comprehension
+difficulty: 2

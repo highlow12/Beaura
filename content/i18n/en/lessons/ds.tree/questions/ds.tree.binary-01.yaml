@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: ds.tree.binary-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which statement best describes the condition for a binary tree?"
+options:
+- id: two
+  content:
+  - type: text
+    text: "Each node has at most two children"
+- id: sorted
+  content:
+  - type: text
+    text: "All nodes are always stored in ascending order"
+- id: cycle
+  content:
+  - type: text
+    text: "All nodes are connected to each other in a cycle"
+correctOptionId: two
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A binary tree is a tree in which each node can have at most two children."
+- type: text
+  text: "The limit on the number of children defines a binary tree; ordering is a separate condition for a binary search tree."
+tags:
+- tree
+- binary-tree
+difficulty: 1

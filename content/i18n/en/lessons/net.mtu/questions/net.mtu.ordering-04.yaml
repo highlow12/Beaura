@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: net.mtu.ordering-04
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: Arrange the basic MTU and fragmentation steps in the correct order.
+items:
+- id: discover
+  content:
+  - type: text
+    text: Determine the MTU limits of links along the path
+- id: size
+  content:
+  - type: text
+    text: Adjust segment and packet sizes to fit the limit
+- id: fragment-reassemble
+  content:
+  - type: text
+    text: Fragment the packet if needed and reassemble it at the destination
+correctOrder:
+- discover
+- size
+- fragment-reassemble
+explanation:
+- type: text
+  text: First, determine the MTU limits of links along the path; use those limits to adjust segment and packet sizes.
+- type: text
+  text: If needed, fragment the packet and reassemble it at the destination. The result is then delivered to the next network
+    layer or the application.
+tags:
+- mtu
+- fragmentation
+- ip
+difficulty: 4

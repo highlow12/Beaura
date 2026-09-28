@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: la.linear-transformations.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for building a 2D transformation matrix from basis images."
+items:
+  - id: basis
+    content:
+      - type: text
+        text: "Identify the standard basis vectors `e₁` and `e₂`"
+  - id: images
+    content:
+      - type: text
+        text: "Calculate `T(e₁)` and `T(e₂)`"
+  - id: columns
+    content:
+      - type: text
+        text: "Place the two images in the columns of the matrix"
+  - id: apply
+    content:
+      - type: text
+        text: "Multiply the matrix by an arbitrary vector"
+correctOrder:
+  - basis
+  - images
+  - columns
+  - apply
+explanation:
+  - type: text
+    text: "The columns of a linear transformation matrix are the transformed basis vectors."
+  - type: text
+    text: "You can then calculate the transform of any input with a matrix-vector product."
+tags:
+  - linear-algebra
+  - transformations
+  - matrix-representation
+difficulty: 2

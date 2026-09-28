@@ -1,0 +1,68 @@
+schemaVersion: 1
+id: py.types.type-matching-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each value with its Python type."
+leftItems:
+  - id: integer-value
+    content:
+      - type: code
+        language: python
+        code: "42"
+  - id: decimal-value
+    content:
+      - type: code
+        language: python
+        code: "3.5"
+  - id: text-value
+    content:
+      - type: code
+        language: python
+        code: '"CS"'
+  - id: boolean-value
+    content:
+      - type: code
+        language: python
+        code: "False"
+rightItems:
+  - id: integer-type
+    content:
+      - type: code
+        language: python
+        code: int
+  - id: float-type
+    content:
+      - type: code
+        language: python
+        code: float
+  - id: string-type
+    content:
+      - type: code
+        language: python
+        code: str
+  - id: boolean-type
+    content:
+      - type: code
+        language: python
+        code: bool
+correctPairs:
+  - leftId: integer-value
+    rightId: integer-type
+  - leftId: decimal-value
+    rightId: float-type
+  - leftId: text-value
+    rightId: string-type
+  - leftId: boolean-value
+    rightId: boolean-type
+explanation:
+  - type: text
+    text: "Numbers without a decimal point are int, and numbers with a decimal point are float. A value in quotation marks is str, while True and False are bool."
+tags:
+  - python-types
+  - int
+  - float
+  - str
+  - bool
+difficulty: 1

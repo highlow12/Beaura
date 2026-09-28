@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.events.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe event probability formulas."
+options:
+  - id: union
+    content:
+      - type: text
+        text: "P(A∪B)=P(A)+P(B)−P(A∩B)"
+  - id: complement
+    content:
+      - type: text
+        text: "P(Aᶜ)=1−P(A)"
+  - id: disjoint
+    content:
+      - type: text
+        text: "If A and B are mutually exclusive, then P(A∩B)=0."
+  - id: always-add
+    content:
+      - type: text
+        text: "For all events, P(A∪B)=P(A)+P(B)."
+correctOptionIds: [union, complement, disjoint]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "For a union, subtract the overlap; formulas for complements and mutually exclusive events simplify under their respective conditions."
+  - type: text
+    text: "Simply adding events that can overlap counts their shared outcomes twice."
+tags:
+  - probability-statistics
+  - events
+  - formulas
+difficulty: 2

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: py.types.division-output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  print(7 / 2)
+choices:
+  - "3.5"
+  - "3"
+  - "1"
+acceptedOutputs:
+  - "3.5"
+explanation:
+  - type: text
+    text: "`/` calculates the result of division, so 7 / 2 is 3.5. Since the result has a decimal part, it is a float."
+tags:
+  - arithmetic
+  - division
+  - code-output
+difficulty: 1

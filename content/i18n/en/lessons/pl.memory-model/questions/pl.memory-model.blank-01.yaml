@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.memory-model.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: The runtime unit that groups a function call's parameters and return address is called a stack ___.
+choices:
+  - frame
+  - token
+  - blockchain
+acceptedAnswers:
+  - frame
+explanation:
+  - type: text
+    text: Each call creates a stack frame that stores local execution information and the return location.
+tags:
+  - programming-languages
+  - stack
+  - call-frame
+difficulty: 1

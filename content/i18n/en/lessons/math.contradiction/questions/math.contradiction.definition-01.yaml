@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.contradiction.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the correct first step in a proof by contradiction?"
+options:
+  - id: negate-goal
+    content:
+      - type: text
+        text: "Assume the negation of the conclusion to be proved"
+  - id: assume-goal
+    content:
+      - type: text
+        text: "Assume that the conclusion is already true"
+  - id: counter
+    content:
+      - type: text
+        text: "Find a counterexample"
+  - id: calculate
+    content:
+      - type: text
+        text: "Choose an arbitrary calculation result"
+correctOptionId: negate-goal
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A proof by contradiction assumes that the goal is false and derives an impossible result."
+  - type: text
+    text: "After deriving a contradiction from the assumption, you can recover the original conclusion."
+tags:
+  - discrete-math
+  - proof
+  - contradiction
+difficulty: 1

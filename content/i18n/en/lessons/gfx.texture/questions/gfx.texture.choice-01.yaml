@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.texture.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is especially useful when an object becomes very small on screen and its texture is minified?"
+options:
+  - id: mipmap
+    content:
+      - type: text
+        text: "Select a suitably sized precomputed mipmap level"
+  - id: enlarge
+    content:
+      - type: text
+        text: "Always magnify the original texture as much as possible"
+  - id: no-sample
+    content:
+      - type: text
+        text: "Disable UV sampling and ignore the surface color"
+correctOptionId: mipmap
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Mipmaps provide reduced textures that help lower aliasing and cost when a pixel covers a larger area of texels."
+tags: [graphics, texture, mipmap]
+difficulty: 2

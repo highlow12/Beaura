@@ -1,0 +1,24 @@
+id: py.dictionaries.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following dictionary code."
+language: python
+code: 'user = {"name": "Ada", "score": 95}
+
+  print(user["score"])'
+choices:
+- '95'
+- Ada
+- score
+acceptedOutputs:
+- '95'
+explanation:
+- type: text
+  text: "The `score` key in square brackets refers to the integer 95, so the output is 95."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- dictionary
+difficulty: 2

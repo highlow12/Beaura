@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.exceptions
+revision: 1
+track: python
+title: "Basic Exception Handling"
+description: "Learn to safely handle exceptions that may occur during execution with try and except."
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.exceptions.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: py.exceptions.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.exceptions.complete-01
+- type: question
+  ref: py.exceptions.steps-01
+- type: question
+  ref: py.exceptions.match-01

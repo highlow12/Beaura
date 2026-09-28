@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: ds.queue.deque-output-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the two-line output of the following deque code."
+language: python
+code: |-
+  from collections import deque
+  queue = deque(["A", "B"])
+  queue.append("C")
+  print(queue.popleft())
+  print(queue[0])
+choices:
+- 'A
+
+  B'
+- 'B
+
+  C'
+- 'A
+
+  C'
+acceptedOutputs:
+- 'A
+
+  B'
+explanation:
+- type: text
+  text: "After removing A from the front, B remains at the front of the queue."
+- type: text
+  text: "append adds at the back and popleft removes from the front, so FIFO order is preserved."
+tags:
+- queue
+- deque
+- code-output
+difficulty: 2

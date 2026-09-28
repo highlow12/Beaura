@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: toc.decidability.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: This bounded simulator prints timeout if it does not halt within 3 steps. Choose the output.
+language: python
+code: |-
+  halted = False
+  for step in range(3):
+      if step == 1:
+          halted = True
+          break
+  print("halted" if halted else "timeout")
+choices:
+  - halted
+  - timeout
+  - undecidable
+acceptedOutputs:
+  - halted
+explanation:
+  - type: text
+    text: When step is 1, `halted` becomes True and the loop breaks, so it prints `halted` before reaching the limit.
+tags:
+  - theory-of-computation
+  - decidability
+  - trace
+difficulty: 2

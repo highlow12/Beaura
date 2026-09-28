@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.recovery.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each crash-recovery term with its role."
+leftItems:
+  - id: wal
+    content:
+      - type: text
+        text: "WAL"
+  - id: checkpoint
+    content:
+      - type: text
+        text: "checkpoint"
+  - id: redo
+    content:
+      - type: text
+        text: "redo"
+rightItems:
+  - id: log-first
+    content:
+      - type: text
+        text: "Write the log before the data page"
+  - id: recovery-marker
+    content:
+      - type: text
+        text: "Mark a point for recovery to use"
+  - id: committed-change
+    content:
+      - type: text
+        text: "Reapply committed changes from the log"
+correctPairs:
+  - leftId: wal
+    rightId: log-first
+  - leftId: checkpoint
+    rightId: recovery-marker
+  - leftId: redo
+    rightId: committed-change
+explanation:
+  - type: text
+    text: "WAL describes the write order, a checkpoint marks the recovery scope, and redo reapplies committed changes. Undo may be used for incomplete changes."
+tags: [database, recovery, wal]
+difficulty: 2

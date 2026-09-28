@@ -1,0 +1,49 @@
+schemaVersion: 1
+id: ds.tree.terms-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each tree term with its meaning."
+leftItems:
+- id: root
+  content:
+  - type: text
+    text: "root"
+- id: leaf
+  content:
+  - type: text
+    text: "leaf"
+- id: edge
+  content:
+  - type: text
+    text: "edge"
+rightItems:
+- id: top-node
+  content:
+  - type: text
+    text: "The starting node of a tree"
+- id: end-node
+  content:
+  - type: text
+    text: "A node with no children"
+- id: connection
+  content:
+  - type: text
+    text: "A connection between two nodes"
+correctPairs:
+- leftId: root
+  rightId: top-node
+- leftId: leaf
+  rightId: end-node
+- leftId: edge
+  rightId: connection
+explanation:
+- type: text
+  text: "The root is the starting node, and a leaf has no children. An edge is a connection between nodes."
+- type: text
+  text: "Distinguishing nodes from connections makes it easier to describe depth and paths in a hierarchy."
+tags:
+- tree
+- terminology
+difficulty: 2

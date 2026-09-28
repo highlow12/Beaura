@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.joins
+revision: 2
+track: databases
+title: Table Joins
+description: Connect multiple relations using a shared key and understand the difference between inner and outer join results.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.joins.match-01
+  - type: question
+    ref: db.joins.output-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.joins.choice-01
+  - type: question
+    ref: db.joins.fill-01
+  - type: question
+    ref: db.joins.properties-01

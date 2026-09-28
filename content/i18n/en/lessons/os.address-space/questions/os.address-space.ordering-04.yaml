@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.address-space.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic process address-space steps in the correct order."
+items:
+  - id: virtual
+    content:
+      - type: text
+        text: "The program generates a virtual address"
+  - id: translate
+    content:
+      - type: text
+        text: "The MMU looks up the physical location in the page table"
+  - id: protect
+    content:
+      - type: text
+        text: "Check permission bits to allow access or raise an exception"
+correctOrder: [virtual, translate, protect]
+explanation:
+  - type: text
+    text: "First, the program generates a virtual address; then the MMU uses the page table to look up its physical location."
+  - type: text
+    text: "At the step where permission bits are checked to allow access or raise an exception, the final result is passed to the next execution step."
+tags: [process, virtual-memory, address-space]
+difficulty: 3

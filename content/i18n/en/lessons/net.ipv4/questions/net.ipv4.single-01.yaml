@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.ipv4.single-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which statement about IP addresses and IPv4 packets is most accurate?
+options:
+- id: correct
+  content:
+  - type: text
+    text: An IPv4 packet is a best-effort network-layer unit forwarded through routers based on its destination IP address.
+- id: wrong-a
+  content:
+  - type: text
+    text: An IPv4 address is a 48-bit MAC address used only within a link.
+- id: wrong-b
+  content:
+  - type: text
+    text: IP always retransmits lost packets automatically to guarantee reliability.
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+- type: text
+  text: An IPv4 packet is a best-effort network-layer unit forwarded through routers based on its destination IP address.
+- type: text
+  text: An IPv4 address is a 32-bit value divided into network and host portions. IP packets pass through routers with headers
+    containing source and destination addresses, TTL, and other fields.
+tags:
+- ip
+- ipv4
+- internet-layer
+difficulty: 2

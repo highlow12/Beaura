@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.recursive-descent.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each recursive-descent parser element with its role.
+leftItems:
+  - id: parse-function
+    content:
+      - type: text
+        text: Parsing function
+  - id: lookahead
+    content:
+      - type: text
+        text: Lookahead token
+  - id: consume
+    content:
+      - type: text
+        text: Token consumption
+rightItems:
+  - id: nonterminal
+    content:
+      - type: text
+        text: Handles the grammar for one nonterminal
+  - id: choose-rule
+    content:
+      - type: text
+        text: A clue for choosing the next production rule
+  - id: advance
+    content:
+      - type: text
+        text: Advances the current position to the next token
+correctPairs:
+  - leftId: parse-function
+    rightId: nonterminal
+  - leftId: lookahead
+    rightId: choose-rule
+  - leftId: consume
+    rightId: advance
+explanation:
+  - type: text
+    text: If a function repeatedly calls itself without consuming a token, it cannot terminate. Make each grammar rule's token-consumption point explicit.
+tags:
+  - programming-languages
+  - recursive-descent
+  - parser
+difficulty: 2

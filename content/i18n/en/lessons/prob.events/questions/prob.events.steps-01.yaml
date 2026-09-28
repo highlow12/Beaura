@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: prob.events.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for calculating the union probability of two overlapping events."
+items:
+  - id: p-a
+    content:
+      - type: text
+        text: "Calculate P(A)."
+  - id: p-b
+    content:
+      - type: text
+        text: "Calculate P(B)."
+  - id: overlap
+    content:
+      - type: text
+        text: "Calculate P(A∩B)."
+  - id: combine
+    content:
+      - type: text
+        text: "Add the two probabilities and subtract their intersection."
+correctOrder:
+  - p-a
+  - p-b
+  - overlap
+  - combine
+unorderedGroups:
+  - [p-a, p-b, overlap]
+explanation:
+  - type: text
+    text: "First find each event and their overlap, then substitute them into the inclusion-exclusion formula."
+  - type: text
+    text: "Subtracting the intersection removes the double count."
+tags:
+  - probability-statistics
+  - events
+  - inclusion-exclusion
+difficulty: 2

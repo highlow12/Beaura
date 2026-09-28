@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: algo.shortest-path.astar-priority-01
+revision: 1
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the priority A* will use."
+language: python
+template: |-
+  priority = {{blank:score}}
+blanks:
+- id: score
+  choices:
+  - g + h
+  - g - h
+  - h - g
+  acceptedAnswers:
+  - g + h
+explanation:
+- type: text
+  text: "A*’s basic priority is the sum of the cost so far, g, and the estimated remaining cost, h."
+- type: text
+  text: "g is the actual cost so far, and h is the estimated cost to the goal."
+tags:
+- shortest-path
+- astar
+- code-completion
+difficulty: 2

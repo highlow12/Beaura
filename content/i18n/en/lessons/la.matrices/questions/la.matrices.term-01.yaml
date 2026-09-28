@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.matrices.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The entry in row `i` and column `j` of matrix `A` is usually written as `A___`."
+choices:
+  - "ij"
+  - "ji"
+  - "i+j"
+  - "i−j"
+acceptedAnswers:
+  - "ij"
+explanation:
+  - type: text
+    text: "The first subscript denotes the row and the second denotes the column, so it is `Aᵢⱼ`."
+  - type: text
+    text: "`Aⱼᵢ` generally refers to a different entry."
+tags:
+  - linear-algebra
+  - matrices
+  - indexing
+difficulty: 1

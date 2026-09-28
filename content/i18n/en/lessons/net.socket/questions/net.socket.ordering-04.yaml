@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.socket.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic socket and client/server steps in the correct order."
+items:
+  - id: listen
+    content:
+      - type: text
+        text: "The server waits for connections at an address and port"
+  - id: accept
+    content:
+      - type: text
+        text: "Create a communication socket for each incoming connection"
+  - id: exchange
+    content:
+      - type: text
+        text: "Read and write data through the connection socket"
+correctOrder: [listen, accept, exchange]
+explanation:
+  - type: text
+    text: "First, the server waits for connections at an address and port; then it creates a communication socket for each incoming connection."
+  - type: text
+    text: "At the step where data is read and written through the connection socket, it is delivered to the next network layer or application."
+tags: [socket, client-server, api]
+difficulty: 3

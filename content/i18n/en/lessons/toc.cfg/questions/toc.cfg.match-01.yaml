@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.cfg.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each CFG concept with its description.
+leftItems:
+  - id: parse-tree
+    content:
+      - type: text
+        text: Parse tree
+  - id: ambiguity
+    content:
+      - type: text
+        text: Ambiguity
+  - id: recursive-rule
+    content:
+      - type: text
+        text: Recursive production rule
+rightItems:
+  - id: hierarchy
+    content:
+      - type: text
+        text: A tree representation of the generated structure
+  - id: multiple-trees
+    content:
+      - type: text
+        text: The property of one string having more than one parse tree
+  - id: nested-generation
+    content:
+      - type: text
+        text: A rule that recreates the same nonterminal to represent nesting
+correctPairs:
+  - leftId: parse-tree
+    rightId: hierarchy
+  - leftId: ambiguity
+    rightId: multiple-trees
+  - leftId: recursive-rule
+    rightId: nested-generation
+explanation:
+  - type: text
+    text: A CFG parse tree shows which rules expanded each nonterminal; multiple trees for one string mean the grammar is ambiguous.
+tags:
+  - theory-of-computation
+  - cfg
+  - parse-tree
+difficulty: 2

@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.testing.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Why does the testing pyramid put many unit tests at the bottom?
+options:
+- id: fast-isolated
+  content:
+  - type: text
+    text: They are fast and isolated, so feedback is quick and failures are easier to diagnose.
+- id: user-only
+  content:
+  - type: text
+    text: Unit tests replace every action taken by real users.
+- id: environment-heavy
+  content:
+  - type: text
+    text: They always connect to external services and databases.
+- id: visual-only
+  content:
+  - type: text
+    text: They check only screen colors.
+correctOptionId: fast-isolated
+shuffleOptions: true
+explanation:
+- type: text
+  text: Validating small units in isolation keeps execution costs low and helps quickly identify which responsibility failed.
+tags:
+- software-engineering
+- testing
+- test-pyramid
+difficulty: 1

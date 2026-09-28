@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.thread
+revision: 2
+track: operating-systems
+title: Threads and Concurrency
+description: Understand threads, which share an address space within a process, and the basic risks of concurrent execution.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.thread.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.thread.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.thread.fill-03
+  - type: question
+    ref: os.thread.ordering-04
+  - type: question
+    ref: os.thread.matching-05

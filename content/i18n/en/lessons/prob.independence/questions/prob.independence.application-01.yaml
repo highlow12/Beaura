@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.independence.application-01
+revision: 2
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe independent events."
+options:
+  - id: conditional-same
+    content:
+      - type: text
+        text: "If P(B)>0, then P(A|B)=P(A)."
+  - id: product
+    content:
+      - type: text
+        text: "P(A∩B)=P(A)P(B)."
+  - id: coin
+    content:
+      - type: text
+        text: "Sampling with replacement can produce an independent model."
+  - id: mutually-exclusive
+    content:
+      - type: text
+        text: "Mutually exclusive events are always independent."
+correctOptionIds: [conditional-same, product, coin]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Independence can be expressed as P(A∩B)=P(A)P(B). If P(B)>0, learning that B occurred does not change the probability of A, so P(A|B)=P(A)."
+  - type: text
+    text: "Mutual exclusivity and independence are different concepts, and events with positive probability cannot have both properties."
+tags:
+  - probability-statistics
+  - independence
+  - properties
+difficulty: 2

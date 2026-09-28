@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: net.subnet.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "In an IPv4 `/24` subnet, the host portion has ___ bits."
+choices:
+  - "8"
+  - "24"
+  - "32"
+acceptedAnswers:
+  - "8"
+explanation:
+  - type: text
+    text: "In `192.168.1.0/24`, the first 24 bits identify the network and the last 8 bits identify the host. In this traditional subnet, `192.168.1.0` is the network address and `192.168.1.255` is the broadcast address. To compare whether two addresses belong to the same network, apply the same mask to each with a bitwise AND."
+tags: [subnet, cidr, ipv4]
+difficulty: 2

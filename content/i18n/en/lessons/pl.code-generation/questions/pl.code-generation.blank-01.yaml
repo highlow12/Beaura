@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.code-generation.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "When there are not enough physical registers and a value is temporarily stored in memory, this is called register ___."
+choices:
+  - spill
+  - cache
+  - parse
+acceptedAnswers:
+  - spill
+explanation:
+  - type: text
+    text: "Spilling moves a value to a memory location such as the stack and loads it again when needed."
+tags:
+  - programming-languages
+  - code-generation
+  - register-allocation
+difficulty: 1

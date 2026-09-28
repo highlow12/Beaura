@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: la.homogeneous-coordinates.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "When extending a 3D point `(x, y, z)` to homogeneous coordinates, the final component is ___ ."
+choices:
+  - "0"
+  - "1"
+  - "z"
+acceptedAnswers:
+  - "1"
+explanation:
+  - type: text
+    text: "A homogeneous coordinate representing a position has a final `w` component of 1."
+  - type: text
+    text: "Set `w = 0` for a direction vector so translation is not applied."
+tags:
+  - linear-algebra
+  - coordinates
+  - point
+difficulty: 1

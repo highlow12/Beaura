@@ -1,0 +1,24 @@
+id: py.tuples.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the value that completes the code to group x and y into a tuple."
+language: python
+template: point = (3, {{blank:value}})
+blanks:
+- id: value
+  choices:
+  - '4'
+  - '[4]'
+  - '"4"'
+  acceptedAnswers:
+  - '4'
+explanation:
+- type: text
+  text: "Putting the numbers 3 and 4 inside parentheses and separating them with a comma creates a two-element tuple."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- tuple
+difficulty: 2

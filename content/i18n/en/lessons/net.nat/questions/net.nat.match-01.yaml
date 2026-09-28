@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: net.nat.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: Match each term with its role.
+leftItems:
+- id: private
+  content:
+  - type: text
+    text: Private address
+- id: pat
+  content:
+  - type: text
+    text: PAT
+- id: forward
+  content:
+  - type: text
+    text: Port forwarding
+rightItems:
+- id: local
+  content:
+  - type: text
+    text: A nonpublic address used within an internal network
+- id: multiplex
+  content:
+  - type: text
+    text: A method that translates ports to distinguish connections
+- id: inbound
+  content:
+  - type: text
+    text: A rule that maps a specific external port to an internal service
+correctPairs:
+- leftId: private
+  rightId: local
+- leftId: pat
+  rightId: multiplex
+- leftId: forward
+  rightId: inbound
+explanation:
+- type: text
+  text: Private addressing, port-based translation, and fixed mappings for inbound connections serve different purposes.
+tags:
+- network
+- nat
+- port-forwarding
+difficulty: 2

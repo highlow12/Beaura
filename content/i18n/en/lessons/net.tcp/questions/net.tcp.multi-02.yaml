@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.tcp.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to TCP connections and reliability."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "The three-way handshake confirms that both sides are ready and synchronizes their initial sequence numbers."
+  - id: correct-b
+    content:
+      - type: text
+        text: "TCP can adjust the sending rate through flow control and congestion control."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "When a TCP segment is lost, the application must restore byte order itself."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A TCP connection stores no state on either side."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The three-way handshake confirms that both sides are ready and synchronizes their initial sequence numbers. TCP can adjust the sending rate through flow control and congestion control."
+  - type: text
+    text: "TCP provides reliability and congestion control, but connection state, the handshake, and retransmissions add latency and memory costs. Real-time applications may tolerate some packet loss to reduce latency."
+tags: [tcp, reliability, handshake]
+difficulty: 3

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.limits.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each limit term with its description."
+leftItems:
+  - id: limit
+    content:
+      - type: text
+        text: "Limit"
+  - id: left
+    content:
+      - type: text
+        text: "Left-hand limit"
+  - id: right
+    content:
+      - type: text
+        text: "Right-hand limit"
+  - id: continuous
+    content:
+      - type: text
+        text: "Continuity"
+rightItems:
+  - id: limit-desc
+    content:
+      - type: text
+        text: "Value approached by the output as the input gets close"
+  - id: left-desc
+    content:
+      - type: text
+        text: "Value approached from the left"
+  - id: right-desc
+    content:
+      - type: text
+        text: "Value approached from the right"
+  - id: continuous-desc
+    content:
+      - type: text
+        text: "The limit, function value, and definition agree at a point"
+correctPairs:
+  - leftId: limit
+    rightId: limit-desc
+  - leftId: left
+    rightId: left-desc
+  - leftId: right
+    rightId: right-desc
+  - leftId: continuous
+    rightId: continuous-desc
+explanation:
+  - type: text
+    text: "Separating left- and right-hand behavior lets you explain whether a limit exists and why a function is discontinuous."
+  - type: text
+    text: "Continuity is defined by the agreement of three conditions, not simply by a graph looking smooth."
+tags:
+  - calculus
+  - limits
+  - terminology
+difficulty: 2

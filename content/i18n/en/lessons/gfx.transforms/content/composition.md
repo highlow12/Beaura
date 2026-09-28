@@ -1,0 +1,5 @@
+## Verifying a Composite Transform with One Point
+
+The order of transforms is easiest to understand by following a single point. Rotating `(1, 0)` by 90 degrees around the origin gives `(0, 1)`; then adding 2 along x gives `(2, 1)`. In contrast, first moving `(1, 0)` to `(3, 0)` and then rotating it gives `(0, 3)`. The same translation and rotation produce different results in a different order because matrix multiplication is generally noncommutative.
+
+When multiplying matrices in code, the equation's reading order depends on whether you multiply column vectors on the left or row vectors on the right. Translating “rotate, then translate” directly into `R × T` can contradict the implementation's convention. Write down the point's intermediate results first, then form the equation using the vector and matrix convention you use. In particular, rotation around an object's center requires three steps: `translate to the center → rotate → translate back`. If you omit them, the object may appear to orbit the origin.

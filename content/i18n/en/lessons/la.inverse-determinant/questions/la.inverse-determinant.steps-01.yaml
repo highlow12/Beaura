@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: la.inverse-determinant.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for finding a 2×2 inverse using the formula."
+items:
+  - id: det
+    content:
+      - type: text
+        text: "Calculate the determinant `ad − bc`"
+  - id: swap
+    content:
+      - type: text
+        text: "Swap the diagonal elements `a` and `d`"
+  - id: negate
+    content:
+      - type: text
+        text: "Negate the off-diagonal elements `b` and `c`"
+  - id: scale
+    content:
+      - type: text
+        text: "Multiply the entire matrix by the reciprocal of the determinant"
+correctOrder:
+  - det
+  - swap
+  - negate
+  - scale
+unorderedGroups:
+  - [det, swap, negate]
+explanation:
+  - type: text
+    text: "The formula is applied by calculating the determinant, rearranging entries and changing signs, then scaling by the reciprocal."
+  - type: text
+    text: "If the determinant is 0, the final division is impossible, so the inverse does not exist."
+tags:
+  - linear-algebra
+  - matrices
+  - inverse-formula
+difficulty: 2

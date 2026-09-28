@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: arch.boolean-algebra.ordering-04
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic Boolean-expression steps in the correct order."
+items:
+  - id: table
+    content:
+      - type: text
+        text: "Make a truth table of outputs for each input combination"
+  - id: rewrite
+    content:
+      - type: text
+        text: "Transform the expression into an equivalent one using Boolean algebra laws"
+  - id: verify
+    content:
+      - type: text
+        text: "Check whether the original and simplified expressions have the same outputs"
+correctOrder: [table, rewrite, verify]
+unorderedGroups:
+  - [table, rewrite]
+
+explanation:
+  - type: text
+    text: "First make a truth table for every input combination. Then use Boolean algebra laws to transform the expression into an equivalent one."
+  - type: text
+    text: "Finally, verify that the original and simplified expressions produce the same outputs before passing the result to the next circuit or program."
+tags: [boolean-algebra, xor, logic]
+difficulty: 3

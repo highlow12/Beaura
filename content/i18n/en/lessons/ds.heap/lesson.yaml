@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.heap
+revision: 2
+track: data-structures
+title: Heaps
+description: Learn heaps, which maintain parent-child priority in a complete binary tree to quickly access the minimum or maximum.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.heap.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.heap.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.heap.complete-01
+- type: question
+  ref: ds.heap.steps-01
+- type: question
+  ref: ds.heap.match-01

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.relations.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "For R={(a,1),(a,2),(b,2)}, select all elements in the domain of R."
+options:
+  - id: a
+    content:
+      - type: text
+        text: "a"
+  - id: b
+    content:
+      - type: text
+        text: "b"
+  - id: one
+    content:
+      - type: text
+        text: "1"
+  - id: two
+    content:
+      - type: text
+        text: "2"
+correctOptionIds: [a, b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The domain is the set of first components of the relation's ordered pairs."
+  - type: text
+    text: "1 and 2 appear as second components, so they belong to the range."
+tags:
+  - discrete-math
+  - relations
+  - domain-range
+difficulty: 2

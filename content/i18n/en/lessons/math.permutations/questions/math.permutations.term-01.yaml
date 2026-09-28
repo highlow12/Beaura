@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.permutations.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The number of ways to arrange all n distinct objects is written as n___ ."
+choices:
+  - "!"
+  - "P0"
+  - "/0"
+acceptedAnswers:
+  - "!"
+explanation:
+  - type: text
+    text: "n! represents the number of all arrangements as the product from n down to 1."
+  - type: text
+    text: "For example, 4!=24."
+tags:
+  - discrete-math
+  - combinatorics
+  - factorial
+difficulty: 1

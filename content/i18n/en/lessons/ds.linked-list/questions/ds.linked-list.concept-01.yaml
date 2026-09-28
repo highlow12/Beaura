@@ -1,0 +1,34 @@
+id: ds.linked-list.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What does a node in a singly linked list store?"
+options:
+- id: next
+  content:
+  - type: text
+    text: "Its value and a next reference pointing to the following node"
+- id: index
+  content:
+  - type: text
+    text: "Only an integer index in the entire array"
+- id: parent
+  content:
+  - type: text
+    text: "Two references that always point to a parent node"
+- id: bucket
+  content:
+  - type: text
+    text: "Only the result of a hash function"
+correctOptionId: next
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A basic singly linked-list node stores a value and a reference to the next node. The last next is None to mark the end."
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- node
+- pointer
+difficulty: 2

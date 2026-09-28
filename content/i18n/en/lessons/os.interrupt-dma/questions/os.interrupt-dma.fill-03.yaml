@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.interrupt-dma.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "The feature that lets a device move a block of data into a memory buffer without the CPU is ___."
+choices:
+  - "DMA"
+  - "interrupt handler"
+  - "page table"
+acceptedAnswers:
+  - "DMA"
+explanation:
+  - type: text
+    text: "While a device controller uses DMA to move a packet into a memory buffer, the CPU does not need to copy each byte itself. When an interrupt signals that the transfer is complete, the CPU preserves its execution state and checks the buffer in an interrupt handler. DMA transfers data; interrupts notify the CPU of events."
+tags: [interrupt, dma, io]
+difficulty: 2

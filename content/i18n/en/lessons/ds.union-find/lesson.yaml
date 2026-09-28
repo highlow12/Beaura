@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.union-find
+revision: 1
+track: data-structures
+title: Disjoint Sets and Union-Find
+description: Learn a data structure that manages connectivity among disjoint sets with find and union operations.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.union-find.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.union-find.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.union-find.complete-01
+- type: question
+  ref: ds.union-find.steps-01
+- type: question
+  ref: ds.union-find.match-01

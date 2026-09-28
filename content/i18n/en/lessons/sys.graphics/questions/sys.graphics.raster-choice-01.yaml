@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: sys.graphics.raster-choice-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which statement best describes a raster image?
+options:
+- id: pixels
+  content:
+  - type: text
+    text: Store the color at each position in a pixel grid.
+- id: formula
+  content:
+  - type: text
+    text: Store only shape formulas and never create pixels.
+- id: network
+  content:
+  - type: text
+    text: A data structure that stores only the order of packets.
+correctOptionId: pixels
+shuffleOptions: true
+explanation:
+- type: text
+  text: A raster image is a grid representation that stores a color for each pixel.
+- type: text
+  text: 'Remember the basic distinction: vector graphics store shape information, while raster images store pixel information.'
+tags:
+- graphics
+- raster
+difficulty: 1

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.system-tradeoffs
+revision: 1
+track: software-engineering
+title: Systems Thinking and Trade-offs
+description: Explicitly compare choices involving consistency, failures, and performance.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: se.system-tradeoffs.concept-01
+- type: content
+  ref: content/model.md
+- type: question
+  ref: se.system-tradeoffs.match-01
+- type: question
+  ref: se.system-tradeoffs.blank-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: se.system-tradeoffs.order-01
+- type: question
+  ref: se.system-tradeoffs.trace-01

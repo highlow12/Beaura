@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.induction.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the general steps of mathematical induction."
+items:
+  - id: base
+    content:
+      - type: text
+        text: "Prove `P(1)` at the starting value"
+  - id: inductive-step
+    content:
+      - type: text
+        text: "Assume `P(k)` for an arbitrary `k` and prove `P(k + 1)`"
+  - id: generalize
+    content:
+      - type: text
+        text: "Use both steps to conclude the result for all natural numbers"
+correctOrder:
+  - base
+  - inductive-step
+  - generalize
+unorderedGroups:
+  - [base, inductive-step]
+explanation:
+  - type: text
+    text: "The base case and inductive step can be proved in either order. Only after both hold can the result be generalized to all natural numbers."
+  - type: text
+    text: "It is important to treat `k` as an arbitrary natural number rather than fixing it to one value."
+tags:
+  - discrete-math
+  - proof
+  - proof-steps
+difficulty: 2

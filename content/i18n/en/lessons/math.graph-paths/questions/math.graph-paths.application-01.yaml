@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.graph-paths.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "If the cost from `A` to `B` is 2, from `B` to `C` is 4, and from `A` to `C` is 7, select all correct statements about paths from `A` to `C`."
+options:
+  - id: via-b
+    content:
+      - type: text
+        text: "The length of `A→B→C` is 6"
+  - id: direct
+    content:
+      - type: text
+        text: "The length of `A→C` is 7"
+  - id: shortest
+    content:
+      - type: text
+        text: "Of these two paths, `A→B→C` is shorter"
+  - id: vertices
+    content:
+      - type: text
+        text: "The length of `A→B→C` is 3 because it has 3 vertices"
+correctOptionIds: [via-b, direct, shortest]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A path's length is the sum of its edge weights, so `2 + 4 = 6`; the direct path has length 7."
+  - type: text
+    text: "The count of 3 vertices is a different measure from the weighted path length."
+tags:
+  - discrete-math
+  - graphs
+  - weighted-path
+difficulty: 2

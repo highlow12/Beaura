@@ -1,0 +1,33 @@
+id: algo.cost.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What should you define first when analyzing an algorithm’s cost?"
+options:
+- id: input
+  content:
+  - type: text
+    text: "The input size and the basic operation to count"
+- id: clock
+  content:
+  - type: text
+    text: "A running time in seconds that is identical on every computer"
+- id: output
+  content:
+  - type: text
+    text: "The data type of the returned answer"
+- id: syntax
+  content:
+  - type: text
+    text: "The number of syntax rules in the programming language used"
+correctOptionId: input
+shuffleOptions: true
+explanation:
+- type: text
+  text: "You need to define the input size n and basic operations such as comparisons or assignments before you can count iterations and growth. Actual running time varies by environment."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- cost
+difficulty: 2

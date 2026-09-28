@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.hex.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe hexadecimal and bytes."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "0xFF is a readable way to write an 8-bit pattern in which every bit is 1."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Two hexadecimal digits correspond to one byte."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "The hexadecimal digit F represents only 2 binary bits."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "The prefix 0x is an instruction to convert a number to binary."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "0xFF is a readable way to write an 8-bit pattern in which every bit is 1. Two hexadecimal digits correspond to one byte."
+  - type: text
+    text: "Hexadecimal does not change the storage format; it is a shorter way to write the same bit pattern. It is especially useful for quickly checking bit boundaries in a debugger or memory dump."
+tags: [hexadecimal, bits, byte]
+difficulty: 2

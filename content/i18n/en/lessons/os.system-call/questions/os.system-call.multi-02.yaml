@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.system-call.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to system calls."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "The kernel can validate system-call arguments and access permissions."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Operations such as opening and reading files can be provided through the system-call interface."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A system call always runs only in user space and never enters the kernel."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A system call provides no return value or error information even when it fails."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The kernel can validate system-call arguments and access permissions. Operations such as opening and reading files can be provided through the system-call interface."
+  - type: text
+    text: "Checks and mode switches improve safety, but each call has a cost. Using a buffer to reduce repeated small reads and the number of calls can improve efficiency."
+tags: [system-call, kernel, api]
+difficulty: 2

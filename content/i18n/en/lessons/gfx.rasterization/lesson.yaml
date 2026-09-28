@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.rasterization
+revision: 3
+track: computer-graphics
+title: "Triangle Rasterization"
+description: "Learn the basic rasterization tests that turn continuous triangles into screen samples and fragments."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: gfx.rasterization.order-01
+  - type: question
+    ref: gfx.rasterization.choice-01
+  - type: content
+    ref: content/coverage.md
+  - type: question
+    ref: gfx.rasterization.output-01
+  - type: question
+    ref: gfx.rasterization.match-01
+  - type: question
+    ref: gfx.rasterization.fill-01

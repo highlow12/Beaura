@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: toc.regular-languages
+revision: 2
+track: theory-of-computation
+title: Regular Languages
+description: Learn the properties of languages represented by regular expressions and finite automata.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: toc.regular-languages.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: toc.regular-languages.match-01
+  - type: question
+    ref: toc.regular-languages.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: toc.regular-languages.order-01
+  - type: question
+    ref: toc.regular-languages.trace-01

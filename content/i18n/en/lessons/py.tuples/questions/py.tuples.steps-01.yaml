@@ -1,0 +1,31 @@
+id: py.tuples.steps-01
+type: ordering
+prompt:
+  - type: text
+    text: "Put in order the steps for creating a tuple and reading an element."
+items:
+  - id: create
+    content:
+      - type: text
+        text: "Group values with parentheses and commas"
+  - id: bind
+    content:
+      - type: text
+        text: "Assign the tuple to a variable"
+  - id: index
+    content:
+      - type: text
+        text: "Read an element using its index"
+correctOrder:
+  - create
+  - bind
+  - index
+explanation:
+  - type: text
+    text: "Create the tuple with commas, assign it to a variable, and read an element by index. Tuple elements cannot be changed after creation."
+schemaVersion: 1
+revision: 2
+tags:
+  - collections
+  - tuple
+difficulty: 2

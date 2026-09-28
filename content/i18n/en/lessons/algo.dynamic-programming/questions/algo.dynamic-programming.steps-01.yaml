@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: algo.dynamic-programming.steps-01
+revision: 2
+type: ordering
+prompt:
+- type: text
+  text: "Put the steps for designing a new DP solution in order."
+items:
+- id: state
+  content:
+  - type: text
+    text: "Define what each state represents"
+- id: base
+  content:
+  - type: text
+    text: "Set the base cases for the smallest states"
+- id: transition
+  content:
+  - type: text
+    text: "Write a recurrence from previous states"
+- id: compute
+  content:
+  - type: text
+    text: "Compute values with memoization or a table"
+correctOrder:
+- state
+- base
+- transition
+- compute
+unorderedGroups:
+  - [base, transition]
+explanation:
+- type: text
+  text: "A clear state definition lets you set correct base cases and recurrences; then choose a storage strategy."
+tags:
+- dynamic-programming
+- state
+- execution-order
+difficulty: 2

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.conditional.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe conditional probability."
+options:
+  - id: formula
+    content:
+      - type: text
+        text: "P(A|B)=P(A∩B)/P(B)"
+  - id: positive
+    content:
+      - type: text
+        text: "P(B) must be greater than 0."
+  - id: restrict
+    content:
+      - type: text
+        text: "B becomes the new reference space."
+  - id: symmetry
+    content:
+      - type: text
+        text: "P(A|B)=P(B|A) always holds."
+correctOptionIds: [formula, positive, restrict]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Conditional probability measures the proportion of region B that also lies in A∩B."
+  - type: text
+    text: "Changing the condition changes the denominator and how the intersection is interpreted."
+tags:
+  - probability-statistics
+  - conditional
+  - formula
+difficulty: 2

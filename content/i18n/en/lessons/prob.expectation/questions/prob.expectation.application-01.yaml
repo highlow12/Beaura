@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.expectation.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all equations that correctly express the linearity of expected value."
+options:
+  - id: scale-shift
+    content:
+      - type: text
+        text: "E[aX+b]=aE[X]+b"
+  - id: sum
+    content:
+      - type: text
+        text: "E[X+Y]=E[X]+E[Y]"
+  - id: constant
+    content:
+      - type: text
+        text: "E[c]=c"
+  - id: product
+    content:
+      - type: text
+        text: "E[XY]=E[X]E[Y] always holds."
+correctOptionIds: [scale-shift, sum, constant]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Expected value is linear with respect to scaling and addition."
+  - type: text
+    text: "Additional conditions, such as independence, are needed to factor the expected value of a product."
+tags:
+  - probability-statistics
+  - expectation
+  - linearity
+difficulty: 2

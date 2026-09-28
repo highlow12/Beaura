@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.relational-model.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the term for one row record in the relational model."
+choices: ["tuple", "attribute", "domain"]
+acceptedAnswers: ["tuple"]
+explanation:
+  - type: text
+    text: "A tuple is one row in a relation; an attribute refers to a column and its definition."
+tags: [database, relational-model]
+difficulty: 1

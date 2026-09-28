@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: prob.bayes.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for finding the posterior probability of disease after a positive test."
+items:
+  - id: prior
+    content:
+      - type: text
+        text: "Set the disease base rate P(D)."
+  - id: likelihood
+    content:
+      - type: text
+        text: "Set the probability of a positive result given disease, P(+|D)."
+  - id: evidence
+    content:
+      - type: text
+        text: "Calculate the total probability of a positive result, P(+)."
+  - id: bayes
+    content:
+      - type: text
+        text: "Calculate P(D|+)=P(+|D)P(D)/P(+)."
+correctOrder:
+  - prior
+  - likelihood
+  - evidence
+  - bayes
+unorderedGroups:
+  - [prior, likelihood]
+explanation:
+  - type: text
+    text: "After setting the prior and likelihood, normalize by the total probability of the evidence to obtain the posterior."
+  - type: text
+    text: "The total probability of a positive result includes the path where disease is absent."
+tags:
+  - probability-statistics
+  - bayes
+  - procedure
+difficulty: 3

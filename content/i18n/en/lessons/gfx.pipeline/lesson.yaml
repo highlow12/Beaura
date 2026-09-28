@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.pipeline
+revision: 2
+track: computer-graphics
+title: "Graphics Pipeline"
+description: "Understand how the rendering pipeline turns vertex data into screen pixels."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.pipeline.stage-match-01
+  - type: question
+    ref: gfx.pipeline.order-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/stage-boundaries.md
+  - type: question
+    ref: gfx.pipeline.fragment-choice-01
+  - type: question
+    ref: gfx.pipeline.stage-output-01
+  - type: question
+    ref: gfx.pipeline.vertex-complete-01

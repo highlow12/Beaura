@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.projection.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all required conditions and results for the projection formula `proj_v(u) = ((u·v)/(v·v))v`."
+options:
+  - id: nonzero
+    content:
+      - type: text
+        text: "`v` must be nonzero"
+  - id: dot
+    content:
+      - type: text
+        text: "Calculate `u·v`"
+  - id: parallel
+    content:
+      - type: text
+        text: "The result is parallel to `v`"
+  - id: cross
+    content:
+      - type: text
+        text: "The result is always perpendicular to `v`"
+correctOptionIds: [nonzero, dot, parallel]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "For the denominator `v·v` to be nonzero, `v` must be nonzero. The result is the component in the direction of `v`."
+  - type: text
+    text: "The remainder `u − proj_v(u)` after projection is perpendicular to `v`."
+tags:
+  - linear-algebra
+  - projection
+  - formula
+difficulty: 2

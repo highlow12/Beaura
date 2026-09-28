@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: algo.kruskal.steps-01
+revision: 2
+type: ordering
+prompt:
+- type: text
+  text: "Put the steps for processing one edge in Kruskal’s algorithm in order."
+items:
+- id: next-edge
+  content:
+  - type: text
+    text: "Choose the next-lightest edge"
+- id: compare
+  content:
+  - type: text
+    text: "Check the representatives of both endpoints"
+- id: choose
+  content:
+  - type: text
+    text: "If the representatives differ, add the edge to the MST"
+- id: merge
+  content:
+  - type: text
+    text: "Merge the two groups with union"
+correctOrder:
+- next-edge
+- compare
+- choose
+- merge
+unorderedGroups:
+  - [choose, merge]
+explanation:
+- type: text
+  text: "Skip the edge if the representatives are the same. Otherwise, select it and merge the two groups."
+tags:
+- graph
+- mst
+- kruskal
+- execution-order
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.graph-representation
+revision: 2
+track: data-structures
+title: Graph Representations
+description: Represent graph connections with adjacency lists and adjacency matrices, and compare their costs.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.graph-representation.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.graph-representation.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.graph-representation.complete-01
+- type: question
+  ref: ds.graph-representation.steps-01
+- type: question
+  ref: ds.graph-representation.match-01

@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.protection.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic permissions and process-isolation steps in the correct order."
+items:
+  - id: identify
+    content:
+      - type: text
+        text: "Identify the execution actor and the resource it wants to access"
+  - id: check
+    content:
+      - type: text
+        text: "Check page, privilege, and file permissions"
+  - id: isolate
+    content:
+      - type: text
+        text: "Block unauthorized access and report an exception"
+correctOrder: [identify, check, isolate]
+explanation:
+  - type: text
+    text: "First, identify the execution actor and the resource it wants to access; then check page, privilege, and file permissions."
+  - type: text
+    text: "At the step where unauthorized access is blocked and an exception is reported, the final result is passed to the next execution step."
+tags: [protection, isolation, privilege]
+difficulty: 3

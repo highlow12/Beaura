@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: net.nat.port-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: A setting that permanently maps external port 8443 to port 443 on the internal server 192.168.0.20 is ___.
+choices:
+- port forwarding
+- subnet mask
+- ARP cache
+acceptedAnswers:
+- port forwarding
+explanation:
+- type: text
+  text: Port forwarding sends connections arriving at a specific external address and port to a designated internal address
+    and port.
+tags:
+- network
+- nat
+- port-forwarding
+difficulty: 2

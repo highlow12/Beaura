@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.twos-complement.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic process for forming a two’s-complement integer in the correct order."
+items:
+  - id: magnitude
+    content:
+      - type: text
+        text: "Write the magnitude using a fixed number of bits"
+  - id: invert
+    content:
+      - type: text
+        text: "Invert every bit"
+  - id: add-one
+    content:
+      - type: text
+        text: "Add 1 to the inverted result"
+correctOrder: [magnitude, invert, add-one]
+explanation:
+  - type: text
+    text: "First, write the magnitude using a fixed number of bits; then invert every bit."
+  - type: text
+    text: "Finally, add 1 to the inverted result; this produces the value passed to the next circuit or program."
+tags: [integer, twos-complement, overflow]
+difficulty: 3

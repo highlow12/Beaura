@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.lexical-scope
+revision: 1
+track: programming-languages
+title: Lexical Scope
+description: Trace name bindings and shadowing across nested scopes.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.lexical-scope.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.lexical-scope.match-01
+  - type: question
+    ref: pl.lexical-scope.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.lexical-scope.order-01
+  - type: question
+    ref: pl.lexical-scope.trace-01

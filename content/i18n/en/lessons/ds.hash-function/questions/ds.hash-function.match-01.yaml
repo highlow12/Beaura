@@ -1,0 +1,47 @@
+id: ds.hash-function.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each hash-function term with its meaning."
+leftItems:
+- id: hash-value
+  content:
+  - type: text
+    text: "Hash value"
+- id: bucket
+  content:
+  - type: text
+    text: "Bucket"
+- id: deterministic
+  content:
+  - type: text
+    text: "Deterministic"
+rightItems:
+- id: number
+  content:
+  - type: text
+    text: "A number calculated from a key"
+- id: slot
+  content:
+  - type: text
+    text: "A storage slot in a hash table"
+- id: same
+  content:
+  - type: text
+    text: "The property of producing the same result for the same input"
+correctPairs:
+- leftId: hash-value
+  rightId: number
+- leftId: bucket
+  rightId: slot
+- leftId: deterministic
+  rightId: same
+explanation:
+- type: text
+  text: "A hash value is a number derived from a key, and a bucket is the actual storage location. A deterministic function maps the same key to the same result."
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-function
+difficulty: 2

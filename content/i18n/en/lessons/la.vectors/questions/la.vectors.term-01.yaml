@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.vectors.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "When writing the result of `(1, 3) + (2, 4)` as `(___, ___)`, choose the first blank."
+choices:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+acceptedAnswers:
+  - "3"
+explanation:
+  - type: text
+    text: "Vector addition sums corresponding components, so the first component is `1 + 2 = 3`."
+  - type: text
+    text: "Calculating the second component gives the full result `(3, 7)`."
+tags:
+  - linear-algebra
+  - vectors
+  - addition
+difficulty: 1

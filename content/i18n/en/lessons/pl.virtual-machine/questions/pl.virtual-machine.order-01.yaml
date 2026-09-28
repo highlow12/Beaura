@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.virtual-machine.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the steps for executing bytecode for 2 + 3 on a stack-based VM.
+items:
+  - id: push-two
+    content:
+      - type: text
+        text: Push 2 onto the stack with PUSH 2.
+  - id: push-three
+    content:
+      - type: text
+        text: Push 3 onto the stack with PUSH 3.
+  - id: add
+    content:
+      - type: text
+        text: ADD pops the two values and adds them.
+  - id: push-result
+    content:
+      - type: text
+        text: Push the result, 5, back onto the stack.
+correctOrder:
+  - push-two
+  - push-three
+  - add
+  - push-result
+explanation:
+  - type: text
+    text: ADD consumes the two operands at the top of the stack and leaves one result, so both PUSH instructions must run first.
+tags:
+  - programming-languages
+  - virtual-machine
+  - operand-stack
+difficulty: 2

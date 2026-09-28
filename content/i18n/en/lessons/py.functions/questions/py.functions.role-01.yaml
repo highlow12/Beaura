@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: py.functions.role-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which statement best describes a function?"
+options:
+- id: reuse
+  content:
+  - type: text
+    text: "A named unit of behavior that can be called again when needed"
+- id: constant
+  content:
+  - type: text
+    text: "A number that can never change once created"
+- id: comment
+  content:
+  - type: text
+    text: "A collection of explanatory statements that are never executed"
+correctOptionId: reuse
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A function groups behavior under a name so it can be called when needed."
+- type: text
+  text: "Parameters and return values let the same function handle different inputs."
+tags:
+- functions
+- abstraction
+difficulty: 1

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: gfx.animation.keyframe-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "In keyframe-based animation, how is the state between two keyframes typically determined?"
+options:
+  - id: interpolate
+    content: [{ type: text, text: "Find the current time’s fraction within the interval and interpolate the property values." }]
+  - id: random
+    content: [{ type: text, text: "Choose a random transformation for every frame." }]
+  - id: raster
+    content: [{ type: text, text: "Copy only the depth-buffer values." }]
+correctOptionId: interpolate
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Find the keyframe interval containing the current time and the fraction within it, then evaluate values such as position, rotation, and scale."
+tags: [graphics, animation, keyframe]
+difficulty: 1

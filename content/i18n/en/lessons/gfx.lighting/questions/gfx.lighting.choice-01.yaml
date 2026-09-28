@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.lighting.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which situation best describes when a specular highlight becomes stronger?"
+options:
+  - id: aligned
+    content:
+      - type: text
+        text: "When the reflection direction aligns well with the viewer direction"
+  - id: hidden
+    content:
+      - type: text
+        text: "When the surface normal always points opposite the light"
+  - id: no-view
+    content:
+      - type: text
+        text: "When the viewer direction is removed from the lighting calculation"
+correctOptionId: aligned
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Specular lighting models how much reflected light reaches the viewer, so alignment between the reflection direction and the view direction matters."
+tags: [graphics, lighting, specular]
+difficulty: 2

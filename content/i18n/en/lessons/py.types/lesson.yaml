@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: py.types
+revision: 1
+track: python
+title: "Basic Types and Operations"
+description: "Learn the basic types of integers, floating-point numbers, strings, and Booleans, along with operations for calculating and comparing values."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: py.types.type-matching-01
+  - type: question
+    ref: py.types.type-function-01
+  - type: content
+    ref: content/numbers.md
+  - type: question
+    ref: py.types.operator-matching-01
+  - type: question
+    ref: py.types.division-output-01
+  - type: question
+    ref: py.types.remainder-01
+  - type: question
+    ref: py.types.power-completion-01
+  - type: content
+    ref: content/strings-and-comparisons.md
+  - type: question
+    ref: py.types.string-concat-01
+  - type: question
+    ref: py.types.string-repeat-01
+  - type: question
+    ref: py.types.comparison-output-01
+  - type: question
+    ref: py.types.bool-expressions-01

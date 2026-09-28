@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.camera.roles-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each camera term with its role."
+leftItems:
+  - id: eye
+    content:
+      - type: text
+        text: eye
+  - id: target
+    content:
+      - type: text
+        text: target
+  - id: view
+    content:
+      - type: text
+        text: "View matrix"
+rightItems:
+  - id: position
+    content:
+      - type: text
+        text: "The camera’s position"
+  - id: look-point
+    content:
+      - type: text
+        text: "The point the camera looks at"
+  - id: world-camera
+    content:
+      - type: text
+        text: "Transforms a world-space point into camera-relative coordinates"
+correctPairs:
+  - leftId: eye
+    rightId: position
+  - leftId: target
+    rightId: look-point
+  - leftId: view
+    rightId: world-camera
+explanation:
+  - type: text
+    text: "eye and target are inputs to look-at; the view matrix implements that camera reference as a coordinate transform."
+tags: [graphics, camera, view-matrix]
+difficulty: 1

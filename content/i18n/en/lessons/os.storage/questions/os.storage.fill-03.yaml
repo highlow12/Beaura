@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.storage.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "The technique that reduces wear by distributing writes across SSD cells is ___."
+choices:
+  - "wear leveling"
+  - "head seek"
+  - "round robin"
+acceptedAnswers:
+  - "wear leveling"
+explanation:
+  - type: text
+    text: "Random reads on an HDD involve seek time as the head moves to the target track, as well as rotational delay. SSDs write to flash pages and erase larger blocks; wear leveling distributes writes so that cells do not wear out in one location."
+tags: [storage, hdd, ssd]
+difficulty: 2

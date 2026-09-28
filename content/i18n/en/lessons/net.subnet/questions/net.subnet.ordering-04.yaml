@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.subnet.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic subnet and CIDR steps in the correct order."
+items:
+  - id: mask
+    content:
+      - type: text
+        text: "Create a mask from the CIDR prefix length"
+  - id: and
+    content:
+      - type: text
+        text: "Bitwise-AND the IP address and mask to calculate the network address"
+  - id: range
+    content:
+      - type: text
+        text: "Determine the host and broadcast range"
+correctOrder: [mask, and, range]
+explanation:
+  - type: text
+    text: "First, create a mask from the CIDR prefix length; then use it to calculate the network address by bitwise-ANDing the IP address and mask."
+  - type: text
+    text: "At the step where the host and broadcast range is determined, the result is passed to the next network layer or application."
+tags: [subnet, cidr, ipv4]
+difficulty: 3

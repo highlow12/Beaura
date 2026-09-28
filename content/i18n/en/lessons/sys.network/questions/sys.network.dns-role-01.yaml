@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: sys.network.dns-role-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which system is mainly used to find a destination IP address when a user enters a domain name such as example.com?
+options:
+- id: dns
+  content:
+  - type: text
+    text: DNS
+- id: http
+  content:
+  - type: text
+    text: HTTP
+- id: framebuffer
+  content:
+  - type: text
+    text: framebuffer
+correctOptionId: dns
+shuffleOptions: true
+explanation:
+- type: text
+  text: DNS helps resolve human-readable domain names to IP addresses.
+tags:
+- network
+- dns
+- addressing
+difficulty: 1

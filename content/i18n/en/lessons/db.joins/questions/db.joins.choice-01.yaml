@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.joins.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which JOIN should you use to show students who have not enrolled as well?"
+options:
+  - id: left
+    content:
+      - type: text
+        text: "A LEFT JOIN with Student on the left"
+  - id: inner
+    content:
+      - type: text
+        text: "INNER JOIN"
+  - id: cross
+    content:
+      - type: text
+        text: "A Cartesian product with no JOIN condition"
+correctOptionId: left
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "With Student on the left of a LEFT JOIN, students without enrollment rows are preserved and right-side columns become NULL."
+tags: [database, sql, joins, left-join]
+difficulty: 2

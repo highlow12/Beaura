@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: arch.alu.ordering-04
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic ALU operation steps in the correct order."
+items:
+  - id: fetch
+    content:
+      - type: text
+        text: "Read the operation inputs from registers"
+  - id: select
+    content:
+      - type: text
+        text: "Select the operation with a control signal"
+  - id: flag
+    content:
+      - type: text
+        text: "Pass the result and condition flags to the next control stage"
+correctOrder: [fetch, select, flag]
+unorderedGroups:
+  - [fetch, select]
+
+explanation:
+  - type: text
+    text: "First read the operation inputs from registers. Then use a control signal to select the operation."
+  - type: text
+    text: "Finally, pass the result and condition flags to the next control stage or program."
+tags: [alu, arithmetic, control]
+difficulty: 3

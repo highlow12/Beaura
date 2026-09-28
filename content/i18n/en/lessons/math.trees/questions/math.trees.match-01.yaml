@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.trees.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each tree term with its description."
+leftItems:
+  - id: root
+    content:
+      - type: text
+        text: "root"
+  - id: parent
+    content:
+      - type: text
+        text: "parent"
+  - id: child
+    content:
+      - type: text
+        text: "child"
+  - id: leaf
+    content:
+      - type: text
+        text: "leaf"
+rightItems:
+  - id: root-desc
+    content:
+      - type: text
+        text: "The designated vertex with no parent"
+  - id: parent-desc
+    content:
+      - type: text
+        text: "A vertex directly above another vertex along an edge"
+  - id: child-desc
+    content:
+      - type: text
+        text: "A vertex directly connected below its parent"
+  - id: leaf-desc
+    content:
+      - type: text
+        text: "An endpoint vertex with no children"
+correctPairs:
+  - leftId: root
+    rightId: root-desc
+  - leftId: parent
+    rightId: parent-desc
+  - leftId: child
+    rightId: child-desc
+  - leftId: leaf
+    rightId: leaf-desc
+explanation:
+  - type: text
+    text: "A rooted tree assigns a direction so that its hierarchy can be described as above and below."
+  - type: text
+    text: "Even for the same undirected tree, changing the root changes the parent-child relationships."
+tags:
+  - discrete-math
+  - graphs
+  - terminology
+difficulty: 2

@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.expectation.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for calculating expected value from a probability table."
+items:
+  - id: values
+    content:
+      - type: text
+        text: "List the possible values of the random variable and their probabilities."
+  - id: products
+    content:
+      - type: text
+        text: "Multiply each value x by P(X=x)."
+  - id: sum
+    content:
+      - type: text
+        text: "Add all the products."
+  - id: interpret
+    content:
+      - type: text
+        text: "Interpret the result as a long-run average."
+correctOrder:
+  - values
+  - products
+  - sum
+  - interpret
+explanation:
+  - type: text
+    text: "Build each term in the expected-value formula and add them to obtain the long-run average."
+  - type: text
+    text: "Check first that the probabilities sum to 1; this can reveal missing entries in the table."
+tags:
+  - probability-statistics
+  - expectation
+  - procedure
+difficulty: 2

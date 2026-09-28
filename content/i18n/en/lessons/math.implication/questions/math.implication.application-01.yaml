@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.implication.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that are always logically equivalent to `P → Q`."
+options:
+  - id: contrapositive
+    content:
+      - type: text
+        text: "¬Q → ¬P"
+  - id: converse
+    content:
+      - type: text
+        text: "Q → P"
+  - id: not-or
+    content:
+      - type: text
+        text: "¬P ∨ Q"
+  - id: inverse
+    content:
+      - type: text
+        text: "¬P → ¬Q"
+correctOptionIds: [contrapositive, not-or]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "An implication is equivalent to its contrapositive `¬Q → ¬P` and has the same truth values as `¬P ∨ Q`."
+  - type: text
+    text: "The converse and inverse are separate statements, so they are not always equivalent to the original implication."
+tags:
+  - discrete-math
+  - logic
+  - equivalence
+difficulty: 3

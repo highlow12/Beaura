@@ -1,5 +1,7 @@
 <script lang="ts">
   import { buildGithubIssueUrl, clearRecentErrorReports, getRecentErrorReports } from '$lib/application/error-reporting';
+  import { locale, t } from '$lib/application/locale';
+  const tr = (korean: string, english: string) => t(korean, english, $locale);
 
   let open = $state(false);
   let description = $state('');
@@ -22,7 +24,7 @@
   }
 </script>
 
-<button class="report-link" type="button" onclick={show}>문제 신고</button>
+<button class="report-link" type="button" onclick={show}>{tr('문제 신고', 'Report an issue')}</button>
 
 {#if open}
   <div class="backdrop" role="presentation" onclick={(event) => { if (event.target === event.currentTarget) open = false; }}>
@@ -30,20 +32,20 @@
       <div class="dialog-heading">
         <div>
           <p class="eyebrow">Beta feedback</p>
-          <h2 id="report-title">문제 신고</h2>
+          <h2 id="report-title">{tr('문제 신고', 'Report an issue')}</h2>
         </div>
-        <button class="close-button" type="button" aria-label="닫기" onclick={() => { open = false; }}>×</button>
+        <button class="close-button" type="button" aria-label={tr('닫기', 'Close')} onclick={() => { open = false; }}>×</button>
       </div>
-      <p class="muted">무슨 일이 있었는지 적으면 GitHub 신고 화면을 엽니다. 최근 자동 진단 정보 {reportCount}건 중 최대 5건이 함께 첨부됩니다. 이 창을 여는 것만으로는 외부 전송이 일어나지 않습니다.</p>
+      <p class="muted">{tr(`무슨 일이 있었는지 적으면 GitHub 신고 화면을 엽니다. 최근 자동 진단 정보 ${reportCount}건 중 최대 5건이 함께 첨부됩니다. 이 창을 여는 것만으로는 외부 전송이 일어나지 않습니다.`, `Describe what happened to open a GitHub issue draft. Up to 5 of your ${reportCount} most recent diagnostic reports will be attached. Opening this dialog does not send anything.`)}</p>
       <label>
-        문제 설명
-        <textarea bind:value={description} rows="5" maxlength="2000" placeholder="예: 복습 문제를 제출했는데 다음 화면으로 넘어가지 않았습니다."></textarea>
+        {tr('문제 설명', 'Describe the issue')}
+        <textarea bind:value={description} rows="5" maxlength="2000" placeholder={tr('예: 복습 문제를 제출했는데 다음 화면으로 넘어가지 않았습니다.', 'Example: I submitted a review question, but the next screen did not appear.')}></textarea>
       </label>
-      <p class="privacy-note">GitHub 전송은 ‘GitHub에서 신고 계속하기’를 누른 뒤 사용자가 내용을 확인했을 때만 일어납니다. 진단 정보에는 오류 메시지, 발생 시각, 현재 화면 경로, 앱 빌드 정보만 포함합니다. 학습 답안과 학습 기록은 넣지 않습니다.</p>
+      <p class="privacy-note">{tr('GitHub 전송은 ‘GitHub에서 신고 계속하기’를 누른 뒤 사용자가 내용을 확인했을 때만 일어납니다. 진단 정보에는 오류 메시지, 발생 시각, 현재 화면 경로, 앱 빌드 정보만 포함합니다. 학습 답안과 학습 기록은 넣지 않습니다.', 'Nothing is sent to GitHub until you choose “Continue to GitHub” and review the draft. Diagnostics include only the error message, time, current screen path, and app build information. Answers and learning records are not included.')}</p>
       <div class="actions">
-        <button class="button" type="button" onclick={submit}>GitHub에서 신고 계속하기</button>
-        <button class="button secondary" type="button" onclick={clearDiagnostics} disabled={reportCount === 0}>진단 기록 지우기</button>
-        <button class="button secondary" type="button" onclick={() => { open = false; }}>취소</button>
+        <button class="button" type="button" onclick={submit}>{tr('GitHub에서 신고 계속하기', 'Continue to GitHub')}</button>
+        <button class="button secondary" type="button" onclick={clearDiagnostics} disabled={reportCount === 0}>{tr('진단 기록 지우기', 'Clear diagnostic records')}</button>
+        <button class="button secondary" type="button" onclick={() => { open = false; }}>{tr('취소', 'Cancel')}</button>
       </div>
     </div>
   </div>

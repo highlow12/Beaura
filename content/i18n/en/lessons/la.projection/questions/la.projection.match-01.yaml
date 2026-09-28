@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.projection.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each projection expression with its role."
+leftItems:
+  - id: coefficient
+    content:
+      - type: text
+        text: "(u·v)/(v·v)"
+  - id: projection
+    content:
+      - type: text
+        text: "proj_v(u)"
+  - id: remainder
+    content:
+      - type: text
+        text: "u−proj_v(u)"
+  - id: unit
+    content:
+      - type: text
+        text: "A reference vector satisfying `e·e = 1`"
+rightItems:
+  - id: coefficient-desc
+    content:
+      - type: text
+        text: "The value that determines how much to scale the reference vector"
+  - id: projection-desc
+    content:
+      - type: text
+        text: "The component parallel to `v`"
+  - id: remainder-desc
+    content:
+      - type: text
+        text: "The remaining component perpendicular to `v`"
+  - id: unit-desc
+    content:
+      - type: text
+        text: "A unit vector that simplifies the projection formula"
+correctPairs:
+  - leftId: coefficient
+    rightId: coefficient-desc
+  - leftId: projection
+    rightId: projection-desc
+  - leftId: remainder
+    rightId: remainder-desc
+  - leftId: unit
+    rightId: unit-desc
+explanation:
+  - type: text
+    text: "Projection decomposes a vector into components along a reference direction and perpendicular to it."
+  - type: text
+    text: "Check that the reference vector is nonzero and verify the parallel and perpendicular relationships in the result."
+tags:
+  - linear-algebra
+  - projection
+  - components
+difficulty: 2

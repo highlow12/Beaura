@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.multiplexer.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about multiplexers is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A multiplexer is a combinational circuit that passes one of several data inputs to the output based on a select signal."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A multiplexer is a circuit that permanently stores input values in sync with a clock."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A multiplexer always adds all inputs together and outputs the sum."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A multiplexer is a combinational circuit that passes one of several data inputs to the output based on a select signal."
+  - type: text
+    text: "A multiplexer (MUX) is a combinational circuit that uses a select signal to pass one of several data inputs to the output. A MUX with 2^n inputs usually needs n select bits."
+tags: [multiplexer, combinational-circuit, datapath]
+difficulty: 2

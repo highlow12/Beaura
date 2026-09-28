@@ -1,0 +1,33 @@
+id: py.exceptions.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "Which statement correctly describes the roles of try and except?"
+options:
+- id: handle
+  content:
+  - type: text
+    text: "except catches and handles an exception that may occur in try"
+- id: ignore
+  content:
+  - type: text
+    text: "Automatically removes all errors without recording their cause"
+- id: repeat
+  content:
+  - type: text
+    text: "Repeats the same statement forever when an exception occurs"
+- id: convert
+  content:
+  - type: text
+    text: "Converts every string to a number"
+correctOptionId: handle
+shuffleOptions: true
+explanation:
+- type: text
+  text: "try wraps an operation that may fail, and except handles a specified exception with recovery or guidance. Hiding exceptions indiscriminately is unsafe."
+schemaVersion: 1
+revision: 1
+tags:
+- errors
+- exceptions
+difficulty: 2

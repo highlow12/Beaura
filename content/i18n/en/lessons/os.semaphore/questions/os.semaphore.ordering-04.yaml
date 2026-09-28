@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.semaphore.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic semaphore and resource-count steps in the correct order."
+items:
+  - id: wait
+    content:
+      - type: text
+        text: "Request a resource and decrement the resource counter"
+  - id: use
+    content:
+      - type: text
+        text: "An allowed execution flow uses the resource"
+  - id: signal
+    content:
+      - type: text
+        text: "Return the resource and wake a waiting flow"
+correctOrder: [wait, use, signal]
+explanation:
+  - type: text
+    text: "First, request a resource and decrement the counter; then an allowed execution flow uses the resource."
+  - type: text
+    text: "At the step where the resource is returned and a waiting flow is awakened, the final result is passed to the next execution step."
+tags: [semaphore, synchronization, producer-consumer]
+difficulty: 3

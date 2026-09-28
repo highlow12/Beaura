@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.graphs.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for counting the undirected degree of vertex `v` from an edge list."
+items:
+  - id: scan
+    content:
+      - type: text
+        text: "Examine every edge one at a time"
+  - id: check
+    content:
+      - type: text
+        text: "Check whether either endpoint of the edge is `v`"
+  - id: count
+    content:
+      - type: text
+        text: "Add 1 for an edge with one endpoint at `v`, and 2 for a loop"
+  - id: report
+    content:
+      - type: text
+        text: "Report the final count as the degree"
+correctOrder:
+  - scan
+  - check
+  - count
+  - report
+explanation:
+  - type: text
+    text: "The degree is the sum of the edge endpoints that touch `v`. Both endpoints of a loop touch `v`, so add 2."
+  - type: text
+    text: "In a typical undirected graph, a loop contributes twice to the degree."
+tags:
+  - discrete-math
+  - graphs
+  - degree-count
+difficulty: 2

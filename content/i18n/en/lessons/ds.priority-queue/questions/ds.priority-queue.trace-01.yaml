@@ -1,0 +1,26 @@
+id: ds.priority-queue.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the result selected from the following priority tuples."
+language: python
+code: 'tasks = [(2, "normal"), (1, "urgent")]
+
+  next_task = min(tasks)
+
+  print(next_task[1])'
+choices:
+- urgent
+- normal
+- '2'
+acceptedOutputs:
+- urgent
+explanation:
+- type: text
+  text: "Comparing the first tuple value, priority 1 is selected before 2, so urgent is printed."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- priority-queue
+difficulty: 2

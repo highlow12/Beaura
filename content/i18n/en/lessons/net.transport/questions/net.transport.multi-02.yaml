@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.transport.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to UDP and ports."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Ports distinguish communication programs on the same host."
+  - id: correct-b
+    content:
+      - type: text
+        text: "An application may need to handle loss or reordering of UDP datagrams."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "UDP assigns link-layer MAC addresses rather than operating at the transport layer."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "When using UDP, data always reaches its destination."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Ports distinguish communication programs on the same host. An application may need to handle loss or reordering of UDP datagrams."
+  - type: text
+    text: "UDP has a small header and little state, which can reduce latency, but an application must implement any reliability features it needs. A transport protocol such as TCP is better for streams that cannot tolerate loss."
+tags: [udp, transport, port]
+difficulty: 2

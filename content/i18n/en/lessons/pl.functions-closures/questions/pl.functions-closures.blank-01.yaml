@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: pl.functions-closures.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "If a function can be stored in a variable and passed as an argument or return value, it is a ___ function."
+choices:
+  - first-class
+  - global
+  - recursive
+acceptedAnswers:
+  - first-class
+explanation:
+  - type: text
+    text: "A first-class function can be passed and returned just like other values."
+tags:
+  - programming-languages
+  - first-class-function
+difficulty: 1

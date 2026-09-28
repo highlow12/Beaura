@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: toc.nfa.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: This code simplifies a run that reaches q1 from q0 using an ε-transition, then reads `a` and moves to q2. What does it print?
+language: python
+code: |-
+  current = {"q0"}
+  current = current | {"q1"}
+  current = {"q2"} if "q1" in current else set()
+  print("q2" in current)
+choices:
+  - "True"
+  - "False"
+  - q1
+acceptedOutputs:
+  - "True"
+explanation:
+  - type: text
+    text: The second line adds q1 to the possible states, and the `a` transition on the third line adds q2, so q2 is in the set.
+tags:
+  - theory-of-computation
+  - nfa
+  - trace
+difficulty: 2

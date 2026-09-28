@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: toc.language.order-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the steps for deciding whether a string belongs to a language.
+items:
+  - id: input
+    content:
+      - type: text
+        text: Identify the alphabet Σ and the string to check.
+  - id: check-rule
+    content:
+      - type: text
+        text: Check the language’s length and symbol rules.
+  - id: decide-membership
+    content:
+      - type: text
+        text: Conclude that the string belongs if it satisfies the rules, and does not belong otherwise.
+correctOrder:
+  - input
+  - check-rule
+  - decide-membership
+explanation:
+  - type: text
+    text: Identify the alphabet and input string, then apply the language rules to distinguish valid symbols from membership conditions.
+tags:
+  - theory-of-computation
+  - membership
+difficulty: 2

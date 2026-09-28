@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.linear-transformations.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each linear transformation concept with its description."
+leftItems:
+  - id: linearity
+    content:
+      - type: text
+        text: "Linearity"
+  - id: origin
+    content:
+      - type: text
+        text: "T(0)=0"
+  - id: basis-image
+    content:
+      - type: text
+        text: "basis images"
+  - id: matrix
+    content:
+      - type: text
+        text: "transformation matrix"
+rightItems:
+  - id: linearity-desc
+    content:
+      - type: text
+        text: "Preserves addition and scalar multiplication"
+  - id: origin-desc
+    content:
+      - type: text
+        text: "The result that the origin maps to itself"
+  - id: basis-image-desc
+    content:
+      - type: text
+        text: "Vectors placed in the columns of a matrix"
+  - id: matrix-desc
+    content:
+      - type: text
+        text: "Multiplies the input vector to apply the transformation"
+correctPairs:
+  - leftId: linearity
+    rightId: linearity-desc
+  - leftId: origin
+    rightId: origin-desc
+  - leftId: basis-image
+    rightId: basis-image-desc
+  - leftId: matrix
+    rightId: matrix-desc
+explanation:
+  - type: text
+    text: "A linear transformation preserves operations, and its images of the basis vectors form its matrix representation."
+  - type: text
+    text: "Actions that do not preserve the origin, such as translation, need a separate representation."
+tags:
+  - linear-algebra
+  - transformations
+  - representation
+difficulty: 2

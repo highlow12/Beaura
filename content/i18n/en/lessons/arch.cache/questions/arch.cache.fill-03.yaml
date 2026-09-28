@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.cache.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "If a cache line’s address tag matches the requested address tag and valid=1, the cache access is a ___."
+choices:
+  - "hit"
+  - "miss"
+  - "stall"
+acceptedAnswers:
+  - "hit"
+explanation:
+  - type: text
+    text: "If a valid cache line’s tag matches the requested address, the desired block is in the cache, so the access is a hit."
+tags: [cache, locality, memory-hierarchy]
+difficulty: 2

@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: ds.array.offset-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "In an array where each element is 4 bytes, how many bytes from the start is the element at index 3?"
+options:
+  - id: offset-12
+    content:
+      - type: text
+        text: "12 bytes"
+  - id: offset-3
+    content:
+      - type: text
+        text: "3 bytes"
+  - id: offset-16
+    content:
+      - type: text
+        text: "16 bytes"
+correctOptionId: offset-12
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The offset of index 3 is 3 × 4 = 12 bytes."
+tags:
+  - array
+  - indexing
+  - memory
+difficulty: 2

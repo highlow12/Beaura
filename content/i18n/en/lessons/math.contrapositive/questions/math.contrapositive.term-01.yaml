@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.contrapositive.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "To form the contrapositive, swap the antecedent and consequent and ___ each one."
+choices:
+  - "negation"
+  - "repetition"
+  - "squaring"
+acceptedAnswers:
+  - "negation"
+explanation:
+  - type: text
+    text: "The contrapositive `¬Q → ¬P` negates both parts and reverses their order."
+  - type: text
+    text: "Remembering this rule helps distinguish the contrapositive from the converse and inverse."
+tags:
+  - discrete-math
+  - proof
+  - negation
+difficulty: 1

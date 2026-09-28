@@ -1,0 +1,96 @@
+schemaVersion: 1
+id: py.types.operator-matching-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each arithmetic operator with its meaning."
+leftItems:
+  - id: add
+    content:
+      - type: code
+        language: python
+        code: 2 + 3
+  - id: subtract
+    content:
+      - type: code
+        language: python
+        code: 5 - 2
+  - id: multiply
+    content:
+      - type: code
+        language: python
+        code: 2 * 3
+  - id: divide
+    content:
+      - type: code
+        language: python
+        code: 7 / 2
+  - id: floor-divide
+    content:
+      - type: code
+        language: python
+        code: 7 // 2
+  - id: remainder
+    content:
+      - type: code
+        language: python
+        code: 7 % 2
+  - id: power
+    content:
+      - type: code
+        language: python
+        code: 2 ** 3
+rightItems:
+  - id: add-values
+    content:
+      - type: text
+        text: "Add two values"
+  - id: subtract-values
+    content:
+      - type: text
+        text: "Subtract the right value from the left value"
+  - id: multiply-values
+    content:
+      - type: text
+        text: "Multiply two values"
+  - id: divide-values
+    content:
+      - type: text
+        text: "Calculate the result of division"
+  - id: floor-quotient
+    content:
+      - type: text
+        text: "Find the quotient, rounding down"
+  - id: remainder-value
+    content:
+      - type: text
+        text: "Find the value left over after division"
+  - id: power-value
+    content:
+      - type: text
+        text: "Multiply the same number several times"
+correctPairs:
+  - leftId: add
+    rightId: add-values
+  - leftId: subtract
+    rightId: subtract-values
+  - leftId: multiply
+    rightId: multiply-values
+  - leftId: divide
+    rightId: divide-values
+  - leftId: floor-divide
+    rightId: floor-quotient
+  - leftId: remainder
+    rightId: remainder-value
+  - leftId: power
+    rightId: power-value
+explanation:
+  - type: text
+    text: "Use +, -, and * for basic arithmetic. / gives the division result, // gives the quotient, and % gives the remainder."
+  - type: text
+    text: "** is the exponentiation operator: 2 ** 3 multiplies 2 by itself three times, giving 8."
+tags:
+  - arithmetic
+  - operators
+difficulty: 2

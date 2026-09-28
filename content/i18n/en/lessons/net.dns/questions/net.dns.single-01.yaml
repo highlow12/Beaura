@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.dns.single-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which statement about DNS name resolution is most accurate?
+options:
+- id: correct
+  content:
+  - type: text
+    text: DNS resolves domain names to IP addresses using hierarchical records and caching.
+- id: wrong-a
+  content:
+  - type: text
+    text: DNS is a protocol that reassembles bytes in order from a TCP stream.
+- id: wrong-b
+  content:
+  - type: text
+    text: DNS names are stored only in the memory of one central server and cannot be cached.
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+- type: text
+  text: DNS resolves domain names to IP addresses using hierarchical records and caching.
+- type: text
+  text: DNS is a distributed naming system that manages domain names and records hierarchically. A resolver checks its cache
+    first and, if needed, queries the root, TLD, and authoritative servers.
+tags:
+- dns
+- name-resolution
+- cache
+difficulty: 2

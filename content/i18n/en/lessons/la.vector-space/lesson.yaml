@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.vector-space
+revision: 2
+track: linear-algebra
+title: "Basis and Dimension"
+description: "Understand dimension through the independence of basis vectors and their ability to span a space."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.vector-space.definition-01
+  - type: question
+    ref: la.vector-space.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
+  - type: question
+    ref: la.vector-space.term-01
+  - type: question
+    ref: la.vector-space.steps-01
+  - type: question
+    ref: la.vector-space.match-01

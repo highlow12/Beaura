@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.transactions.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each ACID property with its meaning."
+leftItems:
+  - id: atomicity
+    content:
+      - type: text
+        text: "Atomicity"
+  - id: isolation
+    content:
+      - type: text
+        text: "Isolation"
+  - id: durability
+    content:
+      - type: text
+        text: "Durability"
+rightItems:
+  - id: all-or-none
+    content:
+      - type: text
+        text: "All changes are applied or all are canceled"
+  - id: interference
+    content:
+      - type: text
+        text: "Limits interference between concurrent operations"
+  - id: after-commit
+    content:
+      - type: text
+        text: "A committed result is preserved after a failure"
+correctPairs:
+  - leftId: atomicity
+    rightId: all-or-none
+  - leftId: isolation
+    rightId: interference
+  - leftId: durability
+    rightId: after-commit
+explanation:
+  - type: text
+    text: "Each letter in ACID represents a different guarantee. Consistency is not included in this matching question, but means constraints are preserved before and after a transaction."
+tags: [database, transactions, acid]
+difficulty: 2

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.observability.blank-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: The identifier that links logs and traces for one request is often called a correlation ___.
+choices:
+- ID
+- color
+- version
+acceptedAnswers:
+- ID
+explanation:
+- type: text
+  text: Propagating a correlation ID or request ID across layers lets you search together for signals from the same request.
+tags:
+- software-engineering
+- observability
+- correlation-id
+difficulty: 1

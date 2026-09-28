@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.statistics.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about descriptive statistics and correlation."
+options:
+  - id: mean
+    content:
+      - type: text
+        text: "The mean uses every observation"
+  - id: median
+    content:
+      - type: text
+        text: "The median is the middle position in sorted data"
+  - id: correlation
+    content:
+      - type: text
+        text: "Correlation summarizes how variables vary together"
+  - id: causation
+    content:
+      - type: text
+        text: "Correlation alone can establish causation"
+correctOptionIds: [mean, median, correlation]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The mean and median summarize center, while correlation summarizes a pattern of variables changing together."
+  - type: text
+    text: "Claims of causation require study design and evidence beyond correlation."
+tags:
+  - probability-statistics
+  - statistics
+  - summary
+difficulty: 2

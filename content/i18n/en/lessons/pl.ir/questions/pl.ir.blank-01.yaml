@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.ir.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "In SSA, an assignment to a single value name is usually allowed only ___ time."
+choices:
+  - one
+  - two
+  - an unlimited number of
+acceptedAnswers:
+  - one
+explanation:
+  - type: text
+    text: "The word single in Static Single Assignment means each name is defined once. Phi functions represent values merged across branches."
+tags:
+  - programming-languages
+  - ir
+  - ssa
+difficulty: 1

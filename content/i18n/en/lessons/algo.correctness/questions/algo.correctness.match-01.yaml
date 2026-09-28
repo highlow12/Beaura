@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.correctness.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each part of a correctness proof with what it checks."
+leftItems:
+- id: precondition
+  content:
+  - type: text
+    text: "Precondition"
+- id: invariant
+  content:
+  - type: text
+    text: "Invariant"
+- id: postcondition
+  content:
+  - type: text
+    text: "Postcondition"
+rightItems:
+- id: input
+  content:
+  - type: text
+    text: "A condition the input must satisfy before the algorithm starts"
+- id: repeat
+  content:
+  - type: text
+    text: "A claim that remains true during the loop"
+- id: result
+  content:
+  - type: text
+    text: "A condition the result must satisfy when the algorithm terminates"
+correctPairs:
+- leftId: precondition
+  rightId: input
+- leftId: invariant
+  rightId: repeat
+- leftId: postcondition
+  rightId: result
+explanation:
+- type: text
+  text: "A correctness argument starts from the precondition, maintains the invariant, and derives the postcondition at termination."
+tags:
+- correctness
+- invariant
+- proof
+difficulty: 2

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.integrals.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "One antiderivative of ∫2x dx is ___."
+choices:
+  - "x²"
+  - "2x²"
+  - "x+2"
+  - "2"
+acceptedAnswers:
+  - "x²"
+explanation:
+  - type: text
+    text: "Since the derivative of x² is 2x, one antiderivative is x²."
+  - type: text
+    text: "The full indefinite integral is x²+C."
+tags:
+  - calculus
+  - integrals
+  - antiderivative
+difficulty: 1

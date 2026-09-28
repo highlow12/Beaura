@@ -1,0 +1,47 @@
+id: py.exceptions.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each exception-handling term with its meaning."
+leftItems:
+- id: try
+  content:
+  - type: text
+    text: try
+- id: except
+  content:
+  - type: text
+    text: except ValueError
+- id: value-error
+  content:
+  - type: text
+    text: ValueError
+rightItems:
+- id: risky
+  content:
+  - type: text
+    text: "A block that wraps an operation that may fail"
+- id: handler
+  content:
+  - type: text
+    text: "A handler that runs when a specific exception occurs"
+- id: bad-input
+  content:
+  - type: text
+    text: "An exception raised when a value has an unexpected format"
+correctPairs:
+- leftId: try
+  rightId: risky
+- leftId: except
+  rightId: handler
+- leftId: value-error
+  rightId: bad-input
+explanation:
+- type: text
+  text: "try is the guarded region, except is the handler, and ValueError is a specific exception often raised for an unexpected value format."
+schemaVersion: 1
+revision: 1
+tags:
+- errors
+- exceptions
+difficulty: 2

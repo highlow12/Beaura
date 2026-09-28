@@ -1,0 +1,25 @@
+id: ds.linked-list.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following linked-list representation."
+language: python
+code: 'head = {"value": "A", "next": {"value": "B", "next": None}}
+
+  print(head["next"]["value"])'
+choices:
+- B
+- A
+- None
+acceptedOutputs:
+- B
+explanation:
+- type: text
+  text: "head.next points to the second node, whose value is B, so B is printed."
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- node
+- pointer
+difficulty: 2

@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: py.conditionals.completion-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Choose the comparison operator that prints pass when the score is at least 60."
+language: python
+template: |-
+  score = 75
+  if score {{blank:operator}} 60:
+      print("pass")
+blanks:
+  - id: operator
+    choices:
+      - ">="
+      - ">"
+      - "=="
+    acceptedAnswers:
+      - ">="
+explanation:
+  - type: text
+    text: "Use `>=`, meaning “greater than or equal to,” to express “at least 60.”"
+tags: [conditionals, code-completion]
+difficulty: 2

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: prob.distributions.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for modeling a binomial situation."
+items:
+  - id: outcome
+    content:
+      - type: text
+        text: "Define success and failure for one trial."
+  - id: n
+    content:
+      - type: text
+        text: "Set the number of trials n."
+  - id: p
+    content:
+      - type: text
+        text: "Set the probability of success p for one trial."
+  - id: count
+    content:
+      - type: text
+        text: "Calculate the probability of each number of successes in n trials."
+correctOrder:
+  - outcome
+  - n
+  - p
+  - count
+unorderedGroups:
+  - [n, p]
+explanation:
+  - type: text
+    text: "After defining the trial structure and parameters, calculate the number of successes as a random variable."
+  - type: text
+    text: "If independence or a constant p does not hold, consider a different model."
+tags:
+  - probability-statistics
+  - distributions
+  - modeling
+difficulty: 2

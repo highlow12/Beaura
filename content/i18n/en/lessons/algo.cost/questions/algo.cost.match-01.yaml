@@ -1,0 +1,47 @@
+id: algo.cost.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each cost-analysis term with its meaning."
+leftItems:
+- id: input-size
+  content:
+  - type: text
+    text: "Input size"
+- id: basic-operation
+  content:
+  - type: text
+    text: "Basic operation"
+- id: cost
+  content:
+  - type: text
+    text: "Cost"
+rightItems:
+- id: n
+  content:
+  - type: text
+    text: "A value that represents the size of the problem data"
+- id: unit
+  content:
+  - type: text
+    text: "A small operation whose repetitions can be counted"
+- id: resources
+  content:
+  - type: text
+    text: "The amount of resources used by an algorithm"
+correctPairs:
+- leftId: input-size
+  rightId: n
+- leftId: basic-operation
+  rightId: unit
+- leftId: cost
+  rightId: resources
+explanation:
+- type: text
+  text: "Counting basic operations in terms of input size n approximates how the time cost grows."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- cost
+difficulty: 2

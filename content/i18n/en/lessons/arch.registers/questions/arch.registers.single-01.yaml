@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.registers.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about registers and state storage is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A register is a limited-width storage location inside the CPU that stores frequently used values with low latency."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Registers preserve every file when powered off, like an SSD."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Registers store unlimited data of any size."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A register is a limited-width storage location inside the CPU that stores frequently used values with low latency."
+  - type: text
+    text: "Registers are very small storage locations built from groups of flip-flops. They hold instruction operands, addresses, and intermediate results, and may have defined purposes and bit widths."
+tags: [register, register-file, cpu-state]
+difficulty: 2

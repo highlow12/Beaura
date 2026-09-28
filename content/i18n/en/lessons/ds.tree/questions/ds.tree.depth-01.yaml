@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: ds.tree.depth-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "If B is a child of root A and C is a child of B, what is C’s depth?"
+options:
+  - id: depth-2
+    content:
+      - type: text
+        text: '2'
+  - id: depth-1
+    content:
+      - type: text
+        text: '1'
+  - id: depth-3
+    content:
+      - type: text
+        text: '3'
+correctOptionId: depth-2
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The path from A to C passes through two edges, A-B and B-C, so C’s depth is 2."
+tags:
+  - tree
+  - depth
+  - path
+difficulty: 1

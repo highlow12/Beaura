@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.contradiction.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "A proof that assumes the negation of a conclusion and derives an impossible result is called a proof by ___ ."
+choices:
+  - "contradiction"
+  - "direct"
+  - "induction"
+acceptedAnswers:
+  - "contradiction"
+explanation:
+  - type: text
+    text: "Proof by contradiction is also called reductio ad absurdum; it derives a contradiction from a negated assumption."
+  - type: text
+    text: "Unlike a direct proof, it starts from the negation of the conclusion."
+tags:
+  - discrete-math
+  - proof
+  - terminology
+difficulty: 1

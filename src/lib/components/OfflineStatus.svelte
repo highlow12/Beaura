@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { locale, t } from '$lib/application/locale';
+  const tr = (korean: string, english: string) => t(korean, english, $locale);
   let online=$state(true);
   let offlineReady=$state(false);
   let update=$state<ServiceWorker | null>(null);
@@ -20,7 +22,7 @@
   });
   function refresh(){if(!update)return;updating=true;update.postMessage({type:'ACTIVATE_UPDATE'});}
 </script>
-<div class="connection" role="status"><span>{!online ? '오프라인 학습 중' : offlineReady ? '오프라인 학습 준비 완료' : '기기에서 바로 학습'}</span>{#if update}<span>새 버전이 있어요.</span><button onclick={refresh} disabled={updating}>{updating?'새로 여는 중…':'문제를 마친 뒤 새로고침'}</button>{/if}</div>
+<div class="connection" role="status"><span>{!online ? tr('오프라인 학습 중', 'Learning offline') : offlineReady ? tr('오프라인 학습 준비 완료', 'Ready for offline learning') : tr('기기에서 바로 학습', 'Learn on this device')}</span>{#if update}<span>{tr('새 버전이 있어요.', 'An update is ready.')}</span><button onclick={refresh} disabled={updating}>{updating ? tr('새로 여는 중…', 'Reloading…') : tr('문제를 마친 뒤 새로고침', 'Refresh after this question')}</button>{/if}</div>
 <style>
   .connection {
     display: flex;

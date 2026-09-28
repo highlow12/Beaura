@@ -1,0 +1,33 @@
+id: ds.doubly-linked-list.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "How does a doubly linked list differ from a singly linked list?"
+options:
+- id: both
+  content:
+  - type: text
+    text: "Each node has both a previous prev reference and a next reference"
+- id: sorted
+  content:
+  - type: text
+    text: "All values are automatically stored in sorted order"
+- id: indexed
+  content:
+  - type: text
+    text: "All nodes are at contiguous addresses like an array"
+- id: hashed
+  content:
+  - type: text
+    text: "Each value is stored only in a hash bucket"
+correctOptionId: both
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A doubly linked list keeps both prev and next references to support movement in both directions. Sorting and memory contiguity are separate properties."
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- doubly-linked-list
+difficulty: 2

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.joins.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe JOIN results."
+options:
+  - id: inner-match
+    content:
+      - type: text
+        text: "INNER JOIN keeps only rows that match on both sides"
+  - id: left-preserve
+    content:
+      - type: text
+        text: "LEFT JOIN also preserves unmatched rows from the left"
+  - id: one-to-many
+    content:
+      - type: text
+        text: "If one left-side row matches multiple right-side rows, the result can contain multiple rows for it"
+  - id: no-condition-safe
+    content:
+      - type: text
+        text: "Without an ON condition, only the desired relations are always connected correctly"
+correctOptionIds: [inner-match, left-preserve, one-to-many]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The JOIN type determines how unmatched rows are handled, and a one-to-many relationship expands a left-side row into multiple results. Omitting the condition can produce an unintended Cartesian product."
+tags: [database, sql, joins]
+difficulty: 3

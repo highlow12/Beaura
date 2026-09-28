@@ -1,0 +1,38 @@
+id: ds.doubly-linked-list.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for deleting a middle node in a doubly linked list."
+items:
+- id: save
+  content:
+  - type: text
+    text: "Check the target node’s prev and next"
+- id: forward
+  content:
+  - type: text
+    text: "Set the previous node’s next to the next node"
+- id: backward
+  content:
+  - type: text
+    text: "Set the next node’s prev to the previous node"
+- id: detach
+  content:
+  - type: text
+    text: "Clean up the deleted node’s links"
+correctOrder:
+- save
+- forward
+- backward
+- detach
+unorderedGroups:
+  - [forward, backward]
+explanation:
+- type: text
+  text: "After checking both neighbors, link them to each other in both directions, then clean up the deleted node’s references."
+schemaVersion: 1
+revision: 2
+tags:
+- linked-list
+- doubly-linked-list
+difficulty: 2

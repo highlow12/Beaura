@@ -1,0 +1,47 @@
+id: py.slicing.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each slicing expression with its meaning."
+leftItems:
+- id: prefix
+  content:
+  - type: text
+    text: values[:3]
+- id: suffix
+  content:
+  - type: text
+    text: values[2:]
+- id: stride
+  content:
+  - type: text
+    text: values[::2]
+rightItems:
+- id: from-start
+  content:
+  - type: text
+    text: "From the beginning up to, but not including, index 3"
+- id: to-end
+  content:
+  - type: text
+    text: "From index 2 through the end"
+- id: every-two
+  content:
+  - type: text
+    text: "Select every other item"
+correctPairs:
+- leftId: prefix
+  rightId: from-start
+- leftId: suffix
+  rightId: to-end
+- leftId: stride
+  rightId: every-two
+explanation:
+- type: text
+  text: "When the start or stop before or after the colon is omitted, the default beginning or end is used. The third field is the step."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- slicing
+difficulty: 2

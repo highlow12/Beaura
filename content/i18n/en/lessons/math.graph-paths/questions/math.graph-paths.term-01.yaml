@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.graph-paths.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "A sequence of vertices that follows edges is generally called a ___ ."
+choices:
+  - "walk"
+  - "degree"
+  - "matrix"
+acceptedAnswers:
+  - "walk"
+explanation:
+  - type: text
+    text: "A walk is a sequence of vertices connected by edges, and it may include repetitions."
+  - type: text
+    text: "In many contexts, a walk without repetitions is called a path."
+tags:
+  - discrete-math
+  - graphs
+  - walk
+difficulty: 1

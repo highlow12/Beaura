@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.multiplexer.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic multiplexer steps in the correct order."
+items:
+  - id: read
+    content:
+      - type: text
+        text: "Read the data inputs and select signal"
+  - id: select
+    content:
+      - type: text
+        text: "Activate the input path indicated by the select signal"
+  - id: forward
+    content:
+      - type: text
+        text: "Pass only the selected value to the output"
+correctOrder: [read, select, forward]
+explanation:
+  - type: text
+    text: "First read the data inputs and select signal. Then activate the input path indicated by the select signal."
+  - type: text
+    text: "Finally, pass the selected value to the output and onward to the next circuit or program."
+tags: [multiplexer, combinational-circuit, datapath]
+difficulty: 3

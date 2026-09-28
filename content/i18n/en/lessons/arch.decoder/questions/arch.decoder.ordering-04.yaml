@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.decoder.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic decoder steps in the correct order."
+items:
+  - id: encode
+    content:
+      - type: text
+        text: "Read the input bits as an address code"
+  - id: decode
+    content:
+      - type: text
+        text: "Determine the output line corresponding to the code"
+  - id: enable
+    content:
+      - type: text
+        text: "Activate the selection line when enabled"
+correctOrder: [encode, decode, enable]
+explanation:
+  - type: text
+    text: "First read the input bits as an address code. Then determine the output line that corresponds to the code."
+  - type: text
+    text: "Finally, activate the selection line when enabled and pass the selection to the next circuit or program."
+tags: [decoder, address, digital-logic]
+difficulty: 3

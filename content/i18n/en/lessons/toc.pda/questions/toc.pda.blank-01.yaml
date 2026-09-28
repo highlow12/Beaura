@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.pda.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: The operation that puts a new symbol on top of a PDA stack is called ___.
+choices:
+  - push
+  - pop
+  - peek
+acceptedAnswers:
+  - push
+explanation:
+  - type: text
+    text: "`push` adds a symbol to the stack, while `pop` removes the top symbol."
+tags:
+  - theory-of-computation
+  - pda
+  - stack-operation
+difficulty: 1

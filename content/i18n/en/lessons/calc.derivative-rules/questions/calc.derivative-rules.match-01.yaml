@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.derivative-rules.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each differentiation rule with its expression."
+leftItems:
+  - id: sum
+    content:
+      - type: text
+        text: "(f+g)′"
+  - id: product
+    content:
+      - type: text
+        text: "(fg)′"
+  - id: chain
+    content:
+      - type: text
+        text: "(f∘g)′"
+  - id: constant
+    content:
+      - type: text
+        text: "(cf)′"
+rightItems:
+  - id: sum-desc
+    content:
+      - type: text
+        text: "f′+g′"
+  - id: product-desc
+    content:
+      - type: text
+        text: "f′g+fg′"
+  - id: chain-desc
+    content:
+      - type: text
+        text: "f′(g(x))g′(x)"
+  - id: constant-desc
+    content:
+      - type: text
+        text: "cf′"
+correctPairs:
+  - leftId: sum
+    rightId: sum-desc
+  - leftId: product
+    rightId: product-desc
+  - leftId: chain
+    rightId: chain-desc
+  - leftId: constant
+    rightId: constant-desc
+explanation:
+  - type: text
+    text: "The rule depends on whether the outer structure of the expression is a sum, product, or composition."
+  - type: text
+    text: "It is easier to choose a rule if you mark the structure of the original expression before naming the rule."
+tags:
+  - calculus
+  - derivative-rules
+  - rules
+difficulty: 2

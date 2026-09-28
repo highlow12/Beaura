@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.race-condition.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "When one task’s increment is overwritten by another, the result is called ___."
+choices:
+  - "lost update"
+  - "memory allocation"
+  - "instruction fetch"
+acceptedAnswers:
+  - "lost update"
+explanation:
+  - type: text
+    text: "If a shared counter starts at 0 and both A and B read 0 before each calculating and writing 1, the final value can be 1. This happens because the read, calculation, and write are not one atomic step. The code that must be protected when updating shared state is called a critical section."
+tags: [race-condition, concurrency, synchronization]
+difficulty: 2

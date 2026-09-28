@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.numerical-differentiation.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about choosing h for numerical differentiation."
+options:
+  - id: large-error
+    content:
+      - type: text
+        text: "If h is too large, it can miss local changes in the curve"
+  - id: small-rounding
+    content:
+      - type: text
+        text: "If h is too small, rounding and noise errors can increase"
+  - id: compare
+    content:
+      - type: text
+        text: "You can compare results for multiple h values to assess stability"
+  - id: zero
+    content:
+      - type: text
+        text: "Setting h=0 always gives the exact derivative"
+correctOptionIds: [large-error, small-rounding, compare]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The step size must balance truncation error against numerical error."
+  - type: text
+    text: "With h=0, the denominator is 0, so it cannot be used in a difference formula."
+tags:
+  - calculus
+  - numerical
+  - error
+difficulty: 2

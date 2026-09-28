@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.memory.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about SRAM and DRAM is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "SRAM is fast but has large cells, while DRAM is dense but requires refresh."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "DRAM permanently preserves its contents when power is off."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "SRAM and DRAM have identical storage cells and access characteristics."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "SRAM is fast but has large cells, while DRAM is dense but requires refresh."
+  - type: text
+    text: "SRAM keeps its state with a circuit similar to a flip-flop, making it fast but large in area. DRAM stores bits as charge in capacitors, making it dense but requiring periodic refresh."
+tags: [memory, sram, dram]
+difficulty: 2

@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.sequential.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "When Q=0 and D=1, Q is updated to ___ at the specified clock edge."
+choices:
+  - "1"
+  - "0"
+  - "D"
+acceptedAnswers:
+  - "1"
+explanation:
+  - type: text
+    text: "At the clock edge, a D flip-flop takes the value of D and stores it in Q."
+tags: [sequential-circuit, flip-flop, clock]
+difficulty: 2

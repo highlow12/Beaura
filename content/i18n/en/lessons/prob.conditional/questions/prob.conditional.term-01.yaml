@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.conditional.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "In P(A∩B)=P(A|B)P(B), P(B) is the ___ in the conditional probability formula."
+choices:
+  - "denominator"
+  - "numerator"
+  - "result"
+acceptedAnswers:
+  - "denominator"
+explanation:
+  - type: text
+    text: "In the definition of P(A|B), P(B) is the denominator; multiplying both sides gives the intersection probability."
+  - type: text
+    text: "If the conditioning event has probability 0, this formula cannot define conditional probability."
+tags:
+  - probability-statistics
+  - conditional
+  - multiplication-rule
+difficulty: 1

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.thread.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about threads and concurrency is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "Threads in the same process share an address space while keeping their own execution state and stacks."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Threads run only on separate computers and cannot share memory."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "All threads in the same process use a single program counter."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Threads in the same process share an address space while keeping their own execution state and stacks."
+  - type: text
+    text: "A thread is an independent execution flow within a process. Each thread has its own PC, registers, and stack, but threads in the same process share code, heap, and open files."
+tags: [thread, concurrency, shared-memory]
+difficulty: 2

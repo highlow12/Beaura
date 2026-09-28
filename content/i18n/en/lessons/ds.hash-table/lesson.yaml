@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.hash-table
+revision: 1
+track: data-structures
+title: Hash Tables
+description: Learn hash tables, which use buckets and collision handling to provide fast average-case key lookup.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.hash-table.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.hash-table.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.hash-table.complete-01
+- type: question
+  ref: ds.hash-table.steps-01
+- type: question
+  ref: ds.hash-table.match-01

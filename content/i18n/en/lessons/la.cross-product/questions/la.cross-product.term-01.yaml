@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: la.cross-product.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "If `u` and `v` are parallel, the magnitude of `u × v` is ___ ."
+choices:
+  - "0"
+  - "1"
+  - "|u|+|v|"
+acceptedAnswers:
+  - "0"
+explanation:
+  - type: text
+    text: "The magnitude is `|u||v|sinθ`; for parallel vectors, `sinθ = 0`, so the magnitude is 0."
+  - type: text
+    text: "The result is the zero vector, whose direction is undefined."
+tags:
+  - linear-algebra
+  - cross-product
+  - parallel
+difficulty: 1

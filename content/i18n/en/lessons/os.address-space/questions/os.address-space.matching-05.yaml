@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: os.address-space.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each process address-space term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "Code region"
+  - id: left-b
+    content:
+      - type: text
+        text: "Heap"
+  - id: left-c
+    content:
+      - type: text
+        text: "Stack"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "The region that holds instructions to execute"
+  - id: right-b
+    content:
+      - type: text
+        text: "The region used for dynamic allocation"
+  - id: right-c
+    content:
+      - type: text
+        text: "The region where function call frames are stored"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "The code region holds instructions to execute; the heap is used for dynamic allocation; the stack stores function call frames."
+tags: [process, virtual-memory, address-space]
+difficulty: 2

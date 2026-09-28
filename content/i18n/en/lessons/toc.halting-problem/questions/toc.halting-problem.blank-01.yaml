@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.halting-problem.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: The halting problem shows that deciding whether every program halts on every input is not ___.
+choices:
+  - decidable
+  - sortable
+  - compressible
+acceptedAnswers:
+  - decidable
+explanation:
+  - type: text
+    text: Even though some individual programs can be analyzed, there is no general decider for every program-input pair.
+tags:
+  - theory-of-computation
+  - halting-problem
+  - decidability
+difficulty: 1

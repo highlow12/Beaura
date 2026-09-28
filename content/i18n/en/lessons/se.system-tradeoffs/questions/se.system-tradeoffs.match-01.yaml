@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.system-tradeoffs.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: Match each system quality attribute with its description.
+leftItems:
+- id: consistency
+  content:
+  - type: text
+    text: Consistency
+- id: availability
+  content:
+  - type: text
+    text: Availability
+- id: latency
+  content:
+  - type: text
+    text: Latency
+rightItems:
+- id: same-view
+  content:
+  - type: text
+    text: How uniformly different observers see the data rules
+- id: timely-response
+  content:
+  - type: text
+    text: The ability to respond to a request within a defined time
+- id: response-delay
+  content:
+  - type: text
+    text: The time between sending a request and receiving its result
+correctPairs:
+- leftId: consistency
+  rightId: same-view
+- leftId: availability
+  rightId: timely-response
+- leftId: latency
+  rightId: response-delay
+explanation:
+- type: text
+  text: Consistency describes agreement about data, availability describes the ability to respond, and latency is the time it takes to respond.
+tags:
+- software-engineering
+- system-design
+- quality-attributes
+difficulty: 2

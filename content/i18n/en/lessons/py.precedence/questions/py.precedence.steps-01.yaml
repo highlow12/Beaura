@@ -1,0 +1,36 @@
+id: py.precedence.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the expression evaluation steps."
+items:
+- id: paren
+  content:
+  - type: text
+    text: "Evaluate the expression inside parentheses"
+- id: high
+  content:
+  - type: text
+    text: "Evaluate multiplication and division"
+- id: low
+  content:
+  - type: text
+    text: "Evaluate addition and subtraction"
+- id: result
+  content:
+  - type: text
+    text: "Use the final result"
+correctOrder:
+- paren
+- high
+- low
+- result
+explanation:
+- type: text
+  text: "Process parentheses first, then higher-precedence operators, followed by lower-precedence operations and use of the final result."
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- precedence
+difficulty: 2

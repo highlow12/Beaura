@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.deadlock.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic deadlock sequence in the correct order."
+items:
+  - id: hold
+    content:
+      - type: text
+        text: "Each flow already holds a resource"
+  - id: wait
+    content:
+      - type: text
+        text: "It requests an additional resource held by another flow"
+  - id: cycle
+    content:
+      - type: text
+        text: "A cycle forms in the wait graph and progress stops"
+correctOrder: [hold, wait, cycle]
+explanation:
+  - type: text
+    text: "First, each flow holds a resource; then it requests an additional resource held by another flow."
+  - type: text
+    text: "At the step where a cycle forms in the wait graph and progress stops, the final result is passed to the next execution step."
+tags: [deadlock, lock-order, concurrency]
+difficulty: 4

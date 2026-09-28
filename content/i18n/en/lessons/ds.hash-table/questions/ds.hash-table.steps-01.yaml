@@ -1,0 +1,37 @@
+id: ds.hash-table.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for lookup in a hash table."
+items:
+- id: hash
+  content:
+  - type: text
+    text: "Hash the lookup key"
+- id: locate
+  content:
+  - type: text
+    text: "Find the bucket using the hash value"
+- id: resolve
+  content:
+  - type: text
+    text: "Check colliding entries in the bucket"
+- id: return
+  content:
+  - type: text
+    text: "Return the value and result for the matching actual key"
+correctOrder:
+- hash
+- locate
+- resolve
+- return
+explanation:
+- type: text
+  text: "Find the bucket using the same hash path as during storage. If there is a collision, compare the actual keys and return the correct value."
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-table
+- collision
+difficulty: 2

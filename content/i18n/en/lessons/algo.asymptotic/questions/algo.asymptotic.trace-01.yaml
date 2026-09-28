@@ -1,0 +1,22 @@
+id: algo.asymptotic.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the number of operations printed by this linear loop."
+language: python
+code: "n = 5\noperations = 0\nfor _ in range(n):\n    operations += 1\nprint(operations)"
+choices:
+- '5'
+- '10'
+- '1'
+acceptedOutputs:
+- '5'
+explanation:
+- type: text
+  text: "The loop runs exactly n times, so when n = 5 it performs 5 operations. This structure has a tight bound of Θ(n)."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- asymptotic
+difficulty: 2

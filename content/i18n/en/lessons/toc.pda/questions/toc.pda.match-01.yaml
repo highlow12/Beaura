@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.pda.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each PDA action with its stack operation.
+leftItems:
+  - id: read-a
+    content:
+      - type: text
+        text: Read the a-part of the input
+  - id: read-b
+    content:
+      - type: text
+        text: Read the b-part of the input
+  - id: empty-check
+    content:
+      - type: text
+        text: Check after the input ends
+rightItems:
+  - id: push
+    content:
+      - type: text
+        text: Add a marker to the stack
+  - id: pop
+    content:
+      - type: text
+        text: Remove the top marker from the stack
+  - id: acceptance
+    content:
+      - type: text
+        text: Check the stack condition and accepting state
+correctPairs:
+  - leftId: read-a
+    rightId: push
+  - leftId: read-b
+    rightId: pop
+  - leftId: empty-check
+    rightId: acceptance
+explanation:
+  - type: text
+    text: "To process `a^n b^n`, push one marker for each symbol in the first part and pop one for each symbol in the second part to match the counts."
+tags:
+  - theory-of-computation
+  - pda
+  - stack
+difficulty: 2

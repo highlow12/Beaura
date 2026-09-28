@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.turing-machine.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: Which direction symbol tells a Turing machine to move its head one cell to the right from the current cell? ___
+choices:
+  - R
+  - L
+  - S
+acceptedAnswers:
+  - R
+explanation:
+  - type: text
+    text: In a transition’s direction, R means right and L means left.
+tags:
+  - theory-of-computation
+  - turing-machine
+  - head
+difficulty: 1

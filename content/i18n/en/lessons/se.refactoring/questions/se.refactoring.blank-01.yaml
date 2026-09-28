@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.refactoring.blank-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: Improving internal structure while preserving external behavior is called ___.
+choices:
+- refactoring
+- deployment
+- serialization
+acceptedAnswers:
+- refactoring
+explanation:
+- type: text
+  text: Refactoring improves structure and maintainability and is distinct from feature development, which adds new behavior.
+tags:
+- software-engineering
+- refactoring
+- terminology
+difficulty: 1

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: toc.turing-machine.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: This code scans right over the 1s on the tape and adds one more 1 in the blank cell. Choose the final tape.
+language: python
+code: |-
+  tape = list("111_")
+  head = 0
+  while tape[head] == "1":
+      head += 1
+  tape[head] = "1"
+  print("".join(tape))
+choices:
+  - "1111"
+  - "111_"
+  - "0111"
+acceptedOutputs:
+  - "1111"
+explanation:
+  - type: text
+    text: The head passes the three 1s, reaches the blank, and writes 1 there to produce 1111.
+tags:
+  - theory-of-computation
+  - turing-machine
+  - trace
+difficulty: 2

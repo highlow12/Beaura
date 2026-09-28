@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.events.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each event operation with its meaning."
+leftItems:
+  - id: union
+    content:
+      - type: text
+        text: "A∪B"
+  - id: intersection
+    content:
+      - type: text
+        text: "A∩B"
+  - id: complement
+    content:
+      - type: text
+        text: "Aᶜ"
+  - id: disjoint
+    content:
+      - type: text
+        text: "Mutually exclusive"
+rightItems:
+  - id: union-desc
+    content:
+      - type: text
+        text: "A or B occurs"
+  - id: intersection-desc
+    content:
+      - type: text
+        text: "Both A and B occur"
+  - id: complement-desc
+    content:
+      - type: text
+        text: "A does not occur"
+  - id: disjoint-desc
+    content:
+      - type: text
+        text: "The two events cannot occur at the same time"
+correctPairs:
+  - leftId: union
+    rightId: union-desc
+  - leftId: intersection
+    rightId: intersection-desc
+  - leftId: complement
+    rightId: complement-desc
+  - leftId: disjoint
+    rightId: disjoint-desc
+explanation:
+  - type: text
+    text: "Mapping set symbols to “or,” “and,” and “not” helps you identify event regions quickly."
+  - type: text
+    text: "Whether events are mutually exclusive determines if the union formula can be simplified."
+tags:
+  - probability-statistics
+  - events
+  - set-operations
+difficulty: 2

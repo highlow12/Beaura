@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.linear-transformations.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which equations must a linear transformation `T` satisfy?"
+options:
+  - id: add-scale
+    content:
+      - type: text
+        text: "`T(u + v) = T(u) + T(v)` and `T(cu) = cT(u)`"
+  - id: shift
+    content:
+      - type: text
+        text: "`T(u + v) = T(u) + v`"
+  - id: square
+    content:
+      - type: text
+        text: "`T(u) = u²`"
+  - id: constant
+    content:
+      - type: text
+        text: "Maps every input to the same point"
+correctOptionId: add-scale
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A linear transformation preserves vector addition and scalar multiplication."
+  - type: text
+    text: "These properties let the transformation be determined from its values on the basis vectors."
+tags:
+  - linear-algebra
+  - transformations
+  - linearity
+difficulty: 1

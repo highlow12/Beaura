@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.camera.inverse-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement best describes the relationship between a camera’s world transform and its view matrix?"
+options:
+  - id: inverse
+    content:
+      - type: text
+        text: "The view matrix can be viewed as the inverse of the camera’s world transform."
+  - id: same
+    content:
+      - type: text
+        text: "The two matrices always contain the same numbers."
+  - id: color
+    content:
+      - type: text
+        text: "The view matrix stores only pixel RGB values."
+correctOptionId: inverse
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "To make the camera appear to be at the origin, apply the inverse of the transform that placed it in the world."
+tags: [graphics, camera, view-matrix]
+difficulty: 2

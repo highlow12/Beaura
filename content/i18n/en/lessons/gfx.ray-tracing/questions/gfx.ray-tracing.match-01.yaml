@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.ray-tracing.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each ray tracing term with its role."
+leftItems:
+  - id: ray
+    content:
+      - type: text
+        text: "Ray"
+  - id: intersection
+    content:
+      - type: text
+        text: "Intersection"
+  - id: bvh
+    content:
+      - type: text
+        text: "BVH"
+rightItems:
+  - id: origin-direction
+    content:
+      - type: text
+        text: "A line defined by an origin and direction"
+  - id: nearest-hit
+    content:
+      - type: text
+        text: "The location where a ray hits a scene surface"
+  - id: accelerate
+    content:
+      - type: text
+        text: "A spatial structure that reduces intersection candidates"
+correctPairs:
+  - leftId: ray
+    rightId: origin-direction
+  - leftId: intersection
+    rightId: nearest-hit
+  - leftId: bvh
+    rightId: accelerate
+explanation:
+  - type: text
+    text: "A ray is the input used to request an intersection test, and the nearest intersection is the starting point for surface shading. A BVH avoids testing every shape each time."
+tags: [graphics, ray-tracing]
+difficulty: 2

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.gradient.application-01
+revision: 2
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about the gradient."
+options:
+  - id: steepest-up
+    content:
+      - type: text
+        text: "At a point where ∇f is not 0, it points in the direction of steepest increase"
+  - id: contour-perp
+    content:
+      - type: text
+        text: "At a smooth point on a contour where ∇f is not 0, it is perpendicular to the contour’s tangent"
+  - id: descent
+    content:
+      - type: text
+        text: "At a point where ∇f is not 0, −∇f is a local direction of decrease"
+  - id: zero-change
+    content:
+      - type: text
+        text: "It always makes the function value 0"
+correctOptionIds: [steepest-up, contour-perp, descent]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "At a point where ∇f is not 0, the gradient points in the direction of greatest increase, and the opposite direction is a local direction of decrease."
+  - type: text
+    text: "At a point where the gradient is 0, first-order directional information disappears, so the same statements do not directly apply."
+tags:
+  - calculus
+  - gradient
+  - geometry
+difficulty: 2

@@ -1,0 +1,49 @@
+schemaVersion: 1
+id: arch.logic.gates-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each logic gate with its truth-table behavior.
+leftItems:
+  - id: and
+    content:
+      - type: text
+        text: AND
+  - id: or
+    content:
+      - type: text
+        text: OR
+  - id: not
+    content:
+      - type: text
+        text: NOT
+rightItems:
+  - id: both
+    content:
+      - type: text
+        text: 1 only when all inputs are 1
+  - id: either
+    content:
+      - type: text
+        text: 1 when at least one input is 1
+  - id: invert
+    content:
+      - type: text
+        text: Invert the input between 0 and 1
+correctPairs:
+  - leftId: and
+    rightId: both
+  - leftId: or
+    rightId: either
+  - leftId: not
+    rightId: invert
+explanation:
+  - type: text
+    text: AND is true when all inputs are true; OR is true when at least one input is true; NOT inverts the value.
+  - type: text
+    text: When building a truth table, list the input combinations separately from the output rules.
+tags:
+  - logic
+  - gates
+difficulty: 1

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.logic.combined-gate-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: What is the output of A AND (NOT B) when A = 1 and B = 0?
+options:
+  - id: option-0
+    content:
+      - type: text
+        text: "1"
+  - id: option-1
+    content:
+      - type: text
+        text: "0"
+  - id: option-2
+    content:
+      - type: text
+        text: Cannot be determined from the inputs alone
+correctOptionId: option-0
+shuffleOptions: true
+explanation:
+  - type: text
+    text: NOT B is 1. Both inputs to AND are 1, so the output is also 1.
+tags:
+  - logic
+  - boolean
+difficulty: 2

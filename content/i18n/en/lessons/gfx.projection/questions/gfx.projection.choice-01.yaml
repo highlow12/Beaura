@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.projection.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which projection is appropriate when a distant mountain looks smaller than a nearby tree?"
+options:
+  - id: perspective
+    content:
+      - type: text
+        text: "Perspective projection"
+  - id: orthographic
+    content:
+      - type: text
+        text: "Orthographic projection"
+  - id: none
+    content:
+      - type: text
+        text: "No projection"
+correctOptionId: perspective
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Perspective projection reduces apparent size with depth, creating an effect close to the size cues in real vision."
+tags: [graphics, projection, perspective]
+difficulty: 1

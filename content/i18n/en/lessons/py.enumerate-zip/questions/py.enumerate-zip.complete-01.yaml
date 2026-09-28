@@ -1,0 +1,25 @@
+id: py.enumerate-zip.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the function for the blank that pairs values at the same positions in two lists."
+language: python
+template: "for name, score in {{blank:function}}(names, scores):\n    print(name, score)"
+blanks:
+- id: function
+  choices:
+  - zip
+  - enumerate
+  - range
+  acceptedAnswers:
+  - zip
+explanation:
+- type: text
+  text: "zip pairs elements at the same positions in multiple sequences. enumerate attaches indexes to one sequence."
+schemaVersion: 1
+revision: 1
+tags:
+- iteration
+- enumerate
+- zip
+difficulty: 2

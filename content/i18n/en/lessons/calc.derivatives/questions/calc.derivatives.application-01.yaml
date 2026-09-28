@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.derivatives.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about derivatives."
+options:
+  - id: constant-zero
+    content:
+      - type: text
+        text: "The derivative of a constant function is 0"
+  - id: position-speed
+    content:
+      - type: text
+        text: "Differentiating position gives velocity"
+  - id: sign
+    content:
+      - type: text
+        text: "The sign of the derivative can indicate whether a function is increasing or decreasing"
+  - id: area
+    content:
+      - type: text
+        text: "Every derivative represents area"
+correctOptionIds: [constant-zero, position-speed, sign]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A derivative measures a rate of change: a constant does not change, and the rate of change of position is velocity."
+  - type: text
+    text: "Area is associated with integration."
+tags:
+  - calculus
+  - derivatives
+  - interpretation
+difficulty: 2

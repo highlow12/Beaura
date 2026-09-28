@@ -1,0 +1,24 @@
+id: ds.union-find.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output for the following parent-array state."
+language: python
+code: 'parent = [0, 0, 2]
+
+  print(parent[1] == parent[0])'
+choices:
+- 'True'
+- 'False'
+- '0'
+acceptedOutputs:
+- 'True'
+explanation:
+- type: text
+  text: "Both parent[1] and parent[0] are 0, so the two elements point to the same representative."
+schemaVersion: 1
+revision: 1
+tags:
+- disjoint-set
+- union-find
+difficulty: 2

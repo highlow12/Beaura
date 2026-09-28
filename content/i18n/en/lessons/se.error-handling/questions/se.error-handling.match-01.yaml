@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.error-handling.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: Match each error-handling strategy with its description.
+leftItems:
+- id: recover
+  content:
+  - type: text
+    text: Recover
+- id: propagate
+  content:
+  - type: text
+    text: Propagate
+- id: fail-fast
+  content:
+  - type: text
+    text: Fail fast
+rightItems:
+- id: fallback
+  content:
+  - type: text
+    text: Continue the normal flow with a fallback value or a limited retry.
+- id: preserve-cause
+  content:
+  - type: text
+    text: Pass the cause and context to the higher layer responsible for resolving it.
+- id: stop-invalid
+  content:
+  - type: text
+    text: Stop immediately in an unrecoverable state and leave a signal.
+correctPairs:
+- leftId: recover
+  rightId: fallback
+- leftId: propagate
+  rightId: preserve-cause
+- leftId: fail-fast
+  rightId: stop-invalid
+explanation:
+- type: text
+  text: Choose a fallback, propagation, or stop based on whether the current boundary can resolve the error; do not handle every error the same way.
+tags:
+- software-engineering
+- error-handling
+- resilience
+difficulty: 2

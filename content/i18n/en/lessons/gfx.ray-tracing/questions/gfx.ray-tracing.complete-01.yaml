@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: gfx.ray-tracing.complete-01
+revision: 2
+type: code-completion
+prompt:
+  - type: text
+    text: "Complete the condition that checks whether the light is directly visible when it is 3 units away along a shadow ray and the first blocker intersection is 5 units away."
+language: python
+template: |-
+  light_distance = 3
+  blocker_distance = 5
+  visible = blocker_distance {{blank:comparison}} light_distance
+blanks:
+  - id: comparison
+    choices: [">", "<", "=="]
+    acceptedAnswers: [">"]
+explanation:
+  - type: text
+    text: "If the light is 3 units away along the shadow ray and the blocker is 5 units away, the blocker is behind the light, so the light is visible. Normalize the direction vector to unit length so both distances use the same units."
+tags: [graphics, ray-tracing, shadows, code-completion]
+difficulty: 2

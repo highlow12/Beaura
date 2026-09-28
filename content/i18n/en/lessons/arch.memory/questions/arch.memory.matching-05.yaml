@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.memory.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each SRAM and DRAM term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "SRAM"
+  - id: left-b
+    content:
+      - type: text
+        text: "DRAM"
+  - id: left-c
+    content:
+      - type: text
+        text: "volatile"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "Memory that is fast but has large cells"
+  - id: right-b
+    content:
+      - type: text
+        text: "Dense memory that requires refresh"
+  - id: right-c
+    content:
+      - type: text
+        text: "The property of losing state when power is removed"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "SRAM is fast memory with large cells, while DRAM is dense memory that requires refresh."
+  - type: text
+    text: "Volatile describes the property of losing state when power is removed, so distinguish these three roles."
+tags: [memory, sram, dram]
+difficulty: 2

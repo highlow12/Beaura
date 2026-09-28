@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: py.io.print-purpose-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What does Python’s print() function do?"
+options:
+  - id: show-value
+    content:
+      - type: text
+        text: "Displays values on the screen"
+  - id: read-value
+    content:
+      - type: text
+        text: "Reads user input as a string"
+  - id: convert-number
+    content:
+      - type: text
+        text: "Converts a string to an integer"
+  - id: compare-values
+    content:
+      - type: text
+        text: "Compares two values and produces a bool"
+correctOptionId: show-value
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "`print()` displays the value inside its parentheses. `input()` is the function that receives user input."
+tags:
+  - io
+  - print
+difficulty: 1

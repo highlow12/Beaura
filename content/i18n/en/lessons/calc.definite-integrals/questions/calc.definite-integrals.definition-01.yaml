@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.definite-integrals.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which expression uses an antiderivative F to evaluate ∫ₐᵇ f(x)dx?"
+options:
+  - id: difference
+    content:
+      - type: text
+        text: "F(b)−F(a)"
+  - id: sum
+    content:
+      - type: text
+        text: "F(a)+F(b)"
+  - id: product
+    content:
+      - type: text
+        text: "F(a)F(b)"
+  - id: derivative
+    content:
+      - type: text
+        text: "F′(b)−F′(a)"
+correctOptionId: difference
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A definite integral is the difference between the antiderivative values at the endpoints."
+  - type: text
+    text: "Reversing the order of the endpoints changes the sign of the value."
+tags:
+  - calculus
+  - definite-integrals
+  - fundamental-theorem
+difficulty: 1

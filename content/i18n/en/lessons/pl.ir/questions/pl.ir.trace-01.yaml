@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: pl.ir.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "This code directly represents the temporary-value calculations in three-address code. What does it print?"
+language: python
+code: |-
+  t1 = 3 * 4
+  t2 = 2 + t1
+  print(t2)
+choices:
+  - "14"
+  - "24"
+  - "9"
+acceptedOutputs:
+  - "14"
+explanation:
+  - type: text
+    text: "t1 becomes 12, and t2 becomes 2 + 12, or 14, so the program prints 14."
+tags:
+  - programming-languages
+  - ir
+  - trace
+difficulty: 1

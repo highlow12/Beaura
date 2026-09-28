@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.protection.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about permissions and process isolation is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A protection system uses permissions and address-space isolation to limit each execution actor to authorized resources."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Protection grants kernel privileges to every program so errors can be handled quickly."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Process isolation lets processes share the same memory without restriction."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A protection system uses permissions and address-space isolation to limit each execution actor to authorized resources."
+  - type: text
+    text: "Protection checks that each execution actor uses only authorized memory, instructions, and resources. Page read/write/execute permissions and CPU privilege levels are common mechanisms."
+tags: [protection, isolation, privilege]
+difficulty: 2

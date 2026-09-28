@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: db.aggregation.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which SQL combination is key to calculating an average for each group?"
+options:
+  - id: avg-group
+    content:
+      - type: code
+        language: sql
+        code: AVG(score) with GROUP BY class
+  - id: order-only
+    content:
+      - type: code
+        language: sql
+        code: ORDER BY score
+  - id: where-only
+    content:
+      - type: code
+        language: sql
+        code: WHERE score
+correctOptionId: avg-group
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "AVG(score) calculates the numerical average, and GROUP BY class creates groups by class. ORDER BY sorts results, and WHERE filters rows."
+tags: [database, sql, aggregation, group-by]
+difficulty: 2

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { locale, t } from "$lib/application/locale";
   import ContentBlockRenderer from "$lib/components/ContentBlockRenderer.svelte";
   import type { QuestionRendererProps } from "$lib/questions/renderer-contract";
 
@@ -23,7 +24,7 @@
     renderedKey = key;
     actionIds = [];
     currentStateId = question.initialStateId;
-    announcement = `${stateLabel(currentStateId)} 상태에서 시작합니다.`;
+    announcement = t(`${stateLabel(currentStateId)} 상태에서 시작합니다.`, `Start in ${stateLabel(currentStateId)}.`, $locale);
     onAnswerChange(null);
   });
 
@@ -83,9 +84,9 @@
     const nextActions = [...actionIds, actionId];
     emit(nextActions, transition.toStateId);
     const suffix = isTerminal(nextActions, transition.toStateId)
-      ? " 제출할 수 있습니다."
+      ? t(" 제출할 수 있습니다.", " You can submit now.", $locale)
       : "";
-    announcement = `${actionLabel(actionId)} 실행. ${stateLabel(transition.toStateId)} 상태가 되었습니다.${suffix}`;
+    announcement = t(`${actionLabel(actionId)} 실행. ${stateLabel(transition.toStateId)} 상태가 되었습니다.${suffix}`, `Executed ${actionLabel(actionId)}. Now in ${stateLabel(transition.toStateId)}.${suffix}`, $locale);
   }
 
   function replay(actions: string[]): string {
@@ -103,13 +104,13 @@
     const next = actionIds.slice(0, -1);
     const stateId = replay(next);
     emit(next, stateId);
-    announcement = `한 단계를 취소했습니다. ${stateLabel(stateId)} 상태입니다.`;
+    announcement = t(`한 단계를 취소했습니다. ${stateLabel(stateId)} 상태입니다.`, `Undid one step. Now in ${stateLabel(stateId)}.`, $locale);
   }
 
   function reset() {
     if (disabled) return;
     emit([], question.initialStateId);
-    announcement = `${stateLabel(question.initialStateId)} 상태에서 다시 시작합니다.`;
+    announcement = t(`${stateLabel(question.initialStateId)} 상태에서 다시 시작합니다.`, `Start again in ${stateLabel(question.initialStateId)}.`, $locale);
   }
 
   function canonicalActions(): string[] {
@@ -129,16 +130,16 @@
   {/each}
 
   <section class="state-panel" aria-live="polite">
-    <span class="eyebrow">현재 상태</span>
+    <span class="eyebrow">{t("현재 상태", "Current state", $locale)}</span>
     <strong class="state-name">{stateLabel(currentStateId)}</strong>
     <span class:goal={isGoal()} class="goal-status">
-      {isGoal() ? "목표 상태 도달" : `목표: ${question.goalStateIds.map(stateLabel).join(", ")}`}
+      {isGoal() ? t("목표 상태 도달", "Goal reached", $locale) : `${t("목표", "Goal", $locale)}: ${question.goalStateIds.map(stateLabel).join(", ")}`}
     </span>
-    <span class="step-count">{actionIds.length} / {question.maxSteps} 단계</span>
+    <span class="step-count">{actionIds.length} / {question.maxSteps} {t("단계", "steps", $locale)}</span>
   </section>
 
-  <section class="action-panel" aria-label="실행 가능한 동작">
-    <h3>동작 선택</h3>
+  <section class="action-panel" aria-label={t("실행 가능한 동작", "Available actions", $locale)}>
+    <h3>{t("동작 선택", "Choose action", $locale)}</h3>
     <div class="action-grid">
       {#each question.actions as action}
         {@const available = availableActionIds().includes(action.id)}
@@ -154,7 +155,7 @@
             {@const transition = transitionFor(currentStateId, action.id)}
             {#if transition}<span>→ {stateLabel(transition.toStateId)}</span>{/if}
           {:else}
-            <span>현재 실행 불가</span>
+            <span>{t("현재 실행 불가", "Currently unavailable", $locale)}</span>
           {/if}
         </button>
       {/each}
@@ -162,9 +163,9 @@
   </section>
 
   <section class="history">
-    <h3>실행 기록</h3>
+    <h3>{t("실행 기록", "Action history", $locale)}</h3>
     {#if actionIds.length === 0}
-      <p>아직 실행한 동작이 없습니다.</p>
+      <p>{t("아직 실행한 동작이 없습니다.", "No actions yet.", $locale)}</p>
     {:else}
       <ol>
         {#each actionIds as actionId}
@@ -176,23 +177,23 @@
 
   <div class="controls">
     <button type="button" class="secondary" disabled={disabled || actionIds.length === 0} onclick={undo}>
-      한 단계 취소
+      {t("한 단계 취소", "Undo one step", $locale)}
     </button>
     <button type="button" class="secondary" disabled={disabled || actionIds.length === 0} onclick={reset}>
-      처음부터
+      {t("처음부터", "Start over", $locale)}
     </button>
   </div>
 
   {#if disabled && submittedActions().length > 0}
     <div class="answer-summary">
-      <strong>내가 실행한 동작</strong>
+      <strong>{t("내가 실행한 동작", "Your actions", $locale)}</strong>
       <span>{submittedActions().map(actionLabel).join(" → ")}</span>
     </div>
   {/if}
 
   {#if disabled && canonicalActions().length > 0}
     <div class="answer-summary canonical-summary">
-      <strong>정답 동작 예시</strong>
+      <strong>{t("정답 동작 예시", "Example correct actions", $locale)}</strong>
       <span>{canonicalActions().map(actionLabel).join(" → ")}</span>
     </div>
   {/if}

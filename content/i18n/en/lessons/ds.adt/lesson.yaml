@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.adt
+revision: 2
+track: data-structures
+title: Abstract Data Types
+description: Understand abstract data types, which define the behavior a data structure provides independently of its implementation.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.adt.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.adt.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.adt.complete-01
+- type: question
+  ref: ds.adt.steps-01
+- type: question
+  ref: ds.adt.match-01

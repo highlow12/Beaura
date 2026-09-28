@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.pipeline.vertex-complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Complete the blank so the vertex shader passes the input vertex's position to the next stage."
+language: python
+template: |-
+  vertex = {"position": (1, 2)}
+  output = vertex[{{blank:key}}]
+blanks:
+  - id: key
+    choices: ['"position"', '"color"', '"depth"']
+    acceptedAnswers: ['"position"']
+explanation:
+  - type: text
+    text: "Select the `position` key in the input dictionary to pass the vertex position `(1, 2)` to the next stage."
+tags: [graphics, pipeline, code-completion]
+difficulty: 2

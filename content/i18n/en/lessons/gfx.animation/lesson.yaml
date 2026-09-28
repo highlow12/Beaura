@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.animation
+revision: 2
+track: computer-graphics
+title: "Animation and Interpolation"
+description: "Learn how to create motion by interpolating position, rotation, and scale transformations over time between keyframes."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.animation.keyframe-01
+  - type: content
+    ref: content/interpolation.md
+  - type: question
+    ref: gfx.animation.value-01
+  - type: question
+    ref: gfx.animation.order-01
+  - type: content
+    ref: content/rotation.md
+  - type: question
+    ref: gfx.animation.properties-01
+  - type: question
+    ref: gfx.animation.match-01

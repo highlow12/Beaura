@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.comprehensions
+revision: 1
+track: python
+title: "List Comprehensions"
+description: "Learn to write iteration, transformation, and filtering in a single list-comprehension expression."
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.comprehensions.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: py.comprehensions.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.comprehensions.complete-01
+- type: question
+  ref: py.comprehensions.steps-01
+- type: question
+  ref: py.comprehensions.match-01

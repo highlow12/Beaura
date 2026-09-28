@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.inverse-determinant.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct calculations for `A = [[1, 2], [3, 4]]`."
+options:
+  - id: det-minus-two
+    content:
+      - type: text
+        text: "`det(A) = −2`"
+  - id: nonzero
+    content:
+      - type: text
+        text: "The inverse exists"
+  - id: formula
+    content:
+      - type: text
+        text: "The difference of the diagonal products is `1 × 4 − 2 × 3`"
+  - id: zero
+    content:
+      - type: text
+        text: "`det(A) = 0`"
+correctOptionIds: [det-minus-two, nonzero, formula]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "`det(A) = 1 × 4 − 2 × 3 = −2`, which is nonzero, so the inverse exists."
+  - type: text
+    text: "Even if the determinant is negative, whether an inverse exists depends on whether it is 0."
+tags:
+  - linear-algebra
+  - matrices
+  - determinant
+difficulty: 2

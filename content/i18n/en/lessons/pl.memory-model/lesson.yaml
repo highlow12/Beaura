@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.memory-model
+revision: 2
+track: programming-languages
+title: Stack and Heap
+description: Distinguish the lifetimes of runtime values and the stack and heap memory models.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.memory-model.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.memory-model.match-01
+  - type: question
+    ref: pl.memory-model.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.memory-model.order-01
+  - type: question
+    ref: pl.memory-model.trace-01

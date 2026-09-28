@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.semaphore.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about semaphores and resource counts is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A semaphore uses a counter and `wait`/`signal` to coordinate a limited number of resources or events."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A semaphore is a format for encoding CPU instructions as 0s and 1s."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A semaphore always allows only one task, regardless of its counter."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A semaphore uses a counter and `wait`/`signal` to coordinate a limited number of resources or events."
+  - type: text
+    text: "A semaphore represents resources or events with an integer counter and atomic `wait` (P) and `signal` (V) operations. If the counter is 0, a `wait` caller blocks until a resource becomes available."
+tags: [semaphore, synchronization, producer-consumer]
+difficulty: 2

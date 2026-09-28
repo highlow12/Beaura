@@ -1,0 +1,37 @@
+id: algo.quicksort.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Put the quicksort partition steps in order."
+items:
+- id: pivot
+  content:
+  - type: text
+    text: "Choose a pivot from the subarray"
+- id: partition
+  content:
+  - type: text
+    text: "Partition the elements around the pivot"
+- id: recurse
+  content:
+  - type: text
+    text: "Recursively sort the left and right parts"
+- id: join
+  content:
+  - type: text
+    text: "Join the sorted left part, pivot, and right part"
+correctOrder:
+- pivot
+- partition
+- recurse
+- join
+explanation:
+- type: text
+  text: "Choose a pivot, partition the array, recursively sort both parts, and combine the results with the pivot in between."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- quicksort
+- partition
+difficulty: 2

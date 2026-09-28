@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: py.loops.while-output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  count = 0
+  while count < 3:
+      count += 1
+  print(count)
+choices:
+  - '3'
+  - '2'
+  - '4'
+acceptedOutputs:
+  - '3'
+explanation:
+  - type: text
+    text: "The loop runs when count is 0, 1, and 2, increasing it by 1 each time. When count reaches 3, the condition is false and the loop ends."
+tags:
+  - loops
+  - while
+  - code-output
+difficulty: 2

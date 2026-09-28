@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: prob.independence.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for checking independence with the product rule."
+items:
+  - id: marginals
+    content:
+      - type: text
+        text: "Calculate P(A) and P(B)."
+  - id: intersection
+    content:
+      - type: text
+        text: "Calculate P(A∩B)."
+  - id: product
+    content:
+      - type: text
+        text: "Calculate P(A)P(B)."
+  - id: compare
+    content:
+      - type: text
+        text: "Compare the two values; if they are equal, the events are independent."
+correctOrder:
+  - marginals
+  - intersection
+  - product
+  - compare
+unorderedGroups:
+  - [marginals, intersection]
+explanation:
+  - type: text
+    text: "Calculate both sides of the intersection product rule, the necessary and sufficient condition for independence, and compare them."
+  - type: text
+    text: "One conditional probability can also establish the same conclusion, but be clear about what the equation means."
+tags:
+  - probability-statistics
+  - independence
+  - test
+difficulty: 2

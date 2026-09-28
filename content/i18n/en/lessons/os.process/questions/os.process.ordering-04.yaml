@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.process.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic process and execution-unit steps in the correct order."
+items:
+  - id: create
+    content:
+      - type: text
+        text: "Create a process from an executable and initial resources"
+  - id: schedule
+    content:
+      - type: text
+        text: "Schedule a runnable process on the CPU"
+  - id: exit
+    content:
+      - type: text
+        text: "Record the exit status and return code, then reclaim resources"
+correctOrder: [create, schedule, exit]
+explanation:
+  - type: text
+    text: "First, create a process from an executable and initial resources; then schedule the runnable process on the CPU."
+  - type: text
+    text: "At the step where the exit status and return code are recorded and resources reclaimed, the final result is passed to the next execution step."
+tags: [process, address-space, lifecycle]
+difficulty: 2

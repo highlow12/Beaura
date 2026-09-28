@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.cicd.blank-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: The pipeline should be ___ so that builds and deployments produce the same result every time from the same inputs.
+choices:
+- reproducible
+- random
+- one-time
+acceptedAnswers:
+- reproducible
+explanation:
+- type: text
+  text: A reproducible pipeline pins the source version, tools, dependencies, and environment so that a validated result can be recreated.
+tags:
+- software-engineering
+- cicd
+- reproducibility
+difficulty: 1

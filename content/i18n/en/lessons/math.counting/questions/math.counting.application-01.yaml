@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.counting.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all situations whose counts can be directly added with the sum rule."
+options:
+  - id: bus-train
+    content:
+      - type: text
+        text: "Choose either one of 4 bus routes or one of 2 subway routes"
+  - id: tea-coffee
+    content:
+      - type: text
+        text: "Order either one of 3 teas or one of 5 coffees"
+  - id: shirt-pants
+    content:
+      - type: text
+        text: "Choose one shirt and one pair of pants"
+  - id: digits
+    content:
+      - type: text
+        text: "Choose each digit of a two-digit password"
+correctOptionIds: [bus-train, tea-coffee]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Add mutually exclusive cases separated by “or” using the sum rule."
+  - type: text
+    text: "A choice that performs several steps corresponds to the product rule."
+tags:
+  - discrete-math
+  - combinatorics
+  - sum-rule
+difficulty: 2

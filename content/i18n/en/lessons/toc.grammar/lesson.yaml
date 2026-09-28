@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: toc.grammar
+revision: 2
+track: theory-of-computation
+title: Formal Grammars
+description: Learn to derive strings using grammar symbols and production rules.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: toc.grammar.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: toc.grammar.match-01
+  - type: question
+    ref: toc.grammar.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: toc.grammar.order-01
+  - type: question
+    ref: toc.grammar.trace-01

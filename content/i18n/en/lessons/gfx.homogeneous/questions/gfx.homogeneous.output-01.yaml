@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.homogeneous.output-01
+revision: 2
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of code that divides 3D clip coordinates by w to find NDC."
+language: python
+code: |-
+  clip = (1, 1, 1, 2)
+  w = clip[3]
+  ndc = (clip[0] / w, clip[1] / w, clip[2] / w)
+  print(ndc)
+choices: ["(0.5, 0.5, 0.5)", "(1, 1, 1)", "(2, 2, 2)"]
+acceptedOutputs: ["(0.5, 0.5, 0.5)"]
+explanation:
+  - type: text
+    text: "Clip coordinates have four components, with w = 2 as the last one. Each of x, y, and z becomes 1/2 = 0.5, so Python prints (0.5, 0.5, 0.5)."
+tags: [graphics, homogeneous-coordinates, code-output]
+difficulty: 2

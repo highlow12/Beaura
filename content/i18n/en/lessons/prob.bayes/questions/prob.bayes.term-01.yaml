@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.bayes.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "In Bayes' theorem, P(A), the probability of cause A before observing evidence, is called the prior ___."
+choices:
+  - "probability"
+  - "Likelihood"
+  - "error"
+acceptedAnswers:
+  - "probability"
+explanation:
+  - type: text
+    text: "P(A) is called the prior probability: our belief or frequency before observing the evidence."
+  - type: text
+    text: "After taking the evidence into account, it becomes the posterior probability P(A|B)."
+tags:
+  - probability-statistics
+  - bayes
+  - prior
+difficulty: 1

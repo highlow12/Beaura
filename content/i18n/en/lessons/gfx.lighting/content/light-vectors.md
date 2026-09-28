@@ -1,0 +1,5 @@
+## Measuring the Angle of Incidence with a Dot Product
+
+A simple diffuse intensity starts with `max(0, n · l)`, where `n` is a unit normal and `l` is a unit direction from the surface toward the light. If `n = (0, 1, 0)` and `l = (0, 1, 0)`, their dot product is 1, so the surface receives light head-on at full brightness. If the light is tilted by 60 degrees and `n · l = 0.5`, the diffuse term for the same material is halved. If the light comes from the other side and the dot product is negative, `max` makes it 0.
+
+Specular lighting depends not only on the normal and light direction, but also on how well the reflection direction aligns with the viewer direction. If you take the dot product without normalizing the vectors, their lengths affect brightness along with their directions. Also, defining `l` to point from the light toward the surface reverses the sign and can make the front face look dark. Choose the convention “from the surface toward the light” from the start and keep it consistent.

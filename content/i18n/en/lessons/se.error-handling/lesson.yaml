@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.error-handling
+revision: 1
+track: software-engineering
+title: Error Handling
+description: Learn to classify errors and recover from, propagate, or fail on them at the appropriate boundary.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: se.error-handling.concept-01
+- type: content
+  ref: content/model.md
+- type: question
+  ref: se.error-handling.match-01
+- type: question
+  ref: se.error-handling.blank-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: se.error-handling.order-01
+- type: question
+  ref: se.error-handling.trace-01

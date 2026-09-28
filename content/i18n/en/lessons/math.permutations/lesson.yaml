@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.permutations
+revision: 3
+track: discrete-math
+title: "Permutations and Arrangements"
+description: "Calculate ordered selections and arrangements using factorials and permutation counts."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.permutations.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.permutations.application-01
+  - type: content
+    ref: content/repetition.md
+  - type: question
+    ref: math.permutations.term-01
+  - type: question
+    ref: math.permutations.steps-01
+  - type: question
+    ref: math.permutations.match-01

@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: math.counterexample.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for verifying a counterexample."
+items:
+  - id: read-claim
+    content:
+      - type: text
+        text: "Separate and read the conditions and conclusion of the statement"
+  - id: choose
+    content:
+      - type: text
+        text: "Choose an object that may satisfy the conditions"
+  - id: check-condition
+    content:
+      - type: text
+        text: "Check whether the object satisfies all the conditions"
+  - id: break
+    content:
+      - type: text
+        text: "Show through calculation that the conclusion is false"
+correctOrder:
+  - read-claim
+  - choose
+  - check-condition
+  - break
+unorderedGroups:
+  - [check-condition, break]
+explanation:
+  - type: text
+    text: "You can check in either order whether the object satisfies the conditions and disproves the conclusion. Both facts must be confirmed for it to be a counterexample."
+  - type: text
+    text: "An object that fails the conditions or has a true conclusion is not a counterexample."
+tags:
+  - discrete-math
+  - proof
+  - proof-method
+difficulty: 2

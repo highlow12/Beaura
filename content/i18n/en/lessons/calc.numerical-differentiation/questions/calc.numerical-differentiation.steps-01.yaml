@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.numerical-differentiation.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for finding a slope from tabulated data using numerical differentiation."
+items:
+  - id: choose-h
+    content:
+      - type: text
+        text: "Identify the reference point and spacing h to the neighboring samples"
+  - id: select
+    content:
+      - type: text
+        text: "Choose a forward, backward, or central difference"
+  - id: substitute
+    content:
+      - type: text
+        text: "Substitute the table’s function values into the formula"
+  - id: check
+    content:
+      - type: text
+        text: "Compare the result with another h value or method"
+correctOrder:
+  - choose-h
+  - select
+  - substitute
+  - check
+explanation:
+  - type: text
+    text: "Consider the sample spacing and boundaries, choose a difference method, and substitute the values."
+  - type: text
+    text: "To assess the approximation’s reliability, check how it changes with the step size or formula."
+tags:
+  - calculus
+  - numerical
+  - procedure
+difficulty: 2

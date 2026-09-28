@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: gfx.geometry.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output: the code prints how many triangles are formed by the vertex indices."
+language: python
+code: |-
+  indices = [0, 1, 2, 2, 3, 0]
+  triangle_count = len(indices) // 3
+  print(triangle_count)
+choices: ["2", "6", "3"]
+acceptedOutputs: ["2"]
+explanation:
+  - type: text
+    text: "Each triangle uses three indices, so 6 // 3 = 2 triangles. This is also a common way to represent a quadrilateral with four points."
+tags: [graphics, geometry, mesh, code-output]
+difficulty: 1

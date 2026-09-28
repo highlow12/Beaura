@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.relations.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "When A={a,b} and B={1,2}, what are the elements of A×B?"
+options:
+  - id: pairs
+    content:
+      - type: text
+        text: "(a,1), (a,2), (b,1), (b,2)"
+  - id: reverse
+    content:
+      - type: text
+        text: "(1,a), (2,a), (1,b), (2,b)"
+  - id: same
+    content:
+      - type: text
+        text: "only the four elements a, b, 1, and 2"
+  - id: two
+    content:
+      - type: text
+        text: "only the two pairs (a,1) and (b,2)"
+correctOptionId: pairs
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The Cartesian product contains every ordered pair whose first component is chosen from A and second component from B."
+  - type: text
+    text: "A relation can be a subset formed by selecting only some of these four pairs."
+tags:
+  - discrete-math
+  - relations
+  - cartesian-product
+difficulty: 1

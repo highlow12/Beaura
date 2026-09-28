@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.observability.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: Match each observability signal with its primary purpose.
+leftItems:
+- id: log
+  content:
+  - type: text
+    text: Log
+- id: metric
+  content:
+  - type: text
+    text: Metric
+- id: trace
+  content:
+  - type: text
+    text: Trace
+rightItems:
+- id: event-detail
+  content:
+  - type: text
+    text: Record an event’s input, error, and handling context
+- id: time-series
+  content:
+  - type: text
+    text: Aggregate trends in values such as request count, error rate, and latency
+- id: request-path
+  content:
+  - type: text
+    text: Connect the path and timing of a request across multiple operations
+correctPairs:
+- leftId: log
+  rightId: event-detail
+- leftId: metric
+  rightId: time-series
+- leftId: trace
+  rightId: request-path
+explanation:
+- type: text
+  text: Metrics can detect an anomaly, traces can narrow its scope, and logs can reveal the event’s detailed cause.
+tags:
+- software-engineering
+- observability
+- signals
+difficulty: 2

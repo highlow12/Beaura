@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: algo.dynamic-programming.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "Complete the Fibonacci recurrence by adding the two preceding values."
+- type: code
+  language: python
+  code: dp[n] = dp[n - 1] {{blank:combine}} dp[n - 2]
+choices:
+- +
+- "-"
+- "*"
+acceptedAnswers:
+- +
+explanation:
+- type: text
+  text: "Each Fibonacci number is the sum of the two preceding numbers."
+tags:
+- dynamic-programming
+- recurrence
+- code-completion
+difficulty: 2

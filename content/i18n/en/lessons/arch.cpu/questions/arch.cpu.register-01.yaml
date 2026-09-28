@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: arch.cpu.register-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement best describes the role of a register?"
+options:
+  - id: temporary
+    content:
+      - type: text
+        text: "Temporarily hold a value the CPU will use in an operation"
+  - id: internet
+    content:
+      - type: text
+        text: "A server that permanently stores internet addresses"
+  - id: display
+    content:
+      - type: text
+        text: "A device that directly draws every pixel on the screen"
+correctOptionId: temporary
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Registers are close to the CPU and quickly hold values needed to execute instructions."
+  - type: text
+    text: "Registers, memory, and storage devices have different speeds and roles."
+tags:
+  - cpu
+  - register
+difficulty: 1

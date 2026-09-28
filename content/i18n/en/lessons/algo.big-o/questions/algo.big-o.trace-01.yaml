@@ -1,0 +1,22 @@
+id: algo.big-o.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of this nested loop."
+language: python
+code: "n = 3\ncount = 0\nfor i in range(n):\n    for j in range(n):\n        count += 1\nprint(count)"
+choices:
+- '9'
+- '3'
+- '6'
+acceptedOutputs:
+- '9'
+explanation:
+- type: text
+  text: "The inner loop runs 3 times for each of the outer loop’s 3 iterations, for 3 × 3 = 9 increments total. This structure is O(n²)."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- big-o
+difficulty: 2

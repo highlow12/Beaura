@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: algo.topological-sort.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of this Kahn algorithm when A and B are prerequisites for C."
+language: python
+code: |-
+  graph = {"A": ["C"], "B": ["C"], "C": []}
+  indegree = {"A": 0, "B": 0, "C": 2}
+  queue = ["A", "B"]
+  order = []
+  while queue:
+      node = queue.pop(0)
+      order.append(node)
+      for nxt in graph[node]:
+          indegree[nxt] -= 1
+          if indegree[nxt] == 0:
+              queue.append(nxt)
+  print(" ".join(order))
+choices:
+- A B C
+- C A B
+- A C B
+acceptedOutputs:
+- A B C
+explanation:
+- type: text
+  text: "A and B start with indegree 0. After both are processed, C’s indegree becomes 0, so it appears last."
+tags:
+- graph
+- topological-sort
+- code-output
+difficulty: 3

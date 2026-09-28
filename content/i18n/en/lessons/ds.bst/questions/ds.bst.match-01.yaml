@@ -1,0 +1,48 @@
+id: ds.bst.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each BST term with its meaning."
+leftItems:
+- id: invariant
+  content:
+  - type: text
+    text: "Ordering invariant"
+- id: path
+  content:
+  - type: text
+    text: "Search path"
+- id: inorder
+  content:
+  - type: text
+    text: "Inorder traversal"
+rightItems:
+- id: order
+  content:
+  - type: text
+    text: "The left-current-right value relationship"
+- id: branch
+  content:
+  - type: text
+    text: "The sequence of nodes selected by comparisons"
+- id: sorted
+  content:
+  - type: text
+    text: "A traversal that produces an ascending result"
+correctPairs:
+- leftId: invariant
+  rightId: order
+- leftId: path
+  rightId: branch
+- leftId: inorder
+  rightId: sorted
+explanation:
+- type: text
+  text: "The ordering invariant determines the search direction, and the selected nodes form a path. Inorder traversal produces a sorted result."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- bst
+- search
+difficulty: 2

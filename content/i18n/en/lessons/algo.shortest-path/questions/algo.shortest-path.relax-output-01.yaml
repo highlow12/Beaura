@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: algo.shortest-path.relax-output-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of this relaxation code."
+language: python
+code: |-
+  current = 3
+  edge_weight = 5
+  best = 10
+  candidate = current + edge_weight
+  if candidate < best:
+      best = candidate
+  print(best)
+choices:
+- '8'
+- '10'
+- '5'
+acceptedOutputs:
+- '8'
+explanation:
+- type: text
+  text: "The candidate 8, found by adding edge weight 5 to the current distance 3, is less than 10, so best becomes 8."
+- type: text
+  text: "Relaxation replaces a stored distance only when there is a better candidate."
+tags:
+- shortest-path
+- relaxation
+- code-output
+difficulty: 2

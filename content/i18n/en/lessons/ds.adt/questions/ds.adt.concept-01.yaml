@@ -1,0 +1,33 @@
+id: ds.adt.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What is the core idea of an abstract data type (ADT)?"
+options:
+- id: behavior
+  content:
+  - type: text
+    text: "Defining the operations and rules to provide independently of internal storage"
+- id: layout
+  content:
+  - type: text
+    text: "Exposing the actual address of every memory cell"
+- id: language
+  content:
+  - type: text
+    text: "Collecting only the syntax of a particular programming language"
+- id: speed
+  content:
+  - type: text
+    text: "Guaranteeing the fastest implementation for every input"
+correctOptionId: behavior
+shuffleOptions: true
+explanation:
+- type: text
+  text: "An ADT defines a behavior contract visible to users and hides implementation details. One ADT can be implemented in several ways."
+schemaVersion: 1
+revision: 1
+tags:
+- adt
+- interface
+difficulty: 2

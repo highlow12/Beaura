@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.kernel-space.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic kernel-space and user-space steps in the correct order."
+items:
+  - id: request
+    content:
+      - type: text
+        text: "A user program requests a protected resource"
+  - id: switch
+    content:
+      - type: text
+        text: "The CPU changes privilege mode through a designated entry point"
+  - id: return
+    content:
+      - type: text
+        text: "The kernel returns the result and switches back to user mode"
+correctOrder: [request, switch, return]
+explanation:
+  - type: text
+    text: "First, a user program requests a protected resource; then the CPU switches privilege mode through a designated entry point."
+  - type: text
+    text: "At the step where the kernel returns the result and switches back to user mode, the final result is passed to the next execution step."
+tags: [kernel, user-space, protection]
+difficulty: 2

@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.adder.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic addition steps for an adder in the correct order."
+items:
+  - id: low-bit
+    content:
+      - type: text
+        text: "Calculate the two input bits and carry-in at the least significant bit"
+  - id: propagate
+    content:
+      - type: text
+        text: "Pass the carry-out to the next bit as its carry-in"
+  - id: collect
+    content:
+      - type: text
+        text: "Combine the sum bits to produce the final result"
+correctOrder: [low-bit, propagate, collect]
+explanation:
+  - type: text
+    text: "First calculate the two input bits and carry-in at the least significant bit. Then pass the resulting carry-out to the next bit as its carry-in."
+  - type: text
+    text: "Finally, combine each bit’s sum to produce the result for the next circuit or program."
+tags: [adder, carry, alu]
+difficulty: 3

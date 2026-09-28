@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.mutex.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic mutex and critical-section steps in the correct order."
+items:
+  - id: lock
+    content:
+      - type: text
+        text: "Acquire the lock before entering the critical section"
+  - id: update
+    content:
+      - type: text
+        text: "Check and update the shared state"
+  - id: unlock
+    content:
+      - type: text
+        text: "Release the lock on every path after finishing the operation"
+correctOrder: [lock, update, unlock]
+explanation:
+  - type: text
+    text: "First, acquire the lock before entering the critical section; then use it to check and update the shared state."
+  - type: text
+    text: "At the step where the lock is released on every path after the operation, the final result is passed to the next execution step."
+tags: [mutex, lock, critical-section]
+difficulty: 3

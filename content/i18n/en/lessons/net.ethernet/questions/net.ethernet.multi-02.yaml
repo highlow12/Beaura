@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: net.ethernet.multi-02
+revision: 1
+type: multi-select
+prompt:
+- type: text
+  text: Select all statements that apply to Ethernet frames.
+options:
+- id: correct-a
+  content:
+  - type: text
+    text: A frame can include source and destination MAC addresses.
+- id: correct-b
+  content:
+  - type: text
+    text: A switch can learn a source MAC address and the port it arrived on.
+- id: wrong-a
+  content:
+  - type: text
+    text: A switch always sends every frame across the entire internet without checking the destination MAC address.
+- id: wrong-b
+  content:
+  - type: text
+    text: A MAC address means the same thing as a transport-layer port number.
+correctOptionIds:
+- correct-a
+- correct-b
+shuffleOptions: true
+explanation:
+- type: text
+  text: A frame can include source and destination MAC addresses. A switch can learn a source MAC address and the port it
+    arrived on.
+- type: text
+  text: MAC-based link delivery is fast on a local network, but it requires managing broadcast scope and addresses. When sending
+    to another network, the frame uses the next hop’s MAC address rather than the server’s MAC address.
+tags:
+- ethernet
+- mac
+- link-layer
+difficulty: 2

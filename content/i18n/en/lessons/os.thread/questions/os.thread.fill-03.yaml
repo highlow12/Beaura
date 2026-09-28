@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.thread.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "The region for dynamic objects shared by threads in the same process is the ___."
+choices:
+  - "heap"
+  - "separate call stacks"
+  - "separate program counters"
+acceptedAnswers:
+  - "heap"
+explanation:
+  - type: text
+    text: "Two threads in one process share code and the heap, but each has its own program counter and call stack. If both update the same heap counter, their operations can interleave, so synchronization is needed. Creating a thread does not by itself make the program safe."
+tags: [thread, concurrency, shared-memory]
+difficulty: 2

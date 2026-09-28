@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: arch.binary.to-decimal-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the decimal value of binary 10110₂?"
+options:
+  - id: value-22
+    content:
+      - type: text
+        text: '22'
+  - id: value-18
+    content:
+      - type: text
+        text: '18'
+  - id: value-26
+    content:
+      - type: text
+        text: '26'
+correctOptionId: value-22
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "In 10110₂, the 1 bits have place values 16, 4, and 2, which sum to 22."
+tags:
+  - binary
+  - place-value
+  - conversion
+difficulty: 1

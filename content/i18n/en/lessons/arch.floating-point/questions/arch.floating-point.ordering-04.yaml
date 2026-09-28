@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.floating-point.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic floating-point representation steps in the correct order."
+items:
+  - id: normalize
+    content:
+      - type: text
+        text: "Normalize the value into a significand times a power of 2"
+  - id: encode
+    content:
+      - type: text
+        text: "Encode the sign, exponent, and significand in their bit fields"
+  - id: round
+    content:
+      - type: text
+        text: "Round bits that cannot be represented and store the result"
+correctOrder: [normalize, encode, round]
+explanation:
+  - type: text
+    text: "First normalize the value into a significand times a power of 2. Then encode the sign, exponent, and significand in their bit fields."
+  - type: text
+    text: "Finally, round bits that cannot be represented, store the result, and pass it to the next circuit or program."
+tags: [floating-point, ieee-754, precision]
+difficulty: 3

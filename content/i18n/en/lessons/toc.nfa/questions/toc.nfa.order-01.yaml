@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: toc.nfa.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the steps for processing one input symbol in an NFA with ε-transitions.
+items:
+  - id: closure-before
+    content:
+      - type: text
+        text: Compute the ε-closure of the current state set.
+  - id: consume-symbol
+    content:
+      - type: text
+        text: Collect transitions available for the next input symbol.
+  - id: closure-after
+    content:
+      - type: text
+        text: Apply ε-closure to the resulting states.
+  - id: continue
+    content:
+      - type: text
+        text: Process the next symbol using the updated state set.
+correctOrder:
+  - closure-before
+  - consume-symbol
+  - closure-after
+  - continue
+explanation:
+  - type: text
+    text: Taking ε-closure before and after consuming input ensures that no paths using ε-transitions are missed.
+tags:
+  - theory-of-computation
+  - nfa
+  - epsilon-closure
+difficulty: 3

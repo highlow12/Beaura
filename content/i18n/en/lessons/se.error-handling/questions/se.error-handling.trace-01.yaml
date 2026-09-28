@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.error-handling.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: What does this code print when it recovers from an invalid port string by using a default value?
+language: python
+code: "def parse_port(text):\n    try:\n        return int(text)\n    except ValueError:\n        return 8080\n\nprint(parse_port(\"bad\"))"
+choices:
+- '8080'
+- bad
+- ValueError
+acceptedOutputs:
+- '8080'
+explanation:
+- type: text
+  text: '`int("bad")` raises `ValueError`, but the exception is caught and the function returns 8080, so that is what gets printed.'
+tags:
+- software-engineering
+- error-handling
+- code-trace
+difficulty: 2

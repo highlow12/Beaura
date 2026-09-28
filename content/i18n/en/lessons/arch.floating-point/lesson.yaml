@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: arch.floating-point
+revision: 2
+track: computer-architecture
+title: Floating-Point Representation
+description: Explore the sign, exponent, and significand fields of IEEE 754 floating point and its precision limits.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: arch.floating-point.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: arch.floating-point.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: arch.floating-point.fill-03
+  - type: question
+    ref: arch.floating-point.ordering-04
+  - type: question
+    ref: arch.floating-point.matching-05

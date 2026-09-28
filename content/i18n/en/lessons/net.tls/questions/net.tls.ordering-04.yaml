@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.tls.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic TLS and certificate steps in the correct order."
+items:
+  - id: handshake
+    content:
+      - type: text
+        text: "Negotiate algorithms and key-exchange information"
+  - id: verify
+    content:
+      - type: text
+        text: "Verify the certificate’s name, signature, and validity"
+  - id: encrypt
+    content:
+      - type: text
+        text: "Protect data and its integrity tag with the session key"
+correctOrder: [handshake, verify, encrypt]
+explanation:
+  - type: text
+    text: "First, negotiate algorithms and key-exchange information; then use the result to verify the certificate’s name, signature, and validity."
+  - type: text
+    text: "At the step where the session key protects data and its integrity tag, the result is passed to the next network layer or application."
+tags: [tls, https, security]
+difficulty: 3

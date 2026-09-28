@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.traversal.mark-time-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "When should you usually mark a vertex as visited to reduce duplicate enqueues in BFS?"
+options:
+  - id: enqueue
+    content:
+      - type: text
+        text: "When the vertex is enqueued"
+  - id: finish
+    content:
+      - type: text
+        text: "After the entire BFS finishes"
+  - id: never
+    content:
+      - type: text
+        text: "Do not mark it"
+correctOptionId: enqueue
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Marking a vertex as soon as it is discovered prevents another vertex from enqueuing the same neighbor again."
+tags:
+  - traversal
+  - bfs
+  - visited
+difficulty: 2

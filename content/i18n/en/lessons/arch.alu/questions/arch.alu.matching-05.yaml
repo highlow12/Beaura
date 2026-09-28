@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.alu.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each ALU term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "operand"
+  - id: left-b
+    content:
+      - type: text
+        text: "control-signal"
+  - id: left-c
+    content:
+      - type: text
+        text: "flag"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "An input value used by the ALU in a calculation"
+  - id: right-b
+    content:
+      - type: text
+        text: "A control value that selects the operation type"
+  - id: right-c
+    content:
+      - type: text
+        text: "A status bit that summarizes a condition of the result"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "An operand is an input value used by the ALU, and a control signal selects the operation type."
+  - type: text
+    text: "A flag is a status bit that summarizes a condition of the result, so distinguish these three roles."
+tags: [alu, arithmetic, control]
+difficulty: 2

@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.runtime-gc.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: What criterion does a tracing garbage collector use to reclaim an object?
+options:
+  - id: unreachable
+    content:
+      - type: text
+        text: The object can no longer be reached from the runtime roots.
+  - id: old
+    content:
+      - type: text
+        text: The object has been in the heap for a long time.
+  - id: large
+    content:
+      - type: text
+        text: The object is large.
+  - id: local-name
+    content:
+      - type: text
+        text: The object has a local-variable name.
+correctOptionId: unreachable
+shuffleOptions: true
+explanation:
+  - type: text
+    text: The collector marks objects reachable by following references from the roots, then reclaims objects it cannot reach.
+tags:
+  - programming-languages
+  - runtime
+  - garbage-collection
+difficulty: 1

@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.multiplexer.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each multiplexer term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "data-input"
+  - id: left-b
+    content:
+      - type: text
+        text: "select"
+  - id: left-c
+    content:
+      - type: text
+        text: "output"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "A value that can be selected"
+  - id: right-b
+    content:
+      - type: text
+        text: "A signal that selects the output path"
+  - id: right-c
+    content:
+      - type: text
+        text: "The selected value"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "A data input is a value that can be selected; select is the signal that chooses the output path."
+  - type: text
+    text: "Output is the selected value, so distinguish these three roles."
+tags: [multiplexer, combinational-circuit, datapath]
+difficulty: 2

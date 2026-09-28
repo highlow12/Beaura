@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.storage.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to HDDs, SSDs, and block devices."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Random access on an HDD can be affected by seek and rotational delays."
+  - id: correct-b
+    content:
+      - type: text
+        text: "An SSD manages flash pages, erase blocks, and wear leveling."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "An SSD always uses the same minimum unit for writing and erasing."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "The block layer does not translate requests between the file system and storage device."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Random access on an HDD can be affected by seek and rotational delays. An SSD manages flash pages, erase blocks, and wear leveling."
+  - type: text
+    text: "HDDs offer low cost per unit of capacity but are slow for random access. SSDs provide low latency and high parallelism, but write endurance and erase-unit constraints must be considered."
+tags: [storage, hdd, ssd]
+difficulty: 3

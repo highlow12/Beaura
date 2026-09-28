@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: py.loops.purpose-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "What is the best reason to use a loop?"
+options:
+- id: repeat
+  content:
+  - type: text
+    text: "To apply the same rule to multiple values"
+- id: branch
+  content:
+  - type: text
+    text: "To check a condition once and end the program"
+- id: rename
+  content:
+  - type: text
+    text: "To change variable names automatically"
+correctOptionId: repeat
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Use a loop to apply the same rule across multiple iterations."
+- type: text
+  text: "for can process items one at a time from an ordered value."
+tags:
+- loops
+- iteration
+difficulty: 1

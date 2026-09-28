@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: net.nat
+revision: 1
+track: networks
+title: NAT and Port Translation
+description: Understand how private addresses are mapped to a public address and ports so multiple devices can communicate
+  with external networks.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: net.nat.purpose-01
+- type: question
+  ref: net.nat.properties-01
+- type: content
+  ref: content/table.md
+- type: question
+  ref: net.nat.match-01
+- type: question
+  ref: net.nat.order-01
+- type: content
+  ref: content/limits.md
+- type: question
+  ref: net.nat.port-01

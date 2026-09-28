@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.concurrency.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose a mechanism a DBMS can use to limit conflicts between concurrently accessing transactions."
+choices: ["Lock", "RGB", "normalization"]
+acceptedAnswers: ["Lock"]
+explanation:
+  - type: text
+    text: "A lock limits concurrent access to specific data and reduces write conflicts. Other techniques, such as MVCC, also exist, but RGB is unrelated."
+tags: [database, concurrency, locks]
+difficulty: 1

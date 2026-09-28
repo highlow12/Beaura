@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: sys.graphics.pixel-count-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: How many pixel positions does a 4-pixel-wide by 3-pixel-tall framebuffer contain in one frame?
+options:
+- id: pixels-12
+  content:
+  - type: text
+    text: '12'
+- id: pixels-7
+  content:
+  - type: text
+    text: '7'
+- id: pixels-24
+  content:
+  - type: text
+    text: '24'
+correctOptionId: pixels-12
+shuffleOptions: true
+explanation:
+- type: text
+  text: 'Multiply the width by the height: 4 × 3 = 12 pixel positions.'
+tags:
+- graphics
+- framebuffer
+- resolution
+difficulty: 1

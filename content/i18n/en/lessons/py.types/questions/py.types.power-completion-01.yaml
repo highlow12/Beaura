@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: py.types.power-completion-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Choose the operator that completes the code to calculate 2 to the third power."
+language: python
+template: |-
+  result = 2 {{blank:operator}} 3
+blanks:
+  - id: operator
+    choices:
+      - "**"
+      - "*"
+      - "+"
+    acceptedAnswers:
+      - "**"
+explanation:
+  - type: text
+    text: "** is the exponentiation operator. 2 ** 3 multiplies 2 by itself three times, giving 8."
+tags:
+  - arithmetic
+  - power
+  - code-completion
+difficulty: 2

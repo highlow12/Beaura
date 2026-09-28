@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.allocation.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic stack, heap, and memory-allocation steps in the correct order."
+items:
+  - id: request
+    content:
+      - type: text
+        text: "The program requests the required amount of memory"
+  - id: split
+    content:
+      - type: text
+        text: "The allocator selects a free block and splits it to the required size"
+  - id: free
+    content:
+      - type: text
+        text: "When use is complete, the block is returned and may be merged with adjacent blocks"
+correctOrder: [request, split, free]
+explanation:
+  - type: text
+    text: "First, the program requests the required amount of memory; then the allocator selects a free block and splits it to the required size."
+  - type: text
+    text: "At the step where the block is returned and may be merged with adjacent blocks, the final result is passed to the next execution step."
+tags: [memory-allocation, stack, heap]
+difficulty: 3

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.sort
+revision: 3
+track: algorithms
+title: Sorting
+description: Learn the purpose of sorting and the compare-and-swap steps used by basic algorithms.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.sort.ideas-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.sort.bubble-output-01
+- type: question
+  ref: algo.sort.pass-steps-01
+- type: content
+  ref: content/passes.md
+- type: question
+  ref: algo.sort.bubble-pass-01
+- type: question
+  ref: algo.sort.selection-pass-01

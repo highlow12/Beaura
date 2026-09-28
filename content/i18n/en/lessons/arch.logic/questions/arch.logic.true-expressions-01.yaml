@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: arch.logic.true-expressions-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: Select all logic expressions that output 1.
+options:
+  - id: and-true
+    content:
+      - type: text
+        text: 1 AND 1
+  - id: and-false
+    content:
+      - type: text
+        text: 1 AND 0
+  - id: or-true
+    content:
+      - type: text
+        text: 0 OR 1
+  - id: not-false
+    content:
+      - type: text
+        text: NOT 0
+correctOptionIds:
+  - and-true
+  - or-true
+  - not-false
+shuffleOptions: true
+explanation:
+  - type: text
+    text: AND outputs 1 when both inputs are 1; OR outputs 1 when at least one input is 1. NOT 0 outputs 1.
+tags:
+  - logic
+  - boolean
+difficulty: 2

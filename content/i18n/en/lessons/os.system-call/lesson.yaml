@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.system-call
+revision: 2
+track: operating-systems
+title: System Calls
+description: Learn how applications use system calls to request file, process, and I/O services from the kernel.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.system-call.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.system-call.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.system-call.fill-03
+  - type: question
+    ref: os.system-call.ordering-04
+  - type: question
+    ref: os.system-call.matching-05

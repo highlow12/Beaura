@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.combinations.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all situations that should be counted with combinations."
+options:
+  - id: team
+    content:
+      - type: text
+        text: "Choose three people from eight for a presentation team"
+  - id: committee
+    content:
+      - type: text
+        text: "Choose four committee members from ten, without order"
+  - id: rank
+    content:
+      - type: text
+        text: "Assign first, second, and third place in a race"
+  - id: seats
+    content:
+      - type: text
+        text: "Seat three people in distinct seats"
+correctOptionIds: [team, committee]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A combination applies when selecting a group with no order or roles."
+  - type: text
+    text: "Rankings and seats are permutations because the positions make the outcomes different."
+tags:
+  - discrete-math
+  - combinatorics
+  - selection
+difficulty: 2

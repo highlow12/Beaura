@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.conditional.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What does P(A|B) mean?"
+options:
+  - id: given-b
+    content:
+      - type: text
+        text: "The probability of A given that B occurred"
+  - id: given-a
+    content:
+      - type: text
+        text: "The probability of B given that A occurred"
+  - id: union
+    content:
+      - type: text
+        text: "The probability of A or B"
+  - id: independent
+    content:
+      - type: text
+        text: "It means the events are always independent"
+correctOptionId: given-b
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "In conditional probability, the event to the right of the bar, B, is the condition; A on the left is the event of interest."
+  - type: text
+    text: "P(A|B) and P(B|A) are generally different values."
+tags:
+  - probability-statistics
+  - conditional
+  - notation
+difficulty: 1

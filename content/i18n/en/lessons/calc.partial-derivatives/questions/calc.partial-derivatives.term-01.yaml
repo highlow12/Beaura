@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.partial-derivatives.term-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "For f(x,y)=x²+y², ∂f/∂y is ___."
+choices:
+- 2x
+- 2y
+- x+y
+- y²
+acceptedAnswers:
+- 2y
+explanation:
+- type: text
+  text: "x² is constant with respect to y, so its derivative is 0; the derivative of y² is 2y."
+- type: text
+  text: "Treat terms containing variables other than the one being differentiated as constants."
+tags:
+- calculus
+- multivariable
+- partial
+difficulty: 1

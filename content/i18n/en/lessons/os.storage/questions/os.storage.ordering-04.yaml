@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.storage.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic HDD, SSD, and block-device steps in the correct order."
+items:
+  - id: queue
+    content:
+      - type: text
+        text: "Place the block request in the device queue"
+  - id: translate
+    content:
+      - type: text
+        text: "The controller maps the logical block to a physical location"
+  - id: persist
+    content:
+      - type: text
+        text: "The device writes the data and signals completion"
+correctOrder: [queue, translate, persist]
+explanation:
+  - type: text
+    text: "First, place the block request in the device queue; then the controller uses it to map the logical block to a physical location."
+  - type: text
+    text: "At the step where the device writes the data and signals completion, the final result is passed to the next execution step."
+tags: [storage, hdd, ssd]
+difficulty: 3

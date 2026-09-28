@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.process
+revision: 2
+track: operating-systems
+title: Processes and Execution Units
+description: Understand how a process, a program in execution, is managed as a unit containing code, data, and state.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.process.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.process.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.process.fill-03
+  - type: question
+    ref: os.process.ordering-04
+  - type: question
+    ref: os.process.matching-05

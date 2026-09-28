@@ -1,0 +1,48 @@
+id: algo.heap-sort.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each heap-sort term with its meaning."
+leftItems:
+- id: heapify
+  content:
+  - type: text
+    text: "heapify"
+- id: root
+  content:
+  - type: text
+    text: "Root"
+- id: sift-down
+  content:
+  - type: text
+    text: "sift-down"
+rightItems:
+- id: build
+  content:
+  - type: text
+    text: "The operation that rearranges an array into a heap"
+- id: priority
+  content:
+  - type: text
+    text: "The position of the current highest-priority element"
+- id: restore
+  content:
+  - type: text
+    text: "The operation that restores heap order by swapping with a child below"
+correctPairs:
+- leftId: heapify
+  rightId: build
+- leftId: root
+  rightId: priority
+- leftId: sift-down
+  rightId: restore
+explanation:
+- type: text
+  text: "Build the heap with heapify, remove the root, then use sift-down to preserve heap order in the remaining elements."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- heap-sort
+- heap
+difficulty: 2

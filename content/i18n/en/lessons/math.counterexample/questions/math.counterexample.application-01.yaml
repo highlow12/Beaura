@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.counterexample.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all conditions that make a number a counterexample to “all primes are odd.”"
+options:
+  - id: prime
+    content:
+      - type: text
+        text: "The number must be prime"
+  - id: even
+    content:
+      - type: text
+        text: "The number must be even"
+  - id: positive
+    content:
+      - type: text
+        text: "It must follow the context of positive integers"
+  - id: composite
+    content:
+      - type: text
+        text: "It must be composite"
+correctOptionIds: [prime, even, positive]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The counterexample must be both prime and even; in this context, the positive integer 2 does the job."
+  - type: text
+    text: "A composite number does not meet the prime condition in the first place, so it cannot be a counterexample."
+tags:
+  - discrete-math
+  - proof
+  - number-theory
+difficulty: 2

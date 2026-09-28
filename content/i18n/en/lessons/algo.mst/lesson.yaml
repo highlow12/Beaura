@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.mst
+revision: 1
+track: algorithms
+title: Minimum Spanning Tree
+description: Learn the conditions for a tree that connects every vertex of a connected weighted undirected graph at minimum total cost.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.mst.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.mst.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.mst.steps-01
+- type: question
+  ref: algo.mst.complete-01
+- type: question
+  ref: algo.mst.trace-01

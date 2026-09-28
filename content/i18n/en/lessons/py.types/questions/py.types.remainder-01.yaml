@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: py.types.remainder-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the operator that completes the code to find the remainder when 10 is divided by 3."
+  - type: code
+    language: python
+    code: |-
+      remainder = 10 ___ 3
+      print(remainder)
+choices:
+  - "%"
+  - "//"
+  - "/"
+acceptedAnswers:
+  - "%"
+explanation:
+  - type: text
+    text: "% is the operator for finding a division remainder. When 10 is divided by 3, the quotient is 3 and the remainder is 1."
+tags:
+  - arithmetic
+  - remainder
+difficulty: 2

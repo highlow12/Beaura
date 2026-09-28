@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: se.version-control.trace-01
+revision: 2
+type: code-output
+prompt:
+- type: text
+  text: A merge commit X combines feature branch F and `main` branch M, both descended from common commit B. How many direct parent commits does X have?
+language: python
+code: 'parents = {"A": [], "B": ["A"], "F": ["B"], "M": ["B"], "X": ["F", "M"]}
+
+  print(len(parents["X"]))'
+choices:
+- '2'
+- '1'
+- '3'
+acceptedOutputs:
+- '2'
+explanation:
+- type: text
+  text: Merge commit X connects the tip of feature branch F and the tip of `main` as its two parents. Therefore, `parents["X"]` contains two commits and its length is 2. This example simplifies how a typical merge commit joins two histories.
+tags:
+- software-engineering
+- version-control
+- code-trace
+difficulty: 2

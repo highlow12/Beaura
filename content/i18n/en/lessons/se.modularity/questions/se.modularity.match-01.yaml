@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.modularity.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: Match each modularity term with its description.
+leftItems:
+- id: cohesion
+  content:
+  - type: text
+    text: Cohesion
+- id: coupling
+  content:
+  - type: text
+    text: Coupling
+- id: boundary
+  content:
+  - type: text
+    text: Module boundary
+rightItems:
+- id: shared-purpose
+  content:
+  - type: text
+    text: How strongly a module’s parts focus on the same purpose
+- id: dependency-knowledge
+  content:
+  - type: text
+    text: How much modules depend on each other’s knowledge and changes
+- id: public-surface
+  content:
+  - type: text
+    text: The line that separates exposed behavior from hidden implementation
+correctPairs:
+- leftId: cohesion
+  rightId: shared-purpose
+- leftId: coupling
+  rightId: dependency-knowledge
+- leftId: boundary
+  rightId: public-surface
+explanation:
+- type: text
+  text: Cohesion describes focus within a module, coupling describes dependencies between modules, and a boundary separates the public surface from the implementation.
+tags:
+- software-engineering
+- modularity
+- design
+difficulty: 2

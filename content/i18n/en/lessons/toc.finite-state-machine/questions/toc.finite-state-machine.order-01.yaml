@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: toc.finite-state-machine.order-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the steps an FSM follows to process one input symbol.
+items:
+  - id: current
+    content:
+      - type: text
+        text: Check the current state.
+  - id: consume
+    content:
+      - type: text
+        text: Read the next input symbol.
+  - id: lookup
+    content:
+      - type: text
+        text: Find the transition for the state and symbol.
+  - id: update
+    content:
+      - type: text
+        text: Update the state to the next state.
+correctOrder:
+  - current
+  - consume
+  - lookup
+  - update
+unorderedGroups:
+  - [current, consume]
+explanation:
+  - type: text
+    text: Both the current state and input symbol are needed to look up a transition. You can check them in either order; once you know both, find the transition and update to the next state.
+tags:
+  - theory-of-computation
+  - finite-state-machine
+  - execution
+difficulty: 2

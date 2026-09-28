@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: toc.regular-languages.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: This code prints whether the string 010 matches the regular expression 0(0|1)*. Choose the result.
+language: python
+code: |-
+  word = "010"
+  accepts = word.startswith("0") and all(symbol in "01" for symbol in word[1:])
+  print(accepts)
+choices:
+  - "True"
+  - "False"
+  - "010"
+acceptedOutputs:
+  - "True"
+explanation:
+  - type: text
+    text: 010 starts with 0, and the remaining 10 contains only 0s and 1s, so it matches the pattern.
+tags:
+  - theory-of-computation
+  - regular-language
+  - trace
+difficulty: 2

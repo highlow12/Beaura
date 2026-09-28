@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.select.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of code that prints only the names of students that pass the WHERE condition."
+language: python
+code: |-
+  students = [
+      {"name": "Mina", "major": "CS"},
+      {"name": "Joon", "major": "Math"},
+      {"name": "Ara", "major": "CS"},
+  ]
+  result = [row["name"] for row in students if row["major"] == "CS"]
+  print(result)
+choices: ["['Mina', 'Ara']", "['Joon']", "['Mina', 'Joon', 'Ara']"]
+acceptedOutputs: ["['Mina', 'Ara']"]
+explanation:
+  - type: text
+    text: "The rows with major CS are Mina and Ara, so the list of names that pass the condition is ['Mina', 'Ara']. This code simplifies the SQL query SELECT name ... WHERE major = 'CS'."
+tags: [database, sql, select, code-output]
+difficulty: 2

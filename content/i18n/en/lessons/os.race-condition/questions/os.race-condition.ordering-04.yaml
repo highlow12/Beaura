@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.race-condition.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic race-condition steps in the correct order."
+items:
+  - id: read
+    content:
+      - type: text
+        text: "An execution flow reads shared state"
+  - id: interleave
+    content:
+      - type: text
+        text: "Another flow’s reads and writes interleave"
+  - id: race
+    content:
+      - type: text
+        text: "Different results are stored depending on the order"
+correctOrder: [read, interleave, race]
+explanation:
+  - type: text
+    text: "First, an execution flow reads shared state; then another flow’s reads and writes can interleave."
+  - type: text
+    text: "At the step where different results are stored depending on the order, the final result is passed to the next execution step."
+tags: [race-condition, concurrency, synchronization]
+difficulty: 3

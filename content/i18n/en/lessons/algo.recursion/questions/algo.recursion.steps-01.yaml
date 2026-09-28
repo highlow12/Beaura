@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.recursion.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Put the basic steps for designing a recursive function in order."
+items:
+- id: base
+  content:
+  - type: text
+    text: "Define the base case and its return value"
+- id: reduce
+  content:
+  - type: text
+    text: "Make the input smaller in the next call"
+- id: call
+  content:
+  - type: text
+    text: "Make a recursive call with the smaller input"
+- id: combine
+  content:
+  - type: text
+    text: "Combine the returned subproblem result with the current result"
+correctOrder:
+- base
+- reduce
+- call
+- combine
+explanation:
+- type: text
+  text: "First define the stopping condition, then call the function with a smaller input and combine the result when the call returns."
+tags:
+- recursion
+- base-case
+- execution-order
+difficulty: 2

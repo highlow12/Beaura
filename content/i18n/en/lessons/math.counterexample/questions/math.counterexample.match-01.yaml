@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.counterexample.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each statement type with the proof strategy it needs."
+leftItems:
+  - id: universal-false
+    content:
+      - type: text
+        text: "Show that a universal statement is false"
+  - id: universal-true
+    content:
+      - type: text
+        text: "Show that a universal statement is true"
+  - id: existential-true
+    content:
+      - type: text
+        text: "Show that an existential statement is true"
+  - id: example
+    content:
+      - type: text
+        text: "Calculate one example"
+rightItems:
+  - id: universal-false-desc
+    content:
+      - type: text
+        text: "Find one counterexample that satisfies the conditions"
+  - id: universal-true-desc
+    content:
+      - type: text
+        text: "Choose an arbitrary object and prove the claim generally"
+  - id: existential-true-desc
+    content:
+      - type: text
+        text: "Provide one witness that satisfies the conditions"
+  - id: example-desc
+    content:
+      - type: text
+        text: "Can give an idea, but does not guarantee a general conclusion"
+correctPairs:
+  - leftId: universal-false
+    rightId: universal-false-desc
+  - leftId: universal-true
+    rightId: universal-true-desc
+  - leftId: existential-true
+    rightId: existential-true-desc
+  - leftId: example
+    rightId: example-desc
+explanation:
+  - type: text
+    text: "A universal statement is disproved by one counterexample, proved by reasoning about an arbitrary object, and an existential statement is proved with one witness."
+  - type: text
+    text: "One example by itself does not prove a general statement."
+tags:
+  - discrete-math
+  - proof
+  - quantifiers
+difficulty: 3

@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.replication.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement best describes asynchronous replication?"
+options:
+  - id: lag
+    content:
+      - type: text
+        text: "The primary can respond first, but a replica may lag temporarily"
+  - id: zero-lag
+    content:
+      - type: text
+        text: "It never responds until every replica confirms the write"
+  - id: no-copy
+    content:
+      - type: text
+        text: "It does not copy data to other nodes"
+correctOptionId: lag
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Asynchronous replication can reduce latency because replica acknowledgments are not required before responding, but replication lag and the possibility of loss during a failure must be managed."
+tags: [database, replication, asynchronous]
+difficulty: 2

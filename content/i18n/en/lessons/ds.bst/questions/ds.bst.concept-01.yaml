@@ -1,0 +1,34 @@
+id: ds.bst.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What is the key invariant of a BST?"
+options:
+- id: order
+  content:
+  - type: text
+    text: "The rule that values to the left of each node are smaller and values to the right are larger"
+- id: complete
+  content:
+  - type: text
+    text: "The rule that every level is always completely filled"
+- id: hash
+  content:
+  - type: text
+    text: "The rule that every key is stored in the same bucket"
+- id: fifo
+  content:
+  - type: text
+    text: "The rule that the first value in is the first value out"
+correctOptionId: order
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A BST maintains value ordering between left and right subtrees. Completeness, hashing, and FIFO are not required BST rules."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- bst
+- search
+difficulty: 2

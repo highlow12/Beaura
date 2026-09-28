@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: arch.binary.bit-weight-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "If the fourth bit from the right is 1, what value does it represent? The rightmost bit has value 1."
+options:
+  - id: weight-8
+    content:
+      - type: text
+        text: '8'
+  - id: weight-4
+    content:
+      - type: text
+        text: '4'
+  - id: weight-16
+    content:
+      - type: text
+        text: '16'
+correctOptionId: weight-8
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The place values from the right are 1, 2, 4, and 8, so the fourth bit has value 8."
+tags:
+  - binary
+  - bits
+  - place-value
+difficulty: 1

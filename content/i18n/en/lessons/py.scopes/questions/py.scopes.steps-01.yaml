@@ -1,0 +1,36 @@
+id: py.scopes.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the flow of a function call and its scope."
+items:
+- id: call
+  content:
+  - type: text
+    text: "Call the function"
+- id: create
+  content:
+  - type: text
+    text: "Create a local scope for the call"
+- id: lookup
+  content:
+  - type: text
+    text: "Look for the name locally first"
+- id: return
+  content:
+  - type: text
+    text: "When the function ends, its local scope disappears along with its result"
+correctOrder:
+- call
+- create
+- lookup
+- return
+explanation:
+- type: text
+  text: "Each call creates a local scope, and names are searched there first. The local scope no longer exists after the function ends."
+schemaVersion: 1
+revision: 1
+tags:
+- functions
+- scope
+difficulty: 2

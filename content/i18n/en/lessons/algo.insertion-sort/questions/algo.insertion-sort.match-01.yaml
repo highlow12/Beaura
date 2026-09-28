@@ -1,0 +1,47 @@
+id: algo.insertion-sort.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each insertion-sort term with its meaning."
+leftItems:
+- id: key
+  content:
+  - type: text
+    text: "key"
+- id: prefix
+  content:
+  - type: text
+    text: "sorted prefix"
+- id: shift
+  content:
+  - type: text
+    text: "Shift"
+rightItems:
+- id: item
+  content:
+  - type: text
+    text: "The element to insert now"
+- id: invariant
+  content:
+  - type: text
+    text: "The prefix that is sorted before the iteration"
+- id: make-room
+  content:
+  - type: text
+    text: "The operation that moves a larger element one position to the right"
+correctPairs:
+- leftId: key
+  rightId: item
+- leftId: prefix
+  rightId: invariant
+- leftId: shift
+  rightId: make-room
+explanation:
+- type: text
+  text: "Shift larger elements to insert key into the sorted prefix."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- insertion-sort
+difficulty: 2

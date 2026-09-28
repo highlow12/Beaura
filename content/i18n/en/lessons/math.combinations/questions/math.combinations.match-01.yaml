@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.combinations.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each permutation or combination expression to the appropriate situation."
+leftItems:
+  - id: npr
+    content:
+      - type: text
+        text: "nPr"
+  - id: ncr
+    content:
+      - type: text
+        text: "nCr"
+  - id: role
+    content:
+      - type: text
+        text: "Choose a president and vice president"
+  - id: team
+    content:
+      - type: text
+        text: "Choose two team members"
+rightItems:
+  - id: npr-desc
+    content:
+      - type: text
+        text: "Select `r` items with order considered"
+  - id: ncr-desc
+    content:
+      - type: text
+        text: "Select `r` items without regard to order"
+  - id: role-desc
+    content:
+      - type: text
+        text: "A permutation because the roles differ"
+  - id: team-desc
+    content:
+      - type: text
+        text: "A combination because the roles are the same"
+correctPairs:
+  - leftId: npr
+    rightId: npr-desc
+  - leftId: ncr
+    rightId: ncr-desc
+  - leftId: role
+    rightId: role-desc
+  - leftId: team
+    rightId: team-desc
+explanation:
+  - type: text
+    text: "Even with the same set of objects, use a permutation when roles or positions make order matter, and a combination when they do not."
+  - type: text
+    text: "First ask whether swapping the order changes the outcome."
+tags:
+  - discrete-math
+  - combinatorics
+  - comparison
+difficulty: 2

@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: algo.prim.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Put one Prim expansion step in order."
+items:
+- id: mark
+  content:
+  - type: text
+    text: "Mark the current vertex as part of the tree"
+- id: push
+  content:
+  - type: text
+    text: "Add boundary edges leaving the current vertex to the heap"
+- id: pop
+  content:
+  - type: text
+    text: "Remove the lightest edge from the heap"
+- id: add
+  content:
+  - type: text
+    text: "If the vertex is new, add the edge and vertex to the tree"
+correctOrder:
+- mark
+- push
+- pop
+- add
+explanation:
+- type: text
+  text: "Mark a new vertex as visited and expand the boundary. Select the next minimum candidate when it points to an outside vertex."
+tags:
+- graph
+- mst
+- prim
+- execution-order
+difficulty: 2

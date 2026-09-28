@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.probability.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each probability term with its description."
+leftItems:
+  - id: space
+    content:
+      - type: text
+        text: "Sample space Ω"
+  - id: event
+    content:
+      - type: text
+        text: "Event A"
+  - id: complement
+    content:
+      - type: text
+        text: "Complement Aᶜ"
+  - id: probability
+    content:
+      - type: text
+        text: "P(A)"
+rightItems:
+  - id: space-desc
+    content:
+      - type: text
+        text: "The set of all possible outcomes"
+  - id: event-desc
+    content:
+      - type: text
+        text: "A subset of outcomes of interest"
+  - id: complement-desc
+    content:
+      - type: text
+        text: "The set of outcomes where A does not occur"
+  - id: probability-desc
+    content:
+      - type: text
+        text: "A value that represents the likelihood of an event"
+correctPairs:
+  - leftId: space
+    rightId: space-desc
+  - leftId: event
+    rightId: event-desc
+  - leftId: complement
+    rightId: complement-desc
+  - leftId: probability
+    rightId: probability-desc
+explanation:
+  - type: text
+    text: "Representing the sample space and event as sets makes it clear what to count in the numerator and in the full sample space."
+  - type: text
+    text: "The complement rule is especially useful when the probability of failure is easier to calculate than that of a complicated event."
+tags:
+  - probability-statistics
+  - probability
+  - terminology
+difficulty: 2

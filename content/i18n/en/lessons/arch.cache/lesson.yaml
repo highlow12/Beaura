@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: arch.cache
+revision: 2
+track: computer-architecture
+title: Cache and Locality
+description: Distinguish cache in the memory hierarchy, temporal and spatial locality, and the causes of cache misses.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: arch.cache.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: arch.cache.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: arch.cache.fill-03
+  - type: question
+    ref: arch.cache.ordering-04
+  - type: question
+    ref: arch.cache.matching-05

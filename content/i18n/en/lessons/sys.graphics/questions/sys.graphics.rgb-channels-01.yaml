@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: sys.graphics.rgb-channels-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: What value results when 10 is added to each channel of the RGB value (10, 20, 30)?
+options:
+- id: option-0
+  content:
+  - type: text
+    text: (20, 30, 40)
+- id: option-1
+  content:
+  - type: text
+    text: (10, 20, 30)
+- id: option-2
+  content:
+  - type: text
+    text: (20, 30, 40, 50)
+correctOptionId: option-0
+shuffleOptions: true
+explanation:
+- type: text
+  text: Adding 10 to each channel gives red 20, green 30, and blue 40. The number of channels stays the same.
+tags:
+- graphics
+- rgb
+difficulty: 2

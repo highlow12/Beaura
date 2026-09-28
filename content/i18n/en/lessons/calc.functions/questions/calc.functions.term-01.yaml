@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: calc.functions.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "For a function f, the output corresponding to input x is written as f(___)."
+choices:
+  - "x"
+  - "f"
+  - "0"
+acceptedAnswers:
+  - "x"
+explanation:
+  - type: text
+    text: "In function notation f(x), the input is inside the parentheses."
+  - type: text
+    text: "f is the name of the rule, and x is the input variable."
+tags:
+  - calculus
+  - functions
+  - notation
+difficulty: 1

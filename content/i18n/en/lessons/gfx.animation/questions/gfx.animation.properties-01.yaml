@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.animation.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about animation interpolation."
+options:
+  - id: endpoints
+    content: [{ type: text, text: "In linear interpolation, t = 0 gives the starting value and t = 1 gives the ending value." }]
+  - id: easing
+    content: [{ type: text, text: "Easing can change the time fraction to control the feel of acceleration and deceleration." }]
+  - id: all-frames
+    content: [{ type: text, text: "Keyframe animation must store values directly for every displayed frame." }]
+  - id: rotation
+    content: [{ type: text, text: "For 3D rotation, simply linearly interpolating three numbers is always sufficient." }]
+correctOptionIds: [endpoints, easing]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Values between keyframes can be computed, and easing controls how time progresses. 3D rotations may require a dedicated interpolation method."
+tags: [graphics, animation, interpolation]
+difficulty: 3

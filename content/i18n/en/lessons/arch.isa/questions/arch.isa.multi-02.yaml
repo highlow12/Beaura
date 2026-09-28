@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.isa.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe instructions and the ISA."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "The opcode indicates the operation an instruction performs."
+  - id: correct-b
+    content:
+      - type: text
+        text: "CPUs that implement the same ISA can be machine-code compatible even if their microarchitectures differ."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "An operand always means only a network port number."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Changing the ISA has no effect on compilers or binary interpretation."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The opcode indicates the operation an instruction performs. CPUs that implement the same ISA can be machine-code compatible even if their microarchitectures differ."
+  - type: text
+    text: "Extending an ISA can add functionality, but it makes instruction decoders and compiler support more complex. A simple fixed format can make decoding and pipelining easier, but may limit expressiveness."
+tags: [isa, instruction, opcode]
+difficulty: 3

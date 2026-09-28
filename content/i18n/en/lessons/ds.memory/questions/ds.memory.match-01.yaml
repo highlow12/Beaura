@@ -1,0 +1,48 @@
+id: ds.memory.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each memory-representation term with its meaning."
+leftItems:
+- id: object
+  content:
+  - type: text
+    text: "Object"
+- id: reference
+  content:
+  - type: text
+    text: "Reference"
+- id: alias
+  content:
+  - type: text
+    text: "Alias"
+rightItems:
+- id: data
+  content:
+  - type: text
+    text: "The actual data structure that exists in memory"
+- id: access
+  content:
+  - type: text
+    text: "A link that provides access to an object"
+- id: shared
+  content:
+  - type: text
+    text: "Multiple names that point to the same object"
+correctPairs:
+- leftId: object
+  rightId: data
+- leftId: reference
+  rightId: access
+- leftId: alias
+  rightId: shared
+explanation:
+- type: text
+  text: "An object is the data itself, and a reference is a link for accessing it. When multiple names point to the same object, they are aliases."
+schemaVersion: 1
+revision: 1
+tags:
+- memory
+- representation
+- reference
+difficulty: 2

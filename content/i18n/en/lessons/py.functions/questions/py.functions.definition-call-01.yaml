@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: py.functions.definition-call-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for defining and calling a function, then printing the result."
+items:
+- id: define
+  content:
+  - type: code
+    language: python
+    code: |-
+      def add(left, right):
+          return left + right
+- id: call
+  content:
+  - type: code
+    language: python
+    code: |-
+      result = add(2, 3)
+- id: print
+  content:
+  - type: code
+    language: python
+    code: |-
+      print(result)
+correctOrder:
+- define
+- call
+- print
+explanation:
+- type: text
+  text: "First define what the function does, store the result of the call in a variable, and then print it."
+- type: text
+  text: "The definition must run before the call, and the return value can be used where the function is called."
+tags:
+- functions
+- execution-order
+difficulty: 2

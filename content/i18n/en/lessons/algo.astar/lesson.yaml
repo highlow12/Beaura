@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.astar
+revision: 2
+track: algorithms
+title: A* Pathfinding
+description: Learn how A* guides its search by combining the actual travel cost with the estimated cost to the goal.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.astar.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.astar.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.astar.steps-01
+- type: question
+  ref: algo.astar.complete-01
+- type: question
+  ref: algo.astar.trace-01

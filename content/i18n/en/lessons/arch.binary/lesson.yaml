@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: arch.binary
+revision: 2
+track: computer-architecture
+title: Binary Numbers and Bits
+description: Learn how computers represent values as combinations of 0 and 1 bits.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: arch.binary.base-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: arch.binary.unsigned-byte-01
+  - type: question
+    ref: arch.binary.hex-digit-01
+  - type: content
+    ref: content/place-value.md
+  - type: question
+    ref: arch.binary.to-decimal-01
+  - type: question
+    ref: arch.binary.bit-weight-01

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.transforms.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "This code prints a point's x-coordinate after a simple translation. Choose the output."
+language: python
+code: |-
+  point_x = 4
+  translation_x = -1
+  transformed_x = point_x + translation_x
+  print(transformed_x)
+choices: ["3", "5", "-4"]
+acceptedOutputs: ["3"]
+explanation:
+  - type: text
+    text: "Translation adds the offset to the point's coordinate, so 4 + (-1) = 3."
+tags: [graphics, transforms, translation, code-output]
+difficulty: 1

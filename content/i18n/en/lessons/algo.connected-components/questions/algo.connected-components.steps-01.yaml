@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.connected-components.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Put the steps for counting all connected components in order."
+items:
+- id: initialize
+  content:
+  - type: text
+    text: "Initialize visited and count"
+- id: scan
+  content:
+  - type: text
+    text: "Check the vertices one by one"
+- id: start
+  content:
+  - type: text
+    text: "If a vertex is unvisited, increment count and start a traversal"
+- id: repeat
+  content:
+  - type: text
+    text: "Repeat until every vertex has been checked"
+correctOrder:
+- initialize
+- scan
+- start
+- repeat
+explanation:
+- type: text
+  text: "Increment count only when you find the start of a new component. After each traversal finishes, the outer loop continues checking the remaining vertices."
+tags:
+- graph
+- connected-components
+- execution-order
+difficulty: 2

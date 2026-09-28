@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: py.functions.return-keyword-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Fill in the blank so the product of the two numbers is returned to the caller."
+language: python
+template: |-
+  def multiply(a, b):
+      {{blank:return-keyword}} a * b
+blanks:
+  - id: return-keyword
+    choices:
+      - return
+      - print
+      - def
+    acceptedAnswers:
+      - return
+explanation:
+  - type: text
+    text: "return sends the computed result back to the caller and ends the function."
+tags:
+  - functions
+  - return
+  - code-completion
+difficulty: 1

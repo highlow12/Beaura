@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: ds.stack.use-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which task is especially suitable for a stack?"
+options:
+- id: undo
+  content:
+  - type: text
+    text: "Undo edits starting with the most recent"
+- id: fifo
+  content:
+  - type: text
+    text: "Process customers in arrival order"
+- id: random
+  content:
+  - type: text
+    text: "Read a value at any position with the same cost"
+correctOptionId: undo
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Undo works well with a LIFO stack because it restores the most recent state first."
+- type: text
+  text: "A FIFO queue is better for tasks that must be processed in arrival order."
+tags:
+- stack
+- application
+difficulty: 1

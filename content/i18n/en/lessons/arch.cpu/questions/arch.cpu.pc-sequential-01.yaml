@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: arch.cpu.pc-sequential-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Every instruction is 4 bytes long, and the current PC points to 100. If execution continues to the next instruction without a jump, what is the next PC?"
+options:
+  - id: pc-104
+    content:
+      - type: text
+        text: '104'
+  - id: pc-100
+    content:
+      - type: text
+        text: '100'
+  - id: pc-96
+    content:
+      - type: text
+        text: '96'
+correctOptionId: pc-104
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Because each instruction is a fixed 4 bytes and execution is sequential, the next instruction is at 100 + 4 = 104."
+tags:
+  - cpu
+  - program-counter
+  - fetch
+difficulty: 2

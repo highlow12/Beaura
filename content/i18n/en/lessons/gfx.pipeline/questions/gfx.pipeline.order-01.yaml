@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: gfx.pipeline.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic steps for turning triangle vertices into screen colors in order."
+items:
+  - id: vertex-transform
+    content:
+      - type: text
+        text: "Transform the vertex positions"
+  - id: primitive
+    content:
+      - type: text
+        text: "Assemble the vertices into a triangle"
+  - id: rasterize
+    content:
+      - type: text
+        text: "Rasterize the triangle into screen samples"
+  - id: fragment-color
+    content:
+      - type: text
+        text: "Calculate the color for each sample"
+  - id: framebuffer
+    content:
+      - type: text
+        text: "Write the result to the framebuffer"
+correctOrder:
+  [vertex-transform, primitive, rasterize, fragment-color, framebuffer]
+explanation:
+  - type: text
+    text: "The vertices must be transformed and assembled into a shape before samples can be generated and shaded for writing to the framebuffer."
+tags: [graphics, pipeline, order]
+difficulty: 2

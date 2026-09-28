@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.filesystem.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic file, directory, and file-system steps in the correct order."
+items:
+  - id: resolve
+    content:
+      - type: text
+        text: "Follow directory entries in the path to locate the file"
+  - id: metadata
+    content:
+      - type: text
+        text: "Check the file’s permissions, size, and block information"
+  - id: io
+    content:
+      - type: text
+        text: "Read or write data blocks through the file descriptor"
+correctOrder: [resolve, metadata, io]
+explanation:
+  - type: text
+    text: "First, follow the directory entries in the path to locate the file; then use that result to check its permissions, size, and block information."
+  - type: text
+    text: "At the step where data blocks are read or written through the file descriptor, the final result is passed to the next execution step."
+tags: [filesystem, file, directory]
+difficulty: 3

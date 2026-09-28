@@ -1,0 +1,31 @@
+id: ds.deque.steps-01
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for performing an operation at either end of a deque."
+items:
+  - id: choose-operation
+    content:
+      - type: text
+        text: "Choose the end to use and whether to insert or remove"
+  - id: update
+    content:
+      - type: text
+        text: "Update the corresponding end of the deque for the selected operation"
+  - id: continue
+    content:
+      - type: text
+        text: "Process the next request at either end"
+correctOrder:
+  - choose-operation
+  - update
+  - continue
+explanation:
+  - type: text
+    text: "A deque operation specifies both the end and whether to insert or remove, then updates the state. Process the next operation for each request."
+schemaVersion: 1
+revision: 2
+tags:
+  - queue
+  - deque
+difficulty: 2

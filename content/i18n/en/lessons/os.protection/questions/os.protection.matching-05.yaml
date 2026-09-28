@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: os.protection.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each permissions and process-isolation term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "Read-only"
+  - id: left-b
+    content:
+      - type: text
+        text: "Privileged instruction"
+  - id: left-c
+    content:
+      - type: text
+        text: "Isolation"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "A page permission that blocks write access"
+  - id: right-b
+    content:
+      - type: text
+        text: "An instruction that can run only with kernel privileges"
+  - id: right-c
+    content:
+      - type: text
+        text: "The property of separating process resources and address spaces"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "Read-only is a page permission that blocks write access; a privileged instruction can run only with kernel privileges; isolation separates process resources and address spaces."
+tags: [protection, isolation, privilege]
+difficulty: 2

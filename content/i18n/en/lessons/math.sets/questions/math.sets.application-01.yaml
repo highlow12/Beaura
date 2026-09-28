@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: math.sets.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "If A={1,2,3} and B={3,4}, select all elements in A∪B."
+options:
+  - id: one
+    content:
+      - type: text
+        text: "1"
+  - id: two
+    content:
+      - type: text
+        text: "2"
+  - id: three
+    content:
+      - type: text
+        text: "3"
+  - id: four
+    content:
+      - type: text
+        text: "4"
+  - id: five
+    content:
+      - type: text
+        text: "5"
+correctOptionIds: [one, two, three, four]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The union collects without repetition the elements that belong to A, B, or both."
+  - type: text
+    text: "5 is in neither set, so it is not included."
+tags:
+  - discrete-math
+  - sets
+  - union
+difficulty: 1

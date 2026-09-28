@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.statistics.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for safely interpreting a correlation."
+items:
+  - id: plot
+    content:
+      - type: text
+        text: "Check the data and units for both variables"
+  - id: pattern
+    content:
+      - type: text
+        text: "Examine how they vary together using a scatterplot or summary statistics"
+  - id: confound
+    content:
+      - type: text
+        text: "Check for confounders and alternative explanations"
+  - id: claim
+    content:
+      - type: text
+        text: "State a conclusion about association, not causation"
+correctOrder:
+  - plot
+  - pattern
+  - confound
+  - claim
+explanation:
+  - type: text
+    text: "Review the data’s context and pattern, check alternative explanations, and draw a measured conclusion."
+  - type: text
+    text: "A correlation coefficient alone does not establish causation."
+tags:
+  - probability-statistics
+  - statistics
+  - correlation
+difficulty: 3

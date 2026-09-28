@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.shortest-path.relax-keep-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "If dist[u] = 4, edge u→v has weight 3, and the current dist[v] = 6, what is dist[v] after relaxation?"
+options:
+  - id: six
+    content:
+      - type: text
+        text: '6'
+  - id: seven
+    content:
+      - type: text
+        text: '7'
+  - id: three
+    content:
+      - type: text
+        text: '3'
+correctOptionId: six
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The new candidate 7 is not shorter than the current distance 6, so dist[v] remains 6."
+tags:
+  - shortest-path
+  - relaxation
+  - graph
+difficulty: 2

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.random-variables.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct conditions for a probability mass function."
+options:
+  - id: nonnegative
+    content:
+      - type: text
+        text: "Each probability is nonnegative"
+  - id: sum-one
+    content:
+      - type: text
+        text: "The probabilities of all possible values sum to 1"
+  - id: discrete
+    content:
+      - type: text
+        text: "It represents the probability of each discrete value"
+  - id: negative
+    content:
+      - type: text
+        text: "Some probabilities may be negative"
+correctOptionIds: [nonnegative, sum-one, discrete]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A PMF gives the probability of each value of a discrete random variable and must satisfy the probability axioms."
+  - type: text
+    text: "Negative probabilities are not allowed."
+tags:
+  - probability-statistics
+  - random-variables
+  - pmf
+difficulty: 1

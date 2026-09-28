@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.filesystem.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about files, directories, and file systems is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A file system manages file contents, metadata, and the directory namespace on storage devices."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A file system records only CPU instruction-pipeline stages."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A directory name alone is enough; file block locations and permissions are unnecessary."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A file system manages file contents, metadata, and the directory namespace on storage devices."
+  - type: text
+    text: "A file system manages file-content blocks, metadata such as size, owner, and permissions, and the mappings from directory names to files. A directory is a special namespace that contains files."
+tags: [filesystem, file, directory]
+difficulty: 2

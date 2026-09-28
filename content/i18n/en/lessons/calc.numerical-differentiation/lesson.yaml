@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.numerical-differentiation
+revision: 2
+track: calculus
+title: "Numerical Differentiation"
+description: "Approximate derivatives from a table of function values using finite differences and understand the errors."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: calc.numerical-differentiation.definition-01
+  - type: question
+    ref: calc.numerical-differentiation.application-01
+  - type: content
+    ref: content/connection.md
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: calc.numerical-differentiation.term-01
+  - type: question
+    ref: calc.numerical-differentiation.steps-01
+  - type: question
+    ref: calc.numerical-differentiation.match-01

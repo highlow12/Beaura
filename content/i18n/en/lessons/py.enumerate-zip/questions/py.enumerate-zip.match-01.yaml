@@ -1,0 +1,48 @@
+id: py.enumerate-zip.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match the roles of enumerate and zip."
+leftItems:
+- id: enumerate
+  content:
+  - type: text
+    text: "enumerate(items)"
+- id: zip
+  content:
+  - type: text
+    text: "zip(names, scores)"
+- id: index
+  content:
+  - type: text
+    text: "index"
+rightItems:
+- id: position
+  content:
+  - type: text
+    text: "Iterates over indexes and items together"
+- id: parallel
+  content:
+  - type: text
+    text: "Pairs sequences at the same positions"
+- id: location
+  content:
+  - type: text
+    text: "A position in a sequence"
+correctPairs:
+- leftId: enumerate
+  rightId: position
+- leftId: zip
+  rightId: parallel
+- leftId: index
+  rightId: location
+explanation:
+- type: text
+  text: "enumerate adds positions, zip pairs items at the same positions in multiple sequences, and index is the position number itself."
+schemaVersion: 1
+revision: 1
+tags:
+- iteration
+- enumerate
+- zip
+difficulty: 2

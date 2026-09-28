@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.mutex.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about mutexes and critical sections is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A mutex is a lock that allows only one execution flow at a time to enter a protected critical section."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A mutex is a scheduler that runs every thread simultaneously."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A mutex is a memory device that preserves data when the power is off."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A mutex is a lock that allows only one execution flow at a time to enter a protected critical section."
+  - type: text
+    text: "A mutex provides mutual exclusion. Once an execution flow acquires the lock, no other flow can enter the same critical section until it is unlocked."
+tags: [mutex, lock, critical-section]
+difficulty: 2

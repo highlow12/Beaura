@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.sequential.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about sequential circuits and flip-flops is the most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A flip-flop stores an input at a specified time on the clock and holds that state until the next time."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A flip-flop immediately stores every past value whenever the input changes."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A sequential circuit’s output is always determined only by its current inputs."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A flip-flop stores an input at a specified time on the clock and holds that state until the next time."
+  - type: text
+    text: "A sequential circuit’s output depends on both its current inputs and its internal state. A flip-flop stores one bit of state and accepts a new input on a specific clock edge."
+tags: [sequential-circuit, flip-flop, clock]
+difficulty: 2

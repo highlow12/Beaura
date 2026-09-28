@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.abstraction-dependencies.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: The principle that makes high-level policies and low-level implementations depend on a shared interface is called dependency ___.
+choices:
+  - inversion
+  - locking
+  - duplication
+acceptedAnswers:
+  - inversion
+explanation:
+  - type: text
+    text: Dependency inversion reverses the direction in which implementation details would otherwise drive policy, so both sides depend on an abstraction.
+tags:
+  - software-engineering
+  - dependency-inversion
+  - abstraction
+difficulty: 1

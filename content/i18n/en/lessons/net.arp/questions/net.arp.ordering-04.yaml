@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: net.arp.ordering-04
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: Arrange the basic ARP and local address resolution steps in the correct order.
+items:
+- id: broadcast
+  content:
+  - type: text
+    text: Broadcast an ARP request containing the IP address on the local link
+- id: reply
+  content:
+  - type: text
+    text: The device with that IP replies with its MAC address
+- id: cache
+  content:
+  - type: text
+    text: Store the IP-to-MAC mapping and send the frame
+correctOrder:
+- broadcast
+- reply
+- cache
+explanation:
+- type: text
+  text: First, an ARP request containing the IP address is broadcast on the local link; the device with that IP then replies
+    with its MAC address.
+- type: text
+  text: After storing the IP-to-MAC mapping, the host sends the frame. The result is then delivered to the next network layer
+    or the application.
+tags:
+- arp
+- ipv4
+- mac
+difficulty: 3

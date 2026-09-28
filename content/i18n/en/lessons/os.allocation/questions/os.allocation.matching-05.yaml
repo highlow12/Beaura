@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: os.allocation.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each stack, heap, and memory-allocation term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "Stack"
+  - id: left-b
+    content:
+      - type: text
+        text: "Heap"
+  - id: left-c
+    content:
+      - type: text
+        text: "Fragmentation"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "A region that manages call frames automatically"
+  - id: right-b
+    content:
+      - type: text
+        text: "A region that stores dynamically allocated objects"
+  - id: right-c
+    content:
+      - type: text
+        text: "A state where free space is split into pieces and difficult to use"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "The stack automatically manages call frames; the heap stores dynamically allocated objects; fragmentation occurs when free space is split into pieces and becomes difficult to use."
+tags: [memory-allocation, stack, heap]
+difficulty: 2

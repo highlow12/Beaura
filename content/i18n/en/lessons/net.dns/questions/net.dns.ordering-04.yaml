@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: net.dns.ordering-04
+revision: 2
+type: ordering
+prompt:
+- type: text
+  text: Arrange the steps for resolving a DNS name after a cache miss.
+items:
+- id: cache
+  content:
+  - type: text
+    text: First check the local and recursive caches for the name
+- id: delegate
+  content:
+  - type: text
+    text: Follow referrals to the root, TLD, and authoritative servers
+- id: answer
+  content:
+  - type: text
+    text: Receive the IP record and cache it with its TTL
+correctOrder:
+- cache
+- delegate
+- answer
+explanation:
+- type: text
+  text: First, check the local and recursive caches for the name; if it is not found, follow referrals to the root, TLD, and
+    authoritative servers.
+- type: text
+  text: After receiving the IP record, cache it with its TTL. The result is then passed to the next network layer or the application.
+tags:
+- dns
+- name-resolution
+- cache
+difficulty: 3

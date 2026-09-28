@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.homogeneous
+revision: 3
+track: computer-graphics
+title: "Homogeneous Coordinates"
+description: "Understand how homogeneous coordinates express translation and perspective projection within a unified matrix pipeline."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.homogeneous.affine-01
+  - type: question
+    ref: gfx.homogeneous.divide-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/point-direction.md
+  - type: question
+    ref: gfx.homogeneous.match-01
+  - type: question
+    ref: gfx.homogeneous.output-01
+  - type: question
+    ref: gfx.homogeneous.complete-01

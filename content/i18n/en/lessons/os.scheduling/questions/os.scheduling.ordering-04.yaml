@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.scheduling.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic CPU-scheduling steps in the correct order."
+items:
+  - id: queue
+    content:
+      - type: text
+        text: "Put runnable tasks in the ready queue"
+  - id: slice
+    content:
+      - type: text
+        text: "Determine time slices or priorities according to the policy"
+  - id: preempt
+    content:
+      - type: text
+        text: "If needed, stop the current task and run the next one"
+correctOrder: [queue, slice, preempt]
+explanation:
+  - type: text
+    text: "First, put runnable tasks in the ready queue; then calculate time slices or priorities according to the scheduling policy."
+  - type: text
+    text: "At the step where the current task is stopped if needed and the next one runs, the final result is passed to the next execution step."
+tags: [scheduling, cpu, fairness]
+difficulty: 3

@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.coordinates.clip-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the coordinate space used just before determining whether a vertex can be visible on screen."
+choices: ["clip space", "model space", "audio space"]
+acceptedAnswers: ["clip space"]
+explanation:
+  - type: text
+    text: "Clip space is where projected coordinates are tested against the visible volume for clipping. Model space is the earlier local space."
+tags: [graphics, coordinates, clipping]
+difficulty: 1

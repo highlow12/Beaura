@@ -1,0 +1,33 @@
+id: ds.graph-representation.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "How does an adjacency list represent a graph?"
+options:
+- id: neighbors
+  content:
+  - type: text
+    text: "Store a list of neighboring vertices for each vertex"
+- id: all-pairs
+  content:
+  - type: text
+    text: "Always store every pair of vertices in every cell of a table"
+- id: stack
+  content:
+  - type: text
+    text: "Store only one vertex in last-in order"
+- id: sorted
+  content:
+  - type: text
+    text: "Store edges only in order of value"
+correctOptionId: neighbors
+shuffleOptions: true
+explanation:
+- type: text
+  text: "An adjacency list stores a neighbor list for each vertex. An adjacency matrix represents connections between every pair of vertices in a table."
+schemaVersion: 1
+revision: 1
+tags:
+- graph
+- representation
+difficulty: 2

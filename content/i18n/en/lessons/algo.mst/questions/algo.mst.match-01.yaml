@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.mst.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each MST term with its description."
+leftItems:
+- id: spanning-tree
+  content:
+  - type: text
+    text: "Spanning tree"
+- id: cut
+  content:
+  - type: text
+    text: "cut"
+- id: safe-edge
+  content:
+  - type: text
+    text: "Safe edge"
+rightItems:
+- id: all-vertices
+  content:
+  - type: text
+    text: "A tree that connects every vertex without cycles"
+- id: partition
+  content:
+  - type: text
+    text: "A boundary that divides the vertex set into two groups"
+- id: light-crossing
+  content:
+  - type: text
+    text: "The minimum-weight edge crossing the boundary"
+correctPairs:
+- leftId: spanning-tree
+  rightId: all-vertices
+- leftId: cut
+  rightId: partition
+- leftId: safe-edge
+  rightId: light-crossing
+explanation:
+- type: text
+  text: "The lightest edge crossing a cut can be a safe choice for building an MST."
+tags:
+- graph
+- mst
+- cut-property
+difficulty: 2

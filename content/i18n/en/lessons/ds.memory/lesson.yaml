@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.memory
+revision: 1
+track: data-structures
+title: Memory and Data Representation
+description: Understand data-structure representations through how objects and references are connected in memory.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.memory.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.memory.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.memory.complete-01
+- type: question
+  ref: ds.memory.steps-01
+- type: question
+  ref: ds.memory.match-01

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.transforms.types-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each geometric transform with its effect."
+leftItems:
+  - id: translation
+    content:
+      - type: text
+        text: "Translation"
+  - id: rotation
+    content:
+      - type: text
+        text: "Rotation"
+  - id: scale
+    content:
+      - type: text
+        text: "Scaling"
+rightItems:
+  - id: position
+    content:
+      - type: text
+        text: "Move the position elsewhere"
+  - id: angle
+    content:
+      - type: text
+        text: "Change orientation around a reference point"
+  - id: length
+    content:
+      - type: text
+        text: "Increase or decrease length along an axis"
+correctPairs:
+  - leftId: translation
+    rightId: position
+  - leftId: rotation
+    rightId: angle
+  - leftId: scale
+    rightId: length
+explanation:
+  - type: text
+    text: "Translation, rotation, and scaling change different geometric properties: position, orientation, and length."
+tags: [graphics, transforms]
+difficulty: 1

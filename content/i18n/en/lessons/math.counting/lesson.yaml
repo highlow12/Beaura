@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.counting
+revision: 3
+track: discrete-math
+title: "Sum Rule and Product Rule"
+description: "Count mutually exclusive choices and sequential choices using addition and multiplication."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.counting.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.counting.application-01
+  - type: content
+    ref: content/decision-tree.md
+  - type: question
+    ref: math.counting.term-01
+  - type: question
+    ref: math.counting.steps-01
+  - type: question
+    ref: math.counting.match-01

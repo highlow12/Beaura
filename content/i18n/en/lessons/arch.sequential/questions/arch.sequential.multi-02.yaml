@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.sequential.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe sequential circuits and flip-flops."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Grouping multiple flip-flops creates a register that stores multiple bits."
+  - id: correct-b
+    content:
+      - type: text
+        text: "A sequential circuit has internal state in addition to its current inputs."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A clock is not needed in sequential circuits."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A flip-flop permanently retains a stored value even when power is turned off."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Grouping multiple flip-flops creates a register that stores multiple bits. A sequential circuit has internal state in addition to its current inputs."
+  - type: text
+    text: "A shorter clock period allows state to update more often, but leaves less time for signals to settle and less power and timing margin. Violating setup or hold requirements can store an incorrect state."
+tags: [sequential-circuit, flip-flop, clock]
+difficulty: 3

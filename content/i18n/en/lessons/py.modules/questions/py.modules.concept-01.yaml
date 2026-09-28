@@ -1,0 +1,33 @@
+id: py.modules.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "Which statement best describes a module and import?"
+options:
+- id: file
+  content:
+  - type: text
+    text: "Importing a file of reusable Python code and using its namespace"
+- id: loop
+  content:
+  - type: text
+    text: "Automatically running the code in every file repeatedly"
+- id: type
+  content:
+  - type: text
+    text: "A conversion function that turns a string into a number"
+- id: comment
+  content:
+  - type: text
+    text: "A file containing statements that are never executed"
+correctOptionId: file
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A module is a unit of code in a Python file, and import makes names from that module available to the current code."
+schemaVersion: 1
+revision: 1
+tags:
+- modules
+- import
+difficulty: 2

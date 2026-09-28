@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.recursive-descent.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: What is a typical design for a recursive-descent parser?
+options:
+  - id: function-per-nonterminal
+    content:
+      - type: text
+        text: Define one parsing function for each grammar nonterminal.
+  - id: token-per-function
+    content:
+      - type: text
+        text: Create one operating-system thread for each character.
+  - id: execute-source
+    content:
+      - type: text
+        text: Execute source code immediately without checking tokens.
+  - id: random-grammar
+    content:
+      - type: text
+        text: Choose grammar rules randomly on each call.
+correctOptionId: function-per-nonterminal
+shuffleOptions: true
+explanation:
+  - type: text
+    text: Functions for nonterminals call the functions for lower-level rules and consume tokens, reflecting the grammar's top-down structure in code.
+tags:
+  - programming-languages
+  - parser
+  - recursive-descent
+difficulty: 1

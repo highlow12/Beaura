@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.language.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each formal-language term with its description.
+leftItems:
+  - id: alphabet
+    content:
+      - type: text
+        text: Alphabet Σ
+  - id: string
+    content:
+      - type: text
+        text: String
+  - id: language
+    content:
+      - type: text
+        text: Language L
+rightItems:
+  - id: symbols
+    content:
+      - type: text
+        text: Finite set of available symbols
+  - id: sequence
+    content:
+      - type: text
+        text: Finite sequence of symbols
+  - id: subset
+    content:
+      - type: text
+        text: Set whose elements are strings
+correctPairs:
+  - leftId: alphabet
+    rightId: symbols
+  - leftId: string
+    rightId: sequence
+  - leftId: language
+    rightId: subset
+explanation:
+  - type: text
+    text: A language is a set of strings, and the available symbols for those strings are first specified by the alphabet.
+tags:
+  - theory-of-computation
+  - alphabet
+  - string
+difficulty: 1

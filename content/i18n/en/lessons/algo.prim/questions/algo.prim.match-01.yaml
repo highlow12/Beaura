@@ -1,0 +1,49 @@
+schemaVersion: 1
+id: algo.prim.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each part of Prim’s algorithm with its role."
+leftItems:
+- id: visited
+  content:
+  - type: text
+    text: "visited"
+- id: frontier
+  content:
+  - type: text
+    text: "Boundary edge"
+- id: min-heap
+  content:
+  - type: text
+    text: "Min-heap"
+rightItems:
+- id: tree-members
+  content:
+  - type: text
+    text: "Mark vertices already in the tree"
+- id: crossing
+  content:
+  - type: text
+    text: "Connect the tree to an outside vertex"
+- id: choose-light
+  content:
+  - type: text
+    text: "Remove the lowest-weight candidate first"
+correctPairs:
+- leftId: visited
+  rightId: tree-members
+- leftId: frontier
+  rightId: crossing
+- leftId: min-heap
+  rightId: choose-light
+explanation:
+- type: text
+  text: "Use the visited set to identify new vertices and a min-heap to choose the lightest boundary edge."
+tags:
+- graph
+- mst
+- prim
+- priority-queue
+difficulty: 2

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.functional-dependency.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe applying functional dependencies in a design."
+options:
+  - id: rule
+    content:
+      - type: text
+        text: "Functional dependencies should be based on business rules, not just a data sample"
+  - id: redundancy
+    content:
+      - type: text
+        text: "Repeatedly storing an attribute determined by part of a key can cause update anomalies"
+  - id: key-link
+    content:
+      - type: text
+        text: "A candidate key is related to a minimal attribute set that determines all attributes"
+  - id: reverse-always
+    content:
+      - type: text
+        text: "If X → Y, then Y → X always holds"
+correctOptionIds: [rule, redundancy, key-link]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Functional dependencies are domain rules, and redundancy from partial determination motivates normalization. The direction of the arrow does not reverse automatically."
+tags: [database, functional-dependency, normalization]
+difficulty: 3

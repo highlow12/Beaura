@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.ethernet.single-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which statement about Ethernet frames is most accurate?
+options:
+- id: correct
+  content:
+  - type: text
+    text: An Ethernet frame uses MAC addresses to carry a higher-layer packet across the same link.
+- id: wrong-a
+  content:
+  - type: text
+    text: An Ethernet MAC address is a routing table that calculates paths around the world.
+- id: wrong-b
+  content:
+  - type: text
+    text: An Ethernet frame is a transport-layer unit that contains only TCP sequence numbers and retransmissions.
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+- type: text
+  text: An Ethernet frame uses MAC addresses to carry a higher-layer packet across the same link.
+- type: text
+  text: Ethernet is a link-layer protocol that uses frames and MAC addresses. A frame contains destination and source MAC
+    addresses, a higher-layer packet, and error-checking information.
+tags:
+- ethernet
+- mac
+- link-layer
+difficulty: 1

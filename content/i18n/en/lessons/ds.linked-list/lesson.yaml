@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.linked-list
+revision: 2
+track: data-structures
+title: Singly Linked Lists
+description: Learn traversal and insertion in a singly linked list, where each node’s next reference points in one direction.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.linked-list.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.linked-list.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.linked-list.complete-01
+- type: question
+  ref: ds.linked-list.steps-01
+- type: question
+  ref: ds.linked-list.match-01

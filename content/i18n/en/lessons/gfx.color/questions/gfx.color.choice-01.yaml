@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.color.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Why is linear color space generally used for lighting and color-blending calculations?"
+options:
+  - id: light-meaning
+    content:
+      - type: text
+        text: "Channel arithmetic can then be interpreted more directly as combining light intensities."
+  - id: more-channels
+    content:
+      - type: text
+        text: "Because it automatically increases the number of RGB channels."
+  - id: no-conversion
+    content:
+      - type: text
+        text: "Because all images already contain linear values."
+correctOptionId: light-meaning
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "sRGB values may be nonlinearly encoded, so averaging them directly does not represent combining physical light intensities. Linearizing them first makes the calculation meaningful."
+tags: [graphics, color, linear-space]
+difficulty: 2

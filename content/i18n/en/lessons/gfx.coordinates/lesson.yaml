@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.coordinates
+revision: 2
+track: computer-graphics
+title: "Graphics Coordinate Spaces"
+description: "Distinguish the roles of model, world, view, and clip spaces as a scene is transformed for display."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.coordinates.spaces-01
+  - type: question
+    ref: gfx.coordinates.match-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/space-trace.md
+  - type: question
+    ref: gfx.coordinates.clip-01
+  - type: question
+    ref: gfx.coordinates.output-01
+  - type: question
+    ref: gfx.coordinates.view-complete-01

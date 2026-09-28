@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.concepts.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each database term with its role."
+leftItems:
+  - id: database
+    content:
+      - type: text
+        text: "Database"
+  - id: dbms
+    content:
+      - type: text
+        text: "DBMS"
+  - id: schema
+    content:
+      - type: text
+        text: "Schema"
+rightItems:
+  - id: organized-data
+    content:
+      - type: text
+        text: "A collection of data stored according to rules"
+  - id: manager
+    content:
+      - type: text
+        text: "Software that manages queries, storage, and recovery"
+  - id: structure
+    content:
+      - type: text
+        text: "A definition that describes data structures and constraints"
+correctPairs:
+  - leftId: database
+    rightId: organized-data
+  - leftId: dbms
+    rightId: manager
+  - leftId: schema
+    rightId: structure
+explanation:
+  - type: text
+    text: "A database is the stored data, a DBMS is the software that manages it, and a schema is the contract for its structure."
+tags: [database, dbms, schema]
+difficulty: 1

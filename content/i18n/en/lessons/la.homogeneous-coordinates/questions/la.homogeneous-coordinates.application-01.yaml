@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.homogeneous-coordinates.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about homogeneous coordinates."
+options:
+  - id: translation
+    content:
+      - type: text
+        text: "Translation can be represented as a matrix multiplication"
+  - id: point-w
+    content:
+      - type: text
+        text: "A point usually has `w = 1`"
+  - id: direction-w
+    content:
+      - type: text
+        text: "A direction vector usually has `w = 0`"
+  - id: no-order
+    content:
+      - type: text
+        text: "The order of multiplying transform matrices does not affect the result"
+correctOptionIds: [translation, point-w, direction-w]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Homogeneous coordinates distinguish points and directions by their `w` values, allowing translation to be included in composed transforms."
+  - type: text
+    text: "Matrix multiplication is generally noncommutative, so transform order matters."
+tags:
+  - linear-algebra
+  - coordinates
+  - transformation
+difficulty: 2

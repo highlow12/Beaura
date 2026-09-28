@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.vector-space.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all properties required for a set to be a basis."
+options:
+  - id: span
+    content:
+      - type: text
+        text: "Spans the entire space"
+  - id: independent
+    content:
+      - type: text
+        text: "Is linearly independent"
+  - id: duplicate
+    content:
+      - type: text
+        text: "Must be parallel to every coordinate axis"
+  - id: infinite
+    content:
+      - type: text
+        text: "Must contain infinitely many vectors"
+correctOptionIds: [span, independent]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A basis is a minimal spanning set that covers the space without unnecessary redundancy."
+  - type: text
+    text: "A basis can have different forms, and a finite-dimensional space has a finite number of basis vectors."
+tags:
+  - linear-algebra
+  - space
+  - linear-independence
+difficulty: 2

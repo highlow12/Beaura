@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.depth.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose which value is typically used to clear the depth buffer at the start of a frame for opaque-surface depth testing."
+choices: ["far", "near", "an arbitrary color"]
+acceptedAnswers: ["far"]
+explanation:
+  - type: text
+    text: "When smaller depth values are treated as closer, initialize to far so the first fragment can pass."
+tags: [graphics, depth-buffer, clear]
+difficulty: 2

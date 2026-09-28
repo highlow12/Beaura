@@ -1,0 +1,49 @@
+schemaVersion: 1
+id: algo.kruskal.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each Kruskal data structure or operation with its role."
+leftItems:
+- id: edge-sort
+  content:
+  - type: text
+    text: "Sort the edges"
+- id: find
+  content:
+  - type: text
+    text: "find"
+- id: union
+  content:
+  - type: text
+    text: "union"
+rightItems:
+- id: weight-order
+  content:
+  - type: text
+    text: "Consider the edges from lowest weight to highest"
+- id: representative
+  content:
+  - type: text
+    text: "Find the representative of the group containing a vertex"
+- id: merge
+  content:
+  - type: text
+    text: "Merge two different groups"
+correctPairs:
+- leftId: edge-sort
+  rightId: weight-order
+- leftId: find
+  rightId: representative
+- leftId: union
+  rightId: merge
+explanation:
+- type: text
+  text: "Select the edge and call union only when its endpoints have different representatives."
+tags:
+- graph
+- mst
+- kruskal
+- union-find
+difficulty: 2

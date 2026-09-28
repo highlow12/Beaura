@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: py.io.int-input-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Choose the function for the blank that converts the entered age to an integer and stores it in age."
+language: python
+template: |-
+  age = {{blank:converter}}(input("나이: "))
+blanks:
+  - id: converter
+    choices:
+      - int
+      - str
+      - bool
+    acceptedAnswers:
+      - int
+explanation:
+  - type: text
+    text: "Because `input()` returns a `str`, wrap it with `int()` to convert it to an integer before doing arithmetic."
+tags:
+  - io
+  - input
+  - int
+  - code-completion
+difficulty: 2

@@ -1,0 +1,24 @@
+id: ds.adt.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the blank that represents the operation for placing a value on top of a stack."
+language: python
+template: stack.{{blank:operation}}("A")
+blanks:
+- id: operation
+  choices:
+  - append
+  - pop
+  - peek
+  acceptedAnswers:
+  - append
+explanation:
+- type: text
+  text: "To implement the ADT’s push with a Python list, use append to add to the end. The list’s pop removes a value from the end."
+schemaVersion: 1
+revision: 2
+tags:
+- adt
+- interface
+difficulty: 2

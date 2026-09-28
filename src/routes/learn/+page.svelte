@@ -25,6 +25,8 @@
     layoutCurriculumDag,
     type DagLayout,
   } from "$lib/curriculum/dag-layout";
+  import { locale, t } from "$lib/application/locale";
+  const tr = (korean: string, english: string) => t(korean, english, $locale);
 
   type SwipeStart = { pointerId: number; x: number; y: number };
   type PrerequisiteItem = {
@@ -80,6 +82,16 @@
       default:
         return "[]";
     }
+  }
+
+  function statusLabel(status: keyof typeof statusLabels): string {
+    const translations = {
+      completed: "Complete",
+      locked: "Prerequisite required",
+      "in-progress": "In progress",
+      available: "Ready to start",
+    } as const;
+    return t(statusLabels[status], translations[status], $locale);
   }
 
   let tracks = $derived(
@@ -475,39 +487,39 @@
   onscroll={() => dismissLessonPopover()}
 />
 
-<svelte:head><title>학습 경로 | Beaura</title></svelte:head>
+<svelte:head><title>{tr("학습 경로", "Learning path")} | Beaura</title></svelte:head>
 
 <div class="stack">
   <div class="page-heading">
-    <span class="page-kicker">학습 경로 / {tracks.length || "—"}개 트랙</span>
-    <h1>학습 경로</h1>
+    <span class="page-kicker">{tr("학습 경로", "LEARNING PATH")} / {tracks.length || "—"}{tr("개 트랙", tracks.length === 1 ? " track" : " tracks")}</span>
+    <h1>{tr("학습 경로", "Learning path")}</h1>
     <p class="muted">
-      Python에서 자료구조로, 컴퓨터 구조에서 네트워크와 그래픽스로.
+      {tr("Python에서 자료구조로, 컴퓨터 구조에서 네트워크와 그래픽스로.", "From Python to data structures, and from computer architecture to networks and graphics.")}
     </p>
   </div>
 
   {#if error}
     <div class="card error" role="alert">
-      {error}<button class="button secondary" onclick={load}>다시 시도</button>
+      {error}<button class="button secondary" onclick={load}>{tr("다시 시도", "Try again")}</button>
     </div>
   {:else if !data}
-    <p class="card" role="status">학습 경로를 불러오는 중입니다…</p>
+    <p class="card" role="status">{tr("학습 경로를 불러오는 중입니다…", "Loading the learning path…")}</p>
   {:else if !tracks.length}
     <section class="card" role="status">
-      <h2>아직 열린 학습 트랙이 없어요</h2>
-      <p class="muted">새 학습 콘텐츠가 준비되면 이곳에 트랙이 나타납니다.</p>
+      <h2>{tr("아직 열린 학습 트랙이 없어요", "No learning tracks are available yet")}</h2>
+      <p class="muted">{tr("새 학습 콘텐츠가 준비되면 이곳에 트랙이 나타납니다.", "Tracks will appear here when new learning content is ready.")}</p>
     </section>
   {:else if selectedTrack}
-    <section class="track-switcher" aria-label="학습 트랙">
-      <div class="track-navigation" role="group" aria-label="트랙 변경">
+    <section class="track-switcher" aria-label={tr("학습 트랙", "Learning tracks")}>
+      <div class="track-navigation" role="group" aria-label={tr("트랙 변경", "Change track")}>
         <button
           type="button"
           class="track-arrow"
-          aria-label="이전 트랙"
+          aria-label={tr("이전 트랙", "Previous track")}
           disabled={selectedTrackIndex <= 0}
           onclick={() => moveTrack("previous")}>←</button
         >
-        <div class="track-tabs" role="tablist" aria-label="열린 트랙">
+        <div class="track-tabs" role="tablist" aria-label={tr("열린 트랙", "Available tracks")}>
           {#each tracks as track}
             <button
               type="button"
@@ -526,7 +538,7 @@
         <button
           type="button"
           class="track-arrow"
-          aria-label="다음 트랙"
+          aria-label={tr("다음 트랙", "Next track")}
           disabled={selectedTrackIndex < 0 ||
             selectedTrackIndex >= tracks.length - 1}
           onclick={() => moveTrack("next")}>→</button
@@ -535,9 +547,9 @@
 
       {#if showSwipeHint}
         <div class="swipe-hint" role="note">
-          <span>좌우로 밀어서 열린 트랙을 바꿀 수 있어요.</span>
+          <span>{tr("좌우로 밀어서 열린 트랙을 바꿀 수 있어요.", "Swipe left or right to switch between available tracks.")}</span>
           <button type="button" class="hint-dismiss" onclick={dismissSwipeHint}
-            >알겠어요</button
+            >{tr("알겠어요", "Got it")}</button
           >
         </div>
       {/if}
@@ -545,7 +557,7 @@
       <div
         class="track-surface"
         role="region"
-        aria-label="스와이프로 트랙 변경"
+        aria-label={tr("스와이프로 트랙 변경", "Swipe to change tracks")}
         onpointerdown={handlePointerDown}
         onpointerup={handlePointerUp}
         onpointercancel={handlePointerCancel}
@@ -572,7 +584,7 @@
                   <div class="row">
                     <h2>{selectedTrack.title}</h2>
                     <span class="muted"
-                      >{completedLessonCount} / {selectedLessons.length} 완료</span
+                      >{completedLessonCount} / {selectedLessons.length} {tr("완료", "complete")}</span
                     >
                   </div>
                   {#if selectedTrack.description}<p class="muted">
@@ -588,23 +600,23 @@
             >
               <div class="dag-heading">
                 <div>
-                  <h3 id={`dag-title-${selectedTrack.id}`}>선행 관계</h3>
+                  <h3 id={`dag-title-${selectedTrack.id}`}>{tr("선행 관계", "Prerequisites")}</h3>
                   <p class="muted">
-                    위에서 아래로 갈수록 다음에 배울 수 있는 레슨입니다.
+                    {tr("위에서 아래로 갈수록 다음에 배울 수 있는 레슨입니다.", "Lessons you can take next appear farther down the graph.")}
                   </p>
                 </div>
-                <div class="dag-legend" aria-label="레슨 상태">
+                <div class="dag-legend" aria-label={tr("레슨 상태", "Lesson status")}>
                   <span
                     ><i class="legend-dot completed" aria-hidden="true">✓</i
-                    >완료</span
+                    >{tr("완료", "Complete")}</span
                   >
                   <span
                     ><i class="legend-dot in-progress" aria-hidden="true">●</i
-                    >학습 중</span
+                    >{tr("학습 중", "In progress")}</span
                   >
                   <span
                     ><i class="legend-dot available" aria-hidden="true">+</i
-                    >시작 가능</span
+                    >{tr("시작 가능", "Ready to start")}</span
                   >
                 </div>
               </div>
@@ -614,7 +626,7 @@
                   class="dag-scroll"
                   bind:this={dagScroll}
                   role="region"
-                  aria-label={`${selectedTrack.title} 레슨 DAG`}
+                  aria-label={`${selectedTrack.title} ${tr("레슨 DAG", "lesson graph")}`}
                   aria-describedby={`dag-help-${selectedTrack.id}`}
                 >
                   <div
@@ -674,7 +686,7 @@
                             class:locked={status === "locked"}
                             data-track={selectedTrack.id}
                             aria-pressed={lesson.id === selectedLesson?.id}
-                            aria-label={`${lesson.title}, ${statusLabels[status]}`}
+                            aria-label={`${lesson.title}, ${statusLabel(status)}`}
                             style={`--node-x: ${node.x}px; --node-y: ${node.y}px; --node-width: ${node.width}px; --node-height: ${node.height}px;`}
                             aria-describedby={lessonPopover?.lessonId ===
                             lesson.id
@@ -691,7 +703,7 @@
                             <span class="node-copy">
                               <strong>{lesson.title}</strong>
                               <span class="node-status"
-                                >{statusLabels[status]}</span
+                                >{statusLabel(status)}</span
                               >
                             </span>
                           </button>
@@ -702,8 +714,7 @@
                 </div>
               </div>
               <p id={`dag-help-${selectedTrack.id}`} class="dag-help muted">
-                선을 따라 선행 레슨과 다음 갈림길을 확인하세요. 넓은 그래프는
-                좌우로 움직일 수 있어요.
+                {tr("선을 따라 선행 레슨과 다음 갈림길을 확인하세요. 넓은 그래프는 좌우로 움직일 수 있어요.", "Follow the lines to see prerequisites and what branches come next. Scroll horizontally to explore a wide graph.")}
               </p>
             </section>
           </div>
@@ -724,13 +735,13 @@
     style={`--popover-left: ${lessonPopover.left}px; --popover-top: ${lessonPopover.top}px; --popover-arrow-left: ${lessonPopover.arrowLeft}px;`}
   >
     <span class:success={popoverStatus === "completed"} class="popover-status"
-      >{statusLabels[popoverStatus]}</span
+      >{statusLabel(popoverStatus)}</span
     >
     <strong id="lesson-popover-title">{popoverLesson.title}</strong>
     <p>{popoverLesson.description}</p>
     {#if lessonPopover.missingPrerequisites.length}
       <div class="popover-prerequisites">
-        <span>먼저 들어야 해요</span>
+        <span>{tr("먼저 들어야 해요", "Complete these first")}</span>
         <ul>
           {#each lessonPopover.missingPrerequisites as item}
             <li>
@@ -738,7 +749,7 @@
               <a
                 class="button secondary prerequisite-action"
                 href={`${base}/learn/${item.lessonId}`}
-                aria-label={`${item.lessonTitle} 레슨으로 바로가기`}>바로가기</a
+                aria-label={`${item.lessonTitle} ${tr("레슨으로 바로가기", "lesson, open")}`}>{tr("바로가기", "Open lesson")}</a
               >
             </li>
           {/each}
@@ -746,12 +757,12 @@
       </div>
     {/if}
     {#if lessonPopover.opensExternalTrack || lessonPopover.opensExternalLesson}
-      <div class="popover-unlocks" aria-label="완료 후 열리는 학습">
+      <div class="popover-unlocks" aria-label={tr("완료 후 열리는 학습", "Lessons unlocked on completion")}>
         {#if lessonPopover.opensExternalTrack}
-          <p>이 레슨을 완료하면 외부의 다른 트랙이 열립니다.</p>
+          <p>{tr("이 레슨을 완료하면 외부의 다른 트랙이 열립니다.", "Completing this lesson unlocks a track beyond this one.")}</p>
         {/if}
         {#if lessonPopover.opensExternalLesson}
-          <p>이 레슨을 완료하면 외부의 다른 레슨이 열립니다.</p>
+          <p>{tr("이 레슨을 완료하면 외부의 다른 레슨이 열립니다.", "Completing this lesson unlocks a lesson in another track.")}</p>
         {/if}
       </div>
     {/if}
@@ -759,12 +770,12 @@
       <a
         class="button popover-action"
         href={`${base}/learn/${popoverLesson.id}`}
-        aria-label={`${popoverLesson.title} ${popoverStatus === "completed" ? "다시 읽기" : "학습하기"}`}
+        aria-label={`${popoverLesson.title} ${popoverStatus === "completed" ? tr("다시 읽기", "review") : tr("학습하기", "learn")}`}
         >{popoverStatus === "completed"
-          ? "다시 읽기"
+          ? tr("다시 읽기", "Review lesson")
           : popoverStatus === "in-progress"
-            ? "이어하기"
-            : "시작하기"}</a
+            ? tr("이어하기", "Continue")
+            : tr("시작하기", "Start lesson")}</a
       >
     {/if}
   </div>

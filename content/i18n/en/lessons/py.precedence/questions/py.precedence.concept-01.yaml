@@ -1,0 +1,33 @@
+id: py.precedence.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "Why is multiplication evaluated before addition in the following expression?"
+options:
+- id: rule
+  content:
+  - type: text
+    text: "Because multiplication has higher precedence than addition"
+- id: left
+  content:
+  - type: text
+    text: "Because Python always evaluates the leftmost value first"
+- id: string
+  content:
+  - type: text
+    text: "Because numbers are automatically converted to strings"
+- id: random
+  content:
+  - type: text
+    text: "Because the operator order is chosen randomly on each run"
+correctOptionId: rule
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Python uses operator precedence. Without parentheses, multiplication and division are evaluated before addition and subtraction."
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- precedence
+difficulty: 2

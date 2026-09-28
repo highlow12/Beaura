@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.lexical-scope.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each scope concept with its description."
+leftItems:
+  - id: binding
+    content:
+      - type: text
+        text: "Binding"
+  - id: shadowing
+    content:
+      - type: text
+        text: "Shadowing"
+  - id: environment
+    content:
+      - type: text
+        text: "Environment"
+rightItems:
+  - id: name-value
+    content:
+      - type: text
+        text: "The event that connects a name to a value or location"
+  - id: inner-name
+    content:
+      - type: text
+        text: "An inner name hides an outer name with the same spelling"
+  - id: chain
+    content:
+      - type: text
+        text: "A link between current bindings and the parent scope"
+correctPairs:
+  - leftId: binding
+    rightId: name-value
+  - leftId: shadowing
+    rightId: inner-name
+  - leftId: environment
+    rightId: chain
+explanation:
+  - type: text
+    text: "Name resolution starts in the current environment, selects the nearest binding, and moves to the parent environment if none is found."
+tags:
+  - programming-languages
+  - lexical-scope
+  - environment
+difficulty: 2

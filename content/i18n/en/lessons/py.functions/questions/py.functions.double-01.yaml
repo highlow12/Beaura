@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: py.functions.double-01
+revision: 1
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the operator so double returns twice its input."
+language: python
+template: |-
+  def double(value):
+      return value {{blank:operator}} value
+blanks:
+- id: operator
+  choices:
+  - +
+  - '-'
+  - '*'
+  acceptedAnswers:
+  - +
+explanation:
+- type: text
+  text: "Doubling a value means adding it to itself, so use +."
+- type: text
+  text: "The return expression becomes the result of the function call, and the caller can use that value in another calculation."
+tags:
+- functions
+- return
+- code-completion
+difficulty: 2

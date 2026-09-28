@@ -1,0 +1,47 @@
+id: ds.tree-traversal.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each tree traversal with its order."
+leftItems:
+- id: preorder
+  content:
+  - type: text
+    text: "Preorder traversal"
+- id: inorder
+  content:
+  - type: text
+    text: "Inorder traversal"
+- id: postorder
+  content:
+  - type: text
+    text: "Postorder traversal"
+rightItems:
+- id: root-first
+  content:
+  - type: text
+    text: "Current-left-right"
+- id: root-middle
+  content:
+  - type: text
+    text: "Left-current-right"
+- id: root-last
+  content:
+  - type: text
+    text: "Left-right-current"
+correctPairs:
+- leftId: preorder
+  rightId: root-first
+- leftId: inorder
+  rightId: root-middle
+- leftId: postorder
+  rightId: root-last
+explanation:
+- type: text
+  text: "The three traversals differ in whether the current node appears before, between, or after the two subtrees."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- traversal
+difficulty: 2

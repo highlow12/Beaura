@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.testing.blank-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: A test that produces the same result on every run, without depending on the external network or current time, is called a ___ test.
+choices:
+- deterministic
+- random
+- visual
+acceptedAnswers:
+- deterministic
+explanation:
+- type: text
+  text: A deterministic test gives reliable feedback because it produces the same result when repeated with the same inputs and environment.
+tags:
+- software-engineering
+- testing
+- determinism
+difficulty: 1

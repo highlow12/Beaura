@@ -1,0 +1,36 @@
+id: py.expressions.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for evaluating an expression and using its result."
+items:
+- id: read
+  content:
+  - type: text
+    text: "Identify the values and names used in the expression"
+- id: apply
+  content:
+  - type: text
+    text: "Apply the operators to calculate an intermediate result"
+- id: store
+  content:
+  - type: text
+    text: "Assign the result to a variable if needed"
+- id: use
+  content:
+  - type: text
+    text: "Use the result in output or a later calculation"
+correctOrder:
+- read
+- apply
+- store
+- use
+explanation:
+- type: text
+  text: "Read the input values first, then evaluate the operation and store the result or pass it directly to the next step."
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- values
+difficulty: 2

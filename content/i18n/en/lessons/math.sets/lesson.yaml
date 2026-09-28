@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.sets
+revision: 3
+track: discrete-math
+title: "Sets and Basic Operations"
+description: "Understand set elements and subsets, and calculate unions, intersections, and differences."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.sets.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.sets.application-01
+  - type: content
+    ref: content/cardinality.md
+  - type: question
+    ref: math.sets.term-01
+  - type: question
+    ref: math.sets.steps-01
+  - type: question
+    ref: math.sets.match-01

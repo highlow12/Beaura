@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: gfx.pipeline.stage-output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of this code that groups three transformed vertices into a shape."
+language: python
+code: |-
+  vertices = ["A", "B", "C"]
+  triangle = tuple(vertices)
+  print(len(triangle))
+choices: ["3", "2", "1"]
+acceptedOutputs: ["3"]
+explanation:
+  - type: text
+    text: "The three vertices A, B, and C are grouped into a tuple, so it contains 3 elements. The tuple in this question is a simplified representation of a primitive assembled in the pipeline."
+tags: [graphics, pipeline, code-output]
+difficulty: 1

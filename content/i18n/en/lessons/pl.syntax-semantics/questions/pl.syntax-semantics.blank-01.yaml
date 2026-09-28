@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: pl.syntax-semantics.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: The rules that describe the values and state changes a program produces when it runs are its ___, not its syntax.
+choices:
+  - semantics
+  - tokens
+  - indentation
+acceptedAnswers:
+  - semantics
+explanation:
+  - type: text
+    text: Semantics deals with the results and state changes observable when expressions and statements execute.
+tags:
+  - programming-languages
+  - semantics
+difficulty: 1

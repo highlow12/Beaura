@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.projection.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "If `u` is orthogonal to `v`, then `proj_v(u)` is the ___ vector."
+choices:
+  - "unit"
+  - "zero"
+  - "opposite"
+  - "infinite"
+acceptedAnswers:
+  - "zero"
+explanation:
+  - type: text
+    text: "Since `u·v = 0`, the coefficient in the formula is 0 and the projection is the zero vector."
+  - type: text
+    text: "In this case, `u` has no component in the direction of `v`."
+tags:
+  - linear-algebra
+  - projection
+  - orthogonal
+difficulty: 1

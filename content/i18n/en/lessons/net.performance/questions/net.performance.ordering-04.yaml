@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: net.performance.ordering-04
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: Arrange the basic steps for analyzing latency, bandwidth, and loss in the correct order.
+items:
+- id: measure
+  content:
+  - type: text
+    text: Measure round-trip time, loss, and throughput
+- id: locate
+  content:
+  - type: text
+    text: Identify propagation, transmission, and queuing bottlenecks
+- id: tune
+  content:
+  - type: text
+    text: Adjust buffers, congestion control, and the transmission method
+correctOrder:
+- measure
+- locate
+- tune
+explanation:
+- type: text
+  text: First, measure round-trip time, loss, and throughput; use the results to identify propagation, transmission, and queuing
+    bottlenecks.
+- type: text
+  text: Then adjust buffers, congestion control, and the transmission method. The result is then delivered to the next network
+    layer or the application.
+tags:
+- network-performance
+- latency
+- bandwidth
+difficulty: 3

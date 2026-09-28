@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.numerical-differentiation.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the formula for the central difference?"
+options:
+  - id: central
+    content:
+      - type: text
+        text: "[f(x+h)−f(x−h)]/(2h)"
+  - id: forward
+    content:
+      - type: text
+        text: "[f(x+h)−f(x)]/h"
+  - id: backward
+    content:
+      - type: text
+        text: "[f(x)−f(x−h)]/(2h)"
+  - id: sum
+    content:
+      - type: text
+        text: "[f(x+h)+f(x−h)]/h"
+correctOptionId: central
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The central difference uses values on both sides of the reference point, spanning a total distance of 2h."
+  - type: text
+    text: "It uses symmetric information, unlike the forward and backward differences."
+tags:
+  - calculus
+  - numerical
+  - finite-difference
+difficulty: 1

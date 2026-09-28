@@ -1,0 +1,31 @@
+id: py.enumerate-zip.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following enumerate code."
+language: python
+code: "names = [\"Ada\", \"Lin\"]\nfor index, name in enumerate(names):\n    print(index, name)"
+choices:
+- '0 Ada
+
+  1 Lin'
+- '1 Ada
+
+  2 Lin'
+- 'Ada 0
+
+  Lin 1'
+acceptedOutputs:
+- '0 Ada
+
+  1 Lin'
+explanation:
+- type: text
+  text: "enumerate indexes start at 0 by default, and each index is printed with its corresponding name."
+schemaVersion: 1
+revision: 1
+tags:
+- iteration
+- enumerate
+- zip
+difficulty: 2

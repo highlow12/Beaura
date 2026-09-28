@@ -1,0 +1,24 @@
+id: ds.deque.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the operation that adds a value to the front of a deque."
+language: python
+template: d.{{blank:operation}}(1)
+blanks:
+- id: operation
+  choices:
+  - appendleft
+  - append
+  - popleft
+  acceptedAnswers:
+  - appendleft
+explanation:
+- type: text
+  text: "appendleft adds to the front, and append adds to the back. popleft removes a value from the front."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- deque
+difficulty: 2

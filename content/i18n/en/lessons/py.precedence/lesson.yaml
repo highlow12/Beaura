@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.precedence
+revision: 2
+track: python
+title: "Operator Precedence"
+description: "Learn how parentheses and operator precedence affect the order in which an expression is evaluated."
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.precedence.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: py.precedence.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.precedence.complete-01
+- type: question
+  ref: py.precedence.steps-01
+- type: question
+  ref: py.precedence.match-01

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: algo.backtracking.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "Choose the operation that removes the last choice from a list after a recursive call returns."
+- type: code
+  language: python
+  code: path.{{blank:undo}}()
+choices:
+- pop
+- append
+- clear
+acceptedAnswers:
+- pop
+explanation:
+- type: text
+  text: "pop removes the most recently added choice so the next sibling branch starts with a clean state."
+tags:
+- backtracking
+- recursion
+- code-completion
+difficulty: 2

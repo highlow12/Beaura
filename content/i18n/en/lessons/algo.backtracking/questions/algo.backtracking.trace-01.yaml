@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: algo.backtracking.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose how many length-2 permutations this backtracking code records."
+language: python
+code: |-
+  solutions = []
+  def search(path, choices):
+      if len(path) == 2:
+          solutions.append(path)
+          return
+      for item in choices:
+          rest = [x for x in choices if x != item]
+          search(path + [item], rest)
+  search([], ["A", "B"])
+  print(len(solutions))
+choices:
+- '2'
+- '1'
+- '4'
+acceptedOutputs:
+- '2'
+explanation:
+- type: text
+  text: 'The first step chooses A or B, then appends the remaining item, recording two solutions: [A, B] and [B, A].'
+tags:
+- backtracking
+- recursion
+- code-output
+difficulty: 3

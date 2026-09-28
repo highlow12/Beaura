@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: math.sets.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put in order the steps for finding A−B."
+items:
+  - id: start-a
+    content:
+      - type: text
+        text: "Examine the elements of A, the starting set, one by one"
+  - id: check-b
+    content:
+      - type: text
+        text: "Check whether each element is also in B"
+  - id: keep
+    content:
+      - type: text
+        text: "Keep only elements that are not in B"
+correctOrder:
+  - start-a
+  - check-b
+  - keep
+explanation:
+  - type: text
+    text: "For the difference A−B, check elements of A and keep only those that are not in B."
+  - type: text
+    text: "Finding B−A changes the starting set and therefore changes the result."
+tags:
+  - discrete-math
+  - sets
+  - difference
+difficulty: 2

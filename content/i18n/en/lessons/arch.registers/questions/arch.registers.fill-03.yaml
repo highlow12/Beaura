@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.registers.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "Even if the write value is ready, when write-enable=0 the target register value ___."
+choices:
+  - "does not change"
+  - "changes immediately"
+  - "doubles"
+acceptedAnswers:
+  - "does not change"
+explanation:
+  - type: text
+    text: "If write enable is 0, the target register is not updated even when a clock edge occurs."
+tags: [register, register-file, cpu-state]
+difficulty: 2

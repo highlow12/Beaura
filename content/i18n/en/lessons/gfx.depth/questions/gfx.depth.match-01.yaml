@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.depth.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each depth-processing term with its role."
+leftItems:
+  - id: depth-buffer
+    content:
+      - type: text
+        text: "Depth buffer"
+  - id: depth-test
+    content:
+      - type: text
+        text: "Depth test"
+  - id: z-fighting
+    content:
+      - type: text
+        text: z-fighting
+rightItems:
+  - id: stored-value
+    content:
+      - type: text
+        text: "An array that stores the current depth at each screen position"
+  - id: compare
+    content:
+      - type: text
+        text: "A rule for comparing a new fragment with the stored depth"
+  - id: flicker
+    content:
+      - type: text
+        text: "Flickering caused by surfaces with similar depth values competing"
+correctPairs:
+  - leftId: depth-buffer
+    rightId: stored-value
+  - leftId: depth-test
+    rightId: compare
+  - leftId: z-fighting
+    rightId: flicker
+explanation:
+  - type: text
+    text: "The buffer stores state, and the test decides whether a fragment passes. Insufficient depth precision can cause z-fighting, where two surfaces alternate as the selected one."
+tags: [graphics, depth-buffer]
+difficulty: 2

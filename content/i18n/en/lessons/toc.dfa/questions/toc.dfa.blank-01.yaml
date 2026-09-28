@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: toc.dfa.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: Choose the notation for the state reached after a DFA in state q reads input symbol a.
+  - type: code
+    language: text
+    code: ___
+choices:
+  - "δ(q, a)"
+  - "δ(a, q)"
+  - "q(a, δ)"
+acceptedAnswers:
+  - "δ(q, a)"
+explanation:
+  - type: text
+    text: The transition function takes the current state first and the input symbol second, then returns the next state as δ(q, a).
+tags:
+  - theory-of-computation
+  - dfa
+  - transition
+difficulty: 2

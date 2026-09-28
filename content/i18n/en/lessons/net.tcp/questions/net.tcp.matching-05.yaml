@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: net.tcp.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each TCP connection and reliability term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "Sequence number"
+  - id: left-b
+    content:
+      - type: text
+        text: "Acknowledgment"
+  - id: left-c
+    content:
+      - type: text
+        text: "Retransmission"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "A number that identifies a byte’s position in the stream"
+  - id: right-b
+    content:
+      - type: text
+        text: "A response that confirms the received range"
+  - id: right-c
+    content:
+      - type: text
+        text: "Sending data again when it is suspected to be lost"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "A sequence number identifies a byte’s position in the stream; an acknowledgment confirms the received range; retransmission sends data again when it is suspected to be lost."
+tags: [tcp, reliability, handshake]
+difficulty: 2

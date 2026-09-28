@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: la.vector-space.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for checking whether a set of vectors is a basis."
+items:
+  - id: target
+    content:
+      - type: text
+        text: "Find the dimension of the space"
+  - id: span
+    content:
+      - type: text
+        text: "Check whether the vectors span the space"
+  - id: independent
+    content:
+      - type: text
+        text: "Check whether the vectors are linearly independent"
+  - id: conclude
+    content:
+      - type: text
+        text: "If both conditions hold, classify the set as a basis"
+correctOrder:
+  - target
+  - span
+  - independent
+  - conclude
+unorderedGroups:
+  - [span, independent]
+explanation:
+  - type: text
+    text: "Testing for a basis requires both spanning and independence."
+  - type: text
+    text: "Knowing the dimension also lets you check whether the number of vectors is appropriate."
+tags:
+  - linear-algebra
+  - space
+  - basis-test
+difficulty: 2

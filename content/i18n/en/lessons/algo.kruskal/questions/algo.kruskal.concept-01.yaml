@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.kruskal.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "What is the basic rule Kruskal’s algorithm uses to select edges?"
+options:
+- id: sorted-safe
+  content:
+  - type: text
+    text: "Consider edges in increasing weight order and add an edge only if it does not create a cycle"
+- id: vertex-first
+  content:
+  - type: text
+    text: "Add every edge in the order of its vertex names"
+- id: largest
+  content:
+  - type: text
+    text: "Add the heaviest edges first"
+correctOptionId: sorted-safe
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Kruskal combines ascending edge order with cycle avoidance to select safe edges for the MST."
+tags:
+- graph
+- mst
+- kruskal
+difficulty: 1

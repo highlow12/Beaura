@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.color.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about RGB, gamma, and alpha."
+options:
+  - id: rgb-channels
+    content:
+      - type: text
+        text: "RGB combines red, green, and blue channels."
+  - id: gamma
+    content:
+      - type: text
+        text: "Encodings such as sRGB change the relationship between numeric values and linear light intensity."
+  - id: alpha
+    content:
+      - type: text
+        text: "Alpha generally represents opacity or a blending ratio."
+  - id: alpha-red
+    content:
+      - type: text
+        text: "Alpha is simply another name for the red channel."
+correctOptionIds: [rgb-channels, gamma, alpha]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "RGB channels and alpha are different values. Gamma encoding adjusts the relationship between stored or displayed numbers and linear light intensity."
+tags: [graphics, color, rgb, alpha]
+difficulty: 3

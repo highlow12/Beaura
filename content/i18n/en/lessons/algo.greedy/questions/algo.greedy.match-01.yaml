@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.greedy.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each greedy-design term with its meaning."
+leftItems:
+- id: local-choice
+  content:
+  - type: text
+    text: "Greedy choice"
+- id: optimal-substructure
+  content:
+  - type: text
+    text: "Optimal substructure"
+- id: exchange
+  content:
+  - type: text
+    text: "Exchange argument"
+rightItems:
+- id: immediate
+  content:
+  - type: text
+    text: "The choice that looks best according to the current criterion"
+- id: combine
+  content:
+  - type: text
+    text: "The property that lets you build a global optimum from optimal subproblem solutions"
+- id: safe
+  content:
+  - type: text
+    text: "A proof showing that optimality is preserved when the first choice in an optimal solution is replaced"
+correctPairs:
+- leftId: local-choice
+  rightId: immediate
+- leftId: optimal-substructure
+  rightId: combine
+- leftId: exchange
+  rightId: safe
+explanation:
+- type: text
+  text: "To claim global optimality, establish that the greedy choice is safe and that the problem has optimal substructure."
+tags:
+- greedy
+- correctness
+- exchange-argument
+difficulty: 2

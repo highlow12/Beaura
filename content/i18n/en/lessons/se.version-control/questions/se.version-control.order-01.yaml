@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: se.version-control.order-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: Arrange the steps for safely integrating feature-branch changes into `main`.
+items:
+- id: inspect
+  content:
+  - type: text
+    text: Review the change diff and related tests.
+- id: update
+  content:
+  - type: text
+    text: Incorporate changes from the latest `main`.
+- id: resolve
+  content:
+  - type: text
+    text: If there is a conflict, compare the intentions, resolve it, and test again.
+- id: merge
+  content:
+  - type: text
+    text: Merge the reviewed branch into `main`.
+correctOrder:
+- inspect
+- update
+- resolve
+- merge
+explanation:
+- type: text
+  text: First understand the current changes, update the base, resolve conflicts and test, and then integrate only the reviewed result.
+tags:
+- software-engineering
+- version-control
+- workflow
+difficulty: 2

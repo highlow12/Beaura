@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.variance.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the conceptual steps for calculating variance from sample values."
+items:
+  - id: mean
+    content:
+      - type: text
+        text: "Calculate the mean μ"
+  - id: deviation
+    content:
+      - type: text
+        text: "Subtract μ from each value"
+  - id: square
+    content:
+      - type: text
+        text: "Square each deviation"
+  - id: average
+    content:
+      - type: text
+        text: "Average the squared deviations"
+correctOrder:
+  - mean
+  - deviation
+  - square
+  - average
+explanation:
+  - type: text
+    text: "To calculate variance, square the distances from the mean and then average them."
+  - type: text
+    text: "If you average deviations without squaring them, they always sum to 0, so they cannot measure spread."
+tags:
+  - probability-statistics
+  - variance
+  - calculation
+difficulty: 2

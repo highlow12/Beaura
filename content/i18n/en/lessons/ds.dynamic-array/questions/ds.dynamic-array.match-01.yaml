@@ -1,0 +1,48 @@
+id: ds.dynamic-array.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each dynamic-array term with its meaning."
+leftItems:
+- id: size
+  content:
+  - type: text
+    text: "size"
+- id: capacity
+  content:
+  - type: text
+    text: "capacity"
+- id: resize
+  content:
+  - type: text
+    text: "Reallocation"
+rightItems:
+- id: used
+  content:
+  - type: text
+    text: "The current number of stored elements"
+- id: reserved
+  content:
+  - type: text
+    text: "The total number of allocated slots"
+- id: grow
+  content:
+  - type: text
+    text: "Moving the elements to a larger region"
+correctPairs:
+- leftId: size
+  rightId: used
+- leftId: capacity
+  rightId: reserved
+- leftId: resize
+  rightId: grow
+explanation:
+- type: text
+  text: "Distinguishing size from capacity tells you when reallocation occurs. resize allocates a larger region and moves the elements."
+schemaVersion: 1
+revision: 1
+tags:
+- array
+- dynamic-array
+- amortized
+difficulty: 2

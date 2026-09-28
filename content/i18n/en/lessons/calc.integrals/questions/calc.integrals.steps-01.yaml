@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.integrals.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for using the relationship between an accumulation function and differentiation."
+items:
+  - id: define
+    content:
+      - type: text
+        text: "Accumulate f and define F(x)=∫ₐˣ f(t)dt"
+  - id: differentiate
+    content:
+      - type: text
+        text: "Differentiate F(x) with respect to x"
+  - id: recover
+    content:
+      - type: text
+        text: "Obtain F′(x)=f(x)"
+  - id: interpret
+    content:
+      - type: text
+        text: "Interpret the rate of change of the accumulated quantity as the original quantity"
+correctOrder:
+  - define
+  - differentiate
+  - recover
+  - interpret
+explanation:
+  - type: text
+    text: "The Fundamental Theorem connects the derivative of an accumulated quantity to the original function’s value at the current point."
+  - type: text
+    text: "This is the key idea of viewing integration and differentiation as inverse operations."
+tags:
+  - calculus
+  - integrals
+  - fundamental-theorem
+difficulty: 2

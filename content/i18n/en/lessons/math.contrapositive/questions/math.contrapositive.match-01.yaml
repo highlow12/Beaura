@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.contrapositive.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each statement or contrapositive-proof element with its role."
+leftItems:
+  - id: p
+    content:
+      - type: text
+        text: "Antecedent `P`"
+  - id: q
+    content:
+      - type: text
+        text: "Consequent `Q`"
+  - id: not-q
+    content:
+      - type: text
+        text: "¬Q"
+  - id: not-p
+    content:
+      - type: text
+        text: "¬P"
+rightItems:
+  - id: p-desc
+    content:
+      - type: text
+        text: "The original condition that becomes the conclusion of the contrapositive"
+  - id: q-desc
+    content:
+      - type: text
+        text: "The original result that is negated to become the starting condition of the contrapositive"
+  - id: not-q-desc
+    content:
+      - type: text
+        text: "The assumption of the contrapositive proof"
+  - id: not-p-desc
+    content:
+      - type: text
+        text: "The conclusion the contrapositive proof must establish"
+correctPairs:
+  - leftId: p
+    rightId: p-desc
+  - leftId: q
+    rightId: q-desc
+  - leftId: not-q
+    rightId: not-q-desc
+  - leftId: not-p
+    rightId: not-p-desc
+explanation:
+  - type: text
+    text: "The contrapositive is an implication from `¬Q`, the negation of `Q`, to `¬P`, the negation of `P`."
+  - type: text
+    text: "Track how the original antecedent and consequent switch places in the contrapositive."
+tags:
+  - discrete-math
+  - proof
+  - structure
+difficulty: 2

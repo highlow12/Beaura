@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.replication.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the code that models a replica catching up with the primary’s log and reaching the same value."
+language: python
+code: |-
+  primary = 10
+  replica = 8
+  log_delta = primary - replica
+  replica += log_delta
+  print(replica)
+choices: ["10", "18", "2"]
+acceptedOutputs: ["10"]
+explanation:
+  - type: text
+    text: "The replica applies the log difference of 2, so 8+2=10 and it matches the primary."
+tags: [database, replication, code-output]
+difficulty: 1

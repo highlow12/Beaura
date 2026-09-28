@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.conditional.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each part of conditional probability with its role."
+leftItems:
+  - id: a-given-b
+    content:
+      - type: text
+        text: "P(A|B)"
+  - id: intersection
+    content:
+      - type: text
+        text: "P(A∩B)"
+  - id: condition
+    content:
+      - type: text
+        text: "B"
+  - id: product
+    content:
+      - type: text
+        text: "P(A|B)P(B)"
+rightItems:
+  - id: a-given-b-desc
+    content:
+      - type: text
+        text: "The probability of A after learning B"
+  - id: intersection-desc
+    content:
+      - type: text
+        text: "The probability that both events occur"
+  - id: condition-desc
+    content:
+      - type: text
+        text: "The event that narrows the reference space"
+  - id: product-desc
+    content:
+      - type: text
+        text: "The product used to recover the intersection probability"
+correctPairs:
+  - leftId: a-given-b
+    rightId: a-given-b-desc
+  - leftId: intersection
+    rightId: intersection-desc
+  - leftId: condition
+    rightId: condition-desc
+  - leftId: product
+    rightId: product-desc
+explanation:
+  - type: text
+    text: "Conditional probability is the intersection probability divided by the probability of the conditioning event."
+  - type: text
+    text: "Read the direction of the notation and use the conditioning event as the denominator."
+tags:
+  - probability-statistics
+  - conditional
+  - terminology
+difficulty: 2

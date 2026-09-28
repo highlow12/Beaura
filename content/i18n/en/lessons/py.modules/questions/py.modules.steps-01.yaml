@@ -1,0 +1,36 @@
+id: py.modules.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for using a module’s function from another file."
+items:
+- id: file
+  content:
+  - type: text
+    text: "Define related functions and constants in a module file"
+- id: import
+  content:
+  - type: text
+    text: "Import the module in the file that will use it"
+- id: qualify
+  content:
+  - type: text
+    text: "Select a name using the module name and a dot"
+- id: call
+  content:
+  - type: text
+    text: "Call the function or use the value"
+correctOrder:
+- file
+- import
+- qualify
+- call
+explanation:
+- type: text
+  text: "Define reusable code in a module, import it, then call the needed function through the module name."
+schemaVersion: 1
+revision: 1
+tags:
+- modules
+- import
+difficulty: 2

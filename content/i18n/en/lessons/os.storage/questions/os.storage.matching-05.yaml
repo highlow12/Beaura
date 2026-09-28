@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: os.storage.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each HDD, SSD, and block-device term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "Block device"
+  - id: left-b
+    content:
+      - type: text
+        text: "head seek"
+  - id: left-c
+    content:
+      - type: text
+        text: "Wear leveling"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "A device interface that reads and writes fixed-size blocks"
+  - id: right-b
+    content:
+      - type: text
+        text: "The time for an HDD head to move to a track"
+  - id: right-c
+    content:
+      - type: text
+        text: "A technique that distributes writes evenly across SSD cells"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "A block device is an interface for reading and writing fixed-size blocks; head seek is the time for an HDD head to move to a track; wear leveling distributes writes evenly across SSD cells."
+tags: [storage, hdd, ssd]
+difficulty: 2

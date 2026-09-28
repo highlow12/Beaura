@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.ipv4.fill-03
+revision: 2
+type: fill-blank
+prompt:
+- type: text
+  text: The IP header value that decreases at each router to prevent endless loops is ___.
+choices:
+- TTL
+- MAC
+- Port
+acceptedAnswers:
+- TTL
+explanation:
+- type: text
+  text: When a host sends a packet to another network, the destination IP continues to identify the final server, while the
+    first frame is sent to the gateway. Each router chooses the next route based on the destination IP and decrements the
+    TTL by one. When the TTL expires, the packet is discarded so it cannot loop forever.
+tags:
+- ip
+- ipv4
+- internet-layer
+difficulty: 2

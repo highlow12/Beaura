@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: py.conditionals.true-comparisons-01
+revision: 1
+type: multi-select
+prompt:
+  - type: code
+    language: python
+    code: score = 80
+  - type: text
+    text: "Select all comparisons that are true when score is 80."
+options:
+  - id: at-least-sixty
+    content:
+      - type: code
+        language: python
+        code: score >= 60
+  - id: exactly-eighty
+    content:
+      - type: code
+        language: python
+        code: score == 80
+  - id: below-sixty
+    content:
+      - type: code
+        language: python
+        code: score < 60
+  - id: not-eighty
+    content:
+      - type: code
+        language: python
+        code: score != 80
+correctOptionIds: [at-least-sixty, exactly-eighty]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "80 is at least 60 and equal to 80, so both comparisons evaluate to `True`."
+tags: [conditionals, comparison, boolean-logic]
+difficulty: 2

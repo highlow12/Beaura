@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.ipv4
+revision: 2
+track: networks
+title: IP Addresses and IPv4 Packets
+description: Learn how IP addresses distinguish networks from hosts and how IPv4 packets travel between hops.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: net.ipv4.single-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: net.ipv4.multi-02
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: net.ipv4.fill-03
+- type: question
+  ref: net.ipv4.ordering-04
+- type: question
+  ref: net.ipv4.matching-05

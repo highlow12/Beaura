@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.multiplexer.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "In a 2:1 multiplexer, if D0=0, D1=1, and select=1, what is the output?"
+choices:
+  - "1"
+  - "0"
+  - "2"
+acceptedAnswers:
+  - "1"
+explanation:
+  - type: text
+    text: "select=1 chooses D1, so the output is D1’s value, 1."
+tags: [multiplexer, combinational-circuit, datapath]
+difficulty: 2

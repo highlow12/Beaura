@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.hex.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about hexadecimal and bytes is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "One hexadecimal digit represents one of the 16 possible combinations of four bits."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "One hexadecimal digit always stores 16 bytes."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Hexadecimal is a separate memory format that stores different values from binary."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "One hexadecimal digit represents one of the 16 possible combinations of four bits."
+  - type: text
+    text: "A hexadecimal digit represents one of 16 values from 0 to F and corresponds to exactly 4 bits. Therefore, two digits compactly represent one 8-bit byte."
+tags: [hexadecimal, bits, byte]
+difficulty: 1

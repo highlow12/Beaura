@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.vectors.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about vector `(2, −1)`."
+options:
+  - id: x-two
+    content:
+      - type: text
+        text: "The x-component is 2"
+  - id: y-minus
+    content:
+      - type: text
+        text: "The y-component is −1"
+  - id: right-down
+    content:
+      - type: text
+        text: "It has rightward and downward components"
+  - id: scalar
+    content:
+      - type: text
+        text: "It is a scalar and has no direction"
+correctOptionIds: [x-two, y-minus, right-down]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The first component, 2, is the change along the x-axis; the second, −1, is the change along the y-axis."
+  - type: text
+    text: "A negative component means movement opposite the positive direction of that axis."
+tags:
+  - linear-algebra
+  - vectors
+  - components
+difficulty: 2

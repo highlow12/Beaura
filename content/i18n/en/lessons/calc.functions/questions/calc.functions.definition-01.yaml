@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.functions.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which mapping satisfies the definition of a function f?"
+options:
+  - id: one-output
+    content:
+      - type: text
+        text: "Each input maps to exactly one output"
+  - id: many-output
+    content:
+      - type: text
+        text: "One input maps to multiple outputs"
+  - id: no-output
+    content:
+      - type: text
+        text: "Some inputs do not need to have an output"
+  - id: same-output
+    content:
+      - type: text
+        text: "All inputs must map to the same output"
+correctOptionId: one-output
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A function assigns exactly one output to every input in its domain."
+  - type: text
+    text: "A function may map different inputs to the same output."
+tags:
+  - calculus
+  - functions
+  - definition
+difficulty: 1

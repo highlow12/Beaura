@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.sets.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "If A={1,2,3} and B={3,4}, choose the number of elements in A ∩ B."
+choices:
+  - "0"
+  - "1"
+  - "2"
+acceptedAnswers:
+  - "1"
+explanation:
+  - type: text
+    text: "The only element common to both sets is 3."
+  - type: text
+    text: "Therefore, the intersection is {3} and has 1 element."
+tags:
+  - discrete-math
+  - sets
+  - intersection
+difficulty: 1

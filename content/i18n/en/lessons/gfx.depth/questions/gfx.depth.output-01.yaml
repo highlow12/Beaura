@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.depth.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output color from this simple test that keeps only fragments with smaller depth values."
+language: python
+code: |-
+  depth_buffer = 0.6
+  fragment_depth = 0.4
+  color = "old"
+  if fragment_depth < depth_buffer:
+      depth_buffer = fragment_depth
+      color = "new"
+  print(color)
+choices: ["new", "old", "0.4"]
+acceptedOutputs: ["new"]
+explanation:
+  - type: text
+    text: "Since 0.4 is less than the existing 0.6, the fragment is treated as closer and the color changes to new."
+tags: [graphics, depth-buffer, code-output]
+difficulty: 1

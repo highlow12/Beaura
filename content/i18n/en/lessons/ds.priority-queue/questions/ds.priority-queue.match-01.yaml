@@ -1,0 +1,47 @@
+id: ds.priority-queue.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each priority-queue term with its meaning."
+leftItems:
+- id: priority
+  content:
+  - type: text
+    text: "priority"
+- id: entry
+  content:
+  - type: text
+    text: "Item"
+- id: tie
+  content:
+  - type: text
+    text: "Tie"
+rightItems:
+- id: rank
+  content:
+  - type: text
+    text: "A value that determines processing order"
+- id: job
+  content:
+  - type: text
+    text: "A task and data stored in the queue"
+- id: order
+  content:
+  - type: text
+    text: "An additional ordering rule for equal priorities"
+correctPairs:
+- leftId: priority
+  rightId: rank
+- leftId: entry
+  rightId: job
+- leftId: tie
+  rightId: order
+explanation:
+- type: text
+  text: "priority is the main selection criterion, and entry is the actual task. If order among equal priorities matters, define a separate tie-breaking policy."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- priority-queue
+difficulty: 2

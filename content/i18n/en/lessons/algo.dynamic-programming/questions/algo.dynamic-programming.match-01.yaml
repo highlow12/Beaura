@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.dynamic-programming.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each DP design element with its description."
+leftItems:
+- id: state
+  content:
+  - type: text
+    text: "State"
+- id: transition
+  content:
+  - type: text
+    text: "Transition"
+- id: memo
+  content:
+  - type: text
+    text: "Memoization"
+rightItems:
+- id: meaning
+  content:
+  - type: text
+    text: "Information that describes the current subproblem"
+- id: relation
+  content:
+  - type: text
+    text: "A rule for building the next answer from smaller answers"
+- id: cache
+  content:
+  - type: text
+    text: "A way to prevent repeated computation by storing recursive results"
+correctPairs:
+- leftId: state
+  rightId: meaning
+- leftId: transition
+  rightId: relation
+- leftId: memo
+  rightId: cache
+explanation:
+- type: text
+  text: "Define the states and recurrence first, then store and reuse computed results through memoization or a table."
+tags:
+- dynamic-programming
+- memoization
+- tabulation
+difficulty: 2

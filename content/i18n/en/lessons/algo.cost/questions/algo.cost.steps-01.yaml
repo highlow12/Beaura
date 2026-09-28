@@ -1,0 +1,38 @@
+id: algo.cost.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Put the steps for analyzing an algorithm’s cost in order."
+items:
+- id: size
+  content:
+  - type: text
+    text: "Define the input size n"
+- id: basic
+  content:
+  - type: text
+    text: "Choose the basic operation to count"
+- id: count
+  content:
+  - type: text
+    text: "Count the iterations and operations"
+- id: growth
+  content:
+  - type: text
+    text: "Describe the growth rate as n increases"
+correctOrder:
+- size
+- basic
+- count
+- growth
+unorderedGroups:
+  - [size, basic]
+explanation:
+- type: text
+  text: "Define the input and basic unit, count the operations, then describe how that expression grows with the input size."
+schemaVersion: 1
+revision: 2
+tags:
+- complexity
+- cost
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.functions.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "A function that pairs every element of the domain and codomain one-to-one is a ___ function."
+choices:
+  - "bijective"
+  - "constant"
+  - "partial"
+acceptedAnswers:
+  - "bijective"
+explanation:
+  - type: text
+    text: "A function that is both injective and surjective is bijective."
+  - type: text
+    text: "A bijection pairs exactly one input with each output, so an inverse function can be formed."
+tags:
+  - discrete-math
+  - functions
+  - bijective
+difficulty: 1

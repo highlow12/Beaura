@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.code-generation.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each code-generation concept with its description."
+leftItems:
+  - id: instruction-selection
+    content:
+      - type: text
+        text: "Instruction selection"
+  - id: register-allocation
+    content:
+      - type: text
+        text: "Register allocation"
+  - id: spill
+    content:
+      - type: text
+        text: "Spilling"
+rightItems:
+  - id: target-isa
+    content:
+      - type: text
+        text: "Choose target ISA instructions that implement IR operations"
+  - id: physical-reg
+    content:
+      - type: text
+        text: "Map live virtual values to physical registers"
+  - id: memory-fallback
+    content:
+      - type: text
+        text: "Temporarily store values in memory when registers are scarce"
+correctPairs:
+  - leftId: instruction-selection
+    rightId: target-isa
+  - leftId: register-allocation
+    rightId: physical-reg
+  - leftId: spill
+    rightId: memory-fallback
+explanation:
+  - type: text
+    text: "When more values are live at once than there are registers, the generated code must also account for the load and store costs of spilling."
+tags:
+  - programming-languages
+  - code-generation
+  - register
+difficulty: 2

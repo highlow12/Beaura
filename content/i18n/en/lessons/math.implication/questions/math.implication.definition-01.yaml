@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.implication.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Under what condition is `P → Q` false?"
+options:
+  - id: tt
+    content:
+      - type: text
+        text: "When `P` and `Q` are both true"
+  - id: tf
+    content:
+      - type: text
+        text: "When `P` is true and `Q` is false"
+  - id: ft
+    content:
+      - type: text
+        text: "When `P` is false and `Q` is true"
+  - id: ff
+    content:
+      - type: text
+        text: "When `P` and `Q` are both false"
+correctOptionId: tf
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "An implication is false only when the antecedent is true and the consequent is false."
+  - type: text
+    text: "`P → Q` is true in the other three rows."
+tags:
+  - discrete-math
+  - logic
+  - implication
+difficulty: 1

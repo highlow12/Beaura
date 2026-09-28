@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.texture.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about texture coordinates and sampling."
+options:
+  - id: uv-address
+    content:
+      - type: text
+        text: "UVs specify a location to read from the texture"
+  - id: interpolate
+    content:
+      - type: text
+        text: "Vertex UVs can be interpolated for fragment locations inside a triangle"
+  - id: wrap
+    content:
+      - type: text
+        text: "UVs outside 0–1 can use address modes such as repeat or clamp"
+  - id: texture-is-light
+    content:
+      - type: text
+        text: "A texture always stores only light directions and never images"
+correctOptionIds: [uv-address, interpolate, wrap]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "UVs are image addresses and are interpolated from vertices to fragments. Coordinates outside the range are handled according to the selected wrap mode."
+tags: [graphics, texture, uv]
+difficulty: 3

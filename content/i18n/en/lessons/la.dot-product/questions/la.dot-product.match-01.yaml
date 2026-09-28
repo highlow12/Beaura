@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.dot-product.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each dot product expression with its meaning."
+leftItems:
+  - id: formula
+    content:
+      - type: text
+        text: "u·v"
+  - id: positive
+    content:
+      - type: text
+        text: "u·v>0"
+  - id: zero
+    content:
+      - type: text
+        text: "u·v=0"
+  - id: negative
+    content:
+      - type: text
+        text: "u·v<0"
+rightItems:
+  - id: formula-desc
+    content:
+      - type: text
+        text: "The sum of products of corresponding components"
+  - id: positive-desc
+    content:
+      - type: text
+        text: "The two directions are generally on the same side"
+  - id: zero-desc
+    content:
+      - type: text
+        text: "The vectors are orthogonal"
+  - id: negative-desc
+    content:
+      - type: text
+        text: "The two directions are generally on opposite sides"
+correctPairs:
+  - leftId: formula
+    rightId: formula-desc
+  - leftId: positive
+    rightId: positive-desc
+  - leftId: zero
+    rightId: zero-desc
+  - leftId: negative
+    rightId: negative-desc
+explanation:
+  - type: text
+    text: "The sign of the dot product matches the sign of the cosine of the angle between the vectors."
+  - type: text
+    text: "The dot product is also 0 when either vector has zero length, so check the context as well."
+tags:
+  - linear-algebra
+  - dot-product
+  - sign
+difficulty: 2

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.numerical-integration.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each numerical integration term with its description."
+leftItems:
+  - id: left-sum
+    content:
+      - type: text
+        text: "Left rectangular sum"
+  - id: right-sum
+    content:
+      - type: text
+        text: "Right rectangular sum"
+  - id: trapezoid
+    content:
+      - type: text
+        text: "Trapezoidal sum"
+  - id: step
+    content:
+      - type: text
+        text: "Interval width h"
+rightItems:
+  - id: left-sum-desc
+    content:
+      - type: text
+        text: "An approximation using the left height of each interval"
+  - id: right-sum-desc
+    content:
+      - type: text
+        text: "An approximation using the right height of each interval"
+  - id: trapezoid-desc
+    content:
+      - type: text
+        text: "An approximation using the average of the endpoint heights"
+  - id: step-desc
+    content:
+      - type: text
+        text: "The x-spacing between samples"
+correctPairs:
+  - leftId: left-sum
+    rightId: left-sum-desc
+  - leftId: right-sum
+    rightId: right-sum-desc
+  - leftId: trapezoid
+    rightId: trapezoid-desc
+  - leftId: step
+    rightId: step-desc
+explanation:
+  - type: text
+    text: "Rectangular sums approximate the curve using one endpoint; trapezoidal sums use both endpoints."
+  - type: text
+    text: "Reading the data spacing correctly is the first step in calculating area."
+tags:
+  - calculus
+  - numerical
+  - methods
+difficulty: 2

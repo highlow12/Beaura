@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.hash-function
+revision: 1
+track: data-structures
+title: Hash Functions
+description: Understand the properties of a hash function that converts keys into numerical hash values and bucket indices.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.hash-function.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.hash-function.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.hash-function.complete-01
+- type: question
+  ref: ds.hash-function.steps-01
+- type: question
+  ref: ds.hash-function.match-01

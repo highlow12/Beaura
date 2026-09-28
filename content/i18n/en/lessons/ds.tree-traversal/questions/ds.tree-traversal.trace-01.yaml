@@ -1,0 +1,22 @@
+id: ds.tree-traversal.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following preorder traversal code."
+language: python
+code: "tree = {\"value\": \"A\", \"left\": {\"value\": \"B\", \"left\": None, \"right\": None}, \"right\": {\"value\": \"C\", \"left\": None, \"right\": None}}\nresult = []\ndef preorder(node):\n    if node is None:\n        return\n    result.append(node[\"value\"])\n    preorder(node[\"left\"])\n    preorder(node[\"right\"])\npreorder(tree)\nprint(result)"
+choices:
+- '["A", "B", "C"]'
+- '["B", "A", "C"]'
+- '["B", "C", "A"]'
+acceptedOutputs:
+- '["A", "B", "C"]'
+explanation:
+- type: text
+  text: "The traversal records A first, then recursively visits left B and right C, so preorder is A, B, C."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- traversal
+difficulty: 2

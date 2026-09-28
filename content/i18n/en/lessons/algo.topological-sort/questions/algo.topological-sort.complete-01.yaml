@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: algo.topological-sort.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "After adding vertex u to the result, write the code that represents removing edge u → v."
+- type: code
+  language: python
+  code: indegree[v] {{blank:operation}} 1
+choices:
+- -=
+- +=
+- =
+acceptedAnswers:
+- -=
+explanation:
+- type: text
+  text: "Processing u removes one edge entering v, so decrement v’s indegree by 1."
+tags:
+- graph
+- topological-sort
+- code-completion
+difficulty: 2

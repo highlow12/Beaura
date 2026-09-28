@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.counterexample
+revision: 3
+track: discrete-math
+title: "Disproving a Claim with a Counterexample"
+description: "Learn how a single counterexample can show that a universal statement is false."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.counterexample.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.counterexample.application-01
+  - type: content
+    ref: content/witness.md
+  - type: question
+    ref: math.counterexample.term-01
+  - type: question
+    ref: math.counterexample.steps-01
+  - type: question
+    ref: math.counterexample.match-01

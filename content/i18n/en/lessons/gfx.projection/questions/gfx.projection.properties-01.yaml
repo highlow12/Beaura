@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.projection.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about projection and clipping."
+options:
+  - id: clip-space
+    content:
+      - type: text
+        text: "The projection matrix produces clip coordinates, which are used before clipping"
+  - id: near-far
+    content:
+      - type: text
+        text: "The near and far planes define the visible range along the depth axis"
+  - id: orthographic-depth
+    content:
+      - type: text
+        text: "Orthographic projection performs no depth comparisons or clipping"
+  - id: no-view-volume
+    content:
+      - type: text
+        text: "A view frustum is an audio region unrelated to projection"
+correctOptionIds: [clip-space, near-far]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "After projection, the view-frustum boundaries are applied in clip space, and points outside the range, including the near and far planes, are removed. Orthographic projection also uses a depth range and clipping."
+tags: [graphics, projection, clipping]
+difficulty: 3

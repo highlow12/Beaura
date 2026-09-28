@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.testing
+revision: 1
+track: software-engineering
+title: The Testing Pyramid
+description: Build a testing strategy by comparing the scope and cost of unit, integration, and end-to-end (E2E) tests.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: se.testing.concept-01
+- type: content
+  ref: content/model.md
+- type: question
+  ref: se.testing.match-01
+- type: question
+  ref: se.testing.blank-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: se.testing.order-01
+- type: question
+  ref: se.testing.trace-01

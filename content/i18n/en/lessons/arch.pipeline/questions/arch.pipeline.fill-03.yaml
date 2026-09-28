@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.pipeline.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "If branch prediction is wrong, discard instructions from the wrong path and ___ the pipeline from the correct address."
+choices:
+  - "refill"
+  - "keep stalled"
+  - "keep the instructions"
+acceptedAnswers:
+  - "refill"
+explanation:
+  - type: text
+    text: "Fetch instructions again from the correct branch address and refill the pipeline."
+tags: [pipeline, hazard, cpu-performance]
+difficulty: 3

@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.api-contracts.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each API-contract term with its description.
+leftItems:
+  - id: precondition
+    content:
+      - type: text
+        text: Precondition
+  - id: postcondition
+    content:
+      - type: text
+        text: Postcondition
+  - id: invariant
+    content:
+      - type: text
+        text: Invariant
+rightItems:
+  - id: before-call
+    content:
+      - type: text
+        text: An input or state rule that must be true before a call
+  - id: after-success
+    content:
+      - type: text
+        text: A result rule guaranteed after successful completion
+  - id: always-holds
+    content:
+      - type: text
+        text: A system rule that must remain true before and after an operation
+correctPairs:
+  - leftId: precondition
+    rightId: before-call
+  - leftId: postcondition
+    rightId: after-success
+  - leftId: invariant
+    rightId: always-holds
+explanation:
+  - type: text
+    text: A precondition describes what must be true before a call, a postcondition describes what is guaranteed after success, and an invariant must hold before and after the operation.
+tags:
+  - software-engineering
+  - api
+  - contracts
+difficulty: 2

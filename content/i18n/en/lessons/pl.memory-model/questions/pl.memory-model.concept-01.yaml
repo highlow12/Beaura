@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.memory-model.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: Which statement correctly describes the difference between the stack and the heap?
+options:
+  - id: lifetimes
+    content:
+      - type: text
+        text: The stack manages call frames; the heap manages dynamic objects whose lifetimes are independent of calls.
+  - id: same
+    content:
+      - type: text
+        text: They are the same memory area with different names.
+  - id: stack-all
+    content:
+      - type: text
+        text: Every heap object disappears as soon as its function returns.
+  - id: heap-order
+    content:
+      - type: text
+        text: The heap can only be freed in last-in, first-out order.
+correctOptionId: lifetimes
+shuffleOptions: true
+explanation:
+  - type: text
+    text: The stack follows the structure of calls and returns, while the heap holds objects that may outlive a call. The placement of values and references depends on language rules.
+tags:
+  - programming-languages
+  - memory
+  - stack
+difficulty: 1

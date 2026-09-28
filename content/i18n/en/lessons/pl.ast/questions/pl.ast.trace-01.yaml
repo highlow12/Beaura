@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: pl.ast.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "This code evaluates an expression represented by a nested AST, with multiplication as a child and addition at the root. What does it print?"
+language: python
+code: |-
+  tree = ("+", 2, ("*", 3, 4))
+  result = tree[1] + tree[2][1] * tree[2][2]
+  print(result)
+choices:
+  - "14"
+  - "20"
+  - "24"
+acceptedOutputs:
+  - "14"
+explanation:
+  - type: text
+    text: "It evaluates the multiplication in the right child, 3 * 4, first, then adds 2 at the root to get 14."
+tags:
+  - programming-languages
+  - ast
+  - trace
+difficulty: 2

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.expectation.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which best describes the expected value E[X]?"
+options:
+  - id: weighted-average
+    content:
+      - type: text
+        text: "The long-run average weighted by probabilities"
+  - id: most-likely
+    content:
+      - type: text
+        text: "The single most frequent value"
+  - id: maximum
+    content:
+      - type: text
+        text: "The largest possible value"
+  - id: sum-only
+    content:
+      - type: text
+        text: "The unweighted sum of possible values"
+correctOptionId: weighted-average
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Expected value is the weighted average found by adding each outcome multiplied by its probability."
+  - type: text
+    text: "It is different from the most likely value or the maximum value."
+tags:
+  - probability-statistics
+  - expectation
+  - definition
+difficulty: 1

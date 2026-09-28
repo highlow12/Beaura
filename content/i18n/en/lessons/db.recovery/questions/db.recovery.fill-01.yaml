@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.recovery.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the abbreviation for the rule that safely writes the change log before the data page."
+choices: ["WAL", "ACID", "B-tree"]
+acceptedAnswers: ["WAL"]
+explanation:
+  - type: text
+    text: "WAL stands for Write-Ahead Logging. It lets the recovery process redo committed changes or undo incomplete ones using the log."
+tags: [database, recovery, wal]
+difficulty: 1

@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.recursion.trace-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each part of recursive execution with its role."
+leftItems:
+- id: call
+  content:
+  - type: text
+    text: "Recursive call"
+- id: stack
+  content:
+  - type: text
+    text: "Call stack"
+- id: return
+  content:
+  - type: text
+    text: "Return"
+rightItems:
+- id: smaller
+  content:
+  - type: text
+    text: "Run the same function again with a smaller input"
+- id: frame
+  content:
+  - type: text
+    text: "Store each call’s local state and pending work"
+- id: unwind
+  content:
+  - type: text
+    text: "Pass the result of a deeper call to the previous call"
+correctPairs:
+- leftId: call
+  rightId: smaller
+- leftId: stack
+  rightId: frame
+- leftId: return
+  rightId: unwind
+explanation:
+- type: text
+  text: "Each call adds a frame to the stack. The deepest call returns first, and its result moves back toward the outer calls."
+tags:
+- recursion
+- call-stack
+- execution
+difficulty: 2

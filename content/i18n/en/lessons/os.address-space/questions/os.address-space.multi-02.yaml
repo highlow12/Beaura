@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.address-space.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to process address spaces."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "The heap is mainly used for dynamic allocation, while the stack is mainly used for function call frames."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Different virtual-address mappings for each process make memory isolation possible."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Virtual and physical addresses always have the same numeric value on every system."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "The code region can never be protected as read-only while a program runs."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The heap is mainly used for dynamic allocation, while the stack is mainly used for function call frames. Different virtual-address mappings for each process make memory isolation possible."
+  - type: text
+    text: "Separate address spaces provide protection and simplify programming, but require mapping data structures and translation. Unmapped gaps between regions act as guard boundaries that quickly catch invalid accesses."
+tags: [process, virtual-memory, address-space]
+difficulty: 3

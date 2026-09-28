@@ -1,0 +1,22 @@
+id: algo.cost.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the number of basic operations printed by this code."
+language: python
+code: "def count_to(n):\n    count = 0\n    for _ in range(n):\n        count += 1\n    return count\nprint(count_to(4))"
+choices:
+- '4'
+- '1'
+- '16'
+acceptedOutputs:
+- '4'
+explanation:
+- type: text
+  text: "range(4) iterates four times and executes count += 1 once per iteration, so the result is 4."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- cost
+difficulty: 2

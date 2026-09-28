@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.functions
+revision: 3
+track: calculus
+title: "Functions and Graphs"
+description: "Interpret the input-output relationship of a function and how its graph changes."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: calc.functions.definition-01
+  - type: question
+    ref: calc.functions.application-01
+  - type: content
+    ref: content/connection.md
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: calc.functions.term-01
+  - type: question
+    ref: calc.functions.steps-01
+  - type: question
+    ref: calc.functions.match-01

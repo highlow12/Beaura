@@ -1,0 +1,34 @@
+id: algo.heap-sort.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "How does heap sort produce a sorted result?"
+options:
+- id: pop
+  content:
+  - type: text
+    text: "Build a heap, then repeatedly remove its root and record it in the result"
+- id: swap-neighbor
+  content:
+  - type: text
+    text: "Compare and swap only neighboring elements once"
+- id: pivot
+  content:
+  - type: text
+    text: "Fix one pivot and do not recurse"
+- id: scan
+  content:
+  - type: text
+    text: "Read the array once and leave it unchanged"
+correctOptionId: pop
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Heap sort uses the property that the root has the highest priority and obtains the sorted order through repeated pops."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- heap-sort
+- heap
+difficulty: 2

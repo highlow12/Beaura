@@ -1,0 +1,33 @@
+id: ds.hash-function.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What does a hash function do in a hash table?"
+options:
+- id: index
+  content:
+  - type: text
+    text: "Convert a key to a number to calculate the bucket location for storage and lookup"
+- id: sort
+  content:
+  - type: text
+    text: "Sort all keys alphabetically"
+- id: encrypt
+  content:
+  - type: text
+    text: "Encrypt keys so they cannot be decrypted"
+- id: remove
+  content:
+  - type: text
+    text: "Automatically delete duplicate keys"
+correctOptionId: index
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A hash function creates a numerical hash value from a key and maps it to a bucket index. Sorting and encryption are not the basic role of a hash function."
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-function
+difficulty: 2

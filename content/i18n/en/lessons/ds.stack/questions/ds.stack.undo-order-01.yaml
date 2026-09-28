@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: ds.stack.undo-order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "If edits A, B, and C were performed in that order, arrange them in the order they are undone."
+items:
+  - id: undo-a
+    content:
+      - type: text
+        text: "Undo A."
+  - id: undo-b
+    content:
+      - type: text
+        text: "Undo B."
+  - id: undo-c
+    content:
+      - type: text
+        text: "Undo C."
+correctOrder:
+  - undo-c
+  - undo-b
+  - undo-a
+explanation:
+  - type: text
+    text: "A stack removes the most recent task first, so the edits are undone in the order C, B, A."
+tags:
+  - stack
+  - lifo
+  - undo
+difficulty: 1

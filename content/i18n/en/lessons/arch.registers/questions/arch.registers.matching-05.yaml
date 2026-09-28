@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.registers.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each register and state-storage term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "program-counter"
+  - id: left-b
+    content:
+      - type: text
+        text: "register-file"
+  - id: left-c
+    content:
+      - type: text
+        text: "write-enable"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "The address of the next instruction"
+  - id: right-b
+    content:
+      - type: text
+        text: "A collection of general-purpose registers"
+  - id: right-c
+    content:
+      - type: text
+        text: "A control signal that enables writing on a clock edge"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "The program counter holds the next instruction address, and a register file is a collection of general-purpose registers."
+  - type: text
+    text: "Write enable is a control signal that allows writing on a clock edge, so distinguish these three roles."
+tags: [register, register-file, cpu-state]
+difficulty: 2

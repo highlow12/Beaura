@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.random-variables.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each random-variable term with its description."
+leftItems:
+  - id: random-variable
+    content:
+      - type: text
+        text: "Random variable X"
+  - id: pmf
+    content:
+      - type: text
+        text: "PMF"
+  - id: cdf
+    content:
+      - type: text
+        text: "CDF"
+  - id: support
+    content:
+      - type: text
+        text: "Possible values"
+rightItems:
+  - id: random-variable-desc
+    content:
+      - type: text
+        text: "A function that maps outcomes to numbers"
+  - id: pmf-desc
+    content:
+      - type: text
+        text: "A function that gives the probability of each value"
+  - id: cdf-desc
+    content:
+      - type: text
+        text: "A function for cumulative probability up to x"
+  - id: support-desc
+    content:
+      - type: text
+        text: "The set of values that may have nonzero probability"
+correctPairs:
+  - leftId: random-variable
+    rightId: random-variable-desc
+  - leftId: pmf
+    rightId: pmf-desc
+  - leftId: cdf
+    rightId: cdf-desc
+  - leftId: support
+    rightId: support-desc
+explanation:
+  - type: text
+    text: "A random variable assigns numerical values to outcomes, while a PMF and CDF describe the resulting distribution in different ways."
+  - type: text
+    text: "Distinguishing the sample space from the set of values of a random variable helps you read a distribution correctly."
+tags:
+  - probability-statistics
+  - random-variables
+  - terminology
+difficulty: 2

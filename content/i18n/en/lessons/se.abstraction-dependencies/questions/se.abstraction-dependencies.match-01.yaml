@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.abstraction-dependencies.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each abstraction and dependency-design term with its description.
+leftItems:
+  - id: abstraction
+    content:
+      - type: text
+        text: Abstraction
+  - id: adapter
+    content:
+      - type: text
+        text: Adapter
+  - id: injection
+    content:
+      - type: text
+        text: Dependency injection
+rightItems:
+  - id: essential-contract
+    content:
+      - type: text
+        text: A boundary that hides implementation details and expresses only the required behavioral contract
+  - id: concrete-bridge
+    content:
+      - type: text
+        text: An implementation that connects an external technology’s API to an internal port
+  - id: outside-supply
+    content:
+      - type: text
+        text: Supplying an implementation from outside the module that uses it
+correctPairs:
+  - leftId: abstraction
+    rightId: essential-contract
+  - leftId: adapter
+    rightId: concrete-bridge
+  - leftId: injection
+    rightId: outside-supply
+explanation:
+  - type: text
+    text: An abstraction defines the contract, an adapter connects a concrete technology, and injection separates creation from use.
+tags:
+  - software-engineering
+  - abstraction
+  - dependency-injection
+difficulty: 2

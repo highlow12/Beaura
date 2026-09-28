@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: algo.greedy.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "Complete the condition that checks whether an activity starts at or after the finish time of the last selected activity."
+- type: code
+  language: python
+  code: |-
+    if start {{blank:compatible}} last_finish:
+choices:
+- ">="
+- "<="
+- "=="
+acceptedAnswers:
+- ">="
+explanation:
+- type: text
+  text: "If start is at least last_finish, the new activity begins after the previous one ends, so the activities do not overlap."
+tags:
+- greedy
+- activity-selection
+- code-completion
+difficulty: 2

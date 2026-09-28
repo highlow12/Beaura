@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.transport.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about UDP and ports is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "UDP uses ports to distinguish processes and deliver datagrams, but does not guarantee ordering or retransmission by default."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "UDP always reassembles packets in order and retransmits missing data."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A port number is a globally unique address for a physical cable in a router."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "UDP uses ports to distinguish processes and deliver datagrams, but does not guarantee ordering or retransmission by default."
+  - type: text
+    text: "A port number identifies a transport endpoint on a host. UDP includes ports, length, and other fields in each datagram for fast delivery, but does not guarantee ordering, retransmission, or congestion control by default."
+tags: [udp, transport, port]
+difficulty: 1

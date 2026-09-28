@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: algo.kruskal.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "Choose the operation that merges two different groups."
+- type: code
+  language: python
+  code: components.{{blank:merge}}(u, v)
+choices:
+- union
+- find
+- skip
+acceptedAnswers:
+- union
+explanation:
+- type: text
+  text: "In Union-Find, union merges two different connected components."
+tags:
+- graph
+- mst
+- kruskal
+- union-find
+- code-completion
+difficulty: 2

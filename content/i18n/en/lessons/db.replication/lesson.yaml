@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.replication
+revision: 2
+track: databases
+title: Replication and Read Scaling
+description: Understand how primaries, replicas, and synchronous or asynchronous replication affect fault response and read scaling.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.replication.match-01
+  - type: question
+    ref: db.replication.choice-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.replication.output-01
+  - type: question
+    ref: db.replication.fill-01
+  - type: question
+    ref: db.replication.properties-01

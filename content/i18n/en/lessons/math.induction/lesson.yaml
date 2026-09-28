@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.induction
+revision: 4
+track: discrete-math
+title: "Mathematical Induction"
+description: "Prove a statement for all natural numbers using a base case and an inductive step."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.induction.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.induction.application-01
+  - type: content
+    ref: content/boundary.md
+  - type: question
+    ref: math.induction.term-01
+  - type: question
+    ref: math.induction.steps-01
+  - type: question
+    ref: math.induction.match-01

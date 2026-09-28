@@ -1,0 +1,50 @@
+schemaVersion: 1
+id: sys.network.terms-01
+revision: 2
+type: matching
+prompt:
+- type: text
+  text: Match each network term with its role.
+leftItems:
+- id: host
+  content:
+  - type: text
+    text: Host
+- id: packet
+  content:
+  - type: text
+    text: Packet
+- id: protocol
+  content:
+  - type: text
+    text: Protocol
+rightItems:
+- id: endpoint
+  content:
+  - type: text
+    text: An endpoint device that produces or consumes data
+- id: unit
+  content:
+  - type: text
+    text: A small unit of data delivered across a network
+- id: rules
+  content:
+  - type: text
+    text: Communication rules for message formats and processing
+correctPairs:
+- leftId: host
+  rightId: endpoint
+- leftId: packet
+  rightId: unit
+- leftId: protocol
+  rightId: rules
+explanation:
+- type: text
+  text: A host is an endpoint device that produces or receives data, a packet is a delivery unit, and a protocol defines communication rules.
+- type: text
+  text: The basic structure of a network becomes clearer when you distinguish devices, data units, and rules.
+tags:
+- networking
+- packet
+- protocol
+difficulty: 2

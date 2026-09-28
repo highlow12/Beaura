@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.statistics.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which measure of center is relatively less affected by one very large outlier?"
+options:
+  - id: median
+    content:
+      - type: text
+        text: "Median"
+  - id: mean
+    content:
+      - type: text
+        text: "Mean"
+  - id: sum
+    content:
+      - type: text
+        text: "Sum"
+  - id: range
+    content:
+      - type: text
+        text: "Range"
+correctOptionId: median
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The median is determined by the middle position in sorted data, so it is less sensitive than the mean to the magnitude of extreme values."
+  - type: text
+    text: "The mean uses every value, so a large outlier can pull it upward."
+tags:
+  - probability-statistics
+  - statistics
+  - median
+difficulty: 1

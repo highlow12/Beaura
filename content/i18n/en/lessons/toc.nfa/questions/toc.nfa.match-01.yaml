@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.nfa.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each NFA concept with its description.
+leftItems:
+  - id: epsilon
+    content:
+      - type: text
+        text: ε-transition
+  - id: current-set
+    content:
+      - type: text
+        text: Current state set
+  - id: subset-construction
+    content:
+      - type: text
+        text: Subset construction
+rightItems:
+  - id: no-consume
+    content:
+      - type: text
+        text: Moves without consuming an input symbol
+  - id: possibilities
+    content:
+      - type: text
+        text: Records all currently reachable states
+  - id: nfa-to-dfa
+    content:
+      - type: text
+        text: Represents a set of NFA states as one DFA state
+correctPairs:
+  - leftId: epsilon
+    rightId: no-consume
+  - leftId: current-set
+    rightId: possibilities
+  - leftId: subset-construction
+    rightId: nfa-to-dfa
+explanation:
+  - type: text
+    text: An NFA run maintains a set of possible states rather than one state, and an ε-transition moves without reading input.
+tags:
+  - theory-of-computation
+  - nfa
+  - epsilon
+difficulty: 2

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.grammar.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "In `S → aS | b`, replacing `S` with `b` applies one production ___."
+choices:
+  - rule
+  - state
+  - input
+acceptedAnswers:
+  - rule
+explanation:
+  - type: text
+    text: Choosing a right-side alternative in a production rule and replacing a nonterminal is one rule application.
+tags:
+  - theory-of-computation
+  - grammar
+  - production
+difficulty: 1

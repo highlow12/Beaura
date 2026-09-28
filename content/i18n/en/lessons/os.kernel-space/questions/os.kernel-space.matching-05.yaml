@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: os.kernel-space.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each kernel-space and user-space term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "user space"
+  - id: left-b
+    content:
+      - type: text
+        text: "Kernel space"
+  - id: left-c
+    content:
+      - type: text
+        text: "Privilege"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "The area where apps run with restricted privileges"
+  - id: right-b
+    content:
+      - type: text
+        text: "The area where core operating-system code runs"
+  - id: right-c
+    content:
+      - type: text
+        text: "A privilege level that permits access to instructions and memory"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "User space is where apps run with restricted privileges; kernel space is where core operating-system code runs; privilege is a level of permission for accessing instructions and memory."
+tags: [kernel, user-space, protection]
+difficulty: 1

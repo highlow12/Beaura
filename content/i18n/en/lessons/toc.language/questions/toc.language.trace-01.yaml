@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: toc.language.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: This code checks whether every symbol in `word` belongs to `alphabet`. Choose the output.
+language: python
+code: |-
+  alphabet = {"0", "1"}
+  word = "101"
+  print(all(symbol in alphabet for symbol in word))
+choices:
+  - "True"
+  - "False"
+  - "101"
+acceptedOutputs:
+  - "True"
+explanation:
+  - type: text
+    text: All three symbols in `word`, 1, 0, and 1, belong to `alphabet`, so `all` returns True.
+tags:
+  - theory-of-computation
+  - alphabet
+  - trace
+difficulty: 2

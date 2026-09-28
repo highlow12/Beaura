@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.allocation.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to the stack, heap, and memory allocation."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Excessively deep recursion can exhaust stack space."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Scattered heap blocks can cause external fragmentation, making it difficult to obtain a large contiguous block."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "The operating system always tracks heap-object lifetimes, even if heap memory is never freed."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A stack local variable keeps the same address for the entire lifetime of the program."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Excessively deep recursion can exhaust stack space. Scattered heap blocks can cause external fragmentation, making it difficult to obtain a large contiguous block."
+  - type: text
+    text: "The stack is fast and simple to manage, but its size and lifetime are limited. The heap is flexible, but it brings allocation costs, fragmentation, and the risk of leaks or double frees."
+tags: [memory-allocation, stack, heap]
+difficulty: 3

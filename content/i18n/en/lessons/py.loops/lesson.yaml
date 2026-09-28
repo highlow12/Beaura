@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.loops
+revision: 3
+track: python
+title: "Loops"
+description: "Use for and while to express repeated work and calculate accumulated values."
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.loops.purpose-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.loops.sum-output-01
+- type: question
+  ref: py.loops.sequence-01
+- type: content
+  ref: content/control.md
+- type: question
+  ref: py.loops.while-output-01
+- type: question
+  ref: py.loops.break-output-01

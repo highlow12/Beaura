@@ -1,0 +1,33 @@
+id: ds.tree-traversal.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What is the visit order for preorder traversal?"
+options:
+- id: pre
+  content:
+  - type: text
+    text: "Current node, left subtree, right subtree"
+- id: in
+  content:
+  - type: text
+    text: "Left subtree, current node, right subtree"
+- id: post
+  content:
+  - type: text
+    text: "Left subtree, right subtree, current node"
+- id: level
+  content:
+  - type: text
+    text: "Visit by queue from the lowest level upward"
+correctOptionId: pre
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Preorder is root-left-right. The left and right subtrees keep their order, but the current node is visited before both children."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- traversal
+difficulty: 2

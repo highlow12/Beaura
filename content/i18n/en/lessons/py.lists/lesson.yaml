@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.lists
+revision: 3
+track: python
+title: "Lists"
+description: "Learn to read and change multiple ordered values by index."
+flow:
+- type: content
+  ref: content/intro.md
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.lists.operations-01
+- type: question
+  ref: py.lists.mutation-output-01
+- type: question
+  ref: py.lists.properties-01
+- type: content
+  ref: content/indexing.md
+- type: question
+  ref: py.lists.index-update-01
+- type: question
+  ref: py.lists.alias-length-01

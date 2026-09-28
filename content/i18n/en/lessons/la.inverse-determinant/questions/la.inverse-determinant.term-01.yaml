@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.inverse-determinant.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The determinant of `[[2, 1], [0, 3]]` is `2 × 3 − 1 × 0 = ___`."
+choices:
+  - "0"
+  - "3"
+  - "6"
+  - "7"
+acceptedAnswers:
+  - "6"
+explanation:
+  - type: text
+    text: "The determinant of a 2×2 matrix is `ad − bc`, so `6 − 0 = 6`."
+  - type: text
+    text: "Since it is nonzero, this matrix is invertible."
+tags:
+  - linear-algebra
+  - matrices
+  - calculation
+difficulty: 1

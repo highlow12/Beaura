@@ -1,0 +1,37 @@
+id: ds.linked-list.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for traversing a singly linked list."
+items:
+- id: start
+  content:
+  - type: text
+    text: "Set current to head"
+- id: visit
+  content:
+  - type: text
+    text: "Use the value of current"
+- id: advance
+  content:
+  - type: text
+    text: "Move current to the next node"
+- id: stop
+  content:
+  - type: text
+    text: "If current is None, stop without reading a value"
+correctOrder:
+- start
+- stop
+- visit
+- advance
+explanation:
+- type: text
+  text: "Start at head and first check whether current is None. Read the value and move to next only when a node exists; perform the same check before each iteration."
+schemaVersion: 1
+revision: 2
+tags:
+- linked-list
+- node
+- pointer
+difficulty: 2

@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: algo.traversal.visited-purpose-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all reasons a visited set is needed in graph traversal."
+options:
+  - id: avoid-repeat
+    content:
+      - type: text
+        text: "To avoid revisiting vertices that have already been processed"
+  - id: stop-cycles
+    content:
+      - type: text
+        text: "To prevent revisiting the same vertices forever in a cyclic graph"
+  - id: sort-vertices
+    content:
+      - type: text
+        text: "To sort vertex names automatically"
+correctOptionIds:
+  - avoid-repeat
+  - stop-cycles
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A visited set prevents duplicate processing and cycles from repeating forever; it is not used for sorting."
+tags:
+  - traversal
+  - visited
+  - graph
+difficulty: 1

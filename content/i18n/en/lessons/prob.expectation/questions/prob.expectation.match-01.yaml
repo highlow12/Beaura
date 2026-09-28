@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.expectation.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each expected-value term with its description."
+leftItems:
+  - id: weighted
+    content:
+      - type: text
+        text: "xP(X=x)"
+  - id: expectation
+    content:
+      - type: text
+        text: "E[X]"
+  - id: linearity
+    content:
+      - type: text
+        text: "Linearity"
+  - id: fair
+    content:
+      - type: text
+        text: "Fair game"
+rightItems:
+  - id: weighted-desc
+    content:
+      - type: text
+        text: "The term contributed by one outcome to the expected value"
+  - id: expectation-desc
+    content:
+      - type: text
+        text: "The weighted average after adding all contributions"
+  - id: linearity-desc
+    content:
+      - type: text
+        text: "The property that separates sums and constant multiples"
+  - id: fair-desc
+    content:
+      - type: text
+        text: "A long-run average model with an expected net gain of 0"
+correctPairs:
+  - leftId: weighted
+    rightId: weighted-desc
+  - leftId: expectation
+    rightId: expectation-desc
+  - leftId: linearity
+    rightId: linearity-desc
+  - leftId: fair
+    rightId: fair-desc
+explanation:
+  - type: text
+    text: "Expected value is a probability-weighted long-run average, not a prediction of an individual outcome."
+  - type: text
+    text: "Remember that expected value is linear over sums even without independence."
+tags:
+  - probability-statistics
+  - expectation
+  - terminology
+difficulty: 2

@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.floating-point.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe floating-point representation."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Values such as 0.1 that have an infinite binary fraction can incur rounding error."
+  - id: correct-b
+    content:
+      - type: text
+        text: "The exponent affects the range of representable values."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Using fewer significand bits always increases precision."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Approximation error does not need to be considered when comparing floating-point values."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Values such as 0.1 that have an infinite binary fraction can incur rounding error. The exponent affects the range of representable values."
+  - type: text
+    text: "Floating point provides a wide range and fast hardware operations, but you must account for rounding errors and special values such as `NaN` and infinity. Values that require exact decimal places, such as money, need a different representation."
+tags: [floating-point, ieee-754, precision]
+difficulty: 3

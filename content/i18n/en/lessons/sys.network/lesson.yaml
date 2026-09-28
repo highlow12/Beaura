@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: sys.network
+revision: 4
+track: networks
+title: Introduction to Computer Networks
+description: Learn how devices, links, packets, and protocols work together to deliver data.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: sys.network.terms-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: sys.network.tcp-choice-01
+- type: question
+  ref: sys.network.web-protocol-01
+- type: content
+  ref: content/delivery.md
+- type: question
+  ref: sys.network.address-port-01
+- type: question
+  ref: sys.network.dns-role-01

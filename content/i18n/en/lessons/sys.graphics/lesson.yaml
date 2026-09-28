@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: sys.graphics
+revision: 4
+track: computer-graphics
+title: Introduction to Computer Graphics
+description: Learn how shapes in a scene become screen pixels through transformation, rasterization, and color calculation.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: sys.graphics.raster-choice-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: sys.graphics.pipeline-terms-01
+- type: question
+  ref: sys.graphics.rgb-channels-01
+- type: content
+  ref: content/framebuffer.md
+- type: question
+  ref: sys.graphics.pixel-count-01
+- type: question
+  ref: sys.graphics.framebuffer-role-01

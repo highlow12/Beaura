@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: toc.language.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: Choose the result of concatenating the strings `ab` and `c` from left to right.
+  - type: code
+    language: text
+    code: ab · c = ___
+choices:
+  - abc
+  - acb
+  - ab
+acceptedAnswers:
+  - abc
+explanation:
+  - type: text
+    text: Concatenation appends the second string after the first, so `c` follows `ab` to give `abc`.
+tags:
+  - theory-of-computation
+  - concatenation
+difficulty: 1

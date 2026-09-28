@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.matrices.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each matrix term with its description."
+leftItems:
+  - id: row
+    content:
+      - type: text
+        text: "Row"
+  - id: column
+    content:
+      - type: text
+        text: "Column"
+  - id: shape
+    content:
+      - type: text
+        text: "m×n"
+  - id: square
+    content:
+      - type: text
+        text: "Square matrix"
+rightItems:
+  - id: row-desc
+    content:
+      - type: text
+        text: "A horizontal line of entries"
+  - id: column-desc
+    content:
+      - type: text
+        text: "A vertical line of entries"
+  - id: shape-desc
+    content:
+      - type: text
+        text: "The shape, given by the number of rows and columns"
+  - id: square-desc
+    content:
+      - type: text
+        text: "A matrix with the same number of rows and columns"
+correctPairs:
+  - leftId: row
+    rightId: row-desc
+  - leftId: column
+    rightId: column-desc
+  - leftId: shape
+    rightId: shape-desc
+  - leftId: square
+    rightId: square-desc
+explanation:
+  - type: text
+    text: "Reading a matrix's shape and indices tells you where an entry is and which operations are possible."
+  - type: text
+    text: "Square matrices are a special case for which concepts such as inverses and determinants are defined."
+tags:
+  - linear-algebra
+  - matrices
+  - terminology
+difficulty: 2

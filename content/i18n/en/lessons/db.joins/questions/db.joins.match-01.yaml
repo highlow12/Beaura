@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.joins.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each JOIN type with the rows it keeps in the result."
+leftItems:
+  - id: inner
+    content:
+      - type: text
+        text: "INNER JOIN"
+  - id: left
+    content:
+      - type: text
+        text: "LEFT JOIN"
+  - id: condition
+    content:
+      - type: text
+        text: "ON condition"
+rightItems:
+  - id: matched
+    content:
+      - type: text
+        text: "Rows with matches on both sides"
+  - id: preserve-left
+    content:
+      - type: text
+        text: "Preserves all left-side rows and uses NULL when there is no match"
+  - id: pair-rule
+    content:
+      - type: text
+        text: "An expression that determines which rows to connect"
+correctPairs:
+  - leftId: inner
+    rightId: matched
+  - leftId: left
+    rightId: preserve-left
+  - leftId: condition
+    rightId: pair-rule
+explanation:
+  - type: text
+    text: "The difference between INNER and LEFT is whether unmatched rows are preserved; ON defines the matching rule. Decide which side’s rows must be kept before choosing the JOIN type."
+tags: [database, sql, joins]
+difficulty: 2

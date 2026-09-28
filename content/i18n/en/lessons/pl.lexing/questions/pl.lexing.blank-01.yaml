@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.lexing.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: When a lexer supports both = and ==, it usually follows the ___-match rule, which prefers the longer matching token.
+choices:
+  - longest
+  - shortest
+  - random
+acceptedAnswers:
+  - longest
+explanation:
+  - type: text
+    text: With the longest-match rule, == is not incorrectly split into two = tokens when both characters are available.
+tags:
+  - programming-languages
+  - lexer
+  - longest-match
+difficulty: 1

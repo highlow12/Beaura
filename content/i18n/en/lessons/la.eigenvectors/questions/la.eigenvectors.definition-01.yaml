@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.eigenvectors.definition-01
+revision: 2
+type: single-choice
+prompt:
+  - type: text
+    text: "In `Av = λv`, what condition must the eigenvector `v` satisfy?"
+options:
+  - id: nonzero
+    content:
+      - type: text
+        text: "`v` is not the zero vector"
+  - id: zero
+    content:
+      - type: text
+        text: "`v` must be the zero vector"
+  - id: scalar
+    content:
+      - type: text
+        text: "`v` is a scalar"
+  - id: orthogonal
+    content:
+      - type: text
+        text: "`v` is always perpendicular to every vector"
+correctOptionId: nonzero
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The zero vector satisfies the equation for every `λ`, so it carries no eigenvector information and is excluded."
+  - type: text
+    text: "An eigenvector is a nonzero vector `v` whose transformed result `Av` is a scalar multiple `λv` of itself."
+tags:
+  - linear-algebra
+  - eigen
+  - definition
+difficulty: 1

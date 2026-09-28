@@ -1,0 +1,5 @@
+## Check a Look-at Basis with Numbers
+
+Let `eye = (4, 2, 0)` and `target = (4, 2, -2)`. Then the forward vector is `target - eye = (0, 0, -2)`, and its normalized direction is `(0, 0, -1)`. In this simple case with no camera rotation, subtracting the camera position from the world-space point `(6, 2, 0)` gives a view-space x coordinate of `6 - 4 = 2`. A look-at transform uses this relative position and the camera's forward, right, and up axes to express coordinates from the camera's perspective.
+
+The view matrix is the inverse of the world transform that places the camera in the scene. If the camera moves 4 units right, adding `+4` to a point in view space would cancel the expected opposite movement of the scene. Also, if `up` is nearly parallel to forward, their cross product cannot define a right axis, so choose sufficiently different directions as look-at inputs. The sign convention for forward can vary across coordinate systems and APIs, so check both `target - eye` and the convention used by the final matrix.

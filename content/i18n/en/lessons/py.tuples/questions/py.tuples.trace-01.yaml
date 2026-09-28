@@ -1,0 +1,24 @@
+id: py.tuples.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following tuple code."
+language: python
+code: 'point = (3, 4)
+
+  print(point[1])'
+choices:
+- '4'
+- '3'
+- (3, 4)
+acceptedOutputs:
+- '4'
+explanation:
+- type: text
+  text: "Tuple indexes also start at 0, so `point[1]` reads the second element, 4."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- tuple
+difficulty: 2

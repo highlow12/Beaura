@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.cicd.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which statement best describes the main purpose of CI?
+options:
+- id: frequent-feedback
+  content:
+  - type: text
+    text: Integrate changes frequently and get fast feedback through automated validation.
+- id: manual-build
+  content:
+  - type: text
+    text: Build manually only on the production server.
+- id: deploy-without-test
+  content:
+  - type: text
+    text: Deploy every commit immediately without testing.
+- id: archive-only
+  content:
+  - type: text
+    text: Only back up source files without validating changes.
+correctOptionId: frequent-feedback
+shuffleOptions: true
+explanation:
+- type: text
+  text: CI integrates small changes frequently and uses automated builds and tests to find integration problems early.
+tags:
+- software-engineering
+- cicd
+- continuous-integration
+difficulty: 1

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.vectors.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement correctly describes a vector?"
+options:
+  - id: magnitude-direction
+    content:
+      - type: text
+        text: "A quantity with both magnitude and direction"
+  - id: magnitude-only
+    content:
+      - type: text
+        text: "Represents magnitude only, without direction"
+  - id: label-only
+    content:
+      - type: text
+        text: "Only a name attached to a number"
+  - id: position-only
+    content:
+      - type: text
+        text: "Always represents only a starting position"
+correctOptionId: magnitude-direction
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A vector has both magnitude and direction and can represent displacement or velocity."
+  - type: text
+    text: "Vectors with the same components can be treated as the same free vector even if they start at different locations."
+tags:
+  - linear-algebra
+  - vectors
+  - vector
+difficulty: 1

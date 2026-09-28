@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.version-control
+revision: 2
+track: software-engineering
+title: Version Control and Merging
+description: Learn how to collaborate safely on change history with commits, branches, and merges.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: se.version-control.concept-01
+- type: content
+  ref: content/model.md
+- type: question
+  ref: se.version-control.match-01
+- type: question
+  ref: se.version-control.blank-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: se.version-control.order-01
+- type: question
+  ref: se.version-control.trace-01

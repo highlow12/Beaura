@@ -1,0 +1,47 @@
+id: py.scopes.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each scope-related name with its meaning."
+leftItems:
+- id: parameter
+  content:
+  - type: text
+    text: "Function parameter"
+- id: local
+  content:
+  - type: text
+    text: "A name assigned inside a function"
+- id: global
+  content:
+  - type: text
+    text: "A name created outside a function"
+rightItems:
+- id: input
+  content:
+  - type: text
+    text: "An input placed in local scope when the function is called"
+- id: inside
+  content:
+  - type: text
+    text: "A name normally visible only within that call"
+- id: outside
+  content:
+  - type: text
+    text: "A name in the module’s top-level scope"
+correctPairs:
+- leftId: parameter
+  rightId: input
+- leftId: local
+  rightId: inside
+- leftId: global
+  rightId: outside
+explanation:
+- type: text
+  text: "Parameters and names assigned inside a function are in local scope. A global name outside the function is found when no local name of the same name exists."
+schemaVersion: 1
+revision: 2
+tags:
+- functions
+- scope
+difficulty: 2

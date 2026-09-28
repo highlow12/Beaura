@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: net.performance.multi-02
+revision: 1
+type: multi-select
+prompt:
+- type: text
+  text: Select all statements that apply to latency, bandwidth, and loss.
+options:
+- id: correct-a
+  content:
+  - type: text
+    text: Queuing latency can increase as a link approaches saturation.
+- id: correct-b
+  content:
+  - type: text
+    text: Packet loss can cause TCP retransmissions and reduce actual throughput.
+- id: wrong-a
+  content:
+  - type: text
+    text: The same performance metric is always important for both large file transfers and interactive input.
+- id: wrong-b
+  content:
+  - type: text
+    text: Throughput is always exactly equal to theoretical bandwidth.
+correctOptionIds:
+- correct-a
+- correct-b
+shuffleOptions: true
+explanation:
+- type: text
+  text: Queuing latency can increase as a link approaches saturation. Packet loss can cause TCP retransmissions and reduce
+    actual throughput.
+- type: text
+  text: Larger buffers can sustain bursts of throughput, but bufferbloat can increase latency. Compression, parallel connections,
+    and congestion control each create a different trade-off between bandwidth and latency.
+tags:
+- network-performance
+- latency
+- bandwidth
+difficulty: 3

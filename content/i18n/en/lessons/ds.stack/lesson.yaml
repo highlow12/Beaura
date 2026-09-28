@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.stack
+revision: 2
+track: data-structures
+title: Stacks
+description: Learn the LIFO structure, where the last value added is the first one removed.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.stack.operations-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.stack.lifo-output-01
+- type: question
+  ref: ds.stack.use-01
+- type: content
+  ref: content/invariant.md
+- type: question
+  ref: ds.stack.trace-01
+- type: question
+  ref: ds.stack.undo-order-01

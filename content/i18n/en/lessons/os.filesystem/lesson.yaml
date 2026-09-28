@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.filesystem
+revision: 2
+track: operating-systems
+title: Files, Directories, and File Systems
+description: Understand how a file system builds a filename space and metadata on top of block storage.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.filesystem.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.filesystem.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.filesystem.fill-03
+  - type: question
+    ref: os.filesystem.ordering-04
+  - type: question
+    ref: os.filesystem.matching-05

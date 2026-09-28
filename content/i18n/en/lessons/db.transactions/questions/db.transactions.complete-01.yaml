@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.transactions.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Complete the action that commits a transaction when all changes have succeeded."
+language: python
+template: |-
+  changes_ok = True
+  if changes_ok:
+      transaction.{{blank:action}}()
+blanks:
+  - id: action
+    choices: ["commit", "rollback", "select"]
+    acceptedAnswers: ["commit"]
+explanation:
+  - type: text
+    text: "Call commit when all changes succeed to finalize the transaction result. Use rollback on the failure path."
+tags: [database, transactions, commit, code-completion]
+difficulty: 1

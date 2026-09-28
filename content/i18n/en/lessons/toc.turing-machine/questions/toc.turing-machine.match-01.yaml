@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.turing-machine.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each Turing machine component with its role.
+leftItems:
+  - id: tape
+    content:
+      - type: text
+        text: Tape
+  - id: head
+    content:
+      - type: text
+        text: Head
+  - id: halt-state
+    content:
+      - type: text
+        text: Halting state
+rightItems:
+  - id: work-memory
+    content:
+      - type: text
+        text: Workspace for reading and writing symbols
+  - id: cursor
+    content:
+      - type: text
+        text: Position that reads and moves across the current cell
+  - id: stop
+    content:
+      - type: text
+        text: State in which no further transition is performed
+correctPairs:
+  - leftId: tape
+    rightId: work-memory
+  - leftId: head
+    rightId: cursor
+  - leftId: halt-state
+    rightId: stop
+explanation:
+  - type: text
+    text: The tape stores the input and intermediate results, and the head marks the cell being read or written.
+tags:
+  - theory-of-computation
+  - turing-machine
+  - model
+difficulty: 1

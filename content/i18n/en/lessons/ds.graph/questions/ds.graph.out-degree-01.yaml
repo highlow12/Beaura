@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: ds.graph.out-degree-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Given the directed edges A→B, A→C, and D→A, what is A’s out-degree?"
+options:
+  - id: out-2
+    content:
+      - type: text
+        text: '2'
+  - id: out-1
+    content:
+      - type: text
+        text: '1'
+  - id: out-3
+    content:
+      - type: text
+        text: '3'
+correctOptionId: out-2
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Two edges leave A: A→B and A→C. D→A is an incoming edge."
+tags:
+  - graph
+  - directed
+  - degree
+difficulty: 2

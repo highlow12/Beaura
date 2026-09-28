@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.merge-sort
+revision: 1
+track: algorithms
+title: Merge Sort
+description: "Learn merge sort’s divide, conquer, and combine process: split subarrays and merge their sorted results."
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.merge-sort.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.merge-sort.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.merge-sort.complete-01
+- type: question
+  ref: algo.merge-sort.steps-01
+- type: question
+  ref: algo.merge-sort.match-01

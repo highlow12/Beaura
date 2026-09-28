@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.keys.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each database key term with its meaning."
+leftItems:
+  - id: candidate
+    content:
+      - type: text
+        text: "Candidate key"
+  - id: primary
+    content:
+      - type: text
+        text: "Primary key"
+  - id: foreign
+    content:
+      - type: text
+        text: "Foreign key"
+rightItems:
+  - id: minimal-unique
+    content:
+      - type: text
+        text: "A minimal set of attributes that uniquely identifies a row"
+  - id: selected-identifier
+    content:
+      - type: text
+        text: "The identifier selected as the primary one among candidate keys"
+  - id: reference
+    content:
+      - type: text
+        text: "A column that references a key in another table"
+correctPairs:
+  - leftId: candidate
+    rightId: minimal-unique
+  - leftId: primary
+    rightId: selected-identifier
+  - leftId: foreign
+    rightId: reference
+explanation:
+  - type: text
+    text: "A candidate key is a minimal identifier that could be selected; the primary key is the one chosen as the main identifier. A foreign key represents a reference between tables."
+tags: [database, keys, integrity]
+difficulty: 2

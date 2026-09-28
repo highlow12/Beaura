@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.allocation
+revision: 2
+track: operating-systems
+title: The Stack, Heap, and Memory Allocation
+description: Compare how the stack and heap are used, including dynamic allocation and fragmentation.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.allocation.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.allocation.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.allocation.fill-03
+  - type: question
+    ref: os.allocation.ordering-04
+  - type: question
+    ref: os.allocation.matching-05

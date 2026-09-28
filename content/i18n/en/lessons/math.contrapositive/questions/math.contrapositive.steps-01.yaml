@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: math.contrapositive.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the contrapositive proof steps for “if `a` is even, then `a²` is even.”"
+items:
+  - id: assume-odd-square
+    content:
+      - type: text
+        text: "Assume that `a²` is odd"
+  - id: infer-odd
+    content:
+      - type: text
+        text: "Show that `a` is odd"
+  - id: state-contra
+    content:
+      - type: text
+        text: "State that this is the contrapositive's conclusion: `a` is not even"
+correctOrder:
+  - assume-odd-square
+  - infer-odd
+  - state-contra
+explanation:
+  - type: text
+    text: "The contrapositive of “if `a` is even, then `a²` is even” is “if `a²` is odd, then `a` is odd.”"
+  - type: text
+    text: "Writing out the negations precisely first helps you keep the proof's direction straight."
+tags:
+  - discrete-math
+  - proof
+  - proof-direction
+difficulty: 3

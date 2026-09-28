@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.distributions.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all conditions for using a binomial distribution."
+options:
+  - id: fixed-n
+    content:
+      - type: text
+        text: "The number of trials n is fixed."
+  - id: two-outcomes
+    content:
+      - type: text
+        text: "Each trial has two possible outcomes: success or failure."
+  - id: independent
+    content:
+      - type: text
+        text: "The trials are independent."
+  - id: varying-p
+    content:
+      - type: text
+        text: "The success probability varies arbitrarily from trial to trial."
+correctOptionIds: [fixed-n, two-outcomes, independent]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A binomial distribution assumes a fixed number n of independent Bernoulli trials with a constant probability of success."
+  - type: text
+    text: "If the success probability changes, the basic binomial model does not apply as is."
+tags:
+  - probability-statistics
+  - distributions
+  - binomial
+difficulty: 2

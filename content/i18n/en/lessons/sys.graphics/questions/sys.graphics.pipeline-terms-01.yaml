@@ -1,0 +1,49 @@
+schemaVersion: 1
+id: sys.graphics.pipeline-terms-01
+revision: 2
+type: matching
+prompt:
+- type: text
+  text: Match each graphics term with its role.
+leftItems:
+- id: pixel
+  content:
+  - type: text
+    text: Pixel
+- id: vertex
+  content:
+  - type: text
+    text: Vertex
+- id: framebuffer
+  content:
+  - type: text
+    text: framebuffer
+rightItems:
+- id: color-cell
+  content:
+  - type: text
+    text: One position in the screen grid and its color
+- id: shape-point
+  content:
+  - type: text
+    text: A coordinate point that defines a shape
+- id: image-store
+  content:
+  - type: text
+    text: A region that collects the final colors to display on screen
+correctPairs:
+- leftId: pixel
+  rightId: color-cell
+- leftId: vertex
+  rightId: shape-point
+- leftId: framebuffer
+  rightId: image-store
+explanation:
+- type: text
+  text: A pixel is a cell where color is recorded, a vertex is a point in a shape, and a framebuffer stores the final colors.
+- type: text
+  text: 'Connect the rendering steps: vertices are transformed, rasterization produces pixel results, and those results are written to the framebuffer.'
+tags:
+- graphics
+- rendering
+difficulty: 2

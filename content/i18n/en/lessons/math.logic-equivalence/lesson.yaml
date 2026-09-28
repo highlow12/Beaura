@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.logic-equivalence
+revision: 3
+track: discrete-math
+title: "Logical Equivalences and Transformations"
+description: "Learn the basics of equivalent logical transformations, De Morgan's laws, and CNF and DNF."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.logic-equivalence.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.logic-equivalence.application-01
+  - type: content
+    ref: content/rewrite.md
+  - type: question
+    ref: math.logic-equivalence.term-01
+  - type: question
+    ref: math.logic-equivalence.steps-01
+  - type: question
+    ref: math.logic-equivalence.match-01

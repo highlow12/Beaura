@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: la.linear-transformations.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "A linear transformation must map the origin to the ___ ."
+choices:
+  - "origin"
+  - "point at infinity"
+  - "another point"
+acceptedAnswers:
+  - "origin"
+explanation:
+  - type: text
+    text: "Since `T(0) = T(0·v) = 0·T(v) = 0`, the origin remains where it is."
+  - type: text
+    text: "Distinguish linear transformations from translations, which move the origin."
+tags:
+  - linear-algebra
+  - transformations
+  - origin
+difficulty: 1

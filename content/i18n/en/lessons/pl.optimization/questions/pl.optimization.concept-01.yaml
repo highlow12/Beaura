@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.optimization.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: What is the most important constraint on compiler optimization?
+options:
+  - id: preserve-semantics
+    content:
+      - type: text
+        text: It must preserve the program's observable meaning.
+  - id: change-output
+    content:
+      - type: text
+        text: It may change outputs and side effects as long as the program is faster.
+  - id: remove-all
+    content:
+      - type: text
+        text: It must remove as many instructions as possible.
+  - id: compile-runtime
+    content:
+      - type: text
+        text: It must make transformations randomly at runtime.
+correctOptionId: preserve-semantics
+shuffleOptions: true
+explanation:
+  - type: text
+    text: Even when reducing time or space, an optimization must preserve observable behavior such as normal results, errors, and side effects.
+tags:
+  - programming-languages
+  - optimization
+  - semantics
+difficulty: 1

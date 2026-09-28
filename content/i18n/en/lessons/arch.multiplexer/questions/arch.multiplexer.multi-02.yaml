@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.multiplexer.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe multiplexers."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "A 2-to-1 MUX uses one select bit to choose between two data inputs."
+  - id: correct-b
+    content:
+      - type: text
+        text: "A MUX’s output responds immediately to the current inputs and select line."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A MUX remembers its previous output even when the select line changes."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A MUX with four inputs needs only one select bit."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A 2-to-1 MUX uses one select bit to choose between two data inputs. A MUX’s output responds immediately to the current inputs and select line."
+  - type: text
+    text: "Connecting MUXes hierarchically lets you choose from more inputs, but increases the number of gates and propagation delay. Confusing the select signal with the data signals can lead you to misread the output path."
+tags: [multiplexer, combinational-circuit, datapath]
+difficulty: 3

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.decoder.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about decoders and address selection is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A decoder selects and activates one output line corresponding to the input binary code."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A decoder calculates one arithmetic result from the sum of multiple inputs."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A decoder compresses the input code into fewer output lines."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A decoder selects and activates one output line corresponding to the input binary code."
+  - type: text
+    text: "A decoder maps a combination of n input bits to an active signal on one of up to 2^n output lines. A common form is one-hot, in which only one output is active at a time."
+tags: [decoder, address, digital-logic]
+difficulty: 2

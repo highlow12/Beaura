@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.definite-integrals
+revision: 2
+track: calculus
+title: "Definite Integrals and Area"
+description: "Calculate a definite integral over an interval as the difference between antiderivative values at the endpoints and interpret it as accumulation."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: calc.definite-integrals.definition-01
+  - type: question
+    ref: calc.definite-integrals.application-01
+  - type: content
+    ref: content/connection.md
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: calc.definite-integrals.term-01
+  - type: question
+    ref: calc.definite-integrals.steps-01
+  - type: question
+    ref: calc.definite-integrals.match-01

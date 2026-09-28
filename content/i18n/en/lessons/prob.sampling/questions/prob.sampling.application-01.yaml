@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.sampling.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all conditions that help produce a representative sample."
+options:
+  - id: random
+    content:
+      - type: text
+        text: "Members of the population have a chance of being selected at random"
+  - id: coverage
+    content:
+      - type: text
+        text: "The sampling frame covers the target population"
+  - id: record
+    content:
+      - type: text
+        text: "Record the sampling procedure and response rate"
+  - id: convenience
+    content:
+      - type: text
+        text: "Select only nearby people for convenience"
+correctOptionIds: [random, coverage, record]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Random selection, coverage of the target population, and documentation help identify and reduce bias."
+  - type: text
+    text: "A convenience sample may overrepresent certain groups."
+tags:
+  - probability-statistics
+  - sampling
+  - bias
+difficulty: 2

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.cfg.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: The symbol at the root of a CFG derivation is called the ___ symbol.
+choices:
+  - start
+  - end
+  - input
+acceptedAnswers:
+  - start
+explanation:
+  - type: text
+    text: Production rules are applied starting from the start symbol to generate a string, and the root of a parse tree is also the start symbol.
+tags:
+  - theory-of-computation
+  - cfg
+  - start-symbol
+difficulty: 1

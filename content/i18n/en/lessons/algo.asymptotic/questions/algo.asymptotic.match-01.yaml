@@ -1,0 +1,47 @@
+id: algo.asymptotic.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each asymptotic notation with its meaning."
+leftItems:
+- id: big-o
+  content:
+  - type: text
+    text: "O(f(n))"
+- id: omega
+  content:
+  - type: text
+    text: "Ω(f(n))"
+- id: theta
+  content:
+  - type: text
+    text: "Θ(f(n))"
+rightItems:
+- id: upper
+  content:
+  - type: text
+    text: "An upper bound on growth"
+- id: lower
+  content:
+  - type: text
+    text: "A lower bound on growth"
+- id: tight
+  content:
+  - type: text
+    text: "A bound where the upper and lower bounds match"
+correctPairs:
+- leftId: big-o
+  rightId: upper
+- leftId: omega
+  rightId: lower
+- leftId: theta
+  rightId: tight
+explanation:
+- type: text
+  text: "O provides an upper bound, and Ω provides a lower bound. When both bounds use the same function, Θ expresses the tight growth rate."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- asymptotic
+difficulty: 2

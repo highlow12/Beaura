@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.integrals.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each integration term with its meaning."
+leftItems:
+  - id: indefinite
+    content:
+      - type: text
+        text: "Indefinite integral"
+  - id: definite
+    content:
+      - type: text
+        text: "Definite integral"
+  - id: antiderivative
+    content:
+      - type: text
+        text: "Antiderivative"
+  - id: constant
+    content:
+      - type: text
+        text: "Constant of integration"
+rightItems:
+  - id: indefinite-desc
+    content:
+      - type: text
+        text: "General family of functions whose derivative is f"
+  - id: definite-desc
+    content:
+      - type: text
+        text: "A single accumulated value over an interval"
+  - id: antiderivative-desc
+    content:
+      - type: text
+        text: "A function whose derivative is the integrand"
+  - id: constant-desc
+    content:
+      - type: text
+        text: "C, which remains in the general form and disappears when differentiated"
+correctPairs:
+  - leftId: indefinite
+    rightId: indefinite-desc
+  - leftId: definite
+    rightId: definite-desc
+  - leftId: antiderivative
+    rightId: antiderivative-desc
+  - leftId: constant
+    rightId: constant-desc
+explanation:
+  - type: text
+    text: "An indefinite integral describes a family of functions, while a definite integral gives an accumulated value over an interval."
+  - type: text
+    text: "First check whether the problem gives an interval and whether you need to include C."
+tags:
+  - calculus
+  - integrals
+  - terminology
+difficulty: 2

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: arch.binary.base-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the decimal value of binary 101?"
+options:
+  - id: five
+    content:
+      - type: text
+        text: "5"
+  - id: three
+    content:
+      - type: text
+        text: "3"
+  - id: four
+    content:
+      - type: text
+        text: "4"
+correctOptionId: five
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "101 is 1×4 + 0×2 + 1×1, which equals 5."
+  - type: text
+    text: "Bit place values increase from right to left, starting with 2 to the power of 0, then 2 to the power of 1."
+tags:
+  - binary
+  - bits
+difficulty: 1

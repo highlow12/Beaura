@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.transport.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic UDP and port processing steps in the correct order."
+items:
+  - id: bind
+    content:
+      - type: text
+        text: "The application binds a socket to a port"
+  - id: datagram
+    content:
+      - type: text
+        text: "UDP packages the header and payload into a datagram"
+  - id: deliver
+    content:
+      - type: text
+        text: "The receiving host delivers the datagram to the port’s queue"
+correctOrder: [bind, datagram, deliver]
+explanation:
+  - type: text
+    text: "First, the application binds a socket to a port; then UDP packages the header and payload into a datagram."
+  - type: text
+    text: "At the step where the receiving host delivers the datagram to the port’s queue, the result is passed to the next network layer or application."
+tags: [udp, transport, port]
+difficulty: 2

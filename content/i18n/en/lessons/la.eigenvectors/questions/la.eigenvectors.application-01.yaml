@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.eigenvectors.application-01
+revision: 2
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about eigenvalues and eigenvectors."
+options:
+  - id: scale
+    content:
+      - type: text
+        text: "An eigenvalue is the scale factor applied to an eigenvector"
+  - id: equation
+    content:
+      - type: text
+        text: "It satisfies `Av = λv`"
+  - id: characteristic
+    content:
+      - type: text
+        text: "Eigenvalue candidates are found by solving `det(A − λI) = 0`"
+  - id: all
+    content:
+      - type: text
+        text: "Every vector is an eigenvector"
+correctOptionIds: [scale, equation, characteristic]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "An eigenvalue is the scale factor for its eigenvector, and the characteristic equation expresses the condition for a nonzero eigenvector to exist."
+  - type: text
+    text: "A general vector may not remain a scalar multiple of itself after a transformation."
+tags:
+  - linear-algebra
+  - eigen
+  - eigenvalue
+difficulty: 2

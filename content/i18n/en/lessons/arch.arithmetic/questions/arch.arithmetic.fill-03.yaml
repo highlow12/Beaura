@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.arithmetic.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "In 4-bit unsigned arithmetic, what result is stored after `1111 + 0001`?"
+choices:
+  - "0000"
+  - "10000"
+  - "1110"
+acceptedAnswers:
+  - "0000"
+explanation:
+  - type: text
+    text: "The mathematical result 16 is outside the 4-bit range, so only the lowest four bits, 0000, are stored."
+tags: [binary-arithmetic, carry, overflow]
+difficulty: 2

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.arithmetic.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about binary arithmetic and overflow is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "Overflow occurs when an addition result in a fixed bit width is outside the representable range."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Any carry always means overflow."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Overflow occurs only in floating-point arithmetic."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Overflow occurs when an addition result in a fixed bit width is outside the representable range."
+  - type: text
+    text: "Binary addition repeats four cases: 0+0, 0+1, 1+0, and 1+1. For `1+1`, write 0 in the current position and carry 1 to the next position."
+tags: [binary-arithmetic, carry, overflow]
+difficulty: 2

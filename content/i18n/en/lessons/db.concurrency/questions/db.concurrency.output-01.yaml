@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.concurrency.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the final stock in this model, where two transactions subtract sequentially."
+language: python
+code: |-
+  stock = 5
+  for requested in [1, 2]:
+      if stock >= requested:
+          stock -= requested
+  print(stock)
+choices: ["2", "4", "5"]
+acceptedOutputs: ["2"]
+explanation:
+  - type: text
+    text: "After the first request, stock is 4; after the second, it is 2. In real concurrent execution, isolation and atomic conditions determine whether this sequential result is guaranteed."
+tags: [database, concurrency, code-output]
+difficulty: 2

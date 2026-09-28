@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.transactions.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "During a bank transfer, what action prevents the withdrawal from remaining if the deposit step fails?"
+options:
+  - id: rollback
+    content:
+      - type: text
+        text: "Roll back the transaction"
+  - id: commit
+    content:
+      - type: text
+        text: "Commit the failed state"
+  - id: select
+    content:
+      - type: text
+        text: "Run only the SELECT query again"
+correctOptionId: rollback
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Rollback cancels changes in the transaction so the withdrawal and deposit either both succeed or both disappear."
+tags: [database, transactions, rollback]
+difficulty: 1

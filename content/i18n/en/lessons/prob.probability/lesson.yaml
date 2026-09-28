@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.probability
+revision: 2
+track: probability-statistics
+title: "Probability Fundamentals"
+description: "Define sample spaces and events, then calculate probabilities when outcomes are equally likely."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: prob.probability.definition-01
+  - type: question
+    ref: prob.probability.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: prob.probability.term-01
+  - type: question
+    ref: prob.probability.steps-01
+  - type: question
+    ref: prob.probability.match-01

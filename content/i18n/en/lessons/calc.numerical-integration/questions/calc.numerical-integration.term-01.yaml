@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.numerical-integration.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The area of a trapezoid with width 1 and endpoint heights 2 and 4 is ___."
+choices:
+  - "2"
+  - "3"
+  - "4"
+  - "6"
+acceptedAnswers:
+  - "3"
+explanation:
+  - type: text
+    text: "The average height is (2+4)/2=3, and the width is 1, so the area is 3."
+  - type: text
+    text: "The trapezoidal rule uses the average of the endpoint values."
+tags:
+  - calculus
+  - numerical
+  - calculation
+difficulty: 1

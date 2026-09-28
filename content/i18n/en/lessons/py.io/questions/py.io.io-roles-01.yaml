@@ -1,0 +1,52 @@
+schemaVersion: 1
+id: py.io.io-roles-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each input/output function with its role."
+leftItems:
+  - id: print-function
+    content:
+      - type: code
+        language: python
+        code: print(value)
+  - id: input-function
+    content:
+      - type: code
+        language: python
+        code: 'input("이름: ")'
+  - id: int-function
+    content:
+      - type: code
+        language: python
+        code: int("20")
+rightItems:
+  - id: show-output
+    content:
+      - type: text
+        text: "Displays values on the screen"
+  - id: read-string
+    content:
+      - type: text
+        text: "Receives user input as a string"
+  - id: convert-integer
+    content:
+      - type: text
+        text: "Converts a numeric string to an integer"
+correctPairs:
+  - leftId: print-function
+    rightId: show-output
+  - leftId: input-function
+    rightId: read-string
+  - leftId: int-function
+    rightId: convert-integer
+explanation:
+  - type: text
+    text: "`print()` displays output, `input()` receives string input, and `int()` converts a value to an integer."
+tags:
+  - io
+  - input
+  - print
+  - int
+difficulty: 2

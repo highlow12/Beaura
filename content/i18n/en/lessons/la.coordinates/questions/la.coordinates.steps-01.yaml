@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: la.coordinates.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for finding a vector's coordinates in a new basis."
+items:
+  - id: choose
+    content:
+      - type: text
+        text: "Build matrix B with the new basis vectors as its columns"
+  - id: equation
+    content:
+      - type: text
+        text: "Set up the equation `Bc = v`"
+  - id: solve
+    content:
+      - type: text
+        text: "Solve for the coefficient vector `c`"
+  - id: verify
+    content:
+      - type: text
+        text: "Calculate `Bc` again and check that it equals `v`"
+correctOrder:
+  - choose
+  - equation
+  - solve
+  - verify
+explanation:
+  - type: text
+    text: "Write the new-basis linear combination as a matrix equation, then solve for the coefficients `c`."
+  - type: text
+    text: "The final reconstruction is a simple check that the coordinate calculation is correct."
+tags:
+  - linear-algebra
+  - coordinates
+  - change-of-basis
+difficulty: 2

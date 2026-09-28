@@ -5,6 +5,8 @@
     learningRepository,
     type HeartStatus,
   } from "$lib/storage/repositories/learning-repository";
+  import { locale, t } from "$lib/application/locale";
+  const tr = (korean: string, english: string) => t(korean, english, $locale);
 
   let status = $state<HeartStatus | null>(null);
   let open = $state(false);
@@ -27,18 +29,24 @@
   }
 
   function recoveryLabel(value: HeartStatus | null) {
-    if (!value) return "확인 중…";
-    if (value.isFull || value.nextRecoveryAt === null) return "가득 찼어요";
+    if (!value) return tr("확인 중…", "Checking…");
+    if (value.isFull || value.nextRecoveryAt === null) return tr("가득 찼어요", "Full");
     const remaining = Math.max(0, value.nextRecoveryAt - now);
     const totalMinutes = Math.max(1, Math.ceil(remaining / (60 * 1000)));
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
+    if ($locale === "en") {
+      const remaining = [];
+      if (hours > 0) remaining.push(`${hours} ${hours === 1 ? "hour" : "hours"}`);
+      if (minutes > 0 || hours === 0) remaining.push(`${minutes} ${minutes === 1 ? "minute" : "minutes"}`);
+      return `${remaining.join(" ")} from now`;
+    }
     if (hours > 0) return `${hours}시간 ${minutes}분 후`;
     return `${minutes}분 후`;
   }
 
   function showAdNotice() {
-    adNotice = "현재 광고가 준비되지 않았어요.";
+    adNotice = tr("현재 광고가 준비되지 않았어요.", "Ads are not available yet.");
     if (typeof window !== "undefined")
       window.setTimeout(() => (adNotice = ""), 3200);
   }
@@ -73,7 +81,7 @@
   <button
     class="heart-button"
     type="button"
-    aria-label="남은 하트 {status?.count ?? 0}개"
+    aria-label={tr(`남은 하트 ${status?.count ?? 0}개`, `${status?.count ?? 0} hearts remaining`)}
     aria-expanded={open}
     aria-controls="heart-popover"
     onclick={() => (open = !open)}
@@ -83,22 +91,22 @@
   </button>
 
   {#if open}
-    <section id="heart-popover" class="heart-popover" aria-label="하트 정보">
+    <section id="heart-popover" class="heart-popover" aria-label={tr("하트 정보", "Heart information")}>
       <p class="heart-total">
         <span aria-hidden="true">♥</span>
         {status?.count ?? 0} / 3
       </p>
       <p class="heart-recovery">
         {status?.isFull
-          ? "하트가 가득 찼어요."
-          : `다음 하트: ${recoveryLabel(status)}`}
+          ? tr("하트가 가득 찼어요.", "Your hearts are full.")
+          : `${tr("다음 하트:", "Next heart:")} ${recoveryLabel(status)}`}
       </p>
       <button
         class="button secondary ad-button"
         type="button"
         onclick={showAdNotice}
       >
-        광고 보고 하트 초기화
+        {tr("광고 보고 하트 초기화", "Watch an ad to refill hearts")}
       </button>
       {#if adNotice}<p class="ad-notice" role="status" aria-live="polite">{adNotice}</p>{/if}
     </section>

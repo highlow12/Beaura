@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.modularity.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which combination do modules that are easy to change generally aim for?
+options:
+- id: high-cohesion-low-coupling
+  content:
+  - type: text
+    text: High cohesion and low coupling
+- id: low-cohesion-high-coupling
+  content:
+  - type: text
+    text: Low cohesion and high coupling
+- id: no-boundary
+  content:
+  - type: text
+    text: Put every feature in a single module
+- id: global-state
+  content:
+  - type: text
+    text: Share global state between modules
+correctOptionId: high-cohesion-low-coupling
+shuffleOptions: true
+explanation:
+- type: text
+  text: Focusing each module on one purpose and reducing shared internal knowledge between modules helps limit the impact of changes.
+tags:
+- software-engineering
+- modularity
+- cohesion
+difficulty: 1

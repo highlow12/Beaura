@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.socket.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about sockets and clients/servers is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A socket is an operating-system-managed endpoint through which a process reads and writes network data."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A socket is the name of a physical cable found only inside routers."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "`accept` is a call that registers a domain record with an authoritative DNS server."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A socket is an operating-system-managed endpoint through which a process reads and writes network data."
+  - type: text
+    text: "A socket is an abstract communication endpoint through which a process sends and receives network data. A server uses `bind`, `listen`, and `accept`; a client uses `connect`, followed by `send` and `receive`."
+tags: [socket, client-server, api]
+difficulty: 2

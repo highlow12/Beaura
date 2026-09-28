@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.backtracking.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Put the steps in one level of backtracking recursion in order."
+items:
+- id: choose
+  content:
+  - type: text
+    text: "Choose the next candidate"
+- id: check
+  content:
+  - type: text
+    text: "Check whether the current partial solution is valid"
+- id: recurse
+  content:
+  - type: text
+    text: "If valid, make a recursive call for the next step"
+- id: remove
+  content:
+  - type: text
+    text: "Remove the choice after the call returns"
+correctOrder:
+- choose
+- check
+- recurse
+- remove
+explanation:
+- type: text
+  text: "Add a choice and check it; recurse only if it is valid. When recursion returns, remove the choice to restore the state."
+tags:
+- backtracking
+- pruning
+- execution-order
+difficulty: 2

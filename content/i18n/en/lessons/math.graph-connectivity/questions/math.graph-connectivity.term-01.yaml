@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.graph-connectivity.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "An edge whose removal increases the number of connected components is called a ___ ."
+choices:
+  - "bridge"
+  - "loop"
+  - "path"
+acceptedAnswers:
+  - "bridge"
+explanation:
+  - type: text
+    text: "A bridge is an edge whose removal separates two parts of a graph."
+  - type: text
+    text: "If a cycle provides an alternate path, removing one edge preserves connectivity."
+tags:
+  - discrete-math
+  - graphs
+  - bridge
+difficulty: 1

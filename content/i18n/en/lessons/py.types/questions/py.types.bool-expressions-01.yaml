@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: py.types.bool-expressions-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all expressions whose result is a bool."
+options:
+  - id: number-comparison
+    content:
+      - type: code
+        language: python
+        code: 3 < 5
+  - id: string-comparison
+    content:
+      - type: code
+        language: python
+        code: '"a" == "a"'
+  - id: arithmetic-expression
+    content:
+      - type: code
+        language: python
+        code: 2 + 3
+  - id: string-expression
+    content:
+      - type: code
+        language: python
+        code: '"ha" * 2'
+  - id: type-expression
+    content:
+      - type: code
+        language: python
+        code: type(3)
+correctOptionIds:
+  - number-comparison
+  - string-comparison
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Comparison expressions produce `True` or `False` by comparing two values, so their result is a bool. Arithmetic expressions produce numbers, while string operations produce strings."
+tags:
+  - bool
+  - comparison
+  - python-types
+difficulty: 2

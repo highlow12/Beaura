@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.astar.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "What priority does A* use to choose its next candidate?"
+options:
+- id: g-plus-h
+  content:
+  - type: text
+    text: "The sum of the cost so far, g, and the estimated cost, h"
+- id: g-only
+  content:
+  - type: text
+    text: "Use only the cost so far, g"
+- id: h-minus-g
+  content:
+  - type: text
+    text: "The estimated cost h minus the actual cost g"
+correctOptionId: g-plus-h
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A* first expands the candidate that minimizes f = g + h. If h is 0, it makes the same choices as Dijkstra."
+tags:
+- graph
+- shortest-path
+- astar
+difficulty: 1

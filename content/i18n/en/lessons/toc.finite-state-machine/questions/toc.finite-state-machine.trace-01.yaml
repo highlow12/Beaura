@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: toc.finite-state-machine.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: The state switches between even and odd whenever it reads 1, and stays the same on 0. What does the following code print?
+language: python
+code: |-
+  state = "even"
+  for symbol in "101":
+      if symbol == "1":
+          state = "odd" if state == "even" else "even"
+  print(state)
+choices:
+  - even
+  - odd
+  - start
+acceptedOutputs:
+  - even
+explanation:
+  - type: text
+    text: It reads two 1s, so the state goes from even to odd and back to even. A 0 does not change the state.
+tags:
+  - theory-of-computation
+  - finite-state-machine
+  - trace
+difficulty: 2

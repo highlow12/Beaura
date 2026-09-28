@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.keys.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the constraint that requires a child-table row to reference a key that exists in a parent table."
+choices: ["Referential integrity", "Color correction", "Rasterization"]
+acceptedAnswers: ["Referential integrity"]
+explanation:
+  - type: text
+    text: "Foreign keys and referential-integrity constraints protect table relationships by preventing child rows from pointing to nonexistent parents."
+tags: [database, keys, referential-integrity]
+difficulty: 1

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.matrix-multiplication.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each part of a matrix product with its role."
+leftItems:
+  - id: left-rows
+    content:
+      - type: text
+        text: "A row of the left matrix"
+  - id: right-cols
+    content:
+      - type: text
+        text: "A column of the right matrix"
+  - id: inner
+    content:
+      - type: text
+        text: "The inner dimension"
+  - id: result
+    content:
+      - type: text
+        text: "The result's shape"
+rightItems:
+  - id: left-rows-desc
+    content:
+      - type: text
+        text: "Determines the result's rows"
+  - id: right-cols-desc
+    content:
+      - type: text
+        text: "Determines the result's columns"
+  - id: inner-desc
+    content:
+      - type: text
+        text: "Must match for the product to be defined"
+  - id: result-desc
+    content:
+      - type: text
+        text: "Rows of the left matrix × columns of the right matrix"
+correctPairs:
+  - leftId: left-rows
+    rightId: left-rows-desc
+  - leftId: right-cols
+    rightId: right-cols-desc
+  - leftId: inner
+    rightId: inner-desc
+  - leftId: result
+    rightId: result-desc
+explanation:
+  - type: text
+    text: "The product's shape is determined by the outer dimensions: the left matrix's rows and the right matrix's columns."
+  - type: text
+    text: "The inner dimension ensures that the vectors being dotted have the same number of components."
+tags:
+  - linear-algebra
+  - matrices
+  - dimension-rule
+difficulty: 2

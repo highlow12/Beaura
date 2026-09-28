@@ -1,0 +1,32 @@
+id: ds.circular-queue.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following circular-buffer code."
+language: python
+code: 'buffer = ["A", None, "Z"]
+
+  front = 2
+
+  size = 1
+
+  index = (front + size) % len(buffer)
+
+  buffer[index] = "B"
+
+  print(buffer)'
+choices:
+- '["B", None, "Z"]'
+- '["A", "B", "Z"]'
+- '["A", None, "B"]'
+acceptedOutputs:
+- '["B", None, "Z"]'
+explanation:
+- type: text
+  text: "If front is 2 and size is 1, the next position is (2 + 1) % 3 = 0. So B is written in the first slot."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- circular-buffer
+difficulty: 2

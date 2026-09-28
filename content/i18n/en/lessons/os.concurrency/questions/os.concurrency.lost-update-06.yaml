@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: os.concurrency.lost-update-06
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "A shared variable x starts at 0. Tasks A and B each read x as 0, add 1 to the value they read, and write the result back to x. Why can the final value of x be 1?"
+options:
+  - id: lost-update
+    content:
+      - type: text
+        text: "Because the read and write are not protected as one atomic increment, so one update can overwrite the other"
+  - id: binary-limit
+    content:
+      - type: text
+        text: "Because binary cannot represent 2"
+  - id: cache-always
+    content:
+      - type: text
+        text: "Because a cache always stores a value only once"
+correctOptionId: lost-update
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "If both tasks read the old value 0 and then write 1, one increment can be overwritten by the other, producing a lost update and a final value of 1."
+tags:
+  - concurrency
+  - atomicity
+  - race-condition
+difficulty: 2

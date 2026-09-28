@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.ast.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic steps for building an AST from a source expression."
+items:
+  - id: tokens
+    content:
+      - type: text
+        text: "Take the token sequence as input."
+  - id: grammar
+    content:
+      - type: text
+        text: "Parse nested structure using grammar rules."
+  - id: precedence
+    content:
+      - type: text
+        text: "Represent precedence and associativity in the tree."
+  - id: simplify
+    content:
+      - type: text
+        text: "Build AST nodes that omit unnecessary grammar detail."
+correctOrder:
+  - tokens
+  - grammar
+  - precedence
+  - simplify
+explanation:
+  - type: text
+    text: "The parser builds structure from tokens and grammar, then applies operator rules to produce a meaningful AST."
+tags:
+  - programming-languages
+  - ast
+  - parser
+difficulty: 2

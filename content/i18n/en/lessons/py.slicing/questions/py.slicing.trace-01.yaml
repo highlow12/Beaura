@@ -1,0 +1,24 @@
+id: py.slicing.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following slicing code."
+language: python
+code: 'values = [10, 20, 30, 40]
+
+  print(values[1:3])'
+choices:
+- '[20, 30]'
+- '[10, 20, 30]'
+- '[20, 30, 40]'
+acceptedOutputs:
+- '[20, 30]'
+explanation:
+- type: text
+  text: "The start index 1 is included and stop index 3 is excluded, so only 20 and 30 are in the result."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- slicing
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: la.eigenvectors.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The characteristic equation for finding eigenvalues is `det(A − λI) = ___`."
+choices:
+  - "0"
+  - "1"
+  - "A"
+acceptedAnswers:
+  - "0"
+explanation:
+  - type: text
+    text: "For a nonzero solution `v` to exist, `A − λI` must be singular, so its determinant must be 0."
+  - type: text
+    text: "The solutions `λ` of this equation are eigenvalue candidates."
+tags:
+  - linear-algebra
+  - eigen
+  - characteristic-equation
+difficulty: 1

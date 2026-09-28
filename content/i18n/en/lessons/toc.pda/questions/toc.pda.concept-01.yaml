@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: toc.pda.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: Why can a PDA remember more structure than a finite automaton?
+options:
+  - id: stack
+    content:
+      - type: text
+        text: It has a stack that can push and pop symbols as it reads input.
+  - id: more-states
+    content:
+      - type: text
+        text: It always has infinitely many states.
+  - id: random-input
+    content:
+      - type: text
+        text: It guesses the answer without reading the input.
+  - id: two-tapes
+    content:
+      - type: text
+        text: Every PDA has two independent tapes.
+correctOptionId: stack
+shuffleOptions: true
+explanation:
+  - type: text
+    text: In addition to finite states, a PDA can push and pop stack symbols to remember counts and nesting.
+tags:
+  - theory-of-computation
+  - pda
+  - stack
+difficulty: 1

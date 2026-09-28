@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.interrupt-dma.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to interrupts and DMA."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "When a device interrupt arrives, the CPU preserves its current state so it can run the handler."
+  - id: correct-b
+    content:
+      - type: text
+        text: "A completion interrupt can notify the driver when DMA finishes."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "DMA never transfers data between memory and a device; it only modifies CPU registers."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "The cost of each event becomes zero as the number of interrupts increases."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "When a device interrupt arrives, the CPU preserves its current state so it can run the handler. A completion interrupt can notify the driver when DMA finishes."
+  - type: text
+    text: "Interrupts and DMA reduce CPU involvement and copying costs, but too many small interrupts create overhead. Buffer sizes and batching can be tuned to balance throughput and latency."
+tags: [interrupt, dma, io]
+difficulty: 3

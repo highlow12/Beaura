@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: gfx.shading.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps that carry a vertex attribute into the fragment color."
+items:
+  - id: vertex-value
+    content:
+      - type: text
+        text: "Store a color or normal at the vertex"
+  - id: vertex-output
+    content:
+      - type: text
+        text: "Output the value from the vertex shader"
+  - id: interpolate
+    content:
+      - type: text
+        text: "Interpolate the value for each sample during rasterization"
+  - id: fragment-use
+    content:
+      - type: text
+        text: "Use the interpolated value in the fragment shader"
+correctOrder: [vertex-value, vertex-output, interpolate, fragment-use]
+explanation:
+  - type: text
+    text: "Vertex attributes pass through the pipeline as shader outputs, are interpolated per sample during rasterization, and are then used in fragment calculations."
+tags: [graphics, shading, interpolation, order]
+difficulty: 2

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: ds.array.layout-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "What is the main reason array access by index is fast?"
+options:
+- id: offset
+  content:
+  - type: text
+    text: "The element’s location can be calculated directly from the start position and index"
+- id: sort
+  content:
+  - type: text
+    text: "Arrays are always automatically sorted"
+- id: duplicate
+  content:
+  - type: text
+    text: "Arrays cannot store duplicate values"
+correctOptionId: offset
+shuffleOptions: true
+explanation:
+- type: text
+  text: "With contiguous slots, the target location can be calculated from the start position and index."
+- type: text
+  text: "Fast random access and the shifting cost of middle insertion are key contrasting properties of arrays."
+tags:
+- array
+- random-access
+difficulty: 1

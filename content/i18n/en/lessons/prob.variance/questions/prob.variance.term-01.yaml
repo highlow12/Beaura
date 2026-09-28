@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.variance.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "In Var(X)=E[X²]−(E[X])², the mean is also denoted by ___."
+choices:
+  - "μ"
+  - "σ"
+  - "p"
+acceptedAnswers:
+  - "μ"
+explanation:
+  - type: text
+    text: "μ is the conventional symbol for the expected value or mean."
+  - type: text
+    text: "σ usually denotes the standard deviation."
+tags:
+  - probability-statistics
+  - variance
+  - notation
+difficulty: 1

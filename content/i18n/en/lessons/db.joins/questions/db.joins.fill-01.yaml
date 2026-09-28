@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.joins.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the keyword for the condition in a JOIN clause that specifies which rows from two tables to connect."
+choices: ["ON", "AS", "LIMIT"]
+acceptedAnswers: ["ON"]
+explanation:
+  - type: text
+    text: "Write a join condition such as `Student.id = Enrollment.student_id` after ON. AS is used for aliases, and LIMIT restricts the number of returned rows."
+tags: [database, sql, joins]
+difficulty: 1

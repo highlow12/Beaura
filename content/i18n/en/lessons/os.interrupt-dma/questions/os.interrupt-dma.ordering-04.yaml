@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.interrupt-dma.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic interrupt and DMA steps in the correct order."
+items:
+  - id: program
+    content:
+      - type: text
+        text: "The driver sets up the DMA buffer and transfer"
+  - id: transfer
+    content:
+      - type: text
+        text: "The device controller transfers data directly to or from memory"
+  - id: interrupt
+    content:
+      - type: text
+        text: "A completion signal notifies the CPU of an event to handle"
+correctOrder: [program, transfer, interrupt]
+explanation:
+  - type: text
+    text: "First, the driver sets up the DMA buffer and transfer; then the device controller uses that setup to transfer data directly to or from memory."
+  - type: text
+    text: "At the step where a completion signal notifies the CPU of an event to handle, the final result is passed to the next execution step."
+tags: [interrupt, dma, io]
+difficulty: 3

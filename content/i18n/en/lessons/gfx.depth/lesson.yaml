@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.depth
+revision: 2
+track: computer-graphics
+title: "Depth buffer"
+description: "Learn how depth testing and the depth buffer select the visible fragment among overlapping surfaces."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.depth.choice-01
+  - type: question
+    ref: gfx.depth.output-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/depth-precision.md
+  - type: question
+    ref: gfx.depth.match-01
+  - type: question
+    ref: gfx.depth.fill-01
+  - type: question
+    ref: gfx.depth.properties-01

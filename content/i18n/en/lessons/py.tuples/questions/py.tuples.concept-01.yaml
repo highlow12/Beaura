@@ -1,0 +1,33 @@
+id: py.tuples.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "Which statement best describes a tuple?"
+options:
+- id: fixed
+  content:
+  - type: text
+    text: "An ordered group whose elements cannot be changed after creation"
+- id: mutable
+  content:
+  - type: text
+    text: "A group whose elements can always be added and removed"
+- id: unique
+  content:
+  - type: text
+    text: "A group that automatically removes duplicates"
+- id: mapped
+  content:
+  - type: text
+    text: "A data type that only associates keys with values"
+correctOptionId: fixed
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Tuples have order and indexes, but their elements cannot be changed. A list is an ordered group whose elements can be changed."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- tuple
+difficulty: 2

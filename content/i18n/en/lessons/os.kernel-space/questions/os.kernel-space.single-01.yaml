@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.kernel-space.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about kernel space and user space is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "User space runs with restricted privileges, while kernel space manages protected resources and hardware."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Every program has the same privileges and directly modifies kernel memory."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Kernel space is an area of the disk that stores program data when the power is off."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "User space runs with restricted privileges, while kernel space manages protected resources and hardware."
+  - type: text
+    text: "User space is where ordinary programs run with restricted privileges; kernel space is where core operating-system code accesses hardware and protected resources."
+tags: [kernel, user-space, protection]
+difficulty: 1

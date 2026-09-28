@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.definite-integrals.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for integrating the area between two functions."
+items:
+  - id: intersections
+    content:
+      - type: text
+        text: "Find the intersections of the two functions"
+  - id: top
+    content:
+      - type: text
+        text: "Identify the upper function on each interval"
+  - id: difference
+    content:
+      - type: text
+        text: "Form the expression upper function − lower function"
+  - id: integrate
+    content:
+      - type: text
+        text: "Integrate on each interval and add the results"
+correctOrder:
+  - intersections
+  - top
+  - difference
+  - integrate
+explanation:
+  - type: text
+    text: "You need the intersections and the upper/lower relationship to determine the correct integration intervals and integrand."
+  - type: text
+    text: "Split the integral at intersections where the upper and lower functions switch."
+tags:
+  - calculus
+  - definite-integrals
+  - between-curves
+difficulty: 2

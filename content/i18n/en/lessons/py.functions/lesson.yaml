@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.functions
+revision: 2
+track: python
+title: "Functions"
+description: "Give behavior a name with functions, and use parameters and return values."
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.functions.role-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.functions.definition-call-01
+- type: question
+  ref: py.functions.double-01
+- type: content
+  ref: content/scope.md
+- type: question
+  ref: py.functions.return-flow-01
+- type: question
+  ref: py.functions.return-keyword-01

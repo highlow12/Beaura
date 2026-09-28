@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.camera.direction-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about stable look-at direction calculations."
+options:
+  - id: target-minus-eye
+    content:
+      - type: text
+        text: "The basic vector for the viewing direction is target - eye."
+  - id: up-parallel
+    content:
+      - type: text
+        text: "If up is nearly parallel to the forward direction, the basis calculation can become unstable."
+  - id: eye-plus-target
+    content:
+      - type: text
+        text: "The direction must always be eye + target."
+  - id: no-camera
+    content:
+      - type: text
+        text: "The camera position is ignored by the view transform."
+correctOptionIds: [target-minus-eye, up-parallel]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The viewing direction points from eye to target, so it is target - eye. If forward and up are parallel, their cross product cannot reliably produce a new axis."
+tags: [graphics, camera, look-at]
+difficulty: 3

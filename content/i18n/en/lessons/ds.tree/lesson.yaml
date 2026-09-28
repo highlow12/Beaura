@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.tree
+revision: 2
+track: data-structures
+title: Trees
+description: Explore trees, which represent hierarchical data through parent-child relationships.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.tree.terms-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.tree.binary-01
+- type: question
+  ref: ds.tree.child-output-01
+- type: content
+  ref: content/structure.md
+- type: question
+  ref: ds.tree.depth-01
+- type: question
+  ref: ds.tree.subtree-01

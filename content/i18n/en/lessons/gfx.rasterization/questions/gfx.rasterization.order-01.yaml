@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: gfx.rasterization.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic steps for rasterizing a triangle in order."
+items:
+  - id: bounds
+    content:
+      - type: text
+        text: "Find the triangle's screen-space bounding box"
+  - id: sample
+    content:
+      - type: text
+        text: "Choose sample locations inside the box"
+  - id: inside
+    content:
+      - type: text
+        text: "Test whether each sample lies inside the triangle"
+  - id: fragment
+    content:
+      - type: text
+        text: "Create fragment candidates for the inside samples"
+correctOrder: [bounds, sample, inside, fragment]
+explanation:
+  - type: text
+    text: "The bounding box narrows the candidate region. Then each sample is tested, and only locations inside the triangle become fragment candidates."
+tags: [graphics, rasterization, order]
+difficulty: 2

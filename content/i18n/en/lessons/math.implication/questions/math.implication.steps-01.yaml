@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.implication.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for forming the contrapositive of `P → Q`."
+items:
+  - id: negate-q
+    content:
+      - type: text
+        text: "Negate the consequent `Q` to get `¬Q`"
+  - id: negate-p
+    content:
+      - type: text
+        text: "Negate the antecedent `P` to get `¬P`"
+  - id: reverse
+    content:
+      - type: text
+        text: "Use the negated consequent as the antecedent and the negated antecedent as the consequent"
+correctOrder:
+  - negate-q
+  - negate-p
+  - reverse
+unorderedGroups:
+  - [negate-q, negate-p]
+explanation:
+  - type: text
+    text: "The contrapositive negates both parts and reverses their order to form `¬Q → ¬P`."
+  - type: text
+    text: "Unlike the converse, which only reverses the order, the contrapositive also negates both statements."
+tags:
+  - discrete-math
+  - logic
+  - contrapositive
+difficulty: 2

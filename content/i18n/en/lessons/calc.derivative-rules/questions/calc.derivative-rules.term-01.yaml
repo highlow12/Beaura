@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.derivative-rules.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The derivative of f(x)=3x² is ___."
+choices:
+  - "3x"
+  - "6x"
+  - "6x²"
+  - "x²"
+acceptedAnswers:
+  - "6x"
+explanation:
+  - type: text
+    text: "Keep the constant 3 and differentiate x² to get 3×2x=6x."
+  - type: text
+    text: "This uses both the constant-multiple rule and the power rule."
+tags:
+  - calculus
+  - derivative-rules
+  - constant-multiple
+difficulty: 1

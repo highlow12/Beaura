@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.variance.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each measure-of-spread term with its description."
+leftItems:
+  - id: variance
+    content:
+      - type: text
+        text: "Variance Var(X)"
+  - id: std
+    content:
+      - type: text
+        text: "Standard deviation σ"
+  - id: mean
+    content:
+      - type: text
+        text: "Mean μ"
+  - id: shift
+    content:
+      - type: text
+        text: "Constant shift X+b"
+rightItems:
+  - id: variance-desc
+    content:
+      - type: text
+        text: "Mean of squared deviations"
+  - id: std-desc
+    content:
+      - type: text
+        text: "Square root of the variance"
+  - id: mean-desc
+    content:
+      - type: text
+        text: "The expected value at the center of a distribution"
+  - id: shift-desc
+    content:
+      - type: text
+        text: "Shifts the center without changing the spread"
+correctPairs:
+  - leftId: variance
+    rightId: variance-desc
+  - leftId: std
+    rightId: std-desc
+  - leftId: mean
+    rightId: mean-desc
+  - leftId: shift
+    rightId: shift-desc
+explanation:
+  - type: text
+    text: "Variance uses squared units, while standard deviation returns to the original units and is easier to interpret."
+  - type: text
+    text: "Separate the effects of shifting the mean and scaling values on the spread."
+tags:
+  - probability-statistics
+  - variance
+  - terminology
+difficulty: 2

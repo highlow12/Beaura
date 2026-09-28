@@ -1,0 +1,36 @@
+id: py.exceptions.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the control flow when an exception occurs."
+items:
+- id: try
+  content:
+  - type: text
+    text: "Put the operation that may fail inside try"
+- id: raise
+  content:
+  - type: text
+    text: "An exception occurs during the operation"
+- id: match
+  content:
+  - type: text
+    text: "Find a matching except type"
+- id: recover
+  content:
+  - type: text
+    text: "Run the recovery action in except"
+correctOrder:
+- try
+- raise
+- match
+- recover
+explanation:
+- type: text
+  text: "If an operation inside try raises an exception, Python moves to the matching except handler and runs its recovery action."
+schemaVersion: 1
+revision: 1
+tags:
+- errors
+- exceptions
+difficulty: 2

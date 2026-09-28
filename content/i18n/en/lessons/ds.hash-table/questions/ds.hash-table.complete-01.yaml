@@ -1,0 +1,25 @@
+id: ds.hash-table.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the blank to store a value under the key id-1."
+language: python
+template: table[{{blank:key}}] = "Ada"
+blanks:
+- id: key
+  choices:
+  - '"id-1"'
+  - id-1
+  - '0'
+  acceptedAnswers:
+  - '"id-1"'
+explanation:
+- type: text
+  text: "id-1 is a string key, so it must be written with quotation marks. Without quotes, id-1 is not a valid key expression in Python."
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-table
+- collision
+difficulty: 2

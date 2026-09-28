@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: algo.connected-components.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "Complete the expression that increments the component count when starting a new traversal from an unvisited vertex."
+- type: code
+  language: python
+  code: count = {{blank:increment}}
+choices:
+- count + 1
+- count - 1
+- count
+acceptedAnswers:
+- count + 1
+explanation:
+- type: text
+  text: "A new starting vertex means you have found a component that has not been counted yet, so increment count by 1."
+tags:
+- graph
+- connected-components
+- code-completion
+difficulty: 2

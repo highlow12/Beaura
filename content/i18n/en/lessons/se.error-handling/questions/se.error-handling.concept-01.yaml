@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.error-handling.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: What is the safest default response when you detect an unrecoverable invariant violation?
+options:
+- id: fail-observable
+  content:
+  - type: text
+    text: Fail immediately and leave the cause and context observable.
+- id: ignore-all
+  content:
+  - type: text
+    text: Ignore every exception and continue handling requests.
+- id: retry-forever
+  content:
+  - type: text
+    text: Retry without a limit until it succeeds.
+- id: hide-cause
+  content:
+  - type: text
+    text: Hide the cause and return an empty success response.
+correctOptionId: fail-observable
+shuffleOptions: true
+explanation:
+- type: text
+  text: Continuing to use a broken invariant can cause greater damage, so stop immediately and leave a signal that helps trace the cause.
+tags:
+- software-engineering
+- error-handling
+- failure
+difficulty: 2

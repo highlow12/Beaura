@@ -150,12 +150,34 @@ function yaml<T>(
 
 export async function loadSourceContent(
   projectRoot = process.cwd(),
+  locale: "ko" | "en" = "ko",
 ): Promise<SourceContentBundle> {
   const root = resolve(projectRoot);
   const contentRoot = join(root, "content");
   const files = new Map<string, Buffer>();
   const loadErrors: string[] = [];
   await walk(contentRoot, contentRoot, files, loadErrors);
+  if (locale === "en") {
+    const prefix = "i18n/en/";
+    const englishFiles = new Map([...files]
+      .filter(([path]) => path.startsWith(prefix))
+      .map(([path, bytes]) => [path.slice(prefix.length), bytes] as const));
+    const translatedLessons = new Set([...englishFiles.keys()]
+      .filter((path) => /^lessons\/[^/]+\/lesson\.yaml$/.test(path))
+      .map((path) => path.split("/")[1]));
+    for (const lesson of translatedLessons) {
+      const lessonPrefix = `lessons/${lesson}/`;
+      const required = [...files.keys()].filter((path) => path.startsWith(lessonPrefix) &&
+        (path.endsWith(".yaml") || path.endsWith(".md")));
+      if (required.some((path) => !englishFiles.has(path))) {
+        loadErrors.push(`content/i18n/en/${lessonPrefix}: translated lesson must include every YAML and Markdown file`);
+        continue;
+      }
+      for (const path of required) files.set(path, englishFiles.get(path)!);
+    }
+    for (const [path, bytes] of englishFiles)
+      if (path.startsWith("curriculum/")) files.set(path, bytes);
+  }
   const tracksFile = yaml<{ schemaVersion: 1; tracks: SourceTrack[] }>(
     contentRoot,
     join(contentRoot, "curriculum", "tracks.yaml"),

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.nfa.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: When simulating an NFA, record the ___ of possible current states at each step.
+choices:
+  - set
+  - number
+  - single string
+acceptedAnswers:
+  - set
+explanation:
+  - type: text
+    text: Because multiple paths may remain possible after the same input, record the possible states together as a set.
+tags:
+  - theory-of-computation
+  - nfa
+  - state-set
+difficulty: 1

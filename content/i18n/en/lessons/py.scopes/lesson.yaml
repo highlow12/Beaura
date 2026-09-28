@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.scopes
+revision: 2
+track: python
+title: "Names and Scope"
+description: "Learn about local scope created by each function call and the rules for finding names in outer scopes."
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.scopes.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: py.scopes.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.scopes.complete-01
+- type: question
+  ref: py.scopes.steps-01
+- type: question
+  ref: py.scopes.match-01

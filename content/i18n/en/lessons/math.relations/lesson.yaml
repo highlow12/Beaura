@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.relations
+revision: 3
+track: discrete-math
+title: "Cartesian Products and Relations"
+description: "Build Cartesian products, represent relations as sets, and identify their domains and ranges."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.relations.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.relations.application-01
+  - type: content
+    ref: content/properties.md
+  - type: question
+    ref: math.relations.term-01
+  - type: question
+    ref: math.relations.steps-01
+  - type: question
+    ref: math.relations.match-01

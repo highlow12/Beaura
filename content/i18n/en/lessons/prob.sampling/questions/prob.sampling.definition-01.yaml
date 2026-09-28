@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.sampling.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement correctly describes the relationship between a population and a sample?"
+options:
+  - id: subset
+    content:
+      - type: text
+        text: "A sample is an observed subset of a population"
+  - id: superset
+    content:
+      - type: text
+        text: "A population is one observation in a sample"
+  - id: same
+    content:
+      - type: text
+        text: "They are always the same set"
+  - id: random-only
+    content:
+      - type: text
+        text: "A sample cannot consist of numbers"
+correctOptionId: subset
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A sample is a subset selected to learn about the full population."
+  - type: text
+    text: "The sampling method affects the reliability and bias of an estimate."
+tags:
+  - probability-statistics
+  - sampling
+  - population-sample
+difficulty: 1

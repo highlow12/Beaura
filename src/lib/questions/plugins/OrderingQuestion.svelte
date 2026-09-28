@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { locale, t } from "$lib/application/locale";
   import ContentBlockRenderer from "$lib/components/ContentBlockRenderer.svelte";
   import { contentLabel } from "$lib/questions/presentation";
   import type { QuestionRendererProps } from "$lib/questions/renderer-contract";
@@ -35,7 +36,7 @@
     orderedItems = shuffleDistinct(question.items, random, previousOrder);
     previousOrder = [...orderedItems];
     clearDragState();
-    announcement = "순서를 정한 뒤 정답을 확인하세요.";
+    announcement = t("순서를 정한 뒤 정답을 확인하세요.", "Arrange the items, then check your answer.", $locale);
     onAnswerChange({
       type: "ordering",
       orderedItemIds: orderedItems.map((item) => item.id),
@@ -43,7 +44,7 @@
   });
 
   function announcePosition(item: (typeof orderedItems)[number], index: number) {
-    announcement = `${contentLabel(item.content)} 항목이 ${index + 1}번째 위치로 이동했습니다.`;
+    announcement = t(`${contentLabel(item.content)} 항목이 ${index + 1}번째 위치로 이동했습니다.`, `${contentLabel(item.content)} moved to position ${index + 1}.`, $locale);
   }
 
   function emitOrder(next: typeof orderedItems) {
@@ -116,7 +117,7 @@
     draggedIndex = index;
     dragTargetIndex = index;
     dragPointerId = event.pointerId;
-    announcement = `${contentLabel(orderedItems[index].content)} 항목 드래그를 시작했습니다. 현재 ${index + 1}번째입니다.`;
+    announcement = t(`${contentLabel(orderedItems[index].content)} 항목 드래그를 시작했습니다. 현재 ${index + 1}번째입니다.`, `Picked up ${contentLabel(orderedItems[index].content)} at position ${index + 1}.`, $locale);
   }
 
   function movePointerDrag(event: PointerEvent) {
@@ -156,7 +157,7 @@
     if (handle.hasPointerCapture(event.pointerId))
       handle.releasePointerCapture(event.pointerId);
     clearDragState();
-    announcement = "드래그가 취소되었습니다.";
+    announcement = t("드래그가 취소되었습니다.", "Drag cancelled.", $locale);
   }
 
   function isCanonical(id: string): boolean {
@@ -173,8 +174,8 @@
     <ContentBlockRenderer {block} />
   {/each}
 
-  <p class="drag-hint">손잡이를 드래그하거나 화살표 버튼으로 순서를 바꾸세요.</p>
-  <ol class="items" aria-label="순서 항목" bind:this={listElement}>
+  <p class="drag-hint">{t("손잡이를 드래그하거나 화살표 버튼으로 순서를 바꾸세요.", "Drag the handle or use the arrow buttons to reorder.", $locale)}</p>
+  <ol class="items" aria-label={t("순서 항목", "Ordered items", $locale)} bind:this={listElement}>
     {#each orderedItems as item, index}
       {@const submitted = isSubmittedAt(index, item.id)}
       {@const canonical = isCanonical(item.id)}
@@ -204,8 +205,8 @@
           type="button"
           draggable="false"
           disabled={disabled}
-          aria-label={`${contentLabel(item.content)} 드래그해서 이동`}
-          title="드래그해서 순서 이동"
+          aria-label={`${contentLabel(item.content)} ${t("드래그해서 이동", "drag to move", $locale)}`}
+          title={t("드래그해서 순서 이동", "Drag to reorder", $locale)}
           onpointerdown={(event) => startPointerDrag(event, index)}
           onpointermove={movePointerDrag}
           onpointerup={finishPointerDrag}
@@ -220,25 +221,25 @@
               <ContentBlockRenderer {block} />
             {/each}
           </span>
-          {#if submitted}<span class="answer-marker">내 답 {index + 1}번째</span>{/if}
+          {#if submitted}<span class="answer-marker">{t("내 답", "Your answer", $locale)} {index + 1}</span>{/if}
           {#if canonical}
             {@const group = question.unorderedGroups?.find((ids) => ids.includes(item.id))}
-            <span class="answer-marker">{group ? `정답 구간 ${Math.min(...group.map((id) => question.correctOrder.indexOf(id))) + 1} ~ ${Math.max(...group.map((id) => question.correctOrder.indexOf(id))) + 1} (순서 무관)` : `정답 위치 ${question.correctOrder.indexOf(item.id) + 1}`}</span>
+            <span class="answer-marker">{group ? `${t("정답 구간", "Correct positions", $locale)} ${Math.min(...group.map((id) => question.correctOrder.indexOf(id))) + 1} ~ ${Math.max(...group.map((id) => question.correctOrder.indexOf(id))) + 1} ${t("(순서 무관)", "(any order)", $locale)}` : `${t("정답 위치", "Correct position", $locale)} ${question.correctOrder.indexOf(item.id) + 1}`}</span>
           {/if}
         </div>
-        <div class="move-actions" aria-label={`${contentLabel(item.content)} 이동`}>
+        <div class="move-actions" aria-label={`${contentLabel(item.content)} ${t("이동", "move", $locale)}`}>
           <button
             class="icon-button"
             type="button"
             disabled={disabled || index === 0}
-            aria-label={`${contentLabel(item.content)} 위로 이동`}
+            aria-label={`${contentLabel(item.content)} ${t("위로 이동", "move up", $locale)}`}
             onclick={() => move(index, -1)}
           >↑</button>
           <button
             class="icon-button"
             type="button"
             disabled={disabled || index === orderedItems.length - 1}
-            aria-label={`${contentLabel(item.content)} 아래로 이동`}
+            aria-label={`${contentLabel(item.content)} ${t("아래로 이동", "move down", $locale)}`}
             onclick={() => move(index, 1)}
           >↓</button>
         </div>

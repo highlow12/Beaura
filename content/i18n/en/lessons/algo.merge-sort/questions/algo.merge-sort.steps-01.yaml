@@ -1,0 +1,37 @@
+id: algo.merge-sort.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Put the overall merge-sort process in order."
+items:
+- id: split
+  content:
+  - type: text
+    text: "Split the array into two parts"
+- id: solve
+  content:
+  - type: text
+    text: "Recursively sort each part"
+- id: compare
+  content:
+  - type: text
+    text: "Compare the first remaining elements of the two sorted parts"
+- id: merge
+  content:
+  - type: text
+    text: "Add the smaller element to the result first"
+correctOrder:
+- split
+- solve
+- compare
+- merge
+explanation:
+- type: text
+  text: "After sorting the subproblems, compare the first remaining elements of both results and merge them into one sorted array."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- merge-sort
+- divide-conquer
+difficulty: 2

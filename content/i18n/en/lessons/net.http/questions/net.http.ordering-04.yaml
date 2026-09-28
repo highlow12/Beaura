@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: net.http.ordering-04
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: Arrange the basic HTTP request and response steps in the correct order.
+items:
+- id: request
+  content:
+  - type: text
+    text: The client sends a method, path, and headers
+- id: process
+  content:
+  - type: text
+    text: The server finds the resource and processes the request
+- id: response
+  content:
+  - type: text
+    text: The server returns a status code, headers, and body
+correctOrder:
+- request
+- process
+- response
+explanation:
+- type: text
+  text: First, the client sends a method, path, and headers; the server then finds the resource and processes the request.
+- type: text
+  text: The server returns the result in a status code, headers, and body. The result is then delivered to the next network
+    layer or the application.
+tags:
+- http
+- web
+- request-response
+difficulty: 2

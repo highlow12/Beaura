@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.variance.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What does variance measure?"
+options:
+  - id: spread
+    content:
+      - type: text
+        text: "Spread around the expected value"
+  - id: center
+    content:
+      - type: text
+        text: "The position of the largest value"
+  - id: probability
+    content:
+      - type: text
+        text: "The probability of one event"
+  - id: order
+    content:
+      - type: text
+        text: "A rule for sorting data"
+correctOptionId: spread
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Variance measures variability by averaging squared deviations from the mean."
+  - type: text
+    text: "Standard deviation expresses the same spread in the original units."
+tags:
+  - probability-statistics
+  - variance
+  - definition
+difficulty: 1

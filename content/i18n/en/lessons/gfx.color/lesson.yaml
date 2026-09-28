@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.color
+revision: 2
+track: computer-graphics
+title: "Color and Gamma"
+description: "Understand the difference between RGB channels, linear color space, and sRGB gamma encoding in the graphics pipeline."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.color.output-01
+  - type: question
+    ref: gfx.color.match-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/linear-blending.md
+  - type: question
+    ref: gfx.color.choice-01
+  - type: question
+    ref: gfx.color.fill-01
+  - type: question
+    ref: gfx.color.properties-01

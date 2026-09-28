@@ -1,0 +1,33 @@
+id: ds.heap.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What does the root guarantee in a min-heap?"
+options:
+- id: minimum
+  content:
+  - type: text
+    text: "The current minimum value in the heap is at the root"
+- id: maximum
+  content:
+  - type: text
+    text: "Only the maximum value is always at the root"
+- id: sorted
+  content:
+  - type: text
+    text: "The entire array is in ascending order"
+- id: fifo
+  content:
+  - type: text
+    text: "The insertion order is preserved"
+correctOptionId: minimum
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A min-heap keeps each parent less than or equal to its children, placing the minimum at the root. The remaining elements are not all sorted."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- heap
+difficulty: 2

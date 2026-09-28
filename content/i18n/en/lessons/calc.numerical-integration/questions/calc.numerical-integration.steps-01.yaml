@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.numerical-integration.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for calculating a trapezoidal sum."
+items:
+  - id: interval
+    content:
+      - type: text
+        text: "Divide the integration interval into smaller intervals of equal width"
+  - id: values
+    content:
+      - type: text
+        text: "Read the function values at both endpoints of each interval"
+  - id: area
+    content:
+      - type: text
+        text: "Calculate the area of each trapezoid"
+  - id: sum
+    content:
+      - type: text
+        text: "Add all the small areas"
+correctOrder:
+  - interval
+  - values
+  - area
+  - sum
+explanation:
+  - type: text
+    text: "Dividing the interval and adding the areas of the shapes gives an approximation of the total accumulated quantity."
+  - type: text
+    text: "If the spacing is not uniform, use each interval’s width separately."
+tags:
+  - calculus
+  - numerical
+  - procedure
+difficulty: 2

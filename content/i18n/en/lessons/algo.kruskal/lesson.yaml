@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.kruskal
+revision: 1
+track: algorithms
+title: Kruskal’s Algorithm
+description: Learn how to build an MST by considering edges in weight order and using Union-Find to avoid cycles.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.kruskal.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.kruskal.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.kruskal.steps-01
+- type: question
+  ref: algo.kruskal.complete-01
+- type: question
+  ref: algo.kruskal.trace-01

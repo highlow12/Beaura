@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: la.coordinates.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "In `v = c₁b₁ + c₂b₂`, `c₁` and `c₂` are the vector's ___ in the new basis."
+choices:
+  - "coordinates"
+  - "determinant"
+  - "angle"
+acceptedAnswers:
+  - "coordinates"
+explanation:
+  - type: text
+    text: "The values `c₁` and `c₂` tell how much to scale the basis vectors, so they are the coordinates in that basis."
+  - type: text
+    text: "These coefficients can differ for the same vector when the basis changes."
+tags:
+  - linear-algebra
+  - coordinates
+  - representation
+difficulty: 1

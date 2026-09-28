@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.memory-model.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each memory-model term with its description.
+leftItems:
+  - id: stack-frame
+    content:
+      - type: text
+        text: Stack frame
+  - id: heap-object
+    content:
+      - type: text
+        text: Heap object
+  - id: alias
+    content:
+      - type: text
+        text: Alias
+rightItems:
+  - id: call-data
+    content:
+      - type: text
+        text: Contains parameters, local variables, and return information
+  - id: dynamic-life
+    content:
+      - type: text
+        text: Can have a lifetime independent of call order
+  - id: shared-target
+    content:
+      - type: text
+        text: Occurs when multiple variables refer to the same object
+correctPairs:
+  - leftId: stack-frame
+    rightId: call-data
+  - leftId: heap-object
+    rightId: dynamic-life
+  - leftId: alias
+    rightId: shared-target
+explanation:
+  - type: text
+    text: Distinguishing memory locations from value semantics helps trace mutations to a shared object separately from reassignment of a variable.
+tags:
+  - programming-languages
+  - memory
+  - references
+difficulty: 2

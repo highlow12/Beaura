@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: math.relations.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Put in order the steps for forming the Cartesian product of two sets."
+items:
+  - id: choose-first
+    content:
+      - type: text
+        text: "Choose a first component from the first set"
+  - id: choose-second
+    content:
+      - type: text
+        text: "Choose a second component from the second set"
+  - id: record
+    content:
+      - type: text
+        text: "Record the ordered pair (first component, second component)"
+  - id: repeat
+    content:
+      - type: text
+        text: "Repeat for every possible choice"
+correctOrder:
+  - choose-first
+  - choose-second
+  - record
+  - repeat
+unorderedGroups:
+  - [choose-first, choose-second]
+explanation:
+  - type: text
+    text: "The Cartesian product is obtained by recording every combination of first and second components as an ordered pair."
+  - type: text
+    text: "Switching the roles of the first and second sets gives a different Cartesian product."
+tags:
+  - discrete-math
+  - relations
+  - construction
+difficulty: 2

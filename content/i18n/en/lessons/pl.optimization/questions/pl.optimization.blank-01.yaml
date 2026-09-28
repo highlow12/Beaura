@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.optimization.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: The optimization that replaces the compile-time expression 2 * 3 with 6 is called constant ___.
+choices:
+  - folding
+  - branching
+  - calling
+acceptedAnswers:
+  - folding
+explanation:
+  - type: text
+    text: Constant folding evaluates an expression during compilation instead of at runtime, reducing instructions and execution cost.
+tags:
+  - programming-languages
+  - optimization
+  - constant-folding
+difficulty: 1

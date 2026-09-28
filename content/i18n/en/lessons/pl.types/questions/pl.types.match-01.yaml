@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.types.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each type-system concept with its description.
+leftItems:
+  - id: static
+    content:
+      - type: text
+        text: Static typing
+  - id: dynamic
+    content:
+      - type: text
+        text: Dynamic typing
+  - id: inference
+    content:
+      - type: text
+        text: Type inference
+rightItems:
+  - id: compile-check
+    content:
+      - type: text
+        text: Checks constraints before execution
+  - id: runtime-check
+    content:
+      - type: text
+        text: Checks the types of values during execution
+  - id: derive-type
+    content:
+      - type: text
+        text: Computes types from assignment and operation relationships
+correctPairs:
+  - leftId: static
+    rightId: compile-check
+  - leftId: dynamic
+    rightId: runtime-check
+  - leftId: inference
+    rightId: derive-type
+explanation:
+  - type: text
+    text: The time of checking and the way types are obtained are separate dimensions, so a statically typed language can also use inference.
+tags:
+  - programming-languages
+  - types
+  - inference
+difficulty: 2

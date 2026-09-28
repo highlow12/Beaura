@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.protection.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "Blocking a write to a read-only page is a page ___ check."
+choices:
+  - "access-permission"
+  - "file extension"
+  - "sort order"
+acceptedAnswers:
+  - "access-permission"
+explanation:
+  - type: text
+    text: "Attempting to write to a read-only code page raises an exception during the permission check in address translation. Privileged instructions, such as device control, also cannot be run in user mode. File writes must be requested from the kernel through a system call."
+tags: [protection, isolation, privilege]
+difficulty: 2

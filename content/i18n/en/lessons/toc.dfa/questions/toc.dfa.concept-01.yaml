@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: toc.dfa.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: Why is a DFA called deterministic?
+options:
+  - id: one-next
+    content:
+      - type: text
+        text: Each state and input-symbol pair has exactly one next state.
+  - id: one-state
+    content:
+      - type: text
+        text: The entire machine has only one state.
+  - id: no-input
+    content:
+      - type: text
+        text: It always gives the same answer without reading the input.
+  - id: random-choice
+    content:
+      - type: text
+        text: It randomly chooses one of several transitions.
+correctOptionId: one-next
+shuffleOptions: true
+explanation:
+  - type: text
+    text: A DFA transition function δ has type `Q × Σ → Q` and maps each state-symbol pair to exactly one next state.
+tags:
+  - theory-of-computation
+  - dfa
+  - determinism
+difficulty: 1

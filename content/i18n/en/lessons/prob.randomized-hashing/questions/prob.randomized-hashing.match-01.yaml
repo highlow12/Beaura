@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.randomized-hashing.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each randomization and hashing term with its role."
+leftItems:
+  - id: randomized
+    content:
+      - type: text
+        text: "Randomized algorithm"
+  - id: expected
+    content:
+      - type: text
+        text: "Expected cost"
+  - id: hash
+    content:
+      - type: text
+        text: "Hash function"
+  - id: chaining
+    content:
+      - type: text
+        text: "chaining"
+rightItems:
+  - id: randomized-desc
+    content:
+      - type: text
+        text: "An algorithm that uses randomness to choose a path or option"
+  - id: expected-desc
+    content:
+      - type: text
+        text: "Average cost across runs, weighted by their probabilities"
+  - id: hash-desc
+    content:
+      - type: text
+        text: "A function that maps keys to bucket locations"
+  - id: chaining-desc
+    content:
+      - type: text
+        text: "A method that stores colliding items together in one bucket"
+correctPairs:
+  - leftId: randomized
+    rightId: randomized-desc
+  - leftId: expected
+    rightId: expected-desc
+  - leftId: hash
+    rightId: hash-desc
+  - leftId: chaining
+    rightId: chaining-desc
+explanation:
+  - type: text
+    text: "Randomness introduces variety into algorithm choices, while hashing maps keys to locations for fast lookup."
+  - type: text
+    text: "State the analysis assumptions clearly, and keep expected and worst-case performance distinct."
+tags:
+  - probability-statistics
+  - randomized-algorithms
+  - comparison
+difficulty: 2

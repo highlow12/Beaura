@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.depth.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which values are generally updated together when a fragment passes the depth test?"
+options:
+  - id: color-depth
+    content:
+      - type: text
+        text: "The color buffer and the depth buffer"
+  - id: keyboard
+    content:
+      - type: text
+        text: "The keyboard input queue and the audio buffer"
+  - id: vertices
+    content:
+      - type: text
+        text: "Only the vertex order in the original mesh"
+correctOptionId: color-depth
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "When a closer fragment is selected, its color is written to the screen and its depth replaces the depth-buffer value for the next comparison."
+tags: [graphics, depth-buffer]
+difficulty: 1

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: db.recovery.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the final value when the code reapplies only committed changes from the recovery log."
+language: python
+code: |-
+  value = 10
+  log = [("T1", 3, True), ("T2", 5, False)]
+  for _, delta, committed in log:
+      if committed:
+          value += delta
+  print(value)
+choices: ["13", "18", "10"]
+acceptedOutputs: ["13"]
+explanation:
+  - type: text
+    text: "Only T1 is committed in the log, so recovery redoes 10+3=13. T2’s incomplete change of 5 is not applied after recovery."
+tags: [database, recovery, redo, code-output]
+difficulty: 2

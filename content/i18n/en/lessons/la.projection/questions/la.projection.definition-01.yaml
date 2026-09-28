@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: la.projection.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What must the result of `proj_v(u)` satisfy?"
+options:
+  - id: parallel
+    content:
+      - type: text
+        text: "It is parallel to `v`"
+  - id: perpendicular
+    content:
+      - type: text
+        text: "It is perpendicular to `v`"
+  - id: zero
+    content:
+      - type: text
+        text: "It is always the zero vector"
+  - id: same
+    content:
+      - type: text
+        text: "It is always equal to `u`"
+correctOptionId: parallel
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The projection is the component of `u` along the reference vector `v`, so it is parallel to `v`."
+  - type: text
+    text: "It equals `u` only when `u` already points along `v`, and it is the zero vector when their dot product is 0."
+tags:
+  - linear-algebra
+  - projection
+difficulty: 1

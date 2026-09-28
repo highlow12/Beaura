@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.mtu
+revision: 2
+track: networks
+title: MTU and Fragmentation
+description: Understand the relationship between link MTU, IP packet size, fragmentation, and path MTU discovery.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: net.mtu.single-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: net.mtu.multi-02
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: net.mtu.fill-03
+- type: question
+  ref: net.mtu.ordering-04
+- type: question
+  ref: net.mtu.matching-05

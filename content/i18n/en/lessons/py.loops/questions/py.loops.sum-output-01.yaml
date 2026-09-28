@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: py.loops.sum-output-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following Python code."
+language: python
+code: |-
+  total = 0
+  for number in [1, 2, 3]:
+      total += number
+  print(total)
+choices:
+- '6'
+- '5'
+- '123'
+acceptedOutputs:
+- '6'
+explanation:
+- type: text
+  text: "Adding 1, 2, and 3 in order gives a total of 6."
+- type: text
+  text: "The accumulator starts at 0 before the loop and is updated each iteration."
+tags:
+- loops
+- accumulator
+- code-output
+difficulty: 2

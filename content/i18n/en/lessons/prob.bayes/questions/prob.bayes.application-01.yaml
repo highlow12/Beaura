@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.bayes.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe Bayes' theorem."
+options:
+  - id: formula
+    content:
+      - type: text
+        text: "P(A|B)=P(B|A)P(A)/P(B)"
+  - id: prior
+    content:
+      - type: text
+        text: "P(A) is the prior probability."
+  - id: base-rate
+    content:
+      - type: text
+        text: "The base rate of a rare cause affects the posterior probability."
+  - id: swap
+    content:
+      - type: text
+        text: "P(A|B) and P(B|A) are always equal."
+correctOptionIds: [formula, prior, base-rate]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Bayes' theorem reverses the direction of a condition and uses both the prior and the total probability of the evidence."
+  - type: text
+    text: "You cannot simply reverse the direction of a conditional probability."
+tags:
+  - probability-statistics
+  - bayes
+  - base-rate
+difficulty: 2

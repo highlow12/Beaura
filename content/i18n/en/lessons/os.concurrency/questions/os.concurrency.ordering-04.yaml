@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: os.concurrency.ordering-04
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic steps for preventing lost updates to shared state."
+items:
+  - id: share
+    content:
+      - type: text
+        text: "Multiple execution flows read and update the same state"
+  - id: interleave
+    content:
+      - type: text
+        text: "If updates interleave, one flow’s change can overwrite another’s"
+  - id: atomic-update
+    content:
+      - type: text
+        text: "Protect each update as one unit with an atomic operation or lock"
+correctOrder: [share, interleave, atomic-update]
+explanation:
+  - type: text
+    text: "When multiple flows operate on the same state, interleaving can cause one change to overwrite another. Atomic operations or locks protect the read-modify-write sequence as one unit."
+tags: [concurrency, parallelism, atomicity]
+difficulty: 4

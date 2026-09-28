@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.lexing.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each lexical-analysis concept with its description.
+leftItems:
+  - id: token
+    content:
+      - type: text
+        text: Token
+  - id: longest-match
+    content:
+      - type: text
+        text: Longest match
+  - id: source-position
+    content:
+      - type: text
+        text: Source location
+rightItems:
+  - id: kind-value
+    content:
+      - type: text
+        text: A unit with a kind and original text or value
+  - id: prefer-long
+    content:
+      - type: text
+        text: A rule that chooses == before two separate = tokens
+  - id: diagnostic
+    content:
+      - type: text
+        text: Information used to report an error's line and column
+correctPairs:
+  - leftId: token
+    rightId: kind-value
+  - leftId: longest-match
+    rightId: prefer-long
+  - leftId: source-position
+    rightId: diagnostic
+explanation:
+  - type: text
+    text: Accurate token boundaries and locations let the parser and its error messages refer back to the original source code.
+tags:
+  - programming-languages
+  - lexer
+  - tokenization
+difficulty: 2

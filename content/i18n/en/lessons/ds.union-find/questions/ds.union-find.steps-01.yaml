@@ -1,0 +1,36 @@
+id: ds.union-find.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for updating connectivity between two elements with union-find."
+items:
+- id: singletons
+  content:
+  - type: text
+    text: "Start with each element in its own set as representative"
+- id: find
+  content:
+  - type: text
+    text: "Find the representatives of the two elements"
+- id: union
+  content:
+  - type: text
+    text: "If the representatives differ, connect the two sets"
+- id: query
+  content:
+  - type: text
+    text: "Check again whether the representatives are equal"
+correctOrder:
+- singletons
+- find
+- union
+- query
+explanation:
+- type: text
+  text: "Initially, each element is its own set. Compare representatives and merge when they differ; connectivity is determined by whether their representatives match."
+schemaVersion: 1
+revision: 1
+tags:
+- disjoint-set
+- union-find
+difficulty: 2

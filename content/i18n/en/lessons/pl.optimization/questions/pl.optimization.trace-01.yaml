@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: pl.optimization.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: Check that the code has the same result before and after constant folding. What does it print?
+language: python
+code: |-
+  folded = 2 * 3
+  print(folded + 1)
+choices:
+  - "7"
+  - "6"
+  - "5"
+acceptedOutputs:
+  - "7"
+explanation:
+  - type: text
+    text: Precomputing 2 * 3 as 6 still gives 7 after adding 1, preserving the original program's meaning.
+tags:
+  - programming-languages
+  - optimization
+  - trace
+difficulty: 1

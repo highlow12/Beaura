@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.consistency.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each distributed consistency term with its characteristic."
+leftItems:
+  - id: strong
+    content:
+      - type: text
+        text: "Strong consistency"
+  - id: eventual
+    content:
+      - type: text
+        text: "Eventual consistency"
+  - id: stale-read
+    content:
+      - type: text
+        text: "Stale read"
+rightItems:
+  - id: latest
+    content:
+      - type: text
+        text: "Aims to read the latest value after a successful write"
+  - id: converge
+    content:
+      - type: text
+        text: "Requires replicas to converge over time"
+  - id: lag-observation
+    content:
+      - type: text
+        text: "An older value from a node that has not caught up with replication"
+correctPairs:
+  - leftId: strong
+    rightId: latest
+  - leftId: eventual
+    rightId: converge
+  - leftId: stale-read
+    rightId: lag-observation
+explanation:
+  - type: text
+    text: "A consistency model defines which observations are allowed between writes and reads. Under eventual consistency, replication lag may temporarily allow stale reads."
+tags: [database, consistency, distributed]
+difficulty: 2

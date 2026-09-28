@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.testing.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: Match each test type with its scope.
+leftItems:
+- id: unit
+  content:
+  - type: text
+    text: Unit test
+- id: integration
+  content:
+  - type: text
+    text: Integration test
+- id: e2e
+  content:
+  - type: text
+    text: E2E test
+rightItems:
+- id: isolated-unit
+  content:
+  - type: text
+    text: Validate a small isolated unit, such as a function or class
+- id: real-boundary
+  content:
+  - type: text
+    text: Validate real connections to repositories or across modules
+- id: user-flow
+  content:
+  - type: text
+    text: Validate a complete critical flow from the user’s perspective
+correctPairs:
+- leftId: unit
+  rightId: isolated-unit
+- leftId: integration
+  rightId: real-boundary
+- leftId: e2e
+  rightId: user-flow
+explanation:
+- type: text
+  text: From unit to integration to E2E tests, scope and cost increase from isolated responsibilities to module boundaries to complete user flows.
+tags:
+- software-engineering
+- testing
+- test-types
+difficulty: 2

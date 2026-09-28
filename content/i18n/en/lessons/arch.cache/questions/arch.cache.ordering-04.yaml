@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.cache.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic cache-access steps in the correct order."
+items:
+  - id: lookup
+    content:
+      - type: text
+        text: "Look up the cache set and tag using the address"
+  - id: hit-miss
+    content:
+      - type: text
+        text: "Determine whether it is a hit or miss based on the tag match"
+  - id: fill
+    content:
+      - type: text
+        text: "On a miss, load the block from a lower level into the cache"
+correctOrder: [lookup, hit-miss, fill]
+explanation:
+  - type: text
+    text: "First look up the cache set and tag using the address. Then determine whether it is a hit or miss based on the tag match."
+  - type: text
+    text: "On a miss, load the block from a lower memory level into the cache, then pass the data to the next circuit or program."
+tags: [cache, locality, memory-hierarchy]
+difficulty: 3

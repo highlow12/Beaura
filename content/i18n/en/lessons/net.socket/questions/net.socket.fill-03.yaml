@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: net.socket.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "The call a server uses to obtain a socket for a new TCP connection is ___."
+choices:
+  - "accept"
+  - "bind"
+  - "listen"
+acceptedAnswers:
+  - "accept"
+explanation:
+  - type: text
+    text: "The server binds to an address and port, then waits for connections with `listen`. When a client calls `connect`, `accept` returns a separate connection socket, so the listening socket can continue accepting other requests. Data is read from and written to the connection socket; a `read` may return fewer bytes than requested."
+tags: [socket, client-server, api]
+difficulty: 2

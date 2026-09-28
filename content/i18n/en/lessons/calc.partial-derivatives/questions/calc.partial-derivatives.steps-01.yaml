@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.partial-derivatives.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for calculating ∂f/∂x."
+items:
+- id: target
+  content:
+  - type: text
+    text: "Choose x as the variable to differentiate with respect to"
+- id: hold
+  content:
+  - type: text
+    text: "Treat the other variables as constants"
+- id: differentiate
+  content:
+  - type: text
+    text: "Differentiate the terms containing x"
+- id: simplify
+  content:
+  - type: text
+    text: "Simplify the result"
+correctOrder:
+- target
+- hold
+- differentiate
+- simplify
+explanation:
+- type: text
+  text: "The key is to distinguish the target variable from the variables held constant."
+- type: text
+  text: "At the end, remember that the function may still depend on the other variables."
+tags:
+- calculus
+- multivariable
+- procedure
+difficulty: 2

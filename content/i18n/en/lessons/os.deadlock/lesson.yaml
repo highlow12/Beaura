@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.deadlock
+revision: 3
+track: operating-systems
+title: Deadlock
+description: Learn the conditions that cause deadlock and ways to handle it, when tasks wait on one another and can never proceed.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.deadlock.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.deadlock.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.deadlock.fill-03
+  - type: question
+    ref: os.deadlock.ordering-04
+  - type: question
+    ref: os.deadlock.matching-05

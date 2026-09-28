@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: toc.finite-state-machine.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each FSM component with its description.
+leftItems:
+  - id: state
+    content:
+      - type: text
+        text: state
+  - id: transition
+    content:
+      - type: text
+        text: transition
+  - id: start
+    content:
+      - type: text
+        text: Start state
+rightItems:
+  - id: mode
+    content:
+      - type: text
+        text: Summary of the computation mode given the input so far
+  - id: move
+    content:
+      - type: text
+        text: Next-state change based on the input and current state
+  - id: initial
+    content:
+      - type: text
+        text: State used before reading the first symbol
+correctPairs:
+  - leftId: state
+    rightId: mode
+  - leftId: transition
+    rightId: move
+  - leftId: start
+    rightId: initial
+explanation:
+  - type: text
+    text: An FSM run repeatedly follows transitions from the start state to update the current state.
+tags:
+  - theory-of-computation
+  - finite-state-machine
+difficulty: 1

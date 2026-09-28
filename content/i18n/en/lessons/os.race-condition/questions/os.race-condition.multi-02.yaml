@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.race-condition.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to race conditions."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "If a read and write are not grouped atomically, an increment can be lost."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Synchronizing critical sections that access shared data can reduce race conditions."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "If two threads read the same value, their final writes always double the result."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Race conditions always happen even when data is not shared."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "If a read and write are not grouped atomically, an increment can be lost. Synchronizing critical sections that access shared data can reduce race conditions."
+  - type: text
+    text: "Locking a large critical section can be safe, but reduces parallelism. Keep the protected region small while including every access that could break an invariant."
+tags: [race-condition, concurrency, synchronization]
+difficulty: 3

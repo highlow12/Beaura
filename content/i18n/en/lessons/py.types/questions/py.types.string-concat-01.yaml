@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: py.types.string-concat-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  first = "Py"
+  second = "thon"
+  print(first + second)
+choices:
+  - Python
+  - "Py thon"
+  - Py
+acceptedOutputs:
+  - Python
+explanation:
+  - type: text
+    text: "Using + with strings joins them without a space. So Py and thon combine to form Python."
+tags:
+  - str
+  - string-concatenation
+  - code-output
+difficulty: 1

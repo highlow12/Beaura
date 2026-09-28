@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.variance
+revision: 3
+track: probability-statistics
+title: "Variance and Standard Deviation"
+description: "Measure spread by averaging squared deviations from the expected value, and interpret the standard deviation."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: prob.variance.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: prob.variance.application-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: prob.variance.term-01
+  - type: question
+    ref: prob.variance.steps-01
+  - type: question
+    ref: prob.variance.match-01

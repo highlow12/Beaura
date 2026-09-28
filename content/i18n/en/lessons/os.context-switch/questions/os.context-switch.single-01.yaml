@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.context-switch.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about context switches is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A context switch saves the current execution state and restores another execution state."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A context switch moves a file to another folder on disk."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "When a context switch happens, the previous process’s registers are permanently deleted."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A context switch saves the current execution state and restores another execution state."
+  - type: text
+    text: "A context switch saves the current execution unit’s registers, program counter, stack pointer, and other state, then restores the next unit’s state."
+tags: [context-switch, scheduler, process]
+difficulty: 2

@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.permutations.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put in order the calculation for choosing a chair and vice-chair from 5 people, where order matters."
+items:
+  - id: chair
+    content:
+      - type: text
+        text: "Count the 5 choices for chair"
+  - id: vice
+    content:
+      - type: text
+        text: "Count the 4 remaining choices for vice-chair"
+  - id: multiply
+    content:
+      - type: text
+        text: "Calculate 5×4"
+  - id: interpret
+    content:
+      - type: text
+        text: "Interpret the result as 20 permutations"
+correctOrder:
+  - chair
+  - vice
+  - multiply
+  - interpret
+explanation:
+  - type: text
+    text: "The number of choices for each position decreases from 5 to 4, and the multiplication principle gives 20."
+  - type: text
+    text: "The chair and vice-chair have different roles, so order cannot be ignored."
+tags:
+  - discrete-math
+  - combinatorics
+  - counting
+difficulty: 2

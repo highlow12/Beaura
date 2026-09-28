@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.backtracking.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "What should backtracking do when the current partial solution violates a constraint?"
+options:
+- id: prune
+  content:
+  - type: text
+    text: "Stop extending that branch and return to the previous choice"
+- id: continue
+  content:
+  - type: text
+    text: "Ignore the constraint and always continue to the end"
+- id: restart
+  content:
+  - type: text
+    text: "Restart every branch that has already been explored"
+correctOptionId: prune
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Backtracking uses the fact that an invalid partial solution cannot lead to a valid solution, so it prunes that branch."
+tags:
+- backtracking
+- search
+- pruning
+difficulty: 1

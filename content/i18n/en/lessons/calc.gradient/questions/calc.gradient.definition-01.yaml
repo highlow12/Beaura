@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.gradient.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What are the components of ∇f?"
+options:
+  - id: partials
+    content:
+      - type: text
+        text: "Partial derivative with respect to each variable"
+  - id: integrals
+    content:
+      - type: text
+        text: "Integral with respect to each variable"
+  - id: values-only
+    content:
+      - type: text
+        text: "The same function value repeated"
+  - id: eigen
+    content:
+      - type: text
+        text: "Eigenvalues only"
+correctOptionId: partials
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The gradient collects partial derivatives into a vector."
+  - type: text
+    text: "For two variables, it has two components: the partial derivatives in the x and y directions."
+tags:
+  - calculus
+  - gradient
+  - definition
+difficulty: 1

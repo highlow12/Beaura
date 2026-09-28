@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: net.routing.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each routing and next-hop term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "Routing table"
+  - id: left-b
+    content:
+      - type: text
+        text: "Next hop"
+  - id: left-c
+    content:
+      - type: text
+        text: "Default route"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "A table of destinations and forwarding directions"
+  - id: right-b
+    content:
+      - type: text
+        text: "The next router or device to receive the packet"
+  - id: right-c
+    content:
+      - type: text
+        text: "A route used when no more specific entry matches"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "The routing table records destinations and forwarding directions; the next hop is the next router or device to receive a packet; the default route is used when no more specific entry matches."
+tags: [routing, router, forwarding]
+difficulty: 2

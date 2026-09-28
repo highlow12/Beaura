@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.topological-sort.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "What condition must a topological order satisfy?"
+options:
+- id: prerequisite-first
+  content:
+  - type: text
+    text: "For every edge u → v, u appears before v"
+- id: reverse-edge
+  content:
+  - type: text
+    text: "Reverse every edge direction in the order"
+- id: same-degree
+  content:
+  - type: text
+    text: "Make every vertex have the same indegree"
+correctOptionId: prerequisite-first
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A topological order places the source of each edge before its destination."
+tags:
+- graph
+- topological-sort
+- dag
+difficulty: 1

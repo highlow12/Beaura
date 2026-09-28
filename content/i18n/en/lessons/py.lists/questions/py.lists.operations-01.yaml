@@ -1,0 +1,55 @@
+schemaVersion: 1
+id: py.lists.operations-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each list operation with what it does."
+leftItems:
+- id: append
+  content:
+  - type: code
+    language: python
+    code: |-
+      items.append(value)
+- id: index
+  content:
+  - type: code
+    language: python
+    code: |-
+      items[0]
+- id: pop
+  content:
+  - type: code
+    language: python
+    code: |-
+      items.pop()
+rightItems:
+- id: add-end
+  content:
+  - type: text
+    text: "Adds an item at the end"
+- id: read-position
+  content:
+  - type: text
+    text: "Reads the item at an index"
+- id: remove-end
+  content:
+  - type: text
+    text: "Removes and returns the last item"
+correctPairs:
+- leftId: append
+  rightId: add-end
+- leftId: index
+  rightId: read-position
+- leftId: pop
+  rightId: remove-end
+explanation:
+- type: text
+  text: "append adds at the end, pop removes the last item, and square-bracket indexing reads an item."
+- type: text
+  text: "It is easier to distinguish list operations when you remember whether they act on a position or on the end."
+tags:
+- lists
+- operations
+difficulty: 2

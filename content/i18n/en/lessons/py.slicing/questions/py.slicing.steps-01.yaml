@@ -1,0 +1,38 @@
+id: py.slicing.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for selecting a range with slicing."
+items:
+- id: start
+  content:
+  - type: text
+    text: "Choose the start index"
+- id: stop
+  content:
+  - type: text
+    text: "Choose the stop boundary to exclude"
+- id: step
+  content:
+  - type: text
+    text: "Choose the step if needed"
+- id: copy
+  content:
+  - type: text
+    text: "Create a new sequence from the selected items"
+correctOrder:
+- start
+- stop
+- step
+- copy
+unorderedGroups:
+  - [start, stop, step]
+explanation:
+- type: text
+  text: "Choose the start and stop boundaries and an optional step; the items in the half-open range are collected in a new result."
+schemaVersion: 1
+revision: 2
+tags:
+- collections
+- slicing
+difficulty: 2

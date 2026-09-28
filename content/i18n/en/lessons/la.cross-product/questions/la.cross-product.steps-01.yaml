@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: la.cross-product.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for finding a triangle's surface normal with the cross product."
+items:
+  - id: edges
+    content:
+      - type: text
+        text: "Form two edge vectors that start at one vertex"
+  - id: cross
+    content:
+      - type: text
+        text: "Calculate the cross product of the two edges"
+  - id: direction
+    content:
+      - type: text
+        text: "Check the direction using the right-hand rule"
+  - id: normalize
+    content:
+      - type: text
+        text: "Normalize the vector to unit length if needed"
+correctOrder:
+  - edges
+  - cross
+  - direction
+  - normalize
+unorderedGroups:
+  - [direction, normalize]
+explanation:
+  - type: text
+    text: "The cross product is perpendicular to the plane formed by the two edges, making it a candidate surface normal."
+  - type: text
+    text: "After normalization, it becomes a unit direction that can be used in lighting calculations."
+tags:
+  - linear-algebra
+  - cross-product
+  - graphics
+difficulty: 2

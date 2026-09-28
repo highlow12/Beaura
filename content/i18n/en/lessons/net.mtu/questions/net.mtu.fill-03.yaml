@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.mtu.fill-03
+revision: 2
+type: fill-blank
+prompt:
+- type: text
+  text: With an MTU of 1,500 bytes and a 20-byte IPv4 header, the maximum IP data that fits without fragmentation is ___ bytes.
+choices:
+- '1480'
+- '1500'
+- '1520'
+acceptedAnswers:
+- '1480'
+explanation:
+- type: text
+  text: If an Ethernet link has an MTU of 1,500 bytes, a typical IPv4 packet must fit its header and data within that size
+    to fit in one frame. For example, with a 20-byte IP header, the IP data can be at most 1,480 bytes. If an IPv4 packet
+    is larger, it may be fragmented depending on the conditions, or an error may be reported if the DF flag is set.
+tags:
+- mtu
+- fragmentation
+- ip
+difficulty: 3

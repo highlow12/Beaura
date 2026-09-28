@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.distributions.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Which parameter gives the center of a normal distribution? The mean is ___."
+choices:
+  - "μ"
+  - "σ"
+  - "p"
+  - "n"
+acceptedAnswers:
+  - "μ"
+explanation:
+  - type: text
+    text: "In a normal distribution, μ gives the center or mean, while σ describes the spread."
+  - type: text
+    text: "σ is the standard deviation, so it controls spread rather than location."
+tags:
+  - probability-statistics
+  - distributions
+  - normal
+difficulty: 1

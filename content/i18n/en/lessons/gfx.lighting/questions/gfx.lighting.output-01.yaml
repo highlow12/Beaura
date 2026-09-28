@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.lighting.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the result of calculating diffuse intensity from a normalized normal and light direction."
+language: python
+code: |-
+  normal = (0, 1)
+  light = (0, 1)
+  diffuse = max(normal[0] * light[0] + normal[1] * light[1], 0)
+  print(diffuse)
+choices: ["1", "0", "2"]
+acceptedOutputs: ["1"]
+explanation:
+  - type: text
+    text: "The dot product of the two vectors is 0×0 + 1×1 = 1. Since it is not negative, the diffuse intensity is 1."
+tags: [graphics, lighting, diffuse, code-output]
+difficulty: 1

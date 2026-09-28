@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: pl.runtime-gc.order-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the basic steps of mark-sweep collection.
+items:
+  - id: mark-roots
+    content:
+      - type: text
+        text: Find GC roots such as the stack and globals, mark them, and add them to a worklist.
+  - id: traverse-and-mark
+    content:
+      - type: text
+        text: Until the worklist is empty, take an object, inspect its references, and add any unmarked objects to the list after marking them.
+  - id: sweep
+    content:
+      - type: text
+        text: Reclaim unmarked heap objects.
+correctOrder:
+  - mark-roots
+  - traverse-and-mark
+  - sweep
+explanation:
+  - type: text
+    text: Mark roots first, then follow references and mark each object before processing it so cycles are handled only once. Reclaim unmarked objects after marking is complete.
+tags:
+  - programming-languages
+  - garbage-collection
+  - mark-sweep
+difficulty: 2

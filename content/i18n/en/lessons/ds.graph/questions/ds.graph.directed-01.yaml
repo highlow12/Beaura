@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: ds.graph.directed-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "If there is only an edge from A to B, which statement is correct?"
+options:
+- id: one-way
+  content:
+  - type: text
+    text: "It means you can move from A to B; movement from B to A is not guaranteed"
+- id: two-way
+  content:
+  - type: text
+    text: "You can always move from B to A using the same edge"
+- id: none
+  content:
+  - type: text
+    text: "There are no vertices, so it cannot be a graph"
+correctOptionId: one-way
+shuffleOptions: true
+explanation:
+- type: text
+  text: "An edge in a directed graph represents movement only from its starting vertex to its destination."
+- type: text
+  text: "Movement in the opposite direction requires a separate edge or an undirected graph."
+tags:
+- graph
+- directed
+difficulty: 2

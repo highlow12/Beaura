@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.concurrency.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which design best prevents a lost update when two requests both read the same stock of 1 and each tries to sell one item?"
+options:
+  - id: atomic-update
+    content:
+      - type: text
+        text: "Use an atomic UPDATE with a stock condition or an appropriate lock"
+  - id: client-read
+    content:
+      - type: text
+        text: "Unconditionally overwrite the value later using what the client read"
+  - id: display
+    content:
+      - type: text
+        text: "Display the current stock on screen without changing the database"
+correctOptionId: atomic-update
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Combine the condition and change into an atomic database operation, such as `UPDATE ... SET stock = stock - 1 WHERE stock > 0`, or protect the read-write interval with a lock."
+tags: [database, concurrency, lost-update]
+difficulty: 3

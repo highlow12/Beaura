@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.topological-sort
+revision: 1
+track: algorithms
+title: Topological Sort
+description: Learn how to order the vertices of a DAG with prerequisites so every edge points forward in the order.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.topological-sort.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.topological-sort.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.topological-sort.steps-01
+- type: question
+  ref: algo.topological-sort.complete-01
+- type: question
+  ref: algo.topological-sort.trace-01

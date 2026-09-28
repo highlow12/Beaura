@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.protocol-model.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about packets and the layer model is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A protocol defines rules for exchanging messages, while layers divide communication responsibilities into stages."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A packet is always a single fixed-size file across the entire network."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "In a layered model, all layers share the same addresses and error handling."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A protocol defines rules for exchanging messages, while layers divide communication responsibilities into stages."
+  - type: text
+    text: "A protocol is an agreed set of rules for message formats and order. A packet is a unit of data divided into a header and payload for transmission. A layered model separates addressing, delivery, and application-level meaning."
+tags: [network, protocol, encapsulation]
+difficulty: 1

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.page-table.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about page tables and the TLB is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "The TLB caches recent virtual-page to physical-frame mappings to speed up address translation."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "The TLB is a queue that sends file contents over a network."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "The page table is a single array shared by all processes without permissions."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The TLB caches recent virtual-page to physical-frame mappings to speed up address translation."
+  - type: text
+    text: "A page table records virtual page numbers, physical frame numbers, and read, write, and execute permissions. The TLB is a small cache that stores frequently used translations."
+tags: [page-table, tlb, mmu]
+difficulty: 3

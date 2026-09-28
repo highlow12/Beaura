@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.socket.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to sockets and clients/servers."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "A server usually waits with `bind` and `listen`, then receives a connection with `accept`."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Socket reads and writes provide an interface between application data and the transport layer."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A listening socket can never handle more than one client connection at a time."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "When a socket write is called, the peer application is guaranteed to read all the data immediately."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A server usually waits with `bind` and `listen`, then receives a connection with `accept`. Socket reads and writes provide an interface between application data and the transport layer."
+  - type: text
+    text: "The socket abstraction simplifies application development, but timeouts, partial reads and writes, and concurrent connection counts still need to be managed. Choosing between blocking and event-driven APIs also affects server architecture."
+tags: [socket, client-server, api]
+difficulty: 3

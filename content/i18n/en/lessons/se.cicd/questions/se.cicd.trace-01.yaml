@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.cicd.trace-01
+revision: 2
+type: code-output
+prompt:
+- type: text
+  text: In this CI/CD pipeline, the build succeeds but the tests fail. What does the code print?
+language: python
+code: "steps = [(\"build\", True), (\"test\", False), (\"deploy\", True)]\nfor name, passed in steps:\n    if not passed:\n        print(f\"stopped:{name}\")\n        break"
+choices:
+- stopped:test
+- stopped:build
+- stopped:deploy
+acceptedOutputs:
+- stopped:test
+explanation:
+- type: text
+  text: The build passes, but `test` is `False`, so the code prints `stopped:test` and breaks out of the loop. The deploy stage does not run. A failed check must not be treated as a pass so the change can be deployed.
+tags:
+- software-engineering
+- cicd
+- code-trace
+difficulty: 1

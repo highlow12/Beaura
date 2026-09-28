@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.select
+revision: 2
+track: databases
+title: Selecting Rows with SELECT
+description: Select the needed columns and rows declaratively with SELECT, WHERE, and ORDER BY.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.select.output-01
+  - type: question
+    ref: db.select.fill-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.select.match-01
+  - type: question
+    ref: db.select.choice-01
+  - type: question
+    ref: db.select.complete-01

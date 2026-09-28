@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.trees.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "How many edges does a tree with 6 vertices have?"
+options:
+  - id: five
+    content:
+      - type: text
+        text: "5"
+  - id: six
+    content:
+      - type: text
+        text: "6"
+  - id: seven
+    content:
+      - type: text
+        text: "7"
+  - id: twelve
+    content:
+      - type: text
+        text: "12"
+correctOptionId: five
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A tree with n vertices has n−1 edges, so 6−1=5."
+  - type: text
+    text: "This formula is a key property of trees that are both connected and acyclic."
+tags:
+  - discrete-math
+  - graphs
+  - tree-property
+difficulty: 1

@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.connected-components.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each part of the connected-component counting algorithm with its role."
+leftItems:
+- id: visited
+  content:
+  - type: text
+    text: "Visited set"
+- id: outer-loop
+  content:
+  - type: text
+    text: "Outer loop"
+- id: traversal
+  content:
+  - type: text
+    text: "BFS or DFS"
+rightItems:
+- id: mark
+  content:
+  - type: text
+    text: "Avoid counting a vertex that has already been included"
+- id: scan
+  content:
+  - type: text
+    text: "Check every vertex as a possible new starting point"
+- id: explore
+  content:
+  - type: text
+    text: "Find all vertices in the same component as the start"
+correctPairs:
+- leftId: visited
+  rightId: mark
+- leftId: outer-loop
+  rightId: scan
+- leftId: traversal
+  rightId: explore
+explanation:
+- type: text
+  text: "The outer loop finds new components, and BFS or DFS visits every vertex in each one. The visited set prevents duplicate counts."
+tags:
+- graph
+- connected-components
+- traversal
+difficulty: 2

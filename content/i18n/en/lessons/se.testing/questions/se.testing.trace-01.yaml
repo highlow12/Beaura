@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.testing.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: What does the total function, which can be called from a unit test, print?
+language: python
+code: "def total(prices):\n    return sum(prices)\n\nprint(total([2, 3, 5]))"
+choices:
+- '10'
+- '235'
+- '5'
+acceptedOutputs:
+- '10'
+explanation:
+- type: text
+  text: '`sum` adds the three values in the list and returns 2 + 3 + 5, which is 10.'
+tags:
+- software-engineering
+- testing
+- code-trace
+difficulty: 1

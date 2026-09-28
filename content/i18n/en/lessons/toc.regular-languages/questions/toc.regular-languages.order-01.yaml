@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: toc.regular-languages.order-01
+revision: 3
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the steps for designing transitions in a DFA that recognizes the regular expression 0(0|1)*.
+items:
+  - id: first-symbol
+    content:
+      - type: text
+        text: Set the start state to check whether the first input symbol is 0.
+  - id: reject-other
+    content:
+      - type: text
+        text: Set a transition to a rejecting state if the first symbol is 1.
+  - id: enter-accept
+    content:
+      - type: text
+        text: Set a transition to an accepting state if the first symbol is 0.
+  - id: loop-rest
+    content:
+      - type: text
+        text: Keep the machine in the accepting state when it reads either 0 or 1 afterward.
+correctOrder:
+  - first-symbol
+  - reject-other
+  - enter-accept
+  - loop-rest
+unorderedGroups:
+  - [reject-other, enter-accept]
+explanation:
+  - type: text
+    text: These steps design transition rules for different inputs. During an actual run, the branches for a first symbol of 0 or 1 are not both taken; only strings starting with 0 can continue freely.
+tags:
+  - theory-of-computation
+  - regular-expression
+  - dfa
+difficulty: 2

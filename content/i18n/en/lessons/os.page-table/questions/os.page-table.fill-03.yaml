@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.page-table.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "When a translation is not found in the TLB, the mapping data structure to check is the ___."
+choices:
+  - "page table"
+  - "priority queue"
+  - "file name"
+acceptedAnswers:
+  - "page table"
+explanation:
+  - type: text
+    text: "If the virtual address’s page number is in the TLB, the system uses the cached frame number and permissions to access memory. If it is not in the TLB, the page table is checked. A valid mapping can be added to the TLB, but if the page is not in RAM, a page fault must be handled. Missing mappings or permissions can also cause an access error."
+tags: [page-table, tlb, mmu]
+difficulty: 3

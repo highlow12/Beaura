@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.virtual-memory.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about virtual memory is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "Virtual memory is an abstraction that maps a process’s virtual addresses to physical frames as needed."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Virtual memory is a storage device that permanently preserves all RAM contents without power."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Using virtual memory means page faults can never occur."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Virtual memory is an abstraction that maps a process’s virtual addresses to physical frames as needed."
+  - type: text
+    text: "Virtual memory is a memory-management technique that gives each process a continuous, private address space and maps it to physical frames as needed."
+tags: [virtual-memory, page, memory-protection]
+difficulty: 2

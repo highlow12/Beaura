@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: algo.traversal.bfs-choice-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which statement best describes how BFS visits nodes?"
+options:
+- id: level
+  content:
+  - type: text
+    text: "Use a queue to visit levels starting closest to the starting point"
+- id: depth
+  content:
+  - type: text
+    text: "Follow one path to its end before considering another"
+- id: random
+  content:
+  - type: text
+    text: "Choose the visit order randomly"
+correctOptionId: level
+shuffleOptions: true
+explanation:
+- type: text
+  text: "BFS uses a queue to visit nodes at closer distances or levels first."
+- type: text
+  text: "Following one path deeply is characteristic of DFS."
+tags:
+- traversal
+- bfs
+difficulty: 1

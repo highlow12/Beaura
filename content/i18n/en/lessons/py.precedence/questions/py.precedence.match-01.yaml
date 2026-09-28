@@ -1,0 +1,47 @@
+id: py.precedence.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each precedence feature with its role."
+leftItems:
+- id: parentheses
+  content:
+  - type: text
+    text: "Parentheses"
+- id: multiply
+  content:
+  - type: text
+    text: "Multiplication"
+- id: add
+  content:
+  - type: text
+    text: "Addition"
+rightItems:
+- id: first
+  content:
+  - type: text
+    text: "Evaluates the grouped expression first"
+- id: before-add
+  content:
+  - type: text
+    text: "Is evaluated before addition"
+- id: later
+  content:
+  - type: text
+    text: "Is evaluated after multiplication"
+correctPairs:
+- leftId: parentheses
+  rightId: first
+- leftId: multiply
+  rightId: before-add
+- leftId: add
+  rightId: later
+explanation:
+- type: text
+  text: "Parentheses explicitly change evaluation order; without them, multiplication is evaluated before addition."
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- precedence
+difficulty: 2

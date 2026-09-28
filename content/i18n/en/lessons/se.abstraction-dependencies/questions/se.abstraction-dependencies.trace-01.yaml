@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: se.abstraction-dependencies.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: What does the following code print when it calls the injected notification implementation?
+language: python
+code: |-
+  class RecordingNotifier:
+      def notify(self, order_id):
+          print(f"notified:{order_id}")
+
+  def checkout(order_id, notifier):
+      notifier.notify(order_id)
+
+  checkout("A7", RecordingNotifier())
+choices:
+  - notified:A7
+  - checkout:A7
+  - notified:RecordingNotifier
+acceptedOutputs:
+  - notified:A7
+explanation:
+  - type: text
+    text: "`checkout` calls `notify` on the `notifier` it receives instead of creating a concrete implementation, so it prints the order ID A7."
+tags:
+  - software-engineering
+  - dependency-injection
+  - code-trace
+difficulty: 2

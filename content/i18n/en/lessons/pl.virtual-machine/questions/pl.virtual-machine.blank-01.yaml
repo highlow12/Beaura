@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.virtual-machine.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: The repeated process in which a VM fetches, decodes, and executes the instruction at the current PC is called the interpreter ___.
+choices:
+  - loop
+  - tree
+  - schema
+acceptedAnswers:
+  - loop
+explanation:
+  - type: text
+    text: The interpreter loop repeats fetch, decode, execution, and PC updates as it processes bytecode.
+tags:
+  - programming-languages
+  - virtual-machine
+  - interpreter-loop
+difficulty: 1

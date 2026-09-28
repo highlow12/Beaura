@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: arch.arithmetic
+revision: 2
+track: computer-architecture
+title: Binary Arithmetic and Overflow
+description: Distinguish binary addition and subtraction from overflow in fixed-width arithmetic.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: arch.arithmetic.single-01
+  - type: question
+    ref: arch.arithmetic.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: arch.arithmetic.fill-03
+  - type: question
+    ref: arch.arithmetic.ordering-04
+  - type: question
+    ref: arch.arithmetic.matching-05

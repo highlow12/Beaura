@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.rasterization.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each rasterization term with its description."
+leftItems:
+  - id: sample
+    content:
+      - type: text
+        text: "Sample"
+  - id: edge-function
+    content:
+      - type: text
+        text: "edge function"
+  - id: aliasing
+    content:
+      - type: text
+        text: "aliasing"
+rightItems:
+  - id: test-point
+    content:
+      - type: text
+        text: "A location within a pixel where coverage is tested"
+  - id: sign-test
+    content:
+      - type: text
+        text: "A function that determines which side of an edge a point lies on"
+  - id: jagged
+    content:
+      - type: text
+        text: "The jagged appearance of an edge"
+correctPairs:
+  - leftId: sample
+    rightId: test-point
+  - leftId: edge-function
+    rightId: sign-test
+  - leftId: aliasing
+    rightId: jagged
+explanation:
+  - type: text
+    text: "A sample is a test location, an edge function is a tool for checking whether a point is inside, and aliasing is the jagged appearance caused by discrete sampling."
+tags: [graphics, rasterization, sampling]
+difficulty: 2

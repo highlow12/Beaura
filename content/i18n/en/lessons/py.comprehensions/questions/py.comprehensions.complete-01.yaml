@@ -1,0 +1,24 @@
+id: py.comprehensions.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the expression that fills the blank to double each element in the comprehension."
+language: python
+template: doubled = [x {{blank:expression}} for x in values]
+blanks:
+- id: expression
+  choices:
+  - '* 2'
+  - + 2
+  - == 2
+  acceptedAnswers:
+  - '* 2'
+explanation:
+- type: text
+  text: "The expression `x * 2` at the front transforms each element and places the result in the new list."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- comprehension
+difficulty: 2

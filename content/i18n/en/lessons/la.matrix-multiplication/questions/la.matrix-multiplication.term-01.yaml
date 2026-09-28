@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.matrix-multiplication.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The product of a 2×3 matrix and a 3×5 matrix is a ___×___ matrix. Choose the first number."
+choices:
+  - "2"
+  - "3"
+  - "5"
+  - "8"
+acceptedAnswers:
+  - "2"
+explanation:
+  - type: text
+    text: "The result has 2 rows, matching the number of rows in the left matrix."
+  - type: text
+    text: "The full result has shape 2×5."
+tags:
+  - linear-algebra
+  - matrices
+  - shape
+difficulty: 1

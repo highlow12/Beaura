@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.shortest-path.relax-update-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "If dist[u] = 4, edge u→v has weight 3, and the current dist[v] = 10, what is dist[v] after relaxation?"
+options:
+  - id: seven
+    content:
+      - type: text
+        text: '7'
+  - id: ten
+    content:
+      - type: text
+        text: '10'
+  - id: three
+    content:
+      - type: text
+        text: '3'
+correctOptionId: seven
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The new candidate distance is 4 + 3 = 7, which is less than 10, so update dist[v] to 7."
+tags:
+  - shortest-path
+  - relaxation
+  - dijkstra
+difficulty: 2

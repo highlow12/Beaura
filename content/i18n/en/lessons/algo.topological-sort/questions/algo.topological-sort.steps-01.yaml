@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.topological-sort.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Put one iteration of Kahn’s algorithm in order."
+items:
+- id: pop
+  content:
+  - type: text
+    text: "Remove a vertex with indegree 0 from the queue"
+- id: output
+  content:
+  - type: text
+    text: "Add the removed vertex to the result"
+- id: decrement
+  content:
+  - type: text
+    text: "Decrement the indegree of each neighbor by one"
+- id: enqueue
+  content:
+  - type: text
+    text: "Add neighbors whose indegree becomes 0 to the queue"
+correctOrder:
+- pop
+- output
+- decrement
+- enqueue
+explanation:
+- type: text
+  text: "After adding a vertex to the result, update the indegrees as if its outgoing edges were removed, then add newly ready candidates to the queue."
+tags:
+- graph
+- topological-sort
+- execution-order
+difficulty: 2

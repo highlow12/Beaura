@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: py.conditionals.operator-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the comparison operator for the blank so the program prints “below freezing” when the temperature is below 0 degrees."
+  - type: code
+    language: python
+    code: |-
+      temperature = -3
+      if temperature ___ 0:
+          print("freezing")
+choices:
+  - "<"
+  - ">"
+  - "=="
+acceptedAnswers:
+  - "<"
+explanation:
+  - type: text
+    text: "Use the `<` operator to check whether the left value is less than the right value."
+tags: [conditionals, comparison]
+difficulty: 1

@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.backtracking.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each backtracking step with its role."
+leftItems:
+- id: choice
+  content:
+  - type: text
+    text: "Add a choice"
+- id: constraint
+  content:
+  - type: text
+    text: "Check constraints"
+- id: undo
+  content:
+  - type: text
+    text: "Undo the choice"
+rightItems:
+- id: extend
+  content:
+  - type: text
+    text: "Extend the partial solution by one step"
+- id: prune
+  content:
+  - type: text
+    text: "Stop exploring an impossible branch"
+- id: clean
+  content:
+  - type: text
+    text: "Restore the state so a sibling branch can be explored"
+correctPairs:
+- leftId: choice
+  rightId: extend
+- leftId: constraint
+  rightId: prune
+- leftId: undo
+  rightId: clean
+explanation:
+- type: text
+  text: "Build and check each choice, then restore the state with an undo step when recursion returns. This lets each branch be explored independently."
+tags:
+- backtracking
+- pruning
+- recursion
+difficulty: 2

@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: la.projection.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for decomposing vector `u` into components along and perpendicular to `v`."
+items:
+  - id: dot
+    content:
+      - type: text
+        text: "Use `u·v` and `v·v` to calculate the coefficient `(u·v)/(v·v)`"
+  - id: project
+    content:
+      - type: text
+        text: "Calculate `proj_v(u)`"
+  - id: subtract
+    content:
+      - type: text
+        text: "Subtract the projection from `u`"
+  - id: check
+    content:
+      - type: text
+        text: "Check whether the remaining vector is orthogonal to `v`"
+correctOrder:
+  - dot
+  - project
+  - subtract
+  - check
+explanation:
+  - type: text
+    text: "Find the projection first, then subtract it from the original vector to get the perpendicular component."
+  - type: text
+    text: "Checking the dot-product relationship between the two components verifies the decomposition."
+tags:
+  - linear-algebra
+  - projection
+  - decomposition
+difficulty: 2

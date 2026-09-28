@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.semantic-analysis.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each semantic-analysis check with its description.
+leftItems:
+  - id: name-lookup
+    content:
+      - type: text
+        text: Name lookup
+  - id: type-check
+    content:
+      - type: text
+        text: Type checking
+  - id: return-check
+    content:
+      - type: text
+        text: Return checking
+rightItems:
+  - id: declared
+    content:
+      - type: text
+        text: Whether an identifier is declared in the current scope chain
+  - id: operand
+    content:
+      - type: text
+        text: Whether the operand types satisfy the operation's rules
+  - id: function-contract
+    content:
+      - type: text
+        text: Whether a function follows its promised return type and paths
+correctPairs:
+  - leftId: name-lookup
+    rightId: declared
+  - leftId: type-check
+    rightId: operand
+  - leftId: return-check
+    rightId: function-contract
+explanation:
+  - type: text
+    text: Attaching name and type information while traversing the AST lets code generation and error reporting reuse the same analysis results.
+tags:
+  - programming-languages
+  - semantic-analysis
+  - type-checking
+difficulty: 2

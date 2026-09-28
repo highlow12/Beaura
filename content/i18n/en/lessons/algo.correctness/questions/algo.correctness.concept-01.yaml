@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.correctness.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which statement best describes the role of a loop invariant?"
+options:
+- id: preserve
+  content:
+  - type: text
+    text: "Explain correctness through a claim that remains true as iterations proceed"
+- id: random
+  content:
+  - type: text
+    text: "Randomly change the number of iterations"
+- id: format
+  content:
+  - type: text
+    text: "Check only the code’s indentation"
+correctOptionId: preserve
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Initialization, maintenance, and termination show why an invariant lets a loop reach the correct result."
+tags:
+- correctness
+- invariant
+- proof
+difficulty: 1

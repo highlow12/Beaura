@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.cross-product
+revision: 2
+track: linear-algebra
+title: "The 3D Cross Product"
+description: "Learn how the cross product of 3D vectors produces a perpendicular vector and an area."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.cross-product.definition-01
+  - type: question
+    ref: la.cross-product.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
+  - type: question
+    ref: la.cross-product.term-01
+  - type: question
+    ref: la.cross-product.steps-01
+  - type: question
+    ref: la.cross-product.match-01

@@ -201,6 +201,25 @@ export async function buildContent(
 ): Promise<{ buildId: string; lessonCount: number; questionCount: number }> {
   const bundle = await loadSourceContent(projectRoot);
   const compiled = compileContent(bundle);
+  const englishBundle = await loadSourceContent(projectRoot, "en");
+  const english = compileContent(englishBundle);
+  for (const section of ["lessons", "questions"] as const) {
+    const originalIds = [...compiled[section].keys()].sort();
+    const translatedIds = [...english[section].keys()].sort();
+    if (JSON.stringify(originalIds) !== JSON.stringify(translatedIds))
+      throw new Error(`English ${section} IDs differ from Korean content`);
+  }
+  for (const [id, original] of compiled.questions) {
+    const translated = english.questions.get(id) as Record<string, unknown>;
+    const source = original as Record<string, unknown>;
+    for (const key of ["type", "revision", "lessonId", "correctOptionId", "correctOptionIds", "correctOrder", "correctPairs", "acceptedOutputs", "acceptedPaths", "canonicalActionIds", "initialStateId", "goalStateIds", "maxSteps", "template", "code", "transitions", "edges", "startNodeId", "goalNodeId"]) {
+      if (JSON.stringify(source[key]) !== JSON.stringify(translated[key]))
+        throw new Error(`English question ${id} changed answer data: ${key}`);
+    }
+    if (Array.isArray(source.acceptedAnswers) &&
+      (!Array.isArray(translated.acceptedAnswers) || source.acceptedAnswers.length !== translated.acceptedAnswers.length))
+      throw new Error(`English question ${id} changed accepted answer count`);
+  }
   const output = join(projectRoot, "generated");
   const publicOutput = join(projectRoot, "static", "generated");
   await rm(output, { recursive: true, force: true });
@@ -212,6 +231,12 @@ export async function buildContent(
   for (const [id, question] of compiled.questions)
     await writeJson(join(output, "questions", `${id}.json`), question);
   await writeJson(join(output, "manifest.json"), compiled.manifest);
+  await writeJson(join(output, "en", "curriculum.json"), english.curriculum);
+  await writeJson(join(output, "en", "catalog.json"), english.catalog);
+  for (const [id, lesson] of english.lessons)
+    await writeJson(join(output, "en", "lessons", `${id}.json`), lesson);
+  for (const [id, question] of english.questions)
+    await writeJson(join(output, "en", "questions", `${id}.json`), question);
   for (const asset of [...compiled.assets].sort()) {
     const destination = join(output, "assets", ...asset.split("/"));
     await mkdir(dirname(destination), { recursive: true });

@@ -1,0 +1,27 @@
+id: ds.memory.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the blank that creates a reference pointing to the same list as data."
+language: python
+template: 'data = [1, 2]
+
+  ref = {{blank:source}}'
+blanks:
+- id: source
+  choices:
+  - data
+  - data.copy()
+  - '[data]'
+  acceptedAnswers:
+  - data
+explanation:
+- type: text
+  text: "`ref = data` creates an alias pointing to the same list object. `data.copy()` creates a separate list, and `[data]` adds another list layer around it."
+schemaVersion: 1
+revision: 1
+tags:
+- memory
+- representation
+- reference
+difficulty: 2

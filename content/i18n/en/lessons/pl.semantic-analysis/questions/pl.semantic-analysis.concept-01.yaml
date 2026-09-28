@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.semantic-analysis.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: What is the primary role of a symbol table during semantic analysis?
+options:
+  - id: name-declarations
+    content:
+      - type: text
+        text: Connect names to declaration information and support scope-aware lookup.
+  - id: execute-code
+    content:
+      - type: text
+        text: Execute every possible program input.
+  - id: draw-ui
+    content:
+      - type: text
+        text: Render the pixels on the user interface.
+  - id: compress-binary
+    content:
+      - type: text
+        text: Compress the generated executable.
+correctOptionId: name-declarations
+shuffleOptions: true
+explanation:
+  - type: text
+    text: A symbol table stores the type, location, and scope of declared names so the analyzer can check identifier references and duplicate declarations.
+tags:
+  - programming-languages
+  - semantic-analysis
+  - symbol-table
+difficulty: 1

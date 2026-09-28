@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.lexical-scope.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "When the same name is declared in nested scopes, a reference usually selects the ___ binding from its current location."
+choices:
+  - nearest
+  - farthest
+  - random
+acceptedAnswers:
+  - nearest
+explanation:
+  - type: text
+    text: "Lookup starts in the current scope and moves to the parent only if the name is absent, so the nearest binding takes precedence."
+tags:
+  - programming-languages
+  - lexical-scope
+  - shadowing
+difficulty: 1

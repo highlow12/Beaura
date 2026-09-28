@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.ray-tracing
+revision: 3
+track: computer-graphics
+title: "Shadows and Ray Tracing"
+description: "Explore the difference between ray tracing, which finds intersections by casting rays, and rasterization, along with the basics of shadows and reflections."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: gfx.ray-tracing.match-01
+  - type: question
+    ref: gfx.ray-tracing.order-01
+  - type: content
+    ref: content/ray-interval.md
+  - type: question
+    ref: gfx.ray-tracing.choice-01
+  - type: question
+    ref: gfx.ray-tracing.complete-01
+  - type: question
+    ref: gfx.ray-tracing.properties-01

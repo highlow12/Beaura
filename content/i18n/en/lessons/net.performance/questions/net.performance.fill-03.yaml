@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.performance.fill-03
+revision: 2
+type: fill-blank
+prompt:
+- type: text
+  text: The rate of data successfully delivered per unit of time is ___.
+choices:
+- throughput
+- round-trip latency
+- packet size
+acceptedAnswers:
+- throughput
+explanation:
+- type: text
+  text: Even on a 100 Mb/s link, the round-trip latency to a distant server may be 80 ms. When transferring a large file,
+    consider bandwidth and actual throughput; for the responsiveness of a small request, consider round-trip latency as well.
+    Packet loss can also reduce throughput because TCP retransmits lost data.
+tags:
+- network-performance
+- latency
+- bandwidth
+difficulty: 2

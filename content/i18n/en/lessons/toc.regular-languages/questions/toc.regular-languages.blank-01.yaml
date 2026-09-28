@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: toc.regular-languages.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: The expression a* allows a to repeat zero times ___.
+choices:
+  - or more
+  - or less
+  - less than
+acceptedAnswers:
+  - or more
+explanation:
+  - type: text
+    text: Kleene star repeats the pattern any number of times, including 0, 1, 2, and so on.
+tags:
+  - theory-of-computation
+  - kleene-star
+difficulty: 1

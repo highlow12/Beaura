@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.functions-closures.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each function concept with its description."
+leftItems:
+  - id: first-class
+    content:
+      - type: text
+        text: "First-class function"
+  - id: higher-order
+    content:
+      - type: text
+        text: "Higher-order function"
+  - id: closure
+    content:
+      - type: text
+        text: "Closure"
+rightItems:
+  - id: value
+    content:
+      - type: text
+        text: "Treats a function as a variable, argument, or return value"
+  - id: function-argument
+    content:
+      - type: text
+        text: "A function that accepts or returns another function"
+  - id: captured-env
+    content:
+      - type: text
+        text: "Preserves a function together with its defining environment"
+correctPairs:
+  - leftId: first-class
+    rightId: value
+  - leftId: higher-order
+    rightId: function-argument
+  - leftId: closure
+    rightId: captured-env
+explanation:
+  - type: text
+    text: "First-class functions are the language feature that makes higher-order functions and closures possible."
+tags:
+  - programming-languages
+  - functions
+  - closure
+difficulty: 2

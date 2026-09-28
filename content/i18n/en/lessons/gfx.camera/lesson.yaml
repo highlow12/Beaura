@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.camera
+revision: 2
+track: computer-graphics
+title: "Camera and View Matrix"
+description: "Learn how a camera’s position and orientation are transformed into view space, including the look-at approach."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.camera.roles-01
+  - type: question
+    ref: gfx.camera.inverse-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/view-basis.md
+  - type: question
+    ref: gfx.camera.order-01
+  - type: question
+    ref: gfx.camera.output-01
+  - type: question
+    ref: gfx.camera.direction-01

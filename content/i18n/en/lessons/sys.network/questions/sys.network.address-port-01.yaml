@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: sys.network.address-port-01
+revision: 2
+type: matching
+prompt:
+- type: text
+  text: Match each identifier with its primary role.
+leftItems:
+- id: ip
+  content:
+  - type: text
+    text: IP address
+- id: port
+  content:
+  - type: text
+    text: Port number
+rightItems:
+- id: host
+  content:
+  - type: text
+    text: Identify the network interface to which packets should be delivered.
+- id: service
+  content:
+  - type: text
+    text: Distinguish communication endpoints within a host.
+correctPairs:
+- leftId: ip
+  rightId: host
+- leftId: port
+  rightId: service
+explanation:
+- type: text
+  text: An IP address identifies the interface to which packets should be delivered, while a port number distinguishes communication endpoints within the host.
+tags:
+- network
+- ip
+- port
+difficulty: 1

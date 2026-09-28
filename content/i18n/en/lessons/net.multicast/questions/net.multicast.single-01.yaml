@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.multicast.single-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which statement about broadcast and multicast is most accurate?
+options:
+- id: correct
+  content:
+  - type: text
+    text: Broadcast targets everyone in the same domain, multicast targets a specific group, and unicast targets one recipient.
+- id: wrong-a
+  content:
+  - type: text
+    text: Unicast is a transmission that every device on the network must receive as a copy.
+- id: wrong-b
+  content:
+  - type: text
+    text: Every device processes a multicast payload even if it has not joined the group.
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+- type: text
+  text: Broadcast targets everyone in the same domain, multicast targets a specific group, and unicast targets one recipient.
+- type: text
+  text: Unicast targets one sender and one recipient, broadcast targets all recipients in the same domain, and multicast targets
+    recipients who joined a specific group.
+tags:
+- broadcast
+- multicast
+- unicast
+difficulty: 1

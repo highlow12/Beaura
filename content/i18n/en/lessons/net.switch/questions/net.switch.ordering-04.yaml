@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: net.switch.ordering-04
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic switch and LAN processing steps in the correct order."
+items:
+  - id: learn
+    content:
+      - type: text
+        text: "Record the source MAC address and ingress port in the table"
+  - id: lookup
+    content:
+      - type: text
+        text: "Look up the output port for the destination MAC address"
+  - id: flood-forward
+    content:
+      - type: text
+        text: "Flood frames for unknown destinations and forward those for known destinations"
+correctOrder: [learn, lookup, flood-forward]
+unorderedGroups:
+  - [learn, lookup]
+explanation:
+  - type: text
+    text: "After receiving a frame, the switch both learns the source MAC address and looks up the destination MAC address. These operations are independent, so either can happen first. If the destination is unknown, the switch floods the frame; otherwise, it forwards it to the matching port."
+  - type: text
+    text: "At the step where frames for unknown destinations are flooded and those for known destinations are forwarded, the result is passed to the next network layer or application."
+tags: [switch, lan, mac-table]
+difficulty: 3

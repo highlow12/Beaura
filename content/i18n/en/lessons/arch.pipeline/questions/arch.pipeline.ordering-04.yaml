@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.pipeline.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic pipeline steps in the correct order."
+items:
+  - id: overlap
+    content:
+      - type: text
+        text: "Place different instructions in separate stages"
+  - id: detect
+    content:
+      - type: text
+        text: "Detect hazards from data and control dependencies"
+  - id: resolve
+    content:
+      - type: text
+        text: "Handle conflicts with forwarding, stalls, and prediction"
+correctOrder: [overlap, detect, resolve]
+explanation:
+  - type: text
+    text: "First place different instructions in separate stages. Then detect hazards from data and control dependencies."
+  - type: text
+    text: "Finally, handle conflicts with forwarding, stalls, and prediction before passing results to the next circuit or program."
+tags: [pipeline, hazard, cpu-performance]
+difficulty: 4

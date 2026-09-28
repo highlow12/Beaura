@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.search.binary-range-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Search for 10 in the sorted list [2, 4, 6, 8, 10, 12, 14]. Right after checking the middle value 8, what is the next candidate range?"
+options:
+  - id: right-half
+    content:
+      - type: text
+        text: '[10, 12, 14]'
+  - id: left-half
+    content:
+      - type: text
+        text: '[2, 4, 6]'
+  - id: include-mid
+    content:
+      - type: text
+        text: '[8, 10, 12, 14]'
+correctOptionId: right-half
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The target 10 is larger than the middle value 8, so discard the values up to 8 and keep only the right half."
+tags:
+  - search
+  - binary-search
+  - bounds
+difficulty: 2

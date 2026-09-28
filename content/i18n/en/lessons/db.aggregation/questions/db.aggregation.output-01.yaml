@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: db.aggregation.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Calculate the total sales amount for each store, then print the largest total. Choose the result."
+language: python
+code: |-
+  sales = [("A", 10), ("B", 7), ("A", 5)]
+  totals = {}
+  for store, amount in sales:
+      totals[store] = totals.get(store, 0) + amount
+  print(max(totals.values()))
+choices: ["15", "10", "22"]
+acceptedOutputs: ["15"]
+explanation:
+  - type: text
+    text: "Store A’s total is 10+5=15 and store B’s is 7, so the largest group total is 15. In SQL, this can be expressed with GROUP BY store and SUM(amount)."
+tags: [database, sql, aggregation, code-output]
+difficulty: 2

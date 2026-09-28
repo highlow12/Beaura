@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: la.matrix-multiplication.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for calculating one entry of the matrix product `C = AB`."
+items:
+  - id: pick-row
+    content:
+      - type: text
+        text: "Select the row of `A` that corresponds to `C`'s row index"
+  - id: pick-col
+    content:
+      - type: text
+        text: "Select the column of `B` that corresponds to `C`'s column index"
+  - id: products
+    content:
+      - type: text
+        text: "Multiply corresponding components"
+  - id: sum
+    content:
+      - type: text
+        text: "Add all the products to get an entry of `C`"
+correctOrder:
+  - pick-row
+  - pick-col
+  - products
+  - sum
+unorderedGroups:
+  - [pick-row, pick-col]
+explanation:
+  - type: text
+    text: "For result position `(i, j)`, take the dot product of row `i` of `A` and column `j` of `B`."
+  - type: text
+    text: "The dimension requirements ensure that the two vectors have the same length."
+tags:
+  - linear-algebra
+  - matrices
+  - calculation
+difficulty: 2

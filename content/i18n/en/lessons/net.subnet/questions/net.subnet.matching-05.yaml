@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: net.subnet.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each subnet and CIDR term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "Prefix"
+  - id: left-b
+    content:
+      - type: text
+        text: "Host bits"
+  - id: left-c
+    content:
+      - type: text
+        text: "Broadcast"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "The leading bits that identify the network"
+  - id: right-b
+    content:
+      - type: text
+        text: "The remaining bits that identify the host"
+  - id: right-c
+    content:
+      - type: text
+        text: "An address that targets every host in a subnet"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "A prefix is the leading bits that identify the network; host bits are the remaining bits that identify a host; a broadcast address targets every host in the subnet."
+tags: [subnet, cidr, ipv4]
+difficulty: 2

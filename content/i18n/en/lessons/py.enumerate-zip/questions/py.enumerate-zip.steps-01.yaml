@@ -1,0 +1,37 @@
+id: py.enumerate-zip.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for processing indexes and values with enumerate."
+items:
+- id: source
+  content:
+  - type: text
+    text: "Get the next item from the sequence"
+- id: pair
+  content:
+  - type: text
+    text: "enumerate pairs the index with the item"
+- id: unpack
+  content:
+  - type: text
+    text: "Unpack the pair into two loop variables"
+- id: use
+  content:
+  - type: text
+    text: "Use the position and value in the loop body"
+correctOrder:
+- source
+- pair
+- unpack
+- use
+explanation:
+- type: text
+  text: "enumerate pairs each item with its position, and the loop unpacks the pair into two variables for the body."
+schemaVersion: 1
+revision: 1
+tags:
+- iteration
+- enumerate
+- zip
+difficulty: 2

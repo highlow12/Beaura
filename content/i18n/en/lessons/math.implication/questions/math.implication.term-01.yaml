@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.implication.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the truth value of `P → Q` when both `P` and `Q` are false."
+choices:
+  - "true"
+  - "false"
+  - "undefined"
+acceptedAnswers:
+  - "true"
+explanation:
+  - type: text
+    text: "When the antecedent `P` is false, the implication is considered true regardless of the consequent's value."
+  - type: text
+    text: "The only row that makes an implication false combines a true antecedent with a false consequent."
+tags:
+  - discrete-math
+  - logic
+  - truth-value
+difficulty: 2

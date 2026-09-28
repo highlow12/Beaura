@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.semantic-analysis
+revision: 1
+track: programming-languages
+title: Semantic Analysis
+description: Check constraints beyond syntax using symbol tables and type checking.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.semantic-analysis.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.semantic-analysis.match-01
+  - type: question
+    ref: pl.semantic-analysis.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.semantic-analysis.order-01
+  - type: question
+    ref: pl.semantic-analysis.trace-01

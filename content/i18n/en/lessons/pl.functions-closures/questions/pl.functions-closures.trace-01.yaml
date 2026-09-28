@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: pl.functions-closures.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the value printed by this closure."
+language: python
+code: |-
+  def make_adder(n):
+      def add(x):
+          return n + x
+      return add
+  plus_two = make_adder(2)
+  print(plus_two(3))
+choices:
+  - "5"
+  - "6"
+  - "3"
+acceptedOutputs:
+  - "5"
+explanation:
+  - type: text
+    text: "plus_two captures n = 2 and adds the call argument 3, so it returns 5."
+tags:
+  - programming-languages
+  - closure
+  - trace
+difficulty: 2

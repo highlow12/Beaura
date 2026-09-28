@@ -1,0 +1,47 @@
+id: py.modules.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each module syntax form with its meaning."
+leftItems:
+- id: import
+  content:
+  - type: text
+    text: import math
+- id: from
+  content:
+  - type: text
+    text: from math import sqrt
+- id: qualified
+  content:
+  - type: text
+    text: math.sqrt(9)
+rightItems:
+- id: module
+  content:
+  - type: text
+    text: "Imports the whole module as a namespace"
+- id: name
+  content:
+  - type: text
+    text: "Imports a specific name from a module"
+- id: access
+  content:
+  - type: text
+    text: "Calls a function through its module name"
+correctPairs:
+- leftId: import
+  rightId: module
+- leftId: from
+  rightId: name
+- leftId: qualified
+  rightId: access
+explanation:
+- type: text
+  text: "import brings in a module, while a from statement imports a specific name. Dot notation makes the module source explicit."
+schemaVersion: 1
+revision: 1
+tags:
+- modules
+- import
+difficulty: 2

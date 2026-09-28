@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: gfx.homogeneous.affine-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "How is a 2D point represented when extended to homogeneous coordinates?"
+options:
+  - id: point
+    content:
+      - type: code
+        language: text
+        code: (x, y, 1)
+  - id: vector
+    content:
+      - type: code
+        language: text
+        code: (x, y)
+  - id: color
+    content:
+      - type: code
+        language: text
+        code: (r, g, b, a, 1)
+correctOptionId: point
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Extending a 2D point to `(x, y, 1)` with a final component of 1 allows translation to be included in a 3×3 matrix multiplication."
+tags: [graphics, homogeneous-coordinates]
+difficulty: 1

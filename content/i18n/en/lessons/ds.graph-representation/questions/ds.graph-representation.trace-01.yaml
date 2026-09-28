@@ -1,0 +1,24 @@
+id: ds.graph-representation.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following adjacency-list code."
+language: python
+code: 'graph = {"A": ["B", "C"], "B": ["A"], "C": ["A"]}
+
+  print(graph["A"])'
+choices:
+- '["B", "C"]'
+- '["A"]'
+- '3'
+acceptedOutputs:
+- '["B", "C"]'
+explanation:
+- type: text
+  text: "The neighbor list connected to key A contains B and C, so that list is printed."
+schemaVersion: 1
+revision: 1
+tags:
+- graph
+- representation
+difficulty: 2

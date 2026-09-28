@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.version-control.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: In version control, what snapshot records one logical change?
+options:
+- id: commit
+  content:
+  - type: text
+    text: Commit
+- id: branch
+  content:
+  - type: text
+    text: Branch
+- id: conflict
+  content:
+  - type: text
+    text: conflict
+- id: workspace
+  content:
+  - type: text
+    text: Working tree
+correctOptionId: commit
+shuffleOptions: true
+explanation:
+- type: text
+  text: A commit is a reviewable and reversible snapshot of a change, while a branch is a workflow name that points to a commit.
+tags:
+- software-engineering
+- version-control
+- commit
+difficulty: 1

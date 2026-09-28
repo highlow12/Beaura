@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.connected-components
+revision: 1
+track: algorithms
+title: Connected Components
+description: Learn how to divide a graph into groups of mutually reachable vertices and count its connected components.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.connected-components.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.connected-components.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.connected-components.steps-01
+- type: question
+  ref: algo.connected-components.complete-01
+- type: question
+  ref: algo.connected-components.trace-01

@@ -1,0 +1,36 @@
+id: py.sets.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for removing duplicates with a set."
+items:
+- id: source
+  content:
+  - type: text
+    text: "Start with a list that may contain duplicates"
+- id: convert
+  content:
+  - type: text
+    text: "Convert the list to a set"
+- id: unique
+  content:
+  - type: text
+    text: "Each value remains only once"
+- id: use
+  content:
+  - type: text
+    text: "Apply membership checks or set operations"
+correctOrder:
+- source
+- convert
+- unique
+- use
+explanation:
+- type: text
+  text: "Converting a list to a set collapses duplicate values. You can then check membership or use operations such as intersection."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- set
+difficulty: 2

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.texture.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each texture term with its role."
+leftItems:
+  - id: uv
+    content:
+      - type: text
+        text: "UV coordinates"
+  - id: nearest
+    content:
+      - type: text
+        text: "Nearest filtering"
+  - id: mipmap
+    content:
+      - type: text
+        text: "Mipmap"
+rightItems:
+  - id: location
+    content:
+      - type: text
+        text: "The location to read from the image"
+  - id: one-texel
+    content:
+      - type: text
+        text: "Select the single nearest texel"
+  - id: reduced-levels
+    content:
+      - type: text
+        text: "A set of textures at reduced resolutions"
+correctPairs:
+  - leftId: uv
+    rightId: location
+  - leftId: nearest
+    rightId: one-texel
+  - leftId: mipmap
+    rightId: reduced-levels
+explanation:
+  - type: text
+    text: "UVs are addresses, and nearest filtering selects a single texel near an address. Mipmaps provide several resolutions for use when a texture is minified."
+tags: [graphics, texture, sampling]
+difficulty: 1

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.race-condition.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about race conditions is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A race condition is a bug where the result for shared data depends on the execution order of multiple flows."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A race condition is when a network packet arrives before its destination."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A race condition always occurs in a single-threaded program, regardless of execution order."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A race condition is a bug where the result for shared data depends on the execution order of multiple flows."
+  - type: text
+    text: "A race condition occurs when a result depends on the order in which multiple execution flows access shared data. If a critical section is not atomic, an update can be lost."
+tags: [race-condition, concurrency, synchronization]
+difficulty: 2

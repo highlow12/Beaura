@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.graph-paths.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for calculating the length of a weighted path."
+items:
+  - id: write-path
+    content:
+      - type: text
+        text: "List the vertices and edges in order from start to goal"
+  - id: list-weights
+    content:
+      - type: text
+        text: "Write down the weight of each traversed edge"
+  - id: sum
+    content:
+      - type: text
+        text: "Add all the weights"
+  - id: compare
+    content:
+      - type: text
+        text: "If needed, compare the sum with another path"
+correctOrder:
+  - write-path
+  - list-weights
+  - sum
+  - compare
+explanation:
+  - type: text
+    text: "First define the path, then add only the costs of its edges."
+  - type: text
+    text: "If you do not write down the path first, it is easy to mix in weights from a different branch."
+tags:
+  - discrete-math
+  - graphs
+  - path-length
+difficulty: 2

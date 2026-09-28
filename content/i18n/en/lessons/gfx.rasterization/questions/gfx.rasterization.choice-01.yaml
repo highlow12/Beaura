@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.rasterization.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the most accurate description of rasterization's direct output?"
+options:
+  - id: fragments
+    content:
+      - type: text
+        text: "Fragment candidates for screen samples covered by the shape"
+  - id: vertices
+    content:
+      - type: text
+        text: "Only new vertices for the original mesh"
+  - id: shader-source
+    content:
+      - type: text
+        text: "The source code of the shader program"
+correctOptionId: fragments
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Rasterization breaks a triangle into screen samples and creates fragment candidates. The fragment shader usually calculates their colors in the next stage."
+tags: [graphics, rasterization]
+difficulty: 1

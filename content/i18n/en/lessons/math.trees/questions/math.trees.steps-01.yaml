@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.trees.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Put in order the steps for finding a vertex's parent in a rooted tree."
+items:
+  - id: start-node
+    content:
+      - type: text
+        text: "Choose the vertex of interest"
+  - id: move-up
+    content:
+      - type: text
+        text: "If it is not the root, follow one edge toward the root"
+  - id: check-root
+    content:
+      - type: text
+        text: "Check whether the vertex of interest is the root"
+  - id: name-parent
+    content:
+      - type: text
+        text: "Record the vertex reached as its parent; if it was the root, record that it has no parent"
+correctOrder:
+  - start-node
+  - check-root
+  - move-up
+  - name-parent
+explanation:
+  - type: text
+    text: "In a rooted tree, the vertex directly above a node toward the root is its parent."
+  - type: text
+    text: "Also check the exception that the vertex has no parent if it is the root."
+tags:
+  - discrete-math
+  - graphs
+  - parent-child
+difficulty: 2

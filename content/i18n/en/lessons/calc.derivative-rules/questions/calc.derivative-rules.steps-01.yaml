@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: calc.derivative-rules.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for differentiating sin(x²)."
+items:
+  - id: outer
+    content:
+      - type: text
+        text: "Write the derivative cos of the outer function sin"
+  - id: inner
+    content:
+      - type: text
+        text: "Keep the inner function x²"
+  - id: inner-deriv
+    content:
+      - type: text
+        text: "Multiply by the inner derivative 2x"
+  - id: result
+    content:
+      - type: text
+        text: "Simplify to 2x cos(x²)"
+correctOrder:
+  - outer
+  - inner
+  - inner-deriv
+  - result
+unorderedGroups:
+  - [outer, inner]
+explanation:
+  - type: text
+    text: "The chain rule evaluates the outer derivative at the inner function, then multiplies by the inner derivative."
+  - type: text
+    text: "Leaving out the inner derivative omits part of the composite function’s rate of change."
+tags:
+  - calculus
+  - derivative-rules
+  - chain-rule
+difficulty: 2

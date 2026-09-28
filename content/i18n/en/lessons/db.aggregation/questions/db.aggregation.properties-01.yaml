@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.aggregation.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe SQL aggregation."
+options:
+  - id: where-before
+    content:
+      - type: text
+        text: "WHERE usually filters individual rows before aggregation"
+  - id: having-after
+    content:
+      - type: text
+        text: "HAVING can filter group-level aggregate results by a condition"
+  - id: count-null
+    content:
+      - type: text
+        text: "COUNT(*) and COUNT(column) can differ in how they handle NULL"
+  - id: group-free
+    content:
+      - type: text
+        text: "With GROUP BY, any SELECT column can be included without restrictions"
+correctOptionIds: [where-before, having-after, count-null]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "WHERE applies to rows and HAVING to groups. Whether NULL is included depends on the COUNT argument. You cannot freely mix group keys with arbitrary non-aggregated columns."
+tags: [database, sql, aggregation, "null"]
+difficulty: 3

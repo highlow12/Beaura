@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.normalization
+revision: 2
+track: databases
+title: Normalization
+description: Learn why tables are decomposed through 1NF, 2NF, and 3NF to reduce repetition and partial or transitive dependencies.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.normalization.match-01
+  - type: question
+    ref: db.normalization.output-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.normalization.fill-01
+  - type: question
+    ref: db.normalization.choice-01
+  - type: question
+    ref: db.normalization.properties-01

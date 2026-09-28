@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.definite-integrals.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The value of ∫₀² x dx is ___."
+choices:
+  - "1"
+  - "2"
+  - "4"
+  - "0"
+acceptedAnswers:
+  - "2"
+explanation:
+  - type: text
+    text: "An antiderivative is x²/2, and [x²/2]₀²=2−0=2."
+  - type: text
+    text: "You can also confirm this using the area of the triangle under the graph: 1/2×2×2."
+tags:
+  - calculus
+  - definite-integrals
+  - calculation
+difficulty: 1

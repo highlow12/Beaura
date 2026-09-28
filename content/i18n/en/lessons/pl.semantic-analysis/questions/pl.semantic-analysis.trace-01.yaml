@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: pl.semantic-analysis.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: Choose the type returned by this simple symbol-table lookup.
+language: python
+code: |-
+  symbols = {"count": "int", "name": "str"}
+  print(symbols["count"])
+choices:
+  - int
+  - str
+  - undefined
+acceptedOutputs:
+  - int
+explanation:
+  - type: text
+    text: The symbol table maps count to int, so the lookup returns int.
+tags:
+  - programming-languages
+  - semantic-analysis
+  - trace
+difficulty: 1

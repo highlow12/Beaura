@@ -1,0 +1,24 @@
+id: algo.insertion-sort.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the comparison operator that shifts elements larger than key to the right."
+language: python
+template: "while j >= 0 and values[j] {{blank:compare}} key:\n    values[j + 1] = values[j]"
+blanks:
+- id: compare
+  choices:
+  - '>'
+  - <
+  - ==
+  acceptedAnswers:
+  - '>'
+explanation:
+- type: text
+  text: "Use > to shift values larger than key to the right in the sorted prefix, making room for key."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- insertion-sort
+difficulty: 2

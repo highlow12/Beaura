@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.events.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "If A and B are mutually exclusive, P(A∩B)=___."
+choices:
+  - "0"
+  - "1"
+  - "P(A)+P(B)"
+acceptedAnswers:
+  - "0"
+explanation:
+  - type: text
+    text: "Mutually exclusive events cannot occur together, so their intersection is empty."
+  - type: text
+    text: "Therefore, the probability of their union simplifies to the sum of their probabilities."
+tags:
+  - probability-statistics
+  - events
+  - mutual-exclusion
+difficulty: 1

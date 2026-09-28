@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { locale, t } from "$lib/application/locale";
   import ContentBlockRenderer from "$lib/components/ContentBlockRenderer.svelte";
   import { highlightCode } from "$lib/content/syntax-highlight";
   import { contentLabel } from "$lib/questions/presentation";
@@ -133,18 +134,18 @@
 
   function choiceLabel(choice: DisplayChoice): string {
     if (choice.content) return contentLabel(choice.content);
-    if (question.type === "code-output" && choice.text === "") return "출력 없음";
+    if (question.type === "code-output" && choice.text === "") return t("출력 없음", "No output", $locale);
     return choice.text ?? "";
   }
 
   function groupLabel(): string {
     switch (question.type) {
       case "multi-select":
-        return "정답을 모두 선택하세요.";
+        return t("정답을 모두 선택하세요.", "Select all correct answers.", $locale);
       case "code-output":
-        return "출력 결과를 고르세요";
+        return t("출력 결과를 고르세요", "Choose the output", $locale);
       default:
-        return "답을 고르세요";
+        return t("답을 고르세요", "Choose an answer", $locale);
     }
   }
 
@@ -163,7 +164,7 @@
   {/each}
 
   {#if question.type === "code-output"}
-    <pre class="code" aria-label="실행할 Python 코드"><code>{@html highlightCode(question.code, question.language)}</code></pre>
+    <pre class="code" aria-label={t("실행할 Python 코드", "Python code to run", $locale)}><code>{@html highlightCode(question.code, question.language)}</code></pre>
   {/if}
 
   <div
@@ -188,7 +189,7 @@
         role={question.type === "multi-select" ? undefined : "radio"}
         aria-checked={question.type === "multi-select" ? undefined : selected}
         aria-pressed={question.type === "multi-select" ? selected : undefined}
-        aria-label={`${choiceLabel(choice)}${selected && question.type === "multi-select" ? ", 선택됨" : ""}${submitted ? ", 내 답" : ""}${canonical ? ", 정답" : ""}`}
+        aria-label={`${choiceLabel(choice)}${selected && question.type === "multi-select" ? t(", 선택됨", ", selected", $locale) : ""}${submitted ? t(", 내 답", ", your answer", $locale) : ""}${canonical ? t(", 정답", ", correct answer", $locale) : ""}`}
         disabled={disabled}
         onclick={() => selectChoice(choice.key)}
       >
@@ -200,11 +201,11 @@
           </span>
         {:else}
           <span class:choice-output={question.type === "code-output"}>
-            {question.type === "code-output" && choice.text === "" ? "출력 없음" : choice.text}
+            {question.type === "code-output" && choice.text === "" ? t("출력 없음", "No output", $locale) : choice.text}
           </span>
         {/if}
-        {#if submitted}<span class="answer-marker">내 답</span>{/if}
-        {#if canonical}<span class="answer-marker">정답</span>{/if}
+        {#if submitted}<span class="answer-marker">{t("내 답", "Your answer", $locale)}</span>{/if}
+        {#if canonical}<span class="answer-marker">{t("정답", "Correct answer", $locale)}</span>{/if}
       </button>
     {/each}
   </div>

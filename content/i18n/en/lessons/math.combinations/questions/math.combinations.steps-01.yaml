@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: math.combinations.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for calculating a value with the combination formula `nCr`."
+items:
+  - id: factorial-n
+    content:
+      - type: text
+        text: "Calculate `n!`"
+  - id: factorial-r
+    content:
+      - type: text
+        text: "Calculate `r!` and `(n−r)!`"
+  - id: denominator
+    content:
+      - type: text
+        text: "Multiply the two factorials to form the denominator"
+  - id: divide
+    content:
+      - type: text
+        text: "Divide `n!` by the denominator"
+correctOrder:
+  - factorial-n
+  - factorial-r
+  - denominator
+  - divide
+unorderedGroups:
+  - [factorial-n, factorial-r]
+explanation:
+  - type: text
+    text: "Calculate the numerator and denominator of `nCr = n!/(r!(n−r)!)` separately, then divide."
+  - type: text
+    text: "For small values, you can also verify the result by listing arrangements and removing duplicates."
+tags:
+  - discrete-math
+  - combinatorics
+  - formula
+difficulty: 2

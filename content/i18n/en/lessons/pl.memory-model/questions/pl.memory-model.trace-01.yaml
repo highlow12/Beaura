@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: pl.memory-model.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: What value of the local variable is printed after this function returns?
+language: python
+code: |-
+  def make_value():
+      value = 7
+      return value
+  saved = make_value()
+  print(saved)
+choices:
+  - "7"
+  - "0"
+  - value
+acceptedOutputs:
+  - "7"
+explanation:
+  - type: text
+    text: value exists in the function's frame, but the return value 7 is passed to saved, so that value remains available after the call.
+tags:
+  - programming-languages
+  - memory
+  - trace
+difficulty: 1

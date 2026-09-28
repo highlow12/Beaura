@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.abstraction-dependencies.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: What is the desirable dependency direction for a high-level order policy that uses dependency inversion?
+options:
+  - id: policy-port
+    content:
+      - type: text
+        text: Both the order policy and notification implementations depend on a stable notification interface.
+  - id: policy-email
+    content:
+      - type: text
+        text: The order policy directly creates a concrete class from the email SDK.
+  - id: adapter-policy
+    content:
+      - type: text
+        text: The notification adapter directly changes the order policy’s internal data.
+  - id: no-dependency
+    content:
+      - type: text
+        text: No module communicates with any other module.
+correctOptionId: policy-port
+shuffleOptions: true
+explanation:
+  - type: text
+    text: When a high-level policy depends on a stable abstraction and each adapter fulfills its contract, replacing a technology does not disrupt the policy.
+tags:
+  - software-engineering
+  - abstraction
+  - dependency-inversion
+difficulty: 2

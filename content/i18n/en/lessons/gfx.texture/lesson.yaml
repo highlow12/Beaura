@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.texture
+revision: 3
+track: computer-graphics
+title: "Textures and Sampling"
+description: "Learn the basics of mapping an image onto a surface with UV coordinates and choosing texture filtering and mipmaps."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: gfx.texture.match-01
+  - type: question
+    ref: gfx.texture.output-01
+  - type: content
+    ref: content/footprint.md
+  - type: question
+    ref: gfx.texture.fill-01
+  - type: question
+    ref: gfx.texture.choice-01
+  - type: question
+    ref: gfx.texture.properties-01

@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: net.mtu.multi-02
+revision: 1
+type: multi-select
+prompt:
+- type: text
+  text: Select all statements that apply to MTU and fragmentation.
+options:
+- id: correct-a
+  content:
+  - type: text
+    text: A low MTU along a path can limit the packet size the sender can use.
+- id: correct-b
+  content:
+  - type: text
+    text: If one fragment is lost, reassembly of the original datagram may fail.
+- id: wrong-a
+  content:
+  - type: text
+    text: Larger packets always have a higher header-to-data ratio and lower transmission efficiency.
+- id: wrong-b
+  content:
+  - type: text
+    text: TCP MSS is an arbitrary port number unrelated to the link MTU.
+correctOptionIds:
+- correct-a
+- correct-b
+shuffleOptions: true
+explanation:
+- type: text
+  text: A low MTU along a path can limit the packet size the sender can use. If one fragment is lost, reassembly of the original
+    datagram may fail.
+- type: text
+  text: Larger packets reduce header overhead and the number of processing operations, but increase the cost of fragmentation
+    and loss. Smaller packets are more flexible, but increase header and interrupt overhead.
+tags:
+- mtu
+- fragmentation
+- ip
+difficulty: 4

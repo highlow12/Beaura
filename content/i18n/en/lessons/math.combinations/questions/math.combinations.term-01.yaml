@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.combinations.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "In a combination, the ___ of the selected objects is ignored."
+choices:
+  - "order"
+  - "count"
+  - "conditions"
+acceptedAnswers:
+  - "order"
+explanation:
+  - type: text
+    text: "A combination treats different arrangements of the same group as the same selection."
+  - type: text
+    text: "The number of items `r` and the conditions on the objects still matter in the calculation."
+tags:
+  - discrete-math
+  - combinatorics
+  - definition
+difficulty: 1

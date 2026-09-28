@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.aggregation.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each aggregation concept with its role."
+leftItems:
+  - id: count
+    content:
+      - type: text
+        text: "COUNT"
+  - id: sum
+    content:
+      - type: text
+        text: "SUM"
+  - id: having
+    content:
+      - type: text
+        text: "HAVING"
+rightItems:
+  - id: number
+    content:
+      - type: text
+        text: "Counts rows or values"
+  - id: total
+    content:
+      - type: text
+        text: "Calculates the sum of a numeric column"
+  - id: group-filter
+    content:
+      - type: text
+        text: "Filters aggregated groups by a condition"
+correctPairs:
+  - leftId: count
+    rightId: number
+  - leftId: sum
+    rightId: total
+  - leftId: having
+    rightId: group-filter
+explanation:
+  - type: text
+    text: "COUNT and SUM are aggregate functions, while HAVING filters groups produced by GROUP BY. Use WHERE for conditions on individual rows."
+tags: [database, sql, aggregation]
+difficulty: 2

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: algo.dynamic-programming.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which property makes a problem especially suitable for dynamic programming?"
+options:
+- id: overlap
+  content:
+  - type: text
+    text: "The same subproblems recur, and the full answer can be built from their answers"
+- id: no-state
+  content:
+  - type: text
+    text: "No state or subproblem can be defined"
+- id: random
+  content:
+  - type: text
+    text: "Every step must make a random choice"
+correctOptionId: overlap
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Memoization reduces repeated work by storing and reusing overlapping subproblems, while the subproblem structure lets a recurrence build the full answer."
+tags:
+- dynamic-programming
+- overlapping-subproblems
+difficulty: 1

@@ -1,0 +1,47 @@
+id: py.dictionaries.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each dictionary term with its meaning."
+leftItems:
+- id: key
+  content:
+  - type: text
+    text: key
+- id: value
+  content:
+  - type: text
+    text: value
+- id: lookup
+  content:
+  - type: text
+    text: user["score"]
+rightItems:
+- id: label
+  content:
+  - type: text
+    text: "A label used to find a value"
+- id: data
+  content:
+  - type: text
+    text: "Data associated with a key"
+- id: access
+  content:
+  - type: text
+    text: "An expression that looks up a value by key"
+correctPairs:
+- leftId: key
+  rightId: label
+- leftId: value
+  rightId: data
+- leftId: lookup
+  rightId: access
+explanation:
+- type: text
+  text: "A key is the label used for lookup, and the value is the actual data. Square brackets read a value using its key."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- dictionary
+difficulty: 2

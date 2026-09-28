@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.twos-complement.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "In 4 bits, inverting the bits of `0011` and adding 1 gives ___."
+choices:
+  - "1101"
+  - "1100"
+  - "0011"
+acceptedAnswers:
+  - "1101"
+explanation:
+  - type: text
+    text: "Inverting 0011 gives 1100; adding 1 gives 1101, the representation of -3."
+tags: [integer, twos-complement, overflow]
+difficulty: 2

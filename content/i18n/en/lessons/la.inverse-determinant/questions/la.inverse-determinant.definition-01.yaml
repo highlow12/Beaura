@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.inverse-determinant.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What condition must a 2×2 matrix `A` satisfy to have an inverse?"
+options:
+  - id: nonzero-det
+    content:
+      - type: text
+        text: "`det(A)` is nonzero"
+  - id: zero-det
+    content:
+      - type: text
+        text: "`det(A) = 0`"
+  - id: square-only
+    content:
+      - type: text
+        text: "Any square matrix has an inverse"
+  - id: positive
+    content:
+      - type: text
+        text: "Every entry is positive"
+correctOptionId: nonzero-det
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A matrix is invertible if its determinant is nonzero."
+  - type: text
+    text: "Being a square matrix is not enough; you also need to check its determinant."
+tags:
+  - linear-algebra
+  - matrices
+  - invertible
+difficulty: 1

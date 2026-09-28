@@ -1,0 +1,33 @@
+id: py.sets.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "Which is the best description of a set?"
+options:
+- id: unique
+  content:
+  - type: text
+    text: "A data type that removes duplicates and checks membership"
+- id: ordered
+  content:
+  - type: text
+    text: "A data type always accessed by index in insertion order"
+- id: mapped
+  content:
+  - type: text
+    text: "A data type that associates one value with each key"
+- id: stack
+  content:
+  - type: text
+    text: "A data type that removes the last item first"
+correctOptionId: unique
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A set is a collection of unique items, suited to membership checks and set operations. Use a list when you need order and indexes."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- set
+difficulty: 2

@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.bellman-ford.match-01
+revision: 2
+type: matching
+prompt:
+- type: text
+  text: "Match each Bellman–Ford step with its meaning."
+leftItems:
+- id: relaxation
+  content:
+  - type: text
+    text: "Relaxation"
+- id: passes
+  content:
+  - type: text
+    text: "V − 1 passes"
+- id: extra-pass
+  content:
+  - type: text
+    text: "An additional pass"
+rightItems:
+- id: improve
+  content:
+  - type: text
+    text: "Update a value with a shorter candidate distance"
+- id: propagate
+  content:
+  - type: text
+    text: "Propagate distance information across as many edges as a simple path can contain"
+- id: detect
+  content:
+  - type: text
+    text: "Check for a negative cycle if a reachable edge can still be relaxed"
+correctPairs:
+- leftId: relaxation
+  rightId: improve
+- leftId: passes
+  rightId: propagate
+- leftId: extra-pass
+  rightId: detect
+explanation:
+- type: text
+  text: "V − 1 passes are enough when there is no negative cycle. An additional update on an edge reachable from the start signals a negative cycle."
+tags:
+- shortest-path
+- bellman-ford
+- relaxation
+difficulty: 2

@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.protocol-model.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic packet and layer processing steps in the correct order."
+items:
+  - id: payload
+    content:
+      - type: text
+        text: "The upper layer creates the data to send"
+  - id: encapsulate
+    content:
+      - type: text
+        text: "Each lower layer adds a header"
+  - id: decapsulate
+    content:
+      - type: text
+        text: "The receiving layer interprets its header and passes the payload onward"
+correctOrder: [payload, encapsulate, decapsulate]
+explanation:
+  - type: text
+    text: "First, the upper layer creates the data to send; then each lower layer uses that result and adds a header."
+  - type: text
+    text: "At the step where the receiving layer interprets its header and passes the payload onward, the result is delivered to the next network layer or the application."
+tags: [network, protocol, encapsulation]
+difficulty: 2

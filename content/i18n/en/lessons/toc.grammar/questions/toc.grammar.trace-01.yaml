@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: toc.grammar.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: The following code imitates the recursive rule `S → aS | b`. What does it print when n=2?
+language: python
+code: |-
+  def derive(n):
+      if n == 0:
+          return "b"
+      return "a" + derive(n - 1)
+  print(derive(2))
+choices:
+  - aab
+  - abb
+  - aa
+acceptedOutputs:
+  - aab
+explanation:
+  - type: text
+    text: When n is 2, the code prepends `a` twice and adds `b` in the base case, producing `aab`.
+tags:
+  - theory-of-computation
+  - grammar
+  - trace
+difficulty: 2

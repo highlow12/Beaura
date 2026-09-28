@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: toc.dfa.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: Choose the state printed by this DFA simulation after it processes the input 101.
+language: python
+code: |-
+  transition = {
+      ("q0", "0"): "q0",
+      ("q0", "1"): "q1",
+      ("q1", "0"): "q1",
+      ("q1", "1"): "q0",
+  }
+  state = "q0"
+  for symbol in "101":
+      state = transition[(state, symbol)]
+  print(state)
+choices:
+  - q0
+  - q1
+  - undefined
+acceptedOutputs:
+  - q0
+explanation:
+  - type: text
+    text: From q0, reading 1 moves to q1; reading 0 keeps q1; the final 1 returns to q0.
+tags:
+  - theory-of-computation
+  - dfa
+  - trace
+difficulty: 3

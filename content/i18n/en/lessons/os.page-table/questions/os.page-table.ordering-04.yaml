@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.page-table.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic page-table and TLB steps in the correct order."
+items:
+  - id: tlb-lookup
+    content:
+      - type: text
+        text: "Look up the virtual page number in the TLB first"
+  - id: page-walk
+    content:
+      - type: text
+        text: "On a miss, read the frame and permissions from the page table"
+  - id: access
+    content:
+      - type: text
+        text: "Access memory using the validated physical address"
+correctOrder: [tlb-lookup, page-walk, access]
+explanation:
+  - type: text
+    text: "First, look up the virtual page number in the TLB; on a miss, read the frame and permissions from the page table."
+  - type: text
+    text: "At the step where memory is accessed using the validated physical address, the final result is passed to the next execution step."
+tags: [page-table, tlb, mmu]
+difficulty: 4

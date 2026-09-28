@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.complexity.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each complexity concept with its description.
+leftItems:
+  - id: p
+    content:
+      - type: text
+        text: P
+  - id: np
+    content:
+      - type: text
+        text: NP
+  - id: reduction
+    content:
+      - type: text
+        text: Polynomial-time reduction
+rightItems:
+  - id: solve-poly
+    content:
+      - type: text
+        text: A problem solvable in deterministic polynomial time
+  - id: verify-poly
+    content:
+      - type: text
+        text: A problem whose candidate solution can be verified in polynomial time
+  - id: transform
+    content:
+      - type: text
+        text: Efficiently transform one problem’s input into another problem’s input
+correctPairs:
+  - leftId: p
+    rightId: solve-poly
+  - leftId: np
+    rightId: verify-poly
+  - leftId: reduction
+    rightId: transform
+explanation:
+  - type: text
+    text: P is defined by the time needed to solve a problem, NP by the time needed to verify a solution, and a reduction transforms inputs to convey a relationship between problem difficulty.
+tags:
+  - theory-of-computation
+  - complexity
+  - reduction
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.bst
+revision: 1
+track: data-structures
+title: Binary Search Trees
+description: Learn how a binary search tree shortens search paths using the invariant that smaller values go left and larger values go right.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.bst.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.bst.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.bst.complete-01
+- type: question
+  ref: ds.bst.steps-01
+- type: question
+  ref: ds.bst.match-01

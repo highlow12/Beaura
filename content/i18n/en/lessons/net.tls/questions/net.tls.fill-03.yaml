@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: net.tls.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "To verify the server’s identity against the domain you connected to, TLS checks the ___."
+choices:
+  - "domain name in the certificate"
+  - "parity of the TCP port"
+  - "packet TTL"
+acceptedAnswers:
+  - "domain name in the certificate"
+explanation:
+  - type: text
+    text: "The browser checks the server certificate’s chain of trust and whether its name matches the connected domain. After agreeing on keys during the handshake, the peers encrypt data with a symmetric session key and check its integrity. If the certificate has expired or the domain does not match, encrypted communication does not make the server trustworthy."
+tags: [tls, https, security]
+difficulty: 2

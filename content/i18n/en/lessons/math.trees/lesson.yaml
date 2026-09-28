@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.trees
+revision: 3
+track: discrete-math
+title: "Tree Structure"
+description: "Understand the connectivity and acyclic properties of trees and the parent-child relationships in rooted trees."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.trees.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.trees.application-01
+  - type: content
+    ref: content/depth.md
+  - type: question
+    ref: math.trees.term-01
+  - type: question
+    ref: math.trees.steps-01
+  - type: question
+    ref: math.trees.match-01

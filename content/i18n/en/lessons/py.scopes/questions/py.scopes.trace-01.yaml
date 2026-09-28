@@ -1,0 +1,30 @@
+id: py.scopes.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following code."
+language: python
+code: "name = \"global\"\ndef show():\n    name = \"local\"\n    print(name)\nshow()\nprint(name)"
+choices:
+- 'local
+
+  global'
+- 'global
+
+  local'
+- 'local
+
+  local'
+acceptedOutputs:
+- 'local
+
+  global'
+explanation:
+- type: text
+  text: "Inside the function, the local name is chosen first, so local is printed. Outside it, the global name is used, so global is printed."
+schemaVersion: 1
+revision: 1
+tags:
+- functions
+- scope
+difficulty: 2

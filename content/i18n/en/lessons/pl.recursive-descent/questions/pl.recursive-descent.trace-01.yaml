@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: pl.recursive-descent.trace-01
+revision: 2
+type: code-output
+prompt:
+  - type: text
+    text: This simple top-down parser consumes numbers and + tokens to evaluate an addition expression. What does it print?
+language: python
+code: |-
+  tokens = ["2", "+", "3", "+", "4"]
+  position = 0
+
+  def parse_number():
+      global position
+      value = int(tokens[position])
+      position += 1
+      return value
+
+  def parse_expression():
+      global position
+      total = parse_number()
+      while position < len(tokens) and tokens[position] == "+":
+          position += 1
+          total += parse_number()
+      return total
+
+  print(parse_expression())
+choices:
+  - "9"
+  - "24"
+  - "7"
+acceptedOutputs:
+  - "9"
+explanation:
+  - type: text
+    text: parse_expression reads the first number, 2. Each time it sees +, it reads and adds the next number, 3 and then 4, so the simplified evaluating parser returns 9. A parser that builds an AST would return operation nodes instead.
+tags:
+  - programming-languages
+  - recursive-descent
+  - trace
+difficulty: 1

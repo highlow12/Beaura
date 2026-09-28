@@ -1,0 +1,36 @@
+id: py.comprehensions.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps by which a comprehension creates its result."
+items:
+- id: source
+  content:
+  - type: text
+    text: "Take an item from the data after `for`"
+- id: bind
+  content:
+  - type: text
+    text: "Bind the current item to a variable"
+- id: filter
+  content:
+  - type: text
+    text: "If there is an `if` condition, check whether the item passes"
+- id: transform
+  content:
+  - type: text
+    text: "Evaluate the leading expression and add it to the result"
+correctOrder:
+- source
+- bind
+- filter
+- transform
+explanation:
+- type: text
+  text: "The item is bound to the loop variable; only if it passes the condition is the leading expression evaluated and added to the result list."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- comprehension
+difficulty: 2

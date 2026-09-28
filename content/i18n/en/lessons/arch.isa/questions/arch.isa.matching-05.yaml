@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.isa.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each instruction and ISA term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "opcode"
+  - id: left-b
+    content:
+      - type: text
+        text: "operand"
+  - id: left-c
+    content:
+      - type: text
+        text: "ISA"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "The type of instruction to execute"
+  - id: right-b
+    content:
+      - type: text
+        text: "The operation’s target or value"
+  - id: right-c
+    content:
+      - type: text
+        text: "The instruction contract between software and the CPU"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "The opcode specifies the type of instruction to execute, and the operand is the operation’s target or value."
+  - type: text
+    text: "The ISA is the instruction contract between software and the CPU, so distinguish these three roles."
+tags: [isa, instruction, opcode]
+difficulty: 2

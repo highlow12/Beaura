@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: py.functions.return-flow-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  def add_one(number):
+      return number + 1
+
+  value = add_one(4)
+  print(value)
+choices:
+  - '5'
+  - '4'
+  - '1'
+acceptedOutputs:
+  - '5'
+explanation:
+  - type: text
+    text: "When called, number is 4 and the function returns 5, so 5 is stored in value."
+tags:
+  - functions
+  - return
+  - code-output
+difficulty: 1

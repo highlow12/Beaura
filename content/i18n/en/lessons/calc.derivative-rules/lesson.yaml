@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.derivative-rules
+revision: 2
+track: calculus
+title: "Differentiation Rules"
+description: "Find derivatives of composite expressions using the sum, constant-multiple, product, and chain rules."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: calc.derivative-rules.definition-01
+  - type: question
+    ref: calc.derivative-rules.application-01
+  - type: content
+    ref: content/connection.md
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: calc.derivative-rules.term-01
+  - type: question
+    ref: calc.derivative-rules.steps-01
+  - type: question
+    ref: calc.derivative-rules.match-01

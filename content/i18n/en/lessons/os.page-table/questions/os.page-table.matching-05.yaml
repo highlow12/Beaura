@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: os.page-table.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each page-table and TLB term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "Page-table entry"
+  - id: left-b
+    content:
+      - type: text
+        text: "TLB"
+  - id: left-c
+    content:
+      - type: text
+        text: "Permission bits"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "An entry mapping a page to a frame with permissions"
+  - id: right-b
+    content:
+      - type: text
+        text: "A cache of recent address translations"
+  - id: right-c
+    content:
+      - type: text
+        text: "Bits that indicate whether reading, writing, or executing is allowed"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "A page-table entry maps a page to a frame with permissions; the TLB caches recent address translations; permission bits indicate whether reading, writing, or executing is allowed."
+tags: [page-table, tlb, mmu]
+difficulty: 3

@@ -1,0 +1,25 @@
+id: ds.bst.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the comparison operator for when target is smaller than the current node."
+language: python
+template: "if target {{blank:compare}} node[\"value\"]:\n    node = node[\"left\"]"
+blanks:
+- id: compare
+  choices:
+  - <
+  - '>'
+  - ==
+  acceptedAnswers:
+  - <
+explanation:
+- type: text
+  text: "If target is smaller than the current value, move left, so use <. Use == for a match and > to move right."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- bst
+- search
+difficulty: 2

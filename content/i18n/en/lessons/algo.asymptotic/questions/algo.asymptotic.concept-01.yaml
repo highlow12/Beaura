@@ -1,0 +1,33 @@
+id: algo.asymptotic.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What does the notation Θ(n) mean?"
+options:
+- id: tight
+  content:
+  - type: text
+    text: "The cost is bounded above and below by constant multiples of n"
+- id: upper
+  content:
+  - type: text
+    text: "We know only that the cost does not grow faster than n"
+- id: lower
+  content:
+  - type: text
+    text: "We know only that the cost does not grow slower than n"
+- id: exact
+  content:
+  - type: text
+    text: "The cost is exactly n for every input"
+correctOptionId: tight
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Θ is a tight bound that satisfies both the O upper bound and the Ω lower bound. Constant factors and lower-order terms are allowed, so it does not mean the cost is always exactly n."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- asymptotic
+difficulty: 2

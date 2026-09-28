@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: gfx.coordinates.view-complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Complete the code so that moving the camera to the right shifts the scene in the opposite direction relative to the screen."
+language: python
+template: |-
+  camera_x = 3
+  object_x = 8
+  view_x = object_x {{blank:operator}} camera_x
+blanks:
+  - id: operator
+    choices: ["-", "+", "*"]
+    acceptedAnswers: ["-"]
+explanation:
+  - type: text
+    text: "View coordinates express the object relative to the camera, so this simple one-dimensional model uses object_x - camera_x."
+tags: [graphics, coordinates, view-space, code-completion]
+difficulty: 2

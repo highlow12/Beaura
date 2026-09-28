@@ -1,0 +1,36 @@
+id: ds.heap.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the internal steps for inserting an element into a heap."
+items:
+- id: append
+  content:
+  - type: text
+    text: "Place the new element at the end of the array"
+- id: compare
+  content:
+  - type: text
+    text: "Compare its priority with the parent"
+- id: swap
+  content:
+  - type: text
+    text: "If the rule is violated, swap with the parent"
+- id: stop
+  content:
+  - type: text
+    text: "Stop when the rule is satisfied or the root is reached"
+correctOrder:
+- append
+- compare
+- swap
+- stop
+explanation:
+- type: text
+  text: "After appending to the end, compare with the parent and move upward as needed. Stop swapping once the rule is satisfied."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- heap
+difficulty: 2

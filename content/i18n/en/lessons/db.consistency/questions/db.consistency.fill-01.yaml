@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.consistency.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the consistency model where replication lag eventually disappears and replicas converge to the same value over time."
+choices: ["Eventual consistency", "Strong consistency", "Random consistency"]
+acceptedAnswers: ["Eventual consistency"]
+explanation:
+  - type: text
+    text: "Eventual consistency may allow temporary stale reads, but replicas converge to the same state as long as synchronization continues normally."
+tags: [database, consistency, eventual]
+difficulty: 1

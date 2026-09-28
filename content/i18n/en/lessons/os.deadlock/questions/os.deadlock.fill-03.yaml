@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.deadlock.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "When A holds L1 while waiting for L2, and B holds L2 while waiting for L1, the condition is ___."
+choices:
+  - "circular wait"
+  - "page fault"
+  - "time slice"
+acceptedAnswers:
+  - "circular wait"
+explanation:
+  - type: text
+    text: "If A holds L1 while waiting for L2, and B holds L2 while waiting for L1, neither task can proceed. This is circular wait. The cycle can be prevented by requiring both tasks to acquire L1 before L2."
+tags: [deadlock, lock-order, concurrency]
+difficulty: 3

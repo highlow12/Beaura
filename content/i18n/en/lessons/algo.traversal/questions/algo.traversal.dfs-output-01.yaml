@@ -1,0 +1,53 @@
+schemaVersion: 1
+id: algo.traversal.dfs-output-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output when DFS follows the neighbor-list order."
+language: python
+code: |-
+  graph = {"A": ["B", "C"], "B": [], "C": []}
+  seen = set()
+
+  def dfs(node):
+      print(node)
+      seen.add(node)
+      for nxt in graph[node]:
+          if nxt not in seen:
+              dfs(nxt)
+
+  dfs("A")
+choices:
+- 'A
+
+  B
+
+  C'
+- 'A
+
+  C
+
+  B'
+- 'B
+
+  A
+
+  C'
+acceptedOutputs:
+- 'A
+
+  B
+
+  C'
+explanation:
+- type: text
+  text: "After visiting A, DFS follows the neighbor list and visits B deeply first, then visits C."
+- type: text
+  text: "The actual DFS order depends on how a graph’s neighbors are stored and traversed."
+tags:
+- traversal
+- dfs
+- recursion
+- code-output
+difficulty: 3

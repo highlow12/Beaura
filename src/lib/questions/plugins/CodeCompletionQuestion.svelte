@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { locale, t } from "$lib/application/locale";
   import ContentBlockRenderer from "$lib/components/ContentBlockRenderer.svelte";
   import { highlightCode } from "$lib/content/syntax-highlight";
   import type { QuestionRendererProps } from "$lib/questions/renderer-contract";
@@ -88,14 +89,14 @@
     <ContentBlockRenderer {block} />
   {/each}
 
-  <pre class="code-preview" aria-label="빈칸이 포함된 Python 코드"><code>{@html highlightCode(previewTemplate(), question.language)}</code></pre>
+  <pre class="code-preview" aria-label={t("빈칸이 포함된 Python 코드", "Python code with blanks", $locale)}><code>{@html highlightCode(previewTemplate(), question.language)}</code></pre>
 
   <div class="blank-sections">
     {#each orderedBlanks() as blank, index}
       {@const labelId = `blank-label-${question.id}-${blank.id}`}
       <section class="blank-section" aria-labelledby={labelId}>
-        <h3 id={labelId} class="blank-label">빈칸 {index + 1}</h3>
-        <div class="blank-choice-grid" role="group" aria-label={`빈칸 ${index + 1}의 선택지`}>
+        <h3 id={labelId} class="blank-label">{t("빈칸", "Blank", $locale)} {index + 1}</h3>
+        <div class="blank-choice-grid" role="group" aria-label={`${t("빈칸", "Blank", $locale)} ${index + 1} ${t("선택지", "choices", $locale)}`}>
           {#each displayedChoices[blank.id] ?? [] as choice}
             {@const selected = values[blank.id] === choice}
             {@const submitted = isSubmitted(blank.id, choice)}
@@ -107,13 +108,13 @@
               class:canonical
               class="blank-choice"
               aria-pressed={selected}
-              aria-label={`${choice}${submitted ? ", 내 답" : ""}${canonical ? ", 정답" : ""}`}
+              aria-label={`${choice}${submitted ? t(", 내 답", ", your answer", $locale) : ""}${canonical ? t(", 정답", ", correct answer", $locale) : ""}`}
               disabled={disabled}
               onclick={() => selectValue(blank.id, choice)}
             >
               <span>{choice}</span>
-              {#if submitted}<span class="answer-marker">내 답</span>{/if}
-              {#if canonical}<span class="answer-marker">정답</span>{/if}
+              {#if submitted}<span class="answer-marker">{t("내 답", "Your answer", $locale)}</span>{/if}
+              {#if canonical}<span class="answer-marker">{t("정답", "Correct answer", $locale)}</span>{/if}
             </button>
           {/each}
         </div>

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.graph-connectivity.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is a graph called if there is a path between every pair of vertices in an undirected graph?"
+options:
+  - id: connected
+    content:
+      - type: text
+        text: "Connected graph"
+  - id: cyclic
+    content:
+      - type: text
+        text: "Complete cycle"
+  - id: directed
+    content:
+      - type: text
+        text: "Directed graph"
+  - id: weighted
+    content:
+      - type: text
+        text: "Weighted graph"
+correctOptionId: connected
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "If every pair of vertices can reach each other, the graph is called connected."
+  - type: text
+    text: "Edge direction and weight are separate properties from whether a graph is connected."
+tags:
+  - discrete-math
+  - graphs
+  - connected
+difficulty: 1

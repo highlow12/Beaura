@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.indexes.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose a typical cost indexes add to INSERT and UPDATE operations in exchange for faster queries."
+choices: ["Index maintenance cost", "Screen-rendering cost", "Pixel-interpolation cost"]
+acceptedAnswers: ["Index maintenance cost"]
+explanation:
+  - type: text
+    text: "When an original value changes, the index’s sorted structure must also be maintained, increasing write and storage costs."
+tags: [database, indexes, trade-off]
+difficulty: 2

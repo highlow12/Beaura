@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: py.conditionals.pass-condition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: code
+    language: python
+    code: |-
+      score = 75
+      if score >= 60:
+          print("pass")
+
+  - type: text
+    text: "Why is the `if` condition in the code above true?"
+options:
+  - id: enough-score
+    content:
+      - type: text
+        text: "Because score is greater than or equal to 60."
+  - id: exact-score
+    content:
+      - type: text
+        text: "Because score is exactly 60."
+  - id: text-value
+    content:
+      - type: text
+        text: "Because score is a string."
+correctOptionId: enough-score
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "75 is greater than 60, so `score >= 60` evaluates to `True`."
+tags: [conditionals, comparison]
+difficulty: 1

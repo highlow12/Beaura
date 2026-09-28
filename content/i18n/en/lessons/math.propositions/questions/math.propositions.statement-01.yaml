@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: math.propositions.statement-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which of the following is a proposition whose truth can be determined?"
+options:
+  - id: arithmetic
+    content:
+      - type: text
+        text: "2 + 3 = 5"
+  - id: command
+    content:
+      - type: text
+        text: "Read this sentence."
+  - id: question
+    content:
+      - type: text
+        text: "What time is it?"
+  - id: open-sentence
+    content:
+      - type: text
+        text: "x + 1 = 3"
+correctOptionId: arithmetic
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "2 + 3 = 5 is a proposition because its truth can be determined. Commands, questions, and expressions with unspecified variables are not propositions."
+tags:
+  - discrete-math
+  - propositions
+  - logic
+difficulty: 1

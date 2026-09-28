@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: gfx.texture.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the result of reading UV (1, 0) as an integer index in this simplified 2×2 texture."
+language: python
+code: |-
+  texture = [["red", "green"], ["blue", "white"]]
+  u, v = 1, 0
+  print(texture[v][u])
+choices: ["green", "blue", "red"]
+acceptedOutputs: ["green"]
+explanation:
+  - type: text
+    text: "This example reads `texture[row=v][column=u]`, so it selects `green` at `texture[0][1]`. Real UVs usually use normalized coordinates together with a filter."
+tags: [graphics, texture, uv, code-output]
+difficulty: 2

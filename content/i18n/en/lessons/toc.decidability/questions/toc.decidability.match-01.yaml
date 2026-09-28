@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.decidability.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each decidability term with its description.
+leftItems:
+  - id: decider
+    content:
+      - type: text
+        text: Decider
+  - id: recognizer
+    content:
+      - type: text
+        text: Recognizer
+  - id: complement
+    content:
+      - type: text
+        text: Complement language
+rightItems:
+  - id: halt-all
+    content:
+      - type: text
+        text: Halts with accept or reject on every input
+  - id: may-loop
+    content:
+      - type: text
+        text: May continue running on inputs outside the language
+  - id: not-members
+    content:
+      - type: text
+        text: Set of strings that are not in the original language
+correctPairs:
+  - leftId: decider
+    rightId: halt-all
+  - leftId: recognizer
+    rightId: may-loop
+  - leftId: complement
+    rightId: not-members
+explanation:
+  - type: text
+    text: Unlike a recognizer, a decider halts even on inputs it rejects. Recognizing both a language and its complement can provide a termination guarantee.
+tags:
+  - theory-of-computation
+  - decidability
+  - recognizer
+difficulty: 2

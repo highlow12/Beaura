@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: db.select.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which clause does SQL need to return names in ascending order?"
+options:
+  - id: order-by
+    content:
+      - type: code
+        language: sql
+        code: ORDER BY name ASC
+  - id: where
+    content:
+      - type: code
+        language: sql
+        code: WHERE name
+  - id: from
+    content:
+      - type: code
+        language: sql
+        code: FROM name
+correctOptionId: order-by
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "`ORDER BY name ASC` specifies ascending order for the name column. WHERE filters rows, and FROM specifies the table."
+tags: [database, sql, order-by]
+difficulty: 1

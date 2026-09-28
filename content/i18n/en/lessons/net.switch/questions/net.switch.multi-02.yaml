@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.switch.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to switches and LANs."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "If the destination MAC address is unknown, a switch can flood the frame within the same broadcast domain."
+  - id: correct-b
+    content:
+      - type: text
+        text: "A switch learns the frame’s source MAC address and ingress port."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Once recorded, a MAC address table entry never changes, even if a device moves."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A switch selects ports using HTTP paths rather than link-layer addresses."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "If the destination MAC address is unknown, a switch can flood the frame within the same broadcast domain. A switch learns the frame’s source MAC address and ingress port."
+  - type: text
+    text: "Switches reduce collisions and support full-duplex communication, but they require table management and loop prevention. VLANs improve isolation and manageability by dividing broadcast domains."
+tags: [switch, lan, mac-table]
+difficulty: 3

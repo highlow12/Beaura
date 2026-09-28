@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.concurrency
+revision: 3
+track: operating-systems
+title: Concurrency and Atomicity
+description: Distinguish concurrency from parallel execution and explain atomicity in multi-step operations.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.concurrency.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.concurrency.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.concurrency.ordering-04
+  - type: question
+    ref: os.concurrency.matching-05
+  - type: question
+    ref: os.concurrency.lost-update-06

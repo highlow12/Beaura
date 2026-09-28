@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: gfx.transforms.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for rotating point (1, 0) by 90 degrees around the origin and then translating it by 2 along x."
+items:
+  - id: start
+    content:
+      - type: text
+        text: "Start with point (1, 0)"
+  - id: rotate
+    content:
+      - type: text
+        text: "Rotate it 90 degrees to get (0, 1)"
+  - id: translate
+    content:
+      - type: text
+        text: "Add 2 to x to get (2, 1)"
+correctOrder: [start, rotate, translate]
+explanation:
+  - type: text
+    text: "Apply the translation to the rotated result to get the target. Composing transformation matrices must preserve the same operation order."
+tags: [graphics, transforms, order]
+difficulty: 2

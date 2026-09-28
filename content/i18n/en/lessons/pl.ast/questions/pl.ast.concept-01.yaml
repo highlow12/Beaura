@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.ast.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement best describes the purpose of an AST (Abstract Syntax Tree)?"
+options:
+  - id: meaningful-tree
+    content:
+      - type: text
+        text: "It preserves meaningful source structure as a tree for later analysis and transformation."
+  - id: raw-chars
+    content:
+      - type: text
+        text: "It stores every space and parenthesis exactly as written."
+  - id: runtime-stack
+    content:
+      - type: text
+        text: "It manages the call stack during program execution."
+  - id: test-cases
+    content:
+      - type: text
+        text: "It collects only input test cases."
+correctOptionId: meaningful-tree
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "An AST removes grammatical detail that is not needed for meaning and exposes the structure of operations, names, and literals."
+tags:
+  - programming-languages
+  - ast
+  - parsing
+difficulty: 1

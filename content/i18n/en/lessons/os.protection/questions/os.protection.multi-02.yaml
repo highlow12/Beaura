@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.protection.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to permissions and process isolation."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Page permissions can distinguish read, write, and execute access."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Ordinary programs request privileged operations through the kernel boundary instead of performing them directly."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A read-only page allows writes in every CPU mode."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Process isolation cannot prevent any permission or memory errors."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Page permissions can distinguish read, write, and execute access. Ordinary programs request privileged operations through the kernel boundary instead of performing them directly."
+  - type: text
+    text: "Fine-grained permissions improve security, but make checks, configuration, and debugging more complex. Stronger isolation improves safety, but can increase the cost of sharing and communication between processes."
+tags: [protection, isolation, privilege]
+difficulty: 3

@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: algo.sort.pass-steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Put the steps in one bubble-sort pass in order."
+items:
+- id: compare
+  content:
+  - type: text
+    text: "Compare two neighboring elements"
+- id: swap
+  content:
+  - type: text
+    text: "Swap the elements if they are out of order"
+- id: next
+  content:
+  - type: text
+    text: "Move to the next neighboring pair"
+- id: repeat
+  content:
+  - type: text
+    text: "Repeat the pass over the remaining range"
+correctOrder:
+- compare
+- swap
+- next
+- repeat
+explanation:
+- type: text
+  text: "Compare a pair, swap if needed, move to the next pair, and repeat the pass."
+- type: text
+  text: "Do not assume the whole array is sorted after one pass; check the remaining range again."
+tags:
+- sorting
+- bubble-sort
+- execution-order
+difficulty: 2

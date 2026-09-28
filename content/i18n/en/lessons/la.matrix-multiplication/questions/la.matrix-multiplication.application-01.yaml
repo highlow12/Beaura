@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.matrix-multiplication.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about the matrix product `AB`."
+options:
+  - id: inner-match
+    content:
+      - type: text
+        text: "The number of columns in `A` must equal the number of rows in `B`"
+  - id: row-column
+    content:
+      - type: text
+        text: "Take dot products of rows of `A` and columns of `B`"
+  - id: outer
+    content:
+      - type: text
+        text: "The result has as many rows as `A` and as many columns as `B`"
+  - id: commute
+    content:
+      - type: text
+        text: "`AB` always equals `BA`"
+correctOptionIds: [inner-match, row-column, outer]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The row-column dot-product structure determines the dimension requirements and the size of a matrix product."
+  - type: text
+    text: "Matrix multiplication is generally not commutative, so you cannot switch the order."
+tags:
+  - linear-algebra
+  - matrices
+  - matrix-product
+difficulty: 2

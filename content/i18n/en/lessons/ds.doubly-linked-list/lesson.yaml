@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.doubly-linked-list
+revision: 1
+track: data-structures
+title: Doubly Linked Lists
+description: Understand bidirectional links in a doubly linked list, which keeps both prev and next references in each node.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.doubly-linked-list.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.doubly-linked-list.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.doubly-linked-list.complete-01
+- type: question
+  ref: ds.doubly-linked-list.steps-01
+- type: question
+  ref: ds.doubly-linked-list.match-01

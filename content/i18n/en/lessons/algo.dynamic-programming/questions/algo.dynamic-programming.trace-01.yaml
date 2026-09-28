@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: algo.dynamic-programming.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the Fibonacci number printed by this bottom-up DP."
+language: python
+code: |-
+  dp = [0, 1]
+  for n in range(2, 6):
+      dp.append(dp[n - 1] + dp[n - 2])
+  print(dp[5])
+choices:
+- '5'
+- '3'
+- '8'
+acceptedOutputs:
+- '5'
+explanation:
+- type: text
+  text: "dp is filled with 0, 1, 1, 2, 3, 5, so dp[5] is 5."
+tags:
+- dynamic-programming
+- tabulation
+- code-output
+difficulty: 2

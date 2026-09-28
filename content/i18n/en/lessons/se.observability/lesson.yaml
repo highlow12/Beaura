@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.observability
+revision: 2
+track: software-engineering
+title: Logging and Monitoring
+description: Observe a running system through logs, metrics, and traces.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: se.observability.concept-01
+- type: content
+  ref: content/model.md
+- type: question
+  ref: se.observability.match-01
+- type: question
+  ref: se.observability.blank-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: se.observability.order-01
+- type: question
+  ref: se.observability.trace-01

@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: se.system-tradeoffs.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: What is the best starting point for handling trade-offs in system design?
+options:
+- id: measurable-requirements
+  content:
+  - type: text
+    text: Write quality goals and acceptable limits as measurable requirements.
+- id: maximize-everything
+  content:
+  - type: text
+    text: Maximize every quality attribute without regard to cost or constraints.
+- id: copy-popular
+  content:
+  - type: text
+    text: Copy another service’s architecture without considering context.
+- id: ignore-failure
+  content:
+  - type: text
+    text: Consider only normal operation and ignore failure behavior.
+correctOptionId: measurable-requirements
+shuffleOptions: true
+explanation:
+- type: text
+  text: Writing measurable requirements such as latency, error rate, and consistency level makes it possible to compare the benefits and costs of alternatives.
+tags:
+- software-engineering
+- system-design
+- tradeoffs
+difficulty: 2

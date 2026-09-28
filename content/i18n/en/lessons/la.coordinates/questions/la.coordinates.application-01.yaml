@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.coordinates.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about change of basis."
+options:
+  - id: same-vector
+    content:
+      - type: text
+        text: "The same vector can be represented in coordinates from a different basis"
+  - id: basis-depend
+    content:
+      - type: text
+        text: "Coordinate values depend on the chosen basis"
+  - id: geometry
+    content:
+      - type: text
+        text: "A geometric vector and its list of coordinates are distinct concepts"
+  - id: always-same
+    content:
+      - type: text
+        text: "Coordinate numbers always stay the same when the basis changes"
+correctOptionIds: [same-vector, basis-depend, geometry]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Coordinates are a way of representing a vector, and the coefficients can change when the basis changes."
+  - type: text
+    text: "Keep the vector itself separate from the coordinates used to write it down."
+tags:
+  - linear-algebra
+  - coordinates
+  - basis-change
+difficulty: 2

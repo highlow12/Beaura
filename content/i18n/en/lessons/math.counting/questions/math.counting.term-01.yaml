@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.counting.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The rule for adding the counts of mutually exclusive cases is the ___ rule."
+choices:
+  - "sum"
+  - "product"
+  - "induction"
+acceptedAnswers:
+  - "sum"
+explanation:
+  - type: text
+    text: "The sum rule adds the counts of non-overlapping choice paths."
+  - type: text
+    text: "If cases overlap, handle the duplicates before adding the counts."
+tags:
+  - discrete-math
+  - combinatorics
+  - sum-rule
+difficulty: 1

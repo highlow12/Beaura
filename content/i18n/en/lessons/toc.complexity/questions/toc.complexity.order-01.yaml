@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: toc.complexity.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the general steps for verifying a proposed solution to an NP problem.
+items:
+  - id: receive
+    content:
+      - type: text
+        text: Receive the input and candidate solution.
+  - id: check-format
+    content:
+      - type: text
+        text: Check that the candidate meets the format and size limits.
+  - id: verify-constraints
+    content:
+      - type: text
+        text: Evaluate the problem constraints to verify the candidate.
+  - id: answer
+    content:
+      - type: text
+        text: Return yes if all constraints are satisfied, and no otherwise.
+correctOrder:
+  - receive
+  - check-format
+  - verify-constraints
+  - answer
+explanation:
+  - type: text
+    text: A verifier does not find a new candidate; it checks whether the supplied candidate is valid within a bounded polynomial time.
+tags:
+  - theory-of-computation
+  - complexity
+  - verifier
+difficulty: 2

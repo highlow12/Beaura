@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: gfx.color.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of this simple code that inverts each of the three RGB channels."
+language: python
+code: |-
+  rgb = (10, 40, 200)
+  inverted = tuple(255 - channel for channel in rgb)
+  print(inverted)
+choices: ["(245, 215, 55)", "(10, 40, 200)", "(265, 295, 455)"]
+acceptedOutputs: ["(245, 215, 55)"]
+explanation:
+  - type: text
+    text: "Subtracting each channel from 255 gives 245, 215, and 55. This practices channel representation and is separate from actual gamma correction."
+tags: [graphics, color, rgb, code-output]
+difficulty: 1

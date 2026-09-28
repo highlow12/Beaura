@@ -1,0 +1,36 @@
+id: ds.circular-queue.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for enqueueing in a circular queue."
+items:
+- id: locate
+  content:
+  - type: text
+    text: "Calculate the next insertion position from front and size"
+- id: wrap
+  content:
+  - type: text
+    text: "Use modulo capacity to wrap the position"
+- id: write
+  content:
+  - type: text
+    text: "Write the new value to the calculated slot"
+- id: grow
+  content:
+  - type: text
+    text: "Increment size to update the state"
+correctOrder:
+- locate
+- wrap
+- write
+- grow
+explanation:
+- type: text
+  text: "Calculate the logical next position, map it into the array with modulo, write the value, then update size."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- circular-buffer
+difficulty: 2

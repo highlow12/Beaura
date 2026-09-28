@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.page-table
+revision: 3
+track: operating-systems
+title: Page Tables and the TLB
+description: Understand how page-table mappings and the TLB cache speed up virtual-address translation.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.page-table.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.page-table.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.page-table.fill-03
+  - type: question
+    ref: os.page-table.ordering-04
+  - type: question
+    ref: os.page-table.matching-05

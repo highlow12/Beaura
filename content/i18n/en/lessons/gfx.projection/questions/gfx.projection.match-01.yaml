@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.projection.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each projection type with its property."
+leftItems:
+  - id: orthographic
+    content:
+      - type: text
+        text: "Orthographic projection"
+  - id: perspective
+    content:
+      - type: text
+        text: "Perspective projection"
+  - id: frustum
+    content:
+      - type: text
+        text: "View frustum"
+rightItems:
+  - id: parallel
+    content:
+      - type: text
+        text: "Apparent size does not change with depth"
+  - id: depth-size
+    content:
+      - type: text
+        text: "Distant objects appear smaller"
+  - id: visible-volume
+    content:
+      - type: text
+        text: "The 3D region visible to the camera"
+correctPairs:
+  - leftId: orthographic
+    rightId: parallel
+  - leftId: perspective
+    rightId: depth-size
+  - leftId: frustum
+    rightId: visible-volume
+explanation:
+  - type: text
+    text: "Orthographic projection preserves parallel lines, while perspective projection scales objects with depth. The view frustum describes the visible region for both types."
+tags: [graphics, projection]
+difficulty: 2

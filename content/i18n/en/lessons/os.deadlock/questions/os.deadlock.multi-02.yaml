@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.deadlock.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to deadlock."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Mutual exclusion, hold and wait, no preemption, and circular wait are the four conditions for deadlock."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Acquiring all locks in a global order can prevent circular wait."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Using two locks always causes deadlock, regardless of the four conditions."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "In a deadlock, at least one waiting flow always obtains a resource and proceeds."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Mutual exclusion, hold and wait, no preemption, and circular wait are the four conditions for deadlock. Acquiring all locks in a global order can prevent circular wait."
+  - type: text
+    text: "Prevention rules are safe, but can limit resource utilization or code flexibility. Detection and recovery have lower normal operating costs, but may require canceling tasks or reclaiming resources."
+tags: [deadlock, lock-order, concurrency]
+difficulty: 4

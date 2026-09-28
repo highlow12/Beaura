@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.homogeneous.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Complete the final component of a 2D point's homogeneous coordinates so it represents a point."
+language: python
+template: |-
+  point = (4, 5)
+  homogeneous = (point[0], point[1], {{blank:last}})
+blanks:
+  - id: last
+    choices: ["1", "0", "5"]
+    acceptedAnswers: ["1"]
+explanation:
+  - type: text
+    text: "For a point in homogeneous coordinates, set the final component w to 1. Direction vectors use a different convention such as w = 0; this question is about a point."
+tags: [graphics, homogeneous-coordinates, code-completion]
+difficulty: 1

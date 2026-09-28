@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: la.vectors.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the conceptual steps for multiplying a vector by the scalar −2."
+items:
+  - id: choose
+    content:
+      - type: text
+        text: "Choose the scalar −2"
+  - id: multiply
+    content:
+      - type: text
+        text: "Multiply every component by −2"
+  - id: reverse
+    content:
+      - type: text
+        text: "Check that the negative sign reverses the direction"
+  - id: magnitude
+    content:
+      - type: text
+        text: "Check that the magnitude doubles"
+correctOrder:
+  - choose
+  - multiply
+  - reverse
+  - magnitude
+unorderedGroups:
+  - [reverse, magnitude]
+explanation:
+  - type: text
+    text: "First apply the scalar to every component; the negative sign reverses direction, and the absolute value 2 doubles the magnitude."
+  - type: text
+    text: "Checking the sign and magnitude effects separately helps prevent calculation errors."
+tags:
+  - linear-algebra
+  - vectors
+  - scalar-multiplication
+difficulty: 2

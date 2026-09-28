@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.api-contracts.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: An API’s promise about what must be true after a successful operation is its ___. A precondition must be true before the operation.
+choices:
+  - postcondition
+  - precondition
+  - invariant
+acceptedAnswers:
+  - postcondition
+explanation:
+  - type: text
+    text: A postcondition describes what the API guarantees about its return value or state after an operation succeeds.
+tags:
+  - software-engineering
+  - api
+  - postcondition
+difficulty: 1

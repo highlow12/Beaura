@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: db.relational-model.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of code that reads the second attribute from a student tuple."
+language: python
+code: |-
+  student = (7, "Mina", "CS")
+  print(student[1])
+choices: ["Mina", "7", "CS"]
+acceptedOutputs: ["Mina"]
+explanation:
+  - type: text
+    text: "Python index 1 refers to the second tuple value, Mina. In the relational model, this value corresponds to the name attribute."
+tags: [database, relational-model, tuple, code-output]
+difficulty: 1

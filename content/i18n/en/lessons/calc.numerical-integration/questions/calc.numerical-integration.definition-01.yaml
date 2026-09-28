@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.numerical-integration.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What formula approximates the area of one trapezoid?"
+options:
+  - id: trapezoid
+    content:
+      - type: text
+        text: "Width × (left height + right height)/2"
+  - id: left-only
+    content:
+      - type: text
+        text: "Width × left height"
+  - id: product
+    content:
+      - type: text
+        text: "Left height × right height"
+  - id: sum-only
+    content:
+      - type: text
+        text: "Left height + right height"
+correctOptionId: trapezoid
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "For a trapezoid, multiply the width by the average of the endpoint heights, which are the parallel sides."
+  - type: text
+    text: "A rectangular sum differs in that it uses only one endpoint height."
+tags:
+  - calculus
+  - numerical
+  - trapezoid-rule
+difficulty: 1

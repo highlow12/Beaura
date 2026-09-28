@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.definite-integrals.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each definite-integral element with its role."
+leftItems:
+  - id: lower
+    content:
+      - type: text
+        text: "a"
+  - id: upper
+    content:
+      - type: text
+        text: "b"
+  - id: antiderivative
+    content:
+      - type: text
+        text: "F"
+  - id: signed
+    content:
+      - type: text
+        text: "Signed area"
+rightItems:
+  - id: lower-desc
+    content:
+      - type: text
+        text: "Starting point of the integration interval"
+  - id: upper-desc
+    content:
+      - type: text
+        text: "Ending point of the integration interval"
+  - id: antiderivative-desc
+    content:
+      - type: text
+        text: "Antiderivative of f"
+  - id: signed-desc
+    content:
+      - type: text
+        text: "Accumulation that counts regions below the x-axis as negative"
+correctPairs:
+  - leftId: lower
+    rightId: lower-desc
+  - leftId: upper
+    rightId: upper-desc
+  - leftId: antiderivative
+    rightId: antiderivative-desc
+  - leftId: signed
+    rightId: signed-desc
+explanation:
+  - type: text
+    text: "A definite integral uses both the interval and the difference between antiderivative values at its endpoints."
+  - type: text
+    text: "Even when a problem says “area,” distinguish signed accumulation from geometric area."
+tags:
+  - calculus
+  - definite-integrals
+  - notation
+difficulty: 2

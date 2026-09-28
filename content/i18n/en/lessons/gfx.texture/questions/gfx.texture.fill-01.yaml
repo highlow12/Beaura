@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.texture.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose a common filter that blends nearby texels into a smooth value."
+choices: ["linear", "nearest", "depth"]
+acceptedAnswers: ["linear"]
+explanation:
+  - type: text
+    text: "Linear filtering takes a weighted average of values near the sample location, producing a smoother result than nearest filtering."
+tags: [graphics, texture, filtering]
+difficulty: 1

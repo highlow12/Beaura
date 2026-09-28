@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: db.keys.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output for the number of distinct student-course pairs in this composite-key example."
+language: python
+code: |-
+  enrollments = [(1, "CS"), (1, "Math"), (1, "CS")]
+  unique_pairs = set(enrollments)
+  print(len(unique_pairs))
+choices: ["2", "3", "1"]
+acceptedOutputs: ["2"]
+explanation:
+  - type: text
+    text: "(1, CS) is repeated, so there are two distinct student-course pairs: (1, CS) and (1, Math). A composite key combining both columns can express the uniqueness of such pairs."
+tags: [database, keys, composite-key, code-output]
+difficulty: 2

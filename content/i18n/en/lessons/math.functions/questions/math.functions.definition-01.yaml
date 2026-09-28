@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.functions.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which mapping satisfies the definition of a function?"
+options:
+  - id: valid
+    content:
+      - type: text
+        text: "Input 1 → a, 2 → a, 3 → b"
+  - id: two-output
+    content:
+      - type: text
+        text: "Input 1 maps to both a and b"
+  - id: missing
+    content:
+      - type: text
+        text: "Input 2 has no output"
+  - id: many
+    content:
+      - type: text
+        text: "One input branches to two outputs"
+correctOptionId: valid
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Different inputs may share an output, but each input must have exactly one output."
+  - type: text
+    text: "Also check that every input in the domain has an output."
+tags:
+  - discrete-math
+  - functions
+  - function-definition
+difficulty: 1

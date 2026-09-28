@@ -1,0 +1,47 @@
+id: ds.circular-queue.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each circular-queue state value with its meaning."
+leftItems:
+- id: front
+  content:
+  - type: text
+    text: "front"
+- id: size
+  content:
+  - type: text
+    text: "size"
+- id: wrap
+  content:
+  - type: text
+    text: '% capacity'
+rightItems:
+- id: dequeue
+  content:
+  - type: text
+    text: "The location of the next element to dequeue"
+- id: count
+  content:
+  - type: text
+    text: "The current number of stored elements"
+- id: cycle
+  content:
+  - type: text
+    text: "A calculation that wraps from the end of the array to the beginning"
+correctPairs:
+- leftId: front
+  rightId: dequeue
+- leftId: size
+  rightId: count
+- leftId: wrap
+  rightId: cycle
+explanation:
+- type: text
+  text: "front marks the removal position, size is the queue’s current length, and modulo arithmetic wraps at the array boundary."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- circular-buffer
+difficulty: 2

@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.rasterization.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the technique that estimates partial edge coverage by using multiple samples within a pixel."
+choices: ["multisample antialiasing", "depth test", "texture compression"]
+acceptedAnswers: ["multisample antialiasing"]
+explanation:
+  - type: text
+    text: "Combining coverage results from multiple samples can make edges look smoother. More samples also increase the cost."
+tags: [graphics, rasterization, antialiasing]
+difficulty: 2

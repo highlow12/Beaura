@@ -1,0 +1,47 @@
+id: ds.doubly-linked-list.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each doubly linked-list reference with its meaning."
+leftItems:
+- id: prev
+  content:
+  - type: text
+    text: "prev"
+- id: next
+  content:
+  - type: text
+    text: "next"
+- id: sentinel
+  content:
+  - type: text
+    text: "sentinel"
+rightItems:
+- id: back
+  content:
+  - type: text
+    text: "Move to the previous node"
+- id: forward
+  content:
+  - type: text
+    text: "Move to the next node"
+- id: boundary
+  content:
+  - type: text
+    text: "A virtual node representing a boundary"
+correctPairs:
+- leftId: prev
+  rightId: back
+- leftId: next
+  rightId: forward
+- leftId: sentinel
+  rightId: boundary
+explanation:
+- type: text
+  text: "prev and next provide movement in opposite directions, while a sentinel is a virtual node that simplifies handling the first and last boundaries."
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- doubly-linked-list
+difficulty: 2

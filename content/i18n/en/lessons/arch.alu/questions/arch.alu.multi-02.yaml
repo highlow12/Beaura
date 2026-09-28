@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.alu.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe the ALU and arithmetic-logic operations."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "The ALU’s zero flag can indicate whether the result is 0."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Implementing subtraction with an adder and an inverted input lets the hardware be reused."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "An ALU input must be a network packet."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "The ALU’s result is always written to memory automatically."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The ALU’s zero flag can indicate whether the result is 0. Implementing subtraction with an adder and an inverted input lets the hardware be reused."
+  - type: text
+    text: "Adding more operation types and widths to an ALU makes the instruction set richer, but also increases circuit, power, and control complexity. Combining simple operations quickly also affects pipeline performance."
+tags: [alu, arithmetic, control]
+difficulty: 3

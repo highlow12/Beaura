@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.adder.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "In a full adder, what is the sum bit for `1 + 1 + carry-in 1`?"
+choices:
+  - "1"
+  - "0"
+  - "3"
+acceptedAnswers:
+  - "1"
+explanation:
+  - type: text
+    text: "The sum is decimal 3, or binary 11, so the sum bit is 1 and the carry-out is also 1."
+tags: [adder, carry, alu]
+difficulty: 2

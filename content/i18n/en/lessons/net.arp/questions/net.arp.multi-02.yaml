@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: net.arp.multi-02
+revision: 1
+type: multi-select
+prompt:
+- type: text
+  text: Select all statements that apply to ARP and local address resolution.
+options:
+- id: correct-a
+  content:
+  - type: text
+    text: An ARP request may be broadcast when the destination MAC address is unknown.
+- id: correct-b
+  content:
+  - type: text
+    text: When sending to a server on another subnet, a host may use the gateway’s MAC address.
+- id: wrong-a
+  content:
+  - type: text
+    text: Once stored, an ARP cache entry never expires, even if the IP or MAC address changes.
+- id: wrong-b
+  content:
+  - type: text
+    text: ARP uses TCP sequence numbers to restore byte-stream order.
+correctOptionIds:
+- correct-a
+- correct-b
+shuffleOptions: true
+explanation:
+- type: text
+  text: An ARP request may be broadcast when the destination MAC address is unknown. When sending to a server on another subnet,
+    a host may use the gateway’s MAC address.
+- type: text
+  text: ARP is simple, but it is exposed to local broadcasts and cache-poisoning attacks. Cache expiration and security checks
+    help limit the impact of stale mappings and forged replies.
+tags:
+- arp
+- ipv4
+- mac
+difficulty: 3

@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: math.contradiction.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the standard steps of a proof by contradiction."
+items:
+  - id: negate
+    content:
+      - type: text
+        text: "Assume the negation of the goal"
+  - id: derive
+    content:
+      - type: text
+        text: "Derive a result using definitions and theorems"
+  - id: conflict
+    content:
+      - type: text
+        text: "Find two results that cannot both be true"
+  - id: conclude
+    content:
+      - type: text
+        text: "Conclude that the negated assumption is false, so the original claim holds"
+correctOrder:
+  - negate
+  - derive
+  - conflict
+  - conclude
+explanation:
+  - type: text
+    text: "Derive a contradiction from the negated assumption, reject that assumption, and establish the original conclusion."
+  - type: text
+    text: "Without stating the final implication, it is easy to confuse finding a contradiction with completing the proof."
+tags:
+  - discrete-math
+  - proof
+  - proof-steps
+difficulty: 2

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.select.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each SELECT query clause with its role."
+leftItems:
+  - id: select
+    content:
+      - type: text
+        text: "SELECT"
+  - id: from
+    content:
+      - type: text
+        text: "FROM"
+  - id: order-by
+    content:
+      - type: text
+        text: "ORDER BY"
+rightItems:
+  - id: columns
+    content:
+      - type: text
+        text: "Specifies the columns to return"
+  - id: table
+    content:
+      - type: text
+        text: "Specifies the table to read"
+  - id: sort
+    content:
+      - type: text
+        text: "Specifies the sort order of the results"
+correctPairs:
+  - leftId: select
+    rightId: columns
+  - leftId: from
+    rightId: table
+  - leftId: order-by
+    rightId: sort
+explanation:
+  - type: text
+    text: "SELECT specifies result columns, FROM the source table, and ORDER BY the display order. WHERE is not in this list, but it handles row conditions."
+tags: [database, sql, select]
+difficulty: 1

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.definite-integrals.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct interpretations of a definite integral."
+options:
+  - id: signed-area
+    content:
+      - type: text
+        text: "Accumulates signed contributions above and below the x-axis"
+  - id: accumulation
+    content:
+      - type: text
+        text: "Can be viewed as the accumulated quantity over an interval"
+  - id: split
+    content:
+      - type: text
+        text: "The interval can be split where the function changes sign"
+  - id: always-positive
+    content:
+      - type: text
+        text: "A definite integral is always positive"
+correctOptionIds: [signed-area, accumulation, split]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A definite integral gives signed area and can be interpreted by splitting at points where the sign changes."
+  - type: text
+    text: "Unlike a definite integral, total geometric area adds regions below the axis as positive values."
+tags:
+  - calculus
+  - definite-integrals
+  - area
+difficulty: 2

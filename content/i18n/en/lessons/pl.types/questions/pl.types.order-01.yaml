@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pl.types.order-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the steps for checking the type of x + y.
+items:
+  - id: lookup
+    content:
+      - type: text
+        text: Look up the declared types of x and y.
+  - id: operator-rule
+    content:
+      - type: text
+        text: Find the operand types allowed by the + operator.
+  - id: compare
+    content:
+      - type: text
+        text: Compare the two operand types with the operator's rules.
+  - id: result-type
+    content:
+      - type: text
+        text: Pass the expression's result type to the parent node.
+correctOrder:
+  - lookup
+  - operator-rule
+  - compare
+  - result-type
+unorderedGroups:
+  - - lookup
+    - operator-rule
+explanation:
+  - type: text
+    text: The checker needs both the types of the child expressions and the operator's rules to decide whether the operation is valid and what type it produces.
+tags:
+  - programming-languages
+  - types
+  - type-checking
+difficulty: 2

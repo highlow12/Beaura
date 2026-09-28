@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.protocol-model.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to packets and the layer model."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "A lower layer can encapsulate higher-layer data by adding a header."
+  - id: correct-b
+    content:
+      - type: text
+        text: "The receiver interprets each layer’s header and passes the payload to the next layer."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "An HTTP request travels directly over a wire without being carried by any transport or internet layer."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "With layering, every layer must know all the implementation details of every other layer."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A lower layer can encapsulate higher-layer data by adding a header. The receiver interprets each layer’s header and passes the payload to the next layer."
+  - type: text
+    text: "Layering makes it easier to replace implementations and isolate problems, but it adds header and conversion costs. Duplicating one layer’s responsibilities in another makes debugging and compatibility harder."
+tags: [network, protocol, encapsulation]
+difficulty: 2

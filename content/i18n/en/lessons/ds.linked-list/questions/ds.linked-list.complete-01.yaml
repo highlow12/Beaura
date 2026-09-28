@@ -1,0 +1,25 @@
+id: ds.linked-list.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the blank indicating that the last node has no next node."
+language: python
+template: 'node = {"value": "A", "next": {{blank:link}}}'
+blanks:
+- id: link
+  choices:
+  - None
+  - '0'
+  - '[]'
+  acceptedAnswers:
+  - None
+explanation:
+- type: text
+  text: "The end of a linked list is represented by None, meaning there is no next node. 0 and an empty list do not represent a missing node in the same way."
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- node
+- pointer
+difficulty: 2

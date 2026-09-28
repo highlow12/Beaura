@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: py.io.input-completion-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Choose the function for the blank that receives the user’s name and stores it in name."
+language: python
+template: |-
+  name = {{blank:function}}("이름: ")
+blanks:
+  - id: function
+    choices:
+      - input
+      - print
+      - int
+    acceptedAnswers:
+      - input
+explanation:
+  - type: text
+    text: "`input(\"이름: \")` displays a prompt and returns the user’s input as a string."
+tags:
+  - io
+  - input
+  - code-completion
+difficulty: 1

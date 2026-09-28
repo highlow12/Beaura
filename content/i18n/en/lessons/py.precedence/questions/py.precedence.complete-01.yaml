@@ -1,0 +1,24 @@
+id: py.precedence.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the placement of parentheses that fills the blank so the sum is evaluated first."
+language: python
+template: value = {{blank:group}} * 4
+blanks:
+- id: group
+  choices:
+  - (2 + 3)
+  - 2 + 3
+  - (2) + 3
+  acceptedAnswers:
+  - (2 + 3)
+explanation:
+- type: text
+  text: "Grouping the entire sum as `(2 + 3)` evaluates the sum to 5 first, then multiplies by 4."
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- precedence
+difficulty: 2

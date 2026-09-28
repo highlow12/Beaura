@@ -1,0 +1,47 @@
+id: algo.big-o.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each Big-O example with its growth rate."
+leftItems:
+- id: constant
+  content:
+  - type: text
+    text: "O(1)"
+- id: linear
+  content:
+  - type: text
+    text: "O(n)"
+- id: quadratic
+  content:
+  - type: text
+    text: "O(n^2)"
+rightItems:
+- id: fixed
+  content:
+  - type: text
+    text: "A constant number of operations, independent of the input"
+- id: scan
+  content:
+  - type: text
+    text: "The cost of scanning the input once"
+- id: nested
+  content:
+  - type: text
+    text: "The cost of nesting two linear loops"
+correctPairs:
+- leftId: constant
+  rightId: fixed
+- leftId: linear
+  rightId: scan
+- leftId: quadratic
+  rightId: nested
+explanation:
+- type: text
+  text: "O(1) represents constant cost, O(n) represents one linear pass, and O(n²) commonly represents two nested linear loops."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- big-o
+difficulty: 2

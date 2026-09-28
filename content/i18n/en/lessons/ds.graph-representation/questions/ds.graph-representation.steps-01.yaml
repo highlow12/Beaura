@@ -1,0 +1,38 @@
+id: ds.graph-representation.steps-01
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for preparing a graph representation."
+items:
+  - id: vertices
+    content:
+      - type: text
+        text: "Define vertices and their IDs"
+  - id: choose
+    content:
+      - type: text
+        text: "Choose an adjacency list or matrix"
+  - id: record
+    content:
+      - type: text
+        text: "Record each edge in the representation"
+  - id: query
+    content:
+      - type: text
+        text: "Look up neighbors or connections in the algorithm"
+correctOrder:
+  - vertices
+  - choose
+  - record
+  - query
+unorderedGroups:
+  - [vertices, choose]
+explanation:
+  - type: text
+    text: "Defining vertex IDs and choosing between an adjacency list and matrix can happen in either order. Once both are decided, record edges and look up the needed neighbors or connections."
+schemaVersion: 1
+revision: 2
+tags:
+  - graph
+  - representation
+difficulty: 2

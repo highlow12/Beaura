@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.recursive-descent.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: A grammar rule such as Expr → Expr + Term, where a function calls itself before consuming a token, has ___ recursion.
+choices:
+  - left
+  - right
+  - random
+acceptedAnswers:
+  - left
+explanation:
+  - type: text
+    text: With left recursion, a recursive-descent function can call itself before consuming input, causing infinite recursion.
+tags:
+  - programming-languages
+  - recursive-descent
+  - left-recursion
+difficulty: 1

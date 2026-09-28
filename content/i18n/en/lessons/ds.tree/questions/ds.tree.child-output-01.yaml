@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: ds.tree.child-output-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following tree-representation code."
+language: python
+code: |-
+  tree = {
+      "value": "A",
+      "left": {"value": "B"},
+      "right": {"value": "C"}
+  }
+  print(tree["left"]["value"])
+choices:
+- B
+- A
+- C
+acceptedOutputs:
+- B
+explanation:
+- type: text
+  text: "The node pointed to by the left key has value B, so B is printed."
+- type: text
+  text: "In a nested dictionary representation, following keys also lets you read parent-child relationships."
+tags:
+- tree
+- representation
+- code-output
+difficulty: 2

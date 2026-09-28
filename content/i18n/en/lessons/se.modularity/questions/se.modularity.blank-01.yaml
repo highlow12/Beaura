@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.modularity.blank-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: The degree to which a module focuses on a single purpose is called ___.
+choices:
+- Cohesion
+- Coupling
+- inheritance
+acceptedAnswers:
+- Cohesion
+explanation:
+- type: text
+  text: Cohesion describes how strongly the parts within a module are grouped around a related responsibility.
+tags:
+- software-engineering
+- cohesion
+- modularity
+difficulty: 1

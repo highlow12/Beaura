@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.concurrency.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to concurrency and atomicity."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Rapid switching on a single core can make multiple tasks concurrent."
+  - id: correct-b
+    content:
+      - type: text
+        text: "An atomic operation performs a shared value’s read and update as one indivisible unit."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Synchronization is unnecessary on multicore systems, so every memory operation is automatically atomic."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Parallel execution always increases throughput by the number of cores, regardless of task dependencies."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Rapid switching on a single core can make multiple tasks concurrent. An atomic operation performs a shared value’s read and update as one indivisible unit."
+  - type: text
+    text: "Parallelism can increase throughput, but adds synchronization, cache-coherence, and debugging costs. Atomic operations are convenient for small state updates, while complex invariants may require locks or transactions."
+tags: [concurrency, parallelism, atomicity]
+difficulty: 4

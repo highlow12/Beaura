@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.backtracking
+revision: 1
+track: algorithms
+title: Backtracking
+description: Learn how backtracking builds choices, returns as soon as a constraint is violated, and prunes impossible branches.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.backtracking.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.backtracking.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.backtracking.steps-01
+- type: question
+  ref: algo.backtracking.complete-01
+- type: question
+  ref: algo.backtracking.trace-01

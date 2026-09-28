@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: se.error-handling.order-01
+revision: 2
+type: ordering
+prompt:
+- type: text
+  text: Arrange the steps for safely handling an external payment error.
+items:
+- id: detect
+  content:
+  - type: text
+    text: Detect that an error occurred.
+- id: classify
+  content:
+  - type: text
+    text: Classify it as invalid input, a temporary failure, or an invariant violation.
+- id: context
+  content:
+  - type: text
+    text: Record the request ID and operation context.
+- id: policy
+  content:
+  - type: text
+    text: Recover, propagate, or fail according to the classification.
+correctOrder:
+- detect
+- classify
+- context
+- policy
+unorderedGroups:
+- - classify
+  - context
+explanation:
+- type: text
+  text: 'First classify the detected error and record traceable context, then apply the appropriate policy: retry, propagate, or stop.'
+tags:
+- software-engineering
+- error-handling
+- workflow
+difficulty: 2

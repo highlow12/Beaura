@@ -1,0 +1,49 @@
+schemaVersion: 1
+id: ds.stack.operations-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each stack operation with its behavior."
+leftItems:
+- id: push
+  content:
+  - type: text
+    text: "push"
+- id: pop
+  content:
+  - type: text
+    text: "pop"
+- id: peek
+  content:
+  - type: text
+    text: "peek"
+rightItems:
+- id: add-top
+  content:
+  - type: text
+    text: "Add a value to the top"
+- id: remove-top
+  content:
+  - type: text
+    text: "Remove and return the top value"
+- id: look-top
+  content:
+  - type: text
+    text: "Inspect the top without removing it"
+correctPairs:
+- leftId: push
+  rightId: add-top
+- leftId: pop
+  rightId: remove-top
+- leftId: peek
+  rightId: look-top
+explanation:
+- type: text
+  text: "push and pop change the top, while peek only reads it."
+- type: text
+  text: "Remember the LIFO order together with the three operations that happen only at the top."
+tags:
+- stack
+- lifo
+difficulty: 2

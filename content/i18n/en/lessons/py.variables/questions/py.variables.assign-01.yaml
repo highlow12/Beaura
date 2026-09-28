@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: py.variables.assign-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: code
+    language: python
+    code: answer = 42
+  - type: text
+    text: "Choose the name of the variable that refers to the value 42 in the code above."
+choices:
+  - answer
+  - value
+  - result
+acceptedAnswers:
+  - answer

@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.tls.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to TLS and certificates."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "A certificate can bind a public key to a domain identity."
+  - id: correct-b
+    content:
+      - type: text
+        text: "TLS session data is usually encrypted with a negotiated symmetric key."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "TLS only encrypts data and cannot detect message tampering."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "An expired certificate is always safe as long as its chain of trust is valid."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A certificate can bind a public key to a domain identity. TLS session data is usually encrypted with a negotiated symmetric key."
+  - type: text
+    text: "TLS reduces eavesdropping and tampering, but adds handshake, certificate-renewal, and CPU costs. If certificate trust is managed incorrectly, an encrypted connection may still reach the wrong server."
+tags: [tls, https, security]
+difficulty: 3

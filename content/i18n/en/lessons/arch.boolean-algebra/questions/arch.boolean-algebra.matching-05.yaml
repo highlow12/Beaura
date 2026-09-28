@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.boolean-algebra.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each Boolean-algebra term with its behavior."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "AND"
+  - id: left-b
+    content:
+      - type: text
+        text: "OR"
+  - id: left-c
+    content:
+      - type: text
+        text: "XOR"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "1 when all inputs are 1"
+  - id: right-b
+    content:
+      - type: text
+        text: "1 when at least one input is 1"
+  - id: right-c
+    content:
+      - type: text
+        text: "1 when the inputs differ"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "AND outputs 1 when all inputs are 1, while OR outputs 1 when at least one input is 1."
+  - type: text
+    text: "XOR outputs 1 when the inputs differ, so distinguish these three behaviors."
+tags: [boolean-algebra, xor, logic]
+difficulty: 2

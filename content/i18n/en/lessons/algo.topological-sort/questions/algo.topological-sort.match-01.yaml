@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.topological-sort.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each topological-sort term with its role."
+leftItems:
+- id: indegree
+  content:
+  - type: text
+    text: "Indegree"
+- id: zero
+  content:
+  - type: text
+    text: "Indegree 0"
+- id: cycle
+  content:
+  - type: text
+    text: "Cycle"
+rightItems:
+- id: incoming
+  content:
+  - type: text
+    text: "The number of edges entering a vertex"
+- id: ready
+  content:
+  - type: text
+    text: "A vertex that is ready to be added to the order"
+- id: impossible
+  content:
+  - type: text
+    text: "A structure that prevents an order from satisfying every edge constraint"
+correctPairs:
+- leftId: indegree
+  rightId: incoming
+- leftId: zero
+  rightId: ready
+- leftId: cycle
+  rightId: impossible
+explanation:
+- type: text
+  text: "Kahn’s algorithm uses vertices with indegree 0 as ready candidates. If a cycle remains, the candidates run out."
+tags:
+- graph
+- topological-sort
+- dag
+difficulty: 2

@@ -1,0 +1,24 @@
+id: ds.graph-representation.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the blank that records the direct connection from A to B in the matrix."
+language: python
+template: matrix[{{blank:row}}][1] = 1
+blanks:
+- id: row
+  choices:
+  - '0'
+  - '1'
+  - '2'
+  acceptedAnswers:
+  - '0'
+explanation:
+- type: text
+  text: "If A is represented by index 0, record the connection from A to B at matrix[0][1]."
+schemaVersion: 1
+revision: 1
+tags:
+- graph
+- representation
+difficulty: 2

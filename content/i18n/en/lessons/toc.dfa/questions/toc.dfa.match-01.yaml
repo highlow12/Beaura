@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.dfa.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each DFA notation element with its role.
+leftItems:
+  - id: q
+    content:
+      - type: text
+        text: Q
+  - id: delta
+    content:
+      - type: text
+        text: δ
+  - id: f
+    content:
+      - type: text
+        text: F
+rightItems:
+  - id: states
+    content:
+      - type: text
+        text: Set of states
+  - id: transition-function
+    content:
+      - type: text
+        text: Function that maps a state and input to the next state
+  - id: accepting-states
+    content:
+      - type: text
+        text: Set of accepting states
+correctPairs:
+  - leftId: q
+    rightId: states
+  - leftId: delta
+    rightId: transition-function
+  - leftId: f
+    rightId: accepting-states
+explanation:
+  - type: text
+    text: A DFA records its states Q, transition function δ, start state, and accepting states F separately.
+tags:
+  - theory-of-computation
+  - dfa
+  - notation
+difficulty: 2

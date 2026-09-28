@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.recursion
+revision: 1
+track: algorithms
+title: Recursion
+description: Learn how recursion calls itself with a smaller input and stops at a base case.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.recursion.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.recursion.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.recursion.complete-01
+- type: question
+  ref: algo.recursion.steps-01
+- type: question
+  ref: algo.recursion.match-01

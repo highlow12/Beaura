@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: se.observability.trace-01
+revision: 2
+type: code-output
+prompt:
+- type: text
+  text: This code prints the longest-running of three spans collected for a request. What is the result?
+language: python
+code: 'spans = [("auth", 12), ("database", 85), ("render", 9)]
+
+  slowest = max(spans, key=lambda span: span[1])
+
+  print(slowest[0])'
+choices:
+- database
+- auth
+- render
+acceptedOutputs:
+- database
+explanation:
+- type: text
+  text: The spans take 12 ms for auth, 85 ms for database, and 9 ms for render. The longest span is `database`; you can investigate next why that segment is slow.
+tags:
+- software-engineering
+- observability
+- code-trace
+difficulty: 1

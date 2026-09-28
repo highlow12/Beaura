@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.lexical-scope.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for resolving the name x under lexical scope."
+items:
+  - id: current
+    content:
+      - type: text
+        text: "Search the environment of the current function or block."
+  - id: parent
+    content:
+      - type: text
+        text: "If absent, move to the parent environment at the definition site."
+  - id: repeat
+    content:
+      - type: text
+        text: "Continue searching outward until a binding is found."
+  - id: report
+    content:
+      - type: text
+        text: "Report an undefined-name error if none exists in the global scope."
+correctOrder:
+  - current
+  - parent
+  - repeat
+  - report
+explanation:
+  - type: text
+    text: "Lookup follows the environment chain of the function's definition, not its caller, and reports an error only if the name is absent all the way out."
+tags:
+  - programming-languages
+  - lexical-scope
+  - name-resolution
+difficulty: 2

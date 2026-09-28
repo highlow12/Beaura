@@ -1,0 +1,24 @@
+id: ds.hash-function.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the operation that reduces a hash value to the bucket range."
+language: python
+template: index = hash_value {{blank:operator}} capacity
+blanks:
+- id: operator
+  choices:
+  - '%'
+  - //
+  - '*'
+  acceptedAnswers:
+  - '%'
+explanation:
+- type: text
+  text: "The remainder of a hash value divided by capacity is between 0 and capacity - 1, so it can be used as a bucket index."
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-function
+difficulty: 2

@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.syntax-semantics.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: Which statement correctly explains the relationship between syntax and semantics in a programming language?
+options:
+  - id: form-meaning
+    content:
+      - type: text
+        text: Syntax defines valid form; semantics defines what that form means when executed.
+  - id: same
+    content:
+      - type: text
+        text: They are the same concept and do not need to be distinguished.
+  - id: meaning-only
+    content:
+      - type: text
+        text: Syntax defines only runtime results, while semantics defines whitespace.
+  - id: runtime-only
+    content:
+      - type: text
+        text: Neither syntax nor semantics can be checked until execution has finished.
+correctOptionId: form-meaning
+shuffleOptions: true
+explanation:
+  - type: text
+    text: Syntax defines valid token sequences and structures. Semantics explains the values and state changes those structures compute.
+tags:
+  - programming-languages
+  - syntax
+  - semantics
+difficulty: 1

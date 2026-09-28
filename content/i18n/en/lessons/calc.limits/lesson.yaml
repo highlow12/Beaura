@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.limits
+revision: 2
+track: calculus
+title: "Understanding Limits"
+description: "Understand a limit as the value a function approaches when its input gets close to a given value."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: calc.limits.definition-01
+  - type: question
+    ref: calc.limits.application-01
+  - type: content
+    ref: content/connection.md
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: calc.limits.term-01
+  - type: question
+    ref: calc.limits.steps-01
+  - type: question
+    ref: calc.limits.match-01

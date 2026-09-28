@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.sampling.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The sum of all observed sample values divided by the sample size is the sample ___."
+choices:
+  - "mean"
+  - "variance"
+  - "range"
+acceptedAnswers:
+  - "mean"
+explanation:
+  - type: text
+    text: "The sample mean is the arithmetic mean calculated from a sample."
+  - type: text
+    text: "The sample mean can be used as an estimator of the population mean."
+tags:
+  - probability-statistics
+  - sampling
+  - sample-mean
+difficulty: 1

@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.lighting.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the operation used to calculate basic diffuse intensity from the surface normal n and light direction l."
+choices: ["dot product", "cross product", "string concatenation"]
+acceptedAnswers: ["dot product"]
+explanation:
+  - type: text
+    text: "The dot product of two unit directions indicates how closely they point in the same direction, making it the starting point for the Lambert diffuse term."
+tags: [graphics, lighting, diffuse]
+difficulty: 1

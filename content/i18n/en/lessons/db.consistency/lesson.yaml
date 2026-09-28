@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.consistency
+revision: 3
+track: databases
+title: Distributed Consistency
+description: Understand the trade-offs among strong and eventual consistency, replication lag, and read requirements.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.consistency.match-01
+  - type: question
+    ref: db.consistency.choice-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.consistency.output-01
+  - type: question
+    ref: db.consistency.fill-01
+  - type: question
+    ref: db.consistency.properties-01

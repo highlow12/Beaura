@@ -1,0 +1,55 @@
+schemaVersion: 1
+id: gfx.coordinates.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each coordinate space with its typical meaning."
+leftItems:
+  - id: model
+    content:
+      - type: text
+        text: "model space"
+  - id: world
+    content:
+      - type: text
+        text: "world space"
+  - id: view
+    content:
+      - type: text
+        text: "view space"
+  - id: clip
+    content:
+      - type: text
+        text: "clip space"
+rightItems:
+  - id: local
+    content:
+      - type: text
+        text: "A position expressed relative to the object itself"
+  - id: scene
+    content:
+      - type: text
+        text: "A position expressed in the shared reference frame of the whole scene"
+  - id: camera
+    content:
+      - type: text
+        text: "A position expressed relative to the camera"
+  - id: visible
+    content:
+      - type: text
+        text: "A position used to test visibility after projection"
+correctPairs:
+  - leftId: model
+    rightId: local
+  - leftId: world
+    rightId: scene
+  - leftId: view
+    rightId: camera
+  - leftId: clip
+    rightId: visible
+explanation:
+  - type: text
+    text: "Coordinate spaces express the same point relative to different references. Model space is object-relative, world space is scene-relative, view space is camera-relative, and clip space is for projection and clipping."
+tags: [graphics, coordinates, spaces]
+difficulty: 2

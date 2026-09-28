@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.virtual-memory
+revision: 2
+track: operating-systems
+title: Virtual Memory
+description: Learn how virtual addresses and pages provide each process with a large address space and memory protection.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.virtual-memory.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.virtual-memory.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.virtual-memory.fill-03
+  - type: question
+    ref: os.virtual-memory.ordering-04
+  - type: question
+    ref: os.virtual-memory.matching-05

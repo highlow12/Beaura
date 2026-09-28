@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.replication.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the procedure that makes a replica the new write-authoritative node after a failure."
+choices: ["failover", "rollback", "rasterization"]
+acceptedAnswers: ["failover"]
+explanation:
+  - type: text
+    text: "Failover is the process of promoting another node, such as a replica, to a new primary to replace a failed primary."
+tags: [database, replication, failover]
+difficulty: 1

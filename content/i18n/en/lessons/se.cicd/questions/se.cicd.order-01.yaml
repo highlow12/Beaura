@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: se.cicd.order-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: Arrange the basic pipeline steps for taking a commit through validation and deployment.
+items:
+- id: commit
+  content:
+  - type: text
+    text: Send the commit to the pipeline.
+- id: build
+  content:
+  - type: text
+    text: Prepare dependencies and build the artifact.
+- id: test
+  content:
+  - type: text
+    text: Validate the artifact with static checks and tests.
+- id: deploy
+  content:
+  - type: text
+    text: Deploy that same validated artifact to the target environment.
+correctOrder:
+- commit
+- build
+- test
+- deploy
+explanation:
+- type: text
+  text: Build an artifact from source, validate it, and deploy that same artifact so production matches the validated result.
+tags:
+- software-engineering
+- cicd
+- pipeline
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.randomized-hashing.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "When a hash function maps distinct keys to the same bucket, a ___ occurs."
+choices:
+  - "collision"
+  - "independent"
+  - "normalization"
+acceptedAnswers:
+  - "collision"
+explanation:
+  - type: text
+    text: "Sharing the same hash location is called a collision."
+  - type: text
+    text: "A resolution strategy such as chaining or open addressing is needed."
+tags:
+  - probability-statistics
+  - randomized-algorithms
+  - terminology
+difficulty: 1

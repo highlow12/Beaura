@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.functions.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each function classification with its criterion."
+leftItems:
+  - id: function
+    content:
+      - type: text
+        text: "Function"
+  - id: injective
+    content:
+      - type: text
+        text: "Injective"
+  - id: surjective
+    content:
+      - type: text
+        text: "Surjective"
+  - id: bijective
+    content:
+      - type: text
+        text: "bijective"
+rightItems:
+  - id: function-desc
+    content:
+      - type: text
+        text: "Exactly one output for each input"
+  - id: injective-desc
+    content:
+      - type: text
+        text: "Different inputs have different outputs"
+  - id: surjective-desc
+    content:
+      - type: text
+        text: "Every codomain value appears at least once"
+  - id: bijective-desc
+    content:
+      - type: text
+        text: "Both injective and surjective"
+correctPairs:
+  - leftId: function
+    rightId: function-desc
+  - leftId: injective
+    rightId: injective-desc
+  - leftId: surjective
+    rightId: surjective-desc
+  - leftId: bijective
+    rightId: bijective-desc
+explanation:
+  - type: text
+    text: "First check that it is a function, then test for input collisions and unused codomain values to determine injectivity and surjectivity."
+  - type: text
+    text: "A bijection is a special function that satisfies both conditions."
+tags:
+  - discrete-math
+  - functions
+  - classification
+difficulty: 2

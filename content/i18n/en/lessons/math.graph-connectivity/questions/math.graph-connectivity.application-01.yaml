@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.graph-connectivity.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about a connected component of a graph."
+options:
+  - id: internal
+    content:
+      - type: text
+        text: "Vertices within a component are connected by paths"
+  - id: maximal
+    content:
+      - type: text
+        text: "It is a maximal connected set that cannot be expanded"
+  - id: isolated
+    content:
+      - type: text
+        text: "An isolated vertex can be a component by itself"
+  - id: all
+    content:
+      - type: text
+        text: "It is always the entire graph"
+correctOptionIds: [internal, maximal, isolated]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A component is a maximal connected set and can include an isolated vertex with no edges to others."
+  - type: text
+    text: "A single component is the entire graph only when the graph itself is connected."
+tags:
+  - discrete-math
+  - graphs
+  - components
+difficulty: 2

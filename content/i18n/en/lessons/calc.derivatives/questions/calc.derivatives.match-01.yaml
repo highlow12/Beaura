@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.derivatives.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each derivative term with its meaning."
+leftItems:
+  - id: average
+    content:
+      - type: text
+        text: "Average rate of change"
+  - id: derivative
+    content:
+      - type: text
+        text: "Derivative"
+  - id: tangent
+    content:
+      - type: text
+        text: "Tangent slope"
+  - id: acceleration
+    content:
+      - type: text
+        text: "Acceleration"
+rightItems:
+  - id: average-desc
+    content:
+      - type: text
+        text: "Ratio of changes between two points"
+  - id: derivative-desc
+    content:
+      - type: text
+        text: "Function of instantaneous rates of change at each input"
+  - id: tangent-desc
+    content:
+      - type: text
+        text: "Slope of the line that approximates the graph at a point"
+  - id: acceleration-desc
+    content:
+      - type: text
+        text: "Rate of change of velocity with respect to time"
+correctPairs:
+  - leftId: average
+    rightId: average-desc
+  - leftId: derivative
+    rightId: derivative-desc
+  - leftId: tangent
+    rightId: tangent-desc
+  - leftId: acceleration
+    rightId: acceleration-desc
+explanation:
+  - type: text
+    text: "A derivative refines the average rate of change into a local instantaneous rate of change."
+  - type: text
+    text: "Even when physical quantities have different names, first identify “with respect to what” the derivative is taken."
+tags:
+  - calculus
+  - derivatives
+  - terminology
+difficulty: 2

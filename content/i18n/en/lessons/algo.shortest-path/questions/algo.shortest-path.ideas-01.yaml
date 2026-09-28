@@ -1,0 +1,50 @@
+schemaVersion: 1
+id: algo.shortest-path.ideas-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each shortest-path concept with its description."
+leftItems:
+- id: dijkstra
+  content:
+  - type: text
+    text: "Dijkstra"
+- id: astar
+  content:
+  - type: text
+    text: "A*"
+- id: relax
+  content:
+  - type: text
+    text: "Relaxation"
+rightItems:
+- id: nonnegative
+  content:
+  - type: text
+    text: "Finalize the shortest candidate first when there are no negative edge weights"
+- id: heuristic
+  content:
+  - type: text
+    text: "Use both the cost so far and the estimated cost to the goal"
+- id: update
+  content:
+  - type: text
+    text: "Update the distance when a shorter candidate path is found"
+correctPairs:
+- leftId: dijkstra
+  rightId: nonnegative
+- leftId: astar
+  rightId: heuristic
+- leftId: relax
+  rightId: update
+explanation:
+- type: text
+  text: "Dijkstra finalizes distance candidates when there are no negative edges, while A* adds a heuristic. Relaxation is the rule for updating distances."
+- type: text
+  text: "Separating an algorithm’s name, assumptions, and priority calculation helps avoid confusion."
+tags:
+- shortest-path
+- dijkstra
+- astar
+difficulty: 3

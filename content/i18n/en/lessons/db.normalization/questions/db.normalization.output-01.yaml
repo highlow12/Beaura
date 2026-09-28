@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: db.normalization.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output for the number of rows produced by splitting a course list from one cell into separate rows."
+language: python
+code: |-
+  courses = "CS,Math,Art".split(",")
+  normalized_rows = [(7, course) for course in courses]
+  print(len(normalized_rows))
+choices: ["3", "1", "2"]
+acceptedOutputs: ["3"]
+explanation:
+  - type: text
+    text: "The three comma-separated courses are split into one row each, so normalized_rows contains 3 entries. This is a simplified example of 1NF’s atomic-value principle."
+tags: [database, normalization, first-normal-form, code-output]
+difficulty: 2

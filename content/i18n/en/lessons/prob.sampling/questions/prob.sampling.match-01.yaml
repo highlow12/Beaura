@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.sampling.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each sampling term with its description."
+leftItems:
+  - id: population
+    content:
+      - type: text
+        text: "Population"
+  - id: sample
+    content:
+      - type: text
+        text: "Sample"
+  - id: sample-mean
+    content:
+      - type: text
+        text: "Sample mean"
+  - id: bias
+    content:
+      - type: text
+        text: "Sampling bias"
+rightItems:
+  - id: population-desc
+    content:
+      - type: text
+        text: "The full set of entities of interest"
+  - id: sample-desc
+    content:
+      - type: text
+        text: "A subset observed from the population"
+  - id: sample-mean-desc
+    content:
+      - type: text
+        text: "The arithmetic mean of sample values"
+  - id: bias-desc
+    content:
+      - type: text
+        text: "Systematic distortion caused by the sampling method"
+correctPairs:
+  - leftId: population
+    rightId: population-desc
+  - leftId: sample
+    rightId: sample-desc
+  - leftId: sample-mean
+    rightId: sample-mean-desc
+  - leftId: bias
+    rightId: bias-desc
+explanation:
+  - type: text
+    text: "A sample statistic is a tool for estimating a population value, but the sampling design must support representativeness."
+  - type: text
+    text: "Increasing sample size and reducing bias are different improvements."
+tags:
+  - probability-statistics
+  - sampling
+  - terminology
+difficulty: 2

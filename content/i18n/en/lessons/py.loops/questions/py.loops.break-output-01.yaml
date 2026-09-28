@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: py.loops.break-output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  total = 0
+  for number in [1, 2, 3, 4]:
+      if number == 3:
+          break
+      total += number
+  print(total)
+choices:
+  - '3'
+  - '6'
+  - '10'
+acceptedOutputs:
+  - '3'
+explanation:
+  - type: text
+    text: "Only 1 and 2 are added to total. When number becomes 3, break runs and the loop ends."
+tags:
+  - loops
+  - break
+  - code-output
+difficulty: 2

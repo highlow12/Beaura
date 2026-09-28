@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.mtu.single-01
+revision: 2
+type: single-choice
+prompt:
+- type: text
+  text: Which statement about MTU and fragmentation is most accurate?
+options:
+- id: correct
+  content:
+  - type: text
+    text: MTU is the maximum packet size a link can carry, and the lowest MTU along a path affects the size of a transmission.
+- id: wrong-a
+  content:
+  - type: text
+    text: MTU is the number of name records held in a DNS cache.
+- id: wrong-b
+  content:
+  - type: text
+    text: Packets larger than the MTU are automatically transmitted forever by every protocol.
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+- type: text
+  text: MTU is the maximum packet size a link can carry, and the lowest MTU along a path affects the size of a transmission.
+- type: text
+  text: MTU (Maximum Transmission Unit) is the largest complete IP packet, including its header, that a link can carry in
+    one frame. The smallest MTU along a path limits the end-to-end transmission size.
+tags:
+- mtu
+- fragmentation
+- ip
+difficulty: 3

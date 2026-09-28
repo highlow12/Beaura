@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.random-variables
+revision: 2
+track: probability-statistics
+title: "Getting Ready for Random Variables and Expected Value"
+description: "Learn how random variables map experiment outcomes to numbers and how probability masses are assigned."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: prob.random-variables.definition-01
+  - type: question
+    ref: prob.random-variables.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: prob.random-variables.term-01
+  - type: question
+    ref: prob.random-variables.steps-01
+  - type: question
+    ref: prob.random-variables.match-01

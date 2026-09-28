@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.partial-derivatives.application-01
+revision: 1
+type: multi-select
+prompt:
+- type: text
+  text: "Select all correct statements about f(x,y)=x²+3xy."
+options:
+- id: dx
+  content:
+  - type: text
+    text: "∂f/∂x=2x+3y"
+- id: dy
+  content:
+  - type: text
+    text: "∂f/∂y=3x"
+- id: y-constant
+  content:
+  - type: text
+    text: "When differentiating with respect to x, treat y as a constant"
+- id: dx-wrong
+  content:
+  - type: text
+    text: "∂f/∂x=2x+3x"
+correctOptionIds:
+- dx
+- dy
+- y-constant
+shuffleOptions: true
+explanation:
+- type: text
+  text: "When differentiating with respect to x, treat y in 3xy as a constant, giving 3y; differentiating with respect to y gives 3x."
+- type: text
+  text: "State which variable is held constant for each partial derivative so you do not miss a term’s coefficient."
+tags:
+- calculus
+- multivariable
+- calculation
+difficulty: 2

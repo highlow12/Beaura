@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.geometry.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about triangles and meshes."
+options:
+  - id: three-vertices
+    content:
+      - type: text
+        text: "A triangle is a basic surface unit defined by three vertices."
+  - id: winding
+    content:
+      - type: text
+        text: "Vertex order can affect front-face and back-face classification."
+  - id: shared
+    content:
+      - type: text
+        text: "Adjacent triangles can share vertices to save storage space."
+  - id: no-normal
+    content:
+      - type: text
+        text: "Normals have nothing to do with lighting calculations."
+correctOptionIds: [three-vertices, winding, shared]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A triangle connects three vertices, winding helps determine face orientation, and sharing vertices makes mesh representations more compact. Normals directly connect surface orientation to lighting."
+tags: [graphics, geometry, mesh, winding]
+difficulty: 3

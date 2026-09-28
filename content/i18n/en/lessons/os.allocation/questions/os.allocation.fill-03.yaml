@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.allocation.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "When free heap space is scattered and a large contiguous block is hard to obtain, this is called ___."
+choices:
+  - "external fragmentation"
+  - "stack return"
+  - "page hit"
+acceptedAnswers:
+  - "external fragmentation"
+explanation:
+  - type: text
+    text: "When a function is called, a frame is pushed onto the stack, and the stack pointer is restored when the function returns. Heap blocks are freed according to the allocator’s rules when they are no longer needed. If free space is scattered into pieces and a large contiguous block is hard to obtain, the result is external fragmentation."
+tags: [memory-allocation, stack, heap]
+difficulty: 2

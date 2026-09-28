@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.shading.properties-01
+revision: 2
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct comparisons of shading methods."
+options:
+  - id: flat-uniform
+    content:
+      - type: text
+        text: "Flat shading can make a face appear uniform"
+  - id: gouraud-cost
+    content:
+      - type: text
+        text: "Gouraud calculates lighting at vertices and interpolates the results"
+  - id: phong-detail
+    content:
+      - type: text
+        text: "Phong calculates lighting per fragment to represent fine detail"
+  - id: vertex-only-final
+    content:
+      - type: text
+        text: "The fragment shader runs only once per vertex, regardless of the number of rasterized samples"
+correctOptionIds: [flat-uniform, gouraud-cost, phong-detail]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Flat, Gouraud, and Phong shading differ in where values are calculated and interpolated. In a typical rasterization pipeline, the fragment shader processes rasterized samples. The vertex shader is the one that runs once per vertex."
+tags: [graphics, shading]
+difficulty: 3

@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.inverse-determinant.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each inverse-matrix term with its description."
+leftItems:
+  - id: identity
+    content:
+      - type: text
+        text: "I"
+  - id: inverse
+    content:
+      - type: text
+        text: "A⁻¹"
+  - id: det
+    content:
+      - type: text
+        text: "det(A)"
+  - id: singular
+    content:
+      - type: text
+        text: "singular matrix"
+rightItems:
+  - id: identity-desc
+    content:
+      - type: text
+        text: "The identity matrix, which is the multiplicative identity"
+  - id: inverse-desc
+    content:
+      - type: text
+        text: "A matrix that multiplies with `A` to produce `I`"
+  - id: det-desc
+    content:
+      - type: text
+        text: "A scalar value used to determine invertibility"
+  - id: singular-desc
+    content:
+      - type: text
+        text: "A matrix with determinant 0 and no inverse"
+correctPairs:
+  - leftId: identity
+    rightId: identity-desc
+  - leftId: inverse
+    rightId: inverse-desc
+  - leftId: det
+    rightId: det-desc
+  - leftId: singular
+    rightId: singular-desc
+explanation:
+  - type: text
+    text: "An inverse reverses a transformation, and the determinant quickly tells whether that is possible."
+  - type: text
+    text: "Check that the product of `A` and `A⁻¹` is correct."
+tags:
+  - linear-algebra
+  - matrices
+  - terminology
+difficulty: 2

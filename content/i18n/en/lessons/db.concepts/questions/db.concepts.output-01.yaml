@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: db.concepts.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the code that counts the records to store in the database."
+language: python
+code: |-
+  records = [{"id": 1}, {"id": 2}, {"id": 3}]
+  print(len(records))
+choices: ["3", "2", "1"]
+acceptedOutputs: ["3"]
+explanation:
+  - type: text
+    text: "The records list contains three dictionaries, so the number of records is 3. A DBMS manages storage and retrieval at a larger scale."
+tags: [database, records, code-output]
+difficulty: 1

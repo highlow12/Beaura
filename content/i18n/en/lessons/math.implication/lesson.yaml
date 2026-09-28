@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.implication
+revision: 3
+track: discrete-math
+title: "Implications and Related Statements"
+description: "Distinguish the truth condition of an implication from its converse, inverse, and contrapositive, and understand their logical relationships."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.implication.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.implication.application-01
+  - type: content
+    ref: content/refutation.md
+  - type: question
+    ref: math.implication.term-01
+  - type: question
+    ref: math.implication.steps-01
+  - type: question
+    ref: math.implication.match-01

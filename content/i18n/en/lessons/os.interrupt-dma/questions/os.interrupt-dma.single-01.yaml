@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.interrupt-dma.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about interrupts and DMA is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "DMA can transfer blocks of data between a device and memory on behalf of the CPU and signal when the transfer is complete."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "DMA is an instruction that changes the CPU’s privilege mode to user mode."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "An interrupt means the CPU must poll the device forever."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "DMA can transfer blocks of data between a device and memory on behalf of the CPU and signal when the transfer is complete."
+  - type: text
+    text: "An interrupt is a signal from a device or timer telling the CPU that an event needs handling. DMA lets a device controller transfer a large block of data between memory and a device on the CPU’s behalf."
+tags: [interrupt, dma, io]
+difficulty: 2

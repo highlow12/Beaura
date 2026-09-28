@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.propositions.equivalence-01
+revision: 2
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all cases in which the proposition P ↔ Q is true."
+options:
+  - id: true-true
+    content:
+      - type: text
+        text: "P=true, Q=true"
+  - id: true-false
+    content:
+      - type: text
+        text: "P=true, Q=false"
+  - id: false-true
+    content:
+      - type: text
+        text: "P=false, Q=true"
+  - id: false-false
+    content:
+      - type: text
+        text: "P=false, Q=false"
+correctOptionIds:
+  - true-true
+  - false-false
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The equivalence P ↔ Q is true when P and Q have the same truth value. Therefore, the correct cases are when both are true or both are false."
+tags:
+  - discrete-math
+  - equivalence
+  - biconditional
+difficulty: 2

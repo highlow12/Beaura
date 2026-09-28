@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.tcp.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about TCP connections and reliability is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "TCP provides an ordered, reliable byte stream over IP using sequence numbers, ACKs, and retransmissions."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "TCP does not establish connections and only delivers each packet independently."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A TCP ACK confirms a switch port’s MAC address, not received bytes."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "TCP provides an ordered, reliable byte stream over IP using sequence numbers, ACKs, and retransmissions."
+  - type: text
+    text: "TCP is a stateful byte-stream protocol. Sequence numbers, acknowledgments, retransmissions, flow control, and congestion control help the receiver obtain data in order."
+tags: [tcp, reliability, handshake]
+difficulty: 2

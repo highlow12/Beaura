@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: prob.independence.term-01
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "If A and B are independent and P(B)>0, then P(A|B)=P(___)."
+choices:
+  - "A"
+  - "B"
+  - "A∩B"
+acceptedAnswers:
+  - "A"
+explanation:
+  - type: text
+    text: "When P(B)>0, information about B does not change the probability of A, so P(A|B)=P(A)."
+  - type: text
+    text: "Conditional probability is undefined for a condition with probability 0, so independence is expressed with the product rule."
+tags:
+  - probability-statistics
+  - independence
+  - conditional
+difficulty: 1

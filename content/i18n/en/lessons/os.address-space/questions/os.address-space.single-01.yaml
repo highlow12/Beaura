@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.address-space.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about process address spaces is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A process address space is the range of virtual addresses and regions visible to that process."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A process address space directly exposes all physical RAM under one name."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "The stack and heap in an address space always have fixed sizes and grow in the same direction."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A process address space is the range of virtual addresses and regions visible to that process."
+  - type: text
+    text: "A process address space is the range of virtual addresses that the process can use. It is generally divided into code, global data, a dynamically growing heap, and a stack that holds function calls."
+tags: [process, virtual-memory, address-space]
+difficulty: 2

@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.consistency.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "If a user must see the latest balance on the next screen immediately after a payment, which guarantee should you consider first?"
+options:
+  - id: strong
+    content:
+      - type: text
+        text: "Strong consistency or a read-after-write guarantee"
+  - id: eventual-only
+    content:
+      - type: text
+        text: "Eventual consistency that reads a lagging replica without conditions"
+  - id: no-read
+    content:
+      - type: text
+        text: "A design that does not read the balance after payment"
+correctOptionId: strong
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "If the latest balance is required immediately after payment, ensure strong reads or at least a read-after-write path that follows the write in the same session."
+tags: [database, consistency, read-after-write]
+difficulty: 2

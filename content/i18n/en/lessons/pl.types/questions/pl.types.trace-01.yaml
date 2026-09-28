@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: pl.types.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: In a dynamically typed language, what value does this addition print?
+language: python
+code: |-
+  value = 3
+  result = value + 2
+  print(result)
+choices:
+  - "5"
+  - "32"
+  - "3"
+acceptedOutputs:
+  - "5"
+explanation:
+  - type: text
+    text: value is the integer 3, so adding 2 performs integer addition and produces 5. A string value would follow a different rule.
+tags:
+  - programming-languages
+  - types
+  - trace
+difficulty: 1

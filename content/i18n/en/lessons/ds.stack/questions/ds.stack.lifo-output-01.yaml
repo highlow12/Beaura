@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: ds.stack.lifo-output-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the two-line output of the following stack code."
+language: python
+code: |-
+  stack = []
+  stack.append("A")
+  stack.append("B")
+  print(stack.pop())
+  print(stack[-1])
+choices:
+- 'B
+
+  A'
+- 'A
+
+  B'
+- 'B
+
+  B'
+acceptedOutputs:
+- 'B
+
+  A'
+explanation:
+- type: text
+  text: "B was added last, so it is popped first, leaving A at the top."
+- type: text
+  text: "The stack’s LIFO rule means the last item added comes out first."
+tags:
+- stack
+- lifo
+- code-output
+difficulty: 2

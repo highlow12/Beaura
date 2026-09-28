@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.randomized-hashing.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is it called when distinct keys map to the same slot in a hash table?"
+options:
+  - id: collision
+    content:
+      - type: text
+        text: "Collision"
+  - id: sorting
+    content:
+      - type: text
+        text: "Sorting"
+  - id: underflow
+    content:
+      - type: text
+        text: "Underflow"
+  - id: projection
+    content:
+      - type: text
+        text: "Projection"
+correctOptionId: collision
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A collision occurs when two keys map to the same slot in the hash function’s output."
+  - type: text
+    text: "A collision-resolution strategy is needed to store all keys."
+tags:
+  - probability-statistics
+  - randomized-algorithms
+  - collision
+difficulty: 1

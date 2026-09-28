@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.semaphore.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to semaphores and resource counts."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "A semaphore initialized to 3 can represent up to three resources available at the same time."
+  - id: correct-b
+    content:
+      - type: text
+        text: "If the counter is 0 during `wait`, the caller can wait for a resource."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "`signal` never increments the counter, even when a resource is returned."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Semaphore `wait` and `signal` do not need to be safe when another flow interleaves."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A semaphore initialized to 3 can represent up to three resources available at the same time. If the counter is 0 during `wait`, the caller can wait for a resource."
+  - type: text
+    text: "Semaphores are useful for representing resource counts and ordering signals, but a missing `signal` or incorrect initial value can cause indefinite waits or over-allocation. A mutex is clearer for a single lock with ownership."
+tags: [semaphore, synchronization, producer-consumer]
+difficulty: 3

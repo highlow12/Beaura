@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.unweighted-shortest-path.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which method is best for finding shortest paths when all edges have the same cost?"
+options:
+- id: bfs
+  content:
+  - type: text
+    text: "BFS with a queue"
+- id: dfs
+  content:
+  - type: text
+    text: "DFS that follows one path all the way to the end"
+- id: random
+  content:
+  - type: text
+    text: "A search that chooses neighbors randomly"
+correctOptionId: bfs
+shuffleOptions: true
+explanation:
+- type: text
+  text: "BFS processes levels in order of edge count, so the first path that discovers a vertex uses the fewest edges."
+tags:
+- graph
+- shortest-path
+- bfs
+difficulty: 1

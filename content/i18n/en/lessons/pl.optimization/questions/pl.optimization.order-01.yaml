@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: pl.optimization.order-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the steps for safely eliminating dead code.
+items:
+  - id: inspect-uses
+    content:
+      - type: text
+        text: Find where the instruction's result is used.
+  - id: inspect-effects
+    content:
+      - type: text
+        text: Check for side effects such as function calls or writes.
+  - id: prove-dead
+    content:
+      - type: text
+        text: Prove that removing it affects neither results nor side effects.
+  - id: remove
+    content:
+      - type: text
+        text: Remove the instruction from the IR.
+correctOrder:
+  - inspect-uses
+  - inspect-effects
+  - prove-dead
+  - remove
+unorderedGroups:
+  - - inspect-uses
+    - inspect-effects
+explanation:
+  - type: text
+    text: It is not enough for a value to be unused; you must also establish that executing the instruction has no side effect before removing it safely.
+tags:
+  - programming-languages
+  - optimization
+  - dead-code
+difficulty: 3

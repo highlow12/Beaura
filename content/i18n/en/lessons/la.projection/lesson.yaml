@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.projection
+revision: 2
+track: linear-algebra
+title: "Projection and Components"
+description: "Use the dot product to project a vector onto another direction and split it into parallel and perpendicular components."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.projection.definition-01
+  - type: question
+    ref: la.projection.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
+  - type: question
+    ref: la.projection.term-01
+  - type: question
+    ref: la.projection.steps-01
+  - type: question
+    ref: la.projection.match-01

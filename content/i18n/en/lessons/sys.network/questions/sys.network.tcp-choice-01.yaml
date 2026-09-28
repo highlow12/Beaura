@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: sys.network.tcp-choice-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which statement best describes TCP?
+options:
+- id: reliable
+  content:
+  - type: text
+    text: It manages data ordering and retransmission to support reliable delivery.
+- id: image
+  content:
+  - type: text
+    text: It converts each packet directly into a screen pixel.
+- id: random
+  content:
+  - type: text
+    text: It always shuffles the transmission order randomly.
+correctOptionId: reliable
+shuffleOptions: true
+explanation:
+- type: text
+  text: TCP supports reliable, ordered delivery through acknowledgments and retransmission.
+- type: text
+  text: A transmission that needs reliability and ordering may call for a different choice from one that prioritizes low latency.
+tags:
+- networking
+- tcp
+difficulty: 1

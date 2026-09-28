@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.functional-dependency
+revision: 2
+track: databases
+title: Functional Dependencies
+description: Understand how functional dependencies, where X determines Y, relate to keys and data redundancy.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.functional-dependency.match-01
+  - type: question
+    ref: db.functional-dependency.choice-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.functional-dependency.output-01
+  - type: question
+    ref: db.functional-dependency.fill-01
+  - type: question
+    ref: db.functional-dependency.properties-01

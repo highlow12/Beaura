@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.relational-model.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each relational-model term with its meaning."
+leftItems:
+  - id: relation
+    content:
+      - type: text
+        text: "relation"
+  - id: tuple
+    content:
+      - type: text
+        text: "tuple"
+  - id: attribute
+    content:
+      - type: text
+        text: "attribute"
+rightItems:
+  - id: table-set
+    content:
+      - type: text
+        text: "A table made up of rows with the same attributes"
+  - id: row
+    content:
+      - type: text
+        text: "The record in one row"
+  - id: column
+    content:
+      - type: text
+        text: "A column with a name and domain"
+correctPairs:
+  - leftId: relation
+    rightId: table-set
+  - leftId: tuple
+    rightId: row
+  - leftId: attribute
+    rightId: column
+explanation:
+  - type: text
+    text: "A relation is a set of rows, a tuple is one row, and an attribute is one column."
+tags: [database, relational-model]
+difficulty: 1

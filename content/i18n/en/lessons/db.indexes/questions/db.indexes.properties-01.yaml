@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.indexes.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe index design."
+options:
+  - id: lookup
+    content:
+      - type: text
+        text: "Columns frequently used in WHERE or ORDER BY can be candidates for indexing"
+  - id: write-cost
+    content:
+      - type: text
+        text: "More indexes can increase maintenance costs during writes"
+  - id: composite-order
+    content:
+      - type: text
+        text: "The leading column order of a composite index affects how queries can use it"
+  - id: guarantee
+    content:
+      - type: text
+        text: "If an index exists, the DBMS always uses only the index"
+correctOptionIds: [lookup, write-cost, composite-order]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Indexes should be chosen to match query patterns, with their write costs understood. The DBMS decides whether to use one based on data distribution and the execution plan."
+tags: [database, indexes, composite-index]
+difficulty: 3

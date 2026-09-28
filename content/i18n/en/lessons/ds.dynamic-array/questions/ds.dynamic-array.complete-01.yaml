@@ -1,0 +1,25 @@
+id: ds.dynamic-array.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the operation that adds a value to the end of a dynamic array."
+language: python
+template: values.{{blank:operation}}(4)
+blanks:
+- id: operation
+  choices:
+  - append
+  - insert
+  - pop
+  acceptedAnswers:
+  - append
+explanation:
+- type: text
+  text: "append adds an element to the end of the array. insert places one at a specific position, and pop removes an element."
+schemaVersion: 1
+revision: 1
+tags:
+- array
+- dynamic-array
+- amortized
+difficulty: 2

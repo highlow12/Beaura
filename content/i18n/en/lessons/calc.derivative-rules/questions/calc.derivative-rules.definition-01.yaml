@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.derivative-rules.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the derivative of the product fg of two functions?"
+options:
+  - id: product
+    content:
+      - type: text
+        text: "f′g+fg′"
+  - id: wrong-sum
+    content:
+      - type: text
+        text: "f′+g′"
+  - id: multiply-deriv
+    content:
+      - type: text
+        text: "f′g′"
+  - id: square
+    content:
+      - type: text
+        text: "(fg)²"
+correctOptionId: product
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The product rule is the sum of the first function’s derivative times the second function and the first function times the second function’s derivative."
+  - type: text
+    text: "It is not correct to differentiate each function and simply multiply the results."
+tags:
+  - calculus
+  - derivative-rules
+  - product-rule
+difficulty: 1

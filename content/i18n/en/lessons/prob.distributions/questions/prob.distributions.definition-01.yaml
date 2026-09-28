@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.distributions.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which distribution models a single success-or-failure trial?"
+options:
+  - id: bernoulli
+    content:
+      - type: text
+        text: "Bernoulli distribution"
+  - id: binomial
+    content:
+      - type: text
+        text: "Binomial distribution"
+  - id: normal
+    content:
+      - type: text
+        text: "Normal distribution"
+  - id: uniform-only
+    content:
+      - type: text
+        text: "Always a uniform distribution"
+correctOptionId: bernoulli
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A Bernoulli distribution models a single trial with two possible outcomes."
+  - type: text
+    text: "The number of successes in repeated trials of the same experiment is modeled by a binomial distribution."
+tags:
+  - probability-statistics
+  - distributions
+  - bernoulli
+difficulty: 1

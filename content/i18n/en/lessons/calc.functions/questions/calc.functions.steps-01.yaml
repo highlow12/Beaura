@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.functions.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for evaluating f(g(x))."
+items:
+  - id: g
+    content:
+      - type: text
+        text: "Apply g to the input x"
+  - id: value
+    content:
+      - type: text
+        text: "Obtain the intermediate value g(x)"
+  - id: f
+    content:
+      - type: text
+        text: "Use the intermediate value as the input to f"
+  - id: result
+    content:
+      - type: text
+        text: "Write down the final result f(g(x))"
+correctOrder:
+  - g
+  - value
+  - f
+  - result
+explanation:
+  - type: text
+    text: "For a composite function, apply the function on the right, g, first and use the result as the input to f."
+  - type: text
+    text: "Remember to evaluate the function inside the parentheses first."
+tags:
+  - calculus
+  - functions
+  - composition
+difficulty: 2

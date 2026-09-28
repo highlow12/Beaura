@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.matrix-multiplication
+revision: 2
+track: linear-algebra
+title: "Matrix Multiplication"
+description: "Learn the dimension requirements for matrix multiplication and how to calculate products using row-column dot products."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.matrix-multiplication.definition-01
+  - type: question
+    ref: la.matrix-multiplication.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
+  - type: question
+    ref: la.matrix-multiplication.term-01
+  - type: question
+    ref: la.matrix-multiplication.steps-01
+  - type: question
+    ref: la.matrix-multiplication.match-01

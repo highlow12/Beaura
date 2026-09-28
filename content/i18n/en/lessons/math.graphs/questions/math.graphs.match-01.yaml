@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.graphs.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each graph term with its description."
+leftItems:
+  - id: vertex
+    content:
+      - type: text
+        text: "Vertex"
+  - id: edge
+    content:
+      - type: text
+        text: "Edge"
+  - id: adj-list
+    content:
+      - type: text
+        text: "Adjacency list"
+  - id: adj-matrix
+    content:
+      - type: text
+        text: "Adjacency matrix"
+rightItems:
+  - id: vertex-desc
+    content:
+      - type: text
+        text: "A point representing an object in the graph"
+  - id: edge-desc
+    content:
+      - type: text
+        text: "A connection between two vertices"
+  - id: adj-list-desc
+    content:
+      - type: text
+        text: "Stores each vertex's neighbors in a list"
+  - id: adj-matrix-desc
+    content:
+      - type: text
+        text: "Stores vertex pairs in matrix cells"
+correctPairs:
+  - leftId: vertex
+    rightId: vertex-desc
+  - leftId: edge
+    rightId: edge-desc
+  - leftId: adj-list
+    rightId: adj-list-desc
+  - leftId: adj-matrix
+    rightId: adj-matrix-desc
+explanation:
+  - type: text
+    text: "Vertices and edges define the structure's meaning; adjacency lists and matrices are ways of storing it."
+  - type: text
+    text: "The same graph can use different representations depending on memory and computation needs."
+tags:
+  - discrete-math
+  - graphs
+  - representation
+difficulty: 2

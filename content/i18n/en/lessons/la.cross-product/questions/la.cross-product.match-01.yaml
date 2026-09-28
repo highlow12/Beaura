@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.cross-product.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each cross product concept with its role."
+leftItems:
+  - id: cross
+    content:
+      - type: text
+        text: "u×v"
+  - id: magnitude
+    content:
+      - type: text
+        text: "|u×v|"
+  - id: right-hand
+    content:
+      - type: text
+        text: "right-hand rule"
+  - id: normal
+    content:
+      - type: text
+        text: "Surface normal"
+rightItems:
+  - id: cross-desc
+    content:
+      - type: text
+        text: "A vector perpendicular to both inputs"
+  - id: magnitude-desc
+    content:
+      - type: text
+        text: "The area of a parallelogram"
+  - id: right-hand-desc
+    content:
+      - type: text
+        text: "A rule for determining the result's direction"
+  - id: normal-desc
+    content:
+      - type: text
+        text: "A direction vector perpendicular to a plane"
+correctPairs:
+  - leftId: cross
+    rightId: cross-desc
+  - leftId: magnitude
+    rightId: magnitude-desc
+  - leftId: right-hand
+    rightId: right-hand-desc
+  - leftId: normal
+    rightId: normal-desc
+explanation:
+  - type: text
+    text: "The cross product provides both direction and area, which makes it useful in 3D geometry and graphics."
+  - type: text
+    text: "Always record that the input order changes the normal's direction."
+tags:
+  - linear-algebra
+  - cross-product
+  - geometry
+difficulty: 2

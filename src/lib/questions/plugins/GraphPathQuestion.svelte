@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { locale, t } from "$lib/application/locale";
   import ContentBlockRenderer from "$lib/components/ContentBlockRenderer.svelte";
   import type { QuestionRendererProps } from "$lib/questions/renderer-contract";
 
@@ -21,7 +22,7 @@
     if (renderedKey === key) return;
     renderedKey = key;
     selectedIds = [question.startNodeId];
-    announcement = `${nodeLabel(question.startNodeId)}에서 시작합니다.`;
+    announcement = t(`${nodeLabel(question.startNodeId)}에서 시작합니다.`, `Start at ${nodeLabel(question.startNodeId)}.`, $locale);
     onAnswerChange(null);
   });
 
@@ -54,10 +55,10 @@
     selectedIds = next;
     if (next.at(-1) === question.goalNodeId) {
       onAnswerChange({ type: "graph-path", nodeIds: [...next] });
-      announcement = `${nodeLabel(question.goalNodeId)}에 도착했습니다. 경로를 제출할 수 있습니다.`;
+      announcement = t(`${nodeLabel(question.goalNodeId)}에 도착했습니다. 경로를 제출할 수 있습니다.`, `Reached ${nodeLabel(question.goalNodeId)}. You can submit your path.`, $locale);
     } else {
       onAnswerChange(null);
-      announcement = `${nodeLabel(next.at(-1) ?? question.startNodeId)}로 이동했습니다.`;
+      announcement = t(`${nodeLabel(next.at(-1) ?? question.startNodeId)}로 이동했습니다.`, `Moved to ${nodeLabel(next.at(-1) ?? question.startNodeId)}.`, $locale);
     }
   }
 
@@ -75,7 +76,7 @@
     if (disabled) return;
     selectedIds = [question.startNodeId];
     onAnswerChange(null);
-    announcement = `${nodeLabel(question.startNodeId)}에서 다시 시작합니다.`;
+    announcement = t(`${nodeLabel(question.startNodeId)}에서 다시 시작합니다.`, `Start again at ${nodeLabel(question.startNodeId)}.`, $locale);
   }
 
   function selectedIndex(id: string): number {
@@ -99,12 +100,12 @@
   {/each}
 
   <div class="graph-meta">
-    <span>{question.directed ? "방향 그래프" : "무방향 그래프"}</span>
-    <span>시작: {nodeLabel(question.startNodeId)}</span>
-    <span>목표: {nodeLabel(question.goalNodeId)}</span>
+    <span>{question.directed ? t("방향 그래프", "Directed graph", $locale) : t("무방향 그래프", "Undirected graph", $locale)}</span>
+    <span>{t("시작", "Start", $locale)}: {nodeLabel(question.startNodeId)}</span>
+    <span>{t("목표", "Goal", $locale)}: {nodeLabel(question.goalNodeId)}</span>
   </div>
 
-  <div class="graph" aria-label="경로 선택 그래프">
+  <div class="graph" aria-label={t("경로 선택 그래프", "Path selection graph", $locale)}>
     <svg class="edges" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
       <defs>
         <marker
@@ -147,31 +148,33 @@
         class:goal={node.id === question.goalNodeId}
         class:submitted={submitted >= 0}
         class:canonical={canonical >= 0}
+        data-start-label={t("시작", "Start", $locale)}
+        data-goal-label={t("목표", "Goal", $locale)}
         style={`left:${node.x}%;top:${node.y}%`}
         type="button"
         disabled={!isAvailable(node.id)}
-        aria-label={`${node.label}${index >= 0 ? `, 선택 순서 ${index + 1}` : ""}`}
+        aria-label={`${node.label}${index >= 0 ? `, ${t("선택 순서", "selection order", $locale)} ${index + 1}` : ""}`}
         onclick={() => selectNode(node.id)}
       >
         <span class="node-label">{node.label}</span>
         {#if index >= 0}<span class="node-order">{index + 1}</span>{/if}
-        {#if disabled && submitted >= 0}<span class="answer-marker">내 답 {submitted + 1}</span>{/if}
-        {#if disabled && canonical >= 0}<span class="answer-marker canonical-marker">정답 {canonical + 1}</span>{/if}
+        {#if disabled && submitted >= 0}<span class="answer-marker">{t("내 답", "Your answer", $locale)} {submitted + 1}</span>{/if}
+        {#if disabled && canonical >= 0}<span class="answer-marker canonical-marker">{t("정답", "Correct answer", $locale)} {canonical + 1}</span>{/if}
       </button>
     {/each}
   </div>
 
   <div class="path-summary" aria-live="polite">
-    <strong>현재 경로</strong>
+    <strong>{t("현재 경로", "Current path", $locale)}</strong>
     <span>{selectedIds.map(nodeLabel).join(" → ")}</span>
   </div>
 
   <div class="actions">
     <button type="button" class="secondary" disabled={disabled || selectedIds.length <= 1} onclick={undo}>
-      한 단계 취소
+      {t("한 단계 취소", "Undo one step", $locale)}
     </button>
     <button type="button" class="secondary" disabled={disabled || selectedIds.length <= 1} onclick={reset}>
-      처음부터
+      {t("처음부터", "Start over", $locale)}
     </button>
   </div>
 
@@ -258,7 +261,7 @@
   }
 
   .node.goal::after {
-    content: "목표";
+    content: attr(data-goal-label);
     position: absolute;
     top: -1.4rem;
     font-size: 0.7rem;
@@ -266,7 +269,7 @@
   }
 
   .node.start::before {
-    content: "시작";
+    content: attr(data-start-label);
     position: absolute;
     bottom: -1.4rem;
     font-size: 0.7rem;

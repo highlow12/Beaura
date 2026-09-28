@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.linear-transformations
+revision: 2
+track: linear-algebra
+title: "Linear Transformations"
+description: "Represent linear transformations that preserve addition and scalar multiplication with matrices."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.linear-transformations.definition-01
+  - type: question
+    ref: la.linear-transformations.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
+  - type: question
+    ref: la.linear-transformations.term-01
+  - type: question
+    ref: la.linear-transformations.steps-01
+  - type: question
+    ref: la.linear-transformations.match-01

@@ -1,0 +1,24 @@
+id: ds.union-find.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the operation that connects the representatives of two sets."
+language: python
+template: sets.{{blank:operation}}(a, b)
+blanks:
+- id: operation
+  choices:
+  - union
+  - find
+  - merge-sort
+  acceptedAnswers:
+  - union
+explanation:
+- type: text
+  text: "union combines two sets. find locates a representative, and merge-sort is the name of a sorting algorithm."
+schemaVersion: 1
+revision: 1
+tags:
+- disjoint-set
+- union-find
+difficulty: 2

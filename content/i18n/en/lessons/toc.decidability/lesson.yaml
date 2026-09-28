@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: toc.decidability
+revision: 2
+track: theory-of-computation
+title: Decidability
+description: Distinguish problems with algorithms that halt on every input and return an answer from recognizable problems.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: toc.decidability.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: toc.decidability.match-01
+  - type: question
+    ref: toc.decidability.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: toc.decidability.order-01
+  - type: question
+    ref: toc.decidability.trace-01

@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: se.refactoring.order-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: Arrange the steps for safely refactoring duplicated discount calculations.
+items:
+- id: baseline
+  content:
+  - type: text
+    text: Create tests for existing results and boundary values.
+- id: small-change
+  content:
+  - type: text
+    text: Make one small structural change.
+- id: rerun
+  content:
+  - type: text
+    text: Rerun tests to check that behavior is preserved.
+- id: inspect-diff
+  content:
+  - type: text
+    text: Review the diff and choose the next small change.
+correctOrder:
+- baseline
+- small-change
+- rerun
+- inspect-diff
+explanation:
+- type: text
+  text: Lock down baseline behavior first, change one thing at a time, and inspect the tests and diff to distinguish semantic changes from structural ones.
+tags:
+- software-engineering
+- refactoring
+- workflow
+difficulty: 2

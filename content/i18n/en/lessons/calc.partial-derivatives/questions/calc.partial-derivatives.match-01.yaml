@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.partial-derivatives.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each multivariable differentiation term with its description."
+leftItems:
+- id: partial-x
+  content:
+  - type: text
+    text: "∂f/∂x"
+- id: partial-y
+  content:
+  - type: text
+    text: "∂f/∂y"
+- id: fixed
+  content:
+  - type: text
+    text: "Held-constant variable"
+- id: mixed
+  content:
+  - type: text
+    text: "Mixed partial derivative"
+rightItems:
+- id: partial-x-desc
+  content:
+  - type: text
+    text: "Rate of change along x with y held constant"
+- id: partial-y-desc
+  content:
+  - type: text
+    text: "Rate of change along y with x held constant"
+- id: fixed-desc
+  content:
+  - type: text
+    text: "A variable treated as constant during differentiation"
+- id: mixed-desc
+  content:
+  - type: text
+    text: "Differentiating twice with respect to different variables"
+correctPairs:
+- leftId: partial-x
+  rightId: partial-x-desc
+- leftId: partial-y
+  rightId: partial-y-desc
+- leftId: fixed
+  rightId: fixed-desc
+- leftId: mixed
+  rightId: mixed-desc
+explanation:
+- type: text
+  text: "Partial derivatives calculate changes along different directions separately."
+- type: text
+  text: "Combining the results for each variable gives a better description of the local shape of a multivariable function."
+tags:
+- calculus
+- multivariable
+- terminology
+difficulty: 2

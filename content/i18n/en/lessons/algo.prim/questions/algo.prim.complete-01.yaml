@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: algo.prim.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "Complete the condition that prevents Prim from adding a vertex already in the tree."
+- type: code
+  language: python
+  code: |-
+    if {{blank:membership}} not in visited:
+choices:
+- neighbor
+- neighbor in
+- weight
+acceptedAnswers:
+- neighbor
+explanation:
+- type: text
+  text: "Add the new vertex and edge to the tree only when the edge’s other endpoint, neighbor, is not in visited."
+tags:
+- graph
+- mst
+- prim
+- code-completion
+difficulty: 2

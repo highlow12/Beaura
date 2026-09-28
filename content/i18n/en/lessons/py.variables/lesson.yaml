@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: py.variables
+revision: 2
+track: python
+title: "Python Variables"
+description: "Learn the basic concept of variables, which associate names with values."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: py.variables.what-is-01
+  - type: content
+    ref: content/assignment.md
+  - type: question
+    ref: py.variables.assign-01
+  - type: content
+    ref: content/reassignment.md
+  - type: question
+    ref: py.variables.trace-01
+  - type: question
+    ref: py.variables.value-copy-01
+  - type: question
+    ref: py.variables.execution-order-01

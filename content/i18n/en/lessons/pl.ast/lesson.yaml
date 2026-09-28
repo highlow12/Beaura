@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.ast
+revision: 2
+track: programming-languages
+title: Abstract Syntax Trees
+description: Represent parse results as ASTs while preserving hierarchy and operator precedence.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.ast.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.ast.match-01
+  - type: question
+    ref: pl.ast.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.ast.order-01
+  - type: question
+    ref: pl.ast.trace-01

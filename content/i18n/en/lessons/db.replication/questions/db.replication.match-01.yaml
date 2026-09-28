@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.replication.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each replication term with its role."
+leftItems:
+  - id: primary
+    content:
+      - type: text
+        text: "primary"
+  - id: replica
+    content:
+      - type: text
+        text: "replica"
+  - id: failover
+    content:
+      - type: text
+        text: "failover"
+rightItems:
+  - id: writes
+    content:
+      - type: text
+        text: "The node that accepts primary writes and serves as the source of changes"
+  - id: copy
+    content:
+      - type: text
+        text: "A replica node that follows changes from the primary"
+  - id: promote
+    content:
+      - type: text
+        text: "Promoting another node to primary after a failure"
+correctPairs:
+  - leftId: primary
+    rightId: writes
+  - leftId: replica
+    rightId: copy
+  - leftId: failover
+    rightId: promote
+explanation:
+  - type: text
+    text: "The primary is the write authority, a replica is a copy, and failover is a role change after a failure. Real products may also support other structures, such as multiple primaries."
+tags: [database, replication]
+difficulty: 1

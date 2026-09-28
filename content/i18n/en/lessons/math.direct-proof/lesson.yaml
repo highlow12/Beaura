@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.direct-proof
+revision: 3
+track: discrete-math
+title: "Direct Proof"
+description: "Practice direct proofs that start from an assumption and apply definitions and rules to reach a conclusion."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.direct-proof.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.direct-proof.application-01
+  - type: content
+    ref: content/definitions.md
+  - type: question
+    ref: math.direct-proof.term-01
+  - type: question
+    ref: math.direct-proof.steps-01
+  - type: question
+    ref: math.direct-proof.match-01

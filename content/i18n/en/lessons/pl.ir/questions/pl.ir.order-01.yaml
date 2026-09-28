@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: pl.ir.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for lowering a + b * c into three-address IR."
+items:
+  - id: multiply
+    content:
+      - type: text
+        text: "Create t1 = b * c."
+  - id: add
+    content:
+      - type: text
+        text: "Create t2 = a + t1."
+  - id: result
+    content:
+      - type: text
+        text: "Use t2 as the result of the full expression."
+correctOrder:
+  - multiply
+  - add
+  - result
+explanation:
+  - type: text
+    text: "Compute the multiplication into a temporary first, then use that value in the addition."
+tags:
+  - programming-languages
+  - ir
+  - three-address-code
+difficulty: 2

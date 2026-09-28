@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: la.eigenvectors.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for finding eigenvalues and eigenvectors of a matrix."
+items:
+  - id: form
+    content:
+      - type: text
+        text: "Form `A − λI`"
+  - id: det
+    content:
+      - type: text
+        text: "Set up `det(A − λI) = 0`"
+  - id: solve-lambda
+    content:
+      - type: text
+        text: "Solve for `λ`"
+  - id: solve-v
+    content:
+      - type: text
+        text: "For each `λ`, find a nonzero `v` satisfying `(A − λI)v = 0`"
+correctOrder:
+  - form
+  - det
+  - solve-lambda
+  - solve-v
+explanation:
+  - type: text
+    text: "First find the scale factors using the characteristic equation, then find a direction vector for each one."
+  - type: text
+    text: "Choose only nonzero solutions as eigenvectors."
+tags:
+  - linear-algebra
+  - eigen
+  - procedure
+difficulty: 2

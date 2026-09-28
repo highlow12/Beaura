@@ -1,0 +1,28 @@
+id: ds.adt.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following stack operations."
+language: python
+code: 'items = []
+
+  items.append("A")
+
+  items.append("B")
+
+  print(items.pop())'
+choices:
+- B
+- A
+- '["A", "B"]'
+acceptedOutputs:
+- B
+explanation:
+- type: text
+  text: "B was added last with append, so pop removes B, the last element. This follows the stack ADT’s LIFO rule."
+schemaVersion: 1
+revision: 1
+tags:
+- adt
+- interface
+difficulty: 2

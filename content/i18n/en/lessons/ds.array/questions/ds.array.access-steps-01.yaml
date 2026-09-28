@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: ds.array.access-steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the conceptual steps for reading an array element by index."
+items:
+- id: choose-index
+  content:
+  - type: text
+    text: "Choose the index to read"
+- id: calculate-offset
+  content:
+  - type: text
+    text: "Calculate the offset from the start position"
+- id: read-cell
+  content:
+  - type: text
+    text: "Read the value in that slot"
+correctOrder:
+- choose-index
+- calculate-offset
+- read-cell
+explanation:
+- type: text
+  text: "First choose the index, calculate its location, then read the slot."
+- type: text
+  text: "The contiguous layout makes offset calculation possible, enabling fast random access."
+tags:
+- array
+- memory-model
+difficulty: 2

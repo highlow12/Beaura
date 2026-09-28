@@ -1,0 +1,50 @@
+schemaVersion: 1
+id: toc.regular-languages.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each regular-expression operator with its meaning.
+leftItems:
+  - id: union
+    content:
+      - type: code
+        language: text
+        code: a|b
+  - id: concat
+    content:
+      - type: code
+        language: text
+        code: ab
+  - id: star
+    content:
+      - type: code
+        language: text
+        code: a*
+rightItems:
+  - id: either
+    content:
+      - type: text
+        text: Either `a` or `b`
+  - id: sequence
+    content:
+      - type: text
+        text: "`a` followed by `b`"
+  - id: repeat
+    content:
+      - type: text
+        text: Repeat `a` zero or more times
+correctPairs:
+  - leftId: union
+    rightId: either
+  - leftId: concat
+    rightId: sequence
+  - leftId: star
+    rightId: repeat
+explanation:
+  - type: text
+    text: Union, concatenation, and star are basic regular-expression operations, representing choice, ordered joining, and repetition zero or more times.
+tags:
+  - theory-of-computation
+  - regular-expression
+difficulty: 1

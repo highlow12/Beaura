@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.search.linear-comparisons-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Using linear search, how many comparisons are needed to find 7 in [5, 7, 9, 11] when searching from the beginning?"
+options:
+  - id: two
+    content:
+      - type: text
+        text: "2 comparisons"
+  - id: one
+    content:
+      - type: text
+        text: "1 comparison"
+  - id: four
+    content:
+      - type: text
+        text: "4 comparisons"
+correctOptionId: two
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The algorithm compares 7 with 5 first, then finds it at the second element, for two comparisons total."
+tags:
+  - search
+  - linear-search
+  - tracing
+difficulty: 1

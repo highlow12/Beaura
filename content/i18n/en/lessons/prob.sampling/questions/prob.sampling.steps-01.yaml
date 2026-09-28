@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.sampling.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for estimating a population mean with a survey."
+items:
+  - id: define
+    content:
+      - type: text
+        text: "Define the target population and the quantity to measure"
+  - id: sample
+    content:
+      - type: text
+        text: "Choose a sampling method and sample size"
+  - id: collect
+    content:
+      - type: text
+        text: "Collect sample data"
+  - id: estimate
+    content:
+      - type: text
+        text: "Estimate the population value using a sample statistic"
+correctOrder:
+  - define
+  - sample
+  - collect
+  - estimate
+explanation:
+  - type: text
+    text: "First define what you want to learn, then design the sample, collect observations, and make an estimate."
+  - type: text
+    text: "If you collect a sample before defining the population, it is difficult to evaluate bias."
+tags:
+  - probability-statistics
+  - sampling
+  - procedure
+difficulty: 2

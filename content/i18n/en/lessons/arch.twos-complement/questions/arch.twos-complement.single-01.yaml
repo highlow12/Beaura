@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.twos-complement.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about two’s-complement integers is the most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "In n-bit two’s complement, the most significant bit indicates the sign, and negative values are formed by inverting the bits and adding 1."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A negative value is always represented by setting only the most significant bit to 1."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Two’s complement stores 0 using two patterns, +0 and -0."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "In n-bit two’s complement, the most significant bit indicates the sign, and negative values are formed by inverting the bits and adding 1."
+  - type: text
+    text: "In two’s-complement representation, the most significant bit indicates the sign. A negative value is made by inverting the bits and adding 1. The range of n bits is -2^(n-1) through 2^(n-1)-1."
+tags: [integer, twos-complement, overflow]
+difficulty: 2

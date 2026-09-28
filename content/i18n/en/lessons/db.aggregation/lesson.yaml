@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.aggregation
+revision: 3
+track: databases
+title: Aggregation and GROUP BY
+description: Summarize multiple rows with COUNT, SUM, AVG, and GROUP BY, and distinguish conditions on groups.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.aggregation.output-01
+  - type: question
+    ref: db.aggregation.match-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.aggregation.choice-01
+  - type: question
+    ref: db.aggregation.fill-01
+  - type: question
+    ref: db.aggregation.properties-01

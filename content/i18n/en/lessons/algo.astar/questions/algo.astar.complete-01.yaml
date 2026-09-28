@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: algo.astar.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "Complete the formula for calculating the candidate priority f in A*."
+- type: code
+  language: python
+  code: f = {{blank:score}}
+choices:
+- g + h
+- g - h
+- g * h
+acceptedAnswers:
+- g + h
+explanation:
+- type: text
+  text: "f is the sum of the actual cost so far, g, and the estimated cost to the goal, h."
+tags:
+- shortest-path
+- astar
+- heuristic
+- code-completion
+difficulty: 2

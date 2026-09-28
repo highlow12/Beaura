@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: sys.network.web-protocol-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which protocol defines the format of web requests and responses between a browser and a web server?
+options:
+- id: option-0
+  content:
+  - type: text
+    text: HTTP
+- id: option-1
+  content:
+  - type: text
+    text: DNS
+- id: option-2
+  content:
+  - type: text
+    text: IP
+correctOptionId: option-0
+shuffleOptions: true
+explanation:
+- type: text
+  text: HTTP defines the meaning and format of web requests and responses. DNS resolves names, while IP handles addresses and packet delivery.
+tags:
+- networking
+- ip
+difficulty: 1

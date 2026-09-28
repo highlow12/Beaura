@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: net.ipv4.ordering-04
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: Arrange the basic IP address and IPv4 packet processing steps in the correct order.
+items:
+- id: route-check
+  content:
+  - type: text
+    text: Determine whether the destination is local or should be reached through the gateway
+- id: forward
+  content:
+  - type: text
+    text: Choose the next hop from the routing table
+- id: decrement
+  content:
+  - type: text
+    text: Decrement the TTL at each hop and send the packet over the next link
+correctOrder:
+- route-check
+- forward
+- decrement
+explanation:
+- type: text
+  text: First, determine whether the destination is local or should be reached through the gateway; then choose the next hop
+    from the routing table.
+- type: text
+  text: At each hop, decrement the TTL and send the packet over the next link. The result is then delivered to the next network
+    layer or the application.
+tags:
+- ip
+- ipv4
+- internet-layer
+difficulty: 3

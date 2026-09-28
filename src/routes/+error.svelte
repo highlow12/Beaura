@@ -1,13 +1,15 @@
 <script lang="ts">
   import { base } from '$app/paths';
 	import { page } from '$app/state';
+	import { locale, t } from '$lib/application/locale';
+	const tr = (korean: string, english: string) => t(korean, english, $locale);
 
 	let status = $derived(page.status || 404);
 	let notFound = $derived(status === 404);
 	let message = $derived(
 		notFound
-			? '요청한 페이지를 찾을 수 없습니다.'
-			: '페이지를 표시하는 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.'
+			? tr('요청한 페이지를 찾을 수 없습니다.', 'The page you requested could not be found.')
+			: tr('페이지를 표시하는 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.', 'Something went wrong while displaying this page. Please try again shortly.')
 	);
 </script>
 
@@ -20,12 +22,12 @@
 	<p class="error-kicker">{notFound ? '404 / path not found' : 'system / unavailable'}</p>
 	<p class="status" aria-hidden="true">{status}</p>
 	<h1 id="error-title">
-		{notFound ? '잠깐, 길을 다시 찾아볼까요?' : '잠시 후 다시 시도해 주세요.'}
+		{notFound ? tr('잠깐, 길을 다시 찾아볼까요?', 'Let’s find another way.') : tr('잠시 후 다시 시도해 주세요.', 'Please try again shortly.')}
 	</h1>
 	<p class="message">{message}</p>
 	<div class="actions">
-		<a class="button" href={`${base}/`}>홈으로 가기</a>
-		<a class="button secondary" href={`${base}/learn`}>학습 경로 열기</a>
+		<a class="button" href={`${base}/`}>{tr('홈으로 가기', 'Go home')}</a>
+		<a class="button secondary" href={`${base}/learn`}>{tr('학습 경로 열기', 'Open learning path')}</a>
 	</div>
 </section>
 

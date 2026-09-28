@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.shading.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each shader or shading method with its description."
+leftItems:
+  - id: vertex-shader
+    content:
+      - type: text
+        text: "Vertex shader"
+  - id: fragment-shader
+    content:
+      - type: text
+        text: "Fragment shader"
+  - id: gouraud
+    content:
+      - type: text
+        text: "Gouraud shading"
+rightItems:
+  - id: per-vertex
+    content:
+      - type: text
+        text: "Calculate the position and pass-through attributes for each vertex"
+  - id: per-sample
+    content:
+      - type: text
+        text: "Calculate the final color for each sample"
+  - id: interpolate-color
+    content:
+      - type: text
+        text: "Interpolate colors calculated at the vertices across the screen"
+correctPairs:
+  - leftId: vertex-shader
+    rightId: per-vertex
+  - leftId: fragment-shader
+    rightId: per-sample
+  - leftId: gouraud
+    rightId: interpolate-color
+explanation:
+  - type: text
+    text: "The shaders operate at different units. Gouraud is a common method that interpolates lighting results calculated at vertices, while Phong calculates lighting at every fragment using interpolated normals."
+tags: [graphics, shading, shaders]
+difficulty: 2

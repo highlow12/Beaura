@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.context-switch.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic context-switch steps in the correct order."
+items:
+  - id: save
+    content:
+      - type: text
+        text: "Save the current execution unit’s register state"
+  - id: choose
+    content:
+      - type: text
+        text: "The scheduler selects the next execution unit"
+  - id: restore
+    content:
+      - type: text
+        text: "Restore the selected unit’s state and resume execution"
+correctOrder: [save, choose, restore]
+explanation:
+  - type: text
+    text: "First, save the current execution unit’s register state; then the scheduler uses that result to select the next execution unit."
+  - type: text
+    text: "At the step where the selected unit’s state is restored and execution resumes, the final result is passed to the next execution step."
+tags: [context-switch, scheduler, process]
+difficulty: 3

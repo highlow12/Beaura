@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: algo.bellman-ford.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the distance to B after this relaxation."
+language: python
+code: |-
+  distance = {"A": 0, "B": 10}
+  edges = [("A", "B", 3)]
+  for u, v, weight in edges:
+      candidate = distance[u] + weight
+      if candidate < distance[v]:
+          distance[v] = candidate
+  print(distance["B"])
+choices:
+- '3'
+- '7'
+- '10'
+acceptedOutputs:
+- '3'
+explanation:
+- type: text
+  text: "The candidate cost from A to B is 0 + 3, which is less than the current value 10, so B’s distance is updated to 3."
+tags:
+- shortest-path
+- bellman-ford
+- relaxation
+- code-output
+difficulty: 2

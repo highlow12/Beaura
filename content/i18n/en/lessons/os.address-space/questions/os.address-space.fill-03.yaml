@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.address-space.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "The same virtual address can point to different physical locations in two processes because their ___ differ."
+choices:
+  - "page mappings"
+  - "file names"
+  - "CPU frequencies"
+acceptedAnswers:
+  - "page mappings"
+explanation:
+  - type: text
+    text: "Even if two processes use the same virtual address, such as `0x1000`, mapping it to different physical frames keeps their data separate. The code (text) region holds instructions, the heap holds dynamically allocated data, and the stack holds call frames. When an address is read or written, the system checks access permissions as well as the address translation."
+tags: [process, virtual-memory, address-space]
+difficulty: 2

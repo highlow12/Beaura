@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.prim
+revision: 1
+track: algorithms
+title: Prim’s Algorithm
+description: Learn to build an MST by growing one tree and choosing the minimum-weight edge crossing its boundary.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.prim.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.prim.match-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.prim.steps-01
+- type: question
+  ref: algo.prim.complete-01
+- type: question
+  ref: algo.prim.trace-01

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.eigenvectors
+revision: 3
+track: linear-algebra
+title: "Eigenvalues and Eigenvectors"
+description: "Understand eigenvectors, which become scalar multiples of themselves when multiplied by a matrix, and eigenvalues, which are the corresponding scale factors."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.eigenvectors.definition-01
+  - type: question
+    ref: la.eigenvectors.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
+  - type: question
+    ref: la.eigenvectors.term-01
+  - type: question
+    ref: la.eigenvectors.steps-01
+  - type: question
+    ref: la.eigenvectors.match-01

@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.cache.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe caches and locality."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Traversing a contiguous array uses nearby addresses and takes advantage of spatial locality."
+  - id: correct-b
+    content:
+      - type: text
+        text: "On a cache miss, a block is usually fetched from a slower level of memory."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Temporal locality means data will never be reused."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A cache always reports a hit without checking the address tag."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Traversing a contiguous array uses nearby addresses and takes advantage of spatial locality. On a cache miss, a block is usually fetched from a slower level of memory."
+  - type: text
+    text: "A larger cache can increase the chance of a hit, but it also increases cost and access latency. Replacement and write policies must also balance consistency, performance, and implementation complexity."
+tags: [cache, locality, memory-hierarchy]
+difficulty: 3

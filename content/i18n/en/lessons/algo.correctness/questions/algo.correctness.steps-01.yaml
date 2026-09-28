@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: algo.correctness.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Put the steps for proving correctness with a loop invariant in order."
+items:
+  - id: initialize
+    content:
+      - type: text
+        text: "Show that the invariant is true before the loop starts"
+  - id: maintain
+    content:
+      - type: text
+        text: "Show that the invariant remains true after one iteration"
+  - id: terminate
+    content:
+      - type: text
+        text: "Combine the termination condition with the invariant to derive the result"
+correctOrder:
+  - initialize
+  - maintain
+  - terminate
+explanation:
+  - type: text
+    text: "Show that the invariant holds at initialization and prove that every iteration preserves it. Combining the invariant with the termination condition establishes that the algorithm’s result is correct."
+tags:
+  - correctness
+  - invariant
+  - execution-order
+difficulty: 2

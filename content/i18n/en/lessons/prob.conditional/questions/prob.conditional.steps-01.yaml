@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.conditional.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for finding conditional probability from a frequency table."
+items:
+  - id: condition
+    content:
+      - type: text
+        text: "Select the row or column corresponding to condition B."
+  - id: overlap
+    content:
+      - type: text
+        text: "Find the cell in B that also overlaps with A."
+  - id: count
+    content:
+      - type: text
+        text: "Use the frequency of the overlap as the numerator."
+  - id: divide
+    content:
+      - type: text
+        text: "Divide by the total frequency for B."
+correctOrder:
+  - condition
+  - overlap
+  - count
+  - divide
+explanation:
+  - type: text
+    text: "First restrict the sample to the condition, then count the outcomes of interest within it to determine the denominator and numerator."
+  - type: text
+    text: "Using the total sample size as the denominator ignores the condition."
+tags:
+  - probability-statistics
+  - conditional
+  - contingency-table
+difficulty: 2

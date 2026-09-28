@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.cicd
+revision: 2
+track: software-engineering
+title: CI/CD
+description: Deliver changes reproducibly through automated validation and deployment pipelines.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: se.cicd.concept-01
+- type: content
+  ref: content/model.md
+- type: question
+  ref: se.cicd.match-01
+- type: question
+  ref: se.cicd.blank-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: se.cicd.order-01
+- type: question
+  ref: se.cicd.trace-01

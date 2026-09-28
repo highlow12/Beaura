@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: py.variables.value-copy-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  first = 4
+  second = first + 3
+  first = 10
+  print(second)
+choices:
+  - '7'
+  - '13'
+  - '10'
+acceptedOutputs:
+  - '7'
+explanation:
+  - type: text
+    text: "When `second` is calculated, `first` is 4, so 7 is assigned to `second`. Changing `first` to 10 afterward does not recalculate `second` automatically."
+tags:
+  - variables
+  - assignment
+  - code-output
+difficulty: 2

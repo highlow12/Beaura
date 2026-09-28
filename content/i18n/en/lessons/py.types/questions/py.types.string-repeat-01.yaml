@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: py.types.string-repeat-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Choose the operator that completes the code to repeat the string ha three times."
+language: python
+template: |-
+  sound = "ha" {{blank:operator}} 3
+blanks:
+  - id: operator
+    choices:
+      - "*"
+      - "+"
+      - "**"
+    acceptedAnswers:
+      - "*"
+explanation:
+  - type: text
+    text: "Multiplying a string by an integer repeats the string. The result of \"ha\" * 3 is \"hahaha\"."
+tags:
+  - str
+  - string-repetition
+  - code-completion
+difficulty: 1

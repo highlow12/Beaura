@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.subnet.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about subnets and CIDR is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "CIDR `/n` designates the first n bits of an IPv4 address as the network prefix."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "The number in CIDR indicates the number of bits in a transport-layer port."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Dividing a network into subnets means every address exists on a separate physical cable."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "CIDR `/n` designates the first n bits of an IPv4 address as the network prefix."
+  - type: text
+    text: "In CIDR notation, `/n` means the first n bits form the network prefix. The remaining bits form the host portion and determine the address range within the subnet."
+tags: [subnet, cidr, ipv4]
+difficulty: 2

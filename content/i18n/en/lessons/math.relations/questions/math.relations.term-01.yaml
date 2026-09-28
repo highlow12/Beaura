@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.relations.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "A relation R is a ___ of a Cartesian product."
+choices:
+  - "subset"
+  - "entire set"
+  - "complement"
+acceptedAnswers:
+  - "subset"
+explanation:
+  - type: text
+    text: "A relation is a subset of a Cartesian product containing only the related ordered pairs."
+  - type: text
+    text: "It does not need to include every pair."
+tags:
+  - discrete-math
+  - relations
+  - relation
+difficulty: 1

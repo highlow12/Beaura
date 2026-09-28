@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: la.coordinates.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement best describes the meaning of coordinates?"
+options:
+  - id: coefficients
+    content:
+      - type: text
+        text: "Coefficients that state how many times to scale each chosen basis vector"
+  - id: absolute
+    content:
+      - type: text
+        text: "Numbers fixed independently of the basis"
+  - id: length-only
+    content:
+      - type: text
+        text: "The vector's length alone"
+  - id: origin
+    content:
+      - type: text
+        text: "Always the position of the origin"
+correctOptionId: coefficients
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Coordinates are the coefficients of a linear combination of basis vectors."
+  - type: text
+    text: "The same vector can have different coordinates in a different basis."
+tags:
+  - linear-algebra
+  - coordinates
+difficulty: 1

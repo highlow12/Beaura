@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: ds.queue.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  from collections import deque
+  queue = deque(["A", "B"])
+  queue.append("C")
+  queue.popleft()
+  print(queue[0])
+choices:
+  - B
+  - A
+  - C
+acceptedOutputs:
+  - B
+explanation:
+  - type: text
+    text: "C is added at the back and A is removed from the front, so the new front is B."
+tags:
+  - queue
+  - fifo
+  - deque
+difficulty: 2

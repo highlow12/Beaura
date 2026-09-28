@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.mst.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which conditions must a minimum spanning tree satisfy?"
+options:
+- id: connected-acyclic
+  content:
+  - type: text
+    text: "It connects every vertex, contains no cycle, and has the minimum total edge weight"
+- id: shortest-pair
+  content:
+  - type: text
+    text: "It contains only one shortest path between an arbitrary pair of vertices"
+- id: all-edges
+  content:
+  - type: text
+    text: "It contains every edge in the graph"
+correctOptionId: connected-acyclic
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A spanning tree is an acyclic subgraph that connects every vertex. An MST is the one with the minimum total edge weight."
+tags:
+- graph
+- mst
+- spanning-tree
+difficulty: 1

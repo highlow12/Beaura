@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: ds.array.index-output-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following code."
+language: python
+code: |-
+  values = [10, 20, 30]
+  print(values[2])
+choices:
+- '30'
+- '20'
+- '2'
+acceptedOutputs:
+- '30'
+explanation:
+- type: text
+  text: "Indices start at 0, so values[2] is the third value, 30."
+- type: text
+  text: "An index and an element value are different concepts, so count the positions first."
+tags:
+- array
+- indexing
+- code-output
+difficulty: 1

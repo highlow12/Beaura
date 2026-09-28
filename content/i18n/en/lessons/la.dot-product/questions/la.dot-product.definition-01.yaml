@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.dot-product.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the value of `(2, 3) · (4, 1)`?"
+options:
+  - id: eleven
+    content:
+      - type: text
+        text: "11"
+  - id: nine
+    content:
+      - type: text
+        text: "9"
+  - id: ten
+    content:
+      - type: text
+        text: "10"
+  - id: twenty-four
+    content:
+      - type: text
+        text: "24"
+correctOptionId: eleven
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The dot product is `2 × 4 + 3 × 1 = 8 + 3 = 11`."
+  - type: text
+    text: "Multiply the corresponding components first, then add the results."
+tags:
+  - linear-algebra
+  - dot-product
+  - calculation
+difficulty: 1

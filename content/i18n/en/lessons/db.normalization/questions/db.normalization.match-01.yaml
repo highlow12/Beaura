@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.normalization.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each normalization concept with its purpose."
+leftItems:
+  - id: first-nf
+    content:
+      - type: text
+        text: "1NF"
+  - id: second-nf
+    content:
+      - type: text
+        text: "2NF"
+  - id: third-nf
+    content:
+      - type: text
+        text: "3NF"
+rightItems:
+  - id: atomic
+    content:
+      - type: text
+        text: "Keep each cell as an atomic value"
+  - id: partial
+    content:
+      - type: text
+        text: "Separate attributes that depend on only part of a composite key"
+  - id: transitive
+    content:
+      - type: text
+        text: "Reduce transitive dependencies between non-key attributes"
+correctPairs:
+  - leftId: first-nf
+    rightId: atomic
+  - leftId: second-nf
+    rightId: partial
+  - leftId: third-nf
+    rightId: transitive
+explanation:
+  - type: text
+    text: "At an introductory level, remember 1NF, 2NF, and 3NF as progressively addressing atomicity, partial dependencies, and transitive dependencies."
+tags: [database, normalization]
+difficulty: 2

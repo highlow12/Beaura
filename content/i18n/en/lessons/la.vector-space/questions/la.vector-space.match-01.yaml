@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.vector-space.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each basis-related term with its description."
+leftItems:
+  - id: basis
+    content:
+      - type: text
+        text: "Basis"
+  - id: span
+    content:
+      - type: text
+        text: "Span"
+  - id: independent
+    content:
+      - type: text
+        text: "Linear independence"
+  - id: dimension
+    content:
+      - type: text
+        text: "Dimension"
+rightItems:
+  - id: basis-desc
+    content:
+      - type: text
+        text: "A set that is both spanning and linearly independent"
+  - id: span-desc
+    content:
+      - type: text
+        text: "Represents the entire space as linear combinations"
+  - id: independent-desc
+    content:
+      - type: text
+        text: "The zero vector can be represented only with all-zero coefficients"
+  - id: dimension-desc
+    content:
+      - type: text
+        text: "The number of basis vectors"
+correctPairs:
+  - leftId: basis
+    rightId: basis-desc
+  - leftId: span
+    rightId: span-desc
+  - leftId: independent
+    rightId: independent-desc
+  - leftId: dimension
+    rightId: dimension-desc
+explanation:
+  - type: text
+    text: "A basis is a minimal reference for assigning coordinates in a space; spanning and independence are the key properties."
+  - type: text
+    text: "Changing the basis does not change the dimension of a space."
+tags:
+  - linear-algebra
+  - space
+  - terminology
+difficulty: 2

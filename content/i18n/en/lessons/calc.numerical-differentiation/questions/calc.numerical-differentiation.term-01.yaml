@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.numerical-differentiation.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Given f(1)=2 and f(1.1)=2.21, the forward difference with h=0.1 approximates f′(1) as ___."
+choices:
+  - "0.21"
+  - "2.1"
+  - "2.21"
+  - "21"
+acceptedAnswers:
+  - "2.1"
+explanation:
+  - type: text
+    text: "(2.21−2)/0.1=0.21/0.1=2.1."
+  - type: text
+    text: "The forward difference divides the change in output by the step size."
+tags:
+  - calculus
+  - numerical
+  - forward-difference
+difficulty: 2

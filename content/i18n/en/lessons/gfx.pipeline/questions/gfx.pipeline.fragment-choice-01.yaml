@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.pipeline.fragment-choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What value can a fragment shader primarily calculate for two samples on the same triangle?"
+options:
+  - id: color
+    content:
+      - type: text
+        text: "The color to write for each sample"
+  - id: keyboard
+    content:
+      - type: text
+        text: "The scan code of a key pressed by the user"
+  - id: source-file
+    content:
+      - type: text
+        text: "The path to the shader source file"
+correctOptionId: color
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The fragment shader calculates outputs such as color and depth for each sample produced by rasterization."
+tags: [graphics, fragment-shader]
+difficulty: 1

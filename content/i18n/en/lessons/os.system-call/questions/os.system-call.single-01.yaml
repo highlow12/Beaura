@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.system-call.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about system calls is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A system call is the boundary through which a user program requests protected kernel services."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A system call is a network protocol that translates domain names into IP addresses."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A system call lets a user program bypass kernel checks."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A system call is the boundary through which a user program requests protected kernel services."
+  - type: text
+    text: "A system call is the formal boundary through which a user-space program requests kernel services. The kernel checks the system-call number and arguments, performs the operation, and returns a result or error."
+tags: [system-call, kernel, api]
+difficulty: 1

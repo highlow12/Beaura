@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.system-call.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "The per-process handle that refers to an open resource is a ___."
+choices:
+  - "file descriptor"
+  - "system-call number"
+  - "CPU mode"
+acceptedAnswers:
+  - "file descriptor"
+explanation:
+  - type: text
+    text: "A program that reads a file prepares a system-call number and arguments, then enters the kernel through a system call. The kernel checks the file descriptor, buffer address, and permissions before returning a result or error. A file descriptor is a per-process handle for an open resource, and the return value communicates success or an error."
+tags: [system-call, kernel, api]
+difficulty: 1

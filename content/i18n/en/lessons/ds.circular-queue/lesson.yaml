@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.circular-queue
+revision: 1
+track: data-structures
+title: Circular Queues
+description: Learn circular queues that reuse space by wrapping from the end of a fixed array back to the beginning.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.circular-queue.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: ds.circular-queue.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.circular-queue.complete-01
+- type: question
+  ref: ds.circular-queue.steps-01
+- type: question
+  ref: ds.circular-queue.match-01

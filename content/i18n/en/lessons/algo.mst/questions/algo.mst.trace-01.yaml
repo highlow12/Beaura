@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: algo.mst.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the total weight of the selected MST edges."
+language: python
+code: |-
+  chosen = [("A", "B", 1), ("B", "C", 2), ("C", "D", 3)]
+  total = 0
+  for _, _, weight in chosen:
+      total += weight
+  print(total)
+choices:
+- '6'
+- '5'
+- '7'
+acceptedOutputs:
+- '6'
+explanation:
+- type: text
+  text: "The selected edges have weights 1, 2, and 3, which sum to a total cost of 6."
+tags:
+- graph
+- mst
+- code-output
+difficulty: 2

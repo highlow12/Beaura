@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.direct-proof.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "An even number can be written as `2k` for some integer `k`. Choose the word that fills the blank: the ___ of an even number."
+choices:
+  - "definition"
+  - "counterexample"
+  - "converse"
+acceptedAnswers:
+  - "definition"
+explanation:
+  - type: text
+    text: "A direct proof often turns the definition of an object into an equation."
+  - type: text
+    text: "Applying the definition of even reveals that the number is a multiple of 2."
+tags:
+  - discrete-math
+  - proof
+  - definition
+difficulty: 1

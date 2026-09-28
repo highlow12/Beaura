@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.dot-product
+revision: 3
+track: linear-algebra
+title: "Dot Product and Angles"
+description: "Calculate the dot product as a sum of component products, and use it to determine angles and orthogonality."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.dot-product.definition-01
+  - type: question
+    ref: la.dot-product.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
+  - type: question
+    ref: la.dot-product.term-01
+  - type: question
+    ref: la.dot-product.steps-01
+  - type: question
+    ref: la.dot-product.match-01

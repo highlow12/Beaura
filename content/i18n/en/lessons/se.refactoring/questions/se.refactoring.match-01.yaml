@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.refactoring.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: Match each refactoring term with its description.
+leftItems:
+- id: smell
+  content:
+  - type: text
+    text: Code smell
+- id: extraction
+  content:
+  - type: text
+    text: Function extraction
+- id: equivalence
+  content:
+  - type: text
+    text: Behavior preservation
+rightItems:
+- id: change-signal
+  content:
+  - type: text
+    text: A signal, such as duplication or a long function, that suggests reviewing the structure
+- id: isolate-responsibility
+  content:
+  - type: text
+    text: A technique for separating part of a long function into a smaller, named function
+- id: observable-contract
+  content:
+  - type: text
+    text: A criterion for preserving externally observable meaning such as results, errors, and side effects
+correctPairs:
+- leftId: smell
+  rightId: change-signal
+- leftId: extraction
+  rightId: isolate-responsibility
+- leftId: equivalence
+  rightId: observable-contract
+explanation:
+- type: text
+  text: A smell signals a possible improvement, extraction separates responsibilities, and behavior preservation provides a basis for comparing the external contract.
+tags:
+- software-engineering
+- refactoring
+- code-smell
+difficulty: 2

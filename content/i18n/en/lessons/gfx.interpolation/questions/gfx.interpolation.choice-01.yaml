@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.interpolation.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "When the barycentric weights are (1, 0, 0), which vertex's value is interpolated?"
+options:
+  - id: first
+    content:
+      - type: text
+        text: "The first vertex"
+  - id: second
+    content:
+      - type: text
+        text: "The second vertex"
+  - id: average
+    content:
+      - type: text
+        text: "The average of the three vertices"
+correctOptionId: first
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Only the first weight is 1 and the others are 0, so the weighted sum equals the first vertex's value."
+tags: [graphics, interpolation, barycentric]
+difficulty: 1

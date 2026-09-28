@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.select.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the SQL clause that filters rows by a condition."
+choices: ["WHERE", "FROM", "ORDER BY"]
+acceptedAnswers: ["WHERE"]
+explanation:
+  - type: text
+    text: "The WHERE clause checks whether each row meets the condition and limits which rows appear in the result. FROM specifies the source table, and ORDER BY specifies sorting."
+tags: [database, sql, where]
+difficulty: 1

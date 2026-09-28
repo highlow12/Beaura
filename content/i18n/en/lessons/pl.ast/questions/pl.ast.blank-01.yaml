@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.ast.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "In the AST for 1 + 2 * 3, the multiplication node is placed deeper in the tree because it has ___ precedence than addition."
+choices:
+  - higher
+  - lower
+  - irrelevant
+acceptedAnswers:
+  - higher
+explanation:
+  - type: text
+    text: "Multiplication is evaluated first, so its node becomes a child of the addition node and represents operator precedence."
+tags:
+  - programming-languages
+  - ast
+  - precedence
+difficulty: 2

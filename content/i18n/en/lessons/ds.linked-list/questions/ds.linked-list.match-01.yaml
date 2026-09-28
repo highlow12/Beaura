@@ -1,0 +1,48 @@
+id: ds.linked-list.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each linked-list term with its meaning."
+leftItems:
+- id: head
+  content:
+  - type: text
+    text: "head"
+- id: node
+  content:
+  - type: text
+    text: "Node"
+- id: next
+  content:
+  - type: text
+    text: "next"
+rightItems:
+- id: first
+  content:
+  - type: text
+    text: "The starting reference pointing to the first node"
+- id: unit
+  content:
+  - type: text
+    text: "An item containing a value and a link"
+- id: forward
+  content:
+  - type: text
+    text: "A reference for moving to the next node"
+correctPairs:
+- leftId: head
+  rightId: first
+- leftId: node
+  rightId: unit
+- leftId: next
+  rightId: forward
+explanation:
+- type: text
+  text: "head stores the starting point, and each node stores a value. Repeatedly following next traverses the list in one direction."
+schemaVersion: 1
+revision: 1
+tags:
+- linked-list
+- node
+- pointer
+difficulty: 2

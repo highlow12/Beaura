@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: toc.grammar.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the leftmost derivation of the string aab using `S → aS | b` in the correct order."
+items:
+  - id: first-a
+    content:
+      - type: text
+        text: S ⇒ aS
+  - id: second-a
+    content:
+      - type: text
+        text: aS ⇒ aaS
+  - id: finish-b
+    content:
+      - type: text
+        text: aaS ⇒ aab
+correctOrder:
+  - first-a
+  - second-a
+  - finish-b
+explanation:
+  - type: text
+    text: Apply the recursive rule twice to produce two `a`s, then replace S with `b` to get `aab`.
+tags:
+  - theory-of-computation
+  - grammar
+  - derivation
+difficulty: 2

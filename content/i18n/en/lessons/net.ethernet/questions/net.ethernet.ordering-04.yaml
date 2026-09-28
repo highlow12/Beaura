@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: net.ethernet.ordering-04
+revision: 2
+type: ordering
+prompt:
+- type: text
+  text: Arrange the basic Ethernet frame processing steps in the correct order.
+items:
+- id: frame
+  content:
+  - type: text
+    text: Encapsulate the IP packet in a link-layer frame
+- id: learn
+  content:
+  - type: text
+    text: The switch learns the source MAC address and port
+- id: forward
+  content:
+  - type: text
+    text: Forward the frame to the link port for its destination MAC address
+correctOrder:
+- frame
+- learn
+- forward
+unorderedGroups:
+- - learn
+  - forward
+explanation:
+- type: text
+  text: After the IP packet is encapsulated in a frame, the switch learns the source MAC address and selects the destination
+    port. These two actions can happen independently after the frame arrives, so their relative order does not matter.
+- type: text
+  text: The frame is forwarded to the link port for its destination MAC address. The result is then delivered to the next
+    network layer or the application.
+tags:
+- ethernet
+- mac
+- link-layer
+difficulty: 2

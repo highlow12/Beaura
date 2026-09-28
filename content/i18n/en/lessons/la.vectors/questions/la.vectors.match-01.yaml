@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.vectors.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each vector operation with its meaning."
+leftItems:
+  - id: addition
+    content:
+      - type: text
+        text: "u+v"
+  - id: scalar
+    content:
+      - type: text
+        text: "3u"
+  - id: zero
+    content:
+      - type: text
+        text: "0u"
+  - id: negative
+    content:
+      - type: text
+        text: "−u"
+rightItems:
+  - id: addition-desc
+    content:
+      - type: text
+        text: "Adds corresponding components to join displacements"
+  - id: scalar-desc
+    content:
+      - type: text
+        text: "Triples the magnitude and keeps the direction"
+  - id: zero-desc
+    content:
+      - type: text
+        text: "Becomes the zero vector"
+  - id: negative-desc
+    content:
+      - type: text
+        text: "Keeps the same magnitude and reverses direction"
+correctPairs:
+  - leftId: addition
+    rightId: addition-desc
+  - leftId: scalar
+    rightId: scalar-desc
+  - leftId: zero
+    rightId: zero-desc
+  - leftId: negative
+    rightId: negative-desc
+explanation:
+  - type: text
+    text: "Vector addition combines displacements, and scalar multiplication changes magnitude and direction."
+  - type: text
+    text: "Consider the sign and absolute value of the scalar separately to distinguish the results."
+tags:
+  - linear-algebra
+  - vectors
+  - operations
+difficulty: 2

@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: db.select.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Complete the query expression that selects only the names of CS students."
+language: python
+template: |-
+  query = "SELECT name FROM Student {{blank:filter}} major = 'CS'"
+blanks:
+  - id: filter
+    choices: ["WHERE", "ORDER BY", "GROUP BY"]
+    acceptedAnswers: ["WHERE"]
+explanation:
+  - type: text
+    text: "Write row conditions after WHERE. This query returns only the name column for rows in Student whose major is CS."
+tags: [database, sql, where, code-completion]
+difficulty: 1

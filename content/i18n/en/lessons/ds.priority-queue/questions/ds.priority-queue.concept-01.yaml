@@ -1,0 +1,33 @@
+id: ds.priority-queue.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What is the main difference between a regular queue and a priority queue?"
+options:
+- id: priority
+  content:
+  - type: text
+    text: "A priority queue chooses the next item by priority, not arrival order"
+- id: fifo
+  content:
+  - type: text
+    text: "A priority queue always removes only the earliest item"
+- id: index
+  content:
+  - type: text
+    text: "A priority queue accesses items only by index"
+- id: unique
+  content:
+  - type: text
+    text: "A priority queue does not allow duplicate items"
+correctOptionId: priority
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A regular queue is FIFO, while item priority determines removal order in a priority queue. Whether duplicates are allowed is a separate policy."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- priority-queue
+difficulty: 2

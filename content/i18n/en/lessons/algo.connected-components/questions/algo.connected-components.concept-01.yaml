@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: algo.connected-components.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which statement best describes a connected component in an undirected graph?"
+options:
+- id: reachable-group
+  content:
+  - type: text
+    text: "A maximal group of vertices that can reach one another by paths"
+- id: edge-count
+  content:
+  - type: text
+    text: "The total number of edges in the graph"
+- id: start-layer
+  content:
+  - type: text
+    text: "A level containing vertices at the same distance from the start vertex"
+correctOptionId: reachable-group
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A connected component is a maximal group whose vertices can reach one another and are not connected to vertices in other components."
+tags:
+- graph
+- connected-components
+difficulty: 1

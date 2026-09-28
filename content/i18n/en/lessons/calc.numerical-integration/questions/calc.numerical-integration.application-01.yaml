@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.numerical-integration.application-01
+revision: 2
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe numerical integration."
+options:
+  - id: samples
+    content:
+      - type: text
+        text: "Accumulated quantities can be approximated using only sampled function values"
+  - id: smaller
+    content:
+      - type: text
+        text: "Subdividing intervals usually reduces approximation error"
+  - id: increasing
+    content:
+      - type: text
+        text: "Where f is positive and increasing, the left rectangular sum is less than the actual area"
+  - id: exact-always
+    content:
+      - type: text
+        text: "A sum of a few rectangles is always exact"
+correctOptionIds: [samples, smaller, increasing]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Reducing sample spacing generally decreases the error from approximating a curve with shapes."
+  - type: text
+    text: "For a positive increasing function, the left endpoint height in each interval is less than or equal to the function values inside it, so the left sum underestimates the actual area."
+tags:
+  - calculus
+  - numerical
+  - approximation
+difficulty: 2

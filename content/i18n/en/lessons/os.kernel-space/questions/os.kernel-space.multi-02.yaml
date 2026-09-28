@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.kernel-space.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to kernel space and user space."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "User-space code needs kernel mediation to access a device."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Privilege modes help prevent one process from reading another process’s memory without permission."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A user-space program can execute any privileged instruction without restriction."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Kernel space and user space have no distinction in addresses or permissions."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "User-space code needs kernel mediation to access a device. Privilege modes help prevent one process from reading another process’s memory without permission."
+  - type: text
+    text: "Privilege separation improves safety, but mode switches and checks add cost. Putting more functionality in the kernel may be faster, but errors can affect the entire system."
+tags: [kernel, user-space, protection]
+difficulty: 2

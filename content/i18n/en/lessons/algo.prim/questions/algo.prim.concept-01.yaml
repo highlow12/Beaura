@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.prim.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which edge does Prim’s algorithm choose next?"
+options:
+- id: light-boundary
+  content:
+  - type: text
+    text: "The lightest edge connecting the current tree to a vertex outside it"
+- id: any-inside
+  content:
+  - type: text
+    text: "Any edge connecting two vertices already in the tree"
+- id: heaviest
+  content:
+  - type: text
+    text: "The heaviest edge in the entire graph"
+correctOptionId: light-boundary
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Prim chooses the lowest-weight boundary edge connecting the current tree to an outside vertex."
+tags:
+- graph
+- mst
+- prim
+difficulty: 1

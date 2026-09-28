@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.alu.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about the ALU and arithmetic-logic operations is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "The ALU applies the arithmetic or logical operation selected by the control signal to its input values and produces a result."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "The ALU is a device that stores disk files long term."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "The ALU always performs addition regardless of the control signal."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The ALU applies the arithmetic or logical operation selected by the control signal to its input values and produces a result."
+  - type: text
+    text: "The ALU is a combinational circuit that performs operations such as addition, subtraction, AND, OR, and comparison. A control signal selects the operation, and the ALU can produce flags such as zero and carry along with the result."
+tags: [alu, arithmetic, control]
+difficulty: 2

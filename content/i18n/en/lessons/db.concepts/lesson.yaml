@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.concepts
+revision: 3
+track: databases
+title: Databases and DBMSs
+description: Distinguish the roles of a database, a DBMS, a schema, and an application.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.concepts.match-01
+  - type: question
+    ref: db.concepts.choice-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.concepts.output-01
+  - type: question
+    ref: db.concepts.fill-01
+  - type: question
+    ref: db.concepts.properties-01

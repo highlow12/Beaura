@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: pl.code-generation.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "This code computes two temporary IR values and then returns the result. What does it print?"
+language: python
+code: |-
+  left = 4
+  right = 6
+  result = left + right
+  print(result)
+choices:
+  - "10"
+  - "24"
+  - "2"
+acceptedOutputs:
+  - "10"
+explanation:
+  - type: text
+    text: "The operands add up to 10. In generated code, this value would be placed in a target register or memory location."
+tags:
+  - programming-languages
+  - code-generation
+  - trace
+difficulty: 1

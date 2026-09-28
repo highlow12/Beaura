@@ -1,0 +1,33 @@
+id: py.slicing.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "In `values[1:4]`, what does the stop index 4 do?"
+options:
+- id: exclusive
+  content:
+  - type: text
+    text: "Sets the boundary so index 4 is excluded and positions 1, 2, and 3 are selected"
+- id: inclusive
+  content:
+  - type: text
+    text: "Sets the boundary to include index 4"
+- id: step
+  content:
+  - type: text
+    text: "Sets the step to skip every other item"
+- id: reverse
+  content:
+  - type: text
+    text: "Indicates that the sequence should be read in reverse"
+correctOptionId: exclusive
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Slicing includes the start and excludes the stop. So `[1:4]` selects indexes 1, 2, and 3."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- slicing
+difficulty: 2

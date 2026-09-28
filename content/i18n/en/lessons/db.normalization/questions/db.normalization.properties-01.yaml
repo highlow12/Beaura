@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.normalization.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe normalization design."
+options:
+  - id: anomalies
+    content:
+      - type: text
+        text: "Reducing duplication can help reduce insertion, deletion, and update anomalies"
+  - id: lossless
+    content:
+      - type: text
+        text: "The decomposed tables must allow the required information to be recovered without loss through JOINs"
+  - id: tradeoff
+    content:
+      - type: text
+        text: "The degree of normalization can be chosen based on query patterns and JOIN costs"
+  - id: atomic-list
+    content:
+      - type: text
+        text: "1NF recommends storing a list of multiple independent values in one cell"
+correctOptionIds: [anomalies, lossless, tradeoff]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Normalization reduces anomalies and aims for lossless joins, but real systems must also consider read costs and model clarity. 1NF does not put a list in one cell."
+tags: [database, normalization]
+difficulty: 3

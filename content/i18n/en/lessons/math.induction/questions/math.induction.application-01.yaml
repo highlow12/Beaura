@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.induction.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all elements required for an induction proof."
+options:
+  - id: base
+    content:
+      - type: text
+        text: "Base case"
+  - id: hypothesis
+    content:
+      - type: text
+        text: "The inductive hypothesis that assumes `P(k)` for an arbitrary `k`"
+  - id: step
+    content:
+      - type: text
+        text: "The step that proves `P(k + 1)` from `P(k)`"
+  - id: sample
+    content:
+      - type: text
+        text: "Calculating a few examples"
+correctOptionIds: [base, hypothesis, step]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The base case, inductive hypothesis, and inductive step work together to extend the result to all natural numbers."
+  - type: text
+    text: "Examples can help identify a pattern, but they are not a required part of an induction proof."
+tags:
+  - discrete-math
+  - proof
+  - induction
+difficulty: 2

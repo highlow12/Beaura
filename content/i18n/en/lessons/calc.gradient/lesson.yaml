@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.gradient
+revision: 3
+track: calculus
+title: "Gradient"
+description: "Understand the gradient as a vector of partial derivatives and its relationship to the direction of greatest increase and critical points."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: calc.gradient.definition-01
+  - type: question
+    ref: calc.gradient.application-01
+  - type: content
+    ref: content/connection.md
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: calc.gradient.term-01
+  - type: question
+    ref: calc.gradient.steps-01
+  - type: question
+    ref: calc.gradient.match-01

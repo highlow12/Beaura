@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: ds.graph.degree-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "In an undirected graph, if A is connected to B, C, and D by one edge each, what is A’s degree?"
+options:
+  - id: degree-3
+    content:
+      - type: text
+        text: '3'
+  - id: degree-2
+    content:
+      - type: text
+        text: '2'
+  - id: degree-4
+    content:
+      - type: text
+        text: '4'
+correctOptionId: degree-3
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Three edges touch A, so its degree is 3."
+tags:
+  - graph
+  - degree
+  - undirected
+difficulty: 1

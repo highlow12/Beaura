@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.indexes
+revision: 2
+track: databases
+title: Indexes and B-trees
+description: Understand how indexes speed up queries and the trade-offs in storage and maintenance costs.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.indexes.match-01
+  - type: question
+    ref: db.indexes.output-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.indexes.fill-01
+  - type: question
+    ref: db.indexes.choice-01
+  - type: question
+    ref: db.indexes.properties-01

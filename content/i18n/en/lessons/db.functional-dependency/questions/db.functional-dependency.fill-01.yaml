@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.functional-dependency.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the term for X in the functional dependency X → Y."
+choices: ["determinant", "dependent", "tuple"]
+acceptedAnswers: ["determinant"]
+explanation:
+  - type: text
+    text: "Since X on the left side of the arrow determines the value of Y on the right, X is the determinant. Y is the dependent."
+tags: [database, functional-dependency]
+difficulty: 1

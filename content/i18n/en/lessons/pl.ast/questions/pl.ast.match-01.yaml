@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.ast.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each AST element with its role."
+leftItems:
+  - id: literal
+    content:
+      - type: text
+        text: "Literal node"
+  - id: operator
+    content:
+      - type: text
+        text: "Operation node"
+  - id: source-span
+    content:
+      - type: text
+        text: "Source span"
+rightItems:
+  - id: value
+    content:
+      - type: text
+        text: "A direct value such as 3 or \"hi\""
+  - id: children
+    content:
+      - type: text
+        text: "The operation and its operand children"
+  - id: diagnostics
+    content:
+      - type: text
+        text: "Connects errors and warnings to the original source"
+correctPairs:
+  - leftId: literal
+    rightId: value
+  - leftId: operator
+    rightId: children
+  - leftId: source-span
+    rightId: diagnostics
+explanation:
+  - type: text
+    text: "Keeping source locations and semantic information in the AST lets tools point to type errors in the original code and reuse the structure across multiple visitors."
+tags:
+  - programming-languages
+  - ast
+  - tree
+difficulty: 2

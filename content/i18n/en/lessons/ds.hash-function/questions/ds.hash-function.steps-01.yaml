@@ -1,0 +1,36 @@
+id: ds.hash-function.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for calculating a bucket location from a key."
+items:
+- id: key
+  content:
+  - type: text
+    text: "Pass the key to the hash function"
+- id: value
+  content:
+  - type: text
+    text: "Obtain a numerical hash value"
+- id: compress
+  content:
+  - type: text
+    text: "Take the remainder by capacity"
+- id: bucket
+  content:
+  - type: text
+    text: "Select the bucket at the calculated index"
+correctOrder:
+- key
+- value
+- compress
+- bucket
+explanation:
+- type: text
+  text: "Convert the key into a numerical hash value, compress it to fit the number of buckets, then select that location."
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-function
+difficulty: 2

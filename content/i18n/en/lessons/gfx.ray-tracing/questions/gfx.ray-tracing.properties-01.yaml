@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.ray-tracing.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about ray tracing."
+options:
+  - id: shadows
+    content:
+      - type: text
+        text: "Direct shadows can be represented by checking visibility with shadow rays"
+  - id: reflection
+    content:
+      - type: text
+        text: "Reflections can be modeled by sending a new ray along the reflection direction"
+  - id: bvh
+    content:
+      - type: text
+        text: "Structures such as BVHs can reduce the number of intersection candidates"
+  - id: no-intersection
+    content:
+      - type: text
+        text: "Rays do not need to intersect scene geometry"
+correctOptionIds: [shadows, reflection, bvh]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Ray tracing represents shadows and reflections consistently through intersections, while spatial data structures accelerate many of the intersection tests."
+tags: [graphics, ray-tracing, shadows, reflection]
+difficulty: 3

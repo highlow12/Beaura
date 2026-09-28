@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: py.conditionals
+revision: 2
+track: python
+title: "Conditionals and Comparisons"
+description: "Learn how to choose which code to run based on the result of a comparison."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: py.conditionals.pass-condition-01
+  - type: question
+    ref: py.conditionals.true-comparisons-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: py.conditionals.operator-01
+  - type: question
+    ref: py.conditionals.decision-order-01
+  - type: question
+    ref: py.conditionals.comparison-meanings-01
+  - type: content
+    ref: content/branches.md
+  - type: question
+    ref: py.conditionals.output-01
+  - type: question
+    ref: py.conditionals.completion-01

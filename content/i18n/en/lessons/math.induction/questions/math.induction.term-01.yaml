@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.induction.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Assuming that `P(k)` is true in the inductive step is called the inductive ___ ."
+choices:
+  - "hypothesis"
+  - "counterexample"
+  - "codomain"
+acceptedAnswers:
+  - "hypothesis"
+explanation:
+  - type: text
+    text: "The inductive hypothesis is a temporary condition used to derive `P(k + 1)`."
+  - type: text
+    text: "Use the assumed `P(k)` in the calculation for the next step."
+tags:
+  - discrete-math
+  - proof
+  - inductive-hypothesis
+difficulty: 1

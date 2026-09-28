@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: net.ethernet.fill-03
+revision: 2
+type: fill-blank
+prompt:
+- type: text
+  text: For a packet sent to another network, the destination MAC address in the first frame is usually the MAC address of
+    the ___.
+choices:
+- gateway
+- final server
+- sending application
+acceptedAnswers:
+- gateway
+explanation:
+- type: text
+  text: When sending to a printer on the same LAN, the IP packet is placed in an Ethernet frame whose destination MAC address
+    is the printer interface’s MAC. When sending to a server on another network, the IP destination remains the server, but
+    the first frame’s destination MAC address belongs to the gateway, the next hop. A new frame is created at each link.
+tags:
+- ethernet
+- mac
+- link-layer
+difficulty: 1

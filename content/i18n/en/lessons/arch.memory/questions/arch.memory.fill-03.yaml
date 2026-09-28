@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.memory.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "When power is removed, the contents stored in SRAM and DRAM ___."
+choices:
+  - "are lost"
+  - "are retained"
+  - "are stored permanently"
+acceptedAnswers:
+  - "are lost"
+explanation:
+  - type: text
+    text: "Both SRAM and DRAM are volatile memories that need power to maintain their state."
+tags: [memory, sram, dram]
+difficulty: 2

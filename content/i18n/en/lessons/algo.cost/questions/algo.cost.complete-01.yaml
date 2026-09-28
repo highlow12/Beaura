@@ -1,0 +1,24 @@
+id: algo.cost.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the blank in range so the loop runs once per input item, n times."
+language: python
+template: "for _ in range({{blank:size}}):\n    work()"
+blanks:
+- id: size
+  choices:
+  - n
+  - n * n
+  - '1'
+  acceptedAnswers:
+  - n
+explanation:
+- type: text
+  text: "range(n) yields n values from 0 through n − 1, so the work is repeated in proportion to the input size."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- cost
+difficulty: 2

@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: pl.syntax-semantics.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: Trace the computation performed by this syntactically valid arithmetic expression. What does it print?
+language: python
+code: |-
+  x = 2
+  y = x + 3
+  print(y)
+choices:
+  - "5"
+  - "2"
+  - "6"
+acceptedOutputs:
+  - "5"
+explanation:
+  - type: text
+    text: x is bound to 2, and x + 3 evaluates to 5 and is stored in y, so the program prints 5.
+tags:
+  - programming-languages
+  - semantics
+  - trace
+difficulty: 1

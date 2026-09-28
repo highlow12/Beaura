@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: algo.insertion-sort
+revision: 1
+track: algorithms
+title: Insertion Sort
+description: Learn the invariant and process behind insertion sort, which inserts each next element into the sorted prefix.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: algo.insertion-sort.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: algo.insertion-sort.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: algo.insertion-sort.complete-01
+- type: question
+  ref: algo.insertion-sort.steps-01
+- type: question
+  ref: algo.insertion-sort.match-01

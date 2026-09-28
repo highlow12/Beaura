@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: py.conditionals.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  score = 45
+  if score >= 60:
+      print("pass")
+  else:
+      print("retry")
+choices:
+  - retry
+  - pass
+  - "45"
+acceptedOutputs:
+  - retry
+explanation:
+  - type: text
+    text: "Since 45 is not at least 60, the `else` block runs instead of the `if` block."
+tags: [conditionals, code-output]
+difficulty: 2

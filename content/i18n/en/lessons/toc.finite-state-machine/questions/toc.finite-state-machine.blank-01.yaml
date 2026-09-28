@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: toc.finite-state-machine.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: What is the rule that uses the current state and input symbol to move to the next state called?
+choices:
+  - transition
+  - alphabet
+  - String
+acceptedAnswers:
+  - transition
+explanation:
+  - type: text
+    text: A transition is a rule that connects the current state and input to the next state.
+tags:
+  - theory-of-computation
+  - transition
+difficulty: 1

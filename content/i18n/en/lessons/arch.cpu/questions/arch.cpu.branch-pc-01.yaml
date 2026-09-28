@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: arch.cpu.branch-pc-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "When a conditional branch is taken, what should the program counter (PC) usually point to?"
+options:
+  - id: branch-target
+    content:
+      - type: text
+        text: "The address of the branch target instruction"
+  - id: current-instruction
+    content:
+      - type: text
+        text: "Keep pointing to the instruction that just executed"
+  - id: data-value
+    content:
+      - type: text
+        text: "A general data value calculated by the ALU"
+correctOptionId: branch-target
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "When a branch is taken, the PC is updated so that the next fetch starts at the branch target."
+tags:
+  - cpu
+  - program-counter
+  - branch
+difficulty: 1

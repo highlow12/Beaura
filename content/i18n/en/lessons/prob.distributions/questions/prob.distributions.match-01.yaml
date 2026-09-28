@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.distributions.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each distribution with its use."
+leftItems:
+  - id: bernoulli
+    content:
+      - type: text
+        text: "Bernoulli"
+  - id: binomial
+    content:
+      - type: text
+        text: "Binomial"
+  - id: normal
+    content:
+      - type: text
+        text: "Normal"
+  - id: sigma
+    content:
+      - type: text
+        text: "σ"
+rightItems:
+  - id: bernoulli-desc
+    content:
+      - type: text
+        text: "The outcome of one success-or-failure trial"
+  - id: binomial-desc
+    content:
+      - type: text
+        text: "The number of successes in repeated trials"
+  - id: normal-desc
+    content:
+      - type: text
+        text: "A bell-shaped distribution of continuous values"
+  - id: sigma-desc
+    content:
+      - type: text
+        text: "The standard deviation that describes the spread of a normal distribution"
+correctPairs:
+  - leftId: bernoulli
+    rightId: bernoulli-desc
+  - leftId: binomial
+    rightId: binomial-desc
+  - leftId: normal
+    rightId: normal-desc
+  - leftId: sigma
+    rightId: sigma-desc
+explanation:
+  - type: text
+    text: "The appropriate distribution model depends on the number of trials and whether values are continuous."
+  - type: text
+    text: "Before memorizing distribution names, check the structure of the observations and the independence assumption."
+tags:
+  - probability-statistics
+  - distributions
+  - comparison
+difficulty: 2

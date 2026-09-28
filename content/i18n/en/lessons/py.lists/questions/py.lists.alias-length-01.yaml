@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: py.lists.alias-length-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following Python code."
+language: python
+code: |-
+  first = [1, 2]
+  second = first
+  second.append(3)
+  print(len(first))
+choices:
+  - '3'
+  - '2'
+  - '1'
+acceptedOutputs:
+  - '3'
+explanation:
+  - type: text
+    text: "second and first refer to the same list. Adding an item through second also changes the list seen through first."
+tags:
+  - lists
+  - aliasing
+  - mutation
+difficulty: 2

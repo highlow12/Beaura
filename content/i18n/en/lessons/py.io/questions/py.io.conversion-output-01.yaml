@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: py.io.conversion-output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the following code."
+language: python
+code: |-
+  age = int("20")
+  print(age + 1)
+choices:
+  - "21"
+  - "201"
+  - "20"
+acceptedOutputs:
+  - "21"
+explanation:
+  - type: text
+    text: "`int(\"20\")` converts the string 20 into the integer 20. Integer addition then adds 1, producing 21."
+tags:
+  - io
+  - int
+  - code-output
+difficulty: 2

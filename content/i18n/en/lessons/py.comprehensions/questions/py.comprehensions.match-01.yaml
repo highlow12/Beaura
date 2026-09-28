@@ -1,0 +1,47 @@
+id: py.comprehensions.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each part of a comprehension with its role."
+leftItems:
+- id: expression
+  content:
+  - type: text
+    text: x * 2
+- id: loop
+  content:
+  - type: text
+    text: for x in values
+- id: condition
+  content:
+  - type: text
+    text: if x > 0
+rightItems:
+- id: output
+  content:
+  - type: text
+    text: "The value to add to the result list"
+- id: iterate
+  content:
+  - type: text
+    text: "Iterates over the source items"
+- id: filter
+  content:
+  - type: text
+    text: "Allows only items that satisfy the condition"
+correctPairs:
+- leftId: expression
+  rightId: output
+- leftId: loop
+  rightId: iterate
+- leftId: condition
+  rightId: filter
+explanation:
+- type: text
+  text: "The leading expression transforms values, the `for` clause iterates, and the optional `if` clause filters."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- comprehension
+difficulty: 2

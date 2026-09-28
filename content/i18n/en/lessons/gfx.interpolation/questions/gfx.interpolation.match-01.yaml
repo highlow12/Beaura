@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.interpolation.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each interpolation concept with its description."
+leftItems:
+  - id: barycentric
+    content:
+      - type: text
+        text: "Barycentric coordinates"
+  - id: vertex-value
+    content:
+      - type: text
+        text: "Vertex attribute"
+  - id: perspective-correct
+    content:
+      - type: text
+        text: "Perspective-correct interpolation"
+rightItems:
+  - id: weights
+    content:
+      - type: text
+        text: "Represents an interior point using weights for three vertices"
+  - id: uv-color
+    content:
+      - type: text
+        text: "A value attached to a vertex, such as color, UV, or a normal"
+  - id: divide-w
+    content:
+      - type: text
+        text: "Interpolates attributes while accounting for distortion caused by depth"
+correctPairs:
+  - leftId: barycentric
+    rightId: weights
+  - leftId: vertex-value
+    rightId: uv-color
+  - leftId: perspective-correct
+    rightId: divide-w
+explanation:
+  - type: text
+    text: "Barycentric coordinates provide weights that carry vertex attributes to a fragment position. Perspective projection may require correction that accounts for w."
+tags: [graphics, interpolation]
+difficulty: 2

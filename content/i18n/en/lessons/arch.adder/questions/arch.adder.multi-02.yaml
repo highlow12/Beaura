@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.adder.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe adders and addition in the ALU."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Connecting several full adders lets the circuit add multiple bits at once."
+  - id: correct-b
+    content:
+      - type: text
+        text: "The delay of a ripple-carry adder depends on the number of bits through which the carry propagates."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A full adder outputs only the sum and discards the carry."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "An adder uses carry-in only at the most significant bit."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Connecting several full adders lets the circuit add multiple bits at once. The delay of a ripple-carry adder depends on the number of bits through which the carry propagates."
+  - type: text
+    text: "A simple ripple-carry adder uses fewer circuits, but it is slow because the carry must pass through every bit. Faster adders use more circuitry to calculate carries in advance and reduce delay."
+tags: [adder, carry, alu]
+difficulty: 3

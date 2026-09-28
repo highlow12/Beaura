@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: algo.prim.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the vertex reached after selecting the lightest boundary edge from start vertex A once."
+language: python
+code: |-
+  edges = [("A", "B", 4), ("A", "C", 2)]
+  chosen = min(edges, key=lambda edge: edge[2])
+  print(chosen[1])
+choices:
+- C
+- B
+- A
+acceptedOutputs:
+- C
+explanation:
+- type: text
+  text: "Of the edges leaving A, A–C has weight 2 and A–B has weight 4, so C is added first."
+tags:
+- graph
+- mst
+- prim
+- code-output
+difficulty: 2

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: pl.semantic-analysis.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: If a name is not found in the current scope, a semantic analyzer usually searches by moving ___ to the parent scope.
+choices:
+  - upward
+  - downward
+  - ignoring it
+acceptedAnswers:
+  - upward
+explanation:
+  - type: text
+    text: Name lookup moves outward along the lexical environment chain and reports an undefined-name error only if the name is absent from the global scope too.
+tags:
+  - programming-languages
+  - semantic-analysis
+  - scope
+difficulty: 1

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: ds.graph
+revision: 3
+track: data-structures
+title: Graphs
+description: Understand graphs, which represent relationships and connections using vertices and edges.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: ds.graph.terms-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: ds.graph.directed-01
+- type: question
+  ref: ds.graph.neighbor-output-01
+- type: content
+  ref: content/degree.md
+- type: question
+  ref: ds.graph.degree-01
+- type: question
+  ref: ds.graph.out-degree-01

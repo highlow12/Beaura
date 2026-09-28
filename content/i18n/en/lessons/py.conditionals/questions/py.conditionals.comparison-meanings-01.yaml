@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: py.conditionals.comparison-meanings-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each comparison with its meaning."
+leftItems:
+  - id: score-at-least
+    content:
+      - type: code
+        language: python
+        code: score >= 60
+  - id: score-equals
+    content:
+      - type: code
+        language: python
+        code: score == 60
+  - id: score-below
+    content:
+      - type: code
+        language: python
+        code: score < 60
+rightItems:
+  - id: at-least
+    content:
+      - type: text
+        text: "score is at least 60."
+  - id: exactly
+    content:
+      - type: text
+        text: "score equals 60."
+  - id: below
+    content:
+      - type: text
+        text: "score is less than 60."
+correctPairs:
+  - leftId: score-at-least
+    rightId: at-least
+  - leftId: score-equals
+    rightId: exactly
+  - leftId: score-below
+    rightId: below
+explanation:
+  - type: text
+    text: "`>=` means “greater than or equal to,” `==` means “equal to,” and `<` means “less than.”"
+tags: [conditionals, comparison]
+difficulty: 2

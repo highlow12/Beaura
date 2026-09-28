@@ -1,0 +1,47 @@
+id: ds.adt.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each ADT-related term with its meaning."
+leftItems:
+- id: adt
+  content:
+  - type: text
+    text: "ADT"
+- id: interface
+  content:
+  - type: text
+    text: "Interface"
+- id: implementation
+  content:
+  - type: text
+    text: "Implementation"
+rightItems:
+- id: contract
+  content:
+  - type: text
+    text: "Abstract rules for the behavior to provide"
+- id: visible
+  content:
+  - type: text
+    text: "The operations available to a caller"
+- id: inside
+  content:
+  - type: text
+    text: "Internal code and storage that satisfy the rules"
+correctPairs:
+- leftId: adt
+  rightId: contract
+- leftId: interface
+  rightId: visible
+- leftId: implementation
+  rightId: inside
+explanation:
+- type: text
+  text: "An ADT is a behavior contract, and the interface is the surface through which it is called. The implementation handles actual storage and processing internally."
+schemaVersion: 1
+revision: 1
+tags:
+- adt
+- interface
+difficulty: 2

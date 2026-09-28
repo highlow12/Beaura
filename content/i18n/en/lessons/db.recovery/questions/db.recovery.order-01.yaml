@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: db.recovery.order-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the log-processing steps for a DBMS using WAL before it reports a successful commit."
+items:
+  - id: log
+    content:
+      - type: text
+        text: "Record the change in the log"
+  - id: flush
+    content:
+      - type: text
+        text: "Write the change and commit log to stable storage"
+  - id: commit-log
+    content:
+      - type: text
+        text: "Record the commit in the log"
+  - id: ack
+    content:
+      - type: text
+        text: "Report success to the client"
+correctOrder: [log, commit-log, flush, ack]
+explanation:
+  - type: text
+    text: "Record the change and commit in the log, write the log to stable storage, then report success. The data page can be written to disk after the success response because WAL enables recovery, so it is not part of this ordering question."
+tags: [database, recovery, wal, order]
+difficulty: 3

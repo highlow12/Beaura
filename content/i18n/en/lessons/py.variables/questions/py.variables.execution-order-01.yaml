@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: py.variables.execution-order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put in order the steps performed by the assignment statement \"score = score + 1\"."
+items:
+  - id: read
+    content:
+      - type: text
+        text: "Read the current value of score and add 1."
+  - id: assign
+    content:
+      - type: text
+        text: "Assign the result back to score."
+  - id: next
+    content:
+      - type: text
+        text: "Use the updated score in the next statement."
+correctOrder:
+  - read
+  - assign
+  - next
+explanation:
+  - type: text
+    text: "An assignment statement first evaluates the expression on the right, stores the result in the name on the left, and then moves to the next statement."
+tags:
+  - variables
+  - assignment
+  - execution-order
+difficulty: 2

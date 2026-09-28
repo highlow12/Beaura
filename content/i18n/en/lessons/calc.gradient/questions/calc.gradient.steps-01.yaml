@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: calc.gradient.steps-01
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for one iteration of gradient descent."
+items:
+  - id: gradient
+    content:
+      - type: text
+        text: "Calculate ∇f at the current point"
+  - id: negative
+    content:
+      - type: text
+        text: "Choose the direction opposite the gradient"
+  - id: rate
+    content:
+      - type: text
+        text: "Multiply by the learning rate"
+  - id: update
+    content:
+      - type: text
+        text: "Update the current point"
+correctOrder:
+  - gradient
+  - negative
+  - rate
+  - update
+explanation:
+  - type: text
+    text: "Choose a decreasing direction, then move by an amount set by the learning rate. A sufficiently small learning rate may produce a local decrease, but a large one can increase the actual function value."
+  - type: text
+    text: "The learning rate controls the step size rather than changing the direction."
+tags:
+  - calculus
+  - gradient
+  - optimization
+difficulty: 2

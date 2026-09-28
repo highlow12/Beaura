@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.cross-product.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about the properties of the cross product."
+options:
+  - id: anti
+    content:
+      - type: text
+        text: "u × v = −(v × u)"
+  - id: parallel-zero
+    content:
+      - type: text
+        text: "The cross product of two parallel vectors is the zero vector"
+  - id: area
+    content:
+      - type: text
+        text: "Its magnitude equals the area of the parallelogram"
+  - id: commute
+    content:
+      - type: text
+        text: "The result stays the same when the order is reversed"
+correctOptionIds: [anti, parallel-zero, area]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The cross product is anti-commutative. Parallel vectors have an angle of 0 or π, so the magnitude is 0."
+  - type: text
+    text: "Reversing the order flips the normal's direction."
+tags:
+  - linear-algebra
+  - cross-product
+  - properties
+difficulty: 2

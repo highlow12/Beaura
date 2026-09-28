@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: se.cicd.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: Match each CI/CD pipeline term with its role.
+leftItems:
+- id: ci
+  content:
+  - type: text
+    text: CI
+- id: artifact
+  content:
+  - type: text
+    text: Artifact
+- id: gate
+  content:
+  - type: text
+    text: Approval gate
+rightItems:
+- id: validate-change
+  content:
+  - type: text
+    text: A workflow that frequently integrates changes and validates them with builds and tests
+- id: tested-package
+  content:
+  - type: text
+    text: A deployable result built from validated source code
+- id: deliberate-stop
+  content:
+  - type: text
+    text: A point that requires human or policy approval before proceeding with a risky step
+correctPairs:
+- leftId: ci
+  rightId: validate-change
+- leftId: artifact
+  rightId: tested-package
+- leftId: gate
+  rightId: deliberate-stop
+explanation:
+- type: text
+  text: CI validates changes, artifacts preserve the validated result, and gates control risks that automation alone cannot decide.
+tags:
+- software-engineering
+- cicd
+- pipeline
+difficulty: 2

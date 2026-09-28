@@ -1,0 +1,33 @@
+id: py.dictionaries.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What is the main purpose of a dictionary?"
+options:
+- id: map
+  content:
+  - type: text
+    text: "Finding the associated value using a key"
+- id: index
+  content:
+  - type: text
+    text: "Finding values only with numeric indexes"
+- id: unique
+  content:
+  - type: text
+    text: "Automatically removing all duplicates without preserving order"
+- id: stack
+  content:
+  - type: text
+    text: "Removing the most recently added value first"
+correctOptionId: map
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A dictionary associates keys with values and looks up values by key. Looking up by numeric position is a feature of lists."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- dictionary
+difficulty: 2

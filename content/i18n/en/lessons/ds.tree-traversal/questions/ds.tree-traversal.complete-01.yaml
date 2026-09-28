@@ -1,0 +1,26 @@
+id: ds.tree-traversal.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the child visited after the current node in preorder traversal."
+language: python
+template: 'visit(node)
+
+  visit(node["{{blank:child}}"])'
+blanks:
+- id: child
+  choices:
+  - left
+  - value
+  - parent
+  acceptedAnswers:
+  - left
+explanation:
+- type: text
+  text: "Preorder visits the current node, then moves down into the left subtree. value is data, and parent is not present in this representation."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- traversal
+difficulty: 2

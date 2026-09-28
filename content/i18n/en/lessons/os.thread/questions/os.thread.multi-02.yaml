@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.thread.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to threads and concurrency."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Access to a shared heap by multiple threads may require synchronization."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Threads can create multiple execution flows without duplicating the entire process."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Threads always run sequentially, so their execution order is fixed."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Adding more threads always makes a program faster, regardless of the number of cores."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Access to a shared heap by multiple threads may require synchronization. Threads can create multiple execution flows without duplicating the entire process."
+  - type: text
+    text: "Threads are cheaper to create and communicate than processes, but shared memory makes bugs more complex. Adding far more threads than cores can reduce performance due to context switching and contention."
+tags: [thread, concurrency, shared-memory]
+difficulty: 3

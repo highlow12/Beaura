@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.transforms
+revision: 2
+track: computer-graphics
+title: "Geometric Transforms"
+description: "Learn how translation, rotation, scaling, and the order of composed transforms affect objects."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.transforms.types-01
+  - type: question
+    ref: gfx.transforms.order-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/composition.md
+  - type: question
+    ref: gfx.transforms.output-01
+  - type: question
+    ref: gfx.transforms.complete-01
+  - type: question
+    ref: gfx.transforms.effects-01

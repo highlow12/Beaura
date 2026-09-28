@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.allocation.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about the stack, heap, and memory allocation is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "The stack manages call-lifetime data automatically, while the heap allocates and frees data with dynamic lifetimes."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "All heap data is automatically deleted as soon as a function returns."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "There is no need to distinguish the stack and heap because they use the same allocation rules."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The stack manages call-lifetime data automatically, while the heap allocates and frees data with dynamic lifetimes."
+  - type: text
+    text: "The stack automatically manages call frames in last-in, first-out order. The heap stores objects with varied lifetimes that are allocated and freed while the program runs. The allocator manages the list of free blocks."
+tags: [memory-allocation, stack, heap]
+difficulty: 2

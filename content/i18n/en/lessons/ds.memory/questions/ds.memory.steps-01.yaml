@@ -1,0 +1,37 @@
+id: ds.memory.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps showing how references observe a shared object."
+items:
+- id: allocate
+  content:
+  - type: text
+    text: "Create a list object in memory"
+- id: bind
+  content:
+  - type: text
+    text: "Connect the first name to the object"
+- id: alias
+  content:
+  - type: text
+    text: "Connect the second name to the same object"
+- id: mutate
+  content:
+  - type: text
+    text: "Modify the object through one name and check it through the other"
+correctOrder:
+- allocate
+- bind
+- alias
+- mutate
+explanation:
+- type: text
+  text: "Creating one object and connecting multiple names to it creates aliases. A change through one name is visible through other names that refer to the same object."
+schemaVersion: 1
+revision: 1
+tags:
+- memory
+- representation
+- reference
+difficulty: 2

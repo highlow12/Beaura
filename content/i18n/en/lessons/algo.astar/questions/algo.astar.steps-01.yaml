@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.astar.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Put the basic A* search steps in order."
+items:
+- id: initialize
+  content:
+  - type: text
+    text: "Set the start vertex g to 0 and add it to the open set"
+- id: choose
+  content:
+  - type: text
+    text: "Remove the candidate with the smallest f"
+- id: goal
+  content:
+  - type: text
+    text: "Check whether it is the goal; if not, examine its neighbors"
+- id: relax
+  content:
+  - type: text
+    text: "Update neighbors with a better g and add them to the open set"
+correctOrder:
+- initialize
+- choose
+- goal
+- relax
+explanation:
+- type: text
+  text: "A* repeatedly removes the candidate with the smallest f from the priority queue and relaxes any better paths to its neighbors."
+tags:
+- shortest-path
+- astar
+- execution-order
+difficulty: 2

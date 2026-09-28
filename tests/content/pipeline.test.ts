@@ -10,6 +10,18 @@ import {
 const CONTENT_TEST_TIMEOUT = 15_000;
 
 describe("content pipeline", () => {
+  it("keeps English lesson and question identities while translating visible text", async () => {
+    const [korean, english] = await Promise.all([
+      loadSourceContent(process.cwd()),
+      loadSourceContent(process.cwd(), "en"),
+    ]);
+    expect(getValidationErrors(english)).toEqual([]);
+    const source = compileContent(korean);
+    const localized = compileContent(english);
+    expect([...localized.lessons.keys()]).toEqual([...source.lessons.keys()]);
+    expect([...localized.questions.keys()]).toEqual([...source.questions.keys()]);
+    expect(localized.curriculum.tracks[0].title).not.toBe(source.curriculum.tracks[0].title);
+  }, CONTENT_TEST_TIMEOUT);
   it("validates the repository content", async () => {
     const bundle = await loadSourceContent(process.cwd());
 

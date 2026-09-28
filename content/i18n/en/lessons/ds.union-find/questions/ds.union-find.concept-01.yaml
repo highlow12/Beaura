@@ -1,0 +1,33 @@
+id: ds.union-find.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What does the find operation in union-find return?"
+options:
+- id: root
+  content:
+  - type: text
+    text: "The representative of the set containing the element"
+- id: next
+  content:
+  - type: text
+    text: "One next neighbor in the graph"
+- id: minimum
+  content:
+  - type: text
+    text: "The minimum value across all sets"
+- id: index
+  content:
+  - type: text
+    text: "The last position in the array"
+correctOptionId: root
+shuffleOptions: true
+explanation:
+- type: text
+  text: "find follows parent links to locate the representative of the set containing an element. If two representatives are equal, the elements belong to the same set."
+schemaVersion: 1
+revision: 1
+tags:
+- disjoint-set
+- union-find
+difficulty: 2

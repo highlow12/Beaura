@@ -7,6 +7,11 @@
     type Dashboard,
   } from "$lib/application/dashboard";
   import StudyCalendar from "$lib/components/StudyCalendar.svelte";
+  import { locale, t } from "$lib/application/locale";
+  const tr = (korean: string, english: string) => t(korean, english, $locale);
+  const countText = (count: number, singular: string, plural: string, koreanUnit: string) =>
+    $locale === "en" ? `${count} ${count === 1 ? singular : plural}` : `${count}${koreanUnit}`;
+  const dayCount = (count: number) => countText(count, "day", "days", "일");
   let data = $state<Dashboard | null>(null);
   let error = $state("");
   async function load() {
@@ -22,40 +27,40 @@
   });
 </script>
 
-<svelte:head><title>나의 학습 기록 | Beaura</title></svelte:head>
+<svelte:head><title>{tr("나의 학습 기록", "My learning history")} | Beaura</title></svelte:head>
 <div class="stack">
   <div class="page-heading">
-    <span class="page-kicker">진행도 / 이 기기의 기록</span>
-    <h1>나의 진행도</h1>
-    <p class="muted">작은 학습이 쌓인 기록을 한눈에 확인해요.</p>
+    <span class="page-kicker">{tr("진행도 / 이 기기의 기록", "PROGRESS / ON THIS DEVICE")}</span>
+    <h1>{tr("나의 진행도", "My progress")}</h1>
+    <p class="muted">{tr("작은 학습이 쌓인 기록을 한눈에 확인해요.", "See how your small learning sessions add up over time.")}</p>
   </div>
   {#if error}<div class="card error" role="alert">
-      {error}<button class="button secondary" onclick={load}>다시 시도</button>
+      {error}<button class="button secondary" onclick={load}>{tr("다시 시도", "Try again")}</button>
     </div>
   {:else if !data}<p class="card" role="status">
-      학습 기록을 불러오는 중입니다…
+      {tr("학습 기록을 불러오는 중입니다…", "Loading your learning data…")}
     </p>
   {:else}
     <StudyCalendar studyDates={data.snapshot.studyDates} />
     <div class="stats-grid">
       <div class="stat">
-        <span>누적 경험치</span><strong
+        <span>{tr("누적 경험치", "Total XP")}</span><strong
           >{data.snapshot.game.xp}<small>XP</small></strong
         >
       </div>
       <div class="stat">
-        <span>연속 학습</span><strong
-          >{data.snapshot.game.streak}<small>일</small></strong
+        <span>{tr("연속 학습", "Current streak")}</span><strong
+          >{dayCount(data.snapshot.game.streak)}</strong
         >
       </div>
       <div class="stat">
-        <span>최장 연속 학습</span><strong
-          >{data.snapshot.game.longestStreak}<small>일</small></strong
+        <span>{tr("최장 연속 학습", "Longest streak")}</span><strong
+          >{dayCount(data.snapshot.game.longestStreak)}</strong
         >
       </div>
     </div>
     <section class="card stack progress-section">
-      <h2>트랙별 학습</h2>
+      <h2>{tr("트랙별 학습", "Progress by track")}</h2>
       {#each [...data.curriculum.tracks].sort((a, b) => a.order - b.order) as track}
         {@const lessons = data.lessons.filter((l) => l.track === track.id)}
         {@const completed = lessons.filter((l) =>
@@ -69,33 +74,38 @@
                 >{completed} / {lessons.length}</span
               >
             </div>
-            <progress
+              <progress
               value={completed}
               max={lessons.length}
-              aria-label={`${track.title} 진행도`}
+              aria-label={`${track.title} ${tr("진행도", "progress")}`}
             ></progress>
           </div>{/if}
       {/each}
     </section>
     <section class="card progress-section">
       <div class="row">
-        <h2>복습 기록</h2>
-        <a class="text-link" href={`${base}/review`}>복습하러 가기</a>
+        <h2>{tr("복습 기록", "Review history")}</h2>
+        <a class="text-link" href={`${base}/review`}>{tr("복습하러 가기", "Start reviewing")}</a>
       </div>
       <p>
-        학습한 문제 <strong>{data.snapshot.questionStates.length}개</strong> ·
-        지금 복습할 문제 <strong>{data.queue.length}개</strong>
+        {#if $locale === "en"}
+          <strong>{countText(data.snapshot.questionStates.length, "question", "questions", "개")}</strong> studied ·
+          <strong>{countText(data.queue.length, "question", "questions", "개")}</strong> due for review
+        {:else}
+          학습한 문제 <strong>{countText(data.snapshot.questionStates.length, "question", "questions", "개")}</strong> ·
+          지금 복습할 문제 <strong>{countText(data.queue.length, "question", "questions", "개")}</strong>
+        {/if}
       </p>
       <p class="muted">
-        첫 시도에서 틀린 문제는 재시도에서 맞혀도 다시 배울 문제로 기록합니다.
+        {tr("첫 시도에서 틀린 문제는 재시도에서 맞혀도 다시 배울 문제로 기록합니다.", "A question missed on the first try is still scheduled for review, even if you get it right on a retry.")}
       </p>
     </section>
     <section class="card progress-section">
-      <h2>최근 학습한 레슨</h2>
+      <h2>{tr("최근 학습한 레슨", "Recently studied lessons")}</h2>
       {#if !data.snapshot.lessonStates.length}<p class="muted">
-          아직 학습 기록이 없어요. 첫 레슨을 시작해보세요.
+          {tr("아직 학습 기록이 없어요. 첫 레슨을 시작해보세요.", "No learning history yet. Start your first lesson.")}
         </p>
-        <a class="button" href={`${base}/learn`}>학습 시작</a>
+        <a class="button" href={`${base}/learn`}>{tr("학습 시작", "Start learning")}</a>
       {:else}<ul class="recent-list">
           {#each [...data.snapshot.lessonStates]
             .filter((s) => data!.lessons.some((l) => l.id === s.lessonId))
@@ -104,8 +114,8 @@
               <a class="text-link" href={`${base}/learn/${state.lessonId}`}
                 >{data.lessons.find((l) => l.id === state.lessonId)?.title}</a
               ><span class="muted"
-                >{state.status === "completed" ? "완료" : "학습 중"} · {state.lastStudiedAt
-                  ? new Date(state.lastStudiedAt).toLocaleDateString("ko-KR")
+                >{state.status === "completed" ? tr("완료", "Completed") : tr("학습 중", "In progress")} · {state.lastStudiedAt
+                  ? new Date(state.lastStudiedAt).toLocaleDateString($locale === "en" ? "en-US" : "ko-KR")
                   : "—"}</span
               >
             </li>{/each}

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: py.io.print-completion-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the function name for the blank to display the value 7."
+  - type: code
+    language: python
+    code: |-
+      ___(7)
+choices:
+  - print
+  - input
+  - int
+acceptedAnswers:
+  - print
+explanation:
+  - type: text
+    text: "Use `print()` to display a value. `input()` receives user input, and `int()` converts a value to an integer."
+tags:
+  - io
+  - print
+difficulty: 1

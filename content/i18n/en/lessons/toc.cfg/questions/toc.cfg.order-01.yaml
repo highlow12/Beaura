@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: toc.cfg.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the derivation of the string aabb using `S → aSb | ε` in the correct order."
+items:
+  - id: outer
+    content:
+      - type: text
+        text: S ⇒ aSb
+  - id: inner
+    content:
+      - type: text
+        text: aSb ⇒ aaSbb
+  - id: epsilon
+    content:
+      - type: text
+        text: aaSbb ⇒ aabb
+correctOrder:
+  - outer
+  - inner
+  - epsilon
+explanation:
+  - type: text
+    text: Applying the recursive rule twice produces two `a`s and two `b`s; replacing S with ε at the end completes the derivation.
+tags:
+  - theory-of-computation
+  - cfg
+  - derivation
+difficulty: 2

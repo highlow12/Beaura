@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: se.refactoring
+revision: 1
+track: software-engineering
+title: Refactoring
+description: Practice improving internal structure while preserving externally observable behavior.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: se.refactoring.concept-01
+- type: content
+  ref: content/model.md
+- type: question
+  ref: se.refactoring.match-01
+- type: question
+  ref: se.refactoring.blank-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: se.refactoring.order-01
+- type: question
+  ref: se.refactoring.trace-01

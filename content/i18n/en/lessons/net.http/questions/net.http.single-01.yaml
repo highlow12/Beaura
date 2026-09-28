@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.http.single-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which statement about HTTP requests and responses is most accurate?
+options:
+- id: correct
+  content:
+  - type: text
+    text: HTTP defines the meaning of methods, status codes, headers, and bodies in request and response messages.
+- id: wrong-a
+  content:
+  - type: text
+    text: HTTP status code 404 always means that the server successfully saved the request.
+- id: wrong-b
+  content:
+  - type: text
+    text: HTTP exchanges only DNS records and does not handle web resource bodies.
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+- type: text
+  text: HTTP defines the meaning of methods, status codes, headers, and bodies in request and response messages.
+- type: text
+  text: HTTP is a request-response protocol. A request contains a method, target path, headers, and optional body; a response
+    contains a status code, headers, and body.
+tags:
+- http
+- web
+- request-response
+difficulty: 1

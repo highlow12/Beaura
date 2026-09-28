@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.integrals
+revision: 3
+track: calculus
+title: "Understanding Integrals"
+description: "Understand integration as the accumulation of small contributions and as the inverse operation of differentiation."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: calc.integrals.definition-01
+  - type: question
+    ref: calc.integrals.application-01
+  - type: content
+    ref: content/connection.md
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: calc.integrals.term-01
+  - type: question
+    ref: calc.integrals.steps-01
+  - type: question
+    ref: calc.integrals.match-01

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.randomized-hashing
+revision: 3
+track: probability-statistics
+title: "Randomized Algorithms and Hashing Probability"
+description: "Build an intuition for the expected performance of randomized choices and the probability of hash collisions."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: prob.randomized-hashing.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: prob.randomized-hashing.application-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: prob.randomized-hashing.term-01
+  - type: question
+    ref: prob.randomized-hashing.steps-01
+  - type: question
+    ref: prob.randomized-hashing.match-01

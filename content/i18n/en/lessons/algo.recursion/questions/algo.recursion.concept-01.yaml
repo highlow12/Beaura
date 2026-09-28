@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: algo.recursion.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Why does a recursive function need a base case?"
+options:
+- id: stop
+  content:
+  - type: text
+    text: "To stop recursion without calling itself again"
+- id: repeat
+  content:
+  - type: text
+    text: "To increase the number of calls indefinitely"
+- id: sort
+  content:
+  - type: text
+    text: "To sort the input automatically"
+correctOptionId: stop
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A base case lets a call with a smaller input eventually return a result directly, ending the recursion."
+tags:
+- recursion
+- base-case
+difficulty: 1

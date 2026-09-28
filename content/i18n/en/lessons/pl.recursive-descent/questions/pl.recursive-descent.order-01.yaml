@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: pl.recursive-descent.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the call flow of a recursive-descent parser processing 2 + 3.
+items:
+  - id: expression
+    content:
+      - type: text
+        text: Call parseExpression.
+  - id: term
+    content:
+      - type: text
+        text: Call parseTerm to read the first number, 2.
+  - id: plus
+    content:
+      - type: text
+        text: Check and consume the + token.
+  - id: second-term
+    content:
+      - type: text
+        text: Call parseTerm to read the second number, 3.
+correctOrder:
+  - expression
+  - term
+  - plus
+  - second-term
+explanation:
+  - type: text
+    text: The outer expression reads a term, consumes the operator, then reads the next term and builds an addition AST.
+tags:
+  - programming-languages
+  - recursive-descent
+  - parsing
+difficulty: 2

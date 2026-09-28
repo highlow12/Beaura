@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: net.nat.properties-01
+revision: 1
+type: multi-select
+prompt:
+- type: text
+  text: Select all correct statements about NAT.
+options:
+- id: private-not-routed
+  content:
+  - type: text
+    text: Private IPv4 addresses are not routed directly over the public internet.
+- id: table
+  content:
+  - type: text
+    text: The router remembers the translation mapping so it can send responses back to the right device.
+- id: firewall
+  content:
+  - type: text
+    text: Using NAT always makes separate security policies unnecessary.
+- id: end-to-end
+  content:
+  - type: text
+    text: NAT can make connections initiated from outside to inside more complicated.
+correctOptionIds:
+- private-not-routed
+- table
+- end-to-end
+shuffleOptions: true
+explanation:
+- type: text
+  text: NAT handles address translation and mapping state. It does not fully replace firewall policies and can complicate
+    end-to-end connectivity.
+tags:
+- network
+- nat
+- private-address
+difficulty: 3

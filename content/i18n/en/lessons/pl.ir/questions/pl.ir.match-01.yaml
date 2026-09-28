@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.ir.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each IR concept with its role."
+leftItems:
+  - id: three-address
+    content:
+      - type: text
+        text: "Three-address code"
+  - id: ssa
+    content:
+      - type: text
+        text: "SSA"
+  - id: basic-block
+    content:
+      - type: text
+        text: "Basic block"
+rightItems:
+  - id: small-ops
+    content:
+      - type: text
+        text: "One instruction represents a small computation and one temporary value"
+  - id: one-definition
+    content:
+      - type: text
+        text: "Allows one assignment for each value name"
+  - id: straight-line
+    content:
+      - type: text
+        text: "A group of instructions with one entry and exit and no internal branch"
+correctPairs:
+  - leftId: three-address
+    rightId: small-ops
+  - leftId: ssa
+    rightId: one-definition
+  - leftId: basic-block
+    rightId: straight-line
+explanation:
+  - type: text
+    text: "IR makes definitions, uses, and branches explicit, supporting analyses such as constant propagation, reachability, and register allocation."
+tags:
+  - programming-languages
+  - ir
+  - ssa
+difficulty: 2

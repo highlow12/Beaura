@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: os.storage
+revision: 2
+track: operating-systems
+title: HDDs, SSDs, and Block Devices
+description: Explore how block devices and HDD/SSD access characteristics affect file systems and performance.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: os.storage.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: os.storage.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: os.storage.fill-03
+  - type: question
+    ref: os.storage.ordering-04
+  - type: question
+    ref: os.storage.matching-05

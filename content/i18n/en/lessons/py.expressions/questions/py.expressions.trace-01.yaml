@@ -1,0 +1,28 @@
+id: py.expressions.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following expression."
+language: python
+code: 'left = 2
+
+  right = 3
+
+  value = left + (right * 4)
+
+  print(value)'
+choices:
+- '14'
+- '20'
+- '24'
+acceptedOutputs:
+- '14'
+explanation:
+- type: text
+  text: "The multiplication expression `right * 4` evaluates to 12 first, then adding `left` gives 14."
+schemaVersion: 1
+revision: 2
+tags:
+- expressions
+- values
+difficulty: 2

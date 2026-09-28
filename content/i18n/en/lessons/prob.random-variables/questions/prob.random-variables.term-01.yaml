@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.random-variables.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "If X counts the number of heads in two coin flips, the greatest value X can take is ___."
+choices:
+  - "0"
+  - "1"
+  - "2"
+  - "4"
+acceptedAnswers:
+  - "2"
+explanation:
+  - type: text
+    text: "If both flips are heads, the number of heads is 2."
+  - type: text
+    text: "The possible values are 0, 1, and 2, each with an assigned probability."
+tags:
+  - probability-statistics
+  - random-variables
+  - count
+difficulty: 1

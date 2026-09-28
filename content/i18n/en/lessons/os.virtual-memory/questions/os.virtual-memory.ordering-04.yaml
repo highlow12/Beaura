@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.virtual-memory.ordering-04
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic virtual-memory steps in the correct order."
+items:
+  - id: split
+    content:
+      - type: text
+        text: "Split the virtual address into a page number and offset"
+  - id: lookup
+    content:
+      - type: text
+        text: "Look up the physical frame in the page table"
+  - id: fault
+    content:
+      - type: text
+        text: "Load and retry a valid page that is not in RAM; report an error for an invalid access"
+correctOrder: [split, lookup, fault]
+explanation:
+  - type: text
+    text: "First, split the virtual address into a page number and offset; then use the page table to look up the physical frame."
+  - type: text
+    text: "A missing valid page is handled differently from an invalid address or permission violation."
+tags: [virtual-memory, page, memory-protection]
+difficulty: 3

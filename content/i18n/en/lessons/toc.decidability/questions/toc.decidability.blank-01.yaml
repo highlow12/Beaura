@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.decidability.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: A decider must ___ on both yes and no inputs.
+choices:
+  - halt
+  - be randomized
+  - be slow
+acceptedAnswers:
+  - halt
+explanation:
+  - type: text
+    text: Decidability requires not only a correct answer but also a guarantee that the algorithm halts on every input.
+tags:
+  - theory-of-computation
+  - decidability
+  - halting
+difficulty: 1

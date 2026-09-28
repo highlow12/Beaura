@@ -1,0 +1,97 @@
+schemaVersion: 1
+tracks:
+  - id: python
+    revision: 1
+    title: Python Fundamentals
+    description: Data Structures 학습에 필요한 Python Fundamentals
+    order: 10
+
+  - id: computer-architecture
+    revision: 1
+    title: Computer Architecture
+    description: Understand how a computer executes programs.
+    order: 20
+
+  - id: discrete-math
+    revision: 1
+    title: Discrete Mathematics
+    description: Learn propositions and logic as the foundations of computer science.
+    order: 30
+
+  - id: data-structures
+    revision: 1
+    title: Data Structures
+    description: Fundamental structures for storing and manipulating data
+    order: 40
+
+  - id: algorithms
+    revision: 1
+    title: Algorithms
+    description: Fundamentals of search, sorting, traversal, and shortest paths
+    order: 45
+
+  - id: computer-systems
+    revision: 1
+    title: Computer Systems Applications
+    description: Learn foundational concepts of networks and graphics.
+    order: 50
+
+  - id: operating-systems
+    revision: 1
+    title: Operating Systems
+    description: 프로세스, 동시성, 메모리와 입출원을 관리하는 Operating Systems의 핵심 원리를 익힌다.
+    order: 55
+
+  - id: networks
+    revision: 2
+    title: Networks
+    description: 링크 계층부터 웹 보안까지 데이터가 Networks를 이동하는 원리를 익힌다.
+    order: 60
+
+  - id: linear-algebra
+    revision: 1
+    title: Linear Algebra
+    description: Build intuition for vectors, matrices, and coordinate transforms used in graphics and computing.
+    order: 70
+
+  - id: calculus
+    revision: 1
+    title: Calculus
+    description: Learn derivatives and integrals used in CS through rates of change and accumulation.
+    order: 75
+
+  - id: probability-statistics
+    revision: 1
+    title: Probability and Statistics
+    description: Learn to model uncertainty and interpret data distributions and summaries.
+    order: 80
+
+  - id: computer-graphics
+    revision: 2
+    title: Computer Graphics
+    description: Explore the graphics pipeline, from coordinate transforms to rasterization, shading, and ray tracing.
+    order: 90
+
+  - id: databases
+    revision: 1
+    title: Databases
+    description: Learn to manage data reliably with relational models, SQL, indexes, and transactions.
+    order: 95
+
+  - id: theory-of-computation
+    revision: 1
+    title: Theory of Computation
+    description: Explore what can be computed using formal languages and models of computation.
+    order: 100
+
+  - id: programming-languages
+    revision: 1
+    title: Programming Languages and Compilers
+    description: Learn how source code is analyzed and transformed into intermediate representations and executable code.
+    order: 110
+
+  - id: software-engineering
+    revision: 1
+    title: Software Engineering
+    description: Learn how to design, test, operate, and safely evolve large software systems.
+    order: 120

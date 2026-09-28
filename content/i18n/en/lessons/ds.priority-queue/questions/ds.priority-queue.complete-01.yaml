@@ -1,0 +1,24 @@
+id: ds.priority-queue.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the blank that removes the highest-priority item from the priority queue."
+language: python
+template: next_task = heapq.{{blank:operation}}(queue)
+blanks:
+- id: operation
+  choices:
+  - heappop
+  - heappush
+  - heapify
+  acceptedAnswers:
+  - heappop
+explanation:
+- type: text
+  text: "heappop removes the highest-priority item at the heap’s root. heappush adds a new task."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- priority-queue
+difficulty: 2

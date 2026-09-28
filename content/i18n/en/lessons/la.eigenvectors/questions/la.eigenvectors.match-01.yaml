@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: la.eigenvectors.match-01
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each eigenvalue concept with its expression."
+leftItems:
+  - id: eigenvector
+    content:
+      - type: text
+        text: "Eigenvector `v`"
+  - id: eigenvalue
+    content:
+      - type: text
+        text: "Eigenvalue `λ`"
+  - id: equation
+    content:
+      - type: text
+        text: "Av=λv"
+  - id: char
+    content:
+      - type: text
+        text: "det(A−λI)=0"
+rightItems:
+  - id: eigenvector-desc
+    content:
+      - type: text
+        text: "A nonzero vector whose transform is a scalar multiple of itself"
+  - id: eigenvalue-desc
+    content:
+      - type: text
+        text: "The scale factor applied to that eigenvector"
+  - id: equation-desc
+    content:
+      - type: text
+        text: "The equation that expresses the eigenvector relationship"
+  - id: char-desc
+    content:
+      - type: text
+        text: "The characteristic equation used to find eigenvalues"
+correctPairs:
+  - leftId: eigenvector
+    rightId: eigenvector-desc
+  - leftId: eigenvalue
+    rightId: eigenvalue-desc
+  - leftId: equation
+    rightId: equation-desc
+  - leftId: char
+    rightId: char-desc
+explanation:
+  - type: text
+    text: "An eigenvalue problem analyzes a matrix transformation through pairs of special vectors and their scale factors."
+  - type: text
+    text: "A nonzero eigenvector can exist when `λ = 0`, but its transformed result is the zero vector."
+tags:
+  - linear-algebra
+  - eigen
+  - terminology
+difficulty: 2

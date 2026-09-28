@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.limits.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which best describes limₓ→ₐ f(x)?"
+options:
+  - id: approach
+    content:
+      - type: text
+        text: "The value f(x) approaches as x gets close to a"
+  - id: at-only
+    content:
+      - type: text
+        text: "Only the function value at x=a"
+  - id: average
+    content:
+      - type: text
+        text: "The average value over the entire domain"
+  - id: slope
+    content:
+      - type: text
+        text: "Always the slope of the graph"
+correctOptionId: approach
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A limit is the value the output approaches as the input approaches a target value."
+  - type: text
+    text: "You can describe a limit from nearby behavior even if the function has no actual value at a."
+tags:
+  - calculus
+  - limits
+  - definition
+difficulty: 1

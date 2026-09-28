@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.ir.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the main reason compilers use an intermediate representation (IR)?"
+options:
+  - id: separate-front-back
+    content:
+      - type: text
+        text: "It separates source analysis from target machine-code generation so they can be reused."
+  - id: replace-source
+    content:
+      - type: text
+        text: "It forces every source language to use one grammar."
+  - id: avoid-analysis
+    content:
+      - type: text
+        text: "It skips type checking and optimization."
+  - id: store-input
+    content:
+      - type: text
+        text: "It permanently stores the program user's input."
+correctOptionId: separate-front-back
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "An IR provides a shared boundary between multiple front ends and back ends, and a form for analyzing value flow and control flow."
+tags:
+  - programming-languages
+  - intermediate-representation
+  - compiler
+difficulty: 1

@@ -1,0 +1,33 @@
+id: ds.deque.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What basic feature does a deque support?"
+options:
+- id: ends
+  content:
+  - type: text
+    text: "It can insert and remove at both the front and back"
+- id: middle
+  content:
+  - type: text
+    text: "It always removes only the middle element"
+- id: priority
+  content:
+  - type: text
+    text: "It automatically calculates the priority of values"
+- id: unique
+  content:
+  - type: text
+    text: "It automatically removes duplicate elements"
+correctOptionId: ends
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A deque supports operations at both ends. Priority handling and duplicate removal are not part of its basic contract."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- deque
+difficulty: 2

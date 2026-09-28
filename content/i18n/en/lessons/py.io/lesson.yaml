@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: py.io
+revision: 1
+track: python
+title: "Input and Output"
+description: "Learn to print values with print, receive strings with input, and convert them to numbers."
+
+flow:
+  - type: content
+    ref: content/print.md
+  - type: question
+    ref: py.io.print-purpose-01
+  - type: question
+    ref: py.io.print-output-01
+  - type: question
+    ref: py.io.print-completion-01
+  - type: content
+    ref: content/input.md
+  - type: question
+    ref: py.io.input-type-01
+  - type: question
+    ref: py.io.input-completion-01
+  - type: content
+    ref: content/conversion.md
+  - type: question
+    ref: py.io.int-input-01
+  - type: question
+    ref: py.io.conversion-output-01
+  - type: question
+    ref: py.io.io-roles-01

@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.aggregation.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the clause that groups rows with the same group key so aggregates can be calculated for each group."
+choices: ["GROUP BY", "WHERE", "SELECT"]
+acceptedAnswers: ["GROUP BY"]
+explanation:
+  - type: text
+    text: "GROUP BY combines rows that have the same value in the specified column into one group. You can apply COUNT, SUM, and other aggregates to each group."
+tags: [database, sql, group-by]
+difficulty: 1

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.color.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each color-processing term with its meaning."
+leftItems:
+  - id: rgb
+    content:
+      - type: text
+        text: RGB
+  - id: linear
+    content:
+      - type: text
+        text: "Linear color space"
+  - id: srgb
+    content:
+      - type: text
+        text: sRGB
+rightItems:
+  - id: channels
+    content:
+      - type: text
+        text: "A combination of red, green, and blue channels"
+  - id: light-math
+    content:
+      - type: text
+        text: "A space where channel values are interpreted as proportional to light intensity"
+  - id: encoded
+    content:
+      - type: text
+        text: "A nonlinear encoding widely used for display and storage"
+correctPairs:
+  - leftId: rgb
+    rightId: channels
+  - leftId: linear
+    rightId: light-math
+  - leftId: srgb
+    rightId: encoded
+explanation:
+  - type: text
+    text: "Distinguish the different roles: RGB describes the channels, linear space gives arithmetic physical meaning, and sRGB is an encoding for display and storage."
+tags: [graphics, color, gamma]
+difficulty: 2

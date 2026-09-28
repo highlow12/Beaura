@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.isa.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "Which instruction field identifies the type of operation to perform?"
+choices:
+  - "opcode"
+  - "operand"
+  - "tag"
+acceptedAnswers:
+  - "opcode"
+explanation:
+  - type: text
+    text: "The opcode specifies the operation to perform, such as ADD or LOAD."
+tags: [isa, instruction, opcode]
+difficulty: 2

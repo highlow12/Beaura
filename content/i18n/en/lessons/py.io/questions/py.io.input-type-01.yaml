@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: py.io.input-type-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "If the user enters 20, what is the type of the value first returned by `input(\"나이: \")`?"
+options:
+  - id: string
+    content:
+      - type: code
+        language: python
+        code: str
+  - id: integer
+    content:
+      - type: code
+        language: python
+        code: int
+  - id: boolean
+    content:
+      - type: code
+        language: python
+        code: bool
+  - id: float
+    content:
+      - type: code
+        language: python
+        code: float
+correctOptionId: string
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "`input()` always returns the entered text as `str`. For arithmetic, convert it with an expression such as `int(input(...))`."
+tags:
+  - io
+  - input
+  - str
+difficulty: 1

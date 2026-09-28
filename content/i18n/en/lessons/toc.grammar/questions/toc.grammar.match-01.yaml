@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: toc.grammar.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each grammar notation element with its description.
+leftItems:
+  - id: terminal
+    content:
+      - type: text
+        text: Terminal
+  - id: nonterminal
+    content:
+      - type: text
+        text: Nonterminal
+  - id: start-symbol
+    content:
+      - type: text
+        text: Start symbol
+rightItems:
+  - id: output
+    content:
+      - type: text
+        text: Symbol that remains in the final string
+  - id: expandable
+    content:
+      - type: text
+        text: Symbol expanded by a production rule
+  - id: derivation-root
+    content:
+      - type: text
+        text: Nonterminal from which a derivation starts
+correctPairs:
+  - leftId: terminal
+    rightId: output
+  - leftId: nonterminal
+    rightId: expandable
+  - leftId: start-symbol
+    rightId: derivation-root
+explanation:
+  - type: text
+    text: Starting from the start symbol, replace nonterminals using rules; the generated string is complete when only terminals remain.
+tags:
+  - theory-of-computation
+  - grammar
+  - derivation
+difficulty: 1

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.animation.value-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of code that linearly interpolates between starting position 10 and ending position 30."
+language: python
+code: |-
+  start = 10
+  end = 30
+  t = 0.25
+  print(start + (end - start) * t)
+choices: ["15.0", "20.0", "25.0"]
+acceptedOutputs: ["15.0"]
+explanation:
+  - type: text
+    text: "10 + (30 - 10) × 0.25 = 15, so the value is 25% of the way across the full distance."
+tags: [graphics, animation, lerp, code-output]
+difficulty: 2

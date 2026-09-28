@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.matrix-multiplication.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "If `A` is 2×3 and `B` is 3×4, what is the shape of `AB`?"
+options:
+  - id: two-four
+    content:
+      - type: text
+        text: "2×4"
+  - id: three-three
+    content:
+      - type: text
+        text: "3×3"
+  - id: four-two
+    content:
+      - type: text
+        text: "4×2"
+  - id: six-four
+    content:
+      - type: text
+        text: "6×4"
+correctOptionId: two-four
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The result uses the 2 rows of `A` and the 4 columns of `B`."
+  - type: text
+    text: "The product is defined because the inner dimension, 3, matches."
+tags:
+  - linear-algebra
+  - matrices
+  - dimensions
+difficulty: 1

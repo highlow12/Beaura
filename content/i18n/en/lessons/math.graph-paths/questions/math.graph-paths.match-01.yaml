@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: math.graph-paths.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each path-related term with its description."
+leftItems:
+  - id: walk
+    content:
+      - type: text
+        text: "walk"
+  - id: path
+    content:
+      - type: text
+        text: "path"
+  - id: cycle
+    content:
+      - type: text
+        text: "cycle"
+  - id: weight
+    content:
+      - type: text
+        text: "Weighted path length"
+rightItems:
+  - id: walk-desc
+    content:
+      - type: text
+        text: "A sequence of vertices connected by edges; repetition is allowed"
+  - id: path-desc
+    content:
+      - type: text
+        text: "A route that usually does not repeat vertices"
+  - id: cycle-desc
+    content:
+      - type: text
+        text: "A closed route that starts and ends at the same vertex"
+  - id: weight-desc
+    content:
+      - type: text
+        text: "The sum of the costs of the traversed edges"
+correctPairs:
+  - leftId: walk
+    rightId: walk-desc
+  - leftId: path
+    rightId: path-desc
+  - leftId: cycle
+    rightId: cycle-desc
+  - leftId: weight
+    rightId: weight-desc
+explanation:
+  - type: text
+    text: "Walks and paths differ in whether repetition is allowed; a cycle is a closed route that returns to its starting point."
+  - type: text
+    text: "In a weighted graph, length is calculated by summing the numerical weights of the traversed edges."
+tags:
+  - discrete-math
+  - graphs
+  - terminology
+difficulty: 2

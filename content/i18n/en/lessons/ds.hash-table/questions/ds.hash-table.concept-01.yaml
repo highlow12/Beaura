@@ -1,0 +1,34 @@
+id: ds.hash-table.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "Why is average lookup fast in a hash table?"
+options:
+- id: bucket
+  content:
+  - type: text
+    text: "The key is hashed to go directly to a candidate bucket, where the entry is checked"
+- id: scan
+  content:
+  - type: text
+    text: "Every key is always compared from beginning to end"
+- id: sort
+  content:
+  - type: text
+    text: "The entire table is sorted on every lookup"
+- id: tree
+  content:
+  - type: text
+    text: "Every key is always stored at a depth equal to the tree height"
+correctOptionId: bucket
+shuffleOptions: true
+explanation:
+- type: text
+  text: "A hash table maps a key to a bucket location to narrow the candidates. Frequent collisions can increase comparisons within a bucket and reduce performance."
+schemaVersion: 1
+revision: 1
+tags:
+- hashing
+- hash-table
+- collision
+difficulty: 2

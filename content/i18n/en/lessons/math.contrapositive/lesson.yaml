@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.contrapositive
+revision: 3
+track: discrete-math
+title: "Proof by Contrapositive"
+description: "Learn the strategy of converting an implication into its contrapositive and proving that statement directly."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.contrapositive.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.contrapositive.application-01
+  - type: content
+    ref: content/strategy.md
+  - type: question
+    ref: math.contrapositive.term-01
+  - type: question
+    ref: math.contrapositive.steps-01
+  - type: question
+    ref: math.contrapositive.match-01

@@ -1,0 +1,37 @@
+id: ds.dynamic-array.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for append when a dynamic array is full."
+items:
+- id: full
+  content:
+  - type: text
+    text: "Check that there are no empty slots in the current capacity"
+- id: allocate
+  content:
+  - type: text
+    text: "Allocate a larger contiguous region"
+- id: copy
+  content:
+  - type: text
+    text: "Copy the existing elements into the new region"
+- id: write
+  content:
+  - type: text
+    text: "Write the new element at the last used position"
+correctOrder:
+- full
+- allocate
+- copy
+- write
+explanation:
+- type: text
+  text: "When the space is full, first allocate a larger region, copy the existing data, then write the new element."
+schemaVersion: 1
+revision: 1
+tags:
+- array
+- dynamic-array
+- amortized
+difficulty: 2

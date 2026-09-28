@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: net.tcp.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "When starting a TCP connection, the server responds to SYN with ___."
+choices:
+  - "SYN-ACK"
+  - "FIN"
+  - "RST"
+acceptedAnswers:
+  - "SYN-ACK"
+explanation:
+  - type: text
+    text: "The client sends SYN, the server replies with SYN-ACK, and the client sends ACK to establish the connection before the byte stream is transmitted. An acknowledgment (ACK) identifies the byte range received; if data is missing, the sender retransmits it. A single `read` is not guaranteed to return the same number of bytes as a single sender `write`."
+tags: [tcp, reliability, handshake]
+difficulty: 2

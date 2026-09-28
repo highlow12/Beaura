@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.graph-connectivity
+revision: 3
+track: discrete-math
+title: "Connectivity and Components"
+description: "Determine whether a graph is connected and identify its connected components and bridges."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.graph-connectivity.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.graph-connectivity.application-01
+  - type: content
+    ref: content/bridge-test.md
+  - type: question
+    ref: math.graph-connectivity.term-01
+  - type: question
+    ref: math.graph-connectivity.steps-01
+  - type: question
+    ref: math.graph-connectivity.match-01

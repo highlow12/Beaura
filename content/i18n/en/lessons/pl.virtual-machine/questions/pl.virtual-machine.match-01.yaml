@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.virtual-machine.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each VM component with its role.
+leftItems:
+  - id: bytecode
+    content:
+      - type: text
+        text: Bytecode
+  - id: pc
+    content:
+      - type: text
+        text: Program counter
+  - id: operand-stack
+    content:
+      - type: text
+        text: Operand stack
+rightItems:
+  - id: intermediate-instruction
+    content:
+      - type: text
+        text: A sequence of intermediate instructions understood by the VM
+  - id: next-opcode
+    content:
+      - type: text
+        text: The location of the next instruction to fetch
+  - id: temporary-values
+    content:
+      - type: text
+        text: Stores intermediate calculation values and arguments
+correctPairs:
+  - leftId: bytecode
+    rightId: intermediate-instruction
+  - leftId: pc
+    rightId: next-opcode
+  - leftId: operand-stack
+    rightId: temporary-values
+explanation:
+  - type: text
+    text: A stack VM uses the PC to fetch instructions in order and takes values from the operand stack before pushing results back onto it.
+tags:
+  - programming-languages
+  - virtual-machine
+  - interpreter
+difficulty: 2

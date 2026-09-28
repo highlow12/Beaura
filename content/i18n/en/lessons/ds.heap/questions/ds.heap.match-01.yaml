@@ -1,0 +1,47 @@
+id: ds.heap.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each heap term with its meaning."
+leftItems:
+- id: min-heap
+  content:
+  - type: text
+    text: "min-heap"
+- id: root
+  content:
+  - type: text
+    text: "Root"
+- id: heapify
+  content:
+  - type: text
+    text: "heapify"
+rightItems:
+- id: smallest
+  content:
+  - type: text
+    text: "A heap where the minimum has priority"
+- id: top
+  content:
+  - type: text
+    text: "The top of the tree that contains the highest-priority element"
+- id: build
+  content:
+  - type: text
+    text: "An operation that rearranges an array to satisfy the heap property"
+correctPairs:
+- leftId: min-heap
+  rightId: smallest
+- leftId: root
+  rightId: top
+- leftId: heapify
+  rightId: build
+explanation:
+- type: text
+  text: "A min-heap has the minimum at its root, and heapify rearranges an existing array to satisfy the heap property."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- heap
+difficulty: 2

@@ -1,0 +1,48 @@
+id: algo.merge-sort.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each merge-sort term with its meaning."
+leftItems:
+- id: divide
+  content:
+  - type: text
+    text: "Divide"
+- id: conquer
+  content:
+  - type: text
+    text: "Conquer"
+- id: combine
+  content:
+  - type: text
+    text: "Combine"
+rightItems:
+- id: halves
+  content:
+  - type: text
+    text: "The step that divides an array into smaller parts"
+- id: sort
+  content:
+  - type: text
+    text: "The step that sorts the subproblems"
+- id: merge
+  content:
+  - type: text
+    text: "The step that merges sorted parts into one"
+correctPairs:
+- leftId: divide
+  rightId: halves
+- leftId: conquer
+  rightId: sort
+- leftId: combine
+  rightId: merge
+explanation:
+- type: text
+  text: "Merge sort applies the divide, conquer, and combine structure to sorting."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- merge-sort
+- divide-conquer
+difficulty: 2

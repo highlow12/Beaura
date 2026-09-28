@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: os.system-call.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic system-call steps in the correct order."
+items:
+  - id: marshal
+    content:
+      - type: text
+        text: "Prepare the system-call number and arguments"
+  - id: trap
+    content:
+      - type: text
+        text: "The CPU switches to a kernel entry point"
+  - id: validate
+    content:
+      - type: text
+        text: "The kernel checks permissions and arguments, then returns a result"
+correctOrder: [marshal, trap, validate]
+explanation:
+  - type: text
+    text: "First, prepare the system-call number and arguments; then the CPU switches to a kernel entry point."
+  - type: text
+    text: "At the step where the kernel checks permissions and arguments and returns a result, the final result is passed to the next execution step."
+tags: [system-call, kernel, api]
+difficulty: 2

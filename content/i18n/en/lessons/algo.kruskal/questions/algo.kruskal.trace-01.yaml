@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: algo.kruskal.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose how many edges are selected when processing these edges in order."
+language: python
+code: |-
+  edges = [("A", "B", 1), ("B", "C", 2), ("A", "C", 3)]
+  chosen = []
+  groups = {"A": "A", "B": "B", "C": "C"}
+  for u, v, weight in edges:
+      if groups[u] != groups[v]:
+          chosen.append(weight)
+          root = groups[v]
+          for node in groups:
+              if groups[node] == root:
+                  groups[node] = groups[u]
+  print(len(chosen))
+choices:
+- '2'
+- '1'
+- '3'
+acceptedOutputs:
+- '2'
+explanation:
+- type: text
+  text: "The weight-1 and weight-2 edges connect all three vertices, so both are selected. The weight-3 edge would create a cycle and is skipped."
+tags:
+- graph
+- mst
+- kruskal
+- code-output
+difficulty: 3

@@ -1,0 +1,33 @@
+id: algo.insertion-sort.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "Which section does insertion sort maintain on each iteration?"
+options:
+- id: prefix
+  content:
+  - type: text
+    text: "The section before the current position, whose elements are sorted"
+- id: suffix
+  content:
+  - type: text
+    text: "A section in which only the elements after the current position are sorted"
+- id: heap
+  content:
+  - type: text
+    text: "A section in which the entire array is a heap"
+- id: random
+  content:
+  - type: text
+    text: "A random section of unvisited values"
+correctOptionId: prefix
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Insertion sort inserts the next key into the sorted prefix on the left, extending the sorted section by one element at a time."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- insertion-sort
+difficulty: 2

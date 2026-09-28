@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.bayes
+revision: 3
+track: probability-statistics
+title: "Bayes' theorem"
+description: "Use conditional probability to calculate a posterior and interpret base rates."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: prob.bayes.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: prob.bayes.application-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: prob.bayes.term-01
+  - type: question
+    ref: prob.bayes.steps-01
+  - type: question
+    ref: prob.bayes.match-01

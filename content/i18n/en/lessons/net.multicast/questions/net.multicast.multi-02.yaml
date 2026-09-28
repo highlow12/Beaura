@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: net.multicast.multi-02
+revision: 1
+type: multi-select
+prompt:
+- type: text
+  text: Select all statements that apply to broadcast and multicast.
+options:
+- id: correct-a
+  content:
+  - type: text
+    text: An ARP request can be delivered as a broadcast on the same link.
+- id: correct-b
+  content:
+  - type: text
+    text: Multicast delivers the same data to multiple members of a group.
+- id: wrong-a
+  content:
+  - type: text
+    text: Broadcasts spread without limit across every router on the internet.
+- id: wrong-b
+  content:
+  - type: text
+    text: Unicast and multicast have the same recipient scope.
+correctOptionIds:
+- correct-a
+- correct-b
+shuffleOptions: true
+explanation:
+- type: text
+  text: An ARP request can be delivered as a broadcast on the same link. Multicast delivers the same data to multiple members
+    of a group.
+- type: text
+  text: Broadcast is useful for discovery, but unnecessary traffic increases as the number of devices grows. Multicast can
+    be efficient, but it requires support from switches, routers, and applications.
+tags:
+- broadcast
+- multicast
+- unicast
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.virtual-machine
+revision: 1
+track: programming-languages
+title: Bytecode and Virtual Machines
+description: Learn how bytecode, the interpreter loop, and the VM execution stack work together.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.virtual-machine.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.virtual-machine.match-01
+  - type: question
+    ref: pl.virtual-machine.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.virtual-machine.order-01
+  - type: question
+    ref: pl.virtual-machine.trace-01

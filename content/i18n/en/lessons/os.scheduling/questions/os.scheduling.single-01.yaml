@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.scheduling.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about CPU scheduling is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "The CPU scheduler selects an execution unit from the ready queue to balance latency and fairness."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "The scheduler recompiles the source code of every process."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "In preemptive scheduling, a running task can never be interrupted."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The CPU scheduler selects an execution unit from the ready queue to balance latency and fairness."
+  - type: text
+    text: "The CPU scheduler selects the next execution unit from those in the ready state. Policies such as FCFS, round robin, and priority affect waiting time, response time, and fairness differently."
+tags: [scheduling, cpu, fairness]
+difficulty: 2

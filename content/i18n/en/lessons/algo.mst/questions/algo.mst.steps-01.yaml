@@ -1,0 +1,37 @@
+schemaVersion: 1
+id: algo.mst.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Put the selection steps for building a spanning tree in order."
+items:
+- id: start
+  content:
+  - type: text
+    text: "Initialize the selected vertex or group of vertices"
+- id: candidate
+  content:
+  - type: text
+    text: "Consider edges connecting the current group to the outside"
+- id: safe
+  content:
+  - type: text
+    text: "Choose the lightest edge that does not create a cycle"
+- id: repeat
+  content:
+  - type: text
+    text: "Repeat until every vertex is connected"
+correctOrder:
+- start
+- candidate
+- safe
+- repeat
+explanation:
+- type: text
+  text: "An MST algorithm keeps the graph connected and selects safe edges one at a time until it has V − 1 edges."
+tags:
+- graph
+- mst
+- execution-order
+difficulty: 2

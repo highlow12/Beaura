@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.registers.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe registers and state storage."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "The program counter is a special register that stores the address of the next instruction to fetch."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Writing to a register file usually follows a control signal and clock."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Register access is generally slower than memory access."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Increasing the number of registers makes storage capacity unlimited."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The program counter is a special register that stores the address of the next instruction to fetch. Writing to a register file usually follows a control signal and clock."
+  - type: text
+    text: "Registers are fast, but their number and area are limited. Compilers place frequently used values in registers to reduce memory accesses and latency."
+tags: [register, register-file, cpu-state]
+difficulty: 3

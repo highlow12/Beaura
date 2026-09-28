@@ -1,0 +1,41 @@
+schemaVersion: 1
+id: calc.limits.steps-01
+revision: 3
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for checking the two-sided limit at x=a from a graph."
+items:
+  - id: left
+    content:
+      - type: text
+        text: "Observe the value approached as x comes from below a"
+  - id: right
+    content:
+      - type: text
+        text: "Observe the value approached as x comes from above a"
+  - id: compare
+    content:
+      - type: text
+        text: "Compare the left- and right-hand limits"
+  - id: decide
+    content:
+      - type: text
+        text: "If they are equal, conclude the limit exists with that common value; if they differ, conclude the two-sided limit does not exist"
+correctOrder:
+  - left
+  - right
+  - compare
+  - decide
+unorderedGroups:
+  - [left, right]
+explanation:
+  - type: text
+    text: "Compare whether the left- and right-hand limits are equal."
+  - type: text
+    text: "If the two values are equal, the limit exists; if they differ, the limit does not exist."
+tags:
+  - calculus
+  - limits
+  - one-sided
+difficulty: 2

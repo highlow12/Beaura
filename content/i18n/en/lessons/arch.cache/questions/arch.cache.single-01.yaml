@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.cache.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about caches and locality is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A cache hit means the requested memory block is in the fast cache and can be used immediately."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A cache miss means the data has been permanently deleted."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Spatial locality is the tendency to access the same address again later."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A cache hit means the requested memory block is in the fast cache and can be used immediately."
+  - type: text
+    text: "A cache is a layer that stores likely-to-be-used memory blocks in faster storage. Temporal locality is the tendency to reuse the same data; spatial locality is the tendency to access nearby addresses together."
+tags: [cache, locality, memory-hierarchy]
+difficulty: 2

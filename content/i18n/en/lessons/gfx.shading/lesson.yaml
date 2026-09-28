@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.shading
+revision: 2
+track: computer-graphics
+title: "Shading Methods"
+description: "Compare the boundary between vertex and fragment shaders and the flat, Gouraud, and Phong shading methods."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.shading.match-01
+  - type: question
+    ref: gfx.shading.choice-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/shading-cost.md
+  - type: question
+    ref: gfx.shading.order-01
+  - type: question
+    ref: gfx.shading.complete-01
+  - type: question
+    ref: gfx.shading.properties-01

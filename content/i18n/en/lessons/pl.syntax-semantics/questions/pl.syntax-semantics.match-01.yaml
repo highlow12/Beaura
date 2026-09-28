@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: pl.syntax-semantics.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: Match each programming-language layer with an example.
+leftItems:
+  - id: syntax
+    content:
+      - type: text
+        text: Syntax
+  - id: static
+    content:
+      - type: text
+        text: Static semantics
+  - id: dynamic
+    content:
+      - type: text
+        text: Dynamic semantics
+rightItems:
+  - id: token-order
+    content:
+      - type: text
+        text: Whether parentheses and token order follow the rules
+  - id: source-check
+    content:
+      - type: text
+        text: Pre-execution constraints such as declarations and types
+  - id: execution-result
+    content:
+      - type: text
+        text: Values and side effects computed in the actual runtime state
+correctPairs:
+  - leftId: syntax
+    rightId: token-order
+  - leftId: static
+    rightId: source-check
+  - leftId: dynamic
+    rightId: execution-result
+explanation:
+  - type: text
+    text: A compiler parses the structure first, checks static constraints, and then generates code that preserves execution meaning.
+tags:
+  - programming-languages
+  - semantics
+  - compiler
+difficulty: 2

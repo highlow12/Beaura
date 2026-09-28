@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: ds.queue.service-order-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the order of enqueuing A and B and processing them one at a time."
+items:
+- id: enqueue-a
+  content:
+  - type: text
+    text: "Enqueue A at the back"
+- id: enqueue-b
+  content:
+  - type: text
+    text: "Enqueue B at the back"
+- id: dequeue-a
+  content:
+  - type: text
+    text: "Dequeue A from the front"
+- id: dequeue-b
+  content:
+  - type: text
+    text: "Dequeue B from the front"
+correctOrder:
+- enqueue-a
+- enqueue-b
+- dequeue-a
+- dequeue-b
+explanation:
+- type: text
+  text: "Since A was enqueued first, the first dequeue returns A, followed by B."
+- type: text
+  text: "Tracking enqueue and dequeue directions separately lets you follow FIFO order."
+tags:
+- queue
+- fifo
+- execution-order
+difficulty: 2

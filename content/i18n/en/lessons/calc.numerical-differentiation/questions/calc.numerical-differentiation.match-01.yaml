@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.numerical-differentiation.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each numerical differentiation method with its characteristic."
+leftItems:
+  - id: forward
+    content:
+      - type: text
+        text: "Forward difference"
+  - id: backward
+    content:
+      - type: text
+        text: "Backward difference"
+  - id: central
+    content:
+      - type: text
+        text: "Central difference"
+  - id: h
+    content:
+      - type: text
+        text: "h"
+rightItems:
+  - id: forward-desc
+    content:
+      - type: text
+        text: "Uses the current and right-hand samples"
+  - id: backward-desc
+    content:
+      - type: text
+        text: "Uses the left-hand and current samples"
+  - id: central-desc
+    content:
+      - type: text
+        text: "Uses samples symmetrically on both sides"
+  - id: h-desc
+    content:
+      - type: text
+        text: "Spacing between samples"
+correctPairs:
+  - leftId: forward
+    rightId: forward-desc
+  - leftId: backward
+    rightId: backward-desc
+  - leftId: central
+    rightId: central-desc
+  - leftId: h
+    rightId: h-desc
+explanation:
+  - type: text
+    text: "The three difference methods use different neighboring samples; the central difference uses information from both sides."
+  - type: text
+    text: "At a boundary, samples may not be available on both sides, so choose a forward or backward difference."
+tags:
+  - calculus
+  - numerical
+  - methods
+difficulty: 2

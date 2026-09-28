@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.linear-transformations.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about the properties of linear transformations."
+options:
+  - id: origin
+    content:
+      - type: text
+        text: "Maps the origin to the origin"
+  - id: basis
+    content:
+      - type: text
+        text: "The images of the basis vectors determine the whole transformation"
+  - id: combo
+    content:
+      - type: text
+        text: "Preserves linear combinations"
+  - id: translation
+    content:
+      - type: text
+        text: "Every translation is a linear transformation"
+correctOptionIds: [origin, basis, combo]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Linearity preserves the origin and linear combinations, and the images of the basis vectors determine the entire transformation."
+  - type: text
+    text: "A translation is generally not linear because it does not preserve the origin."
+tags:
+  - linear-algebra
+  - transformations
+  - properties
+difficulty: 2

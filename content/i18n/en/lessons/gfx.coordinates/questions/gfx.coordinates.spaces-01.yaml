@@ -1,0 +1,35 @@
+schemaVersion: 1
+id: gfx.coordinates.spaces-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all spaces in the usual graphics coordinate transformation sequence."
+options:
+  - id: model
+    content:
+      - type: text
+        text: "model space"
+  - id: world
+    content:
+      - type: text
+        text: "world space"
+  - id: view
+    content:
+      - type: text
+        text: "view space"
+  - id: clip
+    content:
+      - type: text
+        text: "clip space"
+  - id: audio
+    content:
+      - type: text
+        text: "audio space"
+correctOptionIds: [model, world, view, clip]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Model, world, view, and clip are the spaces in the graphics pipeline that carries an object through the camera and projection toward the screen."
+tags: [graphics, coordinates]
+difficulty: 2

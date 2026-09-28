@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.functional-dependency.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the best interpretation of `student_id → student_name`?"
+options:
+  - id: determines
+    content:
+      - type: text
+        text: "Rows with the same student_id must have the same student_name"
+  - id: reverse
+    content:
+      - type: text
+        text: "The same student_name must always have the same student_id"
+  - id: unrelated
+    content:
+      - type: text
+        text: "There is no constraint between the two columns"
+correctOptionId: determines
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The arrow in a functional dependency indicates the direction of determination. The given rule alone does not establish the reverse dependency or that names are unique."
+tags: [database, functional-dependency]
+difficulty: 2

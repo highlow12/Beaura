@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: toc.pda.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: This code simplifies pushing twice for input `aa` and then popping twice for `bb`. What is the final stack length?
+language: python
+code: |-
+  stack = []
+  for symbol in "aa":
+      stack.append("A")
+  for symbol in "bb":
+      stack.pop()
+  print(len(stack))
+choices:
+  - "0"
+  - "1"
+  - "2"
+acceptedOutputs:
+  - "0"
+explanation:
+  - type: text
+    text: Two `A`s are pushed and both are popped, so the stack is empty and its length is 0.
+tags:
+  - theory-of-computation
+  - pda
+  - trace
+difficulty: 2

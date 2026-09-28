@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.coordinates
+revision: 2
+track: linear-algebra
+title: "Coordinates and Change of Basis"
+description: "Understand that coordinates are coefficients relative to a basis, and express vectors in a new basis."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.coordinates.definition-01
+  - type: question
+    ref: la.coordinates.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
+  - type: question
+    ref: la.coordinates.term-01
+  - type: question
+    ref: la.coordinates.steps-01
+  - type: question
+    ref: la.coordinates.match-01

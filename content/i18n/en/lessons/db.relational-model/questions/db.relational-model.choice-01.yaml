@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.relational-model.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Without an explicit sort condition in SQL, what is the safest statement about the order of result rows?"
+options:
+  - id: unspecified
+    content:
+      - type: text
+        text: "You cannot assume any particular order is guaranteed"
+  - id: insertion
+    content:
+      - type: text
+        text: "It is always the insertion order"
+  - id: id-order
+    content:
+      - type: text
+        text: "It is always ascending primary-key order"
+correctOptionId: unspecified
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A relation is treated as a set with no row order. If a screen or later logic needs an order, specify `ORDER BY` directly."
+tags: [database, relational-model, order]
+difficulty: 2

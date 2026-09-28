@@ -1,0 +1,36 @@
+id: ds.priority-queue.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for processing one task in a priority queue."
+items:
+- id: enqueue
+  content:
+  - type: text
+    text: "Add the priority and task to the queue"
+- id: peek
+  content:
+  - type: text
+    text: "Inspect the highest-priority candidate"
+- id: remove
+  content:
+  - type: text
+    text: "Remove the selected candidate from the queue"
+- id: process
+  content:
+  - type: text
+    text: "Run the removed task"
+correctOrder:
+- enqueue
+- peek
+- remove
+- process
+explanation:
+- type: text
+  text: "Store the task with its priority, inspect the highest-priority candidate, then remove and process it."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- priority-queue
+difficulty: 2

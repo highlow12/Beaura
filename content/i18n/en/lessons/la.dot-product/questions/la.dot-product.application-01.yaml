@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.dot-product.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about the dot product of two vectors."
+options:
+  - id: scalar
+    content:
+      - type: text
+        text: "The result is a scalar"
+  - id: zero-orthogonal
+    content:
+      - type: text
+        text: "If the dot product is 0, the vectors can be orthogonal"
+  - id: component
+    content:
+      - type: text
+        text: "Add the products of corresponding components"
+  - id: vector-result
+    content:
+      - type: text
+        text: "It always produces another vector"
+correctOptionIds: [scalar, zero-orthogonal, component]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The dot product is a number formed by summing component products; a result of 0 indicates orthogonality."
+  - type: text
+    text: "Operations that produce a vector, such as vector addition or the cross product, are defined separately."
+tags:
+  - linear-algebra
+  - dot-product
+  - geometry
+difficulty: 2

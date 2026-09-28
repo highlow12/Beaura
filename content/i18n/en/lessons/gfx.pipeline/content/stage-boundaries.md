@@ -1,0 +1,5 @@
+## Data Contracts Between Stages
+
+Given the positions, colors, and UV coordinates of a triangle's vertices, the vertex shader sends the positions to clip space and outputs varyings such as color and UV coordinates. Primitive assembly groups the three vertices into a triangle. Rasterization finds the covered samples and interpolates the varyings for each location. The fragment shader uses those interpolated values to calculate color, and only results that pass depth, stencil, and blending operations are written to the framebuffer. At each stage, outputs become inputs with a new meaning for the next stage.
+
+For example, an 800 × 600 screen has about 480,000 pixel locations, but a small triangle creates fragments for only some of them. The fragment shader can therefore run for each covered sample, rather than “once per vertex,” and a generated fragment can still be discarded by the depth test. Treating a vertex position as a color or calling a fragment candidate a final pixel are common ways to misunderstand the pipeline.

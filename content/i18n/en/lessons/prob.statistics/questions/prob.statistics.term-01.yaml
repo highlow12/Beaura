@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.statistics.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The mean of 2, 4, and 8 is ___."
+choices:
+  - "14/3"
+  - "14"
+  - "8"
+  - "2"
+acceptedAnswers:
+  - "14/3"
+explanation:
+  - type: text
+    text: "The mean is (2+4+8)/3=14/3."
+  - type: text
+    text: "Check the fraction format carefully among the choices."
+tags:
+  - probability-statistics
+  - statistics
+  - mean
+difficulty: 1

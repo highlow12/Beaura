@@ -1,5 +1,6 @@
 import { hasTelemetryConsent } from '$lib/application/privacy';
 import { captureSentryException } from '$lib/application/sentry';
+import { getLocale, t } from '$lib/application/locale';
 
 const STORAGE_KEY = 'cs-duolingo:error-reports';
 const MAX_REPORTS = 20;
@@ -185,6 +186,8 @@ export function installGlobalErrorReporting(target: Window = window) {
 }
 
 export function buildGithubIssueUrl(description = '', reports = getRecentErrorReports()) {
+  const locale = getLocale();
+  const tr = (korean: string, english: string) => t(korean, english, locale);
   const latest = reports.slice(-5).reverse();
   const diagnostics = latest.length
     ? latest
@@ -193,20 +196,20 @@ export function buildGithubIssueUrl(description = '', reports = getRecentErrorRe
           return `- ${report.occurredAt} [${report.kind}] ${report.path} (${commit})\n  ${report.message}`;
         })
         .join('\n')
-    : '- 최근 자동 수집 오류 없음';
+    : tr('- 최근 자동 수집 오류 없음', '- No recent automatically collected errors');
   const body = [
-    '## 문제 설명',
-    description.trim() || '어떤 문제가 있었는지 적어 주세요.',
+    tr('## 문제 설명', '## Issue description'),
+    description.trim() || tr('어떤 문제가 있었는지 적어 주세요.', 'Describe what happened.'),
     '',
-    '## 재현 방법',
+    tr('## 재현 방법', '## Steps to reproduce'),
     '1. ',
     '2. ',
     '',
-    '## 자동 진단 정보',
+    tr('## 자동 진단 정보', '## Diagnostic information'),
     diagnostics,
     '',
-    '> 진단 정보에는 최근 오류 메시지, 발생 시각, 화면 경로, 앱 빌드 정보가 포함됩니다. 학습 답안과 학습 기록은 포함하지 않습니다.',
+    tr('> 진단 정보에는 최근 오류 메시지, 발생 시각, 화면 경로, 앱 빌드 정보가 포함됩니다. 학습 답안과 학습 기록은 포함하지 않습니다.', '> Diagnostics include recent error messages, timestamps, screen paths, and app build information. Answers and learning records are not included.'),
   ].join('\n');
-  const params = new URLSearchParams({ title: '[Beta] 문제 신고', body });
+  const params = new URLSearchParams({ title: tr('[Beta] 문제 신고', '[Beta] Report an issue'), body });
   return `https://github.com/highlow12/Beaura/issues/new?${params.toString()}`;
 }

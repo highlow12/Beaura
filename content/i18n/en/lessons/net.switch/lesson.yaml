@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.switch
+revision: 2
+track: networks
+title: Switches and LANs
+description: Understand how LANs work through MAC learning, forwarding, and flooding by switches.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: net.switch.single-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: net.switch.multi-02
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: net.switch.fill-03
+  - type: question
+    ref: net.switch.ordering-04
+  - type: question
+    ref: net.switch.matching-05

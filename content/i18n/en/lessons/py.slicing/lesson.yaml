@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.slicing
+revision: 1
+track: python
+title: "Slicing"
+description: "Learn to slice a sequence by start, stop, and step to create a new value."
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.slicing.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: py.slicing.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.slicing.complete-01
+- type: question
+  ref: py.slicing.steps-01
+- type: question
+  ref: py.slicing.match-01

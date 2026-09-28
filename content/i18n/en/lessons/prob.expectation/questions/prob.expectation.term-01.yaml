@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.expectation.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "If X takes the value 1 with probability 1/2 and 3 with probability 1/2, then E[X]=___."
+choices:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+acceptedAnswers:
+  - "2"
+explanation:
+  - type: text
+    text: "E[X]=1×1/2+3×1/2=2."
+  - type: text
+    text: "It is the weighted average found by multiplying each outcome by its probability and adding the products."
+tags:
+  - probability-statistics
+  - expectation
+  - calculation
+difficulty: 1

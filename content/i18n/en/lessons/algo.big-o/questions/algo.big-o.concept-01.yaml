@@ -1,0 +1,33 @@
+id: algo.big-o.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What does Big-O notation primarily describe?"
+options:
+- id: upper
+  content:
+  - type: text
+    text: "An upper bound on how quickly the cost grows as the input size increases"
+- id: exact
+  content:
+  - type: text
+    text: "The exact running time in milliseconds on a particular computer"
+- id: output
+  content:
+  - type: text
+    text: "The largest value returned by the algorithm"
+- id: syntax
+  content:
+  - type: text
+    text: "The exact number of lines of code"
+correctOptionId: upper
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Big-O ignores constants and smaller terms to describe an upper growth bound on resource costs as the input grows."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- big-o
+difficulty: 2

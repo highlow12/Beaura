@@ -10,6 +10,8 @@
   } from "$lib/questions/host";
   import { getQuestionRenderer } from "$lib/questions/renderer-registry";
   import type { Question, EvaluationResult, UserAnswer } from "$lib/questions/types";
+  import { locale, t } from "$lib/application/locale";
+  const tr = (korean: string, english: string) => t(korean, english, $locale);
 
   type CompletionSummary = { id: string; correct: boolean; durationMs: number };
 
@@ -198,6 +200,17 @@
     host?.recover();
   }
 
+  function localizedHostError(message: string): string {
+    const translations: Record<string, string> = {
+      "문제를 표시할 수 없습니다.": "This question could not be displayed.",
+      "문제를 평가할 수 없습니다.": "This question could not be evaluated.",
+      "제출 ID를 만들 수 없습니다.": "Could not create a submission ID.",
+      "답안을 저장하지 못했습니다. 다시 시도해 주세요.": "Your answer could not be saved. Please try again.",
+      "저장에 실패했습니다.": "Saving failed.",
+    };
+    return $locale === "en" ? translations[message] ?? message : message;
+  }
+
   function rendererForQuestion() {
     if (!question || typeof question.type !== "string") return null;
     return getQuestionRenderer(question.type);
@@ -206,17 +219,17 @@
 
 {#if hostState?.phase === "error" && hostState.error?.source === "validation"}
   <section class="question-error" role="alert" aria-live="polite">
-    <h2>문제를 표시할 수 없습니다.</h2>
-    <p>이 문제를 지금은 풀 수 없습니다. 이전 화면으로 돌아가 다시 시도해 주세요.</p>
+    <h2>{tr("문제를 표시할 수 없습니다.", "This question could not be displayed.")}</h2>
+    <p>{tr("이 문제를 지금은 풀 수 없습니다. 이전 화면으로 돌아가 다시 시도해 주세요.", "This question is unavailable right now. Go back and try again.")}</p>
   </section>
 {:else if hostState?.phase === "error" && hostState.error}
   <section class="question-error" role="alert" aria-live="polite">
-    <h2>{hostState.error.source === "persistence" ? "답안을 저장하지 못했습니다." : "답안을 확인해 주세요."}</h2>
-    <p>{hostState.error.source === "persistence" ? "저장을 다시 시도하면 같은 제출을 이어갑니다." : hostState.error.message}</p>
+    <h2>{hostState.error.source === "persistence" ? tr("답안을 저장하지 못했습니다.", "Your answer could not be saved.") : tr("답안을 확인해 주세요.", "Check your answer.")}</h2>
+    <p>{hostState.error.source === "persistence" ? tr("저장을 다시 시도하면 같은 제출을 이어갑니다.", "Retrying will continue saving this same submission.") : localizedHostError(hostState.error.message)}</p>
     {#if hostState.error.source === "persistence"}
-      <button class="button" type="button" onclick={retryPersistence}>저장 다시 시도</button>
+      <button class="button" type="button" onclick={retryPersistence}>{tr("저장 다시 시도", "Retry save")}</button>
     {:else}
-      <button class="button" type="button" onclick={recoverEvaluation}>다시 풀기</button>
+      <button class="button" type="button" onclick={recoverEvaluation}>{tr("다시 풀기", "Try again")}</button>
     {/if}
   </section>
 {:else if hostState}
@@ -235,8 +248,8 @@
         />
       {:else}
         <section class="question-error" role="alert">
-          <h2>문제를 표시할 수 없습니다.</h2>
-          <p>지원하지 않는 문제 형식입니다.</p>
+          <h2>{tr("문제를 표시할 수 없습니다.", "This question could not be displayed.")}</h2>
+          <p>{tr("지원하지 않는 문제 형식입니다.", "This question type is not supported.")}</p>
         </section>
       {/if}
     </div>
@@ -248,12 +261,12 @@
         disabled={hostState.phase !== "answering" || hostState.currentAnswer === null}
         onclick={submit}
       >
-        {hostState.phase === "evaluating" ? "확인 중…" : "정답 확인"}
+        {hostState.phase === "evaluating" ? tr("확인 중…", "Checking…") : tr("정답 확인", "Check answer")}
       </button>
     {:else if hostState.phase === "retry-feedback"}
       <div class="feedback-card" aria-live="polite">
-        <p class="feedback incorrect">오답입니다. 한 번 더 풀어보세요.</p>
-        <button class="button" type="button" onclick={retry}>다시 풀기</button>
+        <p class="feedback incorrect">{tr("오답입니다. 한 번 더 풀어보세요.", "Not quite. Give it another try.")}</p>
+        <button class="button" type="button" onclick={retry}>{tr("다시 풀기", "Try again")}</button>
       </div>
     {:else if hostState.phase === "final-feedback"}
       {@const finalResult = hostState.attempts[hostState.attempts.length - 1]}
@@ -265,11 +278,11 @@
         aria-labelledby="question-final-heading"
       >
         <h2 id="question-final-heading" tabindex="-1" bind:this={finalHeading}>
-          {finalResult?.correct ? "정답입니다." : "정답을 확인해 보세요."}
+          {finalResult?.correct ? tr("정답입니다.", "Correct!") : tr("정답을 확인해 보세요.", "Review the answer")}
         </h2>
         {#if question.explanation}
           <section class="explanation" aria-labelledby="question-explanation-heading">
-            <h3 id="question-explanation-heading">설명</h3>
+            <h3 id="question-explanation-heading">{tr("설명", "Explanation")}</h3>
             {#each question.explanation as block}<ContentBlockRenderer {block} />{/each}
           </section>
         {/if}

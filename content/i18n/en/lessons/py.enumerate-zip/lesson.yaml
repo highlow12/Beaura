@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.enumerate-zip
+revision: 1
+track: python
+title: "enumerate and zip"
+description: "Learn to use enumerate to get indexes while iterating and zip to pair multiple sequences."
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.enumerate-zip.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: py.enumerate-zip.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.enumerate-zip.complete-01
+- type: question
+  ref: py.enumerate-zip.steps-01
+- type: question
+  ref: py.enumerate-zip.match-01

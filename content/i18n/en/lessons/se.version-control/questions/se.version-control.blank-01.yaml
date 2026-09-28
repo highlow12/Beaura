@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.version-control.blank-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: A ___ occurs when two branches make different changes to the same area and cannot be merged automatically.
+choices:
+- conflict
+- cache
+- parallelization
+acceptedAnswers:
+- conflict
+explanation:
+- type: text
+  text: A conflict occurs when a tool cannot determine which change was intended, so a person must edit the final result.
+tags:
+- software-engineering
+- version-control
+- merge-conflict
+difficulty: 1

@@ -1,0 +1,47 @@
+id: ds.deque.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each deque operation with its meaning."
+leftItems:
+- id: appendleft
+  content:
+  - type: text
+    text: "appendleft(x)"
+- id: append
+  content:
+  - type: text
+    text: "append(x)"
+- id: popleft
+  content:
+  - type: text
+    text: "popleft()"
+rightItems:
+- id: front-insert
+  content:
+  - type: text
+    text: "Adds an element to the front"
+- id: back-insert
+  content:
+  - type: text
+    text: "Adds an element to the back"
+- id: front-remove
+  content:
+  - type: text
+    text: "Removes an element from the front"
+correctPairs:
+- leftId: appendleft
+  rightId: front-insert
+- leftId: append
+  rightId: back-insert
+- leftId: popleft
+  rightId: front-remove
+explanation:
+- type: text
+  text: "Read left in the operation name together with the action to determine which end is used for insertion or removal."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- deque
+difficulty: 2

@@ -1,0 +1,48 @@
+id: algo.quicksort.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each quicksort term with its meaning."
+leftItems:
+- id: pivot
+  content:
+  - type: text
+    text: "pivot"
+- id: partition
+  content:
+  - type: text
+    text: "partition"
+- id: base
+  content:
+  - type: text
+    text: "Base case"
+rightItems:
+- id: reference
+  content:
+  - type: text
+    text: "The reference element used for partitioning"
+- id: split
+  content:
+  - type: text
+    text: "The process of dividing elements into those below and above the reference"
+- id: stop
+  content:
+  - type: text
+    text: "A condition that ends recursion when the length is 0 or 1"
+correctPairs:
+- leftId: pivot
+  rightId: reference
+- leftId: partition
+  rightId: split
+- leftId: base
+  rightId: stop
+explanation:
+- type: text
+  text: "Partition around the pivot, then stop recursion at the base case when a part cannot be split further."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- quicksort
+- partition
+difficulty: 2

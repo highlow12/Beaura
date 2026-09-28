@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: prob.distributions
+revision: 2
+track: probability-statistics
+title: "Common probability distributions"
+description: "Distinguish the forms and parameters of Bernoulli, binomial, and normal distributions."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: prob.distributions.definition-01
+  - type: question
+    ref: prob.distributions.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: prob.distributions.term-01
+  - type: question
+    ref: prob.distributions.steps-01
+  - type: question
+    ref: prob.distributions.match-01

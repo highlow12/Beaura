@@ -1,0 +1,24 @@
+id: ds.circular-queue.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the operator that makes a circular-queue index wrap back to 0 at the end."
+language: python
+template: next_index = (front + size) {{blank:operator}} capacity
+blanks:
+- id: operator
+  choices:
+  - '%'
+  - //
+  - +
+  acceptedAnswers:
+  - '%'
+explanation:
+- type: text
+  text: "The modulo operator % creates an index that wraps around by capacity. // computes a quotient, and + does not constrain the range."
+schemaVersion: 1
+revision: 1
+tags:
+- queue
+- circular-buffer
+difficulty: 2

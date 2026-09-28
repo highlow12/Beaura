@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: algo.recursion.match-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the value printed by this recursive function."
+language: python
+code: |-
+  def countdown(n):
+      if n == 0:
+          return 0
+      return n + countdown(n - 1)
+  print(countdown(3))
+choices:
+- '6'
+- '3'
+- '0'
+acceptedOutputs:
+- '6'
+explanation:
+- type: text
+  text: "countdown(3) computes 3 + 2 + 1 + countdown(0). The base case returns 0, so the function returns 6."
+tags:
+- recursion
+- call-stack
+- code-output
+difficulty: 2

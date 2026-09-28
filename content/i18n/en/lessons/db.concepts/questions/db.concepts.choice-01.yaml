@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.concepts.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What is the most important reason an application uses a DBMS?"
+options:
+  - id: abstraction
+    content:
+      - type: text
+        text: "It can delegate storage, query, and concurrency details to a management layer"
+  - id: display
+    content:
+      - type: text
+        text: "It automatically renders all data on screen"
+  - id: no-schema
+    content:
+      - type: text
+        text: "It removes the need to define data structures and constraints"
+correctOptionId: abstraction
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A DBMS abstracts the details of storage devices and query processing, but it does not design the application’s screens or data model."
+tags: [database, dbms]
+difficulty: 1

@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.indexes.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each index concept with its description."
+leftItems:
+  - id: index
+    content:
+      - type: text
+        text: "Index"
+  - id: btree
+    content:
+      - type: text
+        text: "B-tree"
+  - id: scan
+    content:
+      - type: text
+        text: "Full table scan"
+rightItems:
+  - id: lookup-structure
+    content:
+      - type: text
+        text: "An auxiliary structure for quickly finding a particular column value"
+  - id: ordered-balanced
+    content:
+      - type: text
+        text: "A tree structure that uses sorted keys and balance"
+  - id: all-rows
+    content:
+      - type: text
+        text: "Reading rows in sequence regardless of the condition"
+correctPairs:
+  - leftId: index
+    rightId: lookup-structure
+  - leftId: btree
+    rightId: ordered-balanced
+  - leftId: scan
+    rightId: all-rows
+explanation:
+  - type: text
+    text: "An index is an auxiliary search structure, and a B-tree is a common sorted tree. An execution plan that does not use an index may read the entire table."
+tags: [database, indexes, b-tree]
+difficulty: 1

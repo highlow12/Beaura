@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: math.graph-paths
+revision: 3
+track: discrete-math
+title: "Paths and Cycles"
+description: "Distinguish walks, paths, and cycles in a graph, and calculate the length of weighted paths."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: math.graph-paths.definition-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: math.graph-paths.application-01
+  - type: content
+    ref: content/path-shape.md
+  - type: question
+    ref: math.graph-paths.term-01
+  - type: question
+    ref: math.graph-paths.steps-01
+  - type: question
+    ref: math.graph-paths.match-01

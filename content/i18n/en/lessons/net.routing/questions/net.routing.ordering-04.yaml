@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: net.routing.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the basic routing and next-hop steps in the correct order."
+items:
+  - id: inspect
+    content:
+      - type: text
+        text: "Compare the destination IP address with the routing table"
+  - id: match
+    content:
+      - type: text
+        text: "Select the entry with the longest matching prefix"
+  - id: forward
+    content:
+      - type: text
+        text: "Forward the packet through the next-hop interface"
+correctOrder: [inspect, match, forward]
+explanation:
+  - type: text
+    text: "First, compare the destination IP address with the routing table; then use the result to select the entry with the longest matching prefix."
+  - type: text
+    text: "At the step where the packet is forwarded through the next-hop interface, it is delivered to the next network layer or application."
+tags: [routing, router, forwarding]
+difficulty: 3

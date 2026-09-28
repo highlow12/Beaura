@@ -1,0 +1,26 @@
+id: py.dictionaries.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the key expression that fills the blank to read the value for the `name` key."
+language: python
+template: 'user = {"name": "Ada"}
+
+  print(user[{{blank:key}}])'
+blanks:
+- id: key
+  choices:
+  - '"name"'
+  - name
+  - '0'
+  acceptedAnswers:
+  - '"name"'
+explanation:
+- type: text
+  text: "To look up a string key in a dictionary, write the key as a string, as in `user[\"name\"]`."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- dictionary
+difficulty: 2

@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: algo.unweighted-shortest-path.steps-01
+revision: 1
+type: ordering
+prompt:
+- type: text
+  text: "Put the steps for updating unweighted shortest distances with BFS in order."
+items:
+- id: start
+  content:
+  - type: text
+    text: "Set the start distance to 0 and add it to the queue"
+- id: pop
+  content:
+  - type: text
+    text: "Remove the current vertex from the queue"
+- id: inspect
+  content:
+  - type: text
+    text: "Check neighbors whose distance is not yet recorded"
+- id: update
+  content:
+  - type: text
+    text: "Record the neighbor’s distance and predecessor, then add it to the queue"
+correctOrder:
+- start
+- pop
+- inspect
+- update
+explanation:
+- type: text
+  text: "Skip visited neighbors. Record only newly discovered neighbors with a distance one greater than the current vertex."
+tags:
+- graph
+- shortest-path
+- bfs
+- execution-order
+difficulty: 2

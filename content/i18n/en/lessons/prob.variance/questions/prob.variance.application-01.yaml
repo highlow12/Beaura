@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.variance.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about variance and standard deviation."
+options:
+  - id: nonnegative
+    content:
+      - type: text
+        text: "Variance is nonnegative"
+  - id: sqrt
+    content:
+      - type: text
+        text: "Standard deviation is the square root of variance"
+  - id: shift
+    content:
+      - type: text
+        text: "Adding a constant does not change variance"
+  - id: negative
+    content:
+      - type: text
+        text: "Variance can be negative"
+correctOptionIds: [nonnegative, sqrt, shift]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Variance is an average of squared deviations, so it is nonnegative; shifting every value by a constant does not change the deviations."
+  - type: text
+    text: "If all values are the same, the variance is 0."
+tags:
+  - probability-statistics
+  - variance
+  - properties
+difficulty: 2

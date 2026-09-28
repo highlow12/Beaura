@@ -1,0 +1,49 @@
+schemaVersion: 1
+id: ds.graph.terms-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each graph term with its meaning."
+leftItems:
+- id: vertex
+  content:
+  - type: text
+    text: "vertex"
+- id: edge
+  content:
+  - type: text
+    text: "edge"
+- id: path
+  content:
+  - type: text
+    text: "path"
+rightItems:
+- id: node
+  content:
+  - type: text
+    text: "A unit representing one vertex"
+- id: link
+  content:
+  - type: text
+    text: "A connection between two vertices"
+- id: route
+  content:
+  - type: text
+    text: "An ordered sequence of vertices traversed along edges"
+correctPairs:
+- leftId: vertex
+  rightId: node
+- leftId: edge
+  rightId: link
+- leftId: path
+  rightId: route
+explanation:
+- type: text
+  text: "A vertex is a node, an edge is a connection, and a path is a route that follows connections."
+- type: text
+  text: "Graph problems begin by correctly identifying the relationships between vertices and edges."
+tags:
+- graph
+- terminology
+difficulty: 1

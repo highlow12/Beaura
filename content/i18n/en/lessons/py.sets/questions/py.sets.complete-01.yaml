@@ -1,0 +1,24 @@
+id: py.sets.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the operator for the blank to test whether a value belongs to a set."
+language: python
+template: "if item {{blank:operator}} values:\n    print(\"found\")"
+blanks:
+- id: operator
+  choices:
+  - in
+  - ==
+  - +
+  acceptedAnswers:
+  - in
+explanation:
+- type: text
+  text: "in checks whether the value on the left is an item in the collection on the right. The result is True or False."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- set
+difficulty: 2

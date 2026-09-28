@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: db.normalization.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the normal-form criterion that requires one value per cell instead of multiple independent values separated by commas."
+choices: ["1NF", "2NF", "3NF"]
+acceptedAnswers: ["1NF"]
+explanation:
+  - type: text
+    text: "1NF is the starting point requiring every attribute value to be atomic and free of repeating groups."
+tags: [database, normalization, first-normal-form]
+difficulty: 1

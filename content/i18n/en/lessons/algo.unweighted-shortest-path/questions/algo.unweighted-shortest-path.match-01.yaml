@@ -1,0 +1,48 @@
+schemaVersion: 1
+id: algo.unweighted-shortest-path.match-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each value used for unweighted shortest paths with its role."
+leftItems:
+- id: distance
+  content:
+  - type: text
+    text: "distance"
+- id: predecessor
+  content:
+  - type: text
+    text: "predecessor"
+- id: queue
+  content:
+  - type: text
+    text: "Queue"
+rightItems:
+- id: length
+  content:
+  - type: text
+    text: "The minimum number of edges from the start"
+- id: restore
+  content:
+  - type: text
+    text: "The previous vertex used to trace the path backward"
+- id: levels
+  content:
+  - type: text
+    text: "The order for processing levels from nearest to farthest"
+correctPairs:
+- leftId: distance
+  rightId: length
+- leftId: predecessor
+  rightId: restore
+- leftId: queue
+  rightId: levels
+explanation:
+- type: text
+  text: "Distance records the shortest length, predecessor lets you reconstruct the actual path, and the queue preserves BFS level order."
+tags:
+- graph
+- shortest-path
+- bfs
+difficulty: 2

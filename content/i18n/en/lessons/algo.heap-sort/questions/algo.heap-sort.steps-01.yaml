@@ -1,0 +1,37 @@
+id: algo.heap-sort.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Put the heap-sort steps in order."
+items:
+- id: build
+  content:
+  - type: text
+    text: "Build a heap from the input array"
+- id: root
+  content:
+  - type: text
+    text: "Read the highest-priority element at the root"
+- id: remove
+  content:
+  - type: text
+    text: "Remove the root and record it in the result"
+- id: restore
+  content:
+  - type: text
+    text: "Restore heap order for the remaining elements"
+correctOrder:
+- build
+- root
+- remove
+- restore
+explanation:
+- type: text
+  text: "First build the heap, then repeatedly remove the root and restore the priority order among the remaining elements."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- heap-sort
+- heap
+difficulty: 2

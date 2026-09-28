@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.lighting.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about basic diffuse lighting."
+options:
+  - id: dot
+    content:
+      - type: text
+        text: "The dot product of the normal and light direction provides a clue about the angle of incidence"
+  - id: clamp
+    content:
+      - type: text
+        text: "A negative dot product is usually clamped with max(..., 0)"
+  - id: normalize
+    content:
+      - type: text
+        text: "Normalizing direction vectors makes it easier to interpret their dot product as the cosine of an angle"
+  - id: eye-only
+    content:
+      - type: text
+        text: "Diffuse lighting is calculated from the viewer position alone, without a light direction"
+correctOptionIds: [dot, clamp, normalize]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The key inputs to diffuse lighting are the surface normal and light direction. Normalization and clamping negative values keep the simple Lambert model's interpretation and visual range consistent."
+tags: [graphics, lighting, diffuse]
+difficulty: 3

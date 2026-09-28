@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.twos-complement.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each two’s-complement term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "msb"
+  - id: left-b
+    content:
+      - type: text
+        text: "range"
+  - id: left-c
+    content:
+      - type: text
+        text: "overflow"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "Most significant bit used to determine the sign"
+  - id: right-b
+    content:
+      - type: text
+        text: "-2^(n-1) to 2^(n-1)-1 for n bits"
+  - id: right-c
+    content:
+      - type: text
+        text: "A result outside the representable range"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "The MSB is the most significant bit used to determine the sign; the range for n bits is -2^(n-1) to 2^(n-1)-1."
+  - type: text
+    text: "Overflow means a result outside the representable range, so distinguish these three roles."
+tags: [integer, twos-complement, overflow]
+difficulty: 2

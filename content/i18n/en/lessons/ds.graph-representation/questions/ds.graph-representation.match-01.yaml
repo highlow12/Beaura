@@ -1,0 +1,47 @@
+id: ds.graph-representation.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each graph-representation term with its meaning."
+leftItems:
+- id: adj-list
+  content:
+  - type: text
+    text: "Adjacency list"
+- id: matrix
+  content:
+  - type: text
+    text: "Adjacency matrix"
+- id: neighbor
+  content:
+  - type: text
+    text: "Neighbor"
+rightItems:
+- id: sparse
+  content:
+  - type: text
+    text: "A representation that stores a list of connected vertices"
+- id: dense
+  content:
+  - type: text
+    text: "A representation that stores connections in cells of a vertex-pair table"
+- id: connected
+  content:
+  - type: text
+    text: "A vertex directly reachable by one edge from another"
+correctPairs:
+- leftId: adj-list
+  rightId: sparse
+- leftId: matrix
+  rightId: dense
+- leftId: neighbor
+  rightId: connected
+explanation:
+- type: text
+  text: "An adjacency list stores only actual neighbors, while a matrix uses a cell for every pair. A neighbor is a vertex directly connected by one edge."
+schemaVersion: 1
+revision: 1
+tags:
+- graph
+- representation
+difficulty: 2

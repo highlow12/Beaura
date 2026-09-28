@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.independence.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which equation holds when A and B are independent?"
+options:
+  - id: product
+    content:
+      - type: text
+        text: "P(A∩B)=P(A)P(B)"
+  - id: sum
+    content:
+      - type: text
+        text: "P(A∩B)=P(A)+P(B)"
+  - id: zero
+    content:
+      - type: text
+        text: "P(A∩B)=0"
+  - id: equal
+    content:
+      - type: text
+        text: "Only P(A)=P(B) holds."
+correctOptionId: product
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "For independent events, the probability of their intersection is the product of their marginal probabilities."
+  - type: text
+    text: "Independence does not mean the events have equal probabilities; it means information about one does not affect the other."
+tags:
+  - probability-statistics
+  - independence
+  - definition
+difficulty: 1

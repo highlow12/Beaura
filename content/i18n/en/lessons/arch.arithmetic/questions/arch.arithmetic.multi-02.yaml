@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: arch.arithmetic.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe binary arithmetic and overflow."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "In 4-bit unsigned arithmetic, adding 1 to 15 leaves 0000 in storage."
+  - id: correct-b
+    content:
+      - type: text
+        text: "For 1+1, the current bit is 0 and a carry of 1 goes to the next bit."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "In binary, 1+1 writes 2 directly in the current position."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "All higher result bits are automatically preserved even with a fixed bit width."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "In 4-bit unsigned arithmetic, adding 1 to 15 leaves 0000 in storage. For 1+1, the current bit is 0 and a carry of 1 goes to the next bit."
+  - type: text
+    text: "Increasing the bit width expands the representable range, but requires more circuitry and storage. Unsigned overflow and signed two’s-complement overflow follow different detection rules, so distinguish them."
+tags: [binary-arithmetic, carry, overflow]
+difficulty: 3

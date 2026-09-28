@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.events.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which event does A∩B represent?"
+options:
+  - id: both
+    content:
+      - type: text
+        text: "The case where both A and B occur"
+  - id: either
+    content:
+      - type: text
+        text: "The case where exactly one of A and B occurs"
+  - id: not-a
+    content:
+      - type: text
+        text: "The case where A does not occur"
+  - id: all
+    content:
+      - type: text
+        text: "The entire sample space"
+correctOptionId: both
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The intersection contains outcomes shared by both events, where they occur together."
+  - type: text
+    text: "A∪B is the union, where at least one of the events occurs."
+tags:
+  - probability-statistics
+  - events
+  - intersection
+difficulty: 1

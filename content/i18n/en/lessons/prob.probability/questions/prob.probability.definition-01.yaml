@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.probability.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What does the sample space Ω represent?"
+options:
+  - id: all-outcomes
+    content:
+      - type: text
+        text: "The set of all possible outcomes of an experiment"
+  - id: favorite
+    content:
+      - type: text
+        text: "A single outcome of interest"
+  - id: average
+    content:
+      - type: text
+        text: "The average value of the outcomes"
+  - id: impossible
+    content:
+      - type: text
+        text: "Only outcomes that cannot occur"
+correctOptionId: all-outcomes
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The sample space contains all possible outcomes used to define probabilities."
+  - type: text
+    text: "An event is a subset formed by selecting outcomes of interest from this sample space."
+tags:
+  - probability-statistics
+  - probability
+  - sample-space
+difficulty: 1

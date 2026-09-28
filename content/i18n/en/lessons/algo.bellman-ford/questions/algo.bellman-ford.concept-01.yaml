@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.bellman-ford.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "What is a key reason to choose Bellman–Ford instead of Dijkstra?"
+options:
+- id: negative
+  content:
+  - type: text
+    text: "It can handle edges with negative weights"
+- id: sorted
+  content:
+  - type: text
+    text: "The vertex names are sorted"
+- id: constant
+  content:
+  - type: text
+    text: "Every edge always has a cost of 1"
+correctOptionId: negative
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Bellman–Ford allows negative edges and can also detect negative cycles with an additional check."
+tags:
+- shortest-path
+- bellman-ford
+- negative-edges
+difficulty: 1

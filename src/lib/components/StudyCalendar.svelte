@@ -1,21 +1,25 @@
 <script lang="ts">
   import { localDateFor } from "$lib/learning/gamification/config";
   import { monthDays, weekDays } from "$lib/learning/study-calendar";
+  import { locale, t } from "$lib/application/locale";
+  const tr = (korean: string, english: string) => t(korean, english, $locale);
 
   let { studyDates }: { studyDates: string[] } = $props();
   let expanded = $state(false);
   const today = localDateFor(Date.now());
   const date = new Date(`${today}T12:00:00`);
-  const monthLabel = new Intl.DateTimeFormat("ko-KR", {
+  const monthLabel = $derived(new Intl.DateTimeFormat($locale === "en" ? "en-US" : "ko-KR", {
     year: "numeric",
     month: "long",
-  }).format(date);
-  const weekdays = ["일", "월", "화", "수", "목", "금", "토"];
+  }).format(date));
+  const weekdays = $derived($locale === "en"
+    ? ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    : ["일", "월", "화", "수", "목", "금", "토"]);
   const studied = $derived(new Set(studyDates));
   const days = $derived(expanded ? monthDays(today) : weekDays(today));
 </script>
 
-<section class="study-calendar card" aria-label="연속 학습 달력">
+<section class="study-calendar card" aria-label={tr("연속 학습 달력", "Study calendar")}>
   <button
     class="calendar-toggle"
     type="button"
@@ -25,11 +29,11 @@
   >
     <span
       ><strong>{monthLabel}</strong><small
-        >{expanded ? "한 달의 학습 기록" : "이번 주 학습 기록"}</small
+        >{expanded ? tr("한 달의 학습 기록", "Monthly activity") : tr("이번 주 학습 기록", "This week")}</small
       ></span
     >
     <span class="toggle-label"
-      >{expanded ? "접기" : "한 달 보기"}
+      >{expanded ? tr("접기", "Show week") : tr("한 달 보기", "Show month")}
       <span aria-hidden="true">{expanded ? "⌃" : "⌄"}</span></span
     >
   </button>
@@ -45,7 +49,7 @@
         class:today={isToday}
         class:outside={!item.inMonth && expanded}
         class="calendar-day"
-        aria-label={`${item.date}${isStudied ? ", 학습함" : ", 학습하지 않음"}${isToday ? ", 오늘" : ""}`}
+        aria-label={`${item.date}${isStudied ? `, ${tr("학습함", "studied")}` : `, ${tr("학습하지 않음", "not studied")}`}${isToday ? `, ${tr("오늘", "today")}` : ""}`}
       >
         <span>{item.day}</span>
         <i aria-hidden="true"></i>
@@ -53,8 +57,8 @@
     {/each}
   </div>
   <div class="calendar-legend">
-    <span><i class="legend-dot studied-dot"></i>학습한 날</span><span
-      ><i class="legend-dot"></i>학습하지 않은 날</span
+    <span><i class="legend-dot studied-dot"></i>{tr("학습한 날", "Studied")}</span><span
+      ><i class="legend-dot"></i>{tr("학습하지 않은 날", "Not studied")}</span
     >
   </div>
 </section>

@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: pl.types.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: The rules that classify kinds of values and the operations allowed on them are called the value's ___.
+choices:
+  - type
+  - address
+  - token
+acceptedAnswers:
+  - type
+explanation:
+  - type: text
+    text: A type describes a value's classification and operation rules. For functions, it can also represent the shapes of arguments and return values.
+tags:
+  - programming-languages
+  - types
+difficulty: 1

@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.projection.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the names of the two planes that define the camera's near and far clipping boundaries."
+choices: ["near and far planes", "red and blue channels", "left and right shaders"]
+acceptedAnswers: ["near and far planes"]
+explanation:
+  - type: text
+    text: "The near and far planes define the view frustum's depth range. Points outside that range can be clipped."
+tags: [graphics, projection, clipping]
+difficulty: 1

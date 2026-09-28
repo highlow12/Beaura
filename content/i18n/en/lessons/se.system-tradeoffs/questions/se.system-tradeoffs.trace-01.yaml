@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: se.system-tradeoffs.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: What does the code print when it compares the cache response time with the origin response time?
+language: python
+code: 'responses = {"cache": 20, "origin": 120}
+
+  print(responses["cache"] < responses["origin"])'
+choices:
+- 'True'
+- 'False'
+- '100'
+acceptedOutputs:
+- 'True'
+explanation:
+- type: text
+  text: 20 is less than 120, so the comparison prints `True`. In a real design, you would also weigh the faster response against the cost of serving stale data.
+tags:
+- software-engineering
+- system-design
+- code-trace
+difficulty: 1

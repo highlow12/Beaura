@@ -1,0 +1,28 @@
+id: py.expressions.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the operator that adds two values so their result can be stored in total."
+language: python
+template: 'left = 6
+
+  right = 4
+
+  total = left {{blank:operator}} right'
+blanks:
+- id: operator
+  choices:
+  - +
+  - '*'
+  - ==
+  acceptedAnswers:
+  - +
+explanation:
+- type: text
+  text: "Use the + operator in an expression to add two values. == is a comparison expression that checks whether two results are equal."
+schemaVersion: 1
+revision: 1
+tags:
+- expressions
+- values
+difficulty: 2

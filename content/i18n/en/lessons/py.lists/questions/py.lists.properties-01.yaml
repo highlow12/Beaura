@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: py.lists.properties-01
+revision: 1
+type: multi-select
+prompt:
+- type: text
+  text: "Select all correct statements about Python lists."
+options:
+- id: ordered
+  content:
+  - type: text
+    text: "Items are ordered and can be accessed by index"
+- id: append-end
+  content:
+  - type: text
+    text: "append adds an item at the end by default"
+- id: pop-last
+  content:
+  - type: text
+    text: "Calling pop() without an index removes the last item"
+- id: fixed-size
+  content:
+  - type: text
+    text: "The size cannot change after creation"
+correctOptionIds:
+- ordered
+- append-end
+- pop-last
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Lists preserve order, and append and pop can change their size and contents."
+- type: text
+  text: "Indexes start at 0, and remember that pop cannot be called on an empty list."
+tags:
+- lists
+- mutable
+difficulty: 2

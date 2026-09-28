@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.partial-derivatives.definition-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "How do you calculate ∂f/∂x?"
+options:
+- id: hold-y
+  content:
+  - type: text
+    text: "Hold y constant and differentiate with respect to x"
+- id: hold-x
+  content:
+  - type: text
+    text: "Hold x constant and differentiate with respect to y"
+- id: both
+  content:
+  - type: text
+    text: "Increase both x and y by 1 at the same time"
+- id: integrate
+  content:
+  - type: text
+    text: "Integrate with respect to every variable"
+correctOptionId: hold-y
+shuffleOptions: true
+explanation:
+- type: text
+  text: "For a partial derivative with respect to x, treat the other variable y as a constant."
+- type: text
+  text: "For ∂f/∂y, hold x constant instead."
+tags:
+- calculus
+- multivariable
+- definition
+difficulty: 1

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: se.system-tradeoffs.blank-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: A design situation in which improving one goal requires considering the cost or risk to another is called a ___.
+choices:
+- trade-off
+- serialization
+- encapsulation
+acceptedAnswers:
+- trade-off
+explanation:
+- type: text
+  text: A trade-off is a choice among goals, such as performance, consistency, and cost, that cannot all be maximized at the same time.
+tags:
+- software-engineering
+- system-design
+- tradeoffs
+difficulty: 1

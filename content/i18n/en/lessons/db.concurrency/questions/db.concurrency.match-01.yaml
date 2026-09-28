@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.concurrency.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each concurrency term with its description."
+leftItems:
+  - id: race
+    content:
+      - type: text
+        text: "Race condition"
+  - id: lock
+    content:
+      - type: text
+        text: "Lock"
+  - id: serializable
+    content:
+      - type: text
+        text: "Serializable isolation"
+rightItems:
+  - id: timing
+    content:
+      - type: text
+        text: "A problem where the result varies with execution order"
+  - id: exclusive
+    content:
+      - type: text
+        text: "A mechanism that limits concurrent operations"
+  - id: serial-result
+    content:
+      - type: text
+        text: "An isolation level that aims for results equivalent to serial execution"
+correctPairs:
+  - leftId: race
+    rightId: timing
+  - leftId: lock
+    rightId: exclusive
+  - leftId: serializable
+    rightId: serial-result
+explanation:
+  - type: text
+    text: "A race condition depends on timing, while a lock is a tool for limiting conflicts. Serializable is one of the strongest isolation goals."
+tags: [database, concurrency, isolation, locks]
+difficulty: 2

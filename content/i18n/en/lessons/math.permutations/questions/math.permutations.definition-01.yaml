@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.permutations.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "How many ways can 4 different people be arranged in a row?"
+options:
+  - id: four
+    content:
+      - type: text
+        text: "4 ways"
+  - id: eight
+    content:
+      - type: text
+        text: "8 ways"
+  - id: twenty-four
+    content:
+      - type: text
+        text: "24 ways"
+  - id: sixteen
+    content:
+      - type: text
+        text: "16 ways"
+correctOptionId: twenty-four
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "There are 4 choices for the first position, then 3, 2, and 1, so 4!=24."
+  - type: text
+    text: "This is a permutation because everyone is used and order matters."
+tags:
+  - discrete-math
+  - combinatorics
+  - factorial
+difficulty: 1

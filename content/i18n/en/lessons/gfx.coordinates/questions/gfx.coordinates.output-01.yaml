@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: gfx.coordinates.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output: this code prints the coordinate space that follows world space in the transform sequence."
+language: python
+code: |-
+  spaces = ["model", "world", "view", "clip"]
+  print(spaces[spaces.index("world") + 1])
+choices: ["view", "model", "clip", "viewport"]
+acceptedOutputs: ["view"]
+explanation:
+  - type: text
+    text: "The item immediately after world in the list is view. View space, which uses the camera as its reference, follows world space."
+tags: [graphics, coordinates, code-output]
+difficulty: 2

@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: gfx.lighting
+revision: 3
+track: computer-graphics
+title: "Diffuse and Specular Lighting"
+description: "Learn the basics of calculating diffuse and specular lighting from the relationship between a surface normal and the light direction."
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: gfx.lighting.output-01
+  - type: question
+    ref: gfx.lighting.match-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/light-vectors.md
+  - type: question
+    ref: gfx.lighting.properties-01
+  - type: question
+    ref: gfx.lighting.fill-01
+  - type: question
+    ref: gfx.lighting.choice-01

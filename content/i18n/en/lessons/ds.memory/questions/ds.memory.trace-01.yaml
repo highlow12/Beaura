@@ -1,0 +1,29 @@
+id: ds.memory.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following reference code."
+language: python
+code: 'a = [1]
+
+  b = a
+
+  b.append(2)
+
+  print(a)'
+choices:
+- '[1, 2]'
+- '[1]'
+- '[2]'
+acceptedOutputs:
+- '[1, 2]'
+explanation:
+- type: text
+  text: "Since a and b point to the same list, the 2 appended through b is also visible when reading a."
+schemaVersion: 1
+revision: 1
+tags:
+- memory
+- representation
+- reference
+difficulty: 2

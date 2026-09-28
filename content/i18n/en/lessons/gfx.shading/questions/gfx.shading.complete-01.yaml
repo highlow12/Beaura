@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.shading.complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: "Complete the blank so the fragment shader passes the interpolated color to the final color variable."
+language: python
+template: |-
+  interpolated_color = (0.2, 0.4, 0.8)
+  output_color = {{blank:value}}
+blanks:
+  - id: value
+    choices: ["interpolated_color", "vertex_position", "depth_buffer"]
+    acceptedAnswers: ["interpolated_color"]
+explanation:
+  - type: text
+    text: "The fragment shader's color output should receive the interpolated color for the current sample. A position or the depth buffer itself is not a color output."
+tags: [graphics, shading, fragment-shader, code-completion]
+difficulty: 1

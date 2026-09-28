@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: net.ethernet
+revision: 2
+track: networks
+title: Ethernet Frames
+description: Learn how Ethernet frames and MAC addresses deliver data across a local link.
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: net.ethernet.single-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: net.ethernet.multi-02
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: net.ethernet.fill-03
+- type: question
+  ref: net.ethernet.ordering-04
+- type: question
+  ref: net.ethernet.matching-05

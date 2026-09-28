@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.dictionaries
+revision: 1
+track: python
+title: "Dictionaries"
+description: "Learn to use dictionaries to associate keys with values and find or update data by name."
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.dictionaries.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: py.dictionaries.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.dictionaries.complete-01
+- type: question
+  ref: py.dictionaries.steps-01
+- type: question
+  ref: py.dictionaries.match-01

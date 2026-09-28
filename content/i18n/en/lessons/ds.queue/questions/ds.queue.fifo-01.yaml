@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: ds.queue.fifo-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "Which statement correctly describes the FIFO rule of a queue?"
+options:
+- id: first
+  content:
+  - type: text
+    text: "The first element in is the first element out"
+- id: last
+  content:
+  - type: text
+    text: "The last element in is the first element out"
+- id: random
+  content:
+  - type: text
+    text: "Elements come out in random order"
+correctOptionId: first
+shuffleOptions: true
+explanation:
+- type: text
+  text: "FIFO stands for First In, First Out: the value added first is removed first."
+- type: text
+  text: "Queues are well suited to waiting tasks where arrival order must be preserved."
+tags:
+- queue
+- fifo
+difficulty: 1

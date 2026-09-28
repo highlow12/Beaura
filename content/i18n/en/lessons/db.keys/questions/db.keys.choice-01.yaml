@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.keys.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "For Enrollment(student_id, course_id), which key would prevent one student from enrolling in the same course more than once?"
+options:
+  - id: composite
+    content:
+      - type: text
+        text: "A composite primary key using student_id and course_id together"
+  - id: student-only
+    content:
+      - type: text
+        text: "Use student_id alone as the primary key"
+  - id: course-only
+    content:
+      - type: text
+        text: "Use course_id alone as the primary key"
+correctOptionId: composite
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Since one student can enroll in many courses and one course can have many students, the combination of both identifiers uniquely represents an enrollment."
+tags: [database, keys, composite-key]
+difficulty: 3

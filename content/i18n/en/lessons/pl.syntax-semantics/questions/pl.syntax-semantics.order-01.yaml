@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: pl.syntax-semantics.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the stages for processing a typical source program in the correct order.
+items:
+  - id: lex
+    content:
+      - type: text
+        text: Split characters into tokens.
+  - id: parse
+    content:
+      - type: text
+        text: Build grammatical structure from the tokens.
+  - id: analyze
+    content:
+      - type: text
+        text: Check the static semantics of names and types.
+  - id: generate
+    content:
+      - type: text
+        text: Generate target code or bytecode.
+correctOrder:
+  - lex
+  - parse
+  - analyze
+  - generate
+explanation:
+  - type: text
+    text: Lexing and parsing build structure. Semantic analysis checks its static constraints before code generation begins.
+tags:
+  - programming-languages
+  - compiler-pipeline
+difficulty: 2

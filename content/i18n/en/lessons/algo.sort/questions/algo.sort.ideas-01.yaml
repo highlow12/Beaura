@@ -1,0 +1,49 @@
+schemaVersion: 1
+id: algo.sort.ideas-01
+revision: 1
+type: matching
+prompt:
+- type: text
+  text: "Match each sorting algorithm with its key idea."
+leftItems:
+- id: bubble
+  content:
+  - type: text
+    text: "Bubble sort"
+- id: selection
+  content:
+  - type: text
+    text: "Selection sort"
+- id: merge
+  content:
+  - type: text
+    text: "Merge sort"
+rightItems:
+- id: neighbors
+  content:
+  - type: text
+    text: "Compare neighboring elements and swap them if needed"
+- id: minimum
+  content:
+  - type: text
+    text: "Find the minimum in the remaining range and move it to the front"
+- id: combine
+  content:
+  - type: text
+    text: "Divide the array into smaller ranges and merge their sorted results"
+correctPairs:
+- leftId: bubble
+  rightId: neighbors
+- leftId: selection
+  rightId: minimum
+- leftId: merge
+  rightId: combine
+explanation:
+- type: text
+  text: "Bubble sort centers on comparing neighbors, selection sort on choosing the minimum, and merge sort on combining divided ranges."
+- type: text
+  text: "Instead of memorizing algorithm names, explain what is selected and moved during one pass."
+tags:
+- sorting
+- algorithm-ideas
+difficulty: 2

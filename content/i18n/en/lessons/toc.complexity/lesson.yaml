@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: toc.complexity
+revision: 2
+track: theory-of-computation
+title: Computational Complexity and P vs. NP
+description: Learn how efficiently solvable problems relate to problems whose solutions can be verified quickly.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: toc.complexity.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: toc.complexity.match-01
+  - type: question
+    ref: toc.complexity.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: toc.complexity.order-01
+  - type: question
+    ref: toc.complexity.trace-01

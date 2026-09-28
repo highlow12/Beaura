@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.process.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about processes and execution units is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A process is a managed unit that combines a running program with its address space, resources, and CPU state."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A process is a source-code file that has never run on the CPU."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A process is one global register shared by every program."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A process is a managed unit that combines a running program with its address space, resources, and CPU state."
+  - type: text
+    text: "A process is an operating-system-managed unit that includes a running program’s address space, register state, open files, and other resources. The same program can run as multiple processes."
+tags: [process, address-space, lifecycle]
+difficulty: 1

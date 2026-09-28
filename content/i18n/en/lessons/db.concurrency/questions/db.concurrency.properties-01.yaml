@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.concurrency.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe database concurrency control."
+options:
+  - id: isolation-tradeoff
+    content:
+      - type: text
+        text: "Stronger isolation can increase the cost of parallelism and waiting"
+  - id: deadlock
+    content:
+      - type: text
+        text: "Deadlocks can occur when the order of multiple locks conflicts"
+  - id: retry
+    content:
+      - type: text
+        text: "A retry policy can be used after detecting a deadlock or conflict"
+  - id: no-interleaving
+    content:
+      - type: text
+        text: "Transactions are never interleaved in real systems"
+correctOptionIds: [isolation-tradeoff, deadlock, retry]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Isolation levels trade off correctness and parallelism. Since locks can cause deadlocks, detection, retries, and consistent lock ordering are important."
+tags: [database, concurrency, isolation, deadlock]
+difficulty: 3

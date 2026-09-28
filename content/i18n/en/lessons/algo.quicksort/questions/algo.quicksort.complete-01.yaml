@@ -1,0 +1,25 @@
+id: algo.quicksort.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Choose the comparison operator that puts elements smaller than the pivot on the left."
+language: python
+template: "if value {{blank:compare}} pivot:\n    smaller.append(value)"
+blanks:
+- id: compare
+  choices:
+  - <
+  - '>'
+  - ==
+  acceptedAnswers:
+  - <
+explanation:
+- type: text
+  text: "Use < because a value is added to the smaller-side list only when it is less than the pivot."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- quicksort
+- partition
+difficulty: 2

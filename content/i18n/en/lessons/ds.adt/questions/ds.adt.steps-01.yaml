@@ -1,0 +1,36 @@
+id: ds.adt.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for choosing and implementing a data structure using an ADT."
+items:
+- id: need
+  content:
+  - type: text
+    text: "Write down the required data behavior"
+- id: contract
+  content:
+  - type: text
+    text: "Define the ADT’s operations and result rules"
+- id: choose
+  content:
+  - type: text
+    text: "Choose an implementation that matches the contract"
+- id: use
+  content:
+  - type: text
+    text: "Call operations without relying on implementation details"
+correctOrder:
+- need
+- contract
+- choose
+- use
+explanation:
+- type: text
+  text: "First express the required behavior as an ADT contract, choose an implementation that fits performance and memory requirements, then use the interface."
+schemaVersion: 1
+revision: 1
+tags:
+- adt
+- interface
+difficulty: 2

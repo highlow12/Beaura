@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: algo.bellman-ford.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "Complete the candidate distance to v when relaxing edge u → v."
+- type: code
+  language: python
+  code: candidate = distance[u] {{blank:edge}}
+choices:
+- + weight
+- "- weight"
+- "* weight"
+acceptedAnswers:
+- + weight
+explanation:
+- type: text
+  text: "The candidate distance to v is the current distance to u plus the edge weight."
+tags:
+- shortest-path
+- bellman-ford
+- relaxation
+- code-completion
+difficulty: 2

@@ -1,0 +1,22 @@
+schemaVersion: 1
+id: gfx.animation.order-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the steps for finding the animation transform for the current frame in order."
+items:
+  - id: interval
+    content: [{ type: text, text: "Find the keyframe interval containing the current time." }]
+  - id: ratio
+    content: [{ type: text, text: "Calculate the time fraction within the interval." }]
+  - id: values
+    content: [{ type: text, text: "Interpolate position, rotation, and scale values." }]
+  - id: matrix
+    content: [{ type: text, text: "Build the transform from the evaluated values." }]
+correctOrder: [interval, ratio, values, matrix]
+explanation:
+  - type: text
+    text: "Select the interval and calculate the normalized time fraction; then use that fraction to evaluate the properties and build the final transform."
+tags: [graphics, animation, transform]
+difficulty: 2

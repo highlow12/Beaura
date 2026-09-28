@@ -1,0 +1,38 @@
+id: algo.asymptotic.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Put the steps for determining an asymptotic bound in order."
+items:
+- id: formula
+  content:
+  - type: text
+    text: "Write an expression for the number of operations"
+- id: upper
+  content:
+  - type: text
+    text: "Find the Big-O upper bound"
+- id: lower
+  content:
+  - type: text
+    text: "Find the Ω lower bound"
+- id: tight
+  content:
+  - type: text
+    text: "If the bounds match, express them as Θ"
+correctOrder:
+- formula
+- upper
+- lower
+- tight
+unorderedGroups:
+  - [upper, lower]
+explanation:
+- type: text
+  text: "First write the cost expression and check the upper and lower bounds separately. If both bounds have the same growth rate, the tight bound is Θ."
+schemaVersion: 1
+revision: 2
+tags:
+- complexity
+- asymptotic
+difficulty: 2

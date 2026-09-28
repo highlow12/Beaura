@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: ds.queue.ends-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each common queue operation with the end it uses."
+leftItems:
+  - id: enqueue
+    content:
+      - type: text
+        text: "enqueue"
+  - id: dequeue
+    content:
+      - type: text
+        text: "dequeue"
+rightItems:
+  - id: rear
+    content:
+      - type: text
+        text: "Insert at the rear"
+  - id: front
+    content:
+      - type: text
+        text: "Remove from the front"
+correctPairs:
+  - leftId: enqueue
+    rightId: rear
+  - leftId: dequeue
+    rightId: front
+explanation:
+  - type: text
+    text: "A queue adds new values at rear and removes the value that has waited the longest at front."
+tags:
+  - queue
+  - fifo
+  - operations
+difficulty: 1

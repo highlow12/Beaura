@@ -1,0 +1,38 @@
+schemaVersion: 1
+id: py.lists.mutation-output-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the two lines printed by the following Python code."
+language: python
+code: |-
+  numbers = [2, 4]
+  numbers.append(6)
+  numbers[0] = 3
+  print(numbers[1])
+  print(len(numbers))
+choices:
+- '4
+
+  3'
+- '3
+
+  3'
+- '4
+
+  2'
+acceptedOutputs:
+- '4
+
+  3'
+explanation:
+- type: text
+  text: "The second item remains 4, and the list has length 3 after append."
+- type: text
+  text: "Changing the item at index 0 does not affect the value at index 1 or the number of items."
+tags:
+- lists
+- mutation
+- code-output
+difficulty: 2

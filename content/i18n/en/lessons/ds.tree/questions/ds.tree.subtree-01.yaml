@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: ds.tree.subtree-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select everything that must be included in the subtree rooted at node B."
+options:
+  - id: node-b
+    content:
+      - type: text
+        text: "B itself"
+  - id: descendants
+    content:
+      - type: text
+        text: "All descendants of B"
+  - id: parent
+    content:
+      - type: text
+        text: "The parent of B"
+correctOptionIds:
+  - node-b
+  - descendants
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A subtree contains the reference node and all its descendants, but not its parent."
+tags:
+  - tree
+  - subtree
+  - hierarchy
+difficulty: 2

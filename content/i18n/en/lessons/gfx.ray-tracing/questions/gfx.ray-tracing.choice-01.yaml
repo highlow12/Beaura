@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: gfx.ray-tracing.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "When a camera ray intersects multiple objects in ray tracing, which intersection is used first to calculate the surface color?"
+options:
+  - id: nearest
+    content:
+      - type: text
+        text: "The nearest valid intersection to the ray origin"
+  - id: farthest
+    content:
+      - type: text
+        text: "Always the farthest intersection"
+  - id: random
+    content:
+      - type: text
+        text: "A randomly selected intersection, regardless of distance"
+correctOptionId: nearest
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The first surface hit from the camera is the visible one, so the nearest valid intersection is selected."
+tags: [graphics, ray-tracing, intersection]
+difficulty: 1

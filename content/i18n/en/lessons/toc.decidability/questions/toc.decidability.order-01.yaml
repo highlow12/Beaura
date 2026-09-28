@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: toc.decidability.order-01
+revision: 3
+type: ordering
+prompt:
+  - type: text
+    text: Arrange the steps for designing a simulator that decides whether a program halts within at most B steps.
+items:
+  - id: set-bound
+    content:
+      - type: text
+        text: Accept a maximum execution bound B as input.
+  - id: simulate
+    content:
+      - type: text
+        text: Run for at most B steps and stop the simulation if the program halts within that bound.
+  - id: report
+    content:
+      - type: text
+        text: If it halts within B steps, report “halts within B steps”; otherwise, report “does not halt within B steps.”
+correctOrder:
+  - set-bound
+  - simulate
+  - report
+explanation:
+  - type: text
+    text: Whether a program halts within B steps is decidable. A result showing that it did not halt within the bound does not imply that it will run forever afterward.
+tags:
+  - theory-of-computation
+  - decidability
+  - simulation
+difficulty: 3

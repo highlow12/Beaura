@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.virtual-memory.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "The exception that requires operating-system handling when a valid page is not in RAM is a ___."
+choices:
+  - "page fault"
+  - "TLB hit"
+  - "normal return"
+acceptedAnswers:
+  - "page fault"
+explanation:
+  - type: text
+    text: "A virtual address is split into a page number and offset, and the page number is mapped to a physical frame. If the page is not in RAM but the access is valid, the operating system can load it after a page fault and retry the access. An invalid address or permission violation cannot be fixed by loading the page and instead results in an error."
+tags: [virtual-memory, page, memory-protection]
+difficulty: 2

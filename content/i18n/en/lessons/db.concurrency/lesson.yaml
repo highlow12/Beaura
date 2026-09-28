@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: db.concurrency
+revision: 2
+track: databases
+title: Concurrency and Isolation
+description: Learn how race conditions, locks, and isolation levels control the outcomes of concurrently running transactions.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: db.concurrency.match-01
+  - type: question
+    ref: db.concurrency.choice-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/system-behavior.md
+  - type: question
+    ref: db.concurrency.fill-01
+  - type: question
+    ref: db.concurrency.output-01
+  - type: question
+    ref: db.concurrency.properties-01

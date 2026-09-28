@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.derivative-rules.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all expressions that require the chain rule."
+options:
+  - id: sin-square
+    content:
+      - type: text
+        text: "sin(x²)"
+  - id: square-sin
+    content:
+      - type: text
+        text: "(sin x)²"
+  - id: linear
+    content:
+      - type: text
+        text: "3x+1"
+  - id: nested-exp
+    content:
+      - type: text
+        text: "e^(2x+1)"
+correctOptionIds: [sin-square, square-sin, nested-exp]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The chain rule is needed for composite expressions where one function is inside another."
+  - type: text
+    text: "3x+1 is a basic linear expression and can be differentiated directly."
+tags:
+  - calculus
+  - derivative-rules
+  - chain-rule
+difficulty: 2

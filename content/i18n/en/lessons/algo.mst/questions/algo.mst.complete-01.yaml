@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: algo.mst.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "Complete the number of edges in a spanning tree with V vertices."
+- type: code
+  language: python
+  code: edge_count = {{blank:count}}
+choices:
+- V - 1
+- V
+- V + 1
+acceptedAnswers:
+- V - 1
+explanation:
+- type: text
+  text: "A tree adds one edge for each vertex connected after the first, so V vertices require V − 1 edges."
+tags:
+- graph
+- mst
+- spanning-tree
+- code-completion
+difficulty: 2

@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: toc.complexity.blank-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: A typical time bound for a problem in P is ___ time in the input size.
+choices:
+  - polynomial
+  - infinite
+  - arbitrary
+acceptedAnswers:
+  - polynomial
+explanation:
+  - type: text
+    text: P is the class of problems solvable by a deterministic algorithm in time bounded by a polynomial in the input size.
+tags:
+  - theory-of-computation
+  - complexity
+  - p
+difficulty: 1

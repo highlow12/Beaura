@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.process.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to processes and execution units."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "The operating system manages execution state and address-space information for each process."
+  - id: correct-b
+    content:
+      - type: text
+        text: "Running a program in multiple processes can provide separate resource isolation."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "All processes must share the same address space."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A process is always in the running state, even while waiting for I/O."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The operating system manages execution state and address-space information for each process. Running a program in multiple processes can provide separate resource isolation."
+  - type: text
+    text: "Process isolation improves safety and fault isolation, but requires separate address spaces and kernel data structures. Threads may be a better fit for lightweight sharing between tasks."
+tags: [process, address-space, lifecycle]
+difficulty: 2

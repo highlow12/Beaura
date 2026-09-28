@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: calc.gradient.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each gradient concept with its description."
+leftItems:
+  - id: gradient
+    content:
+      - type: text
+        text: "∇f"
+  - id: directional
+    content:
+      - type: text
+        text: "Directional derivative"
+  - id: contour
+    content:
+      - type: text
+        text: "Contour line"
+  - id: descent
+    content:
+      - type: text
+        text: "gradient descent"
+rightItems:
+  - id: gradient-desc
+    content:
+      - type: text
+        text: "A vector whose components are partial derivatives"
+  - id: directional-desc
+    content:
+      - type: text
+        text: "Rate of change in a particular direction"
+  - id: contour-desc
+    content:
+      - type: text
+        text: "A line of points with the same function value"
+  - id: descent-desc
+    content:
+      - type: text
+        text: "Update in the direction of the negative gradient"
+correctPairs:
+  - leftId: gradient
+    rightId: gradient-desc
+  - leftId: directional
+    rightId: directional-desc
+  - leftId: contour
+    rightId: contour-desc
+  - leftId: descent
+    rightId: descent-desc
+explanation:
+  - type: text
+    text: "The gradient summarizes directional information about a multivariable function in a vector."
+  - type: text
+    text: "The perpendicular relationship to contour lines is especially useful for visualizing a function’s landscape."
+tags:
+  - calculus
+  - gradient
+  - terminology
+difficulty: 2

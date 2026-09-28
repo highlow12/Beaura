@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: algo.correctness.trace-01
+revision: 1
+type: code-output
+prompt:
+- type: text
+  text: "Choose the sum computed by this loop."
+language: python
+code: |-
+  total = 0
+  for value in [1, 2, 3]:
+      total += value
+  print(total)
+choices:
+- '6'
+- '5'
+- '3'
+acceptedOutputs:
+- '6'
+explanation:
+- type: text
+  text: "total starts at 0 and adds 1, 2, and 3 in order, so it is 6 at the end. After each iteration, total equals the sum of the values seen so far; this is the loop invariant."
+tags:
+- correctness
+- invariant
+- code-output
+difficulty: 2

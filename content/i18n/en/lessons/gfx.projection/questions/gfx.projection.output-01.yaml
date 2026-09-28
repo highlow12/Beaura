@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: gfx.projection.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "This code prints the screen x-coordinate of a distant point in a simplified depth-scaling model. Choose the result."
+language: python
+code: |-
+  camera_x = 4
+  depth = 2
+  screen_x = camera_x / depth
+  print(screen_x)
+choices: ["2.0", "8", "6.0"]
+acceptedOutputs: ["2.0"]
+explanation:
+  - type: text
+    text: "In this simplified perspective model, x is divided by the depth of 2, so 4 / 2 = 2.0. A real GPU produces this relationship with a projection matrix and division by `w`."
+tags: [graphics, projection, code-output]
+difficulty: 2

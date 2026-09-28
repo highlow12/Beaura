@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: prob.randomized-hashing.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the conceptual steps for inserting a key into a hash table."
+items:
+  - id: hash
+    content:
+      - type: text
+        text: "Apply the hash function to the key"
+  - id: bucket
+    content:
+      - type: text
+        text: "Find the bucket indicated by the hash value"
+  - id: check
+    content:
+      - type: text
+        text: "Check whether the bucket already contains a colliding key"
+  - id: resolve
+    content:
+      - type: text
+        text: "Store the key in an empty slot or collision-resolution structure"
+correctOrder:
+  - hash
+  - bucket
+  - check
+  - resolve
+explanation:
+  - type: text
+    text: "Compute the hash location, then apply the chosen strategy if a collision occurs."
+  - type: text
+    text: "Even with the same hash function, storage behavior differs between chaining and open addressing."
+tags:
+  - probability-statistics
+  - randomized-algorithms
+  - procedure
+difficulty: 2

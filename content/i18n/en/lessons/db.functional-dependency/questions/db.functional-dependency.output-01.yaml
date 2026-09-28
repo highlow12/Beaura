@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: db.functional-dependency.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the output of the code that looks up the name determined by student_id in a dictionary."
+language: python
+code: |-
+  names = {7: "Mina", 8: "Joon"}
+  student_id = 7
+  print(names[student_id])
+choices: ["Mina", "Joon", "7"]
+acceptedOutputs: ["Mina"]
+explanation:
+  - type: text
+    text: "Key 7 determines the value Mina, so names[7] outputs Mina. A dictionary is a simple model that intuitively shows the direction of a functional dependency."
+tags: [database, functional-dependency, code-output]
+difficulty: 1

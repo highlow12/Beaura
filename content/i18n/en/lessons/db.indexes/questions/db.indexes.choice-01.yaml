@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.indexes.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Why might an index on a column with almost only one distinct value be of little help?"
+options:
+  - id: low-selectivity
+    content:
+      - type: text
+        text: "Most rows become candidates, so the index has low selectivity"
+  - id: no-storage
+    content:
+      - type: text
+        text: "Indexes use no storage at all"
+  - id: always-order
+    content:
+      - type: text
+        text: "An index automatically returns every result in the desired order"
+correctOptionId: low-selectivity
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "If most rows have the same value, the index cannot narrow the candidates, so reading the whole table may be better. Check the actual execution plan."
+tags: [database, indexes, selectivity]
+difficulty: 2

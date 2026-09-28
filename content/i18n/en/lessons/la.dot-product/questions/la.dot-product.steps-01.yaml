@@ -1,0 +1,39 @@
+schemaVersion: 1
+id: la.dot-product.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Arrange the steps for using the dot product to test whether two vectors are orthogonal."
+items:
+  - id: multiply
+    content:
+      - type: text
+        text: "Multiply corresponding components"
+  - id: sum
+    content:
+      - type: text
+        text: "Add all the products"
+  - id: zero
+    content:
+      - type: text
+        text: "Check whether the sum is 0"
+  - id: judge
+    content:
+      - type: text
+        text: "If it is 0, classify the vectors as orthogonal"
+correctOrder:
+  - multiply
+  - sum
+  - zero
+  - judge
+explanation:
+  - type: text
+    text: "The criterion for orthogonality is whether the dot product is 0."
+  - type: text
+    text: "If the dot product is not 0, this criterion does not classify the vectors as orthogonal."
+tags:
+  - linear-algebra
+  - dot-product
+  - test
+difficulty: 2

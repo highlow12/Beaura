@@ -1,0 +1,47 @@
+id: ds.union-find.match-01
+type: matching
+prompt:
+- type: text
+  text: "Match each union-find term with its meaning."
+leftItems:
+- id: find
+  content:
+  - type: text
+    text: "find"
+- id: union
+  content:
+  - type: text
+    text: "union"
+- id: representative
+  content:
+  - type: text
+    text: "Representative"
+rightItems:
+- id: locate
+  content:
+  - type: text
+    text: "An operation that finds the representative of a set"
+- id: join
+  content:
+  - type: text
+    text: "An operation that merges two sets"
+- id: root
+  content:
+  - type: text
+    text: "A group identifier whose parent is itself"
+correctPairs:
+- leftId: find
+  rightId: locate
+- leftId: union
+  rightId: join
+- leftId: representative
+  rightId: root
+explanation:
+- type: text
+  text: "find locates a representative, and union combines groups with different representatives. A representative is the root used to identify each set."
+schemaVersion: 1
+revision: 1
+tags:
+- disjoint-set
+- union-find
+difficulty: 2

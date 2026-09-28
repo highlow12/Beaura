@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: math.logic-equivalence.steps-01
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put in order the steps for transforming ¬(P ∨ Q) into an equivalent expression."
+items:
+  - id: scope
+    content:
+      - type: text
+        text: "Check that the negation covers all of P ∨ Q"
+  - id: negate
+    content:
+      - type: text
+        text: "Negate P and Q individually"
+  - id: swap
+    content:
+      - type: text
+        text: "Replace ∨ with ∧ and write ¬P ∧ ¬Q"
+correctOrder:
+  - scope
+  - negate
+  - swap
+explanation:
+  - type: text
+    text: "First check the scope of the negation, then negate each term and change OR to AND according to De Morgan's law."
+  - type: text
+    text: "Separating the transformation into steps helps avoid negating only some terms or overlooking the operator change."
+tags:
+  - discrete-math
+  - logic
+  - transformation
+difficulty: 2

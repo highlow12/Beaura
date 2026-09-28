@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: os.mutex.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each mutex and critical-section term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "mutex"
+  - id: left-b
+    content:
+      - type: text
+        text: "Lock acquisition"
+  - id: left-c
+    content:
+      - type: text
+        text: "Lock release"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "A lock that allows only one owner at a time"
+  - id: right-b
+    content:
+      - type: text
+        text: "An operation that requests entry to the critical section"
+  - id: right-c
+    content:
+      - type: text
+        text: "An operation that releases the lock and wakes a waiter"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "A mutex allows only one owner at a time; lock acquisition requests entry to the critical section; lock release frees the lock and wakes a waiter."
+tags: [mutex, lock, critical-section]
+difficulty: 2

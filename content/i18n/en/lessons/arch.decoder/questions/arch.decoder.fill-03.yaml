@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: arch.decoder.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "In a 2-to-4 decoder where 1 is active, if enable=1 and the input code is `10`, which output number is active?"
+choices:
+  - "2"
+  - "1"
+  - "3"
+acceptedAnswers:
+  - "2"
+explanation:
+  - type: text
+    text: "Binary 10 is decimal 2, so only output 2 is activated."
+tags: [decoder, address, digital-logic]
+difficulty: 2

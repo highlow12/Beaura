@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.matrices.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What structure does a 2×3 matrix have?"
+options:
+  - id: two-three
+    content:
+      - type: text
+        text: "2 rows and 3 columns"
+  - id: three-two
+    content:
+      - type: text
+        text: "3 rows and 2 columns"
+  - id: six-row
+    content:
+      - type: text
+        text: "6 rows and 1 column"
+  - id: square
+    content:
+      - type: text
+        text: "2 rows and 2 columns"
+correctOptionId: two-three
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "In matrix notation `m × n`, `m` is the number of rows and `n` is the number of columns."
+  - type: text
+    text: "Therefore, a 2×3 matrix has 6 entries."
+tags:
+  - linear-algebra
+  - matrices
+  - shape
+difficulty: 1

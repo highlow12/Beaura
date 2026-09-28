@@ -1,0 +1,47 @@
+schemaVersion: 1
+id: arch.decoder.matching-05
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each decoder and address-selection term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "input-code"
+  - id: left-b
+    content:
+      - type: text
+        text: "one-hot"
+  - id: left-c
+    content:
+      - type: text
+        text: "enable"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "An n-bit input that represents the selection"
+  - id: right-b
+    content:
+      - type: text
+        text: "A selection form with only one active output"
+  - id: right-c
+    content:
+      - type: text
+        text: "A control signal that enables the decoder"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "An input code is an n-bit input that represents the selection, and one-hot is a form in which only one output is active."
+  - type: text
+    text: "Enable is the control signal that allows the decoder to operate, so distinguish these three roles."
+tags: [decoder, address, digital-logic]
+difficulty: 2

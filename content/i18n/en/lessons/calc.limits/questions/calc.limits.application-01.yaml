@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.limits.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about limits."
+options:
+  - id: both-sides
+    content:
+      - type: text
+        text: "The two-sided limit exists only if the left- and right-hand limits are equal"
+  - id: value-diff
+    content:
+      - type: text
+        text: "The limit may differ from f(a)"
+  - id: undefined
+    content:
+      - type: text
+        text: "The limit may exist even if f(a) is undefined"
+  - id: always-value
+    content:
+      - type: text
+        text: "A limit always equals the function value"
+correctOptionIds: [both-sides, value-diff, undefined]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A limit is an approached value and may be different from the function value at that point."
+  - type: text
+    text: "The limit and function value are equal when the function is continuous at that point."
+tags:
+  - calculus
+  - limits
+  - one-sided
+difficulty: 2

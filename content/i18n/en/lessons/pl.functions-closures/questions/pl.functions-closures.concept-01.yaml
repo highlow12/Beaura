@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: pl.functions-closures.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement best describes a closure?"
+options:
+  - id: code-environment
+    content:
+      - type: text
+        text: "A pair of function code and the lexical environment captured when it was defined."
+  - id: call-stack-only
+    content:
+      - type: text
+        text: "Only the stack frame temporarily created during a function call."
+  - id: source-text
+    content:
+      - type: text
+        text: "A value that stores a function name as a string."
+  - id: global-copy
+    content:
+      - type: text
+        text: "A copy of every global variable inside the function."
+correctOptionId: code-environment
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A closure preserves the environment where a function was defined, so it can use captured names even after the outer function returns."
+tags:
+  - programming-languages
+  - functions
+  - closure
+difficulty: 1

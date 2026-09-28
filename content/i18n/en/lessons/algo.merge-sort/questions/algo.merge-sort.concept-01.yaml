@@ -1,0 +1,34 @@
+id: algo.merge-sort.concept-01
+type: single-choice
+prompt:
+- type: text
+  text: "What is the key process in merge sort?"
+options:
+- id: split-merge
+  content:
+  - type: text
+    text: "Split the array, sort each part, then merge them"
+- id: neighbor
+  content:
+  - type: text
+    text: "Repeatedly swap only neighboring elements"
+- id: pivot
+  content:
+  - type: text
+    text: "Partition the array around a single pivot"
+- id: heap-root
+  content:
+  - type: text
+    text: "Always remove only the root of a heap"
+correctOptionId: split-merge
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Merge sort divides the array into smaller problems, then merges two sorted parts. Neighbor swaps are central to bubble sort, while pivot partitioning is central to quicksort."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- merge-sort
+- divide-conquer
+difficulty: 2

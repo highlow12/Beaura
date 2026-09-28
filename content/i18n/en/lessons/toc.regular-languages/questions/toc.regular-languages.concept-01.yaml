@@ -1,0 +1,34 @@
+schemaVersion: 1
+id: toc.regular-languages.concept-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: Which statement about regular languages is correct?
+options:
+  - id: automaton
+    content:
+      - type: text
+        text: A language that some finite automaton can recognize.
+  - id: all-counting
+    content:
+      - type: text
+        text: Any language that requires comparing arbitrary counts of symbols.
+  - id: finite-only
+    content:
+      - type: text
+        text: Only a language with a finite number of strings.
+  - id: grammar-only
+    content:
+      - type: text
+        text: A language expressible only by a CFG and not by an automaton.
+correctOptionId: automaton
+shuffleOptions: true
+explanation:
+  - type: text
+    text: A DFA or NFA can recognize a regular language, and a regular expression can also represent it. The language itself does not need to contain a finite number of strings.
+tags:
+  - theory-of-computation
+  - regular-language
+  - definition
+difficulty: 1

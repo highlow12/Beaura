@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: pl.runtime-gc
+revision: 1
+track: programming-languages
+title: Runtime and Garbage Collection
+description: Understand object reachability during execution and the mark-sweep collection process.
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: pl.runtime-gc.concept-01
+  - type: content
+    ref: content/model.md
+  - type: question
+    ref: pl.runtime-gc.match-01
+  - type: question
+    ref: pl.runtime-gc.blank-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: pl.runtime-gc.order-01
+  - type: question
+    ref: pl.runtime-gc.trace-01

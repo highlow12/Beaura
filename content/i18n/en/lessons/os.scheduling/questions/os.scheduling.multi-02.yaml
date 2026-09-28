@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: os.scheduling.multi-02
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that apply to CPU scheduling."
+options:
+  - id: correct-a
+    content:
+      - type: text
+        text: "Round-robin scheduling cycles through the ready queue by giving each task a time slice."
+  - id: correct-b
+    content:
+      - type: text
+        text: "If only high-priority tasks are selected, lower-priority tasks can starve."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Waiting time and response time are always the same under every scheduling policy."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Scheduling goals cannot include fairness or throughput."
+correctOptionIds: [correct-a, correct-b]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Round-robin scheduling cycles through the ready queue by giving each task a time slice. If only high-priority tasks are selected, lower-priority tasks can starve."
+  - type: text
+    text: "Priority policies can reduce latency for important tasks, but may starve lower-priority tasks. Aging or fair time allocation can reduce this problem."
+tags: [scheduling, cpu, fairness]
+difficulty: 3

@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.contrapositive.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that describe the contrapositive of “if `n²` is odd, then `n` is odd.”"
+options:
+  - id: even-n
+    content:
+      - type: text
+        text: "Assume that `n` is even"
+  - id: even-square
+    content:
+      - type: text
+        text: "Show that `n²` is even"
+  - id: odd-n
+    content:
+      - type: text
+        text: "Assume that `n` is odd"
+  - id: same
+    content:
+      - type: text
+        text: "It is logically equivalent to the original statement"
+correctOptionIds: [even-n, even-square, same]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Negating the consequent “`n` is odd” gives that `n` is even; then show the negation of the antecedent, that `n²` is even."
+  - type: text
+    text: "The contrapositive is equivalent to the original statement, so the conclusion also applies to the original statement."
+tags:
+  - discrete-math
+  - proof
+  - parity
+difficulty: 2

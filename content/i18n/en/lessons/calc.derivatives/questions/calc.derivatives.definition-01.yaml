@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.derivatives.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What does f′(a) represent?"
+options:
+  - id: instant
+    content:
+      - type: text
+        text: "The instantaneous rate of change and tangent slope at x=a"
+  - id: area
+    content:
+      - type: text
+        text: "Area under the graph"
+  - id: value
+    content:
+      - type: text
+        text: "The function value f(a) itself"
+  - id: average-all
+    content:
+      - type: text
+        text: "The average over the entire domain"
+correctOptionId: instant
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The derivative at a point is the instantaneous rate of change of the output there."
+  - type: text
+    text: "It is also the limit of the average rate of change as the gap between two points approaches 0."
+tags:
+  - calculus
+  - derivatives
+  - slope
+difficulty: 1

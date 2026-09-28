@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: gfx.homogeneous.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each homogeneous-coordinate concept with its role."
+leftItems:
+  - id: extra
+    content:
+      - type: text
+        text: "Additional component"
+  - id: affine
+    content:
+      - type: text
+        text: "Affine transform"
+  - id: perspective
+    content:
+      - type: text
+        text: "Perspective division"
+rightItems:
+  - id: w
+    content:
+      - type: text
+        text: "Adds a w coordinate to a point"
+  - id: compose
+    content:
+      - type: text
+        text: "Combines translation and linear transformations using matrices"
+  - id: normalize
+    content:
+      - type: text
+        text: "Divides x, y, and z by w to produce NDC"
+correctPairs:
+  - leftId: extra
+    rightId: w
+  - leftId: affine
+    rightId: compose
+  - leftId: perspective
+    rightId: normalize
+explanation:
+  - type: text
+    text: "The key to homogeneous coordinates is the additional w component. It is used both when composing transforms and when normalizing after projection."
+tags: [graphics, homogeneous-coordinates]
+difficulty: 2

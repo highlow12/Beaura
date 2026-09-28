@@ -1,0 +1,24 @@
+id: py.scopes.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the declaration so the function assigns to the global count."
+language: python
+template: "count = 0\ndef increase():\n    {{blank:statement}}\n    count += 1"
+blanks:
+- id: statement
+  choices:
+  - global count
+  - local count
+  - scope count
+  acceptedAnswers:
+  - global count
+explanation:
+- type: text
+  text: "To assign to the global name from inside the function, declare `global count`. However, passing state through return values is usually safer."
+schemaVersion: 1
+revision: 1
+tags:
+- functions
+- scope
+difficulty: 2

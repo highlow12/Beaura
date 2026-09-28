@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: py.tuples
+revision: 1
+track: python
+title: "Tuples"
+description: "Learn the properties and uses of tuples, which preserve order but do not allow their elements to be changed after creation."
+flow:
+- type: content
+  ref: content/intro.md
+- type: question
+  ref: py.tuples.concept-01
+- type: content
+  ref: content/concept.md
+- type: question
+  ref: py.tuples.trace-01
+- type: content
+  ref: content/practice.md
+- type: question
+  ref: py.tuples.complete-01
+- type: question
+  ref: py.tuples.steps-01
+- type: question
+  ref: py.tuples.match-01

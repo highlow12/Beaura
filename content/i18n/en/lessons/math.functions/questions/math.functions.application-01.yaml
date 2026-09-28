@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: math.functions.application-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that express the condition for a function `f: A → B` to be injective."
+options:
+  - id: distinct
+    content:
+      - type: text
+        text: "Different inputs map to different outputs"
+  - id: injective-equation
+    content:
+      - type: text
+        text: "If `f(x) = f(y)`, then `x = y`"
+  - id: cover
+    content:
+      - type: text
+        text: "Every value in the codomain must appear as an output"
+  - id: many
+    content:
+      - type: text
+        text: "Every input must map to the same output"
+correctOptionIds: [distinct, injective-equation]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Injectivity means that outputs do not collide; the first two statements express the same condition in different ways."
+  - type: text
+    text: "Covering the entire codomain is the condition for surjectivity."
+tags:
+  - discrete-math
+  - functions
+  - injective
+difficulty: 2

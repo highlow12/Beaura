@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.replication.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe database replication design considerations."
+options:
+  - id: read-scale
+    content:
+      - type: text
+        text: "Reads can be distributed to replicas to reduce primary load"
+  - id: lag
+    content:
+      - type: text
+        text: "Asynchronous replication can show stale reads due to replication lag"
+  - id: split-brain
+    content:
+      - type: text
+        text: "Failover must prevent two nodes from becoming primary at the same time"
+  - id: instant-sync
+    content:
+      - type: text
+        text: "Having replicas guarantees all reads immediately return the latest value"
+correctOptionIds: [read-scale, lag, split-brain]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Replication helps with read scaling and availability, but freshness is not guaranteed unconditionally; replication lag, failover, and split-brain policies must be designed together."
+tags: [database, replication, consistency]
+difficulty: 3

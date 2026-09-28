@@ -1,0 +1,24 @@
+id: py.sets.trace-01
+type: code-output
+prompt:
+- type: text
+  text: "Choose the output of the following set code."
+language: python
+code: 'values = {1, 1, 2, 3}
+
+  print(len(values))'
+choices:
+- '3'
+- '4'
+- '2'
+acceptedOutputs:
+- '3'
+explanation:
+- type: text
+  text: "A set stores the repeated value 1 only once, so it contains three items: 1, 2, and 3."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- set
+difficulty: 2

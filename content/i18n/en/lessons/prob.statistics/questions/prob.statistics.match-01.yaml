@@ -1,0 +1,60 @@
+schemaVersion: 1
+id: prob.statistics.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each statistical term with its description."
+leftItems:
+  - id: mean
+    content:
+      - type: text
+        text: "Mean"
+  - id: median
+    content:
+      - type: text
+        text: "Median"
+  - id: mode
+    content:
+      - type: text
+        text: "Mode"
+  - id: correlation
+    content:
+      - type: text
+        text: "Correlation"
+rightItems:
+  - id: mean-desc
+    content:
+      - type: text
+        text: "The sum of values divided by their count"
+  - id: median-desc
+    content:
+      - type: text
+        text: "The middle position in sorted data"
+  - id: mode-desc
+    content:
+      - type: text
+        text: "The value that occurs most often"
+  - id: correlation-desc
+    content:
+      - type: text
+        text: "How two variables vary together"
+correctPairs:
+  - leftId: mean
+    rightId: mean-desc
+  - leftId: median
+    rightId: median-desc
+  - leftId: mode
+    rightId: mode-desc
+  - leftId: correlation
+    rightId: correlation-desc
+explanation:
+  - type: text
+    text: "Measures of center preserve different information depending on the shape of the data and its outliers."
+  - type: text
+    text: "Correlation is different from causation, so keep conclusions within the scope of the evidence."
+tags:
+  - probability-statistics
+  - statistics
+  - terminology
+difficulty: 2

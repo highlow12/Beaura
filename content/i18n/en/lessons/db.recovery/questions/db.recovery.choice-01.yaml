@@ -1,0 +1,27 @@
+schemaVersion: 1
+id: db.recovery.choice-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What operation reapplies logged changes to data pages to recover committed changes after a failure?"
+options:
+  - id: redo
+    content:
+      - type: text
+        text: "redo"
+  - id: undo
+    content:
+      - type: text
+        text: "undo"
+  - id: join
+    content:
+      - type: text
+        text: "JOIN"
+correctOptionId: redo
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Redo reapplies committed changes recorded in the log during recovery. Undo removes changes that were not committed."
+tags: [database, recovery, redo]
+difficulty: 1

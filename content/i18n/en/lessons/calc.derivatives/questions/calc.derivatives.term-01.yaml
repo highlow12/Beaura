@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.derivatives.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "The derivative f′(x) of f(x)=x² is ___."
+choices:
+  - "x"
+  - "2x"
+  - "x³"
+  - "2"
+acceptedAnswers:
+  - "2x"
+explanation:
+  - type: text
+    text: "By the power rule, the derivative of x² is 2x."
+  - type: text
+    text: "Substitute a specific value of x into 2x to find the tangent slope there."
+tags:
+  - calculus
+  - derivatives
+  - power-rule
+difficulty: 1

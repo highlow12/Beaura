@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: ds.array.middle-insert-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "To insert X at index 1 in array [A, B, C, D] while preserving the original order, how many existing elements must be shifted at minimum?"
+options:
+  - id: move-3
+    content:
+      - type: text
+        text: "3 elements"
+  - id: move-1
+    content:
+      - type: text
+        text: "1 element"
+  - id: move-4
+    content:
+      - type: text
+        text: "4 elements"
+correctOptionId: move-3
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "The three elements B, C, and D must each shift back one slot so X can be inserted at index 1."
+tags:
+  - array
+  - insertion
+  - complexity
+difficulty: 2

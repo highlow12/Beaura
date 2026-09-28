@@ -1,0 +1,36 @@
+id: py.dictionaries.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Arrange the steps for storing and looking up a dictionary entry."
+items:
+- id: define
+  content:
+  - type: text
+    text: "Choose a key and value"
+- id: assign
+  content:
+  - type: text
+    text: "Store the key-value pair in a dictionary"
+- id: lookup
+  content:
+  - type: text
+    text: "Look up the value by putting the key in square brackets"
+- id: update
+  content:
+  - type: text
+    text: "Assign a new value to the same key to update it"
+correctOrder:
+- define
+- assign
+- lookup
+- update
+explanation:
+- type: text
+  text: "Store a key and value first, then look it up by key. Assigning to the same key again updates its value."
+schemaVersion: 1
+revision: 1
+tags:
+- collections
+- dictionary
+difficulty: 2

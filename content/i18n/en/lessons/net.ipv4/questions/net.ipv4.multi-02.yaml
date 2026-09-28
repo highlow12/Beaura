@@ -1,0 +1,40 @@
+schemaVersion: 1
+id: net.ipv4.multi-02
+revision: 1
+type: multi-select
+prompt:
+- type: text
+  text: Select all statements that apply to IP addresses and IPv4 packets.
+options:
+- id: correct-a
+  content:
+  - type: text
+    text: A router selects the next hop based on the destination IP address.
+- id: correct-b
+  content:
+  - type: text
+    text: A packet’s TTL may decrease as it passes through a router.
+- id: wrong-a
+  content:
+  - type: text
+    text: The frame’s MAC address stays the same along the entire route of an IP packet sent to another network.
+- id: wrong-b
+  content:
+  - type: text
+    text: IP’s basic function is to guarantee that data always arrives in order.
+correctOptionIds:
+- correct-a
+- correct-b
+shuffleOptions: true
+explanation:
+- type: text
+  text: A router selects the next hop based on the destination IP address. A packet’s TTL may decrease as it passes through
+    a router.
+- type: text
+  text: IP connects many kinds of links into an internet, but it provides best-effort delivery and does not guarantee delivery
+    or ordering. TTL prevents packets from circulating forever along a loop.
+tags:
+- ip
+- ipv4
+- internet-layer
+difficulty: 3

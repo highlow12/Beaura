@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: net.arp.single-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: Which statement about ARP and local address resolution is most accurate?
+options:
+- id: correct
+  content:
+  - type: text
+    text: ARP finds the MAC address associated with an IP address on the same local IPv4 link.
+- id: wrong-a
+  content:
+  - type: text
+    text: ARP is a transport-layer protocol that calculates routes across the entire internet.
+- id: wrong-b
+  content:
+  - type: text
+    text: Every router on other subnets always responds to an ARP request, regardless of its destination IP.
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+- type: text
+  text: ARP finds the MAC address associated with an IP address on the same local IPv4 link.
+- type: text
+  text: ARP is a protocol that looks up the MAC address associated with an IP address on a local IPv4 network. The result
+    is stored in the ARP cache for a period of time, reducing repeated broadcasts.
+tags:
+- arp
+- ipv4
+- mac
+difficulty: 2

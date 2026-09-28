@@ -1,0 +1,25 @@
+schemaVersion: 1
+id: algo.unweighted-shortest-path.complete-01
+revision: 1
+type: fill-blank
+prompt:
+- type: text
+  text: "Calculate the distance to a neighbor one edge away from the current vertex."
+- type: code
+  language: python
+  code: distance[next] = distance[current] {{blank:step}}
+choices:
+- + 1
+- "- 1"
+- "+ 2"
+acceptedAnswers:
+- + 1
+explanation:
+- type: text
+  text: "Each edge in an unweighted graph has cost 1, so a neighbor’s distance is one greater than the current distance."
+tags:
+- graph
+- shortest-path
+- bfs
+- code-completion
+difficulty: 2

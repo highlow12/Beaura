@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: net.switch.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about switches and LANs is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "A switch uses its MAC address table to forward LAN frames to the appropriate port."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "A switch is a server that translates domain names into IP addresses."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "A switch reassembles every frame at the transport layer and converts it to TCP."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A switch uses its MAC address table to forward LAN frames to the appropriate port."
+  - type: text
+    text: "At the link layer, a switch builds a MAC address table and forwards frames to the appropriate port. If the destination is unknown or the frame is a broadcast, it can flood the frame to multiple ports in the same VLAN."
+tags: [switch, lan, mac-table]
+difficulty: 2

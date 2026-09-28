@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.isa.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic instruction-execution steps in the correct order."
+items:
+  - id: fetch
+    content:
+      - type: text
+        text: "Fetch the instruction’s bit pattern from memory"
+  - id: decode
+    content:
+      - type: text
+        text: "Decode the opcode and operand fields"
+  - id: execute
+    content:
+      - type: text
+        text: "Perform the specified operation and data movement"
+correctOrder: [fetch, decode, execute]
+explanation:
+  - type: text
+    text: "First fetch the instruction’s bit pattern from memory. Then decode its opcode and operand fields."
+  - type: text
+    text: "Finally, perform the specified operation and data movement, then pass the result to the next circuit or program."
+tags: [isa, instruction, opcode]
+difficulty: 3

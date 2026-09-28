@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.greedy.concept-01
+revision: 1
+type: single-choice
+prompt:
+- type: text
+  text: "What is a common greedy rule for selecting the maximum number of activities?"
+options:
+- id: earliest-finish
+  content:
+  - type: text
+    text: "Choose the compatible activity that finishes earliest"
+- id: longest
+  content:
+  - type: text
+    text: "Choose the activity with the longest duration"
+- id: latest-start
+  content:
+  - type: text
+    text: "Choose only the activity that starts latest"
+correctOptionId: earliest-finish
+shuffleOptions: true
+explanation:
+- type: text
+  text: "Choosing the activity that finishes earliest leaves the most time and options for selecting the maximum number of activities."
+tags:
+- greedy
+- activity-selection
+- correctness
+difficulty: 1

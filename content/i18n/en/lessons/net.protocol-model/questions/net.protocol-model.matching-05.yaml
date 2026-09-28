@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: net.protocol-model.matching-05
+revision: 2
+type: matching
+prompt:
+  - type: text
+    text: "Match each packet and layer model term with its role."
+leftItems:
+  - id: left-a
+    content:
+      - type: text
+        text: "Protocol"
+  - id: left-b
+    content:
+      - type: text
+        text: "Packet"
+  - id: left-c
+    content:
+      - type: text
+        text: "Layer"
+rightItems:
+  - id: right-a
+    content:
+      - type: text
+        text: "Rules for message formats and exchange order"
+  - id: right-b
+    content:
+      - type: text
+        text: "A delivery unit containing a header and payload"
+  - id: right-c
+    content:
+      - type: text
+        text: "A layer that groups one kind of communication responsibility"
+correctPairs:
+  - leftId: left-a
+    rightId: right-a
+  - leftId: left-b
+    rightId: right-b
+  - leftId: left-c
+    rightId: right-c
+explanation:
+  - type: text
+    text: "A protocol defines message formats and exchange order; a packet is a delivery unit with a header and payload; a layer groups one kind of communication responsibility."
+tags: [network, protocol, encapsulation]
+difficulty: 1

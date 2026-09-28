@@ -1,0 +1,26 @@
+schemaVersion: 1
+id: arch.logic.nand-trace-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: What is NOT(A AND B) when A=1 and B=0?
+options:
+  - id: result-1
+    content:
+      - type: text
+        text: '1'
+  - id: result-0
+    content:
+      - type: text
+        text: '0'
+correctOptionId: result-1
+shuffleOptions: true
+explanation:
+  - type: text
+    text: A AND B is 0, and NOT 0 is 1.
+tags:
+  - logic-gates
+  - nand
+  - tracing
+difficulty: 1

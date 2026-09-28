@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: py.types.type-function-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "What can you find out by using type(42)?"
+options:
+  - id: value-type
+    content:
+      - type: text
+        text: "The type of the value 42"
+  - id: variable-name
+    content:
+      - type: text
+        text: "The name of the variable that contains 42"
+  - id: value-size
+    content:
+      - type: text
+        text: "The amount of screen space taken up by the value 42"
+  - id: repeated-value
+    content:
+      - type: text
+        text: "The result of repeating 42"
+correctOptionId: value-type
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "type(value) gives the type of a value. The result of type(42) contains int, which means integer."
+tags:
+  - python-types
+  - type
+difficulty: 1

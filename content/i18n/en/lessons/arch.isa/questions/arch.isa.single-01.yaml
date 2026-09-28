@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.isa.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about instructions and the ISA is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "An ISA is a contract that defines the instructions, registers, and addressing rules visible to a program."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "An ISA describes only the layout of a particular CPU’s cooling system."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "An ISA stores source-code variable names directly in memory."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "An ISA is a contract that defines the instructions, registers, and addressing rules visible to a program."
+  - type: text
+    text: "An ISA (Instruction Set Architecture) is the CPU contract visible to programs, including instruction types, registers, addressing modes, and the memory model. An instruction usually contains an opcode and operand information."
+tags: [isa, instruction, opcode]
+difficulty: 2

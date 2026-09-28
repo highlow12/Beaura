@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: arch.memory.ordering-04
+revision: 2
+type: ordering
+prompt:
+  - type: text
+    text: "Order SRAM used in caches and DRAM used in main memory from fastest to slowest."
+items:
+  - id: sram
+    content:
+      - type: text
+        text: "SRAM cache"
+  - id: dram
+    content:
+      - type: text
+        text: "DRAM main memory"
+correctOrder: [sram, dram]
+explanation:
+  - type: text
+    text: "In general, the SRAM cache near the CPU is faster than DRAM main memory."
+  - type: text
+    text: "DRAM refresh is not a fixed step after every read; it is managed separately to update each row within a specified time to preserve the data."
+tags: [memory, sram, dram]
+difficulty: 2

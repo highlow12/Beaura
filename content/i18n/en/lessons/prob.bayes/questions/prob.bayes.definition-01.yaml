@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: prob.bayes.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "In Bayes' theorem, what does P(A|B) mean?"
+options:
+  - id: posterior
+    content:
+      - type: text
+        text: "The probability of cause A after observing evidence B"
+  - id: likelihood
+    content:
+      - type: text
+        text: "The probability of evidence B given cause A"
+  - id: prior
+    content:
+      - type: text
+        text: "The probability of A before observing the evidence"
+  - id: evidence
+    content:
+      - type: text
+        text: "The probability of evidence B itself"
+correctOptionId: posterior
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "P(A|B) is the posterior probability given condition B."
+  - type: text
+    text: "P(B|A) is the likelihood; its direction is reversed."
+tags:
+  - probability-statistics
+  - bayes
+  - posterior
+difficulty: 1

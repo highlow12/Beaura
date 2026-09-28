@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: db.consistency.properties-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all statements that correctly describe design decisions for distributed database consistency."
+options:
+  - id: product-specific
+    content:
+      - type: text
+        text: "Payments and view counts can have different tolerances for stale reads"
+  - id: latency
+    content:
+      - type: text
+        text: "Strong consistency can increase the cost of node coordination and network latency"
+  - id: stale
+    content:
+      - type: text
+        text: "Eventual consistency can allow stale reads during replication lag"
+  - id: free-guarantee
+    content:
+      - type: text
+        text: "Having multiple replicas automatically guarantees every read is fresh"
+correctOptionIds: [product-specific, latency, stale]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Choose consistency based on the data’s risk and user experience requirements. Strong guarantees come with latency costs, while eventual consistency allows the possibility of stale reads."
+tags: [database, consistency, distributed]
+difficulty: 3

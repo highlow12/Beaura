@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: db.indexes.output-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: "Choose the result of code that counts keys matching a range condition in a sorted index."
+language: python
+code: |-
+  keys = [10, 20, 30, 40, 50]
+  matches = [key for key in keys if 20 <= key <= 40]
+  print(len(matches))
+choices: ["3", "2", "5"]
+acceptedOutputs: ["3"]
+explanation:
+  - type: text
+    text: "The three keys 20, 30, and 40 are in the range, so the result is 3. A B-tree’s sorted structure helps find candidates in such a range."
+tags: [database, indexes, b-tree, code-output]
+difficulty: 1

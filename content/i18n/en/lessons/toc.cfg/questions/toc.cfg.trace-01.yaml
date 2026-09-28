@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: toc.cfg.trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: The following function computes the generation length for `S → aSb | ε`. What does generate(2) return?
+language: python
+code: |-
+  def generate(n):
+      if n == 0:
+          return ""
+      return "a" + generate(n - 1) + "b"
+  print(generate(2))
+choices:
+  - aabb
+  - abab
+  - ab
+acceptedOutputs:
+  - aabb
+explanation:
+  - type: text
+    text: The outer call wraps the inner result in an `a` and a `b`, and the inner call also produces `ab`, giving `aabb`.
+tags:
+  - theory-of-computation
+  - cfg
+  - trace
+difficulty: 2

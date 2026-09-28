@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.logic-equivalence.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the operator that completes ¬P ___ ¬Q when transforming ¬(P ∨ Q) by De Morgan's law."
+choices:
+  - "∧"
+  - "∨"
+  - "→"
+acceptedAnswers:
+  - "∧"
+explanation:
+  - type: text
+    text: "Negating an entire OR expression negates each term and connects them with AND."
+  - type: text
+    text: "De Morgan's laws move negation inward and switch AND and OR."
+tags:
+  - discrete-math
+  - logic
+  - demorgan
+difficulty: 1

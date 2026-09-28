@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: net.protocol-model.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "The process of adding a header to higher-layer data at each layer is ___."
+choices:
+  - "encapsulation"
+  - "decapsulation"
+  - "address release"
+acceptedAnswers:
+  - "encapsulation"
+explanation:
+  - type: text
+    text: "An HTTP message in a web request becomes the data in a TCP segment, which is then carried in an IP packet and an Ethernet frame. The sender encapsulates data by adding a header at each layer; the receiver interprets each layer’s header and passes the data upward. MAC addresses on a link and IP addresses on the internet serve different scopes."
+tags: [network, protocol, encapsulation]
+difficulty: 1

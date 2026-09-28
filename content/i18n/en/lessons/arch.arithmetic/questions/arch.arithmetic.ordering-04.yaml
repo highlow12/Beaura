@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.arithmetic.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic binary-arithmetic steps in the correct order."
+items:
+  - id: low
+    content:
+      - type: text
+        text: "Add the two bits starting at the least significant position"
+  - id: carry
+    content:
+      - type: text
+        text: "If the sum is at least 2, carry to the next position"
+  - id: check
+    content:
+      - type: text
+        text: "Check whether the result exceeds the fixed width"
+correctOrder: [low, carry, check]
+explanation:
+  - type: text
+    text: "First add the two bits at the least significant position. Then carry to the next position if the sum is at least 2."
+  - type: text
+    text: "Finally, check whether the result exceeds the fixed width before passing it to the next circuit or program."
+tags: [binary-arithmetic, carry, overflow]
+difficulty: 3

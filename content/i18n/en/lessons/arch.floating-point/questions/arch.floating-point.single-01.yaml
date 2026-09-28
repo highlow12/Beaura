@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: arch.floating-point.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about floating-point representation is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "Floating point approximates values with sign, exponent, and significand fields, providing a wide range with limited precision."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Floating point stores every decimal fraction exactly."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "The exponent field stores digits after the decimal point as a string."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Floating point approximates values with sign, exponent, and significand fields, providing a wide range with limited precision."
+  - type: text
+    text: "Floating-point bits are usually divided into sign, exponent, and significand fields. The exponent shifts the decimal point to represent a wide range of values."
+tags: [floating-point, ieee-754, precision]
+difficulty: 2

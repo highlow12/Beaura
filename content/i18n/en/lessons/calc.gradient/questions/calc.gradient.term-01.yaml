@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.gradient.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "For f(x,y)=x²+y², the x-component of ∇f is ___."
+choices:
+  - "x"
+  - "2x"
+  - "2y"
+  - "x²"
+acceptedAnswers:
+  - "2x"
+explanation:
+  - type: text
+    text: "The partial derivative with respect to x is 2x, so the first component of the gradient is 2x."
+  - type: text
+    text: "The full gradient is (2x,2y)."
+tags:
+  - calculus
+  - gradient
+  - calculation
+difficulty: 1

@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: gfx.transforms.effects-01
+revision: 1
+type: multi-select
+prompt:
+  - type: text
+    text: "Select all correct statements about the order of composed transformation matrices."
+options:
+  - id: noncommutative
+    content:
+      - type: text
+        text: "Rotating and then translating generally gives a different result from translating and then rotating"
+  - id: point-check
+    content:
+      - type: text
+        text: "Substituting a single point lets you check the result of the composition order"
+  - id: commute
+    content:
+      - type: text
+        text: "All graphics transformation matrices are always the same regardless of order"
+  - id: no-matrix
+    content:
+      - type: text
+        text: "Multiple transforms cannot be composed as matrices"
+correctOptionIds: [noncommutative, point-check]
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Matrix multiplication is generally noncommutative. Calculating a point directly is a quick way to check how the order changes the result."
+tags: [graphics, transforms, composition]
+difficulty: 3

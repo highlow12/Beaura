@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: os.mutex.fill-03
+revision: 2
+type: fill-blank
+prompt:
+  - type: text
+    text: "The lock used to protect checking and decrementing a shared balance as one critical section is a ___."
+choices:
+  - "mutex"
+  - "page table"
+  - "file descriptor"
+acceptedAnswers:
+  - "mutex"
+explanation:
+  - type: text
+    text: "If the balance is 10 and two threads each try to withdraw 7, checking and decrementing the balance must be protected by the same mutex critical section. The first thread to acquire the lock completes the check and update, then unlocks; only then can the next thread check the updated balance."
+tags: [mutex, lock, critical-section]
+difficulty: 2

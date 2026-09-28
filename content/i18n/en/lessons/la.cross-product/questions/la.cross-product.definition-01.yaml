@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: la.cross-product.definition-01
+revision: 2
+type: single-choice
+prompt:
+  - type: text
+    text: "When `u × v` is not the zero vector, which relationship must hold?"
+options:
+  - id: perpendicular-both
+    content:
+      - type: text
+        text: "It is perpendicular to both `u` and `v`"
+  - id: parallel-u
+    content:
+      - type: text
+        text: "It is always parallel to `u`"
+  - id: same
+    content:
+      - type: text
+        text: "It is always equal to `u`"
+  - id: scalar
+    content:
+      - type: text
+        text: "It is always a scalar"
+correctOptionId: perpendicular-both
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "A nonzero cross product points along a normal to the plane spanned by the two input vectors."
+  - type: text
+    text: "If the inputs are parallel, their cross product is the zero vector and has no defined normal direction."
+tags:
+  - linear-algebra
+  - cross-product
+  - normal
+difficulty: 1

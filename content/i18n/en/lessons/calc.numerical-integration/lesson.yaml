@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: calc.numerical-integration
+revision: 2
+track: calculus
+title: "Numerical Integration"
+description: "Approximate accumulated quantities from sampled data using trapezoidal and rectangular sums."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: calc.numerical-integration.definition-01
+  - type: question
+    ref: calc.numerical-integration.application-01
+  - type: content
+    ref: content/connection.md
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: calc.numerical-integration.term-01
+  - type: question
+    ref: calc.numerical-integration.steps-01
+  - type: question
+    ref: calc.numerical-integration.match-01

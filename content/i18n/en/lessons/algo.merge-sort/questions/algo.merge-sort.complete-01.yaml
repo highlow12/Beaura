@@ -1,0 +1,25 @@
+id: algo.merge-sort.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the index calculation that finds the midpoint of an array."
+language: python
+template: mid = len(values) {{blank:operator}} 2
+blanks:
+- id: operator
+  choices:
+  - //
+  - /
+  - '*'
+  acceptedAnswers:
+  - //
+explanation:
+- type: text
+  text: "An index must be an integer, so use // to calculate the midpoint with integer division."
+schemaVersion: 1
+revision: 1
+tags:
+- sorting
+- merge-sort
+- divide-conquer
+difficulty: 2

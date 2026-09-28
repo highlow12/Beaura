@@ -1,0 +1,36 @@
+schemaVersion: 1
+id: calc.integrals.definition-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which best describes integration?"
+options:
+  - id: accumulation
+    content:
+      - type: text
+        text: "Accumulating small quantities to find a total"
+  - id: instant
+    content:
+      - type: text
+        text: "Finding only the instantaneous rate of change at one point"
+  - id: label
+    content:
+      - type: text
+        text: "Changing the name of a function"
+  - id: sort
+    content:
+      - type: text
+        text: "Sorting values in order"
+correctOptionId: accumulation
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Integration adds continuous small contributions to obtain an accumulated quantity."
+  - type: text
+    text: "It is connected to differentiation as an inverse perspective on rates of change."
+tags:
+  - calculus
+  - integrals
+  - interpretation
+difficulty: 1

@@ -1,0 +1,24 @@
+schemaVersion: 1
+id: la.vectors
+revision: 2
+track: linear-algebra
+title: "Vector Basics"
+description: "Understand vectors as quantities with magnitude and direction, and calculate vector addition and scalar multiplication."
+
+flow:
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: la.vectors.definition-01
+  - type: question
+    ref: la.vectors.application-01
+  - type: content
+    ref: content/practice.md
+  - type: content
+    ref: content/intuition.md
+  - type: question
+    ref: la.vectors.term-01
+  - type: question
+    ref: la.vectors.steps-01
+  - type: question
+    ref: la.vectors.match-01

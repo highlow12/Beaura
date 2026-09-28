@@ -1,0 +1,14 @@
+schemaVersion: 1
+id: gfx.color.fill-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "Choose the conversion applied to sRGB values before calculating in linear color space."
+choices: ["decoding", "depth testing", "triangle assembly"]
+acceptedAnswers: ["decoding"]
+explanation:
+  - type: text
+    text: "Decode stored sRGB values into linear values before lighting and blending, then encode them again for display."
+tags: [graphics, color, gamma]
+difficulty: 2

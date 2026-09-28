@@ -1,0 +1,45 @@
+schemaVersion: 1
+id: db.functional-dependency.match-01
+revision: 1
+type: matching
+prompt:
+  - type: text
+    text: "Match each functional dependency term with its meaning."
+leftItems:
+  - id: determinant
+    content:
+      - type: text
+        text: "determinant"
+  - id: dependent
+    content:
+      - type: text
+        text: "dependent"
+  - id: candidate-key
+    content:
+      - type: text
+        text: "Candidate key"
+rightItems:
+  - id: left-side
+    content:
+      - type: text
+        text: "The attribute on the left side of the arrow that determines values"
+  - id: right-side
+    content:
+      - type: text
+        text: "An attribute whose value is determined"
+  - id: minimal-superkey
+    content:
+      - type: text
+        text: "A minimal set that determines every attribute"
+correctPairs:
+  - leftId: determinant
+    rightId: left-side
+  - leftId: dependent
+    rightId: right-side
+  - leftId: candidate-key
+    rightId: minimal-superkey
+explanation:
+  - type: text
+    text: "In X → Y, X is the determinant and Y is the dependent. A candidate key can be viewed as a minimal determinant that identifies the entire row."
+tags: [database, functional-dependency, keys]
+difficulty: 2

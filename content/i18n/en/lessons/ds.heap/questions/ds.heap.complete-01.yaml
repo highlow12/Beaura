@@ -1,0 +1,24 @@
+id: ds.heap.complete-01
+type: code-completion
+prompt:
+- type: text
+  text: "Complete the operation that adds a new element to the heap."
+language: python
+template: heapq.{{blank:operation}}(heap, 1)
+blanks:
+- id: operation
+  choices:
+  - heappush
+  - heappop
+  - heapify
+  acceptedAnswers:
+  - heappush
+explanation:
+- type: text
+  text: "heappush adds an element and restores the heap property. heappop removes the root, and heapify converts the entire array into a heap."
+schemaVersion: 1
+revision: 1
+tags:
+- tree
+- heap
+difficulty: 2

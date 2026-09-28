@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: os.concurrency.single-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: "Which statement about concurrency and atomicity is most accurate?"
+options:
+  - id: correct
+    content:
+      - type: text
+        text: "Concurrency is the possibility of overlapping tasks, while parallelism means multiple execution resources actually run at the same time."
+  - id: wrong-a
+    content:
+      - type: text
+        text: "Concurrency and parallelism always mean the same thing, and concurrency is impossible on a single core."
+  - id: wrong-b
+    content:
+      - type: text
+        text: "Atomic operations make intermediate results more visible to other threads."
+correctOptionId: correct
+shuffleOptions: true
+explanation:
+  - type: text
+    text: "Concurrency is the possibility of overlapping tasks, while parallelism means multiple execution resources actually run at the same time."
+  - type: text
+    text: "Concurrency allows multiple tasks to overlap, while parallelism means multiple execution resources work at the same time. An atomic operation completes as one unit without exposing an intermediate state to other flows."
+tags: [concurrency, parallelism, atomicity]
+difficulty: 3

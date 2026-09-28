@@ -1,0 +1,28 @@
+schemaVersion: 1
+id: arch.hex.ordering-04
+revision: 1
+type: ordering
+prompt:
+  - type: text
+    text: "Put the basic hexadecimal-conversion steps in the correct order."
+items:
+  - id: group
+    content:
+      - type: text
+        text: "Group the binary digits into sets of 4 from the right"
+  - id: map
+    content:
+      - type: text
+        text: "Map each group to a symbol from 0 to F"
+  - id: write
+    content:
+      - type: text
+        text: "Write the symbols in order, adding the 0x prefix if needed"
+correctOrder: [group, map, write]
+explanation:
+  - type: text
+    text: "First group the binary digits into sets of four from the right. Then map each group to a symbol from 0 to F."
+  - type: text
+    text: "Finally, write the symbols in order with the 0x prefix if needed, then pass the result to the next circuit or program."
+tags: [hexadecimal, bits, byte]
+difficulty: 2

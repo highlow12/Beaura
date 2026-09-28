@@ -1,0 +1,36 @@
+id: algo.big-o.steps-01
+type: ordering
+prompt:
+- type: text
+  text: "Put the steps for estimating Big-O from loop code in order."
+items:
+- id: loops
+  content:
+  - type: text
+    text: "Identify the loops and their nesting depth"
+- id: count
+  content:
+  - type: text
+    text: "Express each loop count in terms of n"
+- id: combine
+  content:
+  - type: text
+    text: "Add the costs of consecutive loops and multiply the costs of nested loops"
+- id: drop
+  content:
+  - type: text
+    text: "Drop constant factors and lower-order terms"
+correctOrder:
+- loops
+- count
+- combine
+- drop
+explanation:
+- type: text
+  text: "Translate the loop structure into an expression, apply the addition and multiplication rules, then omit terms that have less effect on growth."
+schemaVersion: 1
+revision: 1
+tags:
+- complexity
+- big-o
+difficulty: 2

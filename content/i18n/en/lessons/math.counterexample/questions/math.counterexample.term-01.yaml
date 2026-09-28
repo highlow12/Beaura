@@ -1,0 +1,23 @@
+schemaVersion: 1
+id: math.counterexample.term-01
+revision: 1
+type: fill-blank
+prompt:
+  - type: text
+    text: "A single case that makes a universal statement false is called a ___ ."
+choices:
+  - "counterexample"
+  - "definition"
+  - "codomain"
+acceptedAnswers:
+  - "counterexample"
+explanation:
+  - type: text
+    text: "A counterexample meets the claim's conditions but disproves its conclusion."
+  - type: text
+    text: "One counterexample is enough to disprove an “all” claim."
+tags:
+  - discrete-math
+  - proof
+  - terminology
+difficulty: 1
