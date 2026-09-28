@@ -13,7 +13,7 @@ npm ci
 npm run dev
 ```
 
-브라우저에서 `http://localhost:5173`을 엽니다. 프로덕션 동작은 `npm run build && npm run preview`로 확인합니다. PWA는 HTTPS 또는 localhost에서 한 번 온라인으로 열고 오프라인 자료 준비를 마친 뒤 사용할 수 있습니다.
+브라우저에서 `http://localhost:5173`을 엽니다. 프로덕션 동작은 `npm run build && npm run preview`로 확인합니다. PWA는 HTTPS 또는 localhost에서 한 번 온라인으로 열고 오프라인 자료 준비를 마친 뒤 사용할 수 있습니다. 화면 하단의 `새 버전 확인`을 누르면 업데이트를 검사하며, 새 버전이 설치되면 `버전 업데이트` 버튼으로 적용할 수 있습니다.
 
 ## 구현 범위
 
