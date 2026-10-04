@@ -1,0 +1,33 @@
+schemaVersion: 1
+id: algo.tree-search.bfs-trace-01
+revision: 1
+type: code-output
+prompt:
+  - type: text
+    text: 다음 BFS는 큐에서 꺼낸 노드를 기록하다가 C를 찾으면 멈춥니다. 출력 결과는 무엇인가요?
+explanation:
+  - type: text
+    text: A를 꺼내 B, C를 넣고, B를 꺼내 D를 넣으면 큐는 C, D입니다. 다음 C를 찾는 순간 종료하므로 D는 결과에 없습니다.
+tags:
+  - tree
+  - traversal
+difficulty: 2
+language: python
+code: |-
+  from collections import deque
+  children = {"A": ["B", "C"], "B": ["D"], "C": [], "D": []}
+  queue = deque(["A"])
+  checked = []
+  while queue:
+      node = queue.popleft()
+      checked.append(node)
+      if node == "C":
+          break
+      queue.extend(children[node])
+  print(checked)
+choices:
+  - "['A', 'B', 'C']"
+  - "['A', 'B', 'D', 'C']"
+  - "['A', 'B', 'C', 'D']"
+acceptedOutputs:
+  - "['A', 'B', 'C']"

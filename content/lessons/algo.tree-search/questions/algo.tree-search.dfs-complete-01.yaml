@@ -1,0 +1,32 @@
+schemaVersion: 1
+id: algo.tree-search.dfs-complete-01
+revision: 1
+type: code-completion
+prompt:
+  - type: text
+    text: 왼쪽에서 목표를 찾았으면 조기 종료하고, 못 찾았으면 오른쪽을 탐색하도록 빈칸을 완성하세요.
+explanation:
+  - type: text
+    text: 왼쪽 탐색이 True이면 전체 탐색도 성공입니다. True를 반환해야 오른쪽 호출을 생략하고, 왼쪽이 실패한 경우에만 마지막 줄로
+      갑니다.
+tags:
+  - tree
+  - traversal
+difficulty: 2
+language: python
+template: |-
+  def contains(node, target):
+      if node is None:
+          return False
+      if node["value"] == target:
+          return True
+      if contains(node["left"], target):
+          return {{blank:found}}
+      return contains(node["right"], target)
+blanks:
+  - id: found
+    choices:
+      - "True"
+      - "False"
+    acceptedAnswers:
+      - "True"

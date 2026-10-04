@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: algo.tree-search.rule-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 값의 정렬 규칙이 없는 일반 이진 트리에서 목표가 현재 값보다 작습니다. 올바른 탐색 방법은 무엇인가요?
+explanation:
+  - type: text
+    text: 일반 이진 트리는 값의 크기와 자식 방향 사이의 관계를 보장하지 않습니다. 왼쪽만 골라도 되는 것은 BST의 정렬 규칙을 지킬
+      때입니다.
+tags:
+  - tree
+  - traversal
+difficulty: 2
+options:
+  - id: both
+    content:
+      - type: text
+        text: 현재 노드가 목표가 아니면, 필요한 경우 양쪽 하위 트리를 확인한다
+  - id: left-only
+    content:
+      - type: text
+        text: 왼쪽 하위 트리만 확인하고 오른쪽은 항상 버린다
+  - id: not-found
+    content:
+      - type: text
+        text: 목표가 더 작으면 트리에 없다고 결론 낸다
+correctOptionId: both
+shuffleOptions: true

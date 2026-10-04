@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: algo.tree-search.cost-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 노드 n개인 일반 트리에 목표값이 없고 각 노드 비교 비용은 일정합니다. DFS와 BFS의 최악 탐색 시간은 무엇인가요?
+explanation:
+  - type: text
+    text: 목표가 없다는 것을 확인하려면 모든 노드를 확인해야 합니다. 순서가 달라도 DFS와 BFS 모두 최악 시간은 O(n)입니다.
+tags:
+  - tree
+  - traversal
+difficulty: 2
+options:
+  - id: linear
+    content:
+      - type: text
+        text: 둘 다 O(n)
+  - id: log
+    content:
+      - type: text
+        text: 둘 다 O(log n)
+  - id: bfs-only
+    content:
+      - type: text
+        text: DFS는 O(n), BFS는 O(1)
+correctOptionId: linear
+shuffleOptions: true

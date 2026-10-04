@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: ds.tree-traversal.cost-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 노드 n개, 높이 h인 이진 트리를 재귀로 전부 순회합니다. 각 노드 처리 비용은 일정하고 결과 저장 공간은 제외할 때, 시간과 호출
+      스택 공간은 무엇인가요?
+explanation:
+  - type: text
+    text: 각 노드를 한 번 처리하므로 시간은 O(n)입니다. 동시에 유지하는 재귀 호출은 루트부터 현재 노드까지의 경로에 해당하므로 호출
+      스택은 O(h)입니다.
+tags:
+  - tree
+  - traversal
+difficulty: 2
+options:
+  - id: linear-height
+    content:
+      - type: text
+        text: 시간 O(n), 호출 스택 O(h)
+  - id: log-constant
+    content:
+      - type: text
+        text: 시간 O(log n), 호출 스택 O(1)
+  - id: quadratic-height
+    content:
+      - type: text
+        text: 시간 O(n²), 호출 스택 O(h)
+correctOptionId: linear-height
+shuffleOptions: true

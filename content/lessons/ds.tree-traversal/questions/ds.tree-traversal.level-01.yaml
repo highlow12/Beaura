@@ -1,0 +1,30 @@
+schemaVersion: 1
+id: ds.tree-traversal.level-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 루트 A의 왼쪽 자식은 B, 오른쪽 자식은 C이고 B의 왼쪽 자식은 D입니다. C와 D에는 자식이 없습니다. 자식을 왼쪽부터 큐에
+      넣는 레벨 순회 결과는 무엇인가요?
+explanation:
+  - type: text
+    text: A를 꺼낸 뒤 큐는 B, C입니다. B를 꺼내 D를 넣으면 큐는 C, D이므로 C를 먼저 방문합니다.
+tags:
+  - tree
+  - traversal
+difficulty: 2
+options:
+  - id: level
+    content:
+      - type: text
+        text: A, B, C, D
+  - id: preorder
+    content:
+      - type: text
+        text: A, B, D, C
+  - id: inorder
+    content:
+      - type: text
+        text: D, B, A, C
+correctOptionId: level
+shuffleOptions: true

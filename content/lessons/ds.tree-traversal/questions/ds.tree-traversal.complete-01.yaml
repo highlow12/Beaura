@@ -1,26 +1,32 @@
 id: ds.tree-traversal.complete-01
 type: code-completion
 prompt:
-- type: text
-  text: 전위 순회에서 현재 노드 뒤에 방문할 자식을 완성하세요.
+  - type: text
+    text: 전위 순회 함수에서 현재 노드를 기록한 다음 호출할 왼쪽 자식을 완성하세요.
 language: python
-template: 'visit(node)
-
-  visit(node["{{blank:child}}"])'
+template: |-
+  result = []
+  def preorder(node):
+      if node is None:
+          return
+      result.append(node["value"])
+      preorder(node["{{blank:child}}"])
+      preorder(node["right"])
 blanks:
-- id: child
-  choices:
-  - left
-  - value
-  - parent
-  acceptedAnswers:
-  - left
+  - id: child
+    choices:
+      - left
+      - value
+      - parent
+    acceptedAnswers:
+      - left
 explanation:
-- type: text
-  text: 전위 순회는 현재 노드를 방문한 뒤 왼쪽 하위 트리로 내려갑니다. value는 데이터이고 parent는 이 표현에 없습니다.
+  - type: text
+    text: 전위 순회는 현재 값을 기록한 뒤 왼쪽 하위 트리 전체, 오른쪽 하위 트리 전체를 순회합니다. value는 노드의 값이고
+      parent는 이 표현에 없습니다.
 schemaVersion: 1
-revision: 1
+revision: 2
 tags:
-- tree
-- traversal
+  - tree
+  - traversal
 difficulty: 2

@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: algo.tree-search.strategy-01
+revision: 1
+type: single-choice
+prompt:
+  - type: text
+    text: 같은 목표값을 가진 노드가 여러 개 있습니다. 루트에서 깊이가 가장 얕은 노드를 먼저 찾으려면 어떤 방법이 적합한가요?
+explanation:
+  - type: text
+    text: BFS는 깊이가 얕은 레벨을 먼저 확인합니다. DFS는 한쪽의 깊은 목표를 다른 쪽의 얕은 목표보다 먼저 찾을 수 있습니다.
+tags:
+  - tree
+  - traversal
+difficulty: 2
+options:
+  - id: bfs
+    content:
+      - type: text
+        text: 가까운 레벨부터 확인하는 BFS
+  - id: dfs
+    content:
+      - type: text
+        text: 왼쪽 하위 트리를 끝까지 내려가는 DFS
+  - id: either
+    content:
+      - type: text
+        text: DFS와 BFS 모두 항상 가장 얕은 노드를 먼저 찾는다
+correctOptionId: bfs
+shuffleOptions: true

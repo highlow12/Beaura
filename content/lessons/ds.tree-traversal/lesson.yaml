@@ -1,23 +1,27 @@
 schemaVersion: 1
 id: ds.tree-traversal
-revision: 1
-track: data-structures
+revision: 2
+track: algorithms
 title: 트리 순회
-description: 트리의 노드를 방문하는 전위·중위·후위 순회의 순서 규칙을 익힌다.
+description: 전위·중위·후위·레벨 순회의 방문 순서와 시간·공간 비용을 익힌다.
 flow:
-- type: content
-  ref: content/intro.md
-- type: question
-  ref: ds.tree-traversal.concept-01
-- type: content
-  ref: content/concept.md
-- type: question
-  ref: ds.tree-traversal.trace-01
-- type: content
-  ref: content/practice.md
-- type: question
-  ref: ds.tree-traversal.complete-01
-- type: question
-  ref: ds.tree-traversal.steps-01
-- type: question
-  ref: ds.tree-traversal.match-01
+  - type: content
+    ref: content/intro.md
+  - type: question
+    ref: ds.tree-traversal.concept-01
+  - type: content
+    ref: content/concept.md
+  - type: question
+    ref: ds.tree-traversal.trace-01
+  - type: content
+    ref: content/practice.md
+  - type: question
+    ref: ds.tree-traversal.complete-01
+  - type: question
+    ref: ds.tree-traversal.steps-01
+  - type: question
+    ref: ds.tree-traversal.match-01
+  - type: question
+    ref: ds.tree-traversal.level-01
+  - type: question
+    ref: ds.tree-traversal.cost-01

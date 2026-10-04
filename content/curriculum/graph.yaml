@@ -104,6 +104,8 @@ nodes:
       - ds.tree
       - ds.stack
       - ds.queue
+      - algo.recursion
+      - algo.big-o
   - lesson: ds.bst
     requires:
       - ds.tree
@@ -159,9 +161,12 @@ nodes:
   - lesson: algo.recursion
     requires:
       - py.functions
-  - lesson: algo.traversal
+  - lesson: algo.tree-search
     requires:
       - ds.tree-traversal
+  - lesson: algo.traversal
+    requires:
+      - algo.tree-search
       - ds.graph-representation
   - lesson: algo.connected-components
     requires:
