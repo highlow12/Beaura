@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.sort.ideas-01
-revision: 1
+revision: 2
 type: matching
 prompt:
 - type: text
@@ -30,7 +30,7 @@ rightItems:
 - id: combine
   content:
   - type: text
-    text: 정렬된 작은 범위를 나누고 합친다
+    text: 배열을 작은 범위로 나누고, 각 범위를 정렬한 뒤 합친다
 correctPairs:
 - leftId: bubble
   rightId: neighbors

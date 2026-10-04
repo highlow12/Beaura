@@ -1,6 +1,6 @@
 schemaVersion: 1
 id: algo.sort.pass-steps-01
-revision: 1
+revision: 2
 type: ordering
 prompt:
 - type: text
@@ -21,7 +21,7 @@ items:
 - id: repeat
   content:
   - type: text
-    text: 남은 범위에서 pass를 반복한다
+    text: 범위 끝까지 각 이웃 쌍의 비교와 필요한 교환을 반복한다
 correctOrder:
 - compare
 - swap
@@ -29,7 +29,7 @@ correctOrder:
 - repeat
 explanation:
 - type: text
-  text: 한 쌍을 비교하고 필요하면 교환한 뒤 다음 쌍으로 이동하며 pass를 반복합니다.
+  text: 한 쌍을 비교하고 필요하면 교환한 뒤 다음 쌍으로 이동합니다. 현재 범위 끝까지 이 과정을 반복하면 한 패스가 끝납니다.
 - type: text
   text: 한 번의 pass가 끝나도 전체가 정렬되었다고 단정하지 않고 남은 범위를 다시 확인합니다.
 tags:
