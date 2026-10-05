@@ -20,6 +20,51 @@
   onMount(() => {
     void load();
   });
+  let trackProgress = $derived.by(() => {
+    const dashboard = data;
+    if (!dashboard) return [];
+
+    const completedLessonIds = new Set(
+      dashboard.snapshot.lessonStates
+        .filter((state) => state.status === "completed")
+        .map((state) => state.lessonId),
+    );
+    return [...dashboard.curriculum.tracks]
+      .sort((a, b) => a.order - b.order)
+      .flatMap((track) => {
+        const lessons = dashboard.lessons.filter(
+          (lesson) => lesson.track === track.id,
+        );
+        if (!lessons.length) return [];
+
+        return [
+          {
+            track,
+            total: lessons.length,
+            completed: lessons.filter((lesson) =>
+              completedLessonIds.has(lesson.id),
+            ).length,
+          },
+        ];
+      });
+  });
+  let recentLessons = $derived.by(() => {
+    const dashboard = data;
+    if (!dashboard) return [];
+
+    return [...dashboard.snapshot.lessonStates]
+      .flatMap((state) => {
+        const lesson = dashboard.lessons.find(
+          (candidate) => candidate.id === state.lessonId,
+        );
+        return lesson ? [{ state, lesson }] : [];
+      })
+      .sort(
+        (a, b) =>
+          (b.state.lastStudiedAt ?? 0) - (a.state.lastStudiedAt ?? 0),
+      )
+      .slice(0, 10);
+  });
 </script>
 
 <svelte:head><title>나의 학습 기록 | Beaura</title></svelte:head>
@@ -56,25 +101,19 @@
     </div>
     <section class="card stack progress-section">
       <h2>트랙별 학습</h2>
-      {#each [...data.curriculum.tracks].sort((a, b) => a.order - b.order) as track}
-        {@const lessons = data.lessons.filter((l) => l.track === track.id)}
-        {@const completed = lessons.filter((l) =>
-          data!.snapshot.lessonStates.some(
-            (s) => s.lessonId === l.id && s.status === "completed",
-          ),
-        ).length}
-        {#if lessons.length}<div class="track-progress" data-track={track.id}>
-            <div class="row">
-              <strong>{track.title}</strong><span
-                >{completed} / {lessons.length}</span
-              >
-            </div>
-            <progress
-              value={completed}
-              max={lessons.length}
-              aria-label={`${track.title} 진행도`}
-            ></progress>
-          </div>{/if}
+      {#each trackProgress as { track, total, completed }}
+        <div class="track-progress" data-track={track.id}>
+          <div class="row">
+            <strong>{track.title}</strong><span
+              >{completed} / {total}</span
+            >
+          </div>
+          <progress
+            value={completed}
+            max={total}
+            aria-label={`${track.title} 진행도`}
+          ></progress>
+        </div>
       {/each}
     </section>
     <section class="card progress-section">
@@ -97,12 +136,9 @@
         </p>
         <a class="button" href={`${base}/learn`}>학습 시작</a>
       {:else}<ul class="recent-list">
-          {#each [...data.snapshot.lessonStates]
-            .filter((s) => data!.lessons.some((l) => l.id === s.lessonId))
-            .sort((a, b) => (b.lastStudiedAt ?? 0) - (a.lastStudiedAt ?? 0))
-            .slice(0, 10) as state}<li>
+          {#each recentLessons as { state, lesson }}<li>
               <a class="text-link" href={`${base}/learn/${state.lessonId}`}
-                >{data.lessons.find((l) => l.id === state.lessonId)?.title}</a
+                >{lesson.title}</a
               ><span class="muted"
                 >{state.status === "completed" ? "완료" : "학습 중"} · {state.lastStudiedAt
                   ? new Date(state.lastStudiedAt).toLocaleDateString("ko-KR")

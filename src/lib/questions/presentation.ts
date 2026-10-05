@@ -87,16 +87,17 @@ export interface AnswerDisplay {
   value?: string;
 }
 
-export function describeAnswer(
+function describe(
   question: Question,
-  answer: UserAnswer,
+  answer: UserAnswer | CanonicalAnswer,
+  canonical: boolean,
 ): AnswerDisplay {
   switch (question.type) {
     case "single-choice": {
       const candidate = answer as SingleChoiceAnswer;
       return {
         kind: "single",
-        title: "선택한 답",
+        title: canonical ? "정답" : "선택한 답",
         values: [optionLabel(question, candidate.optionId)],
       };
     }
@@ -104,27 +105,33 @@ export function describeAnswer(
       const candidate = answer as MultiSelectAnswer;
       return {
         kind: "list",
-        title: "선택한 답",
+        title: canonical ? "정답" : "선택한 답",
         values: candidate.optionIds.map((id) => optionLabel(question, id)),
       };
     }
     case "fill-blank": {
       const candidate = answer as FillBlankAnswer;
-      return { kind: "value", title: "선택한 답", value: candidate.value };
+      return {
+        kind: "value",
+        title: canonical ? "정답" : "선택한 답",
+        value: candidate.value,
+      };
     }
     case "ordering": {
       const candidate = answer as OrderingAnswer;
       return {
         kind: "list",
-        title: "제출한 순서",
-        values: candidate.orderedItemIds.map((id) => orderingLabel(question, id)),
+        title: canonical ? "정답 순서" : "제출한 순서",
+        values: candidate.orderedItemIds.map((id) =>
+          orderingLabel(question, id),
+        ),
       };
     }
     case "matching": {
       const candidate = answer as MatchingAnswer;
       return {
         kind: "pairs",
-        title: "제출한 짝",
+        title: canonical ? "정답 짝" : "제출한 짝",
         pairs: candidate.pairs.map((pair) => ({
           left: matchingLabel(question, "left", pair.leftId),
           right: matchingLabel(question, "right", pair.rightId),
@@ -135,7 +142,7 @@ export function describeAnswer(
       const candidate = answer as CodeOutputAnswer;
       return {
         kind: "value",
-        title: "선택한 출력",
+        title: canonical ? "정답 출력" : "선택한 출력",
         value: valueLabel(candidate.value),
       };
     }
@@ -143,7 +150,7 @@ export function describeAnswer(
       const candidate = answer as CodeCompletionAnswer;
       return {
         kind: "blanks",
-        title: "제출한 빈칸 답",
+        title: canonical ? "정답 빈칸" : "제출한 빈칸 답",
         blanks: question.blanks.map((blank, index) => ({
           id: blank.id,
           label: `빈칸 ${index + 1}`,
@@ -155,7 +162,7 @@ export function describeAnswer(
       const candidate = answer as GraphPathAnswer;
       return {
         kind: "list",
-        title: "제출한 경로",
+        title: canonical ? "정답 경로" : "제출한 경로",
         values: candidate.nodeIds.map((id) => graphNodeLabel(question, id)),
       };
     }
@@ -163,116 +170,25 @@ export function describeAnswer(
       const candidate = answer as InteractiveSimulationAnswer;
       return {
         kind: "list",
-        title: "실행한 동작",
-        values: candidate.actionIds.map((id) => simulationActionLabel(question, id)),
+        title: canonical ? "정답 동작 예시" : "실행한 동작",
+        values: candidate.actionIds.map((id) =>
+          simulationActionLabel(question, id),
+        ),
       };
     }
   }
+}
+
+export function describeAnswer(
+  question: Question,
+  answer: UserAnswer,
+): AnswerDisplay {
+  return describe(question, answer, false);
 }
 
 export function describeCanonicalAnswer(
   question: Question,
   answer: CanonicalAnswer,
 ): AnswerDisplay {
-  switch (question.type) {
-    case "single-choice": {
-      const candidate = answer as Extract<
-        CanonicalAnswer,
-        { type: "single-choice" }
-      >;
-      return {
-        kind: "single",
-        title: "정답",
-        values: [optionLabel(question, candidate.optionId)],
-      };
-    }
-    case "multi-select": {
-      const candidate = answer as Extract<
-        CanonicalAnswer,
-        { type: "multi-select" }
-      >;
-      return {
-        kind: "list",
-        title: "정답",
-        values: candidate.optionIds.map((id) => optionLabel(question, id)),
-      };
-    }
-    case "fill-blank": {
-      const candidate = answer as Extract<
-        CanonicalAnswer,
-        { type: "fill-blank" }
-      >;
-      return { kind: "value", title: "정답", value: candidate.value };
-    }
-    case "ordering": {
-      const candidate = answer as Extract<
-        CanonicalAnswer,
-        { type: "ordering" }
-      >;
-      return {
-        kind: "list",
-        title: "정답 순서",
-        values: candidate.orderedItemIds.map((id) => orderingLabel(question, id)),
-      };
-    }
-    case "matching": {
-      const candidate = answer as Extract<
-        CanonicalAnswer,
-        { type: "matching" }
-      >;
-      return {
-        kind: "pairs",
-        title: "정답 짝",
-        pairs: candidate.pairs.map((pair) => ({
-          left: matchingLabel(question, "left", pair.leftId),
-          right: matchingLabel(question, "right", pair.rightId),
-        })),
-      };
-    }
-    case "code-output": {
-      const candidate = answer as Extract<
-        CanonicalAnswer,
-        { type: "code-output" }
-      >;
-      return {
-        kind: "value",
-        title: "정답 출력",
-        value: valueLabel(candidate.value),
-      };
-    }
-    case "code-completion": {
-      const candidate = answer as Extract<
-        CanonicalAnswer,
-        { type: "code-completion" }
-      >;
-      return {
-        kind: "blanks",
-        title: "정답 빈칸",
-        blanks: question.blanks.map((blank, index) => ({
-          id: blank.id,
-          label: `빈칸 ${index + 1}`,
-          value: candidate.values[blank.id] ?? "선택하지 않음",
-        })),
-      };
-    }
-    case "graph-path": {
-      const candidate = answer as Extract<CanonicalAnswer, { type: "graph-path" }>;
-      return {
-        kind: "list",
-        title: "정답 경로",
-        values: candidate.nodeIds.map((id) => graphNodeLabel(question, id)),
-      };
-    }
-    case "interactive-simulation": {
-      const candidate = answer as Extract<
-        CanonicalAnswer,
-        { type: "interactive-simulation" }
-      >;
-      return {
-        kind: "list",
-        title: "정답 동작 예시",
-        values: candidate.actionIds.map((id) => simulationActionLabel(question, id)),
-      };
-    }
-  }
+  return describe(question, answer, true);
 }
