@@ -26,6 +26,7 @@ import {
   DEFAULT_SCHEDULER_PROFILE_ID,
   FsrsScheduler,
   createDefaultSchedulerProfile,
+  effectiveReviewTime,
   type PersistedSchedulerState,
 } from "$lib/learning/review/fsrs-scheduler";
 import {
@@ -742,40 +743,54 @@ function gameFromEvents(
   );
   let game = defaultGame(now);
   for (const event of [...events].sort((left, right) => {
+    const leftSequence = left.eventId
+      ? studyOrder.get(left.eventId)
+      : undefined;
+    const rightSequence = right.eventId
+      ? studyOrder.get(right.eventId)
+      : undefined;
+    if (leftSequence !== undefined && rightSequence === undefined) return 1;
+    if (leftSequence === undefined && rightSequence !== undefined) return -1;
+    if (
+      leftSequence !== undefined &&
+      rightSequence !== undefined &&
+      leftSequence !== rightSequence
+    ) {
+      return leftSequence - rightSequence;
+    }
     const timestampOrder = left.createdAt - right.createdAt;
     if (timestampOrder !== 0) return timestampOrder;
-    const sequenceOrder =
-      (left.eventId === undefined
-        ? Number.MAX_SAFE_INTEGER
-        : (studyOrder.get(left.eventId) ?? Number.MAX_SAFE_INTEGER)) -
-      (right.eventId === undefined
-        ? Number.MAX_SAFE_INTEGER
-        : (studyOrder.get(right.eventId) ?? Number.MAX_SAFE_INTEGER));
-    if (sequenceOrder !== 0) return sequenceOrder;
     // The streak snapshot is written before the XP event for one attempt.
     // Preserve that order when both events point at the same study event.
     if (left.type !== right.type) return left.type === "streak-updated" ? -1 : 1;
     return left.id.localeCompare(right.id);
   })) {
     const date = event.localDate ?? localDateFor(event.createdAt);
+    const olderThanLatestStudy =
+      game.lastStudyDate !== null &&
+      calendarDayDistance(date, game.lastStudyDate) > 0;
     if (event.type === "xp-earned") {
       game.xp += event.amount ?? 0;
-      if (game.todayDate !== date) game.todayXp = 0;
-      game.todayDate = date;
-      // Current events carry a post-write daily XP snapshot.  Using it avoids
-      // counting the same XP twice when the streak event for that visit is
-      // replayed immediately before its xp-earned event.  Older events may
-      // omit the snapshot, so retain additive replay as the fallback.
-      game.todayXp = event.todayXp ?? game.todayXp + (event.amount ?? 0);
+      if (!olderThanLatestStudy) {
+        if (game.todayDate !== date) game.todayXp = 0;
+        game.todayDate = date;
+        // Current events carry a post-write daily XP snapshot.  Using it avoids
+        // counting the same XP twice when the streak event for that visit is
+        // replayed immediately before its xp-earned event.  Older events may
+        // omit the snapshot, so retain additive replay as the fallback.
+        game.todayXp = event.todayXp ?? game.todayXp + (event.amount ?? 0);
+      }
     } else {
-      game.streak = event.streak ?? game.streak;
       game.longestStreak = Math.max(
         game.longestStreak,
         event.longestStreak ?? game.streak,
       );
-      game.lastStudyDate = date;
-      game.todayDate = date;
-      game.todayXp = event.todayXp ?? game.todayXp;
+      if (!olderThanLatestStudy) {
+        game.streak = event.streak ?? game.streak;
+        game.lastStudyDate = date;
+        game.todayDate = date;
+        game.todayXp = event.todayXp ?? game.todayXp;
+      }
     }
     game.updatedAt = event.createdAt;
   }
@@ -1031,6 +1046,26 @@ export class LearningRepository {
       ) {
         throw new Error("Lesson session belongs to an older content revision");
       }
+      if (current?.contentRevision === revision) {
+        const savedAnswers = new Map(
+          session.answers.map((answer) => [answer.questionId, answer.correct]),
+        );
+        if (
+          current.session.answers.some(
+            (answer) => savedAnswers.get(answer.questionId) !== answer.correct,
+          )
+        ) {
+          throw new Error("Lesson session is stale and omits a committed answer");
+        }
+        const savedRetryResults = new Set(session.retryResults ?? []);
+        if (
+          (current.session.retryResults ?? []).some(
+            (questionId) => !savedRetryResults.has(questionId),
+          )
+        ) {
+          throw new Error("Lesson session is stale and omits a committed retry result");
+        }
+      }
       await this.database.lessonSessions.put({
         lessonId: session.lessonId,
         contentRevision: revision,
@@ -1151,31 +1186,30 @@ export class LearningRepository {
     const today = localDateFor(now);
     const old = await this.database.gameState.get(LOCAL_ID);
     const game = old ? { ...old } : defaultGame(now);
-    if (game.todayDate !== today) game.todayXp = 0;
-    game.todayDate = today;
+    const distance = game.lastStudyDate
+      ? calendarDayDistance(game.lastStudyDate, today)
+      : null;
+    const isPastStudyDate = distance !== null && distance < 0;
+    const latestStudyDateAdvanced = distance === null || distance > 0;
+    if (!isPastStudyDate) {
+      if (game.todayDate !== today) game.todayXp = 0;
+      game.todayDate = today;
+    }
 
-    let streakChanged = false;
-    if (game.lastStudyDate !== today) {
-      const distance = game.lastStudyDate
-        ? calendarDayDistance(game.lastStudyDate, today)
-        : null;
+    if (latestStudyDateAdvanced) {
       if (distance === 1) game.streak += 1;
-      else if (distance === null || (distance !== undefined && distance > 1))
-        game.streak = 1;
-      // A clock moved backwards should not erase an already-earned streak.
-      if (game.streak === 0) game.streak = 1;
+      else game.streak = 1;
       game.longestStreak = Math.max(game.longestStreak, game.streak);
       game.lastStudyDate = today;
-      streakChanged = true;
     }
 
     const earned = finalAttempt && correct ? XP_PER_CORRECT_ANSWER : 0;
     game.xp += earned;
-    game.todayXp += earned;
+    if (!isPastStudyDate) game.todayXp += earned;
     game.updatedAt = now;
     await this.database.gameState.put(game);
 
-    if (streakChanged) {
+    if (latestStudyDateAdvanced || isPastStudyDate) {
       const streakEvent: GameEvent = {
         id: `game:streak:${today}`,
         type: "streak-updated",
@@ -1252,10 +1286,15 @@ export class LearningRepository {
           state?.stateVersion ?? 0,
         );
       }
-      const applied = scheduler.apply(
-        scheduler.validateState(state.schedulerState),
-        rating,
+      const schedulerState = scheduler.validateState(state.schedulerState);
+      const schedulerAt = effectiveReviewTime(
+        schedulerState,
         new Date(now),
+      ).getTime();
+      const applied = scheduler.apply(
+        schedulerState,
+        rating,
+        new Date(schedulerAt),
       );
       const eventIdentity = await this.identity();
       const event: StudyEvent = {
@@ -1268,7 +1307,7 @@ export class LearningRepository {
         questionId: input.question.id,
         lessonId: input.question.lessonId,
         contentRevision: input.question.revision,
-        effectiveAt: now,
+        effectiveAt: schedulerAt,
         result: input.correct ? "correct" : "incorrect",
         rating,
         durationMs,
@@ -1284,7 +1323,7 @@ export class LearningRepository {
         userId: eventIdentity.userId,
         contentRevision: input.question.revision,
         status: scheduler.status(applied.state),
-        lastReviewAt: now,
+        lastReviewAt: schedulerAt,
         nextReviewAt: applied.nextReviewAt,
         correctCount: state.correctCount + (input.correct ? 1 : 0),
         incorrectCount: state.incorrectCount + (input.correct ? 0 : 1),
@@ -1293,7 +1332,7 @@ export class LearningRepository {
         schedulerProfileId: profile.id,
         schedulerState: applied.state,
         stateVersion: state.stateVersion + 1,
-        updatedAt: now,
+        updatedAt: schedulerAt,
       };
 
       await this.database.studyEvents.add(event);
@@ -1753,17 +1792,22 @@ export class LearningRepository {
       await this.database.gameState.put(derivedGame);
       if (backup.lessonSessions) {
         await this.database.lessonSessions.bulkAdd(backup.lessonSessions);
-        // Starting a lesson is persisted as a session and materialized
-        // LessonState, but it does not create a StudyEvent until the learner
-        // answers a question. Replay therefore has nothing from which to
-        // rebuild a content-only active lesson. Recreate that missing derived
-        // state from the backed-up session so the dashboard and resume flow
-        // agree immediately after import.
+        // Session records preserve the lesson revision; replayed study events
+        // may carry an independent question revision. Keep replayed progress
+        // and use the session revision, creating state only when replay has
+        // nothing to materialize.
         for (const record of backup.lessonSessions) {
-          if (
-            record.session.status !== "active" ||
-            (await this.database.lessonStates.get(record.lessonId))
-          ) {
+          const existing = await this.database.lessonStates.get(record.lessonId);
+          if (existing) {
+            if (existing.contentRevision !== record.contentRevision) {
+              await this.database.lessonStates.put({
+                ...existing,
+                contentRevision: record.contentRevision,
+              });
+            }
+            continue;
+          }
+          if (record.session.status !== "active") {
             continue;
           }
           const answers = record.session.answers;

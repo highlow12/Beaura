@@ -34,6 +34,26 @@ function truncate(value: string, max: number) {
   return value.length <= max ? value : `${value.slice(0, max)}…`;
 }
 
+function isClientErrorReport(value: unknown): value is ClientErrorReport {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
+  const report = value as Record<string, unknown>;
+  const validKind =
+    report.kind === 'error' ||
+    report.kind === 'unhandledrejection' ||
+    report.kind === 'sveltekit' ||
+    report.kind === 'network';
+  return (
+    typeof report.id === 'string' &&
+    typeof report.occurredAt === 'string' &&
+    validKind &&
+    typeof report.message === 'string' &&
+    typeof report.path === 'string' &&
+    (report.stack === undefined || typeof report.stack === 'string') &&
+    (report.buildCommit === undefined || typeof report.buildCommit === 'string') &&
+    (report.userAgent === undefined || typeof report.userAgent === 'string')
+  );
+}
+
 function normalizeError(error: unknown) {
   if (error instanceof Error) {
     return {
@@ -53,7 +73,9 @@ function readStoredReports(storage: Storage | null): ClientErrorReport[] {
   if (!storage) return [];
   try {
     const value = JSON.parse(storage.getItem(STORAGE_KEY) ?? '[]');
-    return Array.isArray(value) ? value.slice(-MAX_REPORTS) : [];
+    return Array.isArray(value)
+      ? value.filter(isClientErrorReport).slice(-MAX_REPORTS)
+      : [];
   } catch {
     return [];
   }
@@ -185,7 +207,9 @@ export function installGlobalErrorReporting(target: Window = window) {
 }
 
 export function buildGithubIssueUrl(description = '', reports = getRecentErrorReports()) {
-  const latest = reports.slice(-5).reverse();
+  const latest = Array.isArray(reports)
+    ? reports.filter(isClientErrorReport).slice(-5).reverse()
+    : [];
   const diagnostics = latest.length
     ? latest
         .map((report) => {

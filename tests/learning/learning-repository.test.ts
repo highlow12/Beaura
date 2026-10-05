@@ -4,6 +4,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import type { Lesson } from "$lib/content/types";
 import {
   createLessonSession,
+  recordDelayedRetry,
   type LessonSession,
 } from "$lib/lesson/lesson-engine";
 import type { SingleChoiceQuestion } from "$lib/questions/types";
@@ -533,5 +534,238 @@ describe('independent content revisions', () => {
     const started=await repo.startLesson(currentLesson);
     await repo.saveSession({...started,currentIndex:999});
     expect((await repo.startLesson(currentLesson)).currentIndex).toBe(0);
+  });
+});
+
+describe("audited backup, session, and clock boundaries", () => {
+  it("restores lesson revision from its session when a question revision differs", async () => {
+    const repo = repository();
+    const currentLesson = lesson("lesson.one", 1);
+    const started = await repo.startLesson(currentLesson);
+    await repo.saveAttempt({
+      id: "independent-revision-backup",
+      question: question("lesson.one.q1", 2),
+      correct: true,
+      durationMs: 30,
+      mode: "lesson",
+    });
+    const backup = await repo.exportBackup();
+
+    await repo.resetProgress();
+    await repo.importBackup(backup);
+
+    await expect(repo.startLesson(currentLesson)).resolves.toMatchObject({
+      ...started,
+      answers: [{ questionId: "lesson.one.q1", correct: true }],
+    });
+    await expect(repo.database.lessonStates.get(currentLesson.id)).resolves.toMatchObject({
+      contentRevision: 1,
+      status: "in-progress",
+      attemptedQuestions: 1,
+      completedQuestions: 1,
+      correctCount: 1,
+      incorrectCount: 0,
+    });
+  });
+
+  it("rejects stale answers and retry results while accepting current lesson saves", async () => {
+    const repo = repository();
+    const currentLesson = lesson();
+    const stale = await repo.startLesson(currentLesson);
+    const q = question(`${currentLesson.id}.q1`);
+
+    await repo.saveAttempt({
+      id: "committed-before-session-save",
+      question: q,
+      correct: true,
+      durationMs: 30,
+      mode: "lesson",
+    });
+    await expect(repo.saveSession(stale)).rejects.toThrow("stale");
+    const committed = await repo.startLesson(currentLesson);
+    expect(committed.answers).toHaveLength(1);
+    await expect(
+      repo.saveSession({
+        ...committed,
+        answers: committed.answers.map((answer) => ({
+          ...answer,
+          correct: !answer.correct,
+        })),
+      }),
+    ).rejects.toThrow("stale");
+
+    await expect(
+      repo.saveSession({
+        ...committed,
+        currentIndex: 0,
+        answers: committed.answers.map((answer) => ({
+          ...answer,
+          answeredAt: answer.answeredAt + 1,
+        })),
+      }),
+    ).resolves.toBeUndefined();
+    await expect(repo.startLesson(currentLesson)).resolves.toMatchObject({
+      currentIndex: 0,
+      answers: [{ questionId: q.id, correct: true }],
+    });
+
+    const retrySession: LessonSession = {
+      ...committed,
+      currentIndex: currentLesson.flow.length,
+      retryQueue: [q.id],
+      retryCursor: 0,
+      retryResults: [],
+    };
+    await repo.saveSession(retrySession);
+    await repo.saveAttempt({
+      id: "committed-before-retry-session-save",
+      question: q,
+      correct: true,
+      durationMs: 30,
+      mode: "lesson",
+      attemptNumber: 2,
+    });
+    await expect(repo.saveSession(retrySession)).rejects.toThrow("stale");
+    await expect(
+      repo.saveSession(recordDelayedRetry(retrySession, q.id)),
+    ).resolves.toBeUndefined();
+  });
+
+  it("keeps streak and XP stable when study dates move backward and return", async () => {
+    const repo = repository();
+    const dates = [3, 4, 3, 4];
+    for (const [index, day] of dates.entries()) {
+      currentTime = new Date(2026, 0, day, 12).getTime();
+      await repo.saveAttempt({
+        id: `clock-reversal-${index}`,
+        question: question(`lesson.clock.q${index + 1}`),
+        correct: true,
+        durationMs: 30,
+        mode: "review",
+      });
+    }
+
+    const before = await repo.getSnapshot();
+    const gameBefore = await repo.database.gameState.get("local");
+    expect(before).toMatchObject({
+      studyDates: ["2026-01-03", "2026-01-04"],
+      game: { streak: 2, longestStreak: 2, todayXp: 20, xp: 40 },
+    });
+    expect(gameBefore).toMatchObject({
+      lastStudyDate: "2026-01-04",
+      todayDate: "2026-01-04",
+      todayXp: 20,
+      xp: 40,
+    });
+
+    const backup = await repo.exportBackup();
+    await repo.resetProgress();
+    await repo.importBackup(backup);
+
+    await expect(repo.getSnapshot()).resolves.toEqual(before);
+    await expect(repo.database.gameState.get("local")).resolves.toEqual(gameBefore);
+  });
+
+  it("records a previously unseen past study date without lowering the streak", async () => {
+    const repo = repository();
+    for (const [index, day] of [3, 4, 2].entries()) {
+      currentTime = new Date(2026, 0, day, 12).getTime();
+      await repo.saveAttempt({
+        id: `unseen-past-date-${index}`,
+        question: question(`lesson.past-date.q${index + 1}`),
+        correct: true,
+        durationMs: 30,
+        mode: "review",
+      });
+    }
+
+    const before = await repo.getSnapshot();
+    const gameBefore = await repo.database.gameState.get("local");
+    expect(before).toMatchObject({
+      studyDates: ["2026-01-02", "2026-01-03", "2026-01-04"],
+      game: { streak: 2, longestStreak: 2, xp: 30, todayXp: 0 },
+    });
+    expect(gameBefore).toMatchObject({
+      lastStudyDate: "2026-01-04",
+      todayDate: "2026-01-04",
+      todayXp: 10,
+      xp: 30,
+    });
+
+    const backup = await repo.exportBackup();
+    await repo.resetProgress();
+    await repo.importBackup(backup);
+
+    await expect(repo.getSnapshot()).resolves.toEqual(before);
+    await expect(repo.database.gameState.get("local")).resolves.toEqual(gameBefore);
+  });
+
+  it("replays linked events after legacy game events without event IDs", async () => {
+    const repo = repository();
+    for (const [index, day] of [3, 4].entries()) {
+      currentTime = new Date(2026, 0, day, 12).getTime();
+      await repo.saveAttempt({
+        id: `mixed-game-events-${index}`,
+        question: question(`lesson.mixed-events.q${index + 1}`),
+        correct: true,
+        durationMs: 30,
+        mode: "review",
+      });
+    }
+    const before = await repo.getSnapshot();
+    const gameBefore = await repo.database.gameState.get("local");
+    const backup = JSON.parse(await repo.exportBackup()) as {
+      gameEvents: Array<{ localDate?: string; eventId?: string }>;
+    };
+    for (const event of backup.gameEvents) {
+      if (event.localDate === "2026-01-03") delete event.eventId;
+    }
+
+    await repo.resetProgress();
+    await repo.importBackup(JSON.stringify(backup));
+
+    await expect(repo.getSnapshot()).resolves.toEqual(before);
+    await expect(repo.database.gameState.get("local")).resolves.toEqual(gameBefore);
+  });
+
+  it("clamps FSRS time after clock reversal and replays the same scheduler state", async () => {
+    const repo = repository();
+    const q = question("lesson.clock-reversal.q1");
+    currentTime = new Date(2026, 0, 4, 12).getTime();
+    await repo.saveAttempt({
+      id: "fsrs-forward-time",
+      question: q,
+      correct: true,
+      durationMs: 30,
+      mode: "review",
+    });
+    const first = await repo.database.questionStates.get(q.id);
+    if (!first?.lastReviewAt) throw new Error("Expected a reviewed question");
+
+    currentTime = new Date(2026, 0, 3, 12).getTime();
+    await expect(
+      repo.saveAttempt({
+        id: "fsrs-backward-time",
+        question: q,
+        correct: true,
+        durationMs: 30,
+        mode: "review",
+      }),
+    ).resolves.toBeUndefined();
+    const stateBefore = await repo.database.questionStates.get(q.id);
+    const events = await repo.database.studyEvents.orderBy("clientSeq").toArray();
+    expect(events.map((event) => event.effectiveAt)).toEqual([
+      first.lastReviewAt,
+      first.lastReviewAt,
+    ]);
+    expect(
+      (await repo.database.gameEvents.get("game:xp:fsrs-backward-time"))?.localDate,
+    ).toBe("2026-01-03");
+
+    const backup = await repo.exportBackup();
+    await repo.resetProgress();
+    await repo.importBackup(backup);
+
+    await expect(repo.database.questionStates.get(q.id)).resolves.toEqual(stateBefore);
   });
 });

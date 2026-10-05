@@ -59,6 +59,50 @@ describe('error reporting', () => {
     expect(getRecentErrorReports(store)).toEqual([]);
   });
 
+  it('filters malformed stored reports before limiting and building issue links', () => {
+    const malformed = { ...report, kind: 'unexpected', message: 'bad kind' };
+    const wrongField = { ...report, id: 42 };
+    const wrongBuild = { ...report, buildCommit: 42, message: 'bad build' };
+    const wrongStack = { ...report, stack: null, message: 'bad stack' };
+    const store = storage({
+      'cs-duolingo:error-reports': JSON.stringify([
+        report,
+        null,
+        malformed,
+        wrongField,
+        wrongBuild,
+        wrongStack,
+      ]),
+    });
+
+    expect(getRecentErrorReports(store)).toEqual([report]);
+    const url = new URL(buildGithubIssueUrl('', [
+      null,
+      malformed,
+      wrongBuild,
+      wrongStack,
+      report,
+    ] as unknown as ClientErrorReport[]));
+    const body = url.searchParams.get('body') ?? '';
+    expect(body).toContain('example failure');
+    expect(body).not.toContain('bad kind');
+    expect(body).not.toContain('bad build');
+    expect(body).not.toContain('bad stack');
+
+    const overLimitStore = storage({
+      'cs-duolingo:error-reports': JSON.stringify([report, ...Array(20).fill(null)]),
+    });
+    expect(getRecentErrorReports(overLimitStore)).toEqual([report]);
+
+    const emptyStore = storage({
+      'cs-duolingo:error-reports': JSON.stringify([null, malformed]),
+    });
+    const emptyBody = new URL(
+      buildGithubIssueUrl('', getRecentErrorReports(emptyStore)),
+    ).searchParams.get('body');
+    expect(emptyBody).toContain('- 최근 자동 수집 오류 없음');
+  });
+
   it('sanitizes Sentry events to preserve the diagnostic privacy boundary', () => {
     const event = sanitizeSentryEvent({
       message: 'example failure',

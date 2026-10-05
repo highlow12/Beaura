@@ -100,6 +100,57 @@ describe("question registry", () => {
     ).toBe(false);
   });
 
+  it("rejects non-string IDs in answer key arrays", () => {
+    const multiSelect = {
+      schemaVersion: 1,
+      id: "test.invalid-multi-select-key",
+      lessonId: "test",
+      revision: 1,
+      type: "multi-select",
+      prompt,
+      options: [option("a"), option("b")],
+      correctOptionIds: ["a", 42],
+      shuffleOptions: false,
+    };
+    expect(
+      evaluateQuestion(multiSelect, { type: "multi-select", optionIds: ["a"] }),
+    ).toMatchObject({ status: "error", error: { code: "invalid-question" } });
+
+    const ordering = {
+      schemaVersion: 1,
+      id: "test.invalid-ordering-key",
+      lessonId: "test",
+      revision: 1,
+      type: "ordering",
+      prompt,
+      items: [option("first"), option("second")],
+      correctOrder: ["first", "second", 42],
+    };
+    expect(
+      evaluateQuestion(ordering, {
+        type: "ordering",
+        orderedItemIds: ["first", "second"],
+      }),
+    ).toMatchObject({ status: "error", error: { code: "invalid-question" } });
+  });
+
+  it("accepts runtime code-block languages supported by the content builder", () => {
+    const question: SingleChoiceQuestion = {
+      schemaVersion: 1,
+      id: "test.python3-code-block",
+      lessonId: "test",
+      revision: 1,
+      type: "single-choice",
+      prompt: [{ type: "code", language: "python3", code: "print(1)" }],
+      options: [option("a"), option("b")],
+      correctOptionId: "b",
+      shuffleOptions: false,
+    };
+    expect(
+      evaluateQuestion(question, { type: "single-choice", optionId: "b" }),
+    ).toMatchObject({ status: "evaluated", result: { correct: true } });
+  });
+
   it("requires the exact ordering", () => {
     const question: OrderingQuestion = {
       schemaVersion: 1,
@@ -252,6 +303,35 @@ describe("question registry", () => {
     ).toMatchObject({ status: "error", error: { code: "invalid-answer" } });
   });
 
+  it.each([
+    ["null nodes", { nodes: null }],
+    ["null node entry", { nodes: [null, { id: "b", label: "B", x: 90, y: 50 }] }],
+    ["null edges", { edges: null }],
+    ["null edge entry", { edges: [null] }],
+  ])("returns invalid-question for malformed graph structure: %s", (_name, override) => {
+    const question = {
+      schemaVersion: 1,
+      id: "test.malformed-graph",
+      lessonId: "test",
+      revision: 1,
+      type: "graph-path",
+      prompt,
+      directed: true,
+      nodes: [
+        { id: "a", label: "A", x: 10, y: 50 },
+        { id: "b", label: "B", x: 90, y: 50 },
+      ],
+      edges: [{ fromId: "a", toId: "b" }],
+      startNodeId: "a",
+      goalNodeId: "b",
+      acceptedPaths: [["a", "b"]],
+      ...override,
+    };
+    expect(
+      evaluateQuestion(question, { type: "graph-path", nodeIds: ["a", "b"] }),
+    ).toMatchObject({ status: "error", error: { code: "invalid-question" } });
+  });
+
   it("evaluates deterministic interactive simulations by reached state", () => {
     const question: InteractiveSimulationQuestion = {
       schemaVersion: 1,
@@ -299,6 +379,36 @@ describe("question registry", () => {
         actionIds: ["finish"],
       }),
     ).toMatchObject({ status: "error", error: { code: "invalid-answer" } });
+  });
+
+  it.each([
+    ["null transitions", null],
+    ["null transition entry", [null]],
+  ])("returns invalid-question for malformed simulation transitions: %s", (_name, transitions) => {
+    const question = {
+      schemaVersion: 1,
+      id: "test.malformed-simulation",
+      lessonId: "test",
+      revision: 1,
+      type: "interactive-simulation",
+      prompt,
+      states: [
+        { id: "idle", label: "Idle" },
+        { id: "done", label: "Done" },
+      ],
+      actions: [{ id: "finish", label: "Finish" }],
+      transitions,
+      initialStateId: "idle",
+      goalStateIds: ["done"],
+      maxSteps: 1,
+      canonicalActionIds: ["finish"],
+    };
+    expect(
+      evaluateQuestion(question, {
+        type: "interactive-simulation",
+        actionIds: ["finish"],
+      }),
+    ).toMatchObject({ status: "error", error: { code: "invalid-question" } });
   });
 
   it("only accepts values offered by the question choices", () => {

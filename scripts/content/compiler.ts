@@ -35,17 +35,24 @@ function transformMarkdown(
   source: string,
   assets: Set<string>,
 ): string {
-  let result = markdown;
+  const replacements: Array<{ start: number; end: number; target: string }> = [];
   for (const reference of getMarkdownReferences(markdown)) {
     if (!reference.image) continue;
     const resolved = sourceAssetPath(source, reference.target);
     if (!resolved) continue;
     assets.add(resolved);
-    result = result.replaceAll(
-      `](${reference.target})`,
-      `](${publicAssetPath(resolved)})`,
-    );
+    replacements.push({
+      start: reference.targetStart,
+      end: reference.targetEnd,
+      target: publicAssetPath(resolved),
+    });
   }
+  let result = markdown;
+  for (const replacement of replacements.reverse())
+    result =
+      result.slice(0, replacement.start) +
+      replacement.target +
+      result.slice(replacement.end);
   return result;
 }
 

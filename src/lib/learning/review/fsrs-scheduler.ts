@@ -92,6 +92,18 @@ function cardFromState(state: PersistedSchedulerState): Card {
   };
 }
 
+export function effectiveReviewTime(
+  state: PersistedSchedulerState,
+  now: Date,
+): Date {
+  const requestedAt = finite(now.getTime(), "review time");
+  return new Date(
+    state.last_review === null
+      ? requestedAt
+      : Math.max(requestedAt, state.last_review),
+  );
+}
+
 function ratingValue(rating: ReviewRating): Grade {
   switch (rating) {
     case "again":
@@ -168,7 +180,11 @@ export class FsrsScheduler implements Scheduler<PersistedSchedulerState> {
     now: Date,
   ): { state: PersistedSchedulerState; nextReviewAt: number } {
     const card = cardFromState(state);
-    const next = this.engine.next(card, now, ratingValue(rating));
+    const next = this.engine.next(
+      card,
+      effectiveReviewTime(state, now),
+      ratingValue(rating),
+    );
     const lapses =
       state.lapses +
       (rating === "again" && card.state === State.Review ? 1 : 0);
@@ -180,7 +196,7 @@ export class FsrsScheduler implements Scheduler<PersistedSchedulerState> {
     if (state.state === State.New || state.last_review === null) return null;
     const value = this.engine.get_retrievability(
       cardFromState(state),
-      now,
+      effectiveReviewTime(state, now),
       false,
     );
     return Number.isFinite(value) ? value : null;

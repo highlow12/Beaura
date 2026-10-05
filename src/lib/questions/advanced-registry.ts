@@ -221,11 +221,7 @@ function validateGraphPathQuestion(
 
   if (!Array.isArray(value.acceptedPaths) || value.acceptedPaths.length === 0)
     errors.push("question.acceptedPaths: 하나 이상의 정답 경로가 필요합니다.");
-  else if (
-    typeof value.directed === "boolean" &&
-    typeof value.startNodeId === "string" &&
-    typeof value.goalNodeId === "string"
-  ) {
+  else if (errors.length === 0) {
     const partial = value as unknown as GraphPathQuestion;
     value.acceptedPaths.forEach((path, index) =>
       errors.push(...validatePath(partial, path, `question.acceptedPaths[${index}]`)),
@@ -371,11 +367,7 @@ function validateInteractiveSimulationQuestion(
     errors.push("question.canonicalActionIds: 존재하지 않는 action ID가 있습니다.");
   if (Number.isInteger(value.maxSteps) && canonical.length > (value.maxSteps as number))
     errors.push("question.canonicalActionIds: maxSteps를 초과할 수 없습니다.");
-  if (
-    typeof value.initialStateId === "string" &&
-    Array.isArray(value.transitions) &&
-    canonical.length > 0
-  ) {
+  if (errors.length === 0 && canonical.length > 0) {
     const simulation = simulate(value as unknown as InteractiveSimulationQuestion, canonical);
     if (!simulation.valid)
       errors.push("question.canonicalActionIds: 실행할 수 없는 action 순서입니다.");

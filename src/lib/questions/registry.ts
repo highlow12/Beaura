@@ -177,7 +177,7 @@ function validateBlocks(value: unknown, path: string): string[] {
         errors.push(`${at}.markdown: 비어 있을 수 없습니다.`);
     } else if (block.type === "code") {
       errors.push(...unknownFields(block, ["type", "language", "code"], at));
-      if (!isNonEmptyString(block.language) || !/^[a-z]+$/.test(block.language))
+      if (!isNonEmptyString(block.language) || !/^[a-z0-9-]+$/.test(block.language))
         errors.push(`${at}.language: 소문자 식별자여야 합니다.`);
       if (!isNonEmptyString(block.code))
         errors.push(`${at}.code: 비어 있을 수 없습니다.`);
@@ -381,6 +381,8 @@ function validateMultiSelectQuestion(
     : [];
   if (!Array.isArray(value.correctOptionIds) || ids.length === 0)
     errors.push("question.correctOptionIds: 하나 이상의 ID가 필요합니다.");
+  else if (ids.length !== value.correctOptionIds.length)
+    errors.push("question.correctOptionIds: 문자열 배열이어야 합니다.");
   if (duplicateValues(ids).length)
     errors.push("question.correctOptionIds: 중복 ID가 있습니다.");
   if (ids.some((id) => !options.ids.includes(id)))
@@ -441,7 +443,11 @@ function validateOrderingQuestion(
   const order = Array.isArray(value.correctOrder)
     ? value.correctOrder.filter((id): id is string => typeof id === "string")
     : [];
-  if (!Array.isArray(value.correctOrder) || !sameMembers(order, items.ids))
+  if (
+    !Array.isArray(value.correctOrder) ||
+    order.length !== value.correctOrder.length ||
+    !sameMembers(order, items.ids)
+  )
     errors.push(
       "question.correctOrder: 모든 item ID를 정확히 한 번 포함해야 합니다.",
     );

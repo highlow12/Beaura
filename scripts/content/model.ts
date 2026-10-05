@@ -809,6 +809,10 @@ function question(
             ),
           ].map((match) => match[1])
         : [];
+    const markerCount =
+      typeof value.template === "string"
+        ? (value.template.match(/\{\{blank:/g) ?? []).length
+        : 0;
     const blankIds: string[] = [];
     if (!Array.isArray(value.blanks) || !value.blanks.length)
       errors.push(`${at}.blanks: 하나 이상의 blank가 필요합니다.`);
@@ -846,6 +850,7 @@ function question(
             );
       });
     if (
+      markerCount !== placeholders.length ||
       !placeholders.length ||
       duplicateValues(blankIds).length ||
       placeholders.length !== blankIds.length ||
@@ -862,19 +867,53 @@ function question(
 
 export function getMarkdownReferences(
   markdown: string,
-): Array<{ image: boolean; target: string }> {
-  const output: Array<{ image: boolean; target: string }> = [];
+): Array<{
+  image: boolean;
+  target: string;
+  targetStart: number;
+  targetEnd: number;
+}> {
+  const output: Array<{
+    image: boolean;
+    target: string;
+    targetStart: number;
+    targetEnd: number;
+  }> = [];
   let fenced = false;
-  for (const line of markdown.split(/\r?\n/)) {
-    if (/^\s*(```|~~~)/.test(line)) {
-      fenced = !fenced;
+  let offset = 0;
+  for (const segment of markdown.split(/(\r?\n)/)) {
+    if (/^\r?\n$/.test(segment)) {
+      offset += segment.length;
       continue;
     }
-    if (fenced) continue;
+    const line = segment;
+    if (/^\s*(```|~~~)/.test(line)) {
+      fenced = !fenced;
+      offset += line.length;
+      continue;
+    }
+    if (fenced) {
+      offset += line.length;
+      continue;
+    }
     for (const match of line.matchAll(
-      /(!?)\[[^\]]*\]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/g,
-    ))
-      output.push({ image: match[1] === "!", target: match[2] });
+      /(!?)\[([^\]]*)\]\(([ \t]*)([^)\s]+)(?:[ \t]+(?:"[^"]*"|'[^']*'))?[ \t]*\)/g,
+    )) {
+      const targetStart =
+        offset +
+        (match.index ?? 0) +
+        match[1].length +
+        match[2].length +
+        3 +
+        match[3].length;
+      output.push({
+        image: match[1] === "!",
+        target: match[4],
+        targetStart,
+        targetEnd: targetStart + match[4].length,
+      });
+    }
+    offset += line.length;
   }
   return output;
 }

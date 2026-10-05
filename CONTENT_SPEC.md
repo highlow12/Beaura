@@ -308,7 +308,7 @@ Markdown 처리 규칙:
 - CommonMark 문법과 fenced code block을 지원한다.
 - raw HTML은 허용하지 않는다.
 - `<script>`와 실행 가능한 JavaScript URL은 허용하지 않는다.
-- Markdown 안의 상대 image 경로는 Markdown 파일을 기준으로 해석한다.
+- Markdown 안의 상대 image 경로는 Markdown 파일을 기준으로 해석하고 공개 asset 경로로 변환한다. inline image의 alt와 선택적 title은 보존한다.
 - 외부 HTTP(S) image는 허용하지 않는다. 오프라인에서 사용할 수 있는 로컬 asset만 참조한다.
 - 일반 HTTP(S) link는 허용하되 앱이 외부 링크임을 표시한다.
 - 첫 heading은 선택 사항이며 Builder가 임의로 heading을 추가하지 않는다.
@@ -372,7 +372,7 @@ prompt:
 공통 규칙:
 
 - Content Block 배열은 하나 이상의 block을 가져야 한다.
-- `language`는 syntax highlighting을 위한 비어 있지 않은 소문자 식별자다. 실행 가능 언어라는 의미는 아니다.
+- `language`는 syntax highlighting을 위한 식별자로 소문자 알파벳·숫자·하이픈을 하나 이상 허용한다 (`^[a-z0-9-]+$`). 실행 가능 언어라는 의미는 아니다.
 - `image.alt`와 `diagram.alt`는 필수이며 장식용 이미지도 빈 문자열을 사용할 수 없다.
 - `src`는 해당 question YAML 기준 상대 경로다.
 - `diagramType`은 등록된 Diagram Renderer의 ID여야 한다.

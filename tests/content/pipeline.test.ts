@@ -214,4 +214,54 @@ describe("content pipeline", () => {
     );
     expect(errors).toContain("정규화 가능한 선택지가 최소 2개 필요합니다");
   }, CONTENT_TEST_TIMEOUT);
+
+  it("rejects malformed blank markers in completion templates", async () => {
+    const bundle = await loadSourceContent(process.cwd());
+    const completion = bundle.lessons
+      .flatMap((entry) => entry.questions)
+      .find((file) => file.value.type === "code-completion")?.value;
+    expect(completion).toBeDefined();
+    if (!completion || typeof completion.template !== "string")
+      throw new Error("Expected a code-completion source question");
+
+    completion.template += "\n{{blank:BAD}}";
+
+    const errors = getValidationErrors(bundle).join("\n");
+    expect(errors).toContain("placeholder와 blanks가 ID별로 정확히 한 번 대응해야 합니다");
+    expect(() => compileContent(bundle)).toThrow("콘텐츠 검증 실패");
+  }, CONTENT_TEST_TIMEOUT);
+
+  it("rewrites titled source images while preserving their Markdown attributes", async () => {
+    const bundle = await loadSourceContent(process.cwd());
+    const entry = bundle.lessons[0];
+    const file = entry.content[0];
+    file.markdown = [
+      '![double title](../../../assets/a.png   "two")',
+      "![single title](../../../assets/a.png   'one')",
+      "![repeated](../../../assets/a.png)",
+      "![plain](../../../assets/a.png)",
+      "```markdown",
+      "![fenced](../../../assets/a.png)",
+      "```",
+    ].join("\r\n\r\n");
+    bundle.files.set("assets/a.png", Buffer.from("fixture"));
+
+    const compiled = compileContent(bundle);
+    const contentIndex = entry.lessonFile.value.flow.findIndex(
+      (item) => item.type === "content" && item.ref === file.ref,
+    );
+    const lesson = compiled.lessons.get(entry.lessonFile.value.id) as {
+      flow: Array<{ blocks: Array<{ html: string }> }>;
+    };
+    const html = lesson.flow[contentIndex].blocks[0].html;
+
+    expect(compiled.assets.has("assets/a.png")).toBe(true);
+    expect(html.match(/<img\b/g)).toHaveLength(4);
+    expect(html).toContain('src="/generated/assets/assets/a.png"');
+    expect(html).toContain('alt="double title" title="two"');
+    expect(html).toContain('alt="single title" title="one"');
+    expect(html).toContain('alt="repeated"');
+    expect(html).toContain('alt="plain"');
+    expect(html).toContain("![fenced](../../../assets/a.png)");
+  }, CONTENT_TEST_TIMEOUT);
 });

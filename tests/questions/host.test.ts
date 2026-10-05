@@ -54,6 +54,86 @@ function ids(attempts: QuestionAttempt[]): string[] {
   return attempts.map((attempt) => attempt.attemptId);
 }
 
+function graphQuestion(overrides: Record<string, unknown> = {}): unknown {
+  return {
+    schemaVersion: 1,
+    id: "host.malformed-graph",
+    lessonId: "host-lesson",
+    revision: 1,
+    type: "graph-path",
+    prompt,
+    directed: true,
+    nodes: [
+      { id: "a", label: "A", x: 10, y: 50 },
+      { id: "b", label: "B", x: 90, y: 50 },
+    ],
+    edges: [{ fromId: "a", toId: "b" }],
+    startNodeId: "a",
+    goalNodeId: "b",
+    acceptedPaths: [["a", "b"]],
+    ...overrides,
+  };
+}
+
+function simulationQuestion(transitions: unknown): unknown {
+  return {
+    schemaVersion: 1,
+    id: "host.malformed-simulation",
+    lessonId: "host-lesson",
+    revision: 1,
+    type: "interactive-simulation",
+    prompt,
+    states: [
+      { id: "idle", label: "Idle" },
+      { id: "done", label: "Done" },
+    ],
+    actions: [{ id: "finish", label: "Finish" }],
+    transitions,
+    initialStateId: "idle",
+    goalStateIds: ["done"],
+    maxSteps: 1,
+    canonicalActionIds: ["finish"],
+  };
+}
+
+function multiSelectQuestion(correctOptionIds: unknown): unknown {
+  return {
+    schemaVersion: 1,
+    id: "host.malformed-multi-select",
+    lessonId: "host-lesson",
+    revision: 1,
+    type: "multi-select",
+    prompt,
+    options: [choice("a"), choice("b")],
+    correctOptionIds,
+    shuffleOptions: false,
+  };
+}
+
+function orderingQuestion(correctOrder: unknown): unknown {
+  return {
+    schemaVersion: 1,
+    id: "host.malformed-ordering",
+    lessonId: "host-lesson",
+    revision: 1,
+    type: "ordering",
+    prompt,
+    items: [choice("first"), choice("second")],
+    correctOrder,
+  };
+}
+
+const malformedQuestions: Array<[string, unknown]> = [
+  ["mixed multi-select answer key", multiSelectQuestion(["a", 42])],
+  ["mixed ordering answer key", orderingQuestion(["first", "second", 42])],
+  ["null graph nodes", graphQuestion({ nodes: null })],
+  ["null graph node entry", graphQuestion({ nodes: [null, { id: "b", label: "B", x: 90, y: 50 }] })],
+  ["null graph edges", graphQuestion({ edges: null })],
+  ["null graph edge entry", graphQuestion({ edges: [null] })],
+  ["null simulation transitions", simulationQuestion(null)],
+  ["null simulation transition entry", simulationQuestion([null])],
+];
+
 describe("QuestionHost lifecycle", () => {
   it("requires an answer and leaves the attempt available after an invalid answer", async () => {
     const host = createQuestionHost(singleQuestion(), { autoStart: false });
@@ -276,4 +356,15 @@ describe("QuestionHost lifecycle", () => {
     const host = createQuestionHost(null as unknown as Question, { autoStart: false });
     expect(host.state).toMatchObject({ phase: "error", error: { code: "invalid-question" } });
   });
+
+  it.each(malformedQuestions)(
+    "reports validation errors for malformed question data (%s)",
+    (_name, question) => {
+      const host = createQuestionHost(question as Question, { autoStart: false });
+      expect(host.state).toMatchObject({
+        phase: "error",
+        error: { code: "invalid-question", source: "validation" },
+      });
+    },
+  );
 });
